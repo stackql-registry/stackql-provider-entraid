@@ -1,0 +1,36 @@
+---
+title: audit_logs
+hide_title: false
+hide_table_of_contents: false
+keywords:
+  - audit_logs
+  - entraid
+  - stackql
+  - infrastructure-as-code
+  - configuration-as-data
+  - cloud inventory
+description: Query, deploy and manage entraid resources using SQL
+custom_edit_url: null
+image: /img/stackql-entraid-provider-featured-image.png
+---
+
+audit_logs service documentation.
+
+:::info[Service Summary]
+
+total resources: __5__  
+
+:::
+
+## Resources
+<div class="row">
+<div class="providerDocColumn">
+<a href="/services/audit_logs/audit_logs/">audit_logs</a><br />
+<a href="/services/audit_logs/directory_audits/">directory_audits</a><br />
+<a href="/services/audit_logs/provisioning/">provisioning</a>
+</div>
+<div class="providerDocColumn">
+<a href="/services/audit_logs/sign_ins/">sign_ins</a><br />
+<a href="/services/audit_logs/sign_ins_dismiss/">sign_ins_dismiss</a>
+</div>
+</div>

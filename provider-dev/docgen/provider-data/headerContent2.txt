@@ -1,0 +1,38 @@
+See also:
+[[` SHOW `]](https://stackql.io/docs/language-spec/show) [[` DESCRIBE `]](https://stackql.io/docs/language-spec/describe)  [[` REGISTRY `]](https://stackql.io/docs/language-spec/registry)
+* * *
+
+## Installation
+
+To pull the latest version of the `entraid` provider, run the following command:
+
+```bash
+REGISTRY PULL entraid;
+```
+> To view previous provider versions or to pull a specific provider version, see [here](https://stackql.io/docs/language-spec/registry).
+
+## Authentication
+
+The `entraid` provider authenticates to Microsoft Graph using the OAuth2 **client credentials** (app-only) grant. Register an application in Microsoft Entra ID, grant it the required Microsoft Graph **application** permissions (and admin-consent them), then create a client secret.
+
+The following system environment variables are used for authentication by default:
+
+- <CopyableCode code="AZURE_TENANT_ID" /> - your Entra ID tenant ID (GUID or verified domain), used in the token endpoint
+- <CopyableCode code="AZURE_CLIENT_ID" /> - the application (client) ID of your app registration
+- <CopyableCode code="AZURE_CLIENT_SECRET" /> - a client secret for the app registration
+
+These variables are sourced at runtime (from the local machine or as CI variables/secrets).
+
+<details>
+
+<summary>Using different environment variables</summary>
+
+To use different environment variables (instead of the defaults), use the `--auth` flag of the `stackql` program.  For example:
+
+```bash
+
+AUTH='{ "entraid": { "type": "oauth2", "grant_type": "client_credentials", "client_id_env_var": "MY_CLIENT_ID", "client_secret_env_var": "MY_CLIENT_SECRET", "token_url": "https://login.microsoftonline.com/{{ .__env__MY_TENANT_ID }}/oauth2/v2.0/token", "scopes": ["https://graph.microsoft.com/.default"] }}'
+stackql shell --auth="${AUTH}"
+
+```
+</details>

@@ -1,0 +1,77 @@
+# Tier 1 smoke tests: read-only SELECT queries that any reasonable user
+# would expect to "just work" against a freshly-built provider.
+#
+# Each entry has:
+#   name           - test id (used in pytest output)
+#   sql            - SQL to execute. ${VAR} is substituted from env / defaults.
+#   assertions:
+#     min_rows         - result set must have at least this many rows (default 1)
+#     required_columns - every named column must be present on every row
+#     row_predicates   - list of Python expressions evaluated with `rows` and `r`
+#                        (r = rows[0]) in scope.
+#   xfail (optional)   - flag known provider/binary bugs without losing visibility.
+#
+# These require an Entra ID tenant reachable with the configured app-only
+# credentials (AZURE_TENANT_ID / AZURE_CLIENT_ID / AZURE_CLIENT_SECRET) and the
+# Microsoft Graph application permissions for the queried resources
+# (e.g. User.Read.All, Group.Read.All, Application.Read.All, Organization.Read.All).
+
+- name: list_organization
+  sql: |
+    SELECT id, displayName
+    FROM entraid.organization.organization
+  assertions:
+    min_rows: 1
+    required_columns: [id, displayName]
+    row_predicates:
+      - "all(row['id'] for row in rows)"
+
+- name: list_users
+  sql: |
+    SELECT id, displayName, userPrincipalName, accountEnabled
+    FROM entraid.users.users
+  assertions:
+    min_rows: 1
+    required_columns: [id, displayName, userPrincipalName]
+    row_predicates:
+      - "all(row['id'] for row in rows)"
+
+- name: list_groups
+  sql: |
+    SELECT id, displayName, mailEnabled, securityEnabled
+    FROM entraid.groups.groups
+  assertions:
+    min_rows: 1
+    required_columns: [id, displayName]
+
+- name: list_applications
+  sql: |
+    SELECT id, appId, displayName, signInAudience
+    FROM entraid.applications.applications
+  assertions:
+    min_rows: 1
+    required_columns: [id, appId, displayName]
+
+- name: list_service_principals
+  sql: |
+    SELECT id, appId, displayName, servicePrincipalType
+    FROM entraid.service_principals.service_principals
+  assertions:
+    min_rows: 1
+    required_columns: [id, appId, displayName]
+
+- name: list_directory_roles
+  sql: |
+    SELECT id, displayName, roleTemplateId
+    FROM entraid.directory_roles.directory_roles
+  assertions:
+    min_rows: 1
+    required_columns: [id, displayName]
+
+- name: list_subscribed_skus
+  sql: |
+    SELECT skuId, skuPartNumber, capabilityStatus
+    FROM entraid.subscribed_skus.subscribed_skus
+  assertions:
+    min_rows: 1
+    required_columns: [skuId, skuPartNumber]

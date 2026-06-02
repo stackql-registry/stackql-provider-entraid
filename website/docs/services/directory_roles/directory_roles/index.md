@@ -1,0 +1,820 @@
+--- 
+title: directory_roles
+hide_title: false
+hide_table_of_contents: false
+keywords:
+  - directory_roles
+  - directory_roles
+  - entraid
+  - infrastructure-as-code
+  - configuration-as-data
+  - cloud inventory
+description: Query, deploy and manage entraid resources using SQL
+custom_edit_url: null
+image: /img/stackql-entraid-provider-featured-image.png
+---
+
+import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Creates, updates, deletes, gets or lists a <code>directory_roles</code> resource.
+
+## Overview
+<table><tbody>
+<tr><td><b>Name</b></td><td><CopyableCode code="directory_roles" /></td></tr>
+<tr><td><b>Type</b></td><td>Resource</td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory_roles.directory_roles" /></td></tr>
+</tbody></table>
+
+## Fields
+
+The following fields are returned by `SELECT` queries:
+
+<Tabs
+    defaultValue="get"
+    values={[
+        { label: 'get', value: 'get' },
+        { label: 'get_2', value: 'get_2' },
+        { label: 'list', value: 'list' }
+    ]}
+>
+<TabItem value="get">
+
+Retrieved entity
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><CopyableCode code="id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier for an entity. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="@odata.type" /></td>
+    <td><code>string</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><CopyableCode code="deletedDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^[0-9]&#123;4,&#125;-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]&#123;1,12&#125;)?(Z|[+-][0-9][0-9]:[0-9][0-9])$</code>)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="description" /></td>
+    <td><code>string</code></td>
+    <td>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="displayName" /></td>
+    <td><code>string</code></td>
+    <td>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="members" /></td>
+    <td><code>array</code></td>
+    <td>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="roleTemplateId" /></td>
+    <td><code>string</code></td>
+    <td>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="scopedMembers" /></td>
+    <td><code>array</code></td>
+    <td>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</td>
+</tr>
+</tbody>
+</table>
+</TabItem>
+<TabItem value="get_2">
+
+Retrieved entity
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><CopyableCode code="id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier for an entity. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="@odata.type" /></td>
+    <td><code>string</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><CopyableCode code="deletedDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^[0-9]&#123;4,&#125;-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]&#123;1,12&#125;)?(Z|[+-][0-9][0-9]:[0-9][0-9])$</code>)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="description" /></td>
+    <td><code>string</code></td>
+    <td>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="displayName" /></td>
+    <td><code>string</code></td>
+    <td>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="members" /></td>
+    <td><code>array</code></td>
+    <td>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="roleTemplateId" /></td>
+    <td><code>string</code></td>
+    <td>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="scopedMembers" /></td>
+    <td><code>array</code></td>
+    <td>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</td>
+</tr>
+</tbody>
+</table>
+</TabItem>
+<TabItem value="list">
+
+Retrieved collection
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><CopyableCode code="id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier for an entity. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="@odata.type" /></td>
+    <td><code>string</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><CopyableCode code="deletedDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^[0-9]&#123;4,&#125;-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]&#123;1,12&#125;)?(Z|[+-][0-9][0-9]:[0-9][0-9])$</code>)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="description" /></td>
+    <td><code>string</code></td>
+    <td>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="displayName" /></td>
+    <td><code>string</code></td>
+    <td>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="members" /></td>
+    <td><code>array</code></td>
+    <td>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="roleTemplateId" /></td>
+    <td><code>string</code></td>
+    <td>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="scopedMembers" /></td>
+    <td><code>array</code></td>
+    <td>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</td>
+</tr>
+</tbody>
+</table>
+</TabItem>
+</Tabs>
+
+## Methods
+
+The following methods are available for this resource:
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Accessible by</th>
+    <th>Required Params</th>
+    <th>Optional Params</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><a href="#get"><CopyableCode code="get" /></a></td>
+    <td><CopyableCode code="select" /></td>
+    <td><a href="#parameter-roleTemplateId"><code>roleTemplateId</code></a></td>
+    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td>Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.</td>
+</tr>
+<tr>
+    <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
+    <td><CopyableCode code="select" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td>Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.</td>
+</tr>
+<tr>
+    <td><a href="#list"><CopyableCode code="list" /></a></td>
+    <td><CopyableCode code="select" /></td>
+    <td></td>
+    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td>List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Microsoft Entra admin center, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Microsoft Entra ID, use List directoryRoleTemplates.</td>
+</tr>
+<tr>
+    <td><a href="#insert"><CopyableCode code="insert" /></a></td>
+    <td><CopyableCode code="insert" /></td>
+    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
+    <td>Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.</td>
+</tr>
+<tr>
+    <td><a href="#update"><CopyableCode code="update" /></a></td>
+    <td><CopyableCode code="update" /></td>
+    <td><a href="#parameter-roleTemplateId"><code>roleTemplateId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
+    <td><CopyableCode code="update" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete"><CopyableCode code="delete" /></a></td>
+    <td><CopyableCode code="delete" /></td>
+    <td><a href="#parameter-roleTemplateId"><code>roleTemplateId</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
+    <td><CopyableCode code="delete" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#get_available_extension_properties"><CopyableCode code="get_available_extension_properties" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td></td>
+    <td></td>
+    <td>Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:</td>
+</tr>
+<tr>
+    <td><a href="#get_by_ids"><CopyableCode code="get_by_ids" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td></td>
+    <td></td>
+    <td>Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:</td>
+</tr>
+<tr>
+    <td><a href="#validate_properties"><CopyableCode code="validate_properties" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td></td>
+    <td></td>
+    <td>Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.</td>
+</tr>
+<tr>
+    <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td></td>
+    <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
+</tr>
+<tr>
+    <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td></td>
+    <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
+</tr>
+<tr>
+    <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td></td>
+    <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
+</tr>
+<tr>
+    <td><a href="#restore"><CopyableCode code="restore" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-directoryRole-id"><code>directoryRole-id</code></a></td>
+    <td></td>
+    <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#methods) section to see which parameters are required or optional for each operation.
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr id="parameter-directoryRole-id">
+    <td><CopyableCode code="directoryRole-id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier of directoryRole</td>
+</tr>
+<tr id="parameter-roleTemplateId">
+    <td><CopyableCode code="roleTemplateId" /></td>
+    <td><code>string</code></td>
+    <td>Alternate key of directoryRole</td>
+</tr>
+<tr id="parameter-$count">
+    <td><CopyableCode code="$count" /></td>
+    <td><code>boolean</code></td>
+    <td>Include count of items</td>
+</tr>
+<tr id="parameter-$expand">
+    <td><CopyableCode code="$expand" /></td>
+    <td><code>array</code></td>
+    <td>Expand related entities</td>
+</tr>
+<tr id="parameter-$filter">
+    <td><CopyableCode code="$filter" /></td>
+    <td><code>string</code></td>
+    <td>Filter items by property values</td>
+</tr>
+<tr id="parameter-$orderby">
+    <td><CopyableCode code="$orderby" /></td>
+    <td><code>array</code></td>
+    <td>Order items by property values</td>
+</tr>
+<tr id="parameter-$search">
+    <td><CopyableCode code="$search" /></td>
+    <td><code>string</code></td>
+    <td>Search items by search phrases</td>
+</tr>
+<tr id="parameter-$select">
+    <td><CopyableCode code="$select" /></td>
+    <td><code>array</code></td>
+    <td>Select properties to be returned</td>
+</tr>
+<tr id="parameter-$skip">
+    <td><CopyableCode code="$skip" /></td>
+    <td><code>integer</code></td>
+    <td>Skip the first n items</td>
+</tr>
+<tr id="parameter-$top">
+    <td><CopyableCode code="$top" /></td>
+    <td><code>integer</code></td>
+    <td>Show only the first n items (example: 50)</td>
+</tr>
+<tr id="parameter-If-Match">
+    <td><CopyableCode code="If-Match" /></td>
+    <td><code>string</code></td>
+    <td>ETag</td>
+</tr>
+</tbody>
+</table>
+
+## `SELECT` examples
+
+<Tabs
+    defaultValue="get"
+    values={[
+        { label: 'get', value: 'get' },
+        { label: 'get_2', value: 'get_2' },
+        { label: 'list', value: 'list' }
+    ]}
+>
+<TabItem value="get">
+
+Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
+
+```sql
+SELECT
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers
+FROM entraid.directory_roles.directory_roles
+WHERE roleTemplateId = '{{ roleTemplateId }}' -- required
+AND $select = '{{ $select }}'
+AND $expand = '{{ $expand }}'
+;
+```
+</TabItem>
+<TabItem value="get_2">
+
+Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
+
+```sql
+SELECT
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers
+FROM entraid.directory_roles.directory_roles
+WHERE directoryRole-id = '{{ directoryRole-id }}' -- required
+AND $select = '{{ $select }}'
+AND $expand = '{{ $expand }}'
+;
+```
+</TabItem>
+<TabItem value="list">
+
+List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Microsoft Entra admin center, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Microsoft Entra ID, use List directoryRoleTemplates.
+
+```sql
+SELECT
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers
+FROM entraid.directory_roles.directory_roles
+WHERE $top = '{{ $top }}'
+AND $skip = '{{ $skip }}'
+AND $search = '{{ $search }}'
+AND $filter = '{{ $filter }}'
+AND $count = '{{ $count }}'
+AND $orderby = '{{ $orderby }}'
+AND $select = '{{ $select }}'
+AND $expand = '{{ $expand }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## `INSERT` examples
+
+<Tabs
+    defaultValue="insert"
+    values={[
+        { label: 'insert', value: 'insert' },
+        { label: 'Manifest', value: 'manifest' }
+    ]}
+>
+<TabItem value="insert">
+
+Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+
+```sql
+INSERT INTO entraid.directory_roles.directory_roles (
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+roleTemplateId,
+members,
+scopedMembers
+)
+SELECT 
+'{{ id }}',
+'{{ @odata.type }}' /* required */,
+'{{ deletedDateTime }}',
+'{{ description }}',
+'{{ displayName }}',
+'{{ roleTemplateId }}',
+'{{ members }}',
+'{{ scopedMembers }}'
+RETURNING
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers
+;
+```
+</TabItem>
+<TabItem value="manifest">
+
+<CodeBlock language="yaml">{`# Description fields are for documentation purposes
+- name: directory_roles
+  props:
+    - name: id
+      value: "{{ id }}"
+      description: |
+        The unique identifier for an entity. Read-only.
+    - name: @odata.type
+      value: "{{ @odata.type }}"
+    - name: deletedDateTime
+      value: "{{ deletedDateTime }}"
+      description: |
+        Date and time when this object was deleted. Always null when the object hasn't been deleted.
+    - name: description
+      value: "{{ description }}"
+      description: |
+        The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
+    - name: displayName
+      value: "{{ displayName }}"
+      description: |
+        The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
+    - name: roleTemplateId
+      value: "{{ roleTemplateId }}"
+      description: |
+        The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
+    - name: members
+      description: |
+        Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
+      value:
+        - id: "{{ id }}"
+          @odata.type: "{{ @odata.type }}"
+          deletedDateTime: "{{ deletedDateTime }}"
+    - name: scopedMembers
+      description: |
+        Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+      value:
+        - id: "{{ id }}"
+          @odata.type: "{{ @odata.type }}"
+          administrativeUnitId: "{{ administrativeUnitId }}"
+          roleId: "{{ roleId }}"
+          roleMemberInfo:
+            displayName: "{{ displayName }}"
+            id: "{{ id }}"
+            @odata.type: "{{ @odata.type }}"
+`}</CodeBlock>
+
+</TabItem>
+</Tabs>
+
+
+## `UPDATE` examples
+
+<Tabs
+    defaultValue="update"
+    values={[
+        { label: 'update', value: 'update' },
+        { label: 'update_2', value: 'update_2' }
+    ]}
+>
+<TabItem value="update">
+
+No description available.
+
+```sql
+UPDATE entraid.directory_roles.directory_roles
+SET 
+id = '{{ id }}',
+@odata.type = '{{ @odata.type }}',
+deletedDateTime = '{{ deletedDateTime }}',
+description = '{{ description }}',
+displayName = '{{ displayName }}',
+roleTemplateId = '{{ roleTemplateId }}',
+members = '{{ members }}',
+scopedMembers = '{{ scopedMembers }}'
+WHERE 
+roleTemplateId = '{{ roleTemplateId }}' --required
+AND @odata.type = '{{ @odata.type }}' --required
+RETURNING
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers;
+```
+</TabItem>
+<TabItem value="update_2">
+
+No description available.
+
+```sql
+UPDATE entraid.directory_roles.directory_roles
+SET 
+id = '{{ id }}',
+@odata.type = '{{ @odata.type }}',
+deletedDateTime = '{{ deletedDateTime }}',
+description = '{{ description }}',
+displayName = '{{ displayName }}',
+roleTemplateId = '{{ roleTemplateId }}',
+members = '{{ members }}',
+scopedMembers = '{{ scopedMembers }}'
+WHERE 
+directoryRole-id = '{{ directoryRole-id }}' --required
+AND @odata.type = '{{ @odata.type }}' --required
+RETURNING
+id,
+@odata.type,
+deletedDateTime,
+description,
+displayName,
+members,
+roleTemplateId,
+scopedMembers;
+```
+</TabItem>
+</Tabs>
+
+
+## `DELETE` examples
+
+<Tabs
+    defaultValue="delete"
+    values={[
+        { label: 'delete', value: 'delete' },
+        { label: 'delete_2', value: 'delete_2' }
+    ]}
+>
+<TabItem value="delete">
+
+No description available.
+
+```sql
+DELETE FROM entraid.directory_roles.directory_roles
+WHERE roleTemplateId = '{{ roleTemplateId }}' --required
+AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="delete_2">
+
+No description available.
+
+```sql
+DELETE FROM entraid.directory_roles.directory_roles
+WHERE directoryRole-id = '{{ directoryRole-id }}' --required
+AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="get_available_extension_properties"
+    values={[
+        { label: 'get_available_extension_properties', value: 'get_available_extension_properties' },
+        { label: 'get_by_ids', value: 'get_by_ids' },
+        { label: 'validate_properties', value: 'validate_properties' },
+        { label: 'check_member_groups', value: 'check_member_groups' },
+        { label: 'check_member_objects', value: 'check_member_objects' },
+        { label: 'get_member_groups', value: 'get_member_groups' },
+        { label: 'get_member_objects', value: 'get_member_objects' },
+        { label: 'restore', value: 'restore' }
+    ]}
+>
+<TabItem value="get_available_extension_properties">
+
+Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
+
+```sql
+EXEC entraid.directory_roles.directory_roles.get_available_extension_properties 
+@@json=
+'{
+"isSyncedFromOnPremises": {{ isSyncedFromOnPremises }}
+}'
+;
+```
+</TabItem>
+<TabItem value="get_by_ids">
+
+Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
+
+```sql
+EXEC entraid.directory_roles.directory_roles.get_by_ids 
+@@json=
+'{
+"ids": "{{ ids }}", 
+"types": "{{ types }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="validate_properties">
+
+Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
+
+```sql
+EXEC entraid.directory_roles.directory_roles.validate_properties 
+@@json=
+'{
+"entityType": "{{ entityType }}", 
+"displayName": "{{ displayName }}", 
+"mailNickname": "{{ mailNickname }}", 
+"onBehalfOfUserId": "{{ onBehalfOfUserId }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="check_member_groups">
+
+Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+
+```sql
+EXEC entraid.directory_roles.directory_roles.check_member_groups 
+@directoryRole-id='{{ directoryRole-id }}' --required 
+@@json=
+'{
+"groupIds": "{{ groupIds }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="check_member_objects">
+
+Success
+
+```sql
+EXEC entraid.directory_roles.directory_roles.check_member_objects 
+@directoryRole-id='{{ directoryRole-id }}' --required 
+@@json=
+'{
+"ids": "{{ ids }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="get_member_groups">
+
+Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
+
+```sql
+EXEC entraid.directory_roles.directory_roles.get_member_groups 
+@directoryRole-id='{{ directoryRole-id }}' --required 
+@@json=
+'{
+"securityEnabledOnly": {{ securityEnabledOnly }}
+}'
+;
+```
+</TabItem>
+<TabItem value="get_member_objects">
+
+Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
+
+```sql
+EXEC entraid.directory_roles.directory_roles.get_member_objects 
+@directoryRole-id='{{ directoryRole-id }}' --required 
+@@json=
+'{
+"securityEnabledOnly": {{ securityEnabledOnly }}
+}'
+;
+```
+</TabItem>
+<TabItem value="restore">
+
+Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
+
+```sql
+EXEC entraid.directory_roles.directory_roles.restore 
+@directoryRole-id='{{ directoryRole-id }}' --required
+;
+```
+</TabItem>
+</Tabs>

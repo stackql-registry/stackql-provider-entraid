@@ -1,0 +1,23 @@
+---
+title: entraid
+hide_title: false
+hide_table_of_contents: false
+keywords:
+  - entraid
+  - entra
+  - azuread
+  - microsoft graph
+  - identity
+  - stackql
+  - infrastructure-as-code
+  - configuration-as-data
+  - cloud inventory
+description: Query, deploy and manage Microsoft Entra ID resources using SQL
+custom_edit_url: null
+image: /img/stackql-entraid-provider-featured-image.png
+id: 'provider-intro'
+---
+
+import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
+
+Identity and directory management for Microsoft Entra ID (formerly Azure Active Directory), derived from the Microsoft Graph `v1.0` API.

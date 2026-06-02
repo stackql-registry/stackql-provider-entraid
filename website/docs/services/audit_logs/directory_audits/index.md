@@ -1,0 +1,605 @@
+--- 
+title: directory_audits
+hide_title: false
+hide_table_of_contents: false
+keywords:
+  - directory_audits
+  - audit_logs
+  - entraid
+  - infrastructure-as-code
+  - configuration-as-data
+  - cloud inventory
+description: Query, deploy and manage entraid resources using SQL
+custom_edit_url: null
+image: /img/stackql-entraid-provider-featured-image.png
+---
+
+import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Creates, updates, deletes, gets or lists a <code>directory_audits</code> resource.
+
+## Overview
+<table><tbody>
+<tr><td><b>Name</b></td><td><CopyableCode code="directory_audits" /></td></tr>
+<tr><td><b>Type</b></td><td>Resource</td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entraid.audit_logs.directory_audits" /></td></tr>
+</tbody></table>
+
+## Fields
+
+The following fields are returned by `SELECT` queries:
+
+<Tabs
+    defaultValue="get"
+    values={[
+        { label: 'get', value: 'get' },
+        { label: 'list', value: 'list' }
+    ]}
+>
+<TabItem value="get">
+
+Retrieved navigation property
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><CopyableCode code="id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier for an entity. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="@odata.type" /></td>
+    <td><code>string</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><CopyableCode code="activityDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby. (pattern: <code>^[0-9]&#123;4,&#125;-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]&#123;1,12&#125;)?(Z|[+-][0-9][0-9]:[0-9][0-9])$</code>)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="activityDisplayName" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="additionalDetails" /></td>
+    <td><code>array</code></td>
+    <td>Indicates additional details on the activity.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="category" /></td>
+    <td><code>string</code></td>
+    <td>Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="correlationId" /></td>
+    <td><code>string</code></td>
+    <td>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="initiatedBy" /></td>
+    <td><code>object</code></td>
+    <td> (title: auditActivityInitiator)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="loggedByService" /></td>
+    <td><code>string</code></td>
+    <td>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="operationType" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="result" /></td>
+    <td><code></code></td>
+    <td>Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="resultReason" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the reason for failure if the result is failure or timeout.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="targetResources" /></td>
+    <td><code>array</code></td>
+    <td>Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.</td>
+</tr>
+</tbody>
+</table>
+</TabItem>
+<TabItem value="list">
+
+Retrieved collection
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><CopyableCode code="id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier for an entity. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="@odata.type" /></td>
+    <td><code>string</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td><CopyableCode code="activityDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby. (pattern: <code>^[0-9]&#123;4,&#125;-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]&#123;1,12&#125;)?(Z|[+-][0-9][0-9]:[0-9][0-9])$</code>)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="activityDisplayName" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="additionalDetails" /></td>
+    <td><code>array</code></td>
+    <td>Indicates additional details on the activity.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="category" /></td>
+    <td><code>string</code></td>
+    <td>Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="correlationId" /></td>
+    <td><code>string</code></td>
+    <td>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="initiatedBy" /></td>
+    <td><code>object</code></td>
+    <td> (title: auditActivityInitiator)</td>
+</tr>
+<tr>
+    <td><CopyableCode code="loggedByService" /></td>
+    <td><code>string</code></td>
+    <td>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).</td>
+</tr>
+<tr>
+    <td><CopyableCode code="operationType" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="result" /></td>
+    <td><code></code></td>
+    <td>Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="resultReason" /></td>
+    <td><code>string</code></td>
+    <td>Indicates the reason for failure if the result is failure or timeout.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="targetResources" /></td>
+    <td><code>array</code></td>
+    <td>Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.</td>
+</tr>
+</tbody>
+</table>
+</TabItem>
+</Tabs>
+
+## Methods
+
+The following methods are available for this resource:
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Accessible by</th>
+    <th>Required Params</th>
+    <th>Optional Params</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td><a href="#get"><CopyableCode code="get" /></a></td>
+    <td><CopyableCode code="select" /></td>
+    <td><a href="#parameter-directoryAudit-id"><code>directoryAudit-id</code></a></td>
+    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td>Get a specific Microsoft Entra audit log item. This includes an audit log item generated by various services within Microsoft Entra ID like user, application, device and group management, privileged identity management (PIM), access reviews, terms of use, identity protection, password management (self-service and admin password resets), self-service group management, and so on.</td>
+</tr>
+<tr>
+    <td><a href="#list"><CopyableCode code="list" /></a></td>
+    <td><CopyableCode code="select" /></td>
+    <td></td>
+    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td>Get the list of audit logs generated by Microsoft Entra ID. This includes audit logs generated by various services within Microsoft Entra ID, including user, app, device and group Management, privileged identity management (PIM), access reviews, terms of use, identity protection, password management (self-service and admin password resets), and self- service group management, and so on.</td>
+</tr>
+<tr>
+    <td><a href="#insert"><CopyableCode code="insert" /></a></td>
+    <td><CopyableCode code="insert" /></td>
+    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#update"><CopyableCode code="update" /></a></td>
+    <td><CopyableCode code="update" /></td>
+    <td><a href="#parameter-directoryAudit-id"><code>directoryAudit-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete"><CopyableCode code="delete" /></a></td>
+    <td><CopyableCode code="delete" /></td>
+    <td><a href="#parameter-directoryAudit-id"><code>directoryAudit-id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#methods) section to see which parameters are required or optional for each operation.
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Datatype</th>
+    <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr id="parameter-directoryAudit-id">
+    <td><CopyableCode code="directoryAudit-id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier of directoryAudit</td>
+</tr>
+<tr id="parameter-$count">
+    <td><CopyableCode code="$count" /></td>
+    <td><code>boolean</code></td>
+    <td>Include count of items</td>
+</tr>
+<tr id="parameter-$expand">
+    <td><CopyableCode code="$expand" /></td>
+    <td><code>array</code></td>
+    <td>Expand related entities</td>
+</tr>
+<tr id="parameter-$filter">
+    <td><CopyableCode code="$filter" /></td>
+    <td><code>string</code></td>
+    <td>Filter items by property values</td>
+</tr>
+<tr id="parameter-$orderby">
+    <td><CopyableCode code="$orderby" /></td>
+    <td><code>array</code></td>
+    <td>Order items by property values</td>
+</tr>
+<tr id="parameter-$search">
+    <td><CopyableCode code="$search" /></td>
+    <td><code>string</code></td>
+    <td>Search items by search phrases</td>
+</tr>
+<tr id="parameter-$select">
+    <td><CopyableCode code="$select" /></td>
+    <td><code>array</code></td>
+    <td>Select properties to be returned</td>
+</tr>
+<tr id="parameter-$skip">
+    <td><CopyableCode code="$skip" /></td>
+    <td><code>integer</code></td>
+    <td>Skip the first n items</td>
+</tr>
+<tr id="parameter-$top">
+    <td><CopyableCode code="$top" /></td>
+    <td><code>integer</code></td>
+    <td>Show only the first n items (example: 50)</td>
+</tr>
+<tr id="parameter-If-Match">
+    <td><CopyableCode code="If-Match" /></td>
+    <td><code>string</code></td>
+    <td>ETag</td>
+</tr>
+</tbody>
+</table>
+
+## `SELECT` examples
+
+<Tabs
+    defaultValue="get"
+    values={[
+        { label: 'get', value: 'get' },
+        { label: 'list', value: 'list' }
+    ]}
+>
+<TabItem value="get">
+
+Get a specific Microsoft Entra audit log item. This includes an audit log item generated by various services within Microsoft Entra ID like user, application, device and group management, privileged identity management (PIM), access reviews, terms of use, identity protection, password management (self-service and admin password resets), self-service group management, and so on.
+
+```sql
+SELECT
+id,
+@odata.type,
+activityDateTime,
+activityDisplayName,
+additionalDetails,
+category,
+correlationId,
+initiatedBy,
+loggedByService,
+operationType,
+result,
+resultReason,
+targetResources
+FROM entraid.audit_logs.directory_audits
+WHERE directoryAudit-id = '{{ directoryAudit-id }}' -- required
+AND $select = '{{ $select }}'
+AND $expand = '{{ $expand }}'
+;
+```
+</TabItem>
+<TabItem value="list">
+
+Get the list of audit logs generated by Microsoft Entra ID. This includes audit logs generated by various services within Microsoft Entra ID, including user, app, device and group Management, privileged identity management (PIM), access reviews, terms of use, identity protection, password management (self-service and admin password resets), and self- service group management, and so on.
+
+```sql
+SELECT
+id,
+@odata.type,
+activityDateTime,
+activityDisplayName,
+additionalDetails,
+category,
+correlationId,
+initiatedBy,
+loggedByService,
+operationType,
+result,
+resultReason,
+targetResources
+FROM entraid.audit_logs.directory_audits
+WHERE $top = '{{ $top }}'
+AND $skip = '{{ $skip }}'
+AND $search = '{{ $search }}'
+AND $filter = '{{ $filter }}'
+AND $count = '{{ $count }}'
+AND $orderby = '{{ $orderby }}'
+AND $select = '{{ $select }}'
+AND $expand = '{{ $expand }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## `INSERT` examples
+
+<Tabs
+    defaultValue="insert"
+    values={[
+        { label: 'insert', value: 'insert' },
+        { label: 'Manifest', value: 'manifest' }
+    ]}
+>
+<TabItem value="insert">
+
+No description available.
+
+```sql
+INSERT INTO entraid.audit_logs.directory_audits (
+id,
+@odata.type,
+activityDateTime,
+activityDisplayName,
+additionalDetails,
+category,
+correlationId,
+initiatedBy,
+loggedByService,
+operationType,
+result,
+resultReason,
+targetResources
+)
+SELECT 
+'{{ id }}',
+'{{ @odata.type }}' /* required */,
+'{{ activityDateTime }}',
+'{{ activityDisplayName }}',
+'{{ additionalDetails }}',
+'{{ category }}',
+'{{ correlationId }}',
+'{{ initiatedBy }}',
+'{{ loggedByService }}',
+'{{ operationType }}',
+'{{ result }}',
+'{{ resultReason }}',
+'{{ targetResources }}'
+RETURNING
+id,
+@odata.type,
+activityDateTime,
+activityDisplayName,
+additionalDetails,
+category,
+correlationId,
+initiatedBy,
+loggedByService,
+operationType,
+result,
+resultReason,
+targetResources
+;
+```
+</TabItem>
+<TabItem value="manifest">
+
+<CodeBlock language="yaml">{`# Description fields are for documentation purposes
+- name: directory_audits
+  props:
+    - name: id
+      value: "{{ id }}"
+      description: |
+        The unique identifier for an entity. Read-only.
+    - name: @odata.type
+      value: "{{ @odata.type }}"
+    - name: activityDateTime
+      value: "{{ activityDateTime }}"
+      description: |
+        Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
+    - name: activityDisplayName
+      value: "{{ activityDisplayName }}"
+      description: |
+        Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).
+    - name: additionalDetails
+      description: |
+        Indicates additional details on the activity.
+      value:
+        - key: "{{ key }}"
+          value: "{{ value }}"
+          @odata.type: "{{ @odata.type }}"
+    - name: category
+      value: "{{ category }}"
+      description: |
+        Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.
+    - name: correlationId
+      value: "{{ correlationId }}"
+      description: |
+        Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
+    - name: initiatedBy
+      value:
+        app:
+          appId: "{{ appId }}"
+          displayName: "{{ displayName }}"
+          servicePrincipalId: "{{ servicePrincipalId }}"
+          servicePrincipalName: "{{ servicePrincipalName }}"
+          @odata.type: "{{ @odata.type }}"
+        user:
+          displayName: "{{ displayName }}"
+          id: "{{ id }}"
+          @odata.type: "{{ @odata.type }}"
+          ipAddress: "{{ ipAddress }}"
+          userPrincipalName: "{{ userPrincipalName }}"
+        @odata.type: "{{ @odata.type }}"
+    - name: loggedByService
+      value: "{{ loggedByService }}"
+      description: |
+        Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
+    - name: operationType
+      value: "{{ operationType }}"
+      description: |
+        Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+    - name: result
+      value: "{{ result }}"
+      description: |
+        Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.
+    - name: resultReason
+      value: "{{ resultReason }}"
+      description: |
+        Indicates the reason for failure if the result is failure or timeout.
+    - name: targetResources
+      description: |
+        Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
+      value:
+        - displayName: "{{ displayName }}"
+          groupType: "{{ groupType }}"
+          id: "{{ id }}"
+          modifiedProperties: "{{ modifiedProperties }}"
+          type: "{{ type }}"
+          userPrincipalName: "{{ userPrincipalName }}"
+          @odata.type: "{{ @odata.type }}"
+`}</CodeBlock>
+
+</TabItem>
+</Tabs>
+
+
+## `UPDATE` examples
+
+<Tabs
+    defaultValue="update"
+    values={[
+        { label: 'update', value: 'update' }
+    ]}
+>
+<TabItem value="update">
+
+No description available.
+
+```sql
+UPDATE entraid.audit_logs.directory_audits
+SET 
+id = '{{ id }}',
+@odata.type = '{{ @odata.type }}',
+activityDateTime = '{{ activityDateTime }}',
+activityDisplayName = '{{ activityDisplayName }}',
+additionalDetails = '{{ additionalDetails }}',
+category = '{{ category }}',
+correlationId = '{{ correlationId }}',
+initiatedBy = '{{ initiatedBy }}',
+loggedByService = '{{ loggedByService }}',
+operationType = '{{ operationType }}',
+result = '{{ result }}',
+resultReason = '{{ resultReason }}',
+targetResources = '{{ targetResources }}'
+WHERE 
+directoryAudit-id = '{{ directoryAudit-id }}' --required
+AND @odata.type = '{{ @odata.type }}' --required
+RETURNING
+id,
+@odata.type,
+activityDateTime,
+activityDisplayName,
+additionalDetails,
+category,
+correlationId,
+initiatedBy,
+loggedByService,
+operationType,
+result,
+resultReason,
+targetResources;
+```
+</TabItem>
+</Tabs>
+
+
+## `DELETE` examples
+
+<Tabs
+    defaultValue="delete"
+    values={[
+        { label: 'delete', value: 'delete' }
+    ]}
+>
+<TabItem value="delete">
+
+No description available.
+
+```sql
+DELETE FROM entraid.audit_logs.directory_audits
+WHERE directoryAudit-id = '{{ directoryAudit-id }}' --required
+AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
