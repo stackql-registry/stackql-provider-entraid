@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - oauth2_permission_grants
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>oauth2_permission_grants</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="oauth2_permission_grants" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.oauth2_permission_grants" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.oauth2_permission_grants" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -263,7 +263,7 @@ consentType,
 principalId,
 resourceId,
 scope
-FROM entraid.users.oauth2_permission_grants
+FROM entra_id.users.oauth2_permission_grants
 WHERE user-id = '{{ user-id }}' -- required
 AND oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' -- required
 AND $select = '{{ $select }}'
@@ -284,7 +284,7 @@ consentType,
 principalId,
 resourceId,
 scope
-FROM entraid.users.oauth2_permission_grants
+FROM entra_id.users.oauth2_permission_grants
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'

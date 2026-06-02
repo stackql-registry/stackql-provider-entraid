@@ -1,9 +1,9 @@
 ---
-title: entraid
+title: entra_id
 hide_title: false
 hide_table_of_contents: false
 keywords:
-  - entraid
+  - entra_id
   - entra
   - azuread
   - microsoft graph
@@ -14,7 +14,7 @@ keywords:
   - cloud inventory
 description: Query, deploy and manage Microsoft Entra ID resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 id: 'provider-intro'
 ---
 
@@ -36,16 +36,16 @@ See also:
 
 ## Installation
 
-To pull the latest version of the `entraid` provider, run the following command:
+To pull the latest version of the `entra_id` provider, run the following command:
 
 ```bash
-REGISTRY PULL entraid;
+REGISTRY PULL entra_id;
 ```
 > To view previous provider versions or to pull a specific provider version, see [here](https://stackql.io/docs/language-spec/registry).
 
 ## Authentication
 
-The `entraid` provider authenticates to Microsoft Graph using the OAuth2 **client credentials** (app-only) grant. Register an application in Microsoft Entra ID, grant it the required Microsoft Graph **application** permissions (and admin-consent them), then create a client secret.
+The `entra_id` provider authenticates to Microsoft Graph using the OAuth2 **client credentials** (app-only) grant. Register an application in Microsoft Entra ID, grant it the required Microsoft Graph **application** permissions (and admin-consent them), then create a client secret.
 
 The following system environment variables are used for authentication by default:
 
@@ -63,7 +63,7 @@ To use different environment variables (instead of the defaults), use the `--aut
 
 ```bash
 
-AUTH='{ "entraid": { "type": "oauth2", "grant_type": "client_credentials", "client_id_env_var": "MY_CLIENT_ID", "client_secret_env_var": "MY_CLIENT_SECRET", "token_url": "https://login.microsoftonline.com/{{ .__env__MY_TENANT_ID }}/oauth2/v2.0/token", "scopes": ["https://graph.microsoft.com/.default"] }}'
+AUTH='{ "entra_id": { "type": "oauth2", "grant_type": "client_credentials", "client_id_env_var": "MY_CLIENT_ID", "client_secret_env_var": "MY_CLIENT_SECRET", "token_url": "https://login.microsoftonline.com/{{ .__env__MY_TENANT_ID }}/oauth2/v2.0/token", "scopes": ["https://graph.microsoft.com/.default"] }}'
 stackql shell --auth="${AUTH}"
 
 ```

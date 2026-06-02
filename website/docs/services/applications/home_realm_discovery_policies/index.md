@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - home_realm_discovery_policies
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>home_realm_discovery_policies</
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="home_realm_discovery_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.home_realm_discovery_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.home_realm_discovery_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -274,7 +274,7 @@ deletedDateTime,
 description,
 displayName,
 isOrganizationDefault
-FROM entraid.applications.home_realm_discovery_policies
+FROM entra_id.applications.home_realm_discovery_policies
 WHERE application-id = '{{ application-id }}' -- required
 AND homeRealmDiscoveryPolicy-id = '{{ homeRealmDiscoveryPolicy-id }}' -- required
 AND $select = '{{ $select }}'
@@ -296,7 +296,7 @@ deletedDateTime,
 description,
 displayName,
 isOrganizationDefault
-FROM entraid.applications.home_realm_discovery_policies
+FROM entra_id.applications.home_realm_discovery_policies
 WHERE application-id = '{{ application-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'

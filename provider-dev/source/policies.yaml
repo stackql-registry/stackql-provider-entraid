@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: policies API
-  description: entraid policies API
+  description: entra_id policies API
   version: v1.0
 paths:
   /policies:

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - remote_desktop_security_configuration_target_device_groups
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>remote_desktop_security_configu
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="remote_desktop_security_configuration_target_device_groups" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.remote_desktop_security_configuration_target_device_groups" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.remote_desktop_security_configuration_target_device_groups" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.service_principals.remote_desktop_security_configuration_target_device_groups
+FROM entra_id.service_principals.remote_desktop_security_configuration_target_device_groups
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND targetDeviceGroup-id = '{{ targetDeviceGroup-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.service_principals.remote_desktop_security_configuration_target_device_groups
+FROM entra_id.service_principals.remote_desktop_security_configuration_target_device_groups
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
 
 ```sql
-INSERT INTO entraid.service_principals.remote_desktop_security_configuration_target_device_groups (
+INSERT INTO entra_id.service_principals.remote_desktop_security_configuration_target_device_groups (
 id,
 @odata.type,
 displayName,
@@ -347,7 +347,7 @@ displayName
 Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
 
 ```sql
-UPDATE entraid.service_principals.remote_desktop_security_configuration_target_device_groups
+UPDATE entra_id.service_principals.remote_desktop_security_configuration_target_device_groups
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -378,7 +378,7 @@ displayName;
 Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
 
 ```sql
-DELETE FROM entraid.service_principals.remote_desktop_security_configuration_target_device_groups
+DELETE FROM entra_id.service_principals.remote_desktop_security_configuration_target_device_groups
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND targetDeviceGroup-id = '{{ targetDeviceGroup-id }}' --required
 AND If-Match = '{{ If-Match }}'

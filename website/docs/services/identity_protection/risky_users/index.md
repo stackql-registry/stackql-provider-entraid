@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - risky_users
   - identity_protection
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>risky_users</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="risky_users" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_protection.risky_users" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_protection.risky_users" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -342,7 +342,7 @@ riskLevel,
 riskState,
 userDisplayName,
 userPrincipalName
-FROM entraid.identity_protection.risky_users
+FROM entra_id.identity_protection.risky_users
 WHERE riskyUser-id = '{{ riskyUser-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -366,7 +366,7 @@ riskLevel,
 riskState,
 userDisplayName,
 userPrincipalName
-FROM entraid.identity_protection.risky_users
+FROM entra_id.identity_protection.risky_users
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -395,7 +395,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_protection.risky_users (
+INSERT INTO entra_id.identity_protection.risky_users (
 id,
 @odata.type,
 isDeleted,
@@ -515,7 +515,7 @@ userPrincipalName
 No description available.
 
 ```sql
-UPDATE entraid.identity_protection.risky_users
+UPDATE entra_id.identity_protection.risky_users
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -561,7 +561,7 @@ userPrincipalName;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_protection.risky_users
+DELETE FROM entra_id.identity_protection.risky_users
 WHERE riskyUser-id = '{{ riskyUser-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -584,7 +584,7 @@ AND If-Match = '{{ If-Match }}'
 Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 
 ```sql
-EXEC entraid.identity_protection.risky_users.confirm_compromised 
+EXEC entra_id.identity_protection.risky_users.confirm_compromised 
 @@json=
 '{
 "userIds": "{{ userIds }}"
@@ -597,7 +597,7 @@ EXEC entraid.identity_protection.risky_users.confirm_compromised
 Confirm one or more riskyUser objects as safe. This action sets the targeted user's risk level to none.
 
 ```sql
-EXEC entraid.identity_protection.risky_users.confirm_safe 
+EXEC entra_id.identity_protection.risky_users.confirm_safe 
 @@json=
 '{
 "userIds": "{{ userIds }}"

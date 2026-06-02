@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - members
   - directory_roles
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>members</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="members" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory_roles.members" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory_roles.members" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -215,7 +215,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.directory_roles.members
+FROM entra_id.directory_roles.members
 WHERE directoryRole-id = '{{ directoryRole-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
@@ -246,7 +246,7 @@ AND $expand = '{{ $expand }}'
 Create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 
 ```sql
-INSERT INTO entraid.directory_roles.members (
+INSERT INTO entra_id.directory_roles.members (
 @odata.id,
 directoryRole-id
 )
@@ -286,7 +286,7 @@ SELECT
 Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 
 ```sql
-DELETE FROM entraid.directory_roles.members
+DELETE FROM entra_id.directory_roles.members
 WHERE directoryRole-id = '{{ directoryRole-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -298,7 +298,7 @@ AND If-Match = '{{ If-Match }}'
 Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 
 ```sql
-DELETE FROM entraid.directory_roles.members
+DELETE FROM entra_id.directory_roles.members
 WHERE @id = '{{ @id }}' --required
 AND directoryRole-id = '{{ directoryRole-id }}' --required
 AND If-Match = '{{ If-Match }}'

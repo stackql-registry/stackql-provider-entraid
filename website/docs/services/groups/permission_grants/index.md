@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - permission_grants
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>permission_grants</code> resour
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="permission_grants" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.permission_grants" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.permission_grants" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -300,7 +300,7 @@ deletedDateTime,
 permission,
 permissionType,
 resourceAppId
-FROM entraid.groups.permission_grants
+FROM entra_id.groups.permission_grants
 WHERE group-id = '{{ group-id }}' -- required
 AND resourceSpecificPermissionGrant-id = '{{ resourceSpecificPermissionGrant-id }}' -- required
 AND $select = '{{ $select }}'
@@ -322,7 +322,7 @@ deletedDateTime,
 permission,
 permissionType,
 resourceAppId
-FROM entraid.groups.permission_grants
+FROM entra_id.groups.permission_grants
 WHERE group-id = '{{ group-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -352,7 +352,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.groups.permission_grants (
+INSERT INTO entra_id.groups.permission_grants (
 id,
 @odata.type,
 deletedDateTime,
@@ -442,7 +442,7 @@ resourceAppId
 No description available.
 
 ```sql
-UPDATE entraid.groups.permission_grants
+UPDATE entra_id.groups.permission_grants
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -483,7 +483,7 @@ resourceAppId;
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.permission_grants
+DELETE FROM entra_id.groups.permission_grants
 WHERE group-id = '{{ group-id }}' --required
 AND resourceSpecificPermissionGrant-id = '{{ resourceSpecificPermissionGrant-id }}' --required
 AND If-Match = '{{ If-Match }}'

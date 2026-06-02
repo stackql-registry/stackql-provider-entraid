@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: identity API
-  description: entraid identity API
+  description: entra_id identity API
   version: v1.0
 paths:
   /identity:

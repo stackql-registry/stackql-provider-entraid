@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - branding_localizations
   - organization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>branding_localizations</code> r
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="branding_localizations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.organization.branding_localizations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.organization.branding_localizations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -575,7 +575,7 @@ squareLogoDark,
 squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
-FROM entraid.organization.branding_localizations
+FROM entra_id.organization.branding_localizations
 WHERE organization-id = '{{ organization-id }}' -- required
 AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' -- required
 AND $select = '{{ $select }}'
@@ -622,7 +622,7 @@ squareLogoDark,
 squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
-FROM entraid.organization.branding_localizations
+FROM entra_id.organization.branding_localizations
 WHERE organization-id = '{{ organization-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -652,7 +652,7 @@ AND $expand = '{{ $expand }}'
 Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn't exist. The default branding is created only once. It's loaded when a localized branding isn't configured for the user's browser language. To retrieve the default branding, see Get branding.
 
 ```sql
-INSERT INTO entraid.organization.branding_localizations (
+INSERT INTO entra_id.organization.branding_localizations (
 id,
 @odata.type,
 backgroundColor,
@@ -918,7 +918,7 @@ usernameHintText
 Update the properties of an organizationalBrandingLocalization object for a specific localization.
 
 ```sql
-UPDATE entraid.organization.branding_localizations
+UPDATE entra_id.organization.branding_localizations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -1009,7 +1009,7 @@ usernameHintText;
 Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
 
 ```sql
-DELETE FROM entraid.organization.branding_localizations
+DELETE FROM entra_id.organization.branding_localizations
 WHERE organization-id = '{{ organization-id }}' --required
 AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' --required
 AND If-Match = '{{ If-Match }}'

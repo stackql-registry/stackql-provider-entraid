@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - directory
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>directory</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="directory" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.directory" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.directory" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -206,7 +206,7 @@ roleDefinitions,
 roleEligibilityScheduleInstances,
 roleEligibilityScheduleRequests,
 roleEligibilitySchedules
-FROM entraid.role_management.directory
+FROM entra_id.role_management.directory
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -228,7 +228,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.role_management.directory
+UPDATE entra_id.role_management.directory
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -273,7 +273,7 @@ roleEligibilitySchedules;
 No description available.
 
 ```sql
-DELETE FROM entraid.role_management.directory
+DELETE FROM entra_id.role_management.directory
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

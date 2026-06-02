@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - directory_roles
   - directory_roles
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>directory_roles</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="directory_roles" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory_roles.directory_roles" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory_roles.directory_roles" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -435,7 +435,7 @@ displayName,
 members,
 roleTemplateId,
 scopedMembers
-FROM entraid.directory_roles.directory_roles
+FROM entra_id.directory_roles.directory_roles
 WHERE roleTemplateId = '{{ roleTemplateId }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -456,7 +456,7 @@ displayName,
 members,
 roleTemplateId,
 scopedMembers
-FROM entraid.directory_roles.directory_roles
+FROM entra_id.directory_roles.directory_roles
 WHERE directoryRole-id = '{{ directoryRole-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -477,7 +477,7 @@ displayName,
 members,
 roleTemplateId,
 scopedMembers
-FROM entraid.directory_roles.directory_roles
+FROM entra_id.directory_roles.directory_roles
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -506,7 +506,7 @@ AND $expand = '{{ $expand }}'
 Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
 
 ```sql
-INSERT INTO entraid.directory_roles.directory_roles (
+INSERT INTO entra_id.directory_roles.directory_roles (
 id,
 @odata.type,
 deletedDateTime,
@@ -603,7 +603,7 @@ scopedMembers
 No description available.
 
 ```sql
-UPDATE entraid.directory_roles.directory_roles
+UPDATE entra_id.directory_roles.directory_roles
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -632,7 +632,7 @@ scopedMembers;
 No description available.
 
 ```sql
-UPDATE entraid.directory_roles.directory_roles
+UPDATE entra_id.directory_roles.directory_roles
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -673,7 +673,7 @@ scopedMembers;
 No description available.
 
 ```sql
-DELETE FROM entraid.directory_roles.directory_roles
+DELETE FROM entra_id.directory_roles.directory_roles
 WHERE roleTemplateId = '{{ roleTemplateId }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -684,7 +684,7 @@ AND If-Match = '{{ If-Match }}'
 No description available.
 
 ```sql
-DELETE FROM entraid.directory_roles.directory_roles
+DELETE FROM entra_id.directory_roles.directory_roles
 WHERE directoryRole-id = '{{ directoryRole-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -713,7 +713,7 @@ AND If-Match = '{{ If-Match }}'
 Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.get_available_extension_properties 
+EXEC entra_id.directory_roles.directory_roles.get_available_extension_properties 
 @@json=
 '{
 "isSyncedFromOnPremises": {{ isSyncedFromOnPremises }}
@@ -726,7 +726,7 @@ EXEC entraid.directory_roles.directory_roles.get_available_extension_properties
 Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.get_by_ids 
+EXEC entra_id.directory_roles.directory_roles.get_by_ids 
 @@json=
 '{
 "ids": "{{ ids }}", 
@@ -740,7 +740,7 @@ EXEC entraid.directory_roles.directory_roles.get_by_ids
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.validate_properties 
+EXEC entra_id.directory_roles.directory_roles.validate_properties 
 @@json=
 '{
 "entityType": "{{ entityType }}", 
@@ -756,7 +756,7 @@ EXEC entraid.directory_roles.directory_roles.validate_properties
 Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.check_member_groups 
+EXEC entra_id.directory_roles.directory_roles.check_member_groups 
 @directoryRole-id='{{ directoryRole-id }}' --required 
 @@json=
 '{
@@ -770,7 +770,7 @@ EXEC entraid.directory_roles.directory_roles.check_member_groups
 Success
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.check_member_objects 
+EXEC entra_id.directory_roles.directory_roles.check_member_objects 
 @directoryRole-id='{{ directoryRole-id }}' --required 
 @@json=
 '{
@@ -784,7 +784,7 @@ EXEC entraid.directory_roles.directory_roles.check_member_objects
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.get_member_groups 
+EXEC entra_id.directory_roles.directory_roles.get_member_groups 
 @directoryRole-id='{{ directoryRole-id }}' --required 
 @@json=
 '{
@@ -798,7 +798,7 @@ EXEC entraid.directory_roles.directory_roles.get_member_groups
 Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.get_member_objects 
+EXEC entra_id.directory_roles.directory_roles.get_member_objects 
 @directoryRole-id='{{ directoryRole-id }}' --required 
 @@json=
 '{
@@ -812,7 +812,7 @@ EXEC entraid.directory_roles.directory_roles.get_member_objects
 Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
 
 ```sql
-EXEC entraid.directory_roles.directory_roles.restore 
+EXEC entra_id.directory_roles.directory_roles.restore 
 @directoryRole-id='{{ directoryRole-id }}' --required
 ;
 ```

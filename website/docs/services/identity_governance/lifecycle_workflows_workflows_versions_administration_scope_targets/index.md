@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - lifecycle_workflows_workflows_versions_administration_scope_targets
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>lifecycle_workflows_workflows_v
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="lifecycle_workflows_workflows_versions_administration_scope_targets" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -224,7 +224,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets
+FROM entra_id.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets
 WHERE workflow-id = '{{ workflow-id }}' -- required
 AND workflowVersion-versionNumber = '{{ workflowVersion-versionNumber }}' -- required
 AND directoryObject-id = '{{ directoryObject-id }}' -- required
@@ -242,7 +242,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets
+FROM entra_id.identity_governance.lifecycle_workflows_workflows_versions_administration_scope_targets
 WHERE workflow-id = '{{ workflow-id }}' -- required
 AND workflowVersion-versionNumber = '{{ workflowVersion-versionNumber }}' -- required
 AND $top = '{{ $top }}'

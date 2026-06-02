@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - registered_users
   - devices
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>registered_users</code> resourc
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="registered_users" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.devices.registered_users" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.devices.registered_users" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -215,7 +215,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.devices.registered_users
+FROM entra_id.devices.registered_users
 WHERE device-id = '{{ device-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
@@ -246,7 +246,7 @@ AND $expand = '{{ $expand }}'
 Add a registered user for the device.
 
 ```sql
-INSERT INTO entraid.devices.registered_users (
+INSERT INTO entra_id.devices.registered_users (
 @odata.id,
 device-id
 )
@@ -286,7 +286,7 @@ SELECT
 Remove a user as a registered user of the device.
 
 ```sql
-DELETE FROM entraid.devices.registered_users
+DELETE FROM entra_id.devices.registered_users
 WHERE device-id = '{{ device-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -298,7 +298,7 @@ AND If-Match = '{{ If-Match }}'
 Remove a user as a registered user of the device.
 
 ```sql
-DELETE FROM entraid.devices.registered_users
+DELETE FROM entra_id.devices.registered_users
 WHERE @id = '{{ @id }}' --required
 AND device-id = '{{ device-id }}' --required
 AND If-Match = '{{ If-Match }}'

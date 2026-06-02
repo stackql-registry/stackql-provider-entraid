@@ -1,9 +1,9 @@
 ---
-title: entraid
+title: entra_id
 hide_title: false
 hide_table_of_contents: false
 keywords:
-  - entraid
+  - entra_id
   - entra
   - azuread
   - microsoft graph
@@ -14,7 +14,7 @@ keywords:
   - cloud inventory
 description: Query, deploy and manage Microsoft Entra ID resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 id: 'provider-intro'
 ---
 

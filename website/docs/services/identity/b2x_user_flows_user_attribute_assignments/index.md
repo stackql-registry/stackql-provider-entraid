@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - b2x_user_flows_user_attribute_assignments
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>b2x_user_flows_user_attribute_a
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="b2x_user_flows_user_attribute_assignments" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.b2x_user_flows_user_attribute_assignments" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.b2x_user_flows_user_attribute_assignments" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -307,7 +307,7 @@ requiresVerification,
 userAttribute,
 userAttributeValues,
 userInputType
-FROM entraid.identity.b2x_user_flows_user_attribute_assignments
+FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' -- required
 AND $select = '{{ $select }}'
@@ -329,7 +329,7 @@ requiresVerification,
 userAttribute,
 userAttributeValues,
 userInputType
-FROM entraid.identity.b2x_user_flows_user_attribute_assignments
+FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -359,7 +359,7 @@ AND $expand = '{{ $expand }}'
 Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
 
 ```sql
-INSERT INTO entraid.identity.b2x_user_flows_user_attribute_assignments (
+INSERT INTO entra_id.identity.b2x_user_flows_user_attribute_assignments (
 id,
 @odata.type,
 displayName,
@@ -452,7 +452,7 @@ userInputType
 Update the properties of a identityUserFlowAttributeAssignment object.
 
 ```sql
-UPDATE entraid.identity.b2x_user_flows_user_attribute_assignments
+UPDATE entra_id.identity.b2x_user_flows_user_attribute_assignments
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -493,7 +493,7 @@ userInputType;
 Delete an identityUserFlowAttributeAssignment object.
 
 ```sql
-DELETE FROM entraid.identity.b2x_user_flows_user_attribute_assignments
+DELETE FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
 AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -516,7 +516,7 @@ AND If-Match = '{{ If-Match }}'
 Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 
 ```sql
-EXEC entraid.identity.b2x_user_flows_user_attribute_assignments.set_order 
+EXEC entra_id.identity.b2x_user_flows_user_attribute_assignments.set_order 
 @b2xIdentityUserFlow-id='{{ b2xIdentityUserFlow-id }}' --required 
 @@json=
 '{

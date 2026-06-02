@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - app_management_policies
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>app_management_policies</code>
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="app_management_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.app_management_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.app_management_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ description,
 displayName,
 isEnabled,
 restrictions
-FROM entraid.applications.app_management_policies
+FROM entra_id.applications.app_management_policies
 WHERE application-id = '{{ application-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -270,7 +270,7 @@ AND $expand = '{{ $expand }}'
 Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal.
 
 ```sql
-INSERT INTO entraid.applications.app_management_policies (
+INSERT INTO entra_id.applications.app_management_policies (
 @odata.id,
 application-id
 )
@@ -310,7 +310,7 @@ SELECT
 Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
 
 ```sql
-DELETE FROM entraid.applications.app_management_policies
+DELETE FROM entra_id.applications.app_management_policies
 WHERE application-id = '{{ application-id }}' --required
 AND appManagementPolicy-id = '{{ appManagementPolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -322,7 +322,7 @@ AND If-Match = '{{ If-Match }}'
 Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
 
 ```sql
-DELETE FROM entraid.applications.app_management_policies
+DELETE FROM entra_id.applications.app_management_policies
 WHERE @id = '{{ @id }}' --required
 AND application-id = '{{ application-id }}' --required
 AND If-Match = '{{ If-Match }}'

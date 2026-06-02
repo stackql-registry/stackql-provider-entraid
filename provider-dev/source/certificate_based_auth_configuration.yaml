@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: certificate_based_auth_configuration API
-  description: entraid certificate_based_auth_configuration API
+  description: entra_id certificate_based_auth_configuration API
   version: v1.0
 paths:
   /certificateBasedAuthConfiguration:

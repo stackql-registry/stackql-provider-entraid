@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_event_listeners
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_event_listeners
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_event_listeners" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.authentication_event_listeners" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.authentication_event_listeners" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -262,7 +262,7 @@ id,
 authenticationEventsFlowId,
 conditions,
 displayName
-FROM entraid.identity.authentication_event_listeners
+FROM entra_id.identity.authentication_event_listeners
 WHERE authenticationEventListener-id = '{{ authenticationEventListener-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -280,7 +280,7 @@ id,
 authenticationEventsFlowId,
 conditions,
 displayName
-FROM entraid.identity.authentication_event_listeners
+FROM entra_id.identity.authentication_event_listeners
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -309,7 +309,7 @@ AND $expand = '{{ $expand }}'
 Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
 
 ```sql
-INSERT INTO entraid.identity.authentication_event_listeners (
+INSERT INTO entra_id.identity.authentication_event_listeners (
 id,
 @odata.type,
 authenticationEventsFlowId,
@@ -373,7 +373,7 @@ displayName
 Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
 
 ```sql
-UPDATE entraid.identity.authentication_event_listeners
+UPDATE entra_id.identity.authentication_event_listeners
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -407,7 +407,7 @@ displayName;
 Delete an authenticationEventListener object. The following derived types are currently supported.
 
 ```sql
-DELETE FROM entraid.identity.authentication_event_listeners
+DELETE FROM entra_id.identity.authentication_event_listeners
 WHERE authenticationEventListener-id = '{{ authenticationEventListener-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - terms_of_use_agreements_files
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>terms_of_use_agreements_files</
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="terms_of_use_agreements_files" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.terms_of_use_agreements_files" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.terms_of_use_agreements_files" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -322,7 +322,7 @@ isDefault,
 isMajorVersion,
 language,
 versions
-FROM entraid.identity_governance.terms_of_use_agreements_files
+FROM entra_id.identity_governance.terms_of_use_agreements_files
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' -- required
 AND $select = '{{ $select }}'
@@ -346,7 +346,7 @@ isDefault,
 isMajorVersion,
 language,
 versions
-FROM entraid.identity_governance.terms_of_use_agreements_files
+FROM entra_id.identity_governance.terms_of_use_agreements_files
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -376,7 +376,7 @@ AND $expand = '{{ $expand }}'
 Create a new localized agreement file.
 
 ```sql
-INSERT INTO entraid.identity_governance.terms_of_use_agreements_files (
+INSERT INTO entra_id.identity_governance.terms_of_use_agreements_files (
 id,
 @odata.type,
 createdDateTime,
@@ -489,7 +489,7 @@ versions
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.terms_of_use_agreements_files
+UPDATE entra_id.identity_governance.terms_of_use_agreements_files
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -534,7 +534,7 @@ versions;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.terms_of_use_agreements_files
+DELETE FROM entra_id.identity_governance.terms_of_use_agreements_files
 WHERE agreement-id = '{{ agreement-id }}' --required
 AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' --required
 AND If-Match = '{{ If-Match }}'

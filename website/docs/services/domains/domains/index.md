@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - domains
   - domains
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>domains</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="domains" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.domains.domains" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.domains.domains" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -434,7 +434,7 @@ serviceConfigurationRecords,
 state,
 supportedServices,
 verificationDnsRecords
-FROM entraid.domains.domains
+FROM entra_id.domains.domains
 WHERE domain-id = '{{ domain-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -467,7 +467,7 @@ serviceConfigurationRecords,
 state,
 supportedServices,
 verificationDnsRecords
-FROM entraid.domains.domains
+FROM entra_id.domains.domains
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -496,7 +496,7 @@ AND $expand = '{{ $expand }}'
 Adds a domain to the tenant. Important: You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
 
 ```sql
-INSERT INTO entraid.domains.domains (
+INSERT INTO entra_id.domains.domains (
 id,
 @odata.type,
 authenticationType,
@@ -695,7 +695,7 @@ verificationDnsRecords
 Update the properties of domain object. Only verified domains can be updated.
 
 ```sql
-UPDATE entraid.domains.domains
+UPDATE entra_id.domains.domains
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -759,7 +759,7 @@ verificationDnsRecords;
 Delete a domain from a tenant.
 
 ```sql
-DELETE FROM entraid.domains.domains
+DELETE FROM entra_id.domains.domains
 WHERE domain-id = '{{ domain-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -781,7 +781,7 @@ AND If-Match = '{{ If-Match }}'
 Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
 
 ```sql
-EXEC entraid.domains.domains.verify 
+EXEC entra_id.domains.domains.verify 
 @domain-id='{{ domain-id }}' --required
 ;
 ```

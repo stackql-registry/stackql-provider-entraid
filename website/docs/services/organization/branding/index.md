@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - branding
   - organization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>branding</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="branding" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.organization.branding" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.organization.branding" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -349,7 +349,7 @@ squareLogoDark,
 squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
-FROM entraid.organization.branding
+FROM entra_id.organization.branding
 WHERE organization-id = '{{ organization-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -372,7 +372,7 @@ AND $expand = '{{ $expand }}'
 Update the properties of the default branding object specified by the organizationalBranding resource.
 
 ```sql
-UPDATE entraid.organization.branding
+UPDATE entra_id.organization.branding
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -464,7 +464,7 @@ usernameHintText;
 Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 
 ```sql
-DELETE FROM entraid.organization.branding
+DELETE FROM entra_id.organization.branding
 WHERE organization-id = '{{ organization-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

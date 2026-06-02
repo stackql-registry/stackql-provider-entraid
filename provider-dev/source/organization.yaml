@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: organization API
-  description: entraid organization API
+  description: entra_id organization API
   version: v1.0
 paths:
   /organization:

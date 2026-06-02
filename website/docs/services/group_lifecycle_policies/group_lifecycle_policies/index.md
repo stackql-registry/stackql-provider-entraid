@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - group_lifecycle_policies
   - group_lifecycle_policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>group_lifecycle_policies</code>
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="group_lifecycle_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.group_lifecycle_policies.group_lifecycle_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.group_lifecycle_policies.group_lifecycle_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -276,7 +276,7 @@ id,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes
-FROM entraid.group_lifecycle_policies.group_lifecycle_policies
+FROM entra_id.group_lifecycle_policies.group_lifecycle_policies
 WHERE groupLifecyclePolicy-id = '{{ groupLifecyclePolicy-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -294,7 +294,7 @@ id,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes
-FROM entraid.group_lifecycle_policies.group_lifecycle_policies
+FROM entra_id.group_lifecycle_policies.group_lifecycle_policies
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -323,7 +323,7 @@ AND $expand = '{{ $expand }}'
 Creates a new groupLifecyclePolicy. Only one policy exists in the tenant.
 
 ```sql
-INSERT INTO entraid.group_lifecycle_policies.group_lifecycle_policies (
+INSERT INTO entra_id.group_lifecycle_policies.group_lifecycle_policies (
 id,
 @odata.type,
 alternateNotificationEmails,
@@ -387,7 +387,7 @@ managedGroupTypes
 Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
 
 ```sql
-UPDATE entraid.group_lifecycle_policies.group_lifecycle_policies
+UPDATE entra_id.group_lifecycle_policies.group_lifecycle_policies
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -421,7 +421,7 @@ managedGroupTypes;
 Delete a groupLifecyclePolicy.
 
 ```sql
-DELETE FROM entraid.group_lifecycle_policies.group_lifecycle_policies
+DELETE FROM entra_id.group_lifecycle_policies.group_lifecycle_policies
 WHERE groupLifecyclePolicy-id = '{{ groupLifecyclePolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -444,7 +444,7 @@ AND If-Match = '{{ If-Match }}'
 Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
 
 ```sql
-EXEC entraid.group_lifecycle_policies.group_lifecycle_policies.add_group 
+EXEC entra_id.group_lifecycle_policies.group_lifecycle_policies.add_group 
 @groupLifecyclePolicy-id='{{ groupLifecyclePolicy-id }}' --required 
 @@json=
 '{
@@ -458,7 +458,7 @@ EXEC entraid.group_lifecycle_policies.group_lifecycle_policies.add_group
 Removes a group from a lifecycle policy.
 
 ```sql
-EXEC entraid.group_lifecycle_policies.group_lifecycle_policies.remove_group 
+EXEC entra_id.group_lifecycle_policies.group_lifecycle_policies.remove_group 
 @groupLifecyclePolicy-id='{{ groupLifecyclePolicy-id }}' --required 
 @@json=
 '{

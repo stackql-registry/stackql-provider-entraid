@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_strength_policies_combination_configurations
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_strength_polici
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_strength_policies_combination_configurations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.authentication_strength_policies_combination_configurations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.authentication_strength_policies_combination_configurations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 appliesToCombinations
-FROM entraid.policies.authentication_strength_policies_combination_configurations
+FROM entra_id.policies.authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' -- required
 AND authenticationCombinationConfiguration-id = '{{ authenticationCombinationConfiguration-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 appliesToCombinations
-FROM entraid.policies.authentication_strength_policies_combination_configurations
+FROM entra_id.policies.authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.policies.authentication_strength_policies_combination_configurations (
+INSERT INTO entra_id.policies.authentication_strength_policies_combination_configurations (
 id,
 @odata.type,
 appliesToCombinations,
@@ -348,7 +348,7 @@ appliesToCombinations
 No description available.
 
 ```sql
-UPDATE entraid.policies.authentication_strength_policies_combination_configurations
+UPDATE entra_id.policies.authentication_strength_policies_combination_configurations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -379,7 +379,7 @@ appliesToCombinations;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.authentication_strength_policies_combination_configurations
+DELETE FROM entra_id.policies.authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' --required
 AND authenticationCombinationConfiguration-id = '{{ authenticationCombinationConfiguration-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - synchronization_jobs
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>synchronization_jobs</code> res
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="synchronization_jobs" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.synchronization_jobs" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.synchronization_jobs" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -370,7 +370,7 @@ schema,
 status,
 synchronizationJobSettings,
 templateId
-FROM entraid.applications.synchronization_jobs
+FROM entra_id.applications.synchronization_jobs
 WHERE application-id = '{{ application-id }}' -- required
 AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
 AND $select = '{{ $select }}'
@@ -386,7 +386,7 @@ The bulk upload operation for the job.
 SELECT
 id,
 @odata.type
-FROM entraid.applications.synchronization_jobs
+FROM entra_id.applications.synchronization_jobs
 WHERE application-id = '{{ application-id }}' -- required
 AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
 AND $select = '{{ $select }}'
@@ -408,7 +408,7 @@ schema,
 status,
 synchronizationJobSettings,
 templateId
-FROM entraid.applications.synchronization_jobs
+FROM entra_id.applications.synchronization_jobs
 WHERE application-id = '{{ application-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -438,7 +438,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.applications.synchronization_jobs (
+INSERT INTO entra_id.applications.synchronization_jobs (
 id,
 @odata.type,
 schedule,
@@ -531,7 +531,7 @@ templateId
 No description available.
 
 ```sql
-UPDATE entraid.applications.synchronization_jobs
+UPDATE entra_id.applications.synchronization_jobs
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -572,7 +572,7 @@ templateId;
 No description available.
 
 ```sql
-DELETE FROM entraid.applications.synchronization_jobs
+DELETE FROM entra_id.applications.synchronization_jobs
 WHERE application-id = '{{ application-id }}' --required
 AND synchronizationJob-id = '{{ synchronizationJob-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -599,7 +599,7 @@ AND If-Match = '{{ If-Match }}'
 Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ```sql
-EXEC entraid.applications.synchronization_jobs.pause 
+EXEC entra_id.applications.synchronization_jobs.pause 
 @application-id='{{ application-id }}' --required, 
 @synchronizationJob-id='{{ synchronizationJob-id }}' --required
 ;
@@ -610,7 +610,7 @@ EXEC entraid.applications.synchronization_jobs.pause
 Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
 
 ```sql
-EXEC entraid.applications.synchronization_jobs.provision_on_demand 
+EXEC entra_id.applications.synchronization_jobs.provision_on_demand 
 @application-id='{{ application-id }}' --required, 
 @synchronizationJob-id='{{ synchronizationJob-id }}' --required 
 @@json=
@@ -625,7 +625,7 @@ EXEC entraid.applications.synchronization_jobs.provision_on_demand
 Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don't create scripts to call the start job continuously while it's running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. 
 
 ```sql
-EXEC entraid.applications.synchronization_jobs.start 
+EXEC entra_id.applications.synchronization_jobs.start 
 @application-id='{{ application-id }}' --required, 
 @synchronizationJob-id='{{ synchronizationJob-id }}' --required
 ;
@@ -636,7 +636,7 @@ EXEC entraid.applications.synchronization_jobs.start
 Validate that the credentials are valid in the tenant.
 
 ```sql
-EXEC entraid.applications.synchronization_jobs.validate_credentials 
+EXEC entra_id.applications.synchronization_jobs.validate_credentials 
 @application-id='{{ application-id }}' --required, 
 @synchronizationJob-id='{{ synchronizationJob-id }}' --required 
 @@json=
@@ -654,7 +654,7 @@ EXEC entraid.applications.synchronization_jobs.validate_credentials
 Success
 
 ```sql
-EXEC entraid.applications.synchronization_jobs.validate_credentials_2 
+EXEC entra_id.applications.synchronization_jobs.validate_credentials_2 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{

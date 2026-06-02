@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - user_flow_attributes
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>user_flow_attributes</code> res
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="user_flow_attributes" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.user_flow_attributes" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.user_flow_attributes" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -273,7 +273,7 @@ dataType,
 description,
 displayName,
 userFlowAttributeType
-FROM entraid.identity.user_flow_attributes
+FROM entra_id.identity.user_flow_attributes
 WHERE identityUserFlowAttribute-id = '{{ identityUserFlowAttribute-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -292,7 +292,7 @@ dataType,
 description,
 displayName,
 userFlowAttributeType
-FROM entraid.identity.user_flow_attributes
+FROM entra_id.identity.user_flow_attributes
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -321,7 +321,7 @@ AND $expand = '{{ $expand }}'
 Create a new custom identityUserFlowAttribute object.
 
 ```sql
-INSERT INTO entraid.identity.user_flow_attributes (
+INSERT INTO entra_id.identity.user_flow_attributes (
 id,
 @odata.type,
 dataType,
@@ -390,7 +390,7 @@ userFlowAttributeType
 Update the properties of a custom identityUserFlowAttribute object.
 
 ```sql
-UPDATE entraid.identity.user_flow_attributes
+UPDATE entra_id.identity.user_flow_attributes
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -426,7 +426,7 @@ userFlowAttributeType;
 Delete a custom identityUserFlowAttribute.
 
 ```sql
-DELETE FROM entraid.identity.user_flow_attributes
+DELETE FROM entra_id.identity.user_flow_attributes
 WHERE identityUserFlowAttribute-id = '{{ identityUserFlowAttribute-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

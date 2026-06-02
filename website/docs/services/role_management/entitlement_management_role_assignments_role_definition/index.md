@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_role_assignments_role_definition
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_role_as
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_role_assignments_role_definition" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.entitlement_management_role_assignments_role_definition" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.entitlement_management_role_assignments_role_definition" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -192,7 +192,7 @@ resourceScopes,
 rolePermissions,
 templateId,
 version
-FROM entraid.role_management.entitlement_management_role_assignments_role_definition
+FROM entra_id.role_management.entitlement_management_role_assignments_role_definition
 WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - extension_properties
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>extension_properties</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="extension_properties" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.extension_properties" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.extension_properties" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -311,7 +311,7 @@ deletedDateTime,
 isMultiValued,
 isSyncedFromOnPremises,
 targetObjects
-FROM entraid.applications.extension_properties
+FROM entra_id.applications.extension_properties
 WHERE application-id = '{{ application-id }}' -- required
 AND extensionProperty-id = '{{ extensionProperty-id }}' -- required
 AND $select = '{{ $select }}'
@@ -334,7 +334,7 @@ deletedDateTime,
 isMultiValued,
 isSyncedFromOnPremises,
 targetObjects
-FROM entraid.applications.extension_properties
+FROM entra_id.applications.extension_properties
 WHERE application-id = '{{ application-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -364,7 +364,7 @@ AND $expand = '{{ $expand }}'
 Create a new directory extension definition, represented by an extensionProperty object.
 
 ```sql
-INSERT INTO entraid.applications.extension_properties (
+INSERT INTO entra_id.applications.extension_properties (
 id,
 @odata.type,
 deletedDateTime,
@@ -462,7 +462,7 @@ targetObjects
 No description available.
 
 ```sql
-UPDATE entraid.applications.extension_properties
+UPDATE entra_id.applications.extension_properties
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -505,7 +505,7 @@ targetObjects;
 Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
 
 ```sql
-DELETE FROM entraid.applications.extension_properties
+DELETE FROM entra_id.applications.extension_properties
 WHERE application-id = '{{ application-id }}' --required
 AND extensionProperty-id = '{{ extensionProperty-id }}' --required
 AND If-Match = '{{ If-Match }}'

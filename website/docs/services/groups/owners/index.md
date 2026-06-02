@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - owners
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>owners</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="owners" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.owners" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.owners" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -215,7 +215,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.groups.owners
+FROM entra_id.groups.owners
 WHERE group-id = '{{ group-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
@@ -246,7 +246,7 @@ AND $expand = '{{ $expand }}'
 Add a user or service principal to a Microsoft 365 or security group's owners. The owners are a set of users or service principals who are allowed to modify the group object.
 
 ```sql
-INSERT INTO entraid.groups.owners (
+INSERT INTO entra_id.groups.owners (
 @odata.id,
 group-id
 )
@@ -286,7 +286,7 @@ SELECT
 Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
 ```sql
-DELETE FROM entraid.groups.owners
+DELETE FROM entra_id.groups.owners
 WHERE group-id = '{{ group-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -298,7 +298,7 @@ AND If-Match = '{{ If-Match }}'
 Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
 ```sql
-DELETE FROM entraid.groups.owners
+DELETE FROM entra_id.groups.owners
 WHERE @id = '{{ @id }}' --required
 AND group-id = '{{ group-id }}' --required
 AND If-Match = '{{ If-Match }}'

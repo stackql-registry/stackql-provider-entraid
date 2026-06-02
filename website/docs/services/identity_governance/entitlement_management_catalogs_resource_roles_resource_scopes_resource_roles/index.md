@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_catalog
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -299,7 +299,7 @@ displayName,
 originId,
 originSystem,
 resource
-FROM entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
+FROM entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
 AND accessPackageResourceRole-id = '{{ accessPackageResourceRole-id }}' -- required
 AND accessPackageResourceScope-id = '{{ accessPackageResourceScope-id }}' -- required
@@ -322,7 +322,7 @@ displayName,
 originId,
 originSystem,
 resource
-FROM entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
+FROM entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
 AND accessPackageResourceRole-id = '{{ accessPackageResourceRole-id }}' -- required
 AND accessPackageResourceScope-id = '{{ accessPackageResourceScope-id }}' -- required
@@ -354,7 +354,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles (
+INSERT INTO entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles (
 id,
 @odata.type,
 description,
@@ -445,7 +445,7 @@ resource
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
+UPDATE entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -486,7 +486,7 @@ resource;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
+DELETE FROM entra_id.identity_governance.entitlement_management_catalogs_resource_roles_resource_scopes_resource_roles
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
 AND accessPackageResourceRole-id = '{{ accessPackageResourceRole-id }}' --required
 AND accessPackageResourceScope-id = '{{ accessPackageResourceScope-id }}' --required

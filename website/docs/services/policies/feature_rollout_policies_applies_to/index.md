@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - feature_rollout_policies_applies_to
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>feature_rollout_policies_applie
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="feature_rollout_policies_applies_to" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.feature_rollout_policies_applies_to" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.feature_rollout_policies_applies_to" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -217,7 +217,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.policies.feature_rollout_policies_applies_to
+FROM entra_id.policies.feature_rollout_policies_applies_to
 WHERE featureRolloutPolicy-id = '{{ featureRolloutPolicy-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -248,7 +248,7 @@ AND $expand = '{{ $expand }}'
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
 
 ```sql
-INSERT INTO entraid.policies.feature_rollout_policies_applies_to (
+INSERT INTO entra_id.policies.feature_rollout_policies_applies_to (
 id,
 @odata.type,
 deletedDateTime,
@@ -271,7 +271,7 @@ deletedDateTime
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
 
 ```sql
-INSERT INTO entraid.policies.feature_rollout_policies_applies_to (
+INSERT INTO entra_id.policies.feature_rollout_policies_applies_to (
 @odata.id,
 featureRolloutPolicy-id
 )
@@ -321,7 +321,7 @@ SELECT
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 
 ```sql
-DELETE FROM entraid.policies.feature_rollout_policies_applies_to
+DELETE FROM entra_id.policies.feature_rollout_policies_applies_to
 WHERE featureRolloutPolicy-id = '{{ featureRolloutPolicy-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -333,7 +333,7 @@ AND If-Match = '{{ If-Match }}'
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 
 ```sql
-DELETE FROM entraid.policies.feature_rollout_policies_applies_to
+DELETE FROM entra_id.policies.feature_rollout_policies_applies_to
 WHERE @id = '{{ @id }}' --required
 AND featureRolloutPolicy-id = '{{ featureRolloutPolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'

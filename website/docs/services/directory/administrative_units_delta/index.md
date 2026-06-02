@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - administrative_units_delta
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>administrative_units_delta</co
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="administrative_units_delta" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.administrative_units_delta" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.administrative_units_delta" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -227,7 +227,7 @@ membershipRuleProcessingState,
 membershipType,
 scopedRoleMembers,
 visibility
-FROM entraid.directory.administrative_units_delta
+FROM entra_id.directory.administrative_units_delta
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'

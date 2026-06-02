@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authorization_policy
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authorization_policy</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authorization_policy" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.authorization_policy" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.authorization_policy" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -218,7 +218,7 @@ deletedDateTime,
 description,
 displayName,
 guestUserRoleId
-FROM entraid.policies.authorization_policy
+FROM entra_id.policies.authorization_policy
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -240,7 +240,7 @@ AND $expand = '{{ $expand }}'
 Update the properties of an authorizationPolicy object.
 
 ```sql
-UPDATE entraid.policies.authorization_policy
+UPDATE entra_id.policies.authorization_policy
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -289,7 +289,7 @@ guestUserRoleId;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.authorization_policy
+DELETE FROM entra_id.policies.authorization_policy
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

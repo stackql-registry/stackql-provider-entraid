@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_access_packages_incompatible_groups
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_access_
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_access_packages_incompatible_groups" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_access_packages_incompatible_groups" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_access_packages_incompatible_groups" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -648,7 +648,7 @@ uniqueName,
 unseenCount,
 visibility,
 welcomeMessageEnabled
-FROM entraid.identity_governance.entitlement_management_access_packages_incompatible_groups
+FROM entra_id.identity_governance.entitlement_management_access_packages_incompatible_groups
 WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -678,7 +678,7 @@ AND $expand = '{{ $expand }}'
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.  
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_access_packages_incompatible_groups (
+INSERT INTO entra_id.identity_governance.entitlement_management_access_packages_incompatible_groups (
 @odata.id,
 accessPackage-id
 )
@@ -718,7 +718,7 @@ SELECT
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_access_packages_incompatible_groups
+DELETE FROM entra_id.identity_governance.entitlement_management_access_packages_incompatible_groups
 WHERE accessPackage-id = '{{ accessPackage-id }}' --required
 AND group-id = '{{ group-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -730,7 +730,7 @@ AND If-Match = '{{ If-Match }}'
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_access_packages_incompatible_groups
+DELETE FROM entra_id.identity_governance.entitlement_management_access_packages_incompatible_groups
 WHERE @id = '{{ @id }}' --required
 AND accessPackage-id = '{{ accessPackage-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - domain_dns_records
   - domain_dns_records
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>domain_dns_records</code> resou
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="domain_dns_records" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.domain_dns_records.domain_dns_records" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.domain_dns_records.domain_dns_records" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -284,7 +284,7 @@ label,
 recordType,
 supportedService,
 ttl
-FROM entraid.domain_dns_records.domain_dns_records
+FROM entra_id.domain_dns_records.domain_dns_records
 WHERE domainDnsRecord-id = '{{ domainDnsRecord-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -304,7 +304,7 @@ label,
 recordType,
 supportedService,
 ttl
-FROM entraid.domain_dns_records.domain_dns_records
+FROM entra_id.domain_dns_records.domain_dns_records
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -333,7 +333,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.domain_dns_records.domain_dns_records (
+INSERT INTO entra_id.domain_dns_records.domain_dns_records (
 id,
 @odata.type,
 isOptional,
@@ -411,7 +411,7 @@ ttl
 No description available.
 
 ```sql
-UPDATE entraid.domain_dns_records.domain_dns_records
+UPDATE entra_id.domain_dns_records.domain_dns_records
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -449,7 +449,7 @@ ttl;
 No description available.
 
 ```sql
-DELETE FROM entraid.domain_dns_records.domain_dns_records
+DELETE FROM entra_id.domain_dns_records.domain_dns_records
 WHERE domainDnsRecord-id = '{{ domainDnsRecord-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

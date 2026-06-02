@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - permission_grant_policies_excludes
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>permission_grant_policies_exclu
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="permission_grant_policies_excludes" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.permission_grant_policies_excludes" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.permission_grant_policies_excludes" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -322,7 +322,7 @@ permissionClassification,
 permissionType,
 permissions,
 resourceApplication
-FROM entraid.policies.permission_grant_policies_excludes
+FROM entra_id.policies.permission_grant_policies_excludes
 WHERE permissionGrantPolicy-id = '{{ permissionGrantPolicy-id }}' -- required
 AND permissionGrantConditionSet-id = '{{ permissionGrantConditionSet-id }}' -- required
 AND $select = '{{ $select }}'
@@ -346,7 +346,7 @@ permissionClassification,
 permissionType,
 permissions,
 resourceApplication
-FROM entraid.policies.permission_grant_policies_excludes
+FROM entra_id.policies.permission_grant_policies_excludes
 WHERE permissionGrantPolicy-id = '{{ permissionGrantPolicy-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -376,7 +376,7 @@ AND $expand = '{{ $expand }}'
 Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
 
 ```sql
-INSERT INTO entraid.policies.permission_grant_policies_excludes (
+INSERT INTO entra_id.policies.permission_grant_policies_excludes (
 id,
 @odata.type,
 clientApplicationIds,
@@ -484,7 +484,7 @@ resourceApplication
 No description available.
 
 ```sql
-UPDATE entraid.policies.permission_grant_policies_excludes
+UPDATE entra_id.policies.permission_grant_policies_excludes
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -529,7 +529,7 @@ resourceApplication;
 Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
 
 ```sql
-DELETE FROM entraid.policies.permission_grant_policies_excludes
+DELETE FROM entra_id.policies.permission_grant_policies_excludes
 WHERE permissionGrantPolicy-id = '{{ permissionGrantPolicy-id }}' --required
 AND permissionGrantConditionSet-id = '{{ permissionGrantConditionSet-id }}' --required
 AND If-Match = '{{ If-Match }}'

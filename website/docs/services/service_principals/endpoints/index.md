@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - endpoints
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>endpoints</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="endpoints" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.endpoints" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.endpoints" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -300,7 +300,7 @@ providerId,
 providerName,
 providerResourceId,
 uri
-FROM entraid.service_principals.endpoints
+FROM entra_id.service_principals.endpoints
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND endpoint-id = '{{ endpoint-id }}' -- required
 AND $select = '{{ $select }}'
@@ -322,7 +322,7 @@ providerId,
 providerName,
 providerResourceId,
 uri
-FROM entraid.service_principals.endpoints
+FROM entra_id.service_principals.endpoints
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -352,7 +352,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.service_principals.endpoints (
+INSERT INTO entra_id.service_principals.endpoints (
 id,
 @odata.type,
 deletedDateTime,
@@ -432,7 +432,7 @@ uri
 No description available.
 
 ```sql
-UPDATE entraid.service_principals.endpoints
+UPDATE entra_id.service_principals.endpoints
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -473,7 +473,7 @@ uri;
 No description available.
 
 ```sql
-DELETE FROM entraid.service_principals.endpoints
+DELETE FROM entra_id.service_principals.endpoints
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND endpoint-id = '{{ endpoint-id }}' --required
 AND If-Match = '{{ If-Match }}'

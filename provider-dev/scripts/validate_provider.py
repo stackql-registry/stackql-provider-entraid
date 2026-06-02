@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural validation of the generated entraid provider.
+"""Structural validation of the generated entra_id provider.
 
 For every service file: parse YAML, then verify that each
 x-stackQL-resources method's operation.$ref resolves to a real path+verb,
@@ -13,7 +13,7 @@ import urllib.parse
 
 import yaml
 
-ROOT = "provider-dev/openapi/src/entraid/v00.00.00000"
+ROOT = "provider-dev/openapi/src/entra_id/v00.00.00000"
 
 
 def deref_pointer(doc, ref):

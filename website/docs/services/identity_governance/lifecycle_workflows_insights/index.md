@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - lifecycle_workflows_insights
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>lifecycle_workflows_insights</c
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="lifecycle_workflows_insights" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.lifecycle_workflows_insights" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.lifecycle_workflows_insights" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -152,7 +152,7 @@ The insight container holding workflow insight summaries for a tenant.
 SELECT
 id,
 @odata.type
-FROM entraid.identity_governance.lifecycle_workflows_insights
+FROM entra_id.identity_governance.lifecycle_workflows_insights
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -174,7 +174,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.lifecycle_workflows_insights
+UPDATE entra_id.identity_governance.lifecycle_workflows_insights
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}'
@@ -201,7 +201,7 @@ id,
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.lifecycle_workflows_insights
+DELETE FROM entra_id.identity_governance.lifecycle_workflows_insights
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

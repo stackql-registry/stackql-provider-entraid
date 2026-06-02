@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - app_role_assignments
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>app_role_assignments</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="app_role_assignments" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.app_role_assignments" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.app_role_assignments" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -327,7 +327,7 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId
-FROM entraid.users.app_role_assignments
+FROM entra_id.users.app_role_assignments
 WHERE user-id = '{{ user-id }}' -- required
 AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
@@ -352,7 +352,7 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId
-FROM entraid.users.app_role_assignments
+FROM entra_id.users.app_role_assignments
 WHERE user-id = '{{ user-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
@@ -383,7 +383,7 @@ AND $expand = '{{ $expand }}'
 Grant an app role assignment to an agentUser.
 
 ```sql
-INSERT INTO entraid.users.app_role_assignments (
+INSERT INTO entra_id.users.app_role_assignments (
 id,
 @odata.type,
 deletedDateTime,
@@ -487,7 +487,7 @@ resourceId
 No description available.
 
 ```sql
-UPDATE entraid.users.app_role_assignments
+UPDATE entra_id.users.app_role_assignments
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -532,7 +532,7 @@ resourceId;
 Delete an appRoleAssignment that has been granted to a user.
 
 ```sql
-DELETE FROM entraid.users.app_role_assignments
+DELETE FROM entra_id.users.app_role_assignments
 WHERE user-id = '{{ user-id }}' --required
 AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
 AND If-Match = '{{ If-Match }}'

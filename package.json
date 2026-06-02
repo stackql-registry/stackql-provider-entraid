@@ -1,5 +1,5 @@
 {
-  "name": "stackql-provider-entraid",
+  "name": "stackql-provider-entra_id",
   "version": "0.1.0",
   "description": "StackQL Provider for Microsoft Entra ID (derived from Microsoft Graph metadata)",
   "type": "module",
@@ -20,7 +20,7 @@
   },
   "keywords": [
     "stackql",
-    "entraid",
+    "entra_id",
     "entra",
     "azuread",
     "microsoft-graph",

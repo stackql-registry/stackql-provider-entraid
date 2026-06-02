@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - sign_ins
   - audit_logs
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>sign_ins</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="sign_ins" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.audit_logs.sign_ins" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.audit_logs.sign_ins" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -489,7 +489,7 @@ status,
 userDisplayName,
 userId,
 userPrincipalName
-FROM entraid.audit_logs.sign_ins
+FROM entra_id.audit_logs.sign_ins
 WHERE signIn-id = '{{ signIn-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -527,7 +527,7 @@ status,
 userDisplayName,
 userId,
 userPrincipalName
-FROM entraid.audit_logs.sign_ins
+FROM entra_id.audit_logs.sign_ins
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -555,7 +555,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.audit_logs.sign_ins
+UPDATE entra_id.audit_logs.sign_ins
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -629,7 +629,7 @@ userPrincipalName;
 No description available.
 
 ```sql
-DELETE FROM entraid.audit_logs.sign_ins
+DELETE FROM entra_id.audit_logs.sign_ins
 WHERE signIn-id = '{{ signIn-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -652,7 +652,7 @@ AND If-Match = '{{ If-Match }}'
 Mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
 
 ```sql
-EXEC entraid.audit_logs.sign_ins.confirm_compromised 
+EXEC entra_id.audit_logs.sign_ins.confirm_compromised 
 @@json=
 '{
 "requestIds": "{{ requestIds }}"
@@ -665,7 +665,7 @@ EXEC entraid.audit_logs.sign_ins.confirm_compromised
 Mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
 
 ```sql
-EXEC entraid.audit_logs.sign_ins.confirm_safe 
+EXEC entra_id.audit_logs.sign_ins.confirm_safe 
 @@json=
 '{
 "requestIds": "{{ requestIds }}"

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - logo
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>logo</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="logo" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.logo" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.logo" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -106,7 +106,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 The main logo for the application. Not nullable.
 
 ```sql
-REPLACE entraid.applications.logo
+REPLACE entra_id.applications.logo
 SET 
 -- No updatable properties
 WHERE 
@@ -129,7 +129,7 @@ application-id = '{{ application-id }}' --required;
 The main logo for the application. Not nullable.
 
 ```sql
-DELETE FROM entraid.applications.logo
+DELETE FROM entra_id.applications.logo
 WHERE application-id = '{{ application-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

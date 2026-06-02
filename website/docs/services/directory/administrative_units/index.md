@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - administrative_units
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>administrative_units</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="administrative_units" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.administrative_units" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.administrative_units" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -350,7 +350,7 @@ membershipRuleProcessingState,
 membershipType,
 scopedRoleMembers,
 visibility
-FROM entraid.directory.administrative_units
+FROM entra_id.directory.administrative_units
 WHERE administrativeUnit-id = '{{ administrativeUnit-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -376,7 +376,7 @@ membershipRuleProcessingState,
 membershipType,
 scopedRoleMembers,
 visibility
-FROM entraid.directory.administrative_units
+FROM entra_id.directory.administrative_units
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -405,7 +405,7 @@ AND $expand = '{{ $expand }}'
 Create a new administrativeUnit.
 
 ```sql
-INSERT INTO entraid.directory.administrative_units (
+INSERT INTO entra_id.directory.administrative_units (
 id,
 @odata.type,
 deletedDateTime,
@@ -538,7 +538,7 @@ visibility
 Update the properties of an administrativeUnit object.
 
 ```sql
-UPDATE entraid.directory.administrative_units
+UPDATE entra_id.directory.administrative_units
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -588,7 +588,7 @@ visibility;
 Delete an administrativeUnit.
 
 ```sql
-DELETE FROM entraid.directory.administrative_units
+DELETE FROM entra_id.directory.administrative_units
 WHERE administrativeUnit-id = '{{ administrativeUnit-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

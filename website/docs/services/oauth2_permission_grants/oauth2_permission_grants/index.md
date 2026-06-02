@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - oauth2_permission_grants
   - oauth2_permission_grants
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>oauth2_permission_grants</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="oauth2_permission_grants" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.oauth2_permission_grants.oauth2_permission_grants" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.oauth2_permission_grants.oauth2_permission_grants" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -284,7 +284,7 @@ consentType,
 principalId,
 resourceId,
 scope
-FROM entraid.oauth2_permission_grants.oauth2_permission_grants
+FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
 WHERE oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -304,7 +304,7 @@ consentType,
 principalId,
 resourceId,
 scope
-FROM entraid.oauth2_permission_grants.oauth2_permission_grants
+FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -333,7 +333,7 @@ AND $expand = '{{ $expand }}'
 Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 
 ```sql
-INSERT INTO entraid.oauth2_permission_grants.oauth2_permission_grants (
+INSERT INTO entra_id.oauth2_permission_grants.oauth2_permission_grants (
 id,
 @odata.type,
 clientId,
@@ -411,7 +411,7 @@ scope
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant. An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.
 
 ```sql
-UPDATE entraid.oauth2_permission_grants.oauth2_permission_grants
+UPDATE entra_id.oauth2_permission_grants.oauth2_permission_grants
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -449,7 +449,7 @@ scope;
 Delete a delegated permission grant, represented by an oAuth2PermissionGrant object. When a delegated permission grant is deleted, the access it granted is revoked. Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.
 
 ```sql
-DELETE FROM entraid.oauth2_permission_grants.oauth2_permission_grants
+DELETE FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
 WHERE oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

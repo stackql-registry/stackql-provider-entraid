@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - applications
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>applications</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="applications" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.applications" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.applications" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -1525,7 +1525,7 @@ tokenLifetimePolicies,
 uniqueName,
 verifiedPublisher,
 web
-FROM entraid.applications.applications
+FROM entra_id.applications.applications
 WHERE appId = '{{ appId }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -1592,7 +1592,7 @@ tokenLifetimePolicies,
 uniqueName,
 verifiedPublisher,
 web
-FROM entraid.applications.applications
+FROM entra_id.applications.applications
 WHERE uniqueName = '{{ uniqueName }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -1659,7 +1659,7 @@ tokenLifetimePolicies,
 uniqueName,
 verifiedPublisher,
 web
-FROM entraid.applications.applications
+FROM entra_id.applications.applications
 WHERE application-id = '{{ application-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -1726,7 +1726,7 @@ tokenLifetimePolicies,
 uniqueName,
 verifiedPublisher,
 web
-FROM entraid.applications.applications
+FROM entra_id.applications.applications
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -1756,7 +1756,7 @@ AND $expand = '{{ $expand }}'
 Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ```sql
-INSERT INTO entraid.applications.applications (
+INSERT INTO entra_id.applications.applications (
 id,
 @odata.type,
 deletedDateTime,
@@ -2237,7 +2237,7 @@ web
 Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ```sql
-UPDATE entraid.applications.applications
+UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -2358,7 +2358,7 @@ web;
 Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ```sql
-UPDATE entraid.applications.applications
+UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -2479,7 +2479,7 @@ web;
 Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ```sql
-UPDATE entraid.applications.applications
+UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -2613,7 +2613,7 @@ web;
 Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
 
 ```sql
-DELETE FROM entraid.applications.applications
+DELETE FROM entra_id.applications.applications
 WHERE appId = '{{ appId }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -2624,7 +2624,7 @@ AND If-Match = '{{ If-Match }}'
 Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
 
 ```sql
-DELETE FROM entraid.applications.applications
+DELETE FROM entra_id.applications.applications
 WHERE uniqueName = '{{ uniqueName }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -2635,7 +2635,7 @@ AND If-Match = '{{ If-Match }}'
 Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
 
 ```sql
-DELETE FROM entraid.applications.applications
+DELETE FROM entra_id.applications.applications
 WHERE application-id = '{{ application-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -2669,7 +2669,7 @@ AND If-Match = '{{ If-Match }}'
 Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 
 ```sql
-EXEC entraid.applications.applications.get_available_extension_properties 
+EXEC entra_id.applications.applications.get_available_extension_properties 
 @@json=
 '{
 "isSyncedFromOnPremises": {{ isSyncedFromOnPremises }}
@@ -2682,7 +2682,7 @@ EXEC entraid.applications.applications.get_available_extension_properties
 Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 
 ```sql
-EXEC entraid.applications.applications.get_by_ids 
+EXEC entra_id.applications.applications.get_by_ids 
 @@json=
 '{
 "ids": "{{ ids }}", 
@@ -2696,7 +2696,7 @@ EXEC entraid.applications.applications.get_by_ids
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 
 ```sql
-EXEC entraid.applications.applications.validate_properties 
+EXEC entra_id.applications.applications.validate_properties 
 @@json=
 '{
 "entityType": "{{ entityType }}", 
@@ -2712,7 +2712,7 @@ EXEC entraid.applications.applications.validate_properties
 Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don't have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won't be able to use this service action. You can use the Update application operation to perform an update instead.
 
 ```sql
-EXEC entraid.applications.applications.add_key 
+EXEC entra_id.applications.applications.add_key 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2728,7 +2728,7 @@ EXEC entraid.applications.applications.add_key
 Adds a strong password or secret to an application. You can also add passwords while creating the application.
 
 ```sql
-EXEC entraid.applications.applications.add_password 
+EXEC entra_id.applications.applications.add_password 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2742,7 +2742,7 @@ EXEC entraid.applications.applications.add_password
 Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ```sql
-EXEC entraid.applications.applications.check_member_groups 
+EXEC entra_id.applications.applications.check_member_groups 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2756,7 +2756,7 @@ EXEC entraid.applications.applications.check_member_groups
 Success
 
 ```sql
-EXEC entraid.applications.applications.check_member_objects 
+EXEC entra_id.applications.applications.check_member_objects 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2770,7 +2770,7 @@ EXEC entraid.applications.applications.check_member_objects
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
 
 ```sql
-EXEC entraid.applications.applications.get_member_groups 
+EXEC entra_id.applications.applications.get_member_groups 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2784,7 +2784,7 @@ EXEC entraid.applications.applications.get_member_groups
 Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 
 ```sql
-EXEC entraid.applications.applications.get_member_objects 
+EXEC entra_id.applications.applications.get_member_objects 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2798,7 +2798,7 @@ EXEC entraid.applications.applications.get_member_objects
 Remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
 
 ```sql
-EXEC entraid.applications.applications.remove_key 
+EXEC entra_id.applications.applications.remove_key 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2813,7 +2813,7 @@ EXEC entraid.applications.applications.remove_key
 Remove a password from an application.
 
 ```sql
-EXEC entraid.applications.applications.remove_password 
+EXEC entra_id.applications.applications.remove_password 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{
@@ -2827,7 +2827,7 @@ EXEC entraid.applications.applications.remove_password
 Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
 
 ```sql
-EXEC entraid.applications.applications.restore 
+EXEC entra_id.applications.applications.restore 
 @application-id='{{ application-id }}' --required
 ;
 ```
@@ -2837,7 +2837,7 @@ EXEC entraid.applications.applications.restore
 Set the the verifiedPublisher on an agentIdentityBlueprint. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 
 ```sql
-EXEC entraid.applications.applications.set_verified_publisher 
+EXEC entra_id.applications.applications.set_verified_publisher 
 @application-id='{{ application-id }}' --required 
 @@json=
 '{

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - subscriptions
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>subscriptions</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="subscriptions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.subscriptions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.subscriptions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -475,7 +475,7 @@ skuId,
 skuPartNumber,
 status,
 totalLicenses
-FROM entraid.directory.subscriptions
+FROM entra_id.directory.subscriptions
 WHERE commerceSubscriptionId = '{{ commerceSubscriptionId }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -502,7 +502,7 @@ skuId,
 skuPartNumber,
 status,
 totalLicenses
-FROM entraid.directory.subscriptions
+FROM entra_id.directory.subscriptions
 WHERE companySubscription-id = '{{ companySubscription-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -529,7 +529,7 @@ skuId,
 skuPartNumber,
 status,
 totalLicenses
-FROM entraid.directory.subscriptions
+FROM entra_id.directory.subscriptions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -558,7 +558,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.directory.subscriptions (
+INSERT INTO entra_id.directory.subscriptions (
 id,
 @odata.type,
 commerceSubscriptionId,
@@ -691,7 +691,7 @@ totalLicenses
 No description available.
 
 ```sql
-UPDATE entraid.directory.subscriptions
+UPDATE entra_id.directory.subscriptions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -732,7 +732,7 @@ totalLicenses;
 No description available.
 
 ```sql
-UPDATE entraid.directory.subscriptions
+UPDATE entra_id.directory.subscriptions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -785,7 +785,7 @@ totalLicenses;
 No description available.
 
 ```sql
-DELETE FROM entraid.directory.subscriptions
+DELETE FROM entra_id.directory.subscriptions
 WHERE commerceSubscriptionId = '{{ commerceSubscriptionId }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -796,7 +796,7 @@ AND If-Match = '{{ If-Match }}'
 No description available.
 
 ```sql
-DELETE FROM entraid.directory.subscriptions
+DELETE FROM entra_id.directory.subscriptions
 WHERE companySubscription-id = '{{ companySubscription-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

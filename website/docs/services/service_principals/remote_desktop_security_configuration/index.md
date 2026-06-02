@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - remote_desktop_security_configuration
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>remote_desktop_security_configu
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="remote_desktop_security_configuration" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.remote_desktop_security_configuration" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.remote_desktop_security_configuration" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -175,7 +175,7 @@ id,
 approvedClientApps,
 isRemoteDesktopProtocolEnabled,
 targetDeviceGroups
-FROM entraid.service_principals.remote_desktop_security_configuration
+FROM entra_id.service_principals.remote_desktop_security_configuration
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -198,7 +198,7 @@ AND $expand = '{{ $expand }}'
 Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal. Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
 
 ```sql
-UPDATE entraid.service_principals.remote_desktop_security_configuration
+UPDATE entra_id.service_principals.remote_desktop_security_configuration
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -232,7 +232,7 @@ targetDeviceGroups;
 Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
 
 ```sql
-DELETE FROM entraid.service_principals.remote_desktop_security_configuration
+DELETE FROM entra_id.service_principals.remote_desktop_security_configuration
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

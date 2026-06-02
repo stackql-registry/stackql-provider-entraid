@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_events_flows_conditions_applications_include_applications
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_events_flows_co
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_events_flows_conditions_applications_include_applications" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.authentication_events_flows_conditions_applications_include_applications" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.authentication_events_flows_conditions_applications_include_applications" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -234,7 +234,7 @@ Retrieved navigation property
 SELECT
 @odata.type,
 appId
-FROM entraid.identity.authentication_events_flows_conditions_applications_include_applications
+FROM entra_id.identity.authentication_events_flows_conditions_applications_include_applications
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' -- required
 AND authenticationConditionApplication-appId = '{{ authenticationConditionApplication-appId }}' -- required
 AND $select = '{{ $select }}'
@@ -250,7 +250,7 @@ List the applications linked to an external identities self-service sign up user
 SELECT
 @odata.type,
 appId
-FROM entraid.identity.authentication_events_flows_conditions_applications_include_applications
+FROM entra_id.identity.authentication_events_flows_conditions_applications_include_applications
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -280,7 +280,7 @@ AND $expand = '{{ $expand }}'
 Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.
 
 ```sql
-INSERT INTO entraid.identity.authentication_events_flows_conditions_applications_include_applications (
+INSERT INTO entra_id.identity.authentication_events_flows_conditions_applications_include_applications (
 appId,
 @odata.type,
 authenticationEventsFlow-id
@@ -328,7 +328,7 @@ appId
 No description available.
 
 ```sql
-UPDATE entraid.identity.authentication_events_flows_conditions_applications_include_applications
+UPDATE entra_id.identity.authentication_events_flows_conditions_applications_include_applications
 SET 
 appId = '{{ appId }}',
 @odata.type = '{{ @odata.type }}'
@@ -357,7 +357,7 @@ appId;
 Remove or unlink an application from an authenticationEventsFlow object. This disables the customized authentication experience defined for the application.
 
 ```sql
-DELETE FROM entraid.identity.authentication_events_flows_conditions_applications_include_applications
+DELETE FROM entra_id.identity.authentication_events_flows_conditions_applications_include_applications
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' --required
 AND authenticationConditionApplication-appId = '{{ authenticationConditionApplication-appId }}' --required
 AND If-Match = '{{ If-Match }}'

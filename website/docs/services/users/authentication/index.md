@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.authentication" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.authentication" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -229,7 +229,7 @@ platformCredentialMethods,
 softwareOathMethods,
 temporaryAccessPassMethods,
 windowsHelloForBusinessMethods
-FROM entraid.users.authentication
+FROM entra_id.users.authentication
 WHERE user-id = '{{ user-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -252,7 +252,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.users.authentication
+UPDATE entra_id.users.authentication
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -304,7 +304,7 @@ windowsHelloForBusinessMethods;
 No description available.
 
 ```sql
-DELETE FROM entraid.users.authentication
+DELETE FROM entra_id.users.authentication
 WHERE user-id = '{{ user-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

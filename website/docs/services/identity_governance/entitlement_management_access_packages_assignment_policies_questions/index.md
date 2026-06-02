@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_access_packages_assignment_policies_questions
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_access_
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_access_packages_assignment_policies_questions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -294,7 +294,7 @@ isRequired,
 localizations,
 sequence,
 text
-FROM entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions
+FROM entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions
 WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
 AND accessPackageAssignmentPolicy-id = '{{ accessPackageAssignmentPolicy-id }}' -- required
 AND accessPackageQuestion-id = '{{ accessPackageQuestion-id }}' -- required
@@ -316,7 +316,7 @@ isRequired,
 localizations,
 sequence,
 text
-FROM entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions
+FROM entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions
 WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
 AND accessPackageAssignmentPolicy-id = '{{ accessPackageAssignmentPolicy-id }}' -- required
 AND $top = '{{ $top }}'
@@ -347,7 +347,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions (
+INSERT INTO entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions (
 id,
 @odata.type,
 isAnswerEditable,
@@ -438,7 +438,7 @@ text
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions
+UPDATE entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -478,7 +478,7 @@ text;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_access_packages_assignment_policies_questions
+DELETE FROM entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_questions
 WHERE accessPackage-id = '{{ accessPackage-id }}' --required
 AND accessPackageAssignmentPolicy-id = '{{ accessPackageAssignmentPolicy-id }}' --required
 AND accessPackageQuestion-id = '{{ accessPackageQuestion-id }}' --required

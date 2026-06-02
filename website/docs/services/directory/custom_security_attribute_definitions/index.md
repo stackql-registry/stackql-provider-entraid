@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - custom_security_attribute_definitions
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>custom_security_attribute_defin
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="custom_security_attribute_definitions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.custom_security_attribute_definitions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.custom_security_attribute_definitions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ isSearchable,
 status,
 type,
 usePreDefinedValuesOnly
-FROM entraid.directory.custom_security_attribute_definitions
+FROM entra_id.directory.custom_security_attribute_definitions
 WHERE customSecurityAttributeDefinition-id = '{{ customSecurityAttributeDefinition-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ isSearchable,
 status,
 type,
 usePreDefinedValuesOnly
-FROM entraid.directory.custom_security_attribute_definitions
+FROM entra_id.directory.custom_security_attribute_definitions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 Create a new customSecurityAttributeDefinition object.
 
 ```sql
-INSERT INTO entraid.directory.custom_security_attribute_definitions (
+INSERT INTO entra_id.directory.custom_security_attribute_definitions (
 id,
 @odata.type,
 attributeSet,
@@ -490,7 +490,7 @@ usePreDefinedValuesOnly
 Update the properties of a customSecurityAttributeDefinition object.
 
 ```sql
-UPDATE entraid.directory.custom_security_attribute_definitions
+UPDATE entra_id.directory.custom_security_attribute_definitions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -536,7 +536,7 @@ usePreDefinedValuesOnly;
 No description available.
 
 ```sql
-DELETE FROM entraid.directory.custom_security_attribute_definitions
+DELETE FROM entra_id.directory.custom_security_attribute_definitions
 WHERE customSecurityAttributeDefinition-id = '{{ customSecurityAttributeDefinition-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

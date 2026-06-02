@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_resources
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_resourc
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_resources" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_resources" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_resources" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -346,7 +346,7 @@ originId,
 originSystem,
 roles,
 scopes
-FROM entraid.identity_governance.entitlement_management_resources
+FROM entra_id.identity_governance.entitlement_management_resources
 WHERE accessPackageResource-id = '{{ accessPackageResource-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -371,7 +371,7 @@ originId,
 originSystem,
 roles,
 scopes
-FROM entraid.identity_governance.entitlement_management_resources
+FROM entra_id.identity_governance.entitlement_management_resources
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -400,7 +400,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_resources (
+INSERT INTO entra_id.identity_governance.entitlement_management_resources (
 id,
 @odata.type,
 attributes,
@@ -536,7 +536,7 @@ scopes
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_resources
+UPDATE entra_id.identity_governance.entitlement_management_resources
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -584,7 +584,7 @@ scopes;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_resources
+DELETE FROM entra_id.identity_governance.entitlement_management_resources
 WHERE accessPackageResource-id = '{{ accessPackageResource-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -606,7 +606,7 @@ AND If-Match = '{{ If-Match }}'
 Success
 
 ```sql
-EXEC entraid.identity_governance.entitlement_management_resources.refresh 
+EXEC entra_id.identity_governance.entitlement_management_resources.refresh 
 @accessPackageResource-id='{{ accessPackageResource-id }}' --required
 ;
 ```

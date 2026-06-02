@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - force_delete
   - domains
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>force_delete</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="force_delete" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.domains.force_delete" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.domains.force_delete" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -95,7 +95,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Delete a domain using an asynchronous long-running operation. Before performing this operation, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.
 
 ```sql
-INSERT INTO entraid.domains.force_delete (
+INSERT INTO entra_id.domains.force_delete (
 disableUserAccounts,
 domain-id
 )

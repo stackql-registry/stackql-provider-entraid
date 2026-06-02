@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: role_management API
-  description: entraid role_management API
+  description: entra_id role_management API
   version: v1.0
 paths:
   /roleManagement:

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - delta
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>delta</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="delta" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.delta" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.delta" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -491,7 +491,7 @@ tokenIssuancePolicies,
 tokenLifetimePolicies,
 transitiveMemberOf,
 verifiedPublisher
-FROM entraid.service_principals.delta
+FROM entra_id.service_principals.delta
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'

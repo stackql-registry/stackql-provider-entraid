@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - invitations
   - invitations
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>invitations</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="invitations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.invitations.invitations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.invitations.invitations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -236,7 +236,7 @@ invitedUserType,
 resetRedemption,
 sendInvitationMessage,
 status
-FROM entraid.invitations.invitations
+FROM entra_id.invitations.invitations
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -265,7 +265,7 @@ AND $expand = '{{ $expand }}'
 Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds the external user to the organization as part of B2B collaboration. B2B collaboration is supported in both Microsoft Entra External ID in workforce and external tenants. When creating a new invitation, you have several options available:
 
 ```sql
-INSERT INTO entraid.invitations.invitations (
+INSERT INTO entra_id.invitations.invitations (
 id,
 @odata.type,
 invitedUserDisplayName,

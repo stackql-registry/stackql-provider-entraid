@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: agreements API
-  description: entraid agreements API
+  description: entra_id agreements API
   version: v1.0
 paths:
   /agreements:

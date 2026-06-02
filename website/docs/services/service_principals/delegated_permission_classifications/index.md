@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - delegated_permission_classifications
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>delegated_permission_classifica
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="delegated_permission_classifications" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.delegated_permission_classifications" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.delegated_permission_classifications" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -267,7 +267,7 @@ id,
 classification,
 permissionId,
 permissionName
-FROM entraid.service_principals.delegated_permission_classifications
+FROM entra_id.service_principals.delegated_permission_classifications
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND delegatedPermissionClassification-id = '{{ delegatedPermissionClassification-id }}' -- required
 AND $select = '{{ $select }}'
@@ -286,7 +286,7 @@ id,
 classification,
 permissionId,
 permissionName
-FROM entraid.service_principals.delegated_permission_classifications
+FROM entra_id.service_principals.delegated_permission_classifications
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -316,7 +316,7 @@ AND $expand = '{{ $expand }}'
 Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
 
 ```sql
-INSERT INTO entraid.service_principals.delegated_permission_classifications (
+INSERT INTO entra_id.service_principals.delegated_permission_classifications (
 id,
 @odata.type,
 classification,
@@ -385,7 +385,7 @@ permissionName
 No description available.
 
 ```sql
-UPDATE entraid.service_principals.delegated_permission_classifications
+UPDATE entra_id.service_principals.delegated_permission_classifications
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -420,7 +420,7 @@ permissionName;
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
 
 ```sql
-DELETE FROM entraid.service_principals.delegated_permission_classifications
+DELETE FROM entra_id.service_principals.delegated_permission_classifications
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND delegatedPermissionClassification-id = '{{ delegatedPermissionClassification-id }}' --required
 AND If-Match = '{{ If-Match }}'

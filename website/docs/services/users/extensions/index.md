@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - extensions
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>extensions</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="extensions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.extensions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.extensions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -234,7 +234,7 @@ The collection of open extensions defined for the user. Read-only. Supports $exp
 SELECT
 id,
 @odata.type
-FROM entraid.users.extensions
+FROM entra_id.users.extensions
 WHERE user-id = '{{ user-id }}' -- required
 AND extension-id = '{{ extension-id }}' -- required
 AND $select = '{{ $select }}'
@@ -250,7 +250,7 @@ The collection of open extensions defined for the user. Read-only. Supports $exp
 SELECT
 id,
 @odata.type
-FROM entraid.users.extensions
+FROM entra_id.users.extensions
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -280,7 +280,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.users.extensions (
+INSERT INTO entra_id.users.extensions (
 id,
 @odata.type,
 user-id
@@ -328,7 +328,7 @@ id,
 No description available.
 
 ```sql
-UPDATE entraid.users.extensions
+UPDATE entra_id.users.extensions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}'
@@ -357,7 +357,7 @@ id,
 No description available.
 
 ```sql
-DELETE FROM entraid.users.extensions
+DELETE FROM entra_id.users.extensions
 WHERE user-id = '{{ user-id }}' --required
 AND extension-id = '{{ extension-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_events_flows
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_events_flows</c
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_events_flows" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.authentication_events_flows" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.authentication_events_flows" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -262,7 +262,7 @@ id,
 conditions,
 description,
 displayName
-FROM entraid.identity.authentication_events_flows
+FROM entra_id.identity.authentication_events_flows
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -280,7 +280,7 @@ id,
 conditions,
 description,
 displayName
-FROM entraid.identity.authentication_events_flows
+FROM entra_id.identity.authentication_events_flows
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -309,7 +309,7 @@ AND $expand = '{{ $expand }}'
 Create a new authenticationEventsFlow object that is of the type specified in the request body. The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow object type.
 
 ```sql
-INSERT INTO entraid.identity.authentication_events_flows (
+INSERT INTO entra_id.identity.authentication_events_flows (
 id,
 @odata.type,
 conditions,
@@ -373,7 +373,7 @@ displayName
 Update the properties of an authenticationEventsFlow object by ID. You must specify the @odata.type property and the value of the authenticationEventsFlow object type to update. The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow
 
 ```sql
-UPDATE entraid.identity.authentication_events_flows
+UPDATE entra_id.identity.authentication_events_flows
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -407,7 +407,7 @@ displayName;
 Delete a specific authenticationEventsFlow resource by ID. This operation also removes or unlinks all applications from the flow, which disables the customized authentication experience defined for the application.  The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow
 
 ```sql
-DELETE FROM entraid.identity.authentication_events_flows
+DELETE FROM entra_id.identity.authentication_events_flows
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

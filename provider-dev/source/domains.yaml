@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: domains API
-  description: entraid domains API
+  description: entra_id domains API
   version: v1.0
 paths:
   /domains:

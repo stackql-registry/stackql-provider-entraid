@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: directory_objects API
-  description: entraid directory_objects API
+  description: entra_id directory_objects API
   version: v1.0
 paths:
   /directoryObjects:

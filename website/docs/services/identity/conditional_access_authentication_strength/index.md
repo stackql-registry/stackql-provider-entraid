@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - conditional_access_authentication_strength
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>conditional_access_authenticati
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="conditional_access_authentication_strength" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.conditional_access_authentication_strength" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.conditional_access_authentication_strength" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -170,7 +170,7 @@ id,
 authenticationMethodModes,
 combinations,
 policies
-FROM entraid.identity.conditional_access_authentication_strength
+FROM entra_id.identity.conditional_access_authentication_strength
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -192,7 +192,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.identity.conditional_access_authentication_strength
+UPDATE entra_id.identity.conditional_access_authentication_strength
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -225,7 +225,7 @@ policies;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity.conditional_access_authentication_strength
+DELETE FROM entra_id.identity.conditional_access_authentication_strength
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

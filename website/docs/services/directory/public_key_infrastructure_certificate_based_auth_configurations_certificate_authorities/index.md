@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>public_key_infrastructure_certi
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -366,7 +366,7 @@ isIssuerHintEnabled,
 issuer,
 issuerSubjectKeyIdentifier,
 thumbprint
-FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
+FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
 WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' -- required
 AND certificateAuthorityDetail-id = '{{ certificateAuthorityDetail-id }}' -- required
 AND $select = '{{ $select }}'
@@ -394,7 +394,7 @@ isIssuerHintEnabled,
 issuer,
 issuerSubjectKeyIdentifier,
 thumbprint
-FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
+FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
 WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -424,7 +424,7 @@ AND $expand = '{{ $expand }}'
 Create a new certificateAuthorityDetail object.
 
 ```sql
-INSERT INTO entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities (
+INSERT INTO entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities (
 id,
 @odata.type,
 deletedDateTime,
@@ -554,7 +554,7 @@ thumbprint
 No description available.
 
 ```sql
-UPDATE entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
+UPDATE entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -607,7 +607,7 @@ thumbprint;
 Delete a certificateAuthorityDetail object.
 
 ```sql
-DELETE FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
+DELETE FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
 WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' --required
 AND certificateAuthorityDetail-id = '{{ certificateAuthorityDetail-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: subscribed_skus API
-  description: entraid subscribed_skus API
+  description: entra_id subscribed_skus API
   version: v1.0
 paths:
   /subscribedSkus:

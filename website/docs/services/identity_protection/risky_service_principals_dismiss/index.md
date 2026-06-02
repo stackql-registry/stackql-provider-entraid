@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - risky_service_principals_dismiss
   - identity_protection
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>risky_service_principals_dismis
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="risky_service_principals_dismiss" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_protection.risky_service_principals_dismiss" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_protection.risky_service_principals_dismiss" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -90,7 +90,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
 
 ```sql
-INSERT INTO entraid.identity_protection.risky_service_principals_dismiss (
+INSERT INTO entra_id.identity_protection.risky_service_principals_dismiss (
 servicePrincipalIds
 )
 SELECT 

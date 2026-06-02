@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - permission_grant_policies
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>permission_grant_policies</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="permission_grant_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.permission_grant_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.permission_grant_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -284,7 +284,7 @@ description,
 displayName,
 excludes,
 includes
-FROM entraid.policies.permission_grant_policies
+FROM entra_id.policies.permission_grant_policies
 WHERE permissionGrantPolicy-id = '{{ permissionGrantPolicy-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -304,7 +304,7 @@ description,
 displayName,
 excludes,
 includes
-FROM entraid.policies.permission_grant_policies
+FROM entra_id.policies.permission_grant_policies
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -333,7 +333,7 @@ AND $expand = '{{ $expand }}'
 Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
 
 ```sql
-INSERT INTO entraid.policies.permission_grant_policies (
+INSERT INTO entra_id.policies.permission_grant_policies (
 id,
 @odata.type,
 deletedDateTime,
@@ -431,7 +431,7 @@ includes
 Update properties of a  permissionGrantPolicy.
 
 ```sql
-UPDATE entraid.policies.permission_grant_policies
+UPDATE entra_id.policies.permission_grant_policies
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -469,7 +469,7 @@ includes;
 Delete a permissionGrantPolicy object.
 
 ```sql
-DELETE FROM entraid.policies.permission_grant_policies
+DELETE FROM entra_id.policies.permission_grant_policies
 WHERE permissionGrantPolicy-id = '{{ permissionGrantPolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - b2x_user_flows_user_attribute_assignments_user_attribute
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>b2x_user_flows_user_attribute_a
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="b2x_user_flows_user_attribute_assignments_user_attribute" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.b2x_user_flows_user_attribute_assignments_user_attribute" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.b2x_user_flows_user_attribute_assignments_user_attribute" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -167,7 +167,7 @@ dataType,
 description,
 displayName,
 userFlowAttributeType
-FROM entraid.identity.b2x_user_flows_user_attribute_assignments_user_attribute
+FROM entra_id.identity.b2x_user_flows_user_attribute_assignments_user_attribute
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' -- required
 AND $select = '{{ $select }}'

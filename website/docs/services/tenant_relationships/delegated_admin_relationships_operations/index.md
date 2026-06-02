@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - delegated_admin_relationships_operations
   - tenant_relationships
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>delegated_admin_relationships_o
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="delegated_admin_relationships_operations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.tenant_relationships.delegated_admin_relationships_operations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.tenant_relationships.delegated_admin_relationships_operations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -289,7 +289,7 @@ data,
 lastModifiedDateTime,
 operationType,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships_operations
+FROM entra_id.tenant_relationships.delegated_admin_relationships_operations
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' -- required
 AND delegatedAdminRelationshipOperation-id = '{{ delegatedAdminRelationshipOperation-id }}' -- required
 AND $select = '{{ $select }}'
@@ -310,7 +310,7 @@ data,
 lastModifiedDateTime,
 operationType,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships_operations
+FROM entra_id.tenant_relationships.delegated_admin_relationships_operations
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -340,7 +340,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.tenant_relationships.delegated_admin_relationships_operations (
+INSERT INTO entra_id.tenant_relationships.delegated_admin_relationships_operations (
 id,
 @odata.type,
 createdDateTime,
@@ -421,7 +421,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.tenant_relationships.delegated_admin_relationships_operations
+UPDATE entra_id.tenant_relationships.delegated_admin_relationships_operations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -460,7 +460,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.tenant_relationships.delegated_admin_relationships_operations
+DELETE FROM entra_id.tenant_relationships.delegated_admin_relationships_operations
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' --required
 AND delegatedAdminRelationshipOperation-id = '{{ delegatedAdminRelationshipOperation-id }}' --required
 AND If-Match = '{{ If-Match }}'

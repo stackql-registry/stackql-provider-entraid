@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - access_reviews_history_definitions_instances
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>access_reviews_history_definit
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="access_reviews_history_definitions_instances" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.access_reviews_history_definitions_instances" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.access_reviews_history_definitions_instances" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -318,7 +318,7 @@ reviewHistoryPeriodEndDateTime,
 reviewHistoryPeriodStartDateTime,
 runDateTime,
 status
-FROM entraid.identity_governance.access_reviews_history_definitions_instances
+FROM entra_id.identity_governance.access_reviews_history_definitions_instances
 WHERE accessReviewHistoryDefinition-id = '{{ accessReviewHistoryDefinition-id }}' -- required
 AND accessReviewHistoryInstance-id = '{{ accessReviewHistoryInstance-id }}' -- required
 AND $select = '{{ $select }}'
@@ -341,7 +341,7 @@ reviewHistoryPeriodEndDateTime,
 reviewHistoryPeriodStartDateTime,
 runDateTime,
 status
-FROM entraid.identity_governance.access_reviews_history_definitions_instances
+FROM entra_id.identity_governance.access_reviews_history_definitions_instances
 WHERE accessReviewHistoryDefinition-id = '{{ accessReviewHistoryDefinition-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -371,7 +371,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.access_reviews_history_definitions_instances (
+INSERT INTO entra_id.identity_governance.access_reviews_history_definitions_instances (
 id,
 @odata.type,
 downloadUri,
@@ -468,7 +468,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.access_reviews_history_definitions_instances
+UPDATE entra_id.identity_governance.access_reviews_history_definitions_instances
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -511,7 +511,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.access_reviews_history_definitions_instances
+DELETE FROM entra_id.identity_governance.access_reviews_history_definitions_instances
 WHERE accessReviewHistoryDefinition-id = '{{ accessReviewHistoryDefinition-id }}' --required
 AND accessReviewHistoryInstance-id = '{{ accessReviewHistoryInstance-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -534,7 +534,7 @@ AND If-Match = '{{ If-Match }}'
 Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_history_definitions_instances.generate_download_uri 
+EXEC entra_id.identity_governance.access_reviews_history_definitions_instances.generate_download_uri 
 @accessReviewHistoryDefinition-id='{{ accessReviewHistoryDefinition-id }}' --required, 
 @accessReviewHistoryInstance-id='{{ accessReviewHistoryInstance-id }}' --required
 ;

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - directory
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>directory</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="directory" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.directory" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.directory" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -194,7 +194,7 @@ federationConfigurations,
 onPremisesSynchronization,
 publicKeyInfrastructure,
 subscriptions
-FROM entraid.directory.directory
+FROM entra_id.directory.directory
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -216,7 +216,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.directory.directory
+UPDATE entra_id.directory.directory
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',

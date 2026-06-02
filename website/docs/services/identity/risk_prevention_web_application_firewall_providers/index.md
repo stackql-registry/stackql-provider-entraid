@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - risk_prevention_web_application_firewall_providers
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>risk_prevention_web_application
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="risk_prevention_web_application_firewall_providers" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.risk_prevention_web_application_firewall_providers" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.risk_prevention_web_application_firewall_providers" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -247,7 +247,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.identity.risk_prevention_web_application_firewall_providers
+FROM entra_id.identity.risk_prevention_web_application_firewall_providers
 WHERE webApplicationFirewallProvider-id = '{{ webApplicationFirewallProvider-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -263,7 +263,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.identity.risk_prevention_web_application_firewall_providers
+FROM entra_id.identity.risk_prevention_web_application_firewall_providers
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 Create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
 
 ```sql
-INSERT INTO entraid.identity.risk_prevention_web_application_firewall_providers (
+INSERT INTO entra_id.identity.risk_prevention_web_application_firewall_providers (
 id,
 @odata.type,
 displayName
@@ -342,7 +342,7 @@ displayName
 Update the properties of a webApplicationFirewallProvider object.
 
 ```sql
-UPDATE entraid.identity.risk_prevention_web_application_firewall_providers
+UPDATE entra_id.identity.risk_prevention_web_application_firewall_providers
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -372,7 +372,7 @@ displayName;
 Delete a webApplicationFirewallProvider object.
 
 ```sql
-DELETE FROM entraid.identity.risk_prevention_web_application_firewall_providers
+DELETE FROM entra_id.identity.risk_prevention_web_application_firewall_providers
 WHERE webApplicationFirewallProvider-id = '{{ webApplicationFirewallProvider-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -394,7 +394,7 @@ AND If-Match = '{{ If-Match }}'
 Initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
 
 ```sql
-EXEC entraid.identity.risk_prevention_web_application_firewall_providers.verify 
+EXEC entra_id.identity.risk_prevention_web_application_firewall_providers.verify 
 @webApplicationFirewallProvider-id='{{ webApplicationFirewallProvider-id }}' --required 
 @@json=
 '{

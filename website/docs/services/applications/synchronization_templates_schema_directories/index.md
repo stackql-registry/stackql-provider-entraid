@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - synchronization_templates_schema_directories
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>synchronization_templates_schem
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="synchronization_templates_schema_directories" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.synchronization_templates_schema_directories" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.synchronization_templates_schema_directories" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -305,7 +305,7 @@ discoveryDateTime,
 objects,
 readOnly,
 version
-FROM entraid.applications.synchronization_templates_schema_directories
+FROM entra_id.applications.synchronization_templates_schema_directories
 WHERE application-id = '{{ application-id }}' -- required
 AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' -- required
 AND directoryDefinition-id = '{{ directoryDefinition-id }}' -- required
@@ -328,7 +328,7 @@ discoveryDateTime,
 objects,
 readOnly,
 version
-FROM entraid.applications.synchronization_templates_schema_directories
+FROM entra_id.applications.synchronization_templates_schema_directories
 WHERE application-id = '{{ application-id }}' -- required
 AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' -- required
 AND $top = '{{ $top }}'
@@ -359,7 +359,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.applications.synchronization_templates_schema_directories (
+INSERT INTO entra_id.applications.synchronization_templates_schema_directories (
 id,
 @odata.type,
 discoverabilities,
@@ -458,7 +458,7 @@ version
 No description available.
 
 ```sql
-UPDATE entraid.applications.synchronization_templates_schema_directories
+UPDATE entra_id.applications.synchronization_templates_schema_directories
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -500,7 +500,7 @@ version;
 No description available.
 
 ```sql
-DELETE FROM entraid.applications.synchronization_templates_schema_directories
+DELETE FROM entra_id.applications.synchronization_templates_schema_directories
 WHERE application-id = '{{ application-id }}' --required
 AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
 AND directoryDefinition-id = '{{ directoryDefinition-id }}' --required

@@ -2,7 +2,7 @@
 # This file is the only piece (besides tier1.yaml) that should differ between
 # providers when reusing this test framework as an archetype.
 
-provider_name: entraid
+provider_name: entra_id
 
 # Registry root - path relative to the repo root that contains src/<provider>/...
 registry_root: provider-dev/openapi

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - scoped_role_memberships
   - scoped_role_memberships
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>scoped_role_memberships</code> 
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="scoped_role_memberships" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.scoped_role_memberships.scoped_role_memberships" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.scoped_role_memberships.scoped_role_memberships" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -262,7 +262,7 @@ id,
 administrativeUnitId,
 roleId,
 roleMemberInfo
-FROM entraid.scoped_role_memberships.scoped_role_memberships
+FROM entra_id.scoped_role_memberships.scoped_role_memberships
 WHERE scopedRoleMembership-id = '{{ scopedRoleMembership-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -280,7 +280,7 @@ id,
 administrativeUnitId,
 roleId,
 roleMemberInfo
-FROM entraid.scoped_role_memberships.scoped_role_memberships
+FROM entra_id.scoped_role_memberships.scoped_role_memberships
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -309,7 +309,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.scoped_role_memberships.scoped_role_memberships (
+INSERT INTO entra_id.scoped_role_memberships.scoped_role_memberships (
 id,
 @odata.type,
 administrativeUnitId,
@@ -374,7 +374,7 @@ roleMemberInfo
 No description available.
 
 ```sql
-UPDATE entraid.scoped_role_memberships.scoped_role_memberships
+UPDATE entra_id.scoped_role_memberships.scoped_role_memberships
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -408,7 +408,7 @@ roleMemberInfo;
 No description available.
 
 ```sql
-DELETE FROM entraid.scoped_role_memberships.scoped_role_memberships
+DELETE FROM entra_id.scoped_role_memberships.scoped_role_memberships
 WHERE scopedRoleMembership-id = '{{ scopedRoleMembership-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - federation_configurations
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>federation_configurations</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="federation_configurations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.federation_configurations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.federation_configurations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.directory.federation_configurations
+FROM entra_id.directory.federation_configurations
 WHERE identityProviderBase-id = '{{ identityProviderBase-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -256,7 +256,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.directory.federation_configurations
+FROM entra_id.directory.federation_configurations
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -285,7 +285,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.directory.federation_configurations (
+INSERT INTO entra_id.directory.federation_configurations (
 id,
 @odata.type,
 displayName
@@ -335,7 +335,7 @@ displayName
 No description available.
 
 ```sql
-UPDATE entraid.directory.federation_configurations
+UPDATE entra_id.directory.federation_configurations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -365,7 +365,7 @@ displayName;
 Delete a samlOrWsFedExternalDomainFederation object.
 
 ```sql
-DELETE FROM entraid.directory.federation_configurations
+DELETE FROM entra_id.directory.federation_configurations
 WHERE identityProviderBase-id = '{{ identityProviderBase-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

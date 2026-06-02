@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - token_lifetime_policies
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>token_lifetime_policies</code> 
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="token_lifetime_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.token_lifetime_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.token_lifetime_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ deletedDateTime,
 description,
 displayName,
 isOrganizationDefault
-FROM entraid.service_principals.token_lifetime_policies
+FROM entra_id.service_principals.token_lifetime_policies
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -270,7 +270,7 @@ AND $expand = '{{ $expand }}'
 Assign a tokenLifetimePolicy to a servicePrincipal. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per service principal.
 
 ```sql
-INSERT INTO entraid.service_principals.token_lifetime_policies (
+INSERT INTO entra_id.service_principals.token_lifetime_policies (
 @odata.id,
 servicePrincipal-id
 )
@@ -310,7 +310,7 @@ SELECT
 Remove a tokenLifetimePolicy object from a service principal.
 
 ```sql
-DELETE FROM entraid.service_principals.token_lifetime_policies
+DELETE FROM entra_id.service_principals.token_lifetime_policies
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND tokenLifetimePolicy-id = '{{ tokenLifetimePolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -322,7 +322,7 @@ AND If-Match = '{{ If-Match }}'
 Remove a tokenLifetimePolicy object from a service principal.
 
 ```sql
-DELETE FROM entraid.service_principals.token_lifetime_policies
+DELETE FROM entra_id.service_principals.token_lifetime_policies
 WHERE @id = '{{ @id }}' --required
 AND servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND If-Match = '{{ If-Match }}'

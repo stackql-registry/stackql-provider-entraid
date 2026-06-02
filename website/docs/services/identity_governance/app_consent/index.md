@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - app_consent
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>app_consent</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="app_consent" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.app_consent" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.app_consent" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -158,7 +158,7 @@ SELECT
 id,
 @odata.type,
 appConsentRequests
-FROM entraid.identity_governance.app_consent
+FROM entra_id.identity_governance.app_consent
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -180,7 +180,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.app_consent
+UPDATE entra_id.identity_governance.app_consent
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -209,7 +209,7 @@ appConsentRequests;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.app_consent
+DELETE FROM entra_id.identity_governance.app_consent
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

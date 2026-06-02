@@ -4,14 +4,14 @@ hide_title: false
 hide_table_of_contents: false
 keywords:
   - service_principals
-  - entraid
+  - entra_id
   - stackql
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 service_principals service documentation.

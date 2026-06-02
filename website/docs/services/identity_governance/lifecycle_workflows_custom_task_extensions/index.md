@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - lifecycle_workflows_custom_task_extensions
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>lifecycle_workflows_custom_task
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="lifecycle_workflows_custom_task_extensions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.lifecycle_workflows_custom_task_extensions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.lifecycle_workflows_custom_task_extensions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -339,7 +339,7 @@ displayName,
 endpointConfiguration,
 lastModifiedBy,
 lastModifiedDateTime
-FROM entraid.identity_governance.lifecycle_workflows_custom_task_extensions
+FROM entra_id.identity_governance.lifecycle_workflows_custom_task_extensions
 WHERE customTaskExtension-id = '{{ customTaskExtension-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -364,7 +364,7 @@ displayName,
 endpointConfiguration,
 lastModifiedBy,
 lastModifiedDateTime
-FROM entraid.identity_governance.lifecycle_workflows_custom_task_extensions
+FROM entra_id.identity_governance.lifecycle_workflows_custom_task_extensions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -393,7 +393,7 @@ AND $expand = '{{ $expand }}'
 Create a new customTaskExtension object.
 
 ```sql
-INSERT INTO entraid.identity_governance.lifecycle_workflows_custom_task_extensions (
+INSERT INTO entra_id.identity_governance.lifecycle_workflows_custom_task_extensions (
 id,
 @odata.type,
 authenticationConfiguration,
@@ -506,7 +506,7 @@ lastModifiedDateTime
 Update the properties of a customTaskExtension object.
 
 ```sql
-UPDATE entraid.identity_governance.lifecycle_workflows_custom_task_extensions
+UPDATE entra_id.identity_governance.lifecycle_workflows_custom_task_extensions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -554,7 +554,7 @@ lastModifiedDateTime;
 Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 
 ```sql
-DELETE FROM entraid.identity_governance.lifecycle_workflows_custom_task_extensions
+DELETE FROM entra_id.identity_governance.lifecycle_workflows_custom_task_extensions
 WHERE customTaskExtension-id = '{{ customTaskExtension-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

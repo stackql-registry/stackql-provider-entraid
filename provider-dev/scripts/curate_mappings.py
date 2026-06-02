@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Curate the analyze-generated all_services.csv into a fully-mapped StackQL
-manifest for the entraid provider.
+manifest for the entra_id provider.
 
 Microsoft Graph paths are OData-shaped. For every operation we derive:
   - stackql_resource_name : the navigation-collection chain (root dropped)

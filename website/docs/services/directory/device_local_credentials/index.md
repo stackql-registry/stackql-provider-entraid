@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - device_local_credentials
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>device_local_credentials</code>
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="device_local_credentials" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.device_local_credentials" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.device_local_credentials" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -273,7 +273,7 @@ credentials,
 deviceName,
 lastBackupDateTime,
 refreshDateTime
-FROM entraid.directory.device_local_credentials
+FROM entra_id.directory.device_local_credentials
 WHERE deviceLocalCredentialInfo-id = '{{ deviceLocalCredentialInfo-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -292,7 +292,7 @@ credentials,
 deviceName,
 lastBackupDateTime,
 refreshDateTime
-FROM entraid.directory.device_local_credentials
+FROM entra_id.directory.device_local_credentials
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -321,7 +321,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.directory.device_local_credentials (
+INSERT INTO entra_id.directory.device_local_credentials (
 id,
 @odata.type,
 credentials,
@@ -398,7 +398,7 @@ refreshDateTime
 No description available.
 
 ```sql
-UPDATE entraid.directory.device_local_credentials
+UPDATE entra_id.directory.device_local_credentials
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -434,7 +434,7 @@ refreshDateTime;
 No description available.
 
 ```sql
-DELETE FROM entraid.directory.device_local_credentials
+DELETE FROM entra_id.directory.device_local_credentials
 WHERE deviceLocalCredentialInfo-id = '{{ deviceLocalCredentialInfo-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

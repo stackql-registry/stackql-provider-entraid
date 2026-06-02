@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - rejected_senders
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>rejected_senders</code> resourc
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="rejected_senders" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.rejected_senders" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.rejected_senders" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -210,7 +210,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.groups.rejected_senders
+FROM entra_id.groups.rejected_senders
 WHERE group-id = '{{ group-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -240,7 +240,7 @@ AND $expand = '{{ $expand }}'
 Specify the user or group in @odata.id in the request body. Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
 
 ```sql
-INSERT INTO entraid.groups.rejected_senders (
+INSERT INTO entra_id.groups.rejected_senders (
 @odata.id,
 group-id
 )
@@ -280,7 +280,7 @@ SELECT
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.rejected_senders
+DELETE FROM entra_id.groups.rejected_senders
 WHERE group-id = '{{ group-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -292,7 +292,7 @@ AND If-Match = '{{ If-Match }}'
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.rejected_senders
+DELETE FROM entra_id.groups.rejected_senders
 WHERE @id = '{{ @id }}' --required
 AND group-id = '{{ group-id }}' --required
 AND If-Match = '{{ If-Match }}'

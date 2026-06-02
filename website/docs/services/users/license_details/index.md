@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - license_details
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>license_details</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="license_details" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.license_details" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.license_details" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -267,7 +267,7 @@ id,
 servicePlans,
 skuId,
 skuPartNumber
-FROM entraid.users.license_details
+FROM entra_id.users.license_details
 WHERE user-id = '{{ user-id }}' -- required
 AND licenseDetails-id = '{{ licenseDetails-id }}' -- required
 AND $select = '{{ $select }}'
@@ -286,7 +286,7 @@ id,
 servicePlans,
 skuId,
 skuPartNumber
-FROM entraid.users.license_details
+FROM entra_id.users.license_details
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -316,7 +316,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.users.license_details (
+INSERT INTO entra_id.users.license_details (
 id,
 @odata.type,
 servicePlans,
@@ -390,7 +390,7 @@ skuPartNumber
 No description available.
 
 ```sql
-UPDATE entraid.users.license_details
+UPDATE entra_id.users.license_details
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -425,7 +425,7 @@ skuPartNumber;
 No description available.
 
 ```sql
-DELETE FROM entraid.users.license_details
+DELETE FROM entra_id.users.license_details
 WHERE user-id = '{{ user-id }}' --required
 AND licenseDetails-id = '{{ licenseDetails-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - change_password
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>change_password</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="change_password" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.change_password" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.change_password" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -95,7 +95,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Update the signed-in user's password. Any user can update their password without belonging to any administrator role.<br />To update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
 
 ```sql
-INSERT INTO entraid.users.change_password (
+INSERT INTO entra_id.users.change_password (
 currentPassword,
 newPassword,
 user-id

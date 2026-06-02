@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: synchronization API
-  description: entraid synchronization API
+  description: entra_id synchronization API
   version: v1.0
 paths:
   /filterOperators:

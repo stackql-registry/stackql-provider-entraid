@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_phone_methods
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_phone_methods</
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_phone_methods" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.authentication_phone_methods" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.authentication_phone_methods" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -292,7 +292,7 @@ createdDateTime,
 phoneNumber,
 phoneType,
 smsSignInState
-FROM entraid.users.authentication_phone_methods
+FROM entra_id.users.authentication_phone_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND phoneAuthenticationMethod-id = '{{ phoneAuthenticationMethod-id }}' -- required
 AND $select = '{{ $select }}'
@@ -312,7 +312,7 @@ createdDateTime,
 phoneNumber,
 phoneType,
 smsSignInState
-FROM entraid.users.authentication_phone_methods
+FROM entra_id.users.authentication_phone_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -342,7 +342,7 @@ AND $expand = '{{ $expand }}'
 Add a new phone authentication method for a user. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a pre-existing mobile phone fails. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
 
 ```sql
-INSERT INTO entraid.users.authentication_phone_methods (
+INSERT INTO entra_id.users.authentication_phone_methods (
 id,
 @odata.type,
 createdDateTime,
@@ -418,7 +418,7 @@ smsSignInState
 Update a user's phone number associated with a phone authentication method object. You can't change a phone's type. To change a phone's type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system. Self-service operations aren't supported.
 
 ```sql
-UPDATE entraid.users.authentication_phone_methods
+UPDATE entra_id.users.authentication_phone_methods
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -455,7 +455,7 @@ smsSignInState;
 No description available.
 
 ```sql
-DELETE FROM entraid.users.authentication_phone_methods
+DELETE FROM entra_id.users.authentication_phone_methods
 WHERE user-id = '{{ user-id }}' --required
 AND phoneAuthenticationMethod-id = '{{ phoneAuthenticationMethod-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -479,7 +479,7 @@ AND If-Match = '{{ If-Match }}'
 Disable SMS sign-in for an existing mobile phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
 
 ```sql
-EXEC entraid.users.authentication_phone_methods.disable_sms_sign_in 
+EXEC entra_id.users.authentication_phone_methods.disable_sms_sign_in 
 @user-id='{{ user-id }}' --required, 
 @phoneAuthenticationMethod-id='{{ phoneAuthenticationMethod-id }}' --required
 ;
@@ -490,7 +490,7 @@ EXEC entraid.users.authentication_phone_methods.disable_sms_sign_in
 Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:
 
 ```sql
-EXEC entraid.users.authentication_phone_methods.enable_sms_sign_in 
+EXEC entra_id.users.authentication_phone_methods.enable_sms_sign_in 
 @user-id='{{ user-id }}' --required, 
 @phoneAuthenticationMethod-id='{{ phoneAuthenticationMethod-id }}' --required
 ;

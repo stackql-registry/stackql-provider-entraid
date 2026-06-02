@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - lifecycle_workflows_task_definitions
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>lifecycle_workflows_task_defini
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="lifecycle_workflows_task_definitions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.lifecycle_workflows_task_definitions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.lifecycle_workflows_task_definitions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -269,7 +269,7 @@ description,
 displayName,
 parameters,
 version
-FROM entraid.identity_governance.lifecycle_workflows_task_definitions
+FROM entra_id.identity_governance.lifecycle_workflows_task_definitions
 WHERE taskDefinition-id = '{{ taskDefinition-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -290,7 +290,7 @@ description,
 displayName,
 parameters,
 version
-FROM entraid.identity_governance.lifecycle_workflows_task_definitions
+FROM entra_id.identity_governance.lifecycle_workflows_task_definitions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'

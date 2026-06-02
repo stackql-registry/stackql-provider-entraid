@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - branding_square_logo_dark
   - organization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>branding_square_logo_dark</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="branding_square_logo_dark" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.organization.branding_square_logo_dark" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.organization.branding_square_logo_dark" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -106,7 +106,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 
 ```sql
-REPLACE entraid.organization.branding_square_logo_dark
+REPLACE entra_id.organization.branding_square_logo_dark
 SET 
 -- No updatable properties
 WHERE 
@@ -129,7 +129,7 @@ organization-id = '{{ organization-id }}' --required;
 A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 
 ```sql
-DELETE FROM entraid.organization.branding_square_logo_dark
+DELETE FROM entra_id.organization.branding_square_logo_dark
 WHERE organization-id = '{{ organization-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

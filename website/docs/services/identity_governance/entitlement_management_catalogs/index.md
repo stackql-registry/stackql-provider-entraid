@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_catalogs
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_catalog
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_catalogs" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_catalogs" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_catalogs" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -361,7 +361,7 @@ resourceRoles,
 resourceScopes,
 resources,
 state
-FROM entraid.identity_governance.entitlement_management_catalogs
+FROM entra_id.identity_governance.entitlement_management_catalogs
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -388,7 +388,7 @@ resourceRoles,
 resourceScopes,
 resources,
 state
-FROM entraid.identity_governance.entitlement_management_catalogs
+FROM entra_id.identity_governance.entitlement_management_catalogs
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -417,7 +417,7 @@ AND $expand = '{{ $expand }}'
 Create a new accessPackageCatalog object.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_catalogs (
+INSERT INTO entra_id.identity_governance.entitlement_management_catalogs (
 id,
 @odata.type,
 catalogType,
@@ -585,7 +585,7 @@ state
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_catalogs
+UPDATE entra_id.identity_governance.entitlement_management_catalogs
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -637,7 +637,7 @@ state;
 Delete an accessPackageCatalog.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_catalogs
+DELETE FROM entra_id.identity_governance.entitlement_management_catalogs
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

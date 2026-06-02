@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_methods
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_methods</code> 
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_methods" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.authentication_methods" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.authentication_methods" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 createdDateTime
-FROM entraid.users.authentication_methods
+FROM entra_id.users.authentication_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND authenticationMethod-id = '{{ authenticationMethod-id }}' -- required
 AND $select = '{{ $select }}'
@@ -257,7 +257,7 @@ SELECT
 id,
 @odata.type,
 createdDateTime
-FROM entraid.users.authentication_methods
+FROM entra_id.users.authentication_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -287,7 +287,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.users.authentication_methods (
+INSERT INTO entra_id.users.authentication_methods (
 id,
 @odata.type,
 createdDateTime,
@@ -342,7 +342,7 @@ createdDateTime
 No description available.
 
 ```sql
-UPDATE entraid.users.authentication_methods
+UPDATE entra_id.users.authentication_methods
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -373,7 +373,7 @@ createdDateTime;
 Reset a user's password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account. To reset a user's password in Azure AD B2C, use the Update user API operation and update the passwordProfile &gt; forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.
 
 ```sql
-EXEC entraid.users.authentication_methods.reset_password 
+EXEC entra_id.users.authentication_methods.reset_password 
 @user-id='{{ user-id }}' --required, 
 @authenticationMethod-id='{{ authenticationMethod-id }}' --required 
 @@json=

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - branding_localizations_favicon
   - organization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>branding_localizations_favicon<
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="branding_localizations_favicon" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.organization.branding_localizations_favicon" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.organization.branding_localizations_favicon" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -111,7 +111,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 
 ```sql
-REPLACE entraid.organization.branding_localizations_favicon
+REPLACE entra_id.organization.branding_localizations_favicon
 SET 
 -- No updatable properties
 WHERE 
@@ -135,7 +135,7 @@ AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalizati
 A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 
 ```sql
-DELETE FROM entraid.organization.branding_localizations_favicon
+DELETE FROM entra_id.organization.branding_localizations_favicon
 WHERE organization-id = '{{ organization-id }}' --required
 AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' --required
 AND If-Match = '{{ If-Match }}'

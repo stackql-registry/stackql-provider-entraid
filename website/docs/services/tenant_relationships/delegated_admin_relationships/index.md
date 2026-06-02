@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - delegated_admin_relationships
   - tenant_relationships
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>delegated_admin_relationships</
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="delegated_admin_relationships" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.tenant_relationships.delegated_admin_relationships" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.tenant_relationships.delegated_admin_relationships" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -372,7 +372,7 @@ lastModifiedDateTime,
 operations,
 requests,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships
+FROM entra_id.tenant_relationships.delegated_admin_relationships
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -400,7 +400,7 @@ lastModifiedDateTime,
 operations,
 requests,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships
+FROM entra_id.tenant_relationships.delegated_admin_relationships
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -429,7 +429,7 @@ AND $expand = '{{ $expand }}'
 Create a new delegatedAdminRelationship object.
 
 ```sql
-INSERT INTO entraid.tenant_relationships.delegated_admin_relationships (
+INSERT INTO entra_id.tenant_relationships.delegated_admin_relationships (
 id,
 @odata.type,
 accessDetails,
@@ -592,7 +592,7 @@ status
 Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:<br />- You can update this relationship when its status property is created.<br />- You can update the autoExtendDuration property when status is either created or active.<br />- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation.
 
 ```sql
-UPDATE entraid.tenant_relationships.delegated_admin_relationships
+UPDATE entra_id.tenant_relationships.delegated_admin_relationships
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -646,7 +646,7 @@ status;
 Delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status. 
 
 ```sql
-DELETE FROM entraid.tenant_relationships.delegated_admin_relationships
+DELETE FROM entra_id.tenant_relationships.delegated_admin_relationships
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

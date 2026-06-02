@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: audit_logs API
-  description: entraid audit_logs API
+  description: entra_id audit_logs API
   version: v1.0
 paths:
   /auditLogs:

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - multi_tenant_organization_tenants
   - tenant_relationships
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>multi_tenant_organization_tenan
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="multi_tenant_organization_tenants" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.tenant_relationships.multi_tenant_organization_tenants" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.tenant_relationships.multi_tenant_organization_tenants" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ role,
 state,
 tenantId,
 transitionDetails
-FROM entraid.tenant_relationships.multi_tenant_organization_tenants
+FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
 WHERE multiTenantOrganizationMember-id = '{{ multiTenantOrganizationMember-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ role,
 state,
 tenantId,
 transitionDetails
-FROM entraid.tenant_relationships.multi_tenant_organization_tenants
+FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 Add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization.
 
 ```sql
-INSERT INTO entraid.tenant_relationships.multi_tenant_organization_tenants (
+INSERT INTO entra_id.tenant_relationships.multi_tenant_organization_tenants (
 id,
 @odata.type,
 deletedDateTime,
@@ -487,7 +487,7 @@ transitionDetails
 Update the properties of a tenant in a multitenant organization. Only owner tenants can call this API.
 
 ```sql
-UPDATE entraid.tenant_relationships.multi_tenant_organization_tenants
+UPDATE entra_id.tenant_relationships.multi_tenant_organization_tenants
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -533,7 +533,7 @@ transitionDetails;
 Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios:
 
 ```sql
-DELETE FROM entraid.tenant_relationships.multi_tenant_organization_tenants
+DELETE FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
 WHERE multiTenantOrganizationMember-id = '{{ multiTenantOrganizationMember-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

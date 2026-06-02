@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - synchronization_templates
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>synchronization_templates</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="synchronization_templates" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.synchronization_templates" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.synchronization_templates" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -311,7 +311,7 @@ discoverable,
 factoryTag,
 metadata,
 schema
-FROM entraid.applications.synchronization_templates
+FROM entra_id.applications.synchronization_templates
 WHERE application-id = '{{ application-id }}' -- required
 AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' -- required
 AND $select = '{{ $select }}'
@@ -334,7 +334,7 @@ discoverable,
 factoryTag,
 metadata,
 schema
-FROM entraid.applications.synchronization_templates
+FROM entra_id.applications.synchronization_templates
 WHERE application-id = '{{ application-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -364,7 +364,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.applications.synchronization_templates (
+INSERT INTO entra_id.applications.synchronization_templates (
 id,
 @odata.type,
 applicationId,
@@ -464,7 +464,7 @@ schema
 Update (override) the synchronization template associated with a given application.
 
 ```sql
-UPDATE entraid.applications.synchronization_templates
+UPDATE entra_id.applications.synchronization_templates
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -507,7 +507,7 @@ schema;
 No description available.
 
 ```sql
-DELETE FROM entraid.applications.synchronization_templates
+DELETE FROM entra_id.applications.synchronization_templates
 WHERE application-id = '{{ application-id }}' --required
 AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - access_reviews_definitions_filter_by_current_user
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>access_reviews_definitions_fil
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="access_reviews_definitions_filter_by_current_user" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.access_reviews_definitions_filter_by_current_user" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.access_reviews_definitions_filter_by_current_user" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -256,7 +256,7 @@ scope,
 settings,
 stageSettings,
 status
-FROM entraid.identity_governance.access_reviews_definitions_filter_by_current_user
+FROM entra_id.identity_governance.access_reviews_definitions_filter_by_current_user
 WHERE on = '{{ on }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'

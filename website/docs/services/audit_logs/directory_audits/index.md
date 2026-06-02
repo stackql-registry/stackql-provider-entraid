@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - directory_audits
   - audit_logs
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>directory_audits</code> resourc
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="directory_audits" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.audit_logs.directory_audits" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.audit_logs.directory_audits" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -350,7 +350,7 @@ operationType,
 result,
 resultReason,
 targetResources
-FROM entraid.audit_logs.directory_audits
+FROM entra_id.audit_logs.directory_audits
 WHERE directoryAudit-id = '{{ directoryAudit-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -376,7 +376,7 @@ operationType,
 result,
 resultReason,
 targetResources
-FROM entraid.audit_logs.directory_audits
+FROM entra_id.audit_logs.directory_audits
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -405,7 +405,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.audit_logs.directory_audits (
+INSERT INTO entra_id.audit_logs.directory_audits (
 id,
 @odata.type,
 activityDateTime,
@@ -546,7 +546,7 @@ targetResources
 No description available.
 
 ```sql
-UPDATE entraid.audit_logs.directory_audits
+UPDATE entra_id.audit_logs.directory_audits
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -596,7 +596,7 @@ targetResources;
 No description available.
 
 ```sql
-DELETE FROM entraid.audit_logs.directory_audits
+DELETE FROM entra_id.audit_logs.directory_audits
 WHERE directoryAudit-id = '{{ directoryAudit-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

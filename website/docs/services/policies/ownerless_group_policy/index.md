@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - ownerless_group_policy
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>ownerless_group_policy</code> 
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="ownerless_group_policy" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.ownerless_group_policy" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.ownerless_group_policy" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -182,7 +182,7 @@ maxMembersToNotify,
 notificationDurationInWeeks,
 policyWebUrl,
 targetOwners
-FROM entraid.policies.ownerless_group_policy
+FROM entra_id.policies.ownerless_group_policy
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -204,7 +204,7 @@ AND $expand = '{{ $expand }}'
 Create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
 
 ```sql
-UPDATE entraid.policies.ownerless_group_policy
+UPDATE entra_id.policies.ownerless_group_policy
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',

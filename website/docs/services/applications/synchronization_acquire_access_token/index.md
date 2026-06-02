@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - synchronization_acquire_access_token
   - applications
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>synchronization_acquire_access_
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="synchronization_acquire_access_token" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.applications.synchronization_acquire_access_token" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.applications.synchronization_acquire_access_token" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -95,7 +95,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ```sql
-INSERT INTO entraid.applications.synchronization_acquire_access_token (
+INSERT INTO entra_id.applications.synchronization_acquire_access_token (
 credentials,
 application-id
 )

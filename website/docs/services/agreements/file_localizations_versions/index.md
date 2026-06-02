@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - file_localizations_versions
   - agreements
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>file_localizations_versions</co
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="file_localizations_versions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.agreements.file_localizations_versions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.agreements.file_localizations_versions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -316,7 +316,7 @@ fileName,
 isDefault,
 isMajorVersion,
 language
-FROM entraid.agreements.file_localizations_versions
+FROM entra_id.agreements.file_localizations_versions
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' -- required
 AND agreementFileVersion-id = '{{ agreementFileVersion-id }}' -- required
@@ -340,7 +340,7 @@ fileName,
 isDefault,
 isMajorVersion,
 language
-FROM entraid.agreements.file_localizations_versions
+FROM entra_id.agreements.file_localizations_versions
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' -- required
 AND $top = '{{ $top }}'
@@ -371,7 +371,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.agreements.file_localizations_versions (
+INSERT INTO entra_id.agreements.file_localizations_versions (
 id,
 @odata.type,
 createdDateTime,
@@ -475,7 +475,7 @@ language
 No description available.
 
 ```sql
-UPDATE entraid.agreements.file_localizations_versions
+UPDATE entra_id.agreements.file_localizations_versions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -519,7 +519,7 @@ language;
 No description available.
 
 ```sql
-DELETE FROM entraid.agreements.file_localizations_versions
+DELETE FROM entra_id.agreements.file_localizations_versions
 WHERE agreement-id = '{{ agreement-id }}' --required
 AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' --required
 AND agreementFileVersion-id = '{{ agreementFileVersion-id }}' --required

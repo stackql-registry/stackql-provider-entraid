@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_assignment_requests
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_assignm
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_assignment_requests" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_assignment_requests" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_assignment_requests" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -382,7 +382,7 @@ requestor,
 schedule,
 state,
 status
-FROM entraid.identity_governance.entitlement_management_assignment_requests
+FROM entra_id.identity_governance.entitlement_management_assignment_requests
 WHERE accessPackageAssignmentRequest-id = '{{ accessPackageAssignmentRequest-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -409,7 +409,7 @@ requestor,
 schedule,
 state,
 status
-FROM entraid.identity_governance.entitlement_management_assignment_requests
+FROM entra_id.identity_governance.entitlement_management_assignment_requests
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -438,7 +438,7 @@ AND $expand = '{{ $expand }}'
 In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object. This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_assignment_requests (
+INSERT INTO entra_id.identity_governance.entitlement_management_assignment_requests (
 id,
 @odata.type,
 answers,
@@ -584,7 +584,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_assignment_requests
+UPDATE entra_id.identity_governance.entitlement_management_assignment_requests
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -636,7 +636,7 @@ status;
 Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_assignment_requests
+DELETE FROM entra_id.identity_governance.entitlement_management_assignment_requests
 WHERE accessPackageAssignmentRequest-id = '{{ accessPackageAssignmentRequest-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -660,7 +660,7 @@ AND If-Match = '{{ If-Match }}'
 In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 
 ```sql
-EXEC entraid.identity_governance.entitlement_management_assignment_requests.cancel 
+EXEC entra_id.identity_governance.entitlement_management_assignment_requests.cancel 
 @accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required
 ;
 ```
@@ -670,7 +670,7 @@ EXEC entraid.identity_governance.entitlement_management_assignment_requests.canc
 In Microsoft Entra entitlement management, callers can automatically retry a user's request for access to an access package. It's performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
 
 ```sql
-EXEC entraid.identity_governance.entitlement_management_assignment_requests.reprocess 
+EXEC entra_id.identity_governance.entitlement_management_assignment_requests.reprocess 
 @accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required
 ;
 ```
@@ -680,7 +680,7 @@ EXEC entraid.identity_governance.entitlement_management_assignment_requests.repr
 Resume a user's access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It's performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 
 ```sql
-EXEC entraid.identity_governance.entitlement_management_assignment_requests.resume 
+EXEC entra_id.identity_governance.entitlement_management_assignment_requests.resume 
 @accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required 
 @@json=
 '{

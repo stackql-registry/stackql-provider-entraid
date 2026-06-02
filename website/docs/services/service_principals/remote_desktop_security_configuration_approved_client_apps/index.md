@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - remote_desktop_security_configuration_approved_client_apps
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>remote_desktop_security_configu
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="remote_desktop_security_configuration_approved_client_apps" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.remote_desktop_security_configuration_approved_client_apps" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.service_principals.remote_desktop_security_configuration_approved_client_apps
+FROM entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND approvedClientApp-id = '{{ approvedClientApp-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.service_principals.remote_desktop_security_configuration_approved_client_apps
+FROM entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 Create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
 
 ```sql
-INSERT INTO entraid.service_principals.remote_desktop_security_configuration_approved_client_apps (
+INSERT INTO entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps (
 id,
 @odata.type,
 displayName,
@@ -347,7 +347,7 @@ displayName
 Update the properties of an approvedClientApp object for a remotedesktopsecurityconfiguration.
 
 ```sql
-UPDATE entraid.service_principals.remote_desktop_security_configuration_approved_client_apps
+UPDATE entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -378,7 +378,7 @@ displayName;
 No description available.
 
 ```sql
-DELETE FROM entraid.service_principals.remote_desktop_security_configuration_approved_client_apps
+DELETE FROM entra_id.service_principals.remote_desktop_security_configuration_approved_client_apps
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND approvedClientApp-id = '{{ approvedClientApp-id }}' --required
 AND If-Match = '{{ If-Match }}'

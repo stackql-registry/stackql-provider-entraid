@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_role_assignment_schedule_requests
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_role_as
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_role_assignment_schedule_requests" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.entitlement_management_role_assignment_schedule_requests" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.entitlement_management_role_assignment_schedule_requests" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -478,7 +478,7 @@ status,
 targetSchedule,
 targetScheduleId,
 ticketInfo
-FROM entraid.role_management.entitlement_management_role_assignment_schedule_requests
+FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
 WHERE unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -515,7 +515,7 @@ status,
 targetSchedule,
 targetScheduleId,
 ticketInfo
-FROM entraid.role_management.entitlement_management_role_assignment_schedule_requests
+FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -544,7 +544,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.role_management.entitlement_management_role_assignment_schedule_requests (
+INSERT INTO entra_id.role_management.entitlement_management_role_assignment_schedule_requests (
 id,
 @odata.type,
 approvalId,
@@ -741,7 +741,7 @@ ticketInfo
 No description available.
 
 ```sql
-UPDATE entraid.role_management.entitlement_management_role_assignment_schedule_requests
+UPDATE entra_id.role_management.entitlement_management_role_assignment_schedule_requests
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -813,7 +813,7 @@ ticketInfo;
 No description available.
 
 ```sql
-DELETE FROM entraid.role_management.entitlement_management_role_assignment_schedule_requests
+DELETE FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
 WHERE unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -835,7 +835,7 @@ AND If-Match = '{{ If-Match }}'
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ```sql
-EXEC entraid.role_management.entitlement_management_role_assignment_schedule_requests.cancel 
+EXEC entra_id.role_management.entitlement_management_role_assignment_schedule_requests.cancel 
 @unifiedRoleAssignmentScheduleRequest-id='{{ unifiedRoleAssignmentScheduleRequest-id }}' --required
 ;
 ```

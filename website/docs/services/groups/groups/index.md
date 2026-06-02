@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - groups
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>groups</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="groups" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.groups" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.groups" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -1584,7 +1584,7 @@ uniqueName,
 unseenCount,
 visibility,
 welcomeMessageEnabled
-FROM entraid.groups.groups
+FROM entra_id.groups.groups
 WHERE uniqueName = '{{ uniqueName }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -1673,7 +1673,7 @@ uniqueName,
 unseenCount,
 visibility,
 welcomeMessageEnabled
-FROM entraid.groups.groups
+FROM entra_id.groups.groups
 WHERE group-id = '{{ group-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -1762,7 +1762,7 @@ uniqueName,
 unseenCount,
 visibility,
 welcomeMessageEnabled
-FROM entraid.groups.groups
+FROM entra_id.groups.groups
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -1792,7 +1792,7 @@ AND $expand = '{{ $expand }}'
 Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
 
 ```sql
-INSERT INTO entraid.groups.groups (
+INSERT INTO entra_id.groups.groups (
 id,
 @odata.type,
 deletedDateTime,
@@ -2599,7 +2599,7 @@ welcomeMessageEnabled
 Create a new group object if it doesn't exist, or update the properties of an existing group object.<br />You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
 
 ```sql
-UPDATE entraid.groups.groups
+UPDATE entra_id.groups.groups
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -2764,7 +2764,7 @@ welcomeMessageEnabled;
 Create a new group object if it doesn't exist, or update the properties of an existing group object.<br />You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
 
 ```sql
-UPDATE entraid.groups.groups
+UPDATE entra_id.groups.groups
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -2941,7 +2941,7 @@ welcomeMessageEnabled;
 Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This doesn't apply to Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
 
 ```sql
-DELETE FROM entraid.groups.groups
+DELETE FROM entra_id.groups.groups
 WHERE uniqueName = '{{ uniqueName }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -2952,7 +2952,7 @@ AND If-Match = '{{ If-Match }}'
 Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This doesn't apply to Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
 
 ```sql
-DELETE FROM entraid.groups.groups
+DELETE FROM entra_id.groups.groups
 WHERE group-id = '{{ group-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -2989,7 +2989,7 @@ AND If-Match = '{{ If-Match }}'
 Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 
 ```sql
-EXEC entraid.groups.groups.get_available_extension_properties 
+EXEC entra_id.groups.groups.get_available_extension_properties 
 @@json=
 '{
 "isSyncedFromOnPremises": {{ isSyncedFromOnPremises }}
@@ -3002,7 +3002,7 @@ EXEC entraid.groups.groups.get_available_extension_properties
 Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 
 ```sql
-EXEC entraid.groups.groups.get_by_ids 
+EXEC entra_id.groups.groups.get_by_ids 
 @@json=
 '{
 "ids": "{{ ids }}", 
@@ -3016,7 +3016,7 @@ EXEC entraid.groups.groups.get_by_ids
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 
 ```sql
-EXEC entraid.groups.groups.validate_properties 
+EXEC entra_id.groups.groups.validate_properties 
 @@json=
 '{
 "entityType": "{{ entityType }}", 
@@ -3032,7 +3032,7 @@ EXEC entraid.groups.groups.validate_properties
 Add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
 
 ```sql
-EXEC entraid.groups.groups.add_favorite 
+EXEC entra_id.groups.groups.add_favorite 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3042,7 +3042,7 @@ EXEC entraid.groups.groups.add_favorite
 Add or remove licenses on a group. Licenses assigned to the group will be assigned to all users in the group. Group-based licensing is an alternative to direct user licensing. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 
 ```sql
-EXEC entraid.groups.groups.assign_license 
+EXEC entra_id.groups.groups.assign_license 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{
@@ -3057,7 +3057,7 @@ EXEC entraid.groups.groups.assign_license
 Success
 
 ```sql
-EXEC entraid.groups.groups.check_granted_permissions_for_app 
+EXEC entra_id.groups.groups.check_granted_permissions_for_app 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3067,7 +3067,7 @@ EXEC entraid.groups.groups.check_granted_permissions_for_app
 Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ```sql
-EXEC entraid.groups.groups.check_member_groups 
+EXEC entra_id.groups.groups.check_member_groups 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{
@@ -3081,7 +3081,7 @@ EXEC entraid.groups.groups.check_member_groups
 Success
 
 ```sql
-EXEC entraid.groups.groups.check_member_objects 
+EXEC entra_id.groups.groups.check_member_objects 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{
@@ -3095,7 +3095,7 @@ EXEC entraid.groups.groups.check_member_objects
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
 
 ```sql
-EXEC entraid.groups.groups.get_member_groups 
+EXEC entra_id.groups.groups.get_member_groups 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{
@@ -3109,7 +3109,7 @@ EXEC entraid.groups.groups.get_member_groups
 Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 
 ```sql
-EXEC entraid.groups.groups.get_member_objects 
+EXEC entra_id.groups.groups.get_member_objects 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{
@@ -3123,7 +3123,7 @@ EXEC entraid.groups.groups.get_member_objects
 Remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
 
 ```sql
-EXEC entraid.groups.groups.remove_favorite 
+EXEC entra_id.groups.groups.remove_favorite 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3133,7 +3133,7 @@ EXEC entraid.groups.groups.remove_favorite
 Renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ```sql
-EXEC entraid.groups.groups.renew 
+EXEC entra_id.groups.groups.renew 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3143,7 +3143,7 @@ EXEC entraid.groups.groups.renew
 Reset the unseenCount of all the posts that the current user hasn't seen since their last visit. Supported for Microsoft 365 groups only.
 
 ```sql
-EXEC entraid.groups.groups.reset_unseen_count 
+EXEC entra_id.groups.groups.reset_unseen_count 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3153,7 +3153,7 @@ EXEC entraid.groups.groups.reset_unseen_count
 Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
 
 ```sql
-EXEC entraid.groups.groups.restore 
+EXEC entra_id.groups.groups.restore 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3163,7 +3163,7 @@ EXEC entraid.groups.groups.restore
 Retry the group service provisioning.
 
 ```sql
-EXEC entraid.groups.groups.retry_service_provisioning 
+EXEC entra_id.groups.groups.retry_service_provisioning 
 @group-id='{{ group-id }}' --required
 ;
 ```
@@ -3173,7 +3173,7 @@ EXEC entraid.groups.groups.retry_service_provisioning
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to update a Microsoft 365 group. To validate the properties before creating a group, use the directoryobject:validateProperties function. The following policy validations are performed for the display name and mail nickname properties: This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 
 ```sql
-EXEC entraid.groups.groups.validate_properties_2 
+EXEC entra_id.groups.groups.validate_properties_2 
 @group-id='{{ group-id }}' --required 
 @@json=
 '{

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_resource_requests
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_resourc
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_resource_requests" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_resource_requests" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_resource_requests" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -284,7 +284,7 @@ createdDateTime,
 requestType,
 resource,
 state
-FROM entraid.identity_governance.entitlement_management_resource_requests
+FROM entra_id.identity_governance.entitlement_management_resource_requests
 WHERE accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -304,7 +304,7 @@ createdDateTime,
 requestType,
 resource,
 state
-FROM entraid.identity_governance.entitlement_management_resource_requests
+FROM entra_id.identity_governance.entitlement_management_resource_requests
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -333,7 +333,7 @@ AND $expand = '{{ $expand }}'
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_resource_requests (
+INSERT INTO entra_id.identity_governance.entitlement_management_resource_requests (
 id,
 @odata.type,
 createdDateTime,
@@ -407,7 +407,7 @@ state
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_resource_requests
+UPDATE entra_id.identity_governance.entitlement_management_resource_requests
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -445,7 +445,7 @@ state;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_resource_requests
+DELETE FROM entra_id.identity_governance.entitlement_management_resource_requests
 WHERE accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - provisioning
   - audit_logs
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>provisioning</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="provisioning" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.audit_logs.provisioning" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.audit_logs.provisioning" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -405,7 +405,7 @@ sourceSystem,
 targetIdentity,
 targetSystem,
 tenantId
-FROM entraid.audit_logs.provisioning
+FROM entra_id.audit_logs.provisioning
 WHERE provisioningObjectSummary-id = '{{ provisioningObjectSummary-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -436,7 +436,7 @@ sourceSystem,
 targetIdentity,
 targetSystem,
 tenantId
-FROM entraid.audit_logs.provisioning
+FROM entra_id.audit_logs.provisioning
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -465,7 +465,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.audit_logs.provisioning (
+INSERT INTO entra_id.audit_logs.provisioning (
 id,
 @odata.type,
 activityDateTime,
@@ -631,7 +631,7 @@ tenantId
 No description available.
 
 ```sql
-UPDATE entraid.audit_logs.provisioning
+UPDATE entra_id.audit_logs.provisioning
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -691,7 +691,7 @@ tenantId;
 No description available.
 
 ```sql
-DELETE FROM entraid.audit_logs.provisioning
+DELETE FROM entra_id.audit_logs.provisioning
 WHERE provisioningObjectSummary-id = '{{ provisioningObjectSummary-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

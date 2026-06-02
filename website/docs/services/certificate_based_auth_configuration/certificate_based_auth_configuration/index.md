@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - certificate_based_auth_configuration
   - certificate_based_auth_configuration
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>certificate_based_auth_configur
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="certificate_based_auth_configuration" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.certificate_based_auth_configuration.certificate_based_auth_configuration" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 certificateAuthorities
-FROM entraid.certificate_based_auth_configuration.certificate_based_auth_configuration
+FROM entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration
 WHERE certificateBasedAuthConfiguration-id = '{{ certificateBasedAuthConfiguration-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -256,7 +256,7 @@ SELECT
 id,
 @odata.type,
 certificateAuthorities
-FROM entraid.certificate_based_auth_configuration.certificate_based_auth_configuration
+FROM entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -285,7 +285,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.certificate_based_auth_configuration.certificate_based_auth_configuration (
+INSERT INTO entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration (
 id,
 @odata.type,
 certificateAuthorities
@@ -342,7 +342,7 @@ certificateAuthorities
 No description available.
 
 ```sql
-UPDATE entraid.certificate_based_auth_configuration.certificate_based_auth_configuration
+UPDATE entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -372,7 +372,7 @@ certificateAuthorities;
 No description available.
 
 ```sql
-DELETE FROM entraid.certificate_based_auth_configuration.certificate_based_auth_configuration
+DELETE FROM entra_id.certificate_based_auth_configuration.certificate_based_auth_configuration
 WHERE certificateBasedAuthConfiguration-id = '{{ certificateBasedAuthConfiguration-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

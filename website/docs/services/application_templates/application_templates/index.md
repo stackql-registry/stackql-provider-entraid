@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - application_templates
   - application_templates
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>application_templates</code> r
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="application_templates" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.application_templates.application_templates" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.application_templates.application_templates" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -298,7 +298,7 @@ logoUrl,
 publisher,
 supportedProvisioningTypes,
 supportedSingleSignOnModes
-FROM entraid.application_templates.application_templates
+FROM entra_id.application_templates.application_templates
 WHERE applicationTemplate-id = '{{ applicationTemplate-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -321,7 +321,7 @@ logoUrl,
 publisher,
 supportedProvisioningTypes,
 supportedSingleSignOnModes
-FROM entraid.application_templates.application_templates
+FROM entra_id.application_templates.application_templates
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -349,7 +349,7 @@ AND $expand = '{{ $expand }}'
 Add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.
 
 ```sql
-EXEC entraid.application_templates.application_templates.instantiate 
+EXEC entra_id.application_templates.application_templates.instantiate 
 @applicationTemplate-id='{{ applicationTemplate-id }}' --required 
 @@json=
 '{

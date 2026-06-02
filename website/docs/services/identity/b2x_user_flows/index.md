@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - b2x_user_flows
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>b2x_user_flows</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="b2x_user_flows" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.b2x_user_flows" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.b2x_user_flows" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -306,7 +306,7 @@ userAttributeAssignments,
 userFlowIdentityProviders,
 userFlowType,
 userFlowTypeVersion
-FROM entraid.identity.b2x_user_flows
+FROM entra_id.identity.b2x_user_flows
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -328,7 +328,7 @@ userAttributeAssignments,
 userFlowIdentityProviders,
 userFlowType,
 userFlowTypeVersion
-FROM entraid.identity.b2x_user_flows
+FROM entra_id.identity.b2x_user_flows
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -357,7 +357,7 @@ AND $expand = '{{ $expand }}'
 Create a new b2xIdentityUserFlow object.
 
 ```sql
-INSERT INTO entraid.identity.b2x_user_flows (
+INSERT INTO entra_id.identity.b2x_user_flows (
 id,
 @odata.type,
 userFlowType,
@@ -467,7 +467,7 @@ userFlowTypeVersion
 No description available.
 
 ```sql
-UPDATE entraid.identity.b2x_user_flows
+UPDATE entra_id.identity.b2x_user_flows
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -509,7 +509,7 @@ userFlowTypeVersion;
 Delete a b2xIdentityUserFlow object.
 
 ```sql
-DELETE FROM entraid.identity.b2x_user_flows
+DELETE FROM entra_id.identity.b2x_user_flows
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

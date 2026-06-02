@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: group_setting_templates API
-  description: entraid group_setting_templates API
+  description: entra_id group_setting_templates API
   version: v1.0
 paths:
   /groupSettingTemplates:

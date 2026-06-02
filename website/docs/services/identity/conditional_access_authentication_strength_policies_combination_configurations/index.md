@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - conditional_access_authentication_strength_policies_combination_configurations
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>conditional_access_authenticati
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="conditional_access_authentication_strength_policies_combination_configurations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.conditional_access_authentication_strength_policies_combination_configurations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 appliesToCombinations
-FROM entraid.identity.conditional_access_authentication_strength_policies_combination_configurations
+FROM entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' -- required
 AND authenticationCombinationConfiguration-id = '{{ authenticationCombinationConfiguration-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 appliesToCombinations
-FROM entraid.identity.conditional_access_authentication_strength_policies_combination_configurations
+FROM entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:<br />* fido2combinationConfiguration<br />* x509certificatecombinationconfiguration
 
 ```sql
-INSERT INTO entraid.identity.conditional_access_authentication_strength_policies_combination_configurations (
+INSERT INTO entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations (
 id,
 @odata.type,
 appliesToCombinations,
@@ -348,7 +348,7 @@ appliesToCombinations
 Update the properties of an authenticationCombinationConfiguration object. <br />The properties can be for one of the following derived types:<br />* fido2combinationConfigurations<br />* x509certificatecombinationconfiguration
 
 ```sql
-UPDATE entraid.identity.conditional_access_authentication_strength_policies_combination_configurations
+UPDATE entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -379,7 +379,7 @@ appliesToCombinations;
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ```sql
-DELETE FROM entraid.identity.conditional_access_authentication_strength_policies_combination_configurations
+DELETE FROM entra_id.identity.conditional_access_authentication_strength_policies_combination_configurations
 WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' --required
 AND authenticationCombinationConfiguration-id = '{{ authenticationCombinationConfiguration-id }}' --required
 AND If-Match = '{{ If-Match }}'

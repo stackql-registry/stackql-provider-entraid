@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - custom_authentication_extensions
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>custom_authentication_extension
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="custom_authentication_extensions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.custom_authentication_extensions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.custom_authentication_extensions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -309,7 +309,7 @@ clientConfiguration,
 description,
 displayName,
 endpointConfiguration
-FROM entraid.identity.custom_authentication_extensions
+FROM entra_id.identity.custom_authentication_extensions
 WHERE customAuthenticationExtension-id = '{{ customAuthenticationExtension-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -330,7 +330,7 @@ clientConfiguration,
 description,
 displayName,
 endpointConfiguration
-FROM entraid.identity.custom_authentication_extensions
+FROM entra_id.identity.custom_authentication_extensions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -359,7 +359,7 @@ AND $expand = '{{ $expand }}'
 Create a new customAuthenticationExtension object. The following derived types are currently supported.
 
 ```sql
-INSERT INTO entraid.identity.custom_authentication_extensions (
+INSERT INTO entra_id.identity.custom_authentication_extensions (
 id,
 @odata.type,
 authenticationConfiguration,
@@ -444,7 +444,7 @@ endpointConfiguration
 Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
 
 ```sql
-UPDATE entraid.identity.custom_authentication_extensions
+UPDATE entra_id.identity.custom_authentication_extensions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -484,7 +484,7 @@ endpointConfiguration;
 Delete a customAuthenticationExtension object. The following derived types are currently supported.
 
 ```sql
-DELETE FROM entraid.identity.custom_authentication_extensions
+DELETE FROM entra_id.identity.custom_authentication_extensions
 WHERE customAuthenticationExtension-id = '{{ customAuthenticationExtension-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -507,7 +507,7 @@ AND If-Match = '{{ If-Match }}'
 Success
 
 ```sql
-EXEC entraid.identity.custom_authentication_extensions.validate_authentication_configuration 
+EXEC entra_id.identity.custom_authentication_extensions.validate_authentication_configuration 
 @@json=
 '{
 "endpointConfiguration": "{{ endpointConfiguration }}", 
@@ -521,7 +521,7 @@ EXEC entraid.identity.custom_authentication_extensions.validate_authentication_c
 An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension object, which can represent one of the following derived types:
 
 ```sql
-EXEC entraid.identity.custom_authentication_extensions.validate_authentication_configuration_2 
+EXEC entra_id.identity.custom_authentication_extensions.validate_authentication_configuration_2 
 @customAuthenticationExtension-id='{{ customAuthenticationExtension-id }}' --required
 ;
 ```

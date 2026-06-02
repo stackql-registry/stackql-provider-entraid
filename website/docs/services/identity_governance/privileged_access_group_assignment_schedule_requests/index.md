@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - privileged_access_group_assignment_schedule_requests
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>privileged_access_group_assignm
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="privileged_access_group_assignment_schedule_requests" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.privileged_access_group_assignment_schedule_requests" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.privileged_access_group_assignment_schedule_requests" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -445,7 +445,7 @@ status,
 targetSchedule,
 targetScheduleId,
 ticketInfo
-FROM entraid.identity_governance.privileged_access_group_assignment_schedule_requests
+FROM entra_id.identity_governance.privileged_access_group_assignment_schedule_requests
 WHERE privilegedAccessGroupAssignmentScheduleRequest-id = '{{ privilegedAccessGroupAssignmentScheduleRequest-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -479,7 +479,7 @@ status,
 targetSchedule,
 targetScheduleId,
 ticketInfo
-FROM entraid.identity_governance.privileged_access_group_assignment_schedule_requests
+FROM entra_id.identity_governance.privileged_access_group_assignment_schedule_requests
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -508,7 +508,7 @@ AND $expand = '{{ $expand }}'
 Create a new privilegedAccessGroupAssignmentScheduleRequest object.
 
 ```sql
-INSERT INTO entraid.identity_governance.privileged_access_group_assignment_schedule_requests (
+INSERT INTO entra_id.identity_governance.privileged_access_group_assignment_schedule_requests (
 id,
 @odata.type,
 approvalId,
@@ -684,7 +684,7 @@ ticketInfo
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.privileged_access_group_assignment_schedule_requests
+UPDATE entra_id.identity_governance.privileged_access_group_assignment_schedule_requests
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -750,7 +750,7 @@ ticketInfo;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.privileged_access_group_assignment_schedule_requests
+DELETE FROM entra_id.identity_governance.privileged_access_group_assignment_schedule_requests
 WHERE privilegedAccessGroupAssignmentScheduleRequest-id = '{{ privilegedAccessGroupAssignmentScheduleRequest-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -772,7 +772,7 @@ AND If-Match = '{{ If-Match }}'
 Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
 
 ```sql
-EXEC entraid.identity_governance.privileged_access_group_assignment_schedule_requests.cancel 
+EXEC entra_id.identity_governance.privileged_access_group_assignment_schedule_requests.cancel 
 @privilegedAccessGroupAssignmentScheduleRequest-id='{{ privilegedAccessGroupAssignmentScheduleRequest-id }}' --required
 ;
 ```

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - cross_tenant_access_policy_partners
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>cross_tenant_access_policy_part
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="cross_tenant_access_policy_partners" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.cross_tenant_access_policy_partners" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.cross_tenant_access_policy_partners" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -372,7 +372,7 @@ m365CollaborationInbound,
 m365CollaborationOutbound,
 tenantId,
 tenantRestrictions
-FROM entraid.policies.cross_tenant_access_policy_partners
+FROM entra_id.policies.cross_tenant_access_policy_partners
 WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -400,7 +400,7 @@ m365CollaborationInbound,
 m365CollaborationOutbound,
 tenantId,
 tenantRestrictions
-FROM entraid.policies.cross_tenant_access_policy_partners
+FROM entra_id.policies.cross_tenant_access_policy_partners
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -429,7 +429,7 @@ AND $expand = '{{ $expand }}'
 Create a new partner configuration in a cross-tenant access policy.
 
 ```sql
-INSERT INTO entraid.policies.cross_tenant_access_policy_partners (
+INSERT INTO entra_id.policies.cross_tenant_access_policy_partners (
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -676,7 +676,7 @@ tenantRestrictions
 Update the properties of a partner-specific configuration.
 
 ```sql
-UPDATE entraid.policies.cross_tenant_access_policy_partners
+UPDATE entra_id.policies.cross_tenant_access_policy_partners
 SET 
 appServiceConnectInbound = '{{ appServiceConnectInbound }}',
 automaticUserConsentSettings = '{{ automaticUserConsentSettings }}',
@@ -730,7 +730,7 @@ tenantRestrictions;
 Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
 
 ```sql
-DELETE FROM entraid.policies.cross_tenant_access_policy_partners
+DELETE FROM entra_id.policies.cross_tenant_access_policy_partners
 WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

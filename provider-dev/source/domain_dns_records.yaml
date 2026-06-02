@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: domain_dns_records API
-  description: entraid domain_dns_records API
+  description: entra_id domain_dns_records API
   version: v1.0
 paths:
   /domainDnsRecords:

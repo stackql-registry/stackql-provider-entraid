@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_access_package_assignment_approvals_stages
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_access_
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_access_package_assignment_approvals_stages" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -311,7 +311,7 @@ reviewResult,
 reviewedBy,
 reviewedDateTime,
 status
-FROM entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages
+FROM entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages
 WHERE approval-id = '{{ approval-id }}' -- required
 AND approvalStage-id = '{{ approvalStage-id }}' -- required
 AND $select = '{{ $select }}'
@@ -334,7 +334,7 @@ reviewResult,
 reviewedBy,
 reviewedDateTime,
 status
-FROM entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages
+FROM entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages
 WHERE approval-id = '{{ approval-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -364,7 +364,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages (
+INSERT INTO entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages (
 id,
 @odata.type,
 assignedToMe,
@@ -461,7 +461,7 @@ status
 Approve or deny an approvalStage object in an approval.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages
+UPDATE entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -504,7 +504,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_access_package_assignment_approvals_stages
+DELETE FROM entra_id.identity_governance.entitlement_management_access_package_assignment_approvals_stages
 WHERE approval-id = '{{ approval-id }}' --required
 AND approvalStage-id = '{{ approvalStage-id }}' --required
 AND If-Match = '{{ If-Match }}'

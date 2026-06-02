@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_role_assignments
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_role_as
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_role_assignments" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.entitlement_management_role_assignments" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.entitlement_management_role_assignments" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ principal,
 principalId,
 roleDefinition,
 roleDefinitionId
-FROM entraid.role_management.entitlement_management_role_assignments
+FROM entra_id.role_management.entitlement_management_role_assignments
 WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ principal,
 principalId,
 roleDefinition,
 roleDefinitionId
-FROM entraid.role_management.entitlement_management_role_assignments
+FROM entra_id.role_management.entitlement_management_role_assignments
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 Create a new unifiedRoleAssignment object.
 
 ```sql
-INSERT INTO entraid.role_management.entitlement_management_role_assignments (
+INSERT INTO entra_id.role_management.entitlement_management_role_assignments (
 id,
 @odata.type,
 appScopeId,
@@ -485,7 +485,7 @@ roleDefinitionId
 No description available.
 
 ```sql
-UPDATE entraid.role_management.entitlement_management_role_assignments
+UPDATE entra_id.role_management.entitlement_management_role_assignments
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -531,7 +531,7 @@ roleDefinitionId;
 No description available.
 
 ```sql
-DELETE FROM entraid.role_management.entitlement_management_role_assignments
+DELETE FROM entra_id.role_management.entitlement_management_role_assignments
 WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

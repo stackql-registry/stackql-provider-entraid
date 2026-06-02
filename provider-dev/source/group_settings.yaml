@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: group_settings API
-  description: entraid group_settings API
+  description: entra_id group_settings API
   version: v1.0
 paths:
   /groupSettings:

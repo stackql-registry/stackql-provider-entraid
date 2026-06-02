@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - role_management_policies
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>role_management_policies</code>
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="role_management_policies" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.role_management_policies" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.role_management_policies" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ lastModifiedDateTime,
 rules,
 scopeId,
 scopeType
-FROM entraid.policies.role_management_policies
+FROM entra_id.policies.role_management_policies
 WHERE unifiedRoleManagementPolicy-id = '{{ unifiedRoleManagementPolicy-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ lastModifiedDateTime,
 rules,
 scopeId,
 scopeType
-FROM entraid.policies.role_management_policies
+FROM entra_id.policies.role_management_policies
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.policies.role_management_policies (
+INSERT INTO entra_id.policies.role_management_policies (
 id,
 @odata.type,
 description,
@@ -493,7 +493,7 @@ scopeType
 No description available.
 
 ```sql
-UPDATE entraid.policies.role_management_policies
+UPDATE entra_id.policies.role_management_policies
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -539,7 +539,7 @@ scopeType;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.role_management_policies
+DELETE FROM entra_id.policies.role_management_policies
 WHERE unifiedRoleManagementPolicy-id = '{{ unifiedRoleManagementPolicy-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

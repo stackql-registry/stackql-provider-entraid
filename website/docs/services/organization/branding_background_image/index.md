@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - branding_background_image
   - organization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>branding_background_image</code
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="branding_background_image" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.organization.branding_background_image" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.organization.branding_background_image" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -106,7 +106,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
 
 ```sql
-REPLACE entraid.organization.branding_background_image
+REPLACE entra_id.organization.branding_background_image
 SET 
 -- No updatable properties
 WHERE 
@@ -129,7 +129,7 @@ organization-id = '{{ organization-id }}' --required;
 Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
 
 ```sql
-DELETE FROM entraid.organization.branding_background_image
+DELETE FROM entra_id.organization.branding_background_image
 WHERE organization-id = '{{ organization-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

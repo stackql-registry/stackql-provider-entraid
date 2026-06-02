@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - acceptances
   - agreements
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>acceptances</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="acceptances" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.agreements.acceptances" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.agreements.acceptances" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -377,7 +377,7 @@ userDisplayName,
 userEmail,
 userId,
 userPrincipalName
-FROM entraid.agreements.acceptances
+FROM entra_id.agreements.acceptances
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND agreementAcceptance-id = '{{ agreementAcceptance-id }}' -- required
 AND $select = '{{ $select }}'
@@ -406,7 +406,7 @@ userDisplayName,
 userEmail,
 userId,
 userPrincipalName
-FROM entraid.agreements.acceptances
+FROM entra_id.agreements.acceptances
 WHERE agreement-id = '{{ agreement-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -436,7 +436,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.agreements.acceptances (
+INSERT INTO entra_id.agreements.acceptances (
 id,
 @odata.type,
 agreementFileId,
@@ -576,7 +576,7 @@ userPrincipalName
 No description available.
 
 ```sql
-UPDATE entraid.agreements.acceptances
+UPDATE entra_id.agreements.acceptances
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -631,7 +631,7 @@ userPrincipalName;
 No description available.
 
 ```sql
-DELETE FROM entraid.agreements.acceptances
+DELETE FROM entra_id.agreements.acceptances
 WHERE agreement-id = '{{ agreement-id }}' --required
 AND agreementAcceptance-id = '{{ agreementAcceptance-id }}' --required
 AND If-Match = '{{ If-Match }}'

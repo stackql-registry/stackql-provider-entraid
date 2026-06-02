@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: identity_providers API
-  description: entraid identity_providers API
+  description: entra_id identity_providers API
   version: v1.0
 paths:
   /identityProviders:

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - domain_name_references
   - domains
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>domain_name_references</code> r
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="domain_name_references" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.domains.domain_name_references" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.domains.domain_name_references" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -219,7 +219,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.domains.domain_name_references
+FROM entra_id.domains.domain_name_references
 WHERE domain-id = '{{ domain-id }}' -- required
 AND directoryObject-id = '{{ directoryObject-id }}' -- required
 AND $select = '{{ $select }}'
@@ -236,7 +236,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.domains.domain_name_references
+FROM entra_id.domains.domain_name_references
 WHERE domain-id = '{{ domain-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'

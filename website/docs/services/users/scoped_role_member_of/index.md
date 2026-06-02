@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - scoped_role_member_of
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>scoped_role_member_of</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="scoped_role_member_of" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.scoped_role_member_of" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.scoped_role_member_of" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -267,7 +267,7 @@ id,
 administrativeUnitId,
 roleId,
 roleMemberInfo
-FROM entraid.users.scoped_role_member_of
+FROM entra_id.users.scoped_role_member_of
 WHERE user-id = '{{ user-id }}' -- required
 AND scopedRoleMembership-id = '{{ scopedRoleMembership-id }}' -- required
 AND $select = '{{ $select }}'
@@ -286,7 +286,7 @@ id,
 administrativeUnitId,
 roleId,
 roleMemberInfo
-FROM entraid.users.scoped_role_member_of
+FROM entra_id.users.scoped_role_member_of
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -316,7 +316,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.users.scoped_role_member_of (
+INSERT INTO entra_id.users.scoped_role_member_of (
 id,
 @odata.type,
 administrativeUnitId,
@@ -386,7 +386,7 @@ roleMemberInfo
 No description available.
 
 ```sql
-UPDATE entraid.users.scoped_role_member_of
+UPDATE entra_id.users.scoped_role_member_of
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -421,7 +421,7 @@ roleMemberInfo;
 No description available.
 
 ```sql
-DELETE FROM entraid.users.scoped_role_member_of
+DELETE FROM entra_id.users.scoped_role_member_of
 WHERE user-id = '{{ user-id }}' --required
 AND scopedRoleMembership-id = '{{ scopedRoleMembership-id }}' --required
 AND If-Match = '{{ If-Match }}'

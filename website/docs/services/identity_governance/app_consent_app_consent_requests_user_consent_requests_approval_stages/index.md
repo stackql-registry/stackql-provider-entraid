@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - app_consent_app_consent_requests_user_consent_requests_approval_stages
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>app_consent_app_consent_reques
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="app_consent_app_consent_requests_user_consent_requests_approval_stages" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -316,7 +316,7 @@ reviewResult,
 reviewedBy,
 reviewedDateTime,
 status
-FROM entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
+FROM entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
 WHERE appConsentRequest-id = '{{ appConsentRequest-id }}' -- required
 AND userConsentRequest-id = '{{ userConsentRequest-id }}' -- required
 AND approvalStage-id = '{{ approvalStage-id }}' -- required
@@ -340,7 +340,7 @@ reviewResult,
 reviewedBy,
 reviewedDateTime,
 status
-FROM entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
+FROM entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
 WHERE appConsentRequest-id = '{{ appConsentRequest-id }}' -- required
 AND userConsentRequest-id = '{{ userConsentRequest-id }}' -- required
 AND $top = '{{ $top }}'
@@ -371,7 +371,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages (
+INSERT INTO entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages (
 id,
 @odata.type,
 assignedToMe,
@@ -473,7 +473,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
+UPDATE entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -517,7 +517,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
+DELETE FROM entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval_stages
 WHERE appConsentRequest-id = '{{ appConsentRequest-id }}' --required
 AND userConsentRequest-id = '{{ userConsentRequest-id }}' --required
 AND approvalStage-id = '{{ approvalStage-id }}' --required

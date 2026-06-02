@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - created_objects
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>created_objects</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="created_objects" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.created_objects" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.created_objects" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -219,7 +219,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.users.created_objects
+FROM entra_id.users.created_objects
 WHERE user-id = '{{ user-id }}' -- required
 AND directoryObject-id = '{{ directoryObject-id }}' -- required
 AND $select = '{{ $select }}'
@@ -236,7 +236,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.users.created_objects
+FROM entra_id.users.created_objects
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'

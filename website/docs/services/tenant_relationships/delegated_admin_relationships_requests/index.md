@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - delegated_admin_relationships_requests
   - tenant_relationships
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>delegated_admin_relationships_r
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="delegated_admin_relationships_requests" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.tenant_relationships.delegated_admin_relationships_requests" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.tenant_relationships.delegated_admin_relationships_requests" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -278,7 +278,7 @@ action,
 createdDateTime,
 lastModifiedDateTime,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships_requests
+FROM entra_id.tenant_relationships.delegated_admin_relationships_requests
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' -- required
 AND delegatedAdminRelationshipRequest-id = '{{ delegatedAdminRelationshipRequest-id }}' -- required
 AND $select = '{{ $select }}'
@@ -298,7 +298,7 @@ action,
 createdDateTime,
 lastModifiedDateTime,
 status
-FROM entraid.tenant_relationships.delegated_admin_relationships_requests
+FROM entra_id.tenant_relationships.delegated_admin_relationships_requests
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -328,7 +328,7 @@ AND $expand = '{{ $expand }}'
 Create a new delegatedAdminRelationshipRequest object.
 
 ```sql
-INSERT INTO entraid.tenant_relationships.delegated_admin_relationships_requests (
+INSERT INTO entra_id.tenant_relationships.delegated_admin_relationships_requests (
 id,
 @odata.type,
 action,
@@ -403,7 +403,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.tenant_relationships.delegated_admin_relationships_requests
+UPDATE entra_id.tenant_relationships.delegated_admin_relationships_requests
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -440,7 +440,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.tenant_relationships.delegated_admin_relationships_requests
+DELETE FROM entra_id.tenant_relationships.delegated_admin_relationships_requests
 WHERE delegatedAdminRelationship-id = '{{ delegatedAdminRelationship-id }}' --required
 AND delegatedAdminRelationshipRequest-id = '{{ delegatedAdminRelationshipRequest-id }}' --required
 AND If-Match = '{{ If-Match }}'

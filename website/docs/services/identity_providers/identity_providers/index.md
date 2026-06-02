@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - identity_providers
   - identity_providers
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>identity_providers</code> reso
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="identity_providers" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_providers.identity_providers" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_providers.identity_providers" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -273,7 +273,7 @@ name,
 clientId,
 clientSecret,
 type
-FROM entraid.identity_providers.identity_providers
+FROM entra_id.identity_providers.identity_providers
 WHERE identityProvider-id = '{{ identityProvider-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -292,7 +292,7 @@ name,
 clientId,
 clientSecret,
 type
-FROM entraid.identity_providers.identity_providers
+FROM entra_id.identity_providers.identity_providers
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -321,7 +321,7 @@ AND $expand = '{{ $expand }}'
 Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
 
 ```sql
-INSERT INTO entraid.identity_providers.identity_providers (
+INSERT INTO entra_id.identity_providers.identity_providers (
 id,
 @odata.type,
 clientId,
@@ -392,7 +392,7 @@ type
 Update properties in an existing identityProvider.
 
 ```sql
-UPDATE entraid.identity_providers.identity_providers
+UPDATE entra_id.identity_providers.identity_providers
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -428,7 +428,7 @@ type;
 Delete an existing identityProvider.
 
 ```sql
-DELETE FROM entraid.identity_providers.identity_providers
+DELETE FROM entra_id.identity_providers.identity_providers
 WHERE identityProvider-id = '{{ identityProvider-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

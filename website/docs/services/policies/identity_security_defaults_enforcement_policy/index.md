@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - identity_security_defaults_enforcement_policy
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>identity_security_defaults_enf
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="identity_security_defaults_enforcement_policy" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.identity_security_defaults_enforcement_policy" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.identity_security_defaults_enforcement_policy" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -176,7 +176,7 @@ deletedDateTime,
 description,
 displayName,
 isEnabled
-FROM entraid.policies.identity_security_defaults_enforcement_policy
+FROM entra_id.policies.identity_security_defaults_enforcement_policy
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -198,7 +198,7 @@ AND $expand = '{{ $expand }}'
 Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 
 ```sql
-UPDATE entraid.policies.identity_security_defaults_enforcement_policy
+UPDATE entra_id.policies.identity_security_defaults_enforcement_policy
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -233,7 +233,7 @@ isEnabled;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.identity_security_defaults_enforcement_policy
+DELETE FROM entra_id.policies.identity_security_defaults_enforcement_policy
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

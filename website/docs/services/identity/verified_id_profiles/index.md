@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - verified_id_profiles
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>verified_id_profiles</code> res
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="verified_id_profiles" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.verified_id_profiles" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.verified_id_profiles" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ state,
 verifiedIdProfileConfiguration,
 verifiedIdUsageConfigurations,
 verifierDid
-FROM entraid.identity.verified_id_profiles
+FROM entra_id.identity.verified_id_profiles
 WHERE verifiedIdProfile-id = '{{ verifiedIdProfile-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ state,
 verifiedIdProfileConfiguration,
 verifiedIdUsageConfigurations,
 verifierDid
-FROM entraid.identity.verified_id_profiles
+FROM entra_id.identity.verified_id_profiles
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 Create a new verifiedIdProfile object.
 
 ```sql
-INSERT INTO entraid.identity.verified_id_profiles (
+INSERT INTO entra_id.identity.verified_id_profiles (
 id,
 @odata.type,
 description,
@@ -501,7 +501,7 @@ verifierDid
 Update the properties of a verifiedIdProfile object.
 
 ```sql
-UPDATE entraid.identity.verified_id_profiles
+UPDATE entra_id.identity.verified_id_profiles
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -547,7 +547,7 @@ verifierDid;
 Delete a verifiedIdProfile object.
 
 ```sql
-DELETE FROM entraid.identity.verified_id_profiles
+DELETE FROM entra_id.identity.verified_id_profiles
 WHERE verifiedIdProfile-id = '{{ verifiedIdProfile-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

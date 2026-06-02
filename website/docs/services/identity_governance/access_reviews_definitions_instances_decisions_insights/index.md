@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - access_reviews_definitions_instances_decisions_insights
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>access_reviews_definitions_ins
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="access_reviews_definitions_instances_decisions_insights" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.access_reviews_definitions_instances_decisions_insights" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -255,7 +255,7 @@ SELECT
 id,
 @odata.type,
 insightCreatedDateTime
-FROM entraid.identity_governance.access_reviews_definitions_instances_decisions_insights
+FROM entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
 AND accessReviewInstanceDecisionItem-id = '{{ accessReviewInstanceDecisionItem-id }}' -- required
@@ -274,7 +274,7 @@ SELECT
 id,
 @odata.type,
 insightCreatedDateTime
-FROM entraid.identity_governance.access_reviews_definitions_instances_decisions_insights
+FROM entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
 AND accessReviewInstanceDecisionItem-id = '{{ accessReviewInstanceDecisionItem-id }}' -- required
@@ -306,7 +306,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.access_reviews_definitions_instances_decisions_insights (
+INSERT INTO entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights (
 id,
 @odata.type,
 insightCreatedDateTime,
@@ -371,7 +371,7 @@ insightCreatedDateTime
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.access_reviews_definitions_instances_decisions_insights
+UPDATE entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -404,7 +404,7 @@ insightCreatedDateTime;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.access_reviews_definitions_instances_decisions_insights
+DELETE FROM entra_id.identity_governance.access_reviews_definitions_instances_decisions_insights
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' --required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' --required
 AND accessReviewInstanceDecisionItem-id = '{{ accessReviewInstanceDecisionItem-id }}' --required

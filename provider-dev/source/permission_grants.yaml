@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: permission_grants API
-  description: entraid permission_grants API
+  description: entra_id permission_grants API
   version: v1.0
 paths:
   /permissionGrants:

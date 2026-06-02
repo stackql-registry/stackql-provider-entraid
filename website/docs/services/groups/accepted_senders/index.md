@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - accepted_senders
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>accepted_senders</code> resour
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="accepted_senders" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.accepted_senders" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.accepted_senders" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -210,7 +210,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.groups.accepted_senders
+FROM entra_id.groups.accepted_senders
 WHERE group-id = '{{ group-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -240,7 +240,7 @@ AND $expand = '{{ $expand }}'
 Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 
 ```sql
-INSERT INTO entraid.groups.accepted_senders (
+INSERT INTO entra_id.groups.accepted_senders (
 @odata.id,
 group-id
 )
@@ -280,7 +280,7 @@ SELECT
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.accepted_senders
+DELETE FROM entra_id.groups.accepted_senders
 WHERE group-id = '{{ group-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -292,7 +292,7 @@ AND If-Match = '{{ If-Match }}'
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.accepted_senders
+DELETE FROM entra_id.groups.accepted_senders
 WHERE @id = '{{ @id }}' --required
 AND group-id = '{{ group-id }}' --required
 AND If-Match = '{{ If-Match }}'

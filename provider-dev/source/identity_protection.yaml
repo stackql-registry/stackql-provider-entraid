@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: identity_protection API
-  description: entraid identity_protection API
+  description: entra_id identity_protection API
   version: v1.0
 paths:
   /identityProtection:

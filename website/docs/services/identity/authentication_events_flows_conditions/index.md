@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_events_flows_conditions
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_events_flows_co
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_events_flows_conditions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.authentication_events_flows_conditions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.authentication_events_flows_conditions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -138,7 +138,7 @@ The conditions representing the context of the authentication request that's use
 SELECT
 @odata.type,
 applications
-FROM entraid.identity.authentication_events_flows_conditions
+FROM entra_id.identity.authentication_events_flows_conditions
 WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'

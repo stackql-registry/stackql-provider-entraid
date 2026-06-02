@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - access_reviews_definitions_instances_stages
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>access_reviews_definitions_ins
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="access_reviews_definitions_instances_stages" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.access_reviews_definitions_instances_stages" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.access_reviews_definitions_instances_stages" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -312,7 +312,7 @@ fallbackReviewers,
 reviewers,
 startDateTime,
 status
-FROM entraid.identity_governance.access_reviews_definitions_instances_stages
+FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
 AND accessReviewStage-id = '{{ accessReviewStage-id }}' -- required
@@ -335,7 +335,7 @@ fallbackReviewers,
 reviewers,
 startDateTime,
 status
-FROM entraid.identity_governance.access_reviews_definitions_instances_stages
+FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
 AND $top = '{{ $top }}'
@@ -366,7 +366,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.access_reviews_definitions_instances_stages (
+INSERT INTO entra_id.identity_governance.access_reviews_definitions_instances_stages (
 id,
 @odata.type,
 endDateTime,
@@ -485,7 +485,7 @@ status
 Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
 
 ```sql
-UPDATE entraid.identity_governance.access_reviews_definitions_instances_stages
+UPDATE entra_id.identity_governance.access_reviews_definitions_instances_stages
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -527,7 +527,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.access_reviews_definitions_instances_stages
+DELETE FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' --required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' --required
 AND accessReviewStage-id = '{{ accessReviewStage-id }}' --required
@@ -551,7 +551,7 @@ AND If-Match = '{{ If-Match }}'
 Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances_stages.stop 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances_stages.stop 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required, 
 @accessReviewStage-id='{{ accessReviewStage-id }}' --required

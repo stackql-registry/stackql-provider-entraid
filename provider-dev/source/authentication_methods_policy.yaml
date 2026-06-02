@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: authentication_methods_policy API
-  description: entraid authentication_methods_policy API
+  description: entra_id authentication_methods_policy API
   version: v1.0
 paths:
   /authenticationMethodsPolicy:

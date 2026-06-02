@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_microsoft_authenticator_methods
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_microsoft_authe
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_microsoft_authenticator_methods" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.authentication_microsoft_authenticator_methods" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.authentication_microsoft_authenticator_methods" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -275,7 +275,7 @@ device,
 deviceTag,
 displayName,
 phoneAppVersion
-FROM entraid.users.authentication_microsoft_authenticator_methods
+FROM entra_id.users.authentication_microsoft_authenticator_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND microsoftAuthenticatorAuthenticationMethod-id = '{{ microsoftAuthenticatorAuthenticationMethod-id }}' -- required
 AND $select = '{{ $select }}'
@@ -296,7 +296,7 @@ device,
 deviceTag,
 displayName,
 phoneAppVersion
-FROM entraid.users.authentication_microsoft_authenticator_methods
+FROM entra_id.users.authentication_microsoft_authenticator_methods
 WHERE user-id = '{{ user-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -325,7 +325,7 @@ AND $expand = '{{ $expand }}'
 Delete a microsoftAuthenticatorAuthenticationMethod object.
 
 ```sql
-DELETE FROM entraid.users.authentication_microsoft_authenticator_methods
+DELETE FROM entra_id.users.authentication_microsoft_authenticator_methods
 WHERE user-id = '{{ user-id }}' --required
 AND microsoftAuthenticatorAuthenticationMethod-id = '{{ microsoftAuthenticatorAuthenticationMethod-id }}' --required
 AND If-Match = '{{ If-Match }}'

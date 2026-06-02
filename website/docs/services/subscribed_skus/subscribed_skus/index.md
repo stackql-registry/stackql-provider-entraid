@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - subscribed_skus
   - subscribed_skus
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>subscribed_skus</code> resource
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="subscribed_skus" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.subscribed_skus.subscribed_skus" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.subscribed_skus.subscribed_skus" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -339,7 +339,7 @@ servicePlans,
 skuId,
 skuPartNumber,
 subscriptionIds
-FROM entraid.subscribed_skus.subscribed_skus
+FROM entra_id.subscribed_skus.subscribed_skus
 WHERE subscribedSku-id = '{{ subscribedSku-id }}' -- required
 AND $select = '{{ $select }}'
 ;
@@ -363,7 +363,7 @@ servicePlans,
 skuId,
 skuPartNumber,
 subscriptionIds
-FROM entraid.subscribed_skus.subscribed_skus
+FROM entra_id.subscribed_skus.subscribed_skus
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -392,7 +392,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.subscribed_skus.subscribed_skus (
+INSERT INTO entra_id.subscribed_skus.subscribed_skus (
 id,
 @odata.type,
 accountId,
@@ -511,7 +511,7 @@ subscriptionIds
 No description available.
 
 ```sql
-UPDATE entraid.subscribed_skus.subscribed_skus
+UPDATE entra_id.subscribed_skus.subscribed_skus
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -559,7 +559,7 @@ subscriptionIds;
 No description available.
 
 ```sql
-DELETE FROM entraid.subscribed_skus.subscribed_skus
+DELETE FROM entra_id.subscribed_skus.subscribed_skus
 WHERE subscribedSku-id = '{{ subscribedSku-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

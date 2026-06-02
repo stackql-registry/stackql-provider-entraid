@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - custom_security_attribute_definitions_allowed_values
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>custom_security_attribute_defin
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="custom_security_attribute_definitions_allowed_values" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.custom_security_attribute_definitions_allowed_values" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.custom_security_attribute_definitions_allowed_values" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 isActive
-FROM entraid.directory.custom_security_attribute_definitions_allowed_values
+FROM entra_id.directory.custom_security_attribute_definitions_allowed_values
 WHERE customSecurityAttributeDefinition-id = '{{ customSecurityAttributeDefinition-id }}' -- required
 AND allowedValue-id = '{{ allowedValue-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 isActive
-FROM entraid.directory.custom_security_attribute_definitions_allowed_values
+FROM entra_id.directory.custom_security_attribute_definitions_allowed_values
 WHERE customSecurityAttributeDefinition-id = '{{ customSecurityAttributeDefinition-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 Create a new allowedValue object.
 
 ```sql
-INSERT INTO entraid.directory.custom_security_attribute_definitions_allowed_values (
+INSERT INTO entra_id.directory.custom_security_attribute_definitions_allowed_values (
 id,
 @odata.type,
 isActive,
@@ -347,7 +347,7 @@ isActive
 Update the properties of an allowedValue object.
 
 ```sql
-UPDATE entraid.directory.custom_security_attribute_definitions_allowed_values
+UPDATE entra_id.directory.custom_security_attribute_definitions_allowed_values
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -378,7 +378,7 @@ isActive;
 No description available.
 
 ```sql
-DELETE FROM entraid.directory.custom_security_attribute_definitions_allowed_values
+DELETE FROM entra_id.directory.custom_security_attribute_definitions_allowed_values
 WHERE customSecurityAttributeDefinition-id = '{{ customSecurityAttributeDefinition-id }}' --required
 AND allowedValue-id = '{{ allowedValue-id }}' --required
 AND If-Match = '{{ If-Match }}'

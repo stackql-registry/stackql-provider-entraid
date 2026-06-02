@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_role_assignment_schedules
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_role_as
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_role_assignment_schedules" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.entitlement_management_role_assignment_schedules" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.entitlement_management_role_assignment_schedules" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -405,7 +405,7 @@ roleDefinition,
 roleDefinitionId,
 scheduleInfo,
 status
-FROM entraid.role_management.entitlement_management_role_assignment_schedules
+FROM entra_id.role_management.entitlement_management_role_assignment_schedules
 WHERE unifiedRoleAssignmentSchedule-id = '{{ unifiedRoleAssignmentSchedule-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -436,7 +436,7 @@ roleDefinition,
 roleDefinitionId,
 scheduleInfo,
 status
-FROM entraid.role_management.entitlement_management_role_assignment_schedules
+FROM entra_id.role_management.entitlement_management_role_assignment_schedules
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -465,7 +465,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.role_management.entitlement_management_role_assignment_schedules (
+INSERT INTO entra_id.role_management.entitlement_management_role_assignment_schedules (
 id,
 @odata.type,
 appScopeId,
@@ -620,7 +620,7 @@ status
 No description available.
 
 ```sql
-UPDATE entraid.role_management.entitlement_management_role_assignment_schedules
+UPDATE entra_id.role_management.entitlement_management_role_assignment_schedules
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -680,7 +680,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.role_management.entitlement_management_role_assignment_schedules
+DELETE FROM entra_id.role_management.entitlement_management_role_assignment_schedules
 WHERE unifiedRoleAssignmentSchedule-id = '{{ unifiedRoleAssignmentSchedule-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

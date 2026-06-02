@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - access_reviews_definitions_instances
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>access_reviews_definitions_ins
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="access_reviews_definitions_instances" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.access_reviews_definitions_instances" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.access_reviews_definitions_instances" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -368,7 +368,7 @@ scope,
 stages,
 startDateTime,
 status
-FROM entraid.identity_governance.access_reviews_definitions_instances
+FROM entra_id.identity_governance.access_reviews_definitions_instances
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
 AND $select = '{{ $select }}'
@@ -393,7 +393,7 @@ scope,
 stages,
 startDateTime,
 status
-FROM entraid.identity_governance.access_reviews_definitions_instances
+FROM entra_id.identity_governance.access_reviews_definitions_instances
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -423,7 +423,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.access_reviews_definitions_instances (
+INSERT INTO entra_id.identity_governance.access_reviews_definitions_instances (
 id,
 @odata.type,
 endDateTime,
@@ -571,7 +571,7 @@ status
 Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewInstance, it's status must be InProgress.
 
 ```sql
-UPDATE entraid.identity_governance.access_reviews_definitions_instances
+UPDATE entra_id.identity_governance.access_reviews_definitions_instances
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -618,7 +618,7 @@ status;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.access_reviews_definitions_instances
+DELETE FROM entra_id.identity_governance.access_reviews_definitions_instances
 WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' --required
 AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -645,7 +645,7 @@ AND If-Match = '{{ If-Match }}'
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances.accept_recommendations 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances.accept_recommendations 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required
 ;
@@ -656,7 +656,7 @@ EXEC entraid.identity_governance.access_reviews_definitions_instances.accept_rec
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances.apply_decisions 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances.apply_decisions 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required
 ;
@@ -667,7 +667,7 @@ EXEC entraid.identity_governance.access_reviews_definitions_instances.apply_deci
 Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances.reset_decisions 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances.reset_decisions 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required
 ;
@@ -678,7 +678,7 @@ EXEC entraid.identity_governance.access_reviews_definitions_instances.reset_deci
 Send a reminder to the reviewers of an active accessReviewInstance.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances.send_reminder 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances.send_reminder 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required
 ;
@@ -689,7 +689,7 @@ EXEC entraid.identity_governance.access_reviews_definitions_instances.send_remin
 Stop a currently active accessReviewInstance. After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied. Stopping an instance will not stop future instances. To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
 ```sql
-EXEC entraid.identity_governance.access_reviews_definitions_instances.stop 
+EXEC entra_id.identity_governance.access_reviews_definitions_instances.stop 
 @accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
 @accessReviewInstance-id='{{ accessReviewInstance-id }}' --required
 ;

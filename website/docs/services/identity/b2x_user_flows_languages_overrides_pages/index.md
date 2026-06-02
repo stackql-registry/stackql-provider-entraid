@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - b2x_user_flows_languages_overrides_pages
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>b2x_user_flows_languages_overri
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="b2x_user_flows_languages_overrides_pages" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.b2x_user_flows_languages_overrides_pages" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.b2x_user_flows_languages_overrides_pages" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -239,7 +239,7 @@ Collection of pages with the overrides messages to display in a user flow for a 
 SELECT
 id,
 @odata.type
-FROM entraid.identity.b2x_user_flows_languages_overrides_pages
+FROM entra_id.identity.b2x_user_flows_languages_overrides_pages
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND userFlowLanguageConfiguration-id = '{{ userFlowLanguageConfiguration-id }}' -- required
 AND userFlowLanguagePage-id = '{{ userFlowLanguagePage-id }}' -- required
@@ -256,7 +256,7 @@ Get the userFlowLanguagePage resources from the overridesPages navigation proper
 SELECT
 id,
 @odata.type
-FROM entraid.identity.b2x_user_flows_languages_overrides_pages
+FROM entra_id.identity.b2x_user_flows_languages_overrides_pages
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
 AND userFlowLanguageConfiguration-id = '{{ userFlowLanguageConfiguration-id }}' -- required
 AND $top = '{{ $top }}'
@@ -287,7 +287,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity.b2x_user_flows_languages_overrides_pages (
+INSERT INTO entra_id.identity.b2x_user_flows_languages_overrides_pages (
 id,
 @odata.type,
 b2xIdentityUserFlow-id,
@@ -340,7 +340,7 @@ id,
 Update the values in an userFlowLanguagePage object. You may only update the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 
 ```sql
-UPDATE entraid.identity.b2x_user_flows_languages_overrides_pages
+UPDATE entra_id.identity.b2x_user_flows_languages_overrides_pages
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}'
@@ -370,7 +370,7 @@ id,
 Deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 
 ```sql
-DELETE FROM entraid.identity.b2x_user_flows_languages_overrides_pages
+DELETE FROM entra_id.identity.b2x_user_flows_languages_overrides_pages
 WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
 AND userFlowLanguageConfiguration-id = '{{ userFlowLanguageConfiguration-id }}' --required
 AND userFlowLanguagePage-id = '{{ userFlowLanguagePage-id }}' --required

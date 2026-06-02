@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - unsubscribe_by_mail
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>unsubscribe_by_mail</code> res
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="unsubscribe_by_mail" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.unsubscribe_by_mail" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.unsubscribe_by_mail" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -95,7 +95,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Calling this method prevents the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
 
 ```sql
-INSERT INTO entraid.groups.unsubscribe_by_mail (
+INSERT INTO entra_id.groups.unsubscribe_by_mail (
 group-id
 )
 SELECT 

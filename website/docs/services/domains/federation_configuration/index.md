@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - federation_configuration
   - domains
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>federation_configuration</code>
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="federation_configuration" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.domains.federation_configuration" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.domains.federation_configuration" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -388,7 +388,7 @@ promptLoginBehavior,
 signOutUri,
 signingCertificate,
 signingCertificateUpdateStatus
-FROM entraid.domains.federation_configuration
+FROM entra_id.domains.federation_configuration
 WHERE domain-id = '{{ domain-id }}' -- required
 AND internalDomainFederation-id = '{{ internalDomainFederation-id }}' -- required
 AND $select = '{{ $select }}'
@@ -418,7 +418,7 @@ promptLoginBehavior,
 signOutUri,
 signingCertificate,
 signingCertificateUpdateStatus
-FROM entraid.domains.federation_configuration
+FROM entra_id.domains.federation_configuration
 WHERE domain-id = '{{ domain-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -448,7 +448,7 @@ AND $expand = '{{ $expand }}'
 Create a new internalDomainFederation object.
 
 ```sql
-INSERT INTO entraid.domains.federation_configuration (
+INSERT INTO entra_id.domains.federation_configuration (
 id,
 @odata.type,
 displayName,
@@ -592,7 +592,7 @@ signingCertificateUpdateStatus
 Update the properties of an internalDomainFederation object.
 
 ```sql
-UPDATE entraid.domains.federation_configuration
+UPDATE entra_id.domains.federation_configuration
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -649,7 +649,7 @@ signingCertificateUpdateStatus;
 Delete an internalDomainFederation object.
 
 ```sql
-DELETE FROM entraid.domains.federation_configuration
+DELETE FROM entra_id.domains.federation_configuration
 WHERE domain-id = '{{ domain-id }}' --required
 AND internalDomainFederation-id = '{{ internalDomainFederation-id }}' --required
 AND If-Match = '{{ If-Match }}'

@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - data_policy_operations
   - data_policy_operations
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>data_policy_operations</code> r
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="data_policy_operations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.data_policy_operations.data_policy_operations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.data_policy_operations.data_policy_operations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -295,7 +295,7 @@ status,
 storageLocation,
 submittedDateTime,
 userId
-FROM entraid.data_policy_operations.data_policy_operations
+FROM entra_id.data_policy_operations.data_policy_operations
 WHERE dataPolicyOperation-id = '{{ dataPolicyOperation-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -316,7 +316,7 @@ status,
 storageLocation,
 submittedDateTime,
 userId
-FROM entraid.data_policy_operations.data_policy_operations
+FROM entra_id.data_policy_operations.data_policy_operations
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -345,7 +345,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.data_policy_operations.data_policy_operations (
+INSERT INTO entra_id.data_policy_operations.data_policy_operations (
 id,
 @odata.type,
 completedDateTime,
@@ -430,7 +430,7 @@ userId
 No description available.
 
 ```sql
-UPDATE entraid.data_policy_operations.data_policy_operations
+UPDATE entra_id.data_policy_operations.data_policy_operations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -470,7 +470,7 @@ userId;
 No description available.
 
 ```sql
-DELETE FROM entraid.data_policy_operations.data_policy_operations
+DELETE FROM entra_id.data_policy_operations.data_policy_operations
 WHERE dataPolicyOperation-id = '{{ dataPolicyOperation-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

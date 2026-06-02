@@ -124655,11 +124655,11 @@
           <Collection>
             <Record>
               <PropertyValue Property="rel" String="https://graph.microsoft.com/rels/docs/list" />
-              <PropertyValue Property="href" String="https://learn.microsoft.com/graph/api/entraidprotectionriskyuserapproval-get?view=graph-rest-beta" />
+              <PropertyValue Property="href" String="https://learn.microsoft.com/graph/api/entra_idprotectionriskyuserapproval-get?view=graph-rest-beta" />
             </Record>
             <Record>
               <PropertyValue Property="rel" String="https://graph.microsoft.com/rels/docs/update" />
-              <PropertyValue Property="href" String="https://learn.microsoft.com/graph/api/entraidprotectionriskyuserapproval-update?view=graph-rest-beta" />
+              <PropertyValue Property="href" String="https://learn.microsoft.com/graph/api/entra_idprotectionriskyuserapproval-update?view=graph-rest-beta" />
             </Record>
           </Collection>
         </Annotation>

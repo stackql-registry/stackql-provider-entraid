@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - authentication_flows_policy
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>authentication_flows_policy</c
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="authentication_flows_policy" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.authentication_flows_policy" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.authentication_flows_policy" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -170,7 +170,7 @@ id,
 description,
 displayName,
 selfServiceSignUp
-FROM entraid.policies.authentication_flows_policy
+FROM entra_id.policies.authentication_flows_policy
 WHERE $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
 ;
@@ -192,7 +192,7 @@ AND $expand = '{{ $expand }}'
 Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified.
 
 ```sql
-UPDATE entraid.policies.authentication_flows_policy
+UPDATE entra_id.policies.authentication_flows_policy
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -225,7 +225,7 @@ selfServiceSignUp;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.authentication_flows_policy
+DELETE FROM entra_id.policies.authentication_flows_policy
 WHERE If-Match = '{{ If-Match }}'
 ;
 ```

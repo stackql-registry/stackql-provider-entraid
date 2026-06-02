@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: authentication_method_configurations API
-  description: entraid authentication_method_configurations API
+  description: entra_id authentication_method_configurations API
   version: v1.0
 paths:
   /authenticationMethodConfigurations:

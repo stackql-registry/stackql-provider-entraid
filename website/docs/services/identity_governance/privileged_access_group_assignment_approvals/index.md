@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - privileged_access_group_assignment_approvals
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>privileged_access_group_assignm
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="privileged_access_group_assignment_approvals" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.privileged_access_group_assignment_approvals" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.privileged_access_group_assignment_approvals" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 stages
-FROM entraid.identity_governance.privileged_access_group_assignment_approvals
+FROM entra_id.identity_governance.privileged_access_group_assignment_approvals
 WHERE approval-id = '{{ approval-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -256,7 +256,7 @@ SELECT
 id,
 @odata.type,
 stages
-FROM entraid.identity_governance.privileged_access_group_assignment_approvals
+FROM entra_id.identity_governance.privileged_access_group_assignment_approvals
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -285,7 +285,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.identity_governance.privileged_access_group_assignment_approvals (
+INSERT INTO entra_id.identity_governance.privileged_access_group_assignment_approvals (
 id,
 @odata.type,
 stages
@@ -344,7 +344,7 @@ stages
 No description available.
 
 ```sql
-UPDATE entraid.identity_governance.privileged_access_group_assignment_approvals
+UPDATE entra_id.identity_governance.privileged_access_group_assignment_approvals
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -374,7 +374,7 @@ stages;
 No description available.
 
 ```sql
-DELETE FROM entraid.identity_governance.privileged_access_group_assignment_approvals
+DELETE FROM entra_id.identity_governance.privileged_access_group_assignment_approvals
 WHERE approval-id = '{{ approval-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

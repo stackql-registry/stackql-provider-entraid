@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - public_key_infrastructure_certificate_based_auth_configurations
   - directory
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>public_key_infrastructure_certi
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="public_key_infrastructure_certificate_based_auth_configurations" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.directory.public_key_infrastructure_certificate_based_auth_configurations" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -302,7 +302,7 @@ displayName,
 lastModifiedDateTime,
 status,
 statusDetails
-FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations
+FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations
 WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -323,7 +323,7 @@ displayName,
 lastModifiedDateTime,
 status,
 statusDetails
-FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations
+FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -352,7 +352,7 @@ AND $expand = '{{ $expand }}'
 Create a new certificateBasedAuthPki object.
 
 ```sql
-INSERT INTO entraid.directory.public_key_infrastructure_certificate_based_auth_configurations (
+INSERT INTO entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations (
 id,
 @odata.type,
 deletedDateTime,
@@ -451,7 +451,7 @@ statusDetails
 Update the properties of a certificateBasedAuthPki object.
 
 ```sql
-UPDATE entraid.directory.public_key_infrastructure_certificate_based_auth_configurations
+UPDATE entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -491,7 +491,7 @@ statusDetails;
 Delete a certificateBasedAuthPki object.
 
 ```sql
-DELETE FROM entraid.directory.public_key_infrastructure_certificate_based_auth_configurations
+DELETE FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations
 WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -513,7 +513,7 @@ AND If-Match = '{{ If-Match }}'
 Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.
 
 ```sql
-EXEC entraid.directory.public_key_infrastructure_certificate_based_auth_configurations.upload 
+EXEC entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations.upload 
 @certificateBasedAuthPki-id='{{ certificateBasedAuthPki-id }}' --required 
 @@json=
 '{

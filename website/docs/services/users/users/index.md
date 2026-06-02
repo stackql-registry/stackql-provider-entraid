@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - users
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>users</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="users" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.users" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.users" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -2569,7 +2569,7 @@ transitiveMemberOf,
 usageLocation,
 userPrincipalName,
 userType
-FROM entraid.users.users
+FROM entra_id.users.users
 WHERE userPrincipalName = '{{ userPrincipalName }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -2719,7 +2719,7 @@ transitiveMemberOf,
 usageLocation,
 userPrincipalName,
 userType
-FROM entraid.users.users
+FROM entra_id.users.users
 WHERE user-id = '{{ user-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -2869,7 +2869,7 @@ transitiveMemberOf,
 usageLocation,
 userPrincipalName,
 userType
-FROM entraid.users.users
+FROM entra_id.users.users
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
 AND $search = '{{ $search }}'
@@ -2898,7 +2898,7 @@ AND $expand = '{{ $expand }}'
 Create a new user.<br />The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties.
 
 ```sql
-INSERT INTO entraid.users.users (
+INSERT INTO entra_id.users.users (
 id,
 @odata.type,
 deletedDateTime,
@@ -4517,7 +4517,7 @@ userType
 Update the properties of a user object.
 
 ```sql
-UPDATE entraid.users.users
+UPDATE entra_id.users.users
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -4804,7 +4804,7 @@ userType;
 Update the properties of a user object.
 
 ```sql
-UPDATE entraid.users.users
+UPDATE entra_id.users.users
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -5103,7 +5103,7 @@ userType;
 Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
 
 ```sql
-DELETE FROM entraid.users.users
+DELETE FROM entra_id.users.users
 WHERE userPrincipalName = '{{ userPrincipalName }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -5114,7 +5114,7 @@ AND If-Match = '{{ If-Match }}'
 Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
 
 ```sql
-DELETE FROM entraid.users.users
+DELETE FROM entra_id.users.users
 WHERE user-id = '{{ user-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -5153,7 +5153,7 @@ AND If-Match = '{{ If-Match }}'
 Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
 
 ```sql
-EXEC entraid.users.users.get_available_extension_properties 
+EXEC entra_id.users.users.get_available_extension_properties 
 @@json=
 '{
 "isSyncedFromOnPremises": {{ isSyncedFromOnPremises }}
@@ -5166,7 +5166,7 @@ EXEC entraid.users.users.get_available_extension_properties
 Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 
 ```sql
-EXEC entraid.users.users.get_by_ids 
+EXEC entra_id.users.users.get_by_ids 
 @@json=
 '{
 "ids": "{{ ids }}", 
@@ -5180,7 +5180,7 @@ EXEC entraid.users.users.get_by_ids
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.
 
 ```sql
-EXEC entraid.users.users.validate_properties 
+EXEC entra_id.users.users.validate_properties 
 @@json=
 '{
 "entityType": "{{ entityType }}", 
@@ -5196,7 +5196,7 @@ EXEC entraid.users.users.validate_properties
 Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.
 
 ```sql
-EXEC entraid.users.users.assign_license 
+EXEC entra_id.users.users.assign_license 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5211,7 +5211,7 @@ EXEC entraid.users.users.assign_license
 Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ```sql
-EXEC entraid.users.users.check_member_groups 
+EXEC entra_id.users.users.check_member_groups 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5225,7 +5225,7 @@ EXEC entraid.users.users.check_member_groups
 Success
 
 ```sql
-EXEC entraid.users.users.check_member_objects 
+EXEC entra_id.users.users.check_member_objects 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5239,7 +5239,7 @@ EXEC entraid.users.users.check_member_objects
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
 
 ```sql
-EXEC entraid.users.users.export_personal_data 
+EXEC entra_id.users.users.export_personal_data 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5253,7 +5253,7 @@ EXEC entraid.users.users.export_personal_data
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.<br />Based on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
 ```sql
-EXEC entraid.users.users.find_meeting_times 
+EXEC entra_id.users.users.find_meeting_times 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5274,7 +5274,7 @@ EXEC entraid.users.users.find_meeting_times
 Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to<br />be returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
 
 ```sql
-EXEC entraid.users.users.get_mail_tips 
+EXEC entra_id.users.users.get_mail_tips 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5289,7 +5289,7 @@ EXEC entraid.users.users.get_mail_tips
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.
 
 ```sql
-EXEC entraid.users.users.get_member_groups 
+EXEC entra_id.users.users.get_member_groups 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5303,7 +5303,7 @@ EXEC entraid.users.users.get_member_groups
 Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
 
 ```sql
-EXEC entraid.users.users.get_member_objects 
+EXEC entra_id.users.users.get_member_objects 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5317,7 +5317,7 @@ EXEC entraid.users.users.get_member_objects
 Retire all devices from management for this user
 
 ```sql
-EXEC entraid.users.users.remove_all_devices_from_management 
+EXEC entra_id.users.users.remove_all_devices_from_management 
 @user-id='{{ user-id }}' --required
 ;
 ```
@@ -5327,7 +5327,7 @@ EXEC entraid.users.users.remove_all_devices_from_management
 Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
 
 ```sql
-EXEC entraid.users.users.reprocess_license_assignment 
+EXEC entra_id.users.users.reprocess_license_assignment 
 @user-id='{{ user-id }}' --required
 ;
 ```
@@ -5337,7 +5337,7 @@ EXEC entraid.users.users.reprocess_license_assignment
 Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
 
 ```sql
-EXEC entraid.users.users.restore 
+EXEC entra_id.users.users.restore 
 @user-id='{{ user-id }}' --required
 ;
 ```
@@ -5347,7 +5347,7 @@ EXEC entraid.users.users.restore
 Retry the provisioning of a user object in Microsoft Entra ID.
 
 ```sql
-EXEC entraid.users.users.retry_service_provisioning 
+EXEC entra_id.users.users.retry_service_provisioning 
 @user-id='{{ user-id }}' --required
 ;
 ```
@@ -5357,7 +5357,7 @@ EXEC entraid.users.users.retry_service_provisioning
 Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
 
 ```sql
-EXEC entraid.users.users.revoke_sign_in_sessions 
+EXEC entra_id.users.users.revoke_sign_in_sessions 
 @user-id='{{ user-id }}' --required
 ;
 ```
@@ -5367,7 +5367,7 @@ EXEC entraid.users.users.revoke_sign_in_sessions
 Send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include a file attachment in the same sendMail action call. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
 
 ```sql
-EXEC entraid.users.users.send_mail 
+EXEC entra_id.users.users.send_mail 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{
@@ -5382,7 +5382,7 @@ EXEC entraid.users.users.send_mail
 Issues a wipe operation on an app registration with specified device tag.
 
 ```sql
-EXEC entraid.users.users.wipe_managed_app_registrations_by_device_tag 
+EXEC entra_id.users.users.wipe_managed_app_registrations_by_device_tag 
 @user-id='{{ user-id }}' --required 
 @@json=
 '{

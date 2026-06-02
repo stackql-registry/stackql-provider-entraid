@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - synchronization_jobs_restart
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>synchronization_jobs_restart</c
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="synchronization_jobs_restart" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.synchronization_jobs_restart" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.synchronization_jobs_restart" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -100,7 +100,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
 
 ```sql
-INSERT INTO entraid.service_principals.synchronization_jobs_restart (
+INSERT INTO entra_id.service_principals.synchronization_jobs_restart (
 criteria,
 servicePrincipal-id,
 synchronizationJob-id

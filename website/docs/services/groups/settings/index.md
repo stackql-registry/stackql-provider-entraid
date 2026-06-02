@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - settings
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>settings</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="settings" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.settings" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.settings" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -267,7 +267,7 @@ id,
 displayName,
 templateId,
 values
-FROM entraid.groups.settings
+FROM entra_id.groups.settings
 WHERE group-id = '{{ group-id }}' -- required
 AND groupSetting-id = '{{ groupSetting-id }}' -- required
 AND $select = '{{ $select }}'
@@ -286,7 +286,7 @@ id,
 displayName,
 templateId,
 values
-FROM entraid.groups.settings
+FROM entra_id.groups.settings
 WHERE group-id = '{{ group-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -316,7 +316,7 @@ AND $expand = '{{ $expand }}'
 Create a new group setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
 
 ```sql
-INSERT INTO entraid.groups.settings (
+INSERT INTO entra_id.groups.settings (
 id,
 @odata.type,
 displayName,
@@ -388,7 +388,7 @@ values
 Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 
 ```sql
-UPDATE entraid.groups.settings
+UPDATE entra_id.groups.settings
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -423,7 +423,7 @@ values;
 No description available.
 
 ```sql
-DELETE FROM entraid.groups.settings
+DELETE FROM entra_id.groups.settings
 WHERE group-id = '{{ group-id }}' --required
 AND groupSetting-id = '{{ groupSetting-id }}' --required
 AND If-Match = '{{ If-Match }}'

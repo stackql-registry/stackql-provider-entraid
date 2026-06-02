@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_catalogs_custom_workflow_extensions
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_catalog
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_catalogs_custom_workflow_extensions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -289,7 +289,7 @@ clientConfiguration,
 description,
 displayName,
 endpointConfiguration
-FROM entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
+FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
 AND customCalloutExtension-id = '{{ customCalloutExtension-id }}' -- required
 AND $select = '{{ $select }}'
@@ -310,7 +310,7 @@ clientConfiguration,
 description,
 displayName,
 endpointConfiguration
-FROM entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
+FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -340,7 +340,7 @@ AND $expand = '{{ $expand }}'
 Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions (
+INSERT INTO entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions (
 id,
 @odata.type,
 authenticationConfiguration,
@@ -423,7 +423,7 @@ endpointConfiguration
 Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
+UPDATE entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -462,7 +462,7 @@ endpointConfiguration;
 Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
+DELETE FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
 WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
 AND customCalloutExtension-id = '{{ customCalloutExtension-id }}' --required
 AND If-Match = '{{ If-Match }}'

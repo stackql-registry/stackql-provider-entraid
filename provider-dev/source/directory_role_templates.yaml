@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: directory_role_templates API
-  description: entraid directory_role_templates API
+  description: entra_id directory_role_templates API
   version: v1.0
 paths:
   /directoryRoleTemplates:

@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: contracts API
-  description: entraid contracts API
+  description: entra_id contracts API
   version: v1.0
 paths:
   /contracts:

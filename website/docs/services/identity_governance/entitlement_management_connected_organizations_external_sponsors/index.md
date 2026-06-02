@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_connected_organizations_external_sponsors
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_connect
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_connected_organizations_external_sponsors" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_connected_organizations_external_sponsors" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_connected_organizations_external_sponsors" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -210,7 +210,7 @@ SELECT
 id,
 @odata.type,
 deletedDateTime
-FROM entraid.identity_governance.entitlement_management_connected_organizations_external_sponsors
+FROM entra_id.identity_governance.entitlement_management_connected_organizations_external_sponsors
 WHERE connectedOrganization-id = '{{ connectedOrganization-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -240,7 +240,7 @@ AND $expand = '{{ $expand }}'
 Add a user or a group to the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_connected_organizations_external_sponsors (
+INSERT INTO entra_id.identity_governance.entitlement_management_connected_organizations_external_sponsors (
 @odata.id,
 connectedOrganization-id
 )
@@ -280,7 +280,7 @@ SELECT
 Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_connected_organizations_external_sponsors
+DELETE FROM entra_id.identity_governance.entitlement_management_connected_organizations_external_sponsors
 WHERE connectedOrganization-id = '{{ connectedOrganization-id }}' --required
 AND directoryObject-id = '{{ directoryObject-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -292,7 +292,7 @@ AND If-Match = '{{ If-Match }}'
 Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_connected_organizations_external_sponsors
+DELETE FROM entra_id.identity_governance.entitlement_management_connected_organizations_external_sponsors
 WHERE @id = '{{ @id }}' --required
 AND connectedOrganization-id = '{{ connectedOrganization-id }}' --required
 AND If-Match = '{{ If-Match }}'

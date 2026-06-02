@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - directory_role_definitions
   - role_management
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>directory_role_definitions</cod
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="directory_role_definitions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.role_management.directory_role_definitions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.role_management.directory_role_definitions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -328,7 +328,7 @@ resourceScopes,
 rolePermissions,
 templateId,
 version
-FROM entraid.role_management.directory_role_definitions
+FROM entra_id.role_management.directory_role_definitions
 WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -352,7 +352,7 @@ resourceScopes,
 rolePermissions,
 templateId,
 version
-FROM entraid.role_management.directory_role_definitions
+FROM entra_id.role_management.directory_role_definitions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -381,7 +381,7 @@ AND $expand = '{{ $expand }}'
 Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.
 
 ```sql
-INSERT INTO entraid.role_management.directory_role_definitions (
+INSERT INTO entra_id.role_management.directory_role_definitions (
 id,
 @odata.type,
 description,
@@ -503,7 +503,7 @@ version
 Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
 
 ```sql
-UPDATE entraid.role_management.directory_role_definitions
+UPDATE entra_id.role_management.directory_role_definitions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -549,7 +549,7 @@ version;
 Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
 
 ```sql
-DELETE FROM entraid.role_management.directory_role_definitions
+DELETE FROM entra_id.role_management.directory_role_definitions
 WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

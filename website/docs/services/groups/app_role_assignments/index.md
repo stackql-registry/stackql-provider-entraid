@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - app_role_assignments
   - groups
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>app_role_assignments</code> re
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="app_role_assignments" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.groups.app_role_assignments" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.groups.app_role_assignments" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -327,7 +327,7 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId
-FROM entraid.groups.app_role_assignments
+FROM entra_id.groups.app_role_assignments
 WHERE group-id = '{{ group-id }}' -- required
 AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
@@ -352,7 +352,7 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId
-FROM entraid.groups.app_role_assignments
+FROM entra_id.groups.app_role_assignments
 WHERE group-id = '{{ group-id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
 AND $top = '{{ $top }}'
@@ -383,7 +383,7 @@ AND $expand = '{{ $expand }}'
 Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ```sql
-INSERT INTO entraid.groups.app_role_assignments (
+INSERT INTO entra_id.groups.app_role_assignments (
 id,
 @odata.type,
 deletedDateTime,
@@ -487,7 +487,7 @@ resourceId
 No description available.
 
 ```sql
-UPDATE entraid.groups.app_role_assignments
+UPDATE entra_id.groups.app_role_assignments
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -532,7 +532,7 @@ resourceId;
 Deletes an appRoleAssignment that a group has been granted.
 
 ```sql
-DELETE FROM entraid.groups.app_role_assignments
+DELETE FROM entra_id.groups.app_role_assignments
 WHERE group-id = '{{ group-id }}' --required
 AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
 AND If-Match = '{{ If-Match }}'

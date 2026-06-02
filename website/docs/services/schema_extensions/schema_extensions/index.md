@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - schema_extensions
   - schema_extensions
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>schema_extensions</code> resour
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="schema_extensions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.schema_extensions.schema_extensions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.schema_extensions.schema_extensions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -284,7 +284,7 @@ owner,
 properties,
 status,
 targetTypes
-FROM entraid.schema_extensions.schema_extensions
+FROM entra_id.schema_extensions.schema_extensions
 WHERE schemaExtension-id = '{{ schemaExtension-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -304,7 +304,7 @@ owner,
 properties,
 status,
 targetTypes
-FROM entraid.schema_extensions.schema_extensions
+FROM entra_id.schema_extensions.schema_extensions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -333,7 +333,7 @@ AND $expand = '{{ $expand }}'
 Create a new schemaExtension definition and its associated schema extension property to extend a supporting resource type. Schema extensions let you add strongly-typed custom data to a resource. The app that creates a schema extension is the owner app. Depending on the <br />state of the extension, the owner app, and only the owner app, may update or delete the extension.  See examples of how to define a schema extension that describes a training course, <br />use the schema extension definition to create a new group with training course data, and <br />add training course data to an existing group.
 
 ```sql
-INSERT INTO entraid.schema_extensions.schema_extensions (
+INSERT INTO entra_id.schema_extensions.schema_extensions (
 id,
 @odata.type,
 description,
@@ -415,7 +415,7 @@ targetTypes
 Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the InDevelopment or Available status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the targetTypes property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the owner property of the extension is set to the appId of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the owner property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer. When using Graph Explorer to update a schemaExtension resource, include the owner property in the PATCH request body.
 
 ```sql
-UPDATE entraid.schema_extensions.schema_extensions
+UPDATE entra_id.schema_extensions.schema_extensions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -453,7 +453,7 @@ targetTypes;
 Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
 
 ```sql
-DELETE FROM entraid.schema_extensions.schema_extensions
+DELETE FROM entra_id.schema_extensions.schema_extensions
 WHERE schemaExtension-id = '{{ schemaExtension-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

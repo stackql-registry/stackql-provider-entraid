@@ -19,7 +19,7 @@
 - name: list_organization
   sql: |
     SELECT id, displayName
-    FROM entraid.organization.organization
+    FROM entra_id.organization.organization
   assertions:
     min_rows: 1
     required_columns: [id, displayName]
@@ -29,7 +29,7 @@
 - name: list_users
   sql: |
     SELECT id, displayName, userPrincipalName, accountEnabled
-    FROM entraid.users.users
+    FROM entra_id.users.users
   assertions:
     min_rows: 1
     required_columns: [id, displayName, userPrincipalName]
@@ -39,7 +39,7 @@
 - name: list_groups
   sql: |
     SELECT id, displayName, mailEnabled, securityEnabled
-    FROM entraid.groups.groups
+    FROM entra_id.groups.groups
   assertions:
     min_rows: 1
     required_columns: [id, displayName]
@@ -47,7 +47,7 @@
 - name: list_applications
   sql: |
     SELECT id, appId, displayName, signInAudience
-    FROM entraid.applications.applications
+    FROM entra_id.applications.applications
   assertions:
     min_rows: 1
     required_columns: [id, appId, displayName]
@@ -55,7 +55,7 @@
 - name: list_service_principals
   sql: |
     SELECT id, appId, displayName, servicePrincipalType
-    FROM entraid.service_principals.service_principals
+    FROM entra_id.service_principals.service_principals
   assertions:
     min_rows: 1
     required_columns: [id, appId, displayName]
@@ -63,7 +63,7 @@
 - name: list_directory_roles
   sql: |
     SELECT id, displayName, roleTemplateId
-    FROM entraid.directory_roles.directory_roles
+    FROM entra_id.directory_roles.directory_roles
   assertions:
     min_rows: 1
     required_columns: [id, displayName]
@@ -71,7 +71,7 @@
 - name: list_subscribed_skus
   sql: |
     SELECT skuId, skuPartNumber, capabilityStatus
-    FROM entraid.subscribed_skus.subscribed_skus
+    FROM entra_id.subscribed_skus.subscribed_skus
   assertions:
     min_rows: 1
     required_columns: [skuId, skuPartNumber]

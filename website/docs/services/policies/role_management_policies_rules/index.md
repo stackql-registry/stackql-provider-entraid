@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - role_management_policies_rules
   - policies
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>role_management_policies_rules<
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="role_management_policies_rules" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.policies.role_management_policies_rules" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.policies.role_management_policies_rules" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -245,7 +245,7 @@ SELECT
 id,
 @odata.type,
 target
-FROM entraid.policies.role_management_policies_rules
+FROM entra_id.policies.role_management_policies_rules
 WHERE unifiedRoleManagementPolicy-id = '{{ unifiedRoleManagementPolicy-id }}' -- required
 AND unifiedRoleManagementPolicyRule-id = '{{ unifiedRoleManagementPolicyRule-id }}' -- required
 AND $select = '{{ $select }}'
@@ -262,7 +262,7 @@ SELECT
 id,
 @odata.type,
 target
-FROM entraid.policies.role_management_policies_rules
+FROM entra_id.policies.role_management_policies_rules
 WHERE unifiedRoleManagementPolicy-id = '{{ unifiedRoleManagementPolicy-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -292,7 +292,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.policies.role_management_policies_rules (
+INSERT INTO entra_id.policies.role_management_policies_rules (
 id,
 @odata.type,
 target,
@@ -347,7 +347,7 @@ target
 Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:
 
 ```sql
-UPDATE entraid.policies.role_management_policies_rules
+UPDATE entra_id.policies.role_management_policies_rules
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -378,7 +378,7 @@ target;
 No description available.
 
 ```sql
-DELETE FROM entraid.policies.role_management_policies_rules
+DELETE FROM entra_id.policies.role_management_policies_rules
 WHERE unifiedRoleManagementPolicy-id = '{{ unifiedRoleManagementPolicy-id }}' --required
 AND unifiedRoleManagementPolicyRule-id = '{{ unifiedRoleManagementPolicyRule-id }}' --required
 AND If-Match = '{{ If-Match }}'

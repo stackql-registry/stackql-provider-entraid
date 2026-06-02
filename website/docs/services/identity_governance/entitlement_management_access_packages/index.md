@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - entitlement_management_access_packages
   - identity_governance
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>entitlement_management_access_
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="entitlement_management_access_packages" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity_governance.entitlement_management_access_packages" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity_governance.entitlement_management_access_packages" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -357,7 +357,7 @@ incompatibleGroups,
 isHidden,
 modifiedDateTime,
 resourceRoleScopes
-FROM entraid.identity_governance.entitlement_management_access_packages
+FROM entra_id.identity_governance.entitlement_management_access_packages
 WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -383,7 +383,7 @@ incompatibleGroups,
 isHidden,
 modifiedDateTime,
 resourceRoleScopes
-FROM entraid.identity_governance.entitlement_management_access_packages
+FROM entra_id.identity_governance.entitlement_management_access_packages
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -412,7 +412,7 @@ AND $expand = '{{ $expand }}'
 Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 
 ```sql
-INSERT INTO entraid.identity_governance.entitlement_management_access_packages (
+INSERT INTO entra_id.identity_governance.entitlement_management_access_packages (
 id,
 @odata.type,
 createdDateTime,
@@ -657,7 +657,7 @@ resourceRoleScopes
 Update an existing accessPackage object to change one or more of its properties, such as the display name or description.
 
 ```sql
-UPDATE entraid.identity_governance.entitlement_management_access_packages
+UPDATE entra_id.identity_governance.entitlement_management_access_packages
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -707,7 +707,7 @@ resourceRoleScopes;
 Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
 
 ```sql
-DELETE FROM entraid.identity_governance.entitlement_management_access_packages
+DELETE FROM entra_id.identity_governance.entitlement_management_access_packages
 WHERE accessPackage-id = '{{ accessPackage-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
@@ -729,7 +729,7 @@ AND If-Match = '{{ If-Match }}'
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 
 ```sql
-EXEC entraid.identity_governance.entitlement_management_access_packages.get_applicable_policy_requirements 
+EXEC entra_id.identity_governance.entitlement_management_access_packages.get_applicable_policy_requirements 
 @accessPackage-id='{{ accessPackage-id }}' --required
 ;
 ```

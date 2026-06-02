@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - reminder_view
   - users
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>reminder_view</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="reminder_view" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.users.reminder_view" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.users.reminder_view" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -203,7 +203,7 @@ eventStartTime,
 eventSubject,
 eventWebLink,
 reminderFireTime
-FROM entraid.users.reminder_view
+FROM entra_id.users.reminder_view
 WHERE user-id = '{{ user-id }}' -- required
 AND StartDateTime = '{{ StartDateTime }}' -- required
 AND EndDateTime = '{{ EndDateTime }}' -- required

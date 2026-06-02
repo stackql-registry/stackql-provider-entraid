@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - federated_identity_credentials
   - service_principals
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>federated_identity_credentials<
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="federated_identity_credentials" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.service_principals.federated_identity_credentials" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.service_principals.federated_identity_credentials" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -368,7 +368,7 @@ audiences,
 description,
 issuer,
 subject
-FROM entraid.service_principals.federated_identity_credentials
+FROM entra_id.service_principals.federated_identity_credentials
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND federatedIdentityCredential-id = '{{ federatedIdentityCredential-id }}' -- required
 AND $select = '{{ $select }}'
@@ -389,7 +389,7 @@ audiences,
 description,
 issuer,
 subject
-FROM entraid.service_principals.federated_identity_credentials
+FROM entra_id.service_principals.federated_identity_credentials
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND name = '{{ name }}' -- required
 AND $select = '{{ $select }}'
@@ -410,7 +410,7 @@ audiences,
 description,
 issuer,
 subject
-FROM entraid.service_principals.federated_identity_credentials
+FROM entra_id.service_principals.federated_identity_credentials
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
 AND $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
@@ -440,7 +440,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.service_principals.federated_identity_credentials (
+INSERT INTO entra_id.service_principals.federated_identity_credentials (
 id,
 @odata.type,
 audiences,
@@ -525,7 +525,7 @@ subject
 No description available.
 
 ```sql
-UPDATE entraid.service_principals.federated_identity_credentials
+UPDATE entra_id.service_principals.federated_identity_credentials
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -553,7 +553,7 @@ subject;
 No description available.
 
 ```sql
-UPDATE entraid.service_principals.federated_identity_credentials
+UPDATE entra_id.service_principals.federated_identity_credentials
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -593,7 +593,7 @@ subject;
 No description available.
 
 ```sql
-DELETE FROM entraid.service_principals.federated_identity_credentials
+DELETE FROM entra_id.service_principals.federated_identity_credentials
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND federatedIdentityCredential-id = '{{ federatedIdentityCredential-id }}' --required
 AND If-Match = '{{ If-Match }}'
@@ -605,7 +605,7 @@ AND If-Match = '{{ If-Match }}'
 No description available.
 
 ```sql
-DELETE FROM entraid.service_principals.federated_identity_credentials
+DELETE FROM entra_id.service_principals.federated_identity_credentials
 WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
 AND name = '{{ name }}' --required
 AND If-Match = '{{ If-Match }}'

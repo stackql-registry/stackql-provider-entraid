@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: data_policy_operations API
-  description: entraid data_policy_operations API
+  description: entra_id data_policy_operations API
   version: v1.0
 paths:
   /dataPolicyOperations:

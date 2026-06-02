@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - functions
   - synchronization
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists a <code>functions</code> resource.
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="functions" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.synchronization.functions" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.synchronization.functions" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 parameters
-FROM entraid.synchronization.functions
+FROM entra_id.synchronization.functions
 WHERE attributeMappingFunctionSchema-id = '{{ attributeMappingFunctionSchema-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -256,7 +256,7 @@ SELECT
 id,
 @odata.type,
 parameters
-FROM entraid.synchronization.functions
+FROM entra_id.synchronization.functions
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -285,7 +285,7 @@ AND $expand = '{{ $expand }}'
 No description available.
 
 ```sql
-INSERT INTO entraid.synchronization.functions (
+INSERT INTO entra_id.synchronization.functions (
 id,
 @odata.type,
 parameters
@@ -340,7 +340,7 @@ parameters
 No description available.
 
 ```sql
-UPDATE entraid.synchronization.functions
+UPDATE entra_id.synchronization.functions
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -370,7 +370,7 @@ parameters;
 No description available.
 
 ```sql
-DELETE FROM entraid.synchronization.functions
+DELETE FROM entra_id.synchronization.functions
 WHERE attributeMappingFunctionSchema-id = '{{ attributeMappingFunctionSchema-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

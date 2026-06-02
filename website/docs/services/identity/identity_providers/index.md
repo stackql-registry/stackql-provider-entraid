@@ -5,13 +5,13 @@ hide_table_of_contents: false
 keywords:
   - identity_providers
   - identity
-  - entraid
+  - entra_id
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage entraid resources using SQL
+description: Query, deploy and manage entra_id resources using SQL
 custom_edit_url: null
-image: /img/stackql-entraid-provider-featured-image.png
+image: /img/stackql-entra_id-provider-featured-image.png
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
@@ -25,7 +25,7 @@ Creates, updates, deletes, gets or lists an <code>identity_providers</code> reso
 <table><tbody>
 <tr><td><b>Name</b></td><td><CopyableCode code="identity_providers" /></td></tr>
 <tr><td><b>Type</b></td><td>Resource</td></tr>
-<tr><td><b>Id</b></td><td><CopyableCode code="entraid.identity.identity_providers" /></td></tr>
+<tr><td><b>Id</b></td><td><CopyableCode code="entra_id.identity.identity_providers" /></td></tr>
 </tbody></table>
 
 ## Fields
@@ -240,7 +240,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.identity.identity_providers
+FROM entra_id.identity.identity_providers
 WHERE identityProviderBase-id = '{{ identityProviderBase-id }}' -- required
 AND $select = '{{ $select }}'
 AND $expand = '{{ $expand }}'
@@ -256,7 +256,7 @@ SELECT
 id,
 @odata.type,
 displayName
-FROM entraid.identity.identity_providers
+FROM entra_id.identity.identity_providers
 WHERE $top = '{{ $top }}'
 AND $skip = '{{ $skip }}'
 AND $search = '{{ $search }}'
@@ -285,7 +285,7 @@ AND $expand = '{{ $expand }}'
 Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
 
 ```sql
-INSERT INTO entraid.identity.identity_providers (
+INSERT INTO entra_id.identity.identity_providers (
 id,
 @odata.type,
 displayName
@@ -335,7 +335,7 @@ displayName
 Update the properties of the specified identity provider configured in the tenant. Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently update a socialIdentityProvider, or an appleManagedIdentityProvider resource.
 
 ```sql
-UPDATE entraid.identity.identity_providers
+UPDATE entra_id.identity.identity_providers
 SET 
 id = '{{ id }}',
 @odata.type = '{{ @odata.type }}',
@@ -365,7 +365,7 @@ displayName;
 Delete an identity provider resource that is of the type specified by the id in the request. Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently delete a socialIdentityProvider, or an appleManagedIdentityProvider resource.
 
 ```sql
-DELETE FROM entraid.identity.identity_providers
+DELETE FROM entra_id.identity.identity_providers
 WHERE identityProviderBase-id = '{{ identityProviderBase-id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
