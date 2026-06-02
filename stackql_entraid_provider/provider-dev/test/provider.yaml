@@ -1,0 +1,21 @@
+# Per-provider settings consumed by conftest.py.
+# This file is the only piece (besides tier1.yaml) that should differ between
+# providers when reusing this test framework as an archetype.
+
+provider_name: entra_id
+
+# Registry root - path that contains src/<provider>/...  Resolved by
+# conftest.py against the directory two parents above this test directory
+# (i.e. stackql_entraid_provider/, the provider root - NOT the git repo root).
+registry_root: provider-dev/openapi
+
+# Auth env vars that MUST be set for tier 1 tests to run.
+# If any are missing, the test session fails fast with a clear message.
+required_env:
+  - AZURE_TENANT_ID
+  - AZURE_CLIENT_ID
+  - AZURE_CLIENT_SECRET
+
+# Optional env vars used inside tier1.yaml ${VAR} substitutions.
+# Defaults are applied if the env var is not set.
+test_env_defaults: {}
