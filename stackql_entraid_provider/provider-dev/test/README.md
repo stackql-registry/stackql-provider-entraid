@@ -58,3 +58,40 @@ pytest provider-dev/test/ -v --mode=both
 `${VAR}` substitution looks up `test_env_defaults` in `provider.yaml` first,
 then the process environment. Use it for anything per-environment (target org,
 expected username, etc.) - do not hard-code values in `tier1.yaml`.
+
+## OData push-down tests
+
+`test_odata_pushdown.py` (data-driven from `pushdown.yaml`) verifies that stackql
+translates SQL query options into OData query params on the outgoing Microsoft
+Graph request: projection -> `$select`, `WHERE` -> `$filter`, `ORDER BY` ->
+`$orderby`, `LIMIT` -> `$top`, `OFFSET` -> `$skip`, `COUNT(*)` -> `$count`.
+
+Each case runs `stackql exec --http.log.enabled`, which makes any-sdk print the
+outgoing request URL to stderr (`http request url: '<url>', method: 'GET'`) just
+before dispatch. The test URL-decodes the graph.microsoft.com request query and
+asserts the pushed options (`expect_wire`) / absent options (`forbid_wire`). The
+URL is logged before the request is sent, so the assertions do not depend on
+Graph returning 200 - only on the `AZURE_*` app-only creds being valid enough to
+mint a token. These run in exec mode only (the translation is transport-agnostic).
+
+Two prerequisites beyond the tier-1 setup:
+
+- **Push-down is not in a released stackql yet.** The bootstrapped
+  `.bin/stackql` will not have it. Point `STACKQL_BINARY` at a build of the
+  feature branch:
+
+  ```bash
+  STACKQL_BINARY=/mnt/c/LocalGitRepos/stackql/core/stackql/build/stackql \
+    pytest provider-dev/test/test_odata_pushdown.py -v
+  ```
+
+- **The push-down config must be present in the built provider.** It is injected
+  at service level by `provider-dev/scripts/inject_pushdown_config.py`; re-run
+  that after any `generate-provider` (see the root `CLAUDE.md`).
+
+To add a case: edit `pushdown.yaml` (`name` / `sql` / `expect_wire` /
+`forbid_wire`). `expect_wire` / `forbid_wire` fragments are matched against the
+URL-**decoded** query string (so write `$filter=userType eq 'Member'`, not the
+`%24filter=...%27Member%27` wire encoding). Only string/integer-literal and
+prefix-`LIKE` predicates reach `$filter`; a boolean literal (`col = true`) is not
+pushed by current stackql - `bool_literal_not_pushed` pins that.

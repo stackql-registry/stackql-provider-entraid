@@ -3,6 +3,20 @@ info:
   title: oauth2_permission_grants API
   description: entra_id oauth2_permission_grants API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /oauth2PermissionGrants:
     get:

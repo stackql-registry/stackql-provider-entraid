@@ -3,6 +3,20 @@ info:
   title: agreements API
   description: entra_id agreements API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /agreements:
     get:

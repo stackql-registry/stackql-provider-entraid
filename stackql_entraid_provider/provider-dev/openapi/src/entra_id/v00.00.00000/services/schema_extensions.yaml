@@ -3,6 +3,20 @@ info:
   title: schema_extensions API
   description: entra_id schema_extensions API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /schemaExtensions:
     get:

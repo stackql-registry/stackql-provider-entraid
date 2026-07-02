@@ -3,6 +3,20 @@ info:
   title: certificate_based_auth_configuration API
   description: entra_id certificate_based_auth_configuration API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /certificateBasedAuthConfiguration:
     get:

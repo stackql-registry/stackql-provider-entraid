@@ -1,0 +1,126 @@
+# OData query-option push-down tests.
+#
+# Each case runs a SELECT against the live entra_id provider with
+# `--http.log.enabled`, then asserts the OData query options that stackql pushed
+# onto the outgoing Microsoft Graph request URL. any-sdk logs that URL to stderr
+# as:  http request url: '<url incl. ?$select=...&$filter=...>', method: 'GET'
+# BEFORE the request is dispatched, so the wire assertion holds even if Graph
+# then rejects the specific query (some advanced $filter/$count/$orderby shapes
+# need the ConsistencyLevel: eventual header). The point here is the SQL -> OData
+# translation, not Graph's acceptance of every shape.
+#
+# Fields:
+#   name         - test id
+#   sql          - SQL to run. ${VAR} substituted from env / test_env_defaults.
+#   expect_wire  - substrings that MUST appear in the URL-decoded request query.
+#   forbid_wire  - substrings that must NOT appear (optional).
+#
+# Push-down only fires for a simple resource-scoped scan (single table, no
+# JOIN / GROUP BY / DISTINCT / HAVING). Projection -> $select, WHERE -> $filter,
+# ORDER BY -> $orderby, LIMIT -> $top, OFFSET -> $skip, COUNT(*) -> $count.
+#
+# Note: only string- and integer-literal comparisons and prefix LIKE are pushed
+# to $filter. A boolean-keyword literal (col = true) is NOT pushed by current
+# stackql (its parser models it as a keyword, not a pushable value) - see the
+# bool_literal_not_pushed case, which pins that behaviour.
+
+- name: select_projection_to_dollar_select
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+  expect_wire:
+    - "$select=id,displayName"
+
+- name: where_eq_string_to_filter
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    WHERE userType = 'Member'
+  expect_wire:
+    - "$filter=userType eq 'Member'"
+
+- name: where_like_prefix_to_startswith
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    WHERE displayName LIKE 'a%'
+  expect_wire:
+    - "$filter=startswith(displayName,'a')"
+
+- name: where_eq_string_on_groups_to_filter
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.groups.groups
+    WHERE displayName = 'Engineering'
+  expect_wire:
+    - "$filter=displayName eq 'Engineering'"
+
+- name: and_predicates_joined
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    WHERE userType = 'Member' AND displayName LIKE 'a%'
+  expect_wire:
+    - "$filter=userType eq 'Member' and startswith(displayName,'a')"
+
+- name: limit_to_top
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    LIMIT 5
+  expect_wire:
+    - "$top=5"
+
+- name: limit_offset_to_top_and_skip
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    LIMIT 5 OFFSET 2
+  expect_wire:
+    - "$top=5"
+    - "$skip=2"
+
+- name: order_by_to_orderby
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    ORDER BY displayName ASC
+  expect_wire:
+    - "$orderby=displayName asc"
+
+- name: count_star_to_dollar_count
+  sql: |
+    SELECT COUNT(*) AS cnt
+    FROM entra_id.users.users
+  expect_wire:
+    - "$count=true"
+  # COUNT(*) collapses grain: top/skip/select/orderby must NOT be pushed.
+  forbid_wire:
+    - "$top="
+    - "$select="
+    - "$orderby="
+
+- name: group_by_suppresses_pushdown
+  sql: |
+    SELECT COUNT(*) AS c
+    FROM entra_id.users.users
+    GROUP BY accountEnabled
+    LIMIT 1
+  # GROUP BY changes grain, so the whole SELECT is not a simple resource scan
+  # and nothing is pushed - LIMIT stays a client-side primitive.
+  forbid_wire:
+    - "$top=1"
+    - "$count=true"
+
+- name: bool_literal_not_pushed
+  sql: |
+    SELECT id, displayName
+    FROM entra_id.users.users
+    WHERE accountEnabled = true
+  # Pins current stackql behaviour: a boolean-keyword literal is not pushed to
+  # $filter (it stays a client-side filter). $select is still pushed. If stackql
+  # later learns to push booleans, flip this to an expect_wire assertion.
+  expect_wire:
+    - "$select=id,displayName"
+  forbid_wire:
+    - "$filter="

@@ -3,6 +3,20 @@ info:
   title: authentication_method_configurations API
   description: entra_id authentication_method_configurations API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /authenticationMethodConfigurations:
     get:

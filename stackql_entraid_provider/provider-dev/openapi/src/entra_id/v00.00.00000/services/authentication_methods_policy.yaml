@@ -3,6 +3,20 @@ info:
   title: authentication_methods_policy API
   description: entra_id authentication_methods_policy API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /authenticationMethodsPolicy:
     get:

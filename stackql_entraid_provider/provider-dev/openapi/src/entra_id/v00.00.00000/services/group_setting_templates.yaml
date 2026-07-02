@@ -3,6 +3,20 @@ info:
   title: group_setting_templates API
   description: entra_id group_setting_templates API
   version: v1.0
+x-stackQL-config:
+  queryParamPushdown:
+    select:
+      dialect: odata
+    filter:
+      dialect: odata
+    orderBy:
+      dialect: odata
+    top:
+      dialect: odata
+    skip:
+      dialect: odata
+    count:
+      dialect: odata
 paths:
   /groupSettingTemplates:
     get:
