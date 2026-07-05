@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="alternateNotificationEmails" /></td>
     <td><code>string</code></td>
     <td>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</td>
@@ -97,11 +92,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="alternateNotificationEmails" /></td>
@@ -141,49 +131,49 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupLifecyclePolicy-id"><code>groupLifecyclePolicy-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_lifecycle_policy_id"><code>group_lifecycle_policy_id</code></a></td>
+    <td></td>
     <td>The collection of lifecycle policies for this group. Read-only. Nullable.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
+    <td></td>
     <td>Retrieves a list of groupLifecyclePolicy objects to which a group belongs.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupLifecyclePolicy-id"><code>groupLifecyclePolicy-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_lifecycle_policy_id"><code>group_lifecycle_policy_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupLifecyclePolicy-id"><code>groupLifecyclePolicy-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_lifecycle_policy_id"><code>group_lifecycle_policy_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#add_group"><CopyableCode code="add_group" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupLifecyclePolicy-id"><code>groupLifecyclePolicy-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_lifecycle_policy_id"><code>group_lifecycle_policy_id</code></a></td>
     <td></td>
     <td>Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.</td>
 </tr>
 <tr>
     <td><a href="#remove_group"><CopyableCode code="remove_group" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupLifecyclePolicy-id"><code>groupLifecyclePolicy-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_lifecycle_policy_id"><code>group_lifecycle_policy_id</code></a></td>
     <td></td>
     <td>Removes a group from a lifecycle policy.</td>
 </tr>
@@ -203,55 +193,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-group-id">
-    <td><CopyableCode code="group-id" /></td>
+<tr id="parameter-group_id">
+    <td><CopyableCode code="group_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of group</td>
 </tr>
-<tr id="parameter-groupLifecyclePolicy-id">
-    <td><CopyableCode code="groupLifecyclePolicy-id" /></td>
+<tr id="parameter-group_lifecycle_policy_id">
+    <td><CopyableCode code="group_lifecycle_policy_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of groupLifecyclePolicy</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -277,15 +227,12 @@ The collection of lifecycle policies for this group. Read-only. Nullable.
 ```sql
 SELECT
 id,
-@odata.type,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes
 FROM entra_id.groups.group_lifecycle_policies
-WHERE group-id = '{{ group-id }}' -- required
-AND groupLifecyclePolicy-id = '{{ groupLifecyclePolicy-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE group_id = '{{ group_id }}' -- required
+AND group_lifecycle_policy_id = '{{ group_lifecycle_policy_id }}' -- required
 ;
 ```
 </TabItem>
@@ -296,20 +243,11 @@ Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 ```sql
 SELECT
 id,
-@odata.type,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes
 FROM entra_id.groups.group_lifecycle_policies
-WHERE group-id = '{{ group-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE group_id = '{{ group_id }}' -- required
 ;
 ```
 </TabItem>
@@ -332,22 +270,19 @@ No description available.
 ```sql
 INSERT INTO entra_id.groups.group_lifecycle_policies (
 id,
-@odata.type,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes,
-group-id
+group_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ alternateNotificationEmails }}',
 {{ groupLifetimeInDays }},
 '{{ managedGroupTypes }}',
-'{{ group-id }}'
+'{{ group_id }}'
 RETURNING
 id,
-@odata.type,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes
@@ -359,15 +294,13 @@ managedGroupTypes
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: group_lifecycle_policies
   props:
-    - name: group-id
-      value: "{{ group-id }}"
+    - name: group_id
+      value: "{{ group_id }}"
       description: Required parameter for the group_lifecycle_policies resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: alternateNotificationEmails
       value: "{{ alternateNotificationEmails }}"
       description: |
@@ -402,17 +335,14 @@ No description available.
 UPDATE entra_id.groups.group_lifecycle_policies
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 alternateNotificationEmails = '{{ alternateNotificationEmails }}',
 groupLifetimeInDays = {{ groupLifetimeInDays }},
 managedGroupTypes = '{{ managedGroupTypes }}'
 WHERE 
-group-id = '{{ group-id }}' --required
-AND groupLifecyclePolicy-id = '{{ groupLifecyclePolicy-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+group_id = '{{ group_id }}' --required
+AND group_lifecycle_policy_id = '{{ group_lifecycle_policy_id }}' --required
 RETURNING
 id,
-@odata.type,
 alternateNotificationEmails,
 groupLifetimeInDays,
 managedGroupTypes;
@@ -435,8 +365,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.groups.group_lifecycle_policies
-WHERE group-id = '{{ group-id }}' --required
-AND groupLifecyclePolicy-id = '{{ groupLifecyclePolicy-id }}' --required
+WHERE group_id = '{{ group_id }}' --required
+AND group_lifecycle_policy_id = '{{ group_lifecycle_policy_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -459,8 +389,8 @@ Add a group to a groupLifecyclePolicy. This action is supported only if the mana
 
 ```sql
 EXEC entra_id.groups.group_lifecycle_policies.add_group 
-@group-id='{{ group-id }}' --required, 
-@groupLifecyclePolicy-id='{{ groupLifecyclePolicy-id }}' --required 
+@group_id='{{ group_id }}' --required, 
+@group_lifecycle_policy_id='{{ group_lifecycle_policy_id }}' --required 
 @@json=
 '{
 "groupId": "{{ groupId }}"
@@ -474,8 +404,8 @@ Removes a group from a lifecycle policy.
 
 ```sql
 EXEC entra_id.groups.group_lifecycle_policies.remove_group 
-@group-id='{{ group-id }}' --required, 
-@groupLifecyclePolicy-id='{{ groupLifecyclePolicy-id }}' --required 
+@group_id='{{ group_id }}' --required, 
+@group_lifecycle_policy_id='{{ group_lifecycle_policy_id }}' --required 
 @@json=
 '{
 "groupId": "{{ groupId }}"

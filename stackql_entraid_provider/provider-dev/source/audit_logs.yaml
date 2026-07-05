@@ -461,7 +461,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
     description: Provides operations to call the dismiss method.
-  /auditLogs/directoryAudits/{directoryAudit_id}:
+  /auditLogs/directoryAudits/{directory_audit_id}:
     get:
       tags:
         - auditLogs.directoryAudit
@@ -492,7 +492,7 @@ paths:
             type: array
             items:
               type: string
-        - name: directoryAudit-id
+        - name: directory_audit_id
           in: path
           description: The unique identifier of directoryAudit
           required: true
@@ -536,7 +536,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: directoryAudit-id
+        - name: directory_audit_id
           in: path
           description: The unique identifier of directoryAudit
           required: true
@@ -554,7 +554,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: directoryAudit-id
+        - name: directory_audit_id
           in: path
           description: The unique identifier of directoryAudit
           required: true
@@ -570,7 +570,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-  /auditLogs/provisioning/{provisioningObjectSummary_id}:
+  /auditLogs/provisioning/{provisioning_object_summary_id}:
     get:
       tags:
         - auditLogs.provisioningObjectSummary
@@ -597,7 +597,7 @@ paths:
             type: array
             items:
               type: string
-        - name: provisioningObjectSummary-id
+        - name: provisioning_object_summary_id
           in: path
           description: The unique identifier of provisioningObjectSummary
           required: true
@@ -641,7 +641,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: provisioningObjectSummary-id
+        - name: provisioning_object_summary_id
           in: path
           description: The unique identifier of provisioningObjectSummary
           required: true
@@ -659,7 +659,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: provisioningObjectSummary-id
+        - name: provisioning_object_summary_id
           in: path
           description: The unique identifier of provisioningObjectSummary
           required: true
@@ -675,7 +675,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-  /auditLogs/signIns/{signIn_id}:
+  /auditLogs/signIns/{sign_in_id}:
     get:
       tags:
         - auditLogs.signIn
@@ -706,7 +706,7 @@ paths:
             type: array
             items:
               type: string
-        - name: signIn-id
+        - name: sign_in_id
           in: path
           description: The unique identifier of signIn
           required: true
@@ -750,7 +750,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: signIn-id
+        - name: sign_in_id
           in: path
           description: The unique identifier of signIn
           required: true
@@ -768,7 +768,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: signIn-id
+        - name: sign_in_id
           in: path
           description: The unique identifier of signIn
           required: true
@@ -789,8 +789,6 @@ components:
     microsoft.graph.auditLogRoot:
       x-ms-discriminator-value: '#microsoft.graph.auditLogRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1937,8 +1935,6 @@ components:
     microsoft.graph.directoryAudit:
       x-ms-discriminator-value: '#microsoft.graph.directoryAudit'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3116,8 +3112,6 @@ components:
     microsoft.graph.provisioningObjectSummary:
       x-ms-discriminator-value: '#microsoft.graph.provisioningObjectSummary'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4343,8 +4337,6 @@ components:
     microsoft.graph.signIn:
       x-ms-discriminator-value: '#microsoft.graph.signIn'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5598,8 +5590,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6752,8 +6742,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.directoryAudit'
     microsoft.graph.keyValue:
       title: keyValue
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -6768,15 +6756,11 @@ components:
           type: string
     microsoft.graph.auditActivityInitiator:
       title: auditActivityInitiator
-      required:
-        - '@odata.type'
       type: object
       properties:
         app:
           description: If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
           title: appIdentity
-          required:
-            - '@odata.type'
           type: object
           properties:
             appId:
@@ -6802,8 +6786,6 @@ components:
           description: If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
           x-ms-discriminator-value: '#microsoft.graph.userIdentity'
           title: identity
-          required:
-            - '@odata.type'
           type: object
           properties:
             displayName:
@@ -6861,8 +6843,6 @@ components:
       type: string
     microsoft.graph.targetResource:
       title: targetResource
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -6918,8 +6898,6 @@ components:
     microsoft.graph.initiator:
       x-ms-discriminator-value: '#microsoft.graph.initiator'
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -6965,8 +6943,6 @@ components:
           '#microsoft.graph.callRecords.userIdentity': '#/components/schemas/microsoft.graph.callRecords.userIdentity'
     microsoft.graph.modifiedProperty:
       title: modifiedProperty
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -6996,15 +6972,11 @@ components:
       type: string
     microsoft.graph.provisioningStatusInfo:
       title: provisioningStatusInfo
-      required:
-        - '@odata.type'
       type: object
       properties:
         errorInformation:
           description: If status isn't success/ skipped details for the error are contained in this.
           title: provisioningErrorInfo
-          required:
-            - '@odata.type'
           type: object
           properties:
             additionalDetails:
@@ -7051,8 +7023,6 @@ components:
           type: string
     microsoft.graph.provisioningStep:
       title: provisioningStep
-      required:
-        - '@odata.type'
       type: object
       properties:
         description:
@@ -7062,8 +7032,6 @@ components:
         details:
           description: Details of what occurred during the step.
           title: detailsInfo
-          required:
-            - '@odata.type'
           type: object
           properties:
             '@odata.type':
@@ -7102,8 +7070,6 @@ components:
     microsoft.graph.provisioningServicePrincipal:
       x-ms-discriminator-value: '#microsoft.graph.provisioningServicePrincipal'
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7143,8 +7109,6 @@ components:
     microsoft.graph.provisionedIdentity:
       x-ms-discriminator-value: '#microsoft.graph.provisionedIdentity'
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7195,8 +7159,6 @@ components:
     microsoft.graph.provisioningSystem:
       x-ms-discriminator-value: '#microsoft.graph.provisioningSystem'
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7257,8 +7219,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.signIn'
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7309,8 +7269,6 @@ components:
       type: string
     microsoft.graph.deviceDetail:
       title: deviceDetail
-      required:
-        - '@odata.type'
       type: object
       properties:
         browser:
@@ -7345,8 +7303,6 @@ components:
           type: string
     microsoft.graph.signInLocation:
       title: signInLocation
-      required:
-        - '@odata.type'
       type: object
       properties:
         city:
@@ -7360,8 +7316,6 @@ components:
         geoCoordinates:
           description: Provides the latitude, longitude and altitude where the sign-in originated.
           title: geoCoordinates
-          required:
-            - '@odata.type'
           type: object
           properties:
             altitude:
@@ -7465,8 +7419,6 @@ components:
       type: string
     microsoft.graph.signInStatus:
       title: signInStatus
-      required:
-        - '@odata.type'
       type: object
       properties:
         additionalDetails:
@@ -7519,8 +7471,6 @@ components:
           nullable: true
     microsoft.graph.appIdentity:
       title: appIdentity
-      required:
-        - '@odata.type'
       type: object
       properties:
         appId:
@@ -7544,8 +7494,6 @@ components:
     microsoft.graph.userIdentity:
       x-ms-discriminator-value: '#microsoft.graph.userIdentity'
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7599,8 +7547,6 @@ components:
       type: string
     microsoft.graph.identity:
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -7647,8 +7593,6 @@ components:
       type: string
     microsoft.graph.provisioningErrorInfo:
       title: provisioningErrorInfo
-      required:
-        - '@odata.type'
       type: object
       properties:
         additionalDetails:
@@ -7690,8 +7634,6 @@ components:
       type: string
     microsoft.graph.detailsInfo:
       title: detailsInfo
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -7723,8 +7665,6 @@ components:
       type: string
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
-      required:
-        - '@odata.type'
       type: object
       properties:
         altitude:
@@ -7771,8 +7711,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

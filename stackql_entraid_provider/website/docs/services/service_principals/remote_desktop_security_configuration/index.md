@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="approvedClientApps" /></td>
     <td><code>array</code></td>
     <td>The collection of approved client apps that are associated with the RDS configuration. Supports $expand.</td>
@@ -99,21 +94,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal. Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.</td>
 </tr>
@@ -133,20 +128,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -171,14 +156,11 @@ Read the properties and relationships of a remoteDesktopSecurityConfiguration ob
 ```sql
 SELECT
 id,
-@odata.type,
 approvedClientApps,
 isRemoteDesktopProtocolEnabled,
 targetDeviceGroups
 FROM entra_id.service_principals.remote_desktop_security_configuration
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -201,16 +183,13 @@ Update the properties of a remoteDesktopSecurityConfiguration object on the serv
 UPDATE entra_id.service_principals.remote_desktop_security_configuration
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 isRemoteDesktopProtocolEnabled = {{ isRemoteDesktopProtocolEnabled }},
 approvedClientApps = '{{ approvedClientApps }}',
 targetDeviceGroups = '{{ targetDeviceGroups }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
 RETURNING
 id,
-@odata.type,
 approvedClientApps,
 isRemoteDesktopProtocolEnabled,
 targetDeviceGroups;
@@ -233,7 +212,7 @@ Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removi
 
 ```sql
 DELETE FROM entra_id.service_principals.remote_desktop_security_configuration
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

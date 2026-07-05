@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="certificateBasedAuthConfigurations" /></td>
     <td><code>array</code></td>
     <td>The collection of public key infrastructure instances for the certificate-based authentication feature for users.</td>
@@ -90,13 +85,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -123,16 +118,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -156,11 +141,8 @@ The collection of public key infrastructure instances for the certificate-based 
 ```sql
 SELECT
 id,
-@odata.type,
 certificateBasedAuthConfigurations
 FROM entra_id.directory.public_key_infrastructure
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -183,13 +165,9 @@ No description available.
 UPDATE entra_id.directory.public_key_infrastructure
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 certificateBasedAuthConfigurations = '{{ certificateBasedAuthConfigurations }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 certificateBasedAuthConfigurations;
 ```
 </TabItem>

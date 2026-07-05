@@ -52,11 +52,6 @@ Retrieved entity
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="delegatedAdminCustomers" /></td>
     <td><code>array</code></td>
     <td>The customer who has a delegated admin relationship with a Microsoft partner.</td>
@@ -95,13 +90,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -121,16 +116,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 </tbody>
 </table>
 
@@ -148,13 +133,10 @@ Retrieved entity
 
 ```sql
 SELECT
-@odata.type,
 delegatedAdminCustomers,
 delegatedAdminRelationships,
 multiTenantOrganization
 FROM entra_id.tenant_relationships.tenant_relationships
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -178,12 +160,8 @@ UPDATE entra_id.tenant_relationships.tenant_relationships
 SET 
 delegatedAdminCustomers = '{{ delegatedAdminCustomers }}',
 delegatedAdminRelationships = '{{ delegatedAdminRelationships }}',
-multiTenantOrganization = '{{ multiTenantOrganization }}',
-@odata.type = '{{ @odata.type }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
+multiTenantOrganization = '{{ multiTenantOrganization }}'
 RETURNING
-@odata.type,
 delegatedAdminCustomers,
 delegatedAdminRelationships,
 multiTenantOrganization;

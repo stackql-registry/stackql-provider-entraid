@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appRoleId" /></td>
     <td><code>string (uuid)</code></td>
     <td>The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. (pattern: <code>^&#91;0-9a-fA-F&#93;&#123;8&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;12&#125;$</code>)</td>
@@ -122,11 +117,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="appRoleId" /></td>
@@ -191,35 +181,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an appRoleAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Read the properties and relationships of an appRoleAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.</td>
 </tr>
@@ -239,55 +229,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-appRoleAssignment-id">
-    <td><CopyableCode code="appRoleAssignment-id" /></td>
+<tr id="parameter-app_role_assignment_id">
+    <td><CopyableCode code="app_role_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of appRoleAssignment</td>
 </tr>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -318,7 +268,6 @@ Read the properties and relationships of an appRoleAssignment object.
 ```sql
 SELECT
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -328,10 +277,8 @@ principalType,
 resourceDisplayName,
 resourceId
 FROM entra_id.service_principals.app_role_assignments
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,7 +289,6 @@ Read the properties and relationships of an appRoleAssignment object.
 ```sql
 SELECT
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -352,16 +298,8 @@ principalType,
 resourceDisplayName,
 resourceId
 FROM entra_id.service_principals.app_role_assignments
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -384,7 +322,6 @@ Assign an app role to a client service principal. App roles that are assigned to
 ```sql
 INSERT INTO entra_id.service_principals.app_role_assignments (
 id,
-@odata.type,
 deletedDateTime,
 appRoleId,
 createdDateTime,
@@ -393,11 +330,10 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId,
-servicePrincipal-id
+service_principal_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ appRoleId }}',
 '{{ createdDateTime }}',
@@ -406,10 +342,9 @@ SELECT
 '{{ principalType }}',
 '{{ resourceDisplayName }}',
 '{{ resourceId }}',
-'{{ servicePrincipal-id }}'
+'{{ service_principal_id }}'
 RETURNING
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -426,15 +361,13 @@ resourceId
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: app_role_assignments
   props:
-    - name: servicePrincipal-id
-      value: "{{ servicePrincipal-id }}"
+    - name: service_principal_id
+      value: "{{ service_principal_id }}"
       description: Required parameter for the app_role_assignments resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -489,7 +422,6 @@ No description available.
 UPDATE entra_id.service_principals.app_role_assignments
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 appRoleId = '{{ appRoleId }}',
 createdDateTime = '{{ createdDateTime }}',
@@ -499,12 +431,10 @@ principalType = '{{ principalType }}',
 resourceDisplayName = '{{ resourceDisplayName }}',
 resourceId = '{{ resourceId }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -532,8 +462,8 @@ Deletes an appRoleAssignment that a service principal has been granted. App role
 
 ```sql
 DELETE FROM entra_id.service_principals.app_role_assignments
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

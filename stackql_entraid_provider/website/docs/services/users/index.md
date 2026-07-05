@@ -18,7 +18,7 @@ users service documentation.
 
 :::info[Service Summary]
 
-total resources: __43__  
+total resources: __40__  
 
 :::
 
@@ -43,19 +43,16 @@ total resources: __43__
 <a href="/services/users/authentication_temporary_access_pass_methods/">authentication_temporary_access_pass_methods</a><br />
 <a href="/services/users/authentication_windows_hello_for_business_methods/">authentication_windows_hello_for_business_methods</a><br />
 <a href="/services/users/authentication_windows_hello_for_business_methods_device/">authentication_windows_hello_for_business_methods_device</a><br />
-<a href="/services/users/change_password/">change_password</a><br />
 <a href="/services/users/created_objects/">created_objects</a><br />
-<a href="/services/users/delta/">delta</a><br />
-<a href="/services/users/direct_reports/">direct_reports</a>
+<a href="/services/users/delta/">delta</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/users/export_device_and_app_management_data/">export_device_and_app_management_data</a><br />
+<a href="/services/users/direct_reports/">direct_reports</a><br />
 <a href="/services/users/extensions/">extensions</a><br />
-<a href="/services/users/get_managed_app_diagnostic_statuses/">get_managed_app_diagnostic_statuses</a><br />
-<a href="/services/users/get_managed_app_policies/">get_managed_app_policies</a><br />
-<a href="/services/users/get_managed_devices_with_app_failures/">get_managed_devices_with_app_failures</a><br />
 <a href="/services/users/license_details/">license_details</a><br />
-<a href="/services/users/license_details_get_teams_licensing_details/">license_details_get_teams_licensing_details</a><br />
+<a href="/services/users/managed_app_diagnostic_statuses/">managed_app_diagnostic_statuses</a><br />
+<a href="/services/users/managed_app_policies/">managed_app_policies</a><br />
+<a href="/services/users/managed_devices_with_app_failures/">managed_devices_with_app_failures</a><br />
 <a href="/services/users/manager/">manager</a><br />
 <a href="/services/users/member_of/">member_of</a><br />
 <a href="/services/users/oauth2_permission_grants/">oauth2_permission_grants</a><br />
@@ -67,8 +64,8 @@ total resources: __43__
 <a href="/services/users/scoped_role_member_of/">scoped_role_member_of</a><br />
 <a href="/services/users/service_provisioning_errors/">service_provisioning_errors</a><br />
 <a href="/services/users/sponsors/">sponsors</a><br />
+<a href="/services/users/teams_licensing_details/">teams_licensing_details</a><br />
 <a href="/services/users/transitive_member_of/">transitive_member_of</a><br />
-<a href="/services/users/translate_exchange_ids/">translate_exchange_ids</a><br />
 <a href="/services/users/users/">users</a>
 </div>
 </div>

@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="emailInfo" /></td>
     <td><code>object</code></td>
     <td> (title: emailDetails)</td>
@@ -120,13 +115,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Read the properties of an ownerlessGroupPolicy object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.</td>
 </tr>
@@ -146,16 +141,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 </tbody>
 </table>
 
@@ -174,7 +159,6 @@ Read the properties of an ownerlessGroupPolicy object.
 ```sql
 SELECT
 id,
-@odata.type,
 emailInfo,
 enabledGroupIds,
 isEnabled,
@@ -183,8 +167,6 @@ notificationDurationInWeeks,
 policyWebUrl,
 targetOwners
 FROM entra_id.policies.ownerless_group_policy
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -207,7 +189,6 @@ Create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't 
 UPDATE entra_id.policies.ownerless_group_policy
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 emailInfo = '{{ emailInfo }}',
 enabledGroupIds = '{{ enabledGroupIds }}',
 isEnabled = {{ isEnabled }},
@@ -215,11 +196,8 @@ maxMembersToNotify = {{ maxMembersToNotify }},
 notificationDurationInWeeks = {{ notificationDurationInWeeks }},
 policyWebUrl = '{{ policyWebUrl }}',
 targetOwners = '{{ targetOwners }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 emailInfo,
 enabledGroupIds,
 isEnabled,

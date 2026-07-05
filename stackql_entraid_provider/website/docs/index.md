@@ -26,7 +26,7 @@ Identity and directory management for Microsoft Entra ID (formerly Azure Active 
 :::info[Provider Summary] 
 
 total services: __39__  
-total resources: __897__  
+total resources: __849__  
 
 :::
 

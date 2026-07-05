@@ -57,11 +57,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="apiConnectors" /></td>
     <td><code>array</code></td>
     <td>Represents entry point for API connectors.</td>
@@ -135,15 +130,22 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
     <td></td>
     <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#conditional_access_evaluate"><CopyableCode code="conditional_access_evaluate" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td></td>
+    <td></td>
+    <td>Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.</td>
 </tr>
 </tbody>
 </table>
@@ -161,16 +163,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 </tbody>
 </table>
 
@@ -189,7 +181,6 @@ Retrieved entity
 ```sql
 SELECT
 id,
-@odata.type,
 apiConnectors,
 authenticationEventListeners,
 authenticationEventsFlows,
@@ -201,8 +192,6 @@ riskPrevention,
 userFlowAttributes,
 verifiedId
 FROM entra_id.identity.identity
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -225,7 +214,6 @@ No description available.
 UPDATE entra_id.identity.identity
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 apiConnectors = '{{ apiConnectors }}',
 authenticationEventListeners = '{{ authenticationEventListeners }}',
 authenticationEventsFlows = '{{ authenticationEventsFlows }}',
@@ -236,11 +224,8 @@ identityProviders = '{{ identityProviders }}',
 riskPrevention = '{{ riskPrevention }}',
 userFlowAttributes = '{{ userFlowAttributes }}',
 verifiedId = '{{ verifiedId }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 apiConnectors,
 authenticationEventListeners,
 authenticationEventsFlows,
@@ -251,6 +236,33 @@ identityProviders,
 riskPrevention,
 userFlowAttributes,
 verifiedId;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="conditional_access_evaluate"
+    values={[
+        { label: 'conditional_access_evaluate', value: 'conditional_access_evaluate' }
+    ]}
+>
+<TabItem value="conditional_access_evaluate">
+
+Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+
+```sql
+EXEC entra_id.identity.identity.conditional_access_evaluate 
+@@json=
+'{
+"signInIdentity": "{{ signInIdentity }}", 
+"signInContext": "{{ signInContext }}", 
+"signInConditions": "{{ signInConditions }}", 
+"appliedPoliciesOnly": {{ appliedPoliciesOnly }}
+}'
+;
 ```
 </TabItem>
 </Tabs>

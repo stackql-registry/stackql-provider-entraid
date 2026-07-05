@@ -50,11 +50,6 @@ The following fields are returned by `SELECT` queries:
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="defaultDomainName" /></td>
     <td><code>string</code></td>
     <td>Primary domain name of a Microsoft Entra tenant.</td>
@@ -97,7 +92,7 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-domainName"><code>domainName</code></a></td>
+    <td><a href="#parameter-domain_name"><code>domain_name</code></a></td>
     <td></td>
     <td>Given a domain name, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant access settings between you and the tenant.</td>
 </tr>
@@ -117,8 +112,8 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-domainName">
-    <td><CopyableCode code="domainName" /></td>
+<tr id="parameter-domain_name">
+    <td><CopyableCode code="domain_name" /></td>
     <td><code>string</code></td>
     <td>Usage: domainName='&#123;domainName&#125;'</td>
 </tr>
@@ -139,13 +134,12 @@ Given a domain name, search for a tenant and read its tenantInformation. You can
 
 ```sql
 SELECT
-@odata.type,
 defaultDomainName,
 displayName,
 federationBrandName,
 tenantId
 FROM entra_id.tenant_relationships.find_tenant_information_by_domain_name
-WHERE domainName = '{{ domainName }}' -- required
+WHERE domain_name = '{{ domain_name }}' -- required
 ;
 ```
 </TabItem>

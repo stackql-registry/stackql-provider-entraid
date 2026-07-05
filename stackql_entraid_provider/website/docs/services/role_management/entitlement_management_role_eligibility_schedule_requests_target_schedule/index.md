@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appScope" /></td>
     <td><code></code></td>
     <td>Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.</td>
@@ -154,8 +149,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleEligibilityScheduleRequest-id"><code>unifiedRoleEligibilityScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_eligibility_schedule_request_id"><code>unified_role_eligibility_schedule_request_id</code></a></td>
+    <td></td>
     <td>The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.</td>
 </tr>
 </tbody>
@@ -174,20 +169,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleEligibilityScheduleRequest-id">
-    <td><CopyableCode code="unifiedRoleEligibilityScheduleRequest-id" /></td>
+<tr id="parameter-unified_role_eligibility_schedule_request_id">
+    <td><CopyableCode code="unified_role_eligibility_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleEligibilityScheduleRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -207,7 +192,6 @@ The schedule for a role eligibility that is referenced through the targetSchedul
 ```sql
 SELECT
 id,
-@odata.type,
 appScope,
 appScopeId,
 createdDateTime,
@@ -223,9 +207,7 @@ roleDefinitionId,
 scheduleInfo,
 status
 FROM entra_id.role_management.entitlement_management_role_eligibility_schedule_requests_target_schedule
-WHERE unifiedRoleEligibilityScheduleRequest-id = '{{ unifiedRoleEligibilityScheduleRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_eligibility_schedule_request_id = '{{ unified_role_eligibility_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>

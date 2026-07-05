@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="dataType" /></td>
     <td><code>string</code></td>
     <td> (string, boolean, int64, stringCollection, dateTime, unknownFutureValue) (title: identityUserFlowAttributeDataType)</td>
@@ -104,8 +99,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-identityUserFlowAttributeAssignment-id"><code>identityUserFlowAttributeAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a>, <a href="#parameter-identity_user_flow_attribute_assignment_id"><code>identity_user_flow_attribute_assignment_id</code></a></td>
+    <td></td>
     <td>The user attribute that you want to add to your user flow.</td>
 </tr>
 </tbody>
@@ -124,25 +119,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-b2xIdentityUserFlow-id">
-    <td><CopyableCode code="b2xIdentityUserFlow-id" /></td>
+<tr id="parameter-b2x_identity_user_flow_id">
+    <td><CopyableCode code="b2x_identity_user_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of b2xIdentityUserFlow</td>
 </tr>
-<tr id="parameter-identityUserFlowAttributeAssignment-id">
-    <td><CopyableCode code="identityUserFlowAttributeAssignment-id" /></td>
+<tr id="parameter-identity_user_flow_attribute_assignment_id">
+    <td><CopyableCode code="identity_user_flow_attribute_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of identityUserFlowAttributeAssignment</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -162,16 +147,13 @@ The user attribute that you want to add to your user flow.
 ```sql
 SELECT
 id,
-@odata.type,
 dataType,
 description,
 displayName,
 userFlowAttributeType
 FROM entra_id.identity.b2x_user_flows_user_attribute_assignments_user_attribute
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
+AND identity_user_flow_attribute_assignment_id = '{{ identity_user_flow_attribute_assignment_id }}' -- required
 ;
 ```
 </TabItem>

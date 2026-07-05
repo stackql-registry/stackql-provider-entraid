@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="durationUntilExternalUserDeletedAfterBlocked" /></td>
     <td><code>string (duration)</code></td>
     <td>If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted. (pattern: <code>^-?P(&#91;0-9&#93;+D)?(T(&#91;0-9&#93;+H)?(&#91;0-9&#93;+M)?(&#91;0-9&#93;+(&#91;.&#93;&#91;0-9&#93;+)?S)?)?$</code>)</td>
@@ -95,13 +90,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve the properties of an entitlementManagementSettings object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update an existing entitlementManagementSettings object to change one or more of its properties.</td>
 </tr>
@@ -128,16 +123,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -161,12 +146,9 @@ Retrieve the properties of an entitlementManagementSettings object.
 ```sql
 SELECT
 id,
-@odata.type,
 durationUntilExternalUserDeletedAfterBlocked,
 externalUserLifecycleAction
 FROM entra_id.identity_governance.entitlement_management_settings
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -189,14 +171,10 @@ Update an existing entitlementManagementSettings object to change one or more of
 UPDATE entra_id.identity_governance.entitlement_management_settings
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 durationUntilExternalUserDeletedAfterBlocked = '{{ durationUntilExternalUserDeletedAfterBlocked }}',
 externalUserLifecycleAction = '{{ externalUserLifecycleAction }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 durationUntilExternalUserDeletedAfterBlocked,
 externalUserLifecycleAction;
 ```

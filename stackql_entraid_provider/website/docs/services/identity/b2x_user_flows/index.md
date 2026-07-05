@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="apiConnectorConfiguration" /></td>
     <td><code></code></td>
     <td>Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.</td>
@@ -117,11 +112,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="apiConnectorConfiguration" /></td>
@@ -181,37 +171,79 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a b2xIdentityUserFlow object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of b2xIdentityUserFlow objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new b2xIdentityUserFlow object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a b2xIdentityUserFlow object.</td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_attribute_collection_add_ref"><CopyableCode code="api_connector_configuration_post_attribute_collection_add_ref" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_attribute_collection_remove_ref"><CopyableCode code="api_connector_configuration_post_attribute_collection_remove_ref" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_attribute_collection_upload_client_certificate"><CopyableCode code="api_connector_configuration_post_attribute_collection_upload_client_certificate" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td>Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.</td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_federation_signup_add_ref"><CopyableCode code="api_connector_configuration_post_federation_signup_add_ref" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_federation_signup_remove_ref"><CopyableCode code="api_connector_configuration_post_federation_signup_remove_ref" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#api_connector_configuration_post_federation_signup_upload_client_certificate"><CopyableCode code="api_connector_configuration_post_federation_signup_upload_client_certificate" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td>Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.</td>
 </tr>
 </tbody>
 </table>
@@ -229,50 +261,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-b2xIdentityUserFlow-id">
-    <td><CopyableCode code="b2xIdentityUserFlow-id" /></td>
+<tr id="parameter-b2x_identity_user_flow_id">
+    <td><CopyableCode code="b2x_identity_user_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of b2xIdentityUserFlow</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -298,7 +290,6 @@ Retrieve the properties and relationships of a b2xIdentityUserFlow object.
 ```sql
 SELECT
 id,
-@odata.type,
 apiConnectorConfiguration,
 identityProviders,
 languages,
@@ -307,9 +298,7 @@ userFlowIdentityProviders,
 userFlowType,
 userFlowTypeVersion
 FROM entra_id.identity.b2x_user_flows
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
 ;
 ```
 </TabItem>
@@ -320,7 +309,6 @@ Retrieve a list of b2xIdentityUserFlow objects.
 ```sql
 SELECT
 id,
-@odata.type,
 apiConnectorConfiguration,
 identityProviders,
 languages,
@@ -329,14 +317,6 @@ userFlowIdentityProviders,
 userFlowType,
 userFlowTypeVersion
 FROM entra_id.identity.b2x_user_flows
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -359,7 +339,6 @@ Create a new b2xIdentityUserFlow object.
 ```sql
 INSERT INTO entra_id.identity.b2x_user_flows (
 id,
-@odata.type,
 userFlowType,
 userFlowTypeVersion,
 apiConnectorConfiguration,
@@ -370,7 +349,6 @@ userFlowIdentityProviders
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ userFlowType }}',
 '{{ userFlowTypeVersion }}',
 '{{ apiConnectorConfiguration }}',
@@ -380,7 +358,6 @@ SELECT
 '{{ userFlowIdentityProviders }}'
 RETURNING
 id,
-@odata.type,
 apiConnectorConfiguration,
 identityProviders,
 languages,
@@ -400,8 +377,6 @@ userFlowTypeVersion
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: userFlowType
       value: "{{ userFlowType }}"
       valid_values: ['signUp', 'signIn', 'signUpOrSignIn', 'passwordReset', 'profileUpdate', 'resourceOwner', 'unknownFutureValue']
@@ -416,7 +391,6 @@ userFlowTypeVersion
         The identity providers included in the user flow.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           clientId: "{{ clientId }}"
           clientSecret: "{{ clientSecret }}"
           name: "{{ name }}"
@@ -426,7 +400,6 @@ userFlowTypeVersion
         The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
           isEnabled: {{ isEnabled }}
           defaultPages: "{{ defaultPages }}"
@@ -436,7 +409,6 @@ userFlowTypeVersion
         The user attribute assignments included in the user flow.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
           isOptional: {{ isOptional }}
           requiresVerification: {{ requiresVerification }}
@@ -446,7 +418,6 @@ userFlowTypeVersion
     - name: userFlowIdentityProviders
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
 `}</CodeBlock>
 
@@ -470,7 +441,6 @@ No description available.
 UPDATE entra_id.identity.b2x_user_flows
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 userFlowType = '{{ userFlowType }}',
 userFlowTypeVersion = '{{ userFlowTypeVersion }}',
 apiConnectorConfiguration = '{{ apiConnectorConfiguration }}',
@@ -479,11 +449,9 @@ languages = '{{ languages }}',
 userAttributeAssignments = '{{ userAttributeAssignments }}',
 userFlowIdentityProviders = '{{ userFlowIdentityProviders }}'
 WHERE 
-b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
 RETURNING
 id,
-@odata.type,
 apiConnectorConfiguration,
 identityProviders,
 languages,
@@ -510,8 +478,102 @@ Delete a b2xIdentityUserFlow object.
 
 ```sql
 DELETE FROM entra_id.identity.b2x_user_flows
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
 AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="api_connector_configuration_post_attribute_collection_add_ref"
+    values={[
+        { label: 'api_connector_configuration_post_attribute_collection_add_ref', value: 'api_connector_configuration_post_attribute_collection_add_ref' },
+        { label: 'api_connector_configuration_post_attribute_collection_remove_ref', value: 'api_connector_configuration_post_attribute_collection_remove_ref' },
+        { label: 'api_connector_configuration_post_attribute_collection_upload_client_certificate', value: 'api_connector_configuration_post_attribute_collection_upload_client_certificate' },
+        { label: 'api_connector_configuration_post_federation_signup_add_ref', value: 'api_connector_configuration_post_federation_signup_add_ref' },
+        { label: 'api_connector_configuration_post_federation_signup_remove_ref', value: 'api_connector_configuration_post_federation_signup_remove_ref' },
+        { label: 'api_connector_configuration_post_federation_signup_upload_client_certificate', value: 'api_connector_configuration_post_federation_signup_upload_client_certificate' }
+    ]}
+>
+<TabItem value="api_connector_configuration_post_attribute_collection_add_ref">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_attribute_collection_add_ref 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+}'
+;
+```
+</TabItem>
+<TabItem value="api_connector_configuration_post_attribute_collection_remove_ref">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_attribute_collection_remove_ref 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="api_connector_configuration_post_attribute_collection_upload_client_certificate">
+
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_attribute_collection_upload_client_certificate 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+"pkcs12Value": "{{ pkcs12Value }}", 
+"password": "{{ password }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="api_connector_configuration_post_federation_signup_add_ref">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_federation_signup_add_ref 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+}'
+;
+```
+</TabItem>
+<TabItem value="api_connector_configuration_post_federation_signup_remove_ref">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_federation_signup_remove_ref 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="api_connector_configuration_post_federation_signup_upload_client_certificate">
+
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
+
+```sql
+EXEC entra_id.identity.b2x_user_flows.api_connector_configuration_post_federation_signup_upload_client_certificate 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+"pkcs12Value": "{{ pkcs12Value }}", 
+"password": "{{ password }}"
+}'
 ;
 ```
 </TabItem>

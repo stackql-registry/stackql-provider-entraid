@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="activityDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -162,11 +157,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="activityDateTime" /></td>
@@ -271,35 +261,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-provisioningObjectSummary-id"><code>provisioningObjectSummary-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-provisioning_object_summary_id"><code>provisioning_object_summary_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. </td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-provisioningObjectSummary-id"><code>provisioningObjectSummary-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-provisioning_object_summary_id"><code>provisioning_object_summary_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-provisioningObjectSummary-id"><code>provisioningObjectSummary-id</code></a></td>
+    <td><a href="#parameter-provisioning_object_summary_id"><code>provisioning_object_summary_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -319,50 +309,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-provisioningObjectSummary-id">
-    <td><CopyableCode code="provisioningObjectSummary-id" /></td>
+<tr id="parameter-provisioning_object_summary_id">
+    <td><CopyableCode code="provisioning_object_summary_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of provisioningObjectSummary</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -388,7 +338,6 @@ Retrieved navigation property
 ```sql
 SELECT
 id,
-@odata.type,
 activityDateTime,
 changeId,
 cycleId,
@@ -406,9 +355,7 @@ targetIdentity,
 targetSystem,
 tenantId
 FROM entra_id.audit_logs.provisioning
-WHERE provisioningObjectSummary-id = '{{ provisioningObjectSummary-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE provisioning_object_summary_id = '{{ provisioning_object_summary_id }}' -- required
 ;
 ```
 </TabItem>
@@ -419,7 +366,6 @@ Get all provisioning events that occurred in your tenant, such as the deletion o
 ```sql
 SELECT
 id,
-@odata.type,
 activityDateTime,
 changeId,
 cycleId,
@@ -437,14 +383,6 @@ targetIdentity,
 targetSystem,
 tenantId
 FROM entra_id.audit_logs.provisioning
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -467,7 +405,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.audit_logs.provisioning (
 id,
-@odata.type,
 activityDateTime,
 changeId,
 cycleId,
@@ -487,7 +424,6 @@ tenantId
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ activityDateTime }}',
 '{{ changeId }}',
 '{{ cycleId }}',
@@ -506,7 +442,6 @@ SELECT
 '{{ tenantId }}'
 RETURNING
 id,
-@odata.type,
 activityDateTime,
 changeId,
 cycleId,
@@ -535,8 +470,6 @@ tenantId
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: activityDateTime
       value: "{{ activityDateTime }}"
       description: |
@@ -568,7 +501,6 @@ tenantId
         - displayName: "{{ displayName }}"
           newValue: "{{ newValue }}"
           oldValue: "{{ oldValue }}"
-          @odata.type: "{{ @odata.type }}"
     - name: provisioningAction
       value: "{{ provisioningAction }}"
       description: |
@@ -583,11 +515,9 @@ tenantId
       value:
         - description: "{{ description }}"
           details:
-            @odata.type: "{{ @odata.type }}"
           name: "{{ name }}"
           provisioningStepType: "{{ provisioningStepType }}"
           status: "{{ status }}"
-          @odata.type: "{{ @odata.type }}"
     - name: servicePrincipal
       value: "{{ servicePrincipal }}"
       description: |
@@ -634,7 +564,6 @@ No description available.
 UPDATE entra_id.audit_logs.provisioning
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 activityDateTime = '{{ activityDateTime }}',
 changeId = '{{ changeId }}',
 cycleId = '{{ cycleId }}',
@@ -652,11 +581,9 @@ targetIdentity = '{{ targetIdentity }}',
 targetSystem = '{{ targetSystem }}',
 tenantId = '{{ tenantId }}'
 WHERE 
-provisioningObjectSummary-id = '{{ provisioningObjectSummary-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+provisioning_object_summary_id = '{{ provisioning_object_summary_id }}' --required
 RETURNING
 id,
-@odata.type,
 activityDateTime,
 changeId,
 cycleId,
@@ -692,7 +619,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.audit_logs.provisioning
-WHERE provisioningObjectSummary-id = '{{ provisioningObjectSummary-id }}' --required
+WHERE provisioning_object_summary_id = '{{ provisioning_object_summary_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

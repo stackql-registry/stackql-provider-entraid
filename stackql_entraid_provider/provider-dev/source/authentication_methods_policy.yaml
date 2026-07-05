@@ -164,7 +164,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /authenticationMethodsPolicy/authenticationMethodConfigurations/{authenticationMethodConfiguration_id}:
+  /authenticationMethodsPolicy/authenticationMethodConfigurations/{authentication_method_configuration_id}:
     get:
       tags:
         - authenticationMethodsPolicy.authenticationMethodConfiguration
@@ -192,7 +192,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -236,7 +236,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -254,7 +254,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -275,8 +275,6 @@ components:
     microsoft.graph.authenticationMethodsPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authenticationMethodsPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1451,8 +1449,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationMethodConfiguration:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2595,8 +2591,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3735,15 +3729,11 @@ components:
       type: string
     microsoft.graph.registrationEnforcement:
       title: registrationEnforcement
-      required:
-        - '@odata.type'
       type: object
       properties:
         authenticationMethodsRegistrationCampaign:
           description: Run campaigns to remind users to set up targeted authentication methods.
           title: authenticationMethodsRegistrationCampaign
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeTargets:
@@ -3793,8 +3783,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
     microsoft.graph.excludeTarget:
       title: excludeTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3815,8 +3803,6 @@ components:
       format: int32
     microsoft.graph.authenticationMethodsRegistrationCampaign:
       title: authenticationMethodsRegistrationCampaign
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeTargets:
@@ -3879,8 +3865,6 @@ components:
       type: string
     microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget:
       title: authenticationMethodsRegistrationCampaignIncludeTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3917,8 +3901,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

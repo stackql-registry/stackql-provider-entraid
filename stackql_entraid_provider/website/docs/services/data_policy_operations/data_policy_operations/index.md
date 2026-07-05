@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="completedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -112,11 +107,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="completedDateTime" /></td>
@@ -171,35 +161,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-dataPolicyOperation-id"><code>dataPolicyOperation-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-data_policy_operation_id"><code>data_policy_operation_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties of a dataPolicyOperation object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve the properties of a dataPolicyOperation object.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-dataPolicyOperation-id"><code>dataPolicyOperation-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-data_policy_operation_id"><code>data_policy_operation_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-dataPolicyOperation-id"><code>dataPolicyOperation-id</code></a></td>
+    <td><a href="#parameter-data_policy_operation_id"><code>data_policy_operation_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -219,50 +209,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-dataPolicyOperation-id">
-    <td><CopyableCode code="dataPolicyOperation-id" /></td>
+<tr id="parameter-data_policy_operation_id">
+    <td><CopyableCode code="data_policy_operation_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of dataPolicyOperation</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -288,7 +238,6 @@ Retrieve the properties of a dataPolicyOperation object.
 ```sql
 SELECT
 id,
-@odata.type,
 completedDateTime,
 progress,
 status,
@@ -296,9 +245,7 @@ storageLocation,
 submittedDateTime,
 userId
 FROM entra_id.data_policy_operations.data_policy_operations
-WHERE dataPolicyOperation-id = '{{ dataPolicyOperation-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE data_policy_operation_id = '{{ data_policy_operation_id }}' -- required
 ;
 ```
 </TabItem>
@@ -309,7 +256,6 @@ Retrieve the properties of a dataPolicyOperation object.
 ```sql
 SELECT
 id,
-@odata.type,
 completedDateTime,
 progress,
 status,
@@ -317,14 +263,6 @@ storageLocation,
 submittedDateTime,
 userId
 FROM entra_id.data_policy_operations.data_policy_operations
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -347,7 +285,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.data_policy_operations.data_policy_operations (
 id,
-@odata.type,
 completedDateTime,
 progress,
 status,
@@ -357,7 +294,6 @@ userId
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ completedDateTime }}',
 '{{ progress }}',
 '{{ status }}',
@@ -366,7 +302,6 @@ SELECT
 '{{ userId }}'
 RETURNING
 id,
-@odata.type,
 completedDateTime,
 progress,
 status,
@@ -385,8 +320,6 @@ userId
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: completedDateTime
       value: "{{ completedDateTime }}"
       description: |
@@ -433,7 +366,6 @@ No description available.
 UPDATE entra_id.data_policy_operations.data_policy_operations
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 completedDateTime = '{{ completedDateTime }}',
 progress = '{{ progress }}',
 status = '{{ status }}',
@@ -441,11 +373,9 @@ storageLocation = '{{ storageLocation }}',
 submittedDateTime = '{{ submittedDateTime }}',
 userId = '{{ userId }}'
 WHERE 
-dataPolicyOperation-id = '{{ dataPolicyOperation-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+data_policy_operation_id = '{{ data_policy_operation_id }}' --required
 RETURNING
 id,
-@odata.type,
 completedDateTime,
 progress,
 status,
@@ -471,7 +401,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.data_policy_operations.data_policy_operations
-WHERE dataPolicyOperation-id = '{{ dataPolicyOperation-id }}' --required
+WHERE data_policy_operation_id = '{{ data_policy_operation_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="multiTenantOrganizationIdentitySynchronization" /></td>
     <td><code></code></td>
     <td>Defines an optional cross-tenant access policy template with user synchronization settings for a multitenant organization.</td>
@@ -95,13 +90,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Represents the base policy in the directory for multitenant organization settings.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -128,16 +123,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -161,12 +146,9 @@ Represents the base policy in the directory for multitenant organization setting
 ```sql
 SELECT
 id,
-@odata.type,
 multiTenantOrganizationIdentitySynchronization,
 multiTenantOrganizationPartnerConfiguration
 FROM entra_id.policies.cross_tenant_access_policy_templates
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -189,14 +171,10 @@ No description available.
 UPDATE entra_id.policies.cross_tenant_access_policy_templates
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 multiTenantOrganizationIdentitySynchronization = '{{ multiTenantOrganizationIdentitySynchronization }}',
 multiTenantOrganizationPartnerConfiguration = '{{ multiTenantOrganizationPartnerConfiguration }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 multiTenantOrganizationIdentitySynchronization,
 multiTenantOrganizationPartnerConfiguration;
 ```

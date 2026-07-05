@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="isOptional" /></td>
     <td><code>boolean</code></td>
     <td>If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.</td>
@@ -107,11 +102,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="isOptional" /></td>
@@ -161,35 +151,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a>, <a href="#parameter-domainDnsRecord-id"><code>domainDnsRecord-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a>, <a href="#parameter-domain_dns_record_id"><code>domain_dns_record_id</code></a></td>
+    <td></td>
     <td>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
+    <td></td>
     <td>Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a>, <a href="#parameter-domainDnsRecord-id"><code>domainDnsRecord-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a>, <a href="#parameter-domain_dns_record_id"><code>domain_dns_record_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a>, <a href="#parameter-domainDnsRecord-id"><code>domainDnsRecord-id</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a>, <a href="#parameter-domain_dns_record_id"><code>domain_dns_record_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -209,55 +199,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-domain-id">
-    <td><CopyableCode code="domain-id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier of domain</td>
-</tr>
-<tr id="parameter-domainDnsRecord-id">
-    <td><CopyableCode code="domainDnsRecord-id" /></td>
+<tr id="parameter-domain_dns_record_id">
+    <td><CopyableCode code="domain_dns_record_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of domainDnsRecord</td>
 </tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
+<tr id="parameter-domain_id">
+    <td><CopyableCode code="domain_id" /></td>
     <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
+    <td>The unique identifier of domain</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -283,17 +233,14 @@ DNS records the customer adds to the DNS zone file of the domain before the doma
 ```sql
 SELECT
 id,
-@odata.type,
 isOptional,
 label,
 recordType,
 supportedService,
 ttl
 FROM entra_id.domains.service_configuration_records
-WHERE domain-id = '{{ domain-id }}' -- required
-AND domainDnsRecord-id = '{{ domainDnsRecord-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE domain_id = '{{ domain_id }}' -- required
+AND domain_dns_record_id = '{{ domain_dns_record_id }}' -- required
 ;
 ```
 </TabItem>
@@ -304,22 +251,13 @@ Retrieves a list of domainDnsRecord objects needed to enable services for the do
 ```sql
 SELECT
 id,
-@odata.type,
 isOptional,
 label,
 recordType,
 supportedService,
 ttl
 FROM entra_id.domains.service_configuration_records
-WHERE domain-id = '{{ domain-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE domain_id = '{{ domain_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,26 +280,23 @@ No description available.
 ```sql
 INSERT INTO entra_id.domains.service_configuration_records (
 id,
-@odata.type,
 isOptional,
 label,
 recordType,
 supportedService,
 ttl,
-domain-id
+domain_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 {{ isOptional }},
 '{{ label }}',
 '{{ recordType }}',
 '{{ supportedService }}',
 {{ ttl }},
-'{{ domain-id }}'
+'{{ domain_id }}'
 RETURNING
 id,
-@odata.type,
 isOptional,
 label,
 recordType,
@@ -375,15 +310,13 @@ ttl
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: service_configuration_records
   props:
-    - name: domain-id
-      value: "{{ domain-id }}"
+    - name: domain_id
+      value: "{{ domain_id }}"
       description: Required parameter for the service_configuration_records resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: isOptional
       value: {{ isOptional }}
       description: |
@@ -426,19 +359,16 @@ No description available.
 UPDATE entra_id.domains.service_configuration_records
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 isOptional = {{ isOptional }},
 label = '{{ label }}',
 recordType = '{{ recordType }}',
 supportedService = '{{ supportedService }}',
 ttl = {{ ttl }}
 WHERE 
-domain-id = '{{ domain-id }}' --required
-AND domainDnsRecord-id = '{{ domainDnsRecord-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+domain_id = '{{ domain_id }}' --required
+AND domain_dns_record_id = '{{ domain_dns_record_id }}' --required
 RETURNING
 id,
-@odata.type,
 isOptional,
 label,
 recordType,
@@ -463,8 +393,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.domains.service_configuration_records
-WHERE domain-id = '{{ domain-id }}' --required
-AND domainDnsRecord-id = '{{ domainDnsRecord-id }}' --required
+WHERE domain_id = '{{ domain_id }}' --required
+AND domain_dns_record_id = '{{ domain_dns_record_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

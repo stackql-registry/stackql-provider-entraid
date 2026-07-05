@@ -82,7 +82,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of agreementAcceptance entities.
-  /agreementAcceptances/{agreementAcceptance_id}:
+  /agreementAcceptances/{agreement_acceptance_id}:
     get:
       tags:
         - agreementAcceptances.agreementAcceptance
@@ -99,7 +99,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -143,7 +143,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -161,7 +161,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -182,8 +182,6 @@ components:
     microsoft.graph.agreementAcceptance:
       x-ms-discriminator-value: '#microsoft.graph.agreementAcceptance'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1397,8 +1395,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2580,8 +2576,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

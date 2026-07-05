@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="deletedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -89,8 +84,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-privilegedAccessGroupAssignmentSchedule-id"><code>privilegedAccessGroupAssignmentSchedule-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-privileged_access_group_assignment_schedule_id"><code>privileged_access_group_assignment_schedule_id</code></a></td>
+    <td></td>
     <td>References the principal that's in the scope of this membership or ownership assignment request to the group that's governed through PIM. Supports $expand and $select nested in $expand for id only.</td>
 </tr>
 </tbody>
@@ -109,20 +104,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-privilegedAccessGroupAssignmentSchedule-id">
-    <td><CopyableCode code="privilegedAccessGroupAssignmentSchedule-id" /></td>
+<tr id="parameter-privileged_access_group_assignment_schedule_id">
+    <td><CopyableCode code="privileged_access_group_assignment_schedule_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of privilegedAccessGroupAssignmentSchedule</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -142,12 +127,9 @@ References the principal that's in the scope of this membership or ownership ass
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime
 FROM entra_id.identity_governance.privileged_access_group_assignment_schedules_principal
-WHERE privilegedAccessGroupAssignmentSchedule-id = '{{ privilegedAccessGroupAssignmentSchedule-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE privileged_access_group_assignment_schedule_id = '{{ privileged_access_group_assignment_schedule_id }}' -- required
 ;
 ```
 </TabItem>

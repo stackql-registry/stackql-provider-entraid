@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -760,7 +755,7 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.</td>
 </tr>
 </tbody>
@@ -779,16 +774,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 </tbody>
 </table>
 
@@ -807,7 +792,6 @@ The user created as part of the invitation creation. Read-only. The id property 
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -944,8 +928,6 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.invitations.invited_user
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>

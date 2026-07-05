@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="deletedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -89,21 +84,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Returns the user or organizational contact assigned as the agentUser's manager.</td>
 </tr>
 <tr>
     <td><a href="#add_ref"><CopyableCode code="add_ref" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Assign a user's manager.</td>
 </tr>
 <tr>
     <td><a href="#remove_ref"><CopyableCode code="remove_ref" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove an agentUser's manager.</td>
 </tr>
@@ -123,20 +118,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-user-id">
-    <td><CopyableCode code="user-id" /></td>
+<tr id="parameter-user_id">
+    <td><CopyableCode code="user_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of user</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -166,13 +151,10 @@ Returns the user or organizational contact assigned as the agentUser's manager.
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime
 FROM entra_id.users.manager
-WHERE user-id = '{{ user-id }}' -- required
+WHERE user_id = '{{ user_id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -194,14 +176,10 @@ Assign a user's manager.
 
 ```sql
 INSERT INTO entra_id.users.manager (
-@odata.id,
-@odata.type,
-user-id
+user_id
 )
 SELECT 
-'{{ @odata.id }}',
-'{{ @odata.type }}',
-'{{ user-id }}'
+'{{ user_id }}'
 ;
 ```
 </TabItem>
@@ -210,13 +188,9 @@ SELECT
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: manager
   props:
-    - name: user-id
-      value: "{{ user-id }}"
+    - name: user_id
+      value: "{{ user_id }}"
       description: Required parameter for the manager resource.
-    - name: @odata.id
-      value: "{{ @odata.id }}"
-    - name: @odata.type
-      value: "{{ @odata.type }}"
 `}</CodeBlock>
 
 </TabItem>
@@ -237,7 +211,7 @@ Remove an agentUser's manager.
 
 ```sql
 DELETE FROM entra_id.users.manager
-WHERE user-id = '{{ user-id }}' --required
+WHERE user_id = '{{ user_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

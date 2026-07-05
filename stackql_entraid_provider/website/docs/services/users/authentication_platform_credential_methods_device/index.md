@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accountEnabled" /></td>
     <td><code>boolean</code></td>
     <td>true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.</td>
@@ -264,8 +259,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-platformCredentialAuthenticationMethod-id"><code>platformCredentialAuthenticationMethod-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-platform_credential_authentication_method_id"><code>platform_credential_authentication_method_id</code></a></td>
+    <td></td>
     <td>The registered device on which this Platform Credential resides. Supports $expand. When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</td>
 </tr>
 </tbody>
@@ -284,25 +279,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-platformCredentialAuthenticationMethod-id">
-    <td><CopyableCode code="platformCredentialAuthenticationMethod-id" /></td>
+<tr id="parameter-platform_credential_authentication_method_id">
+    <td><CopyableCode code="platform_credential_authentication_method_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of platformCredentialAuthenticationMethod</td>
 </tr>
-<tr id="parameter-user-id">
-    <td><CopyableCode code="user-id" /></td>
+<tr id="parameter-user_id">
+    <td><CopyableCode code="user_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of user</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -322,7 +307,6 @@ The registered device on which this Platform Credential resides. Supports $expan
 ```sql
 SELECT
 id,
-@odata.type,
 accountEnabled,
 alternativeSecurityIds,
 approximateLastSignInDateTime,
@@ -360,10 +344,8 @@ systemLabels,
 transitiveMemberOf,
 trustType
 FROM entra_id.users.authentication_platform_credential_methods_device
-WHERE user-id = '{{ user-id }}' -- required
-AND platformCredentialAuthenticationMethod-id = '{{ platformCredentialAuthenticationMethod-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE user_id = '{{ user_id }}' -- required
+AND platform_credential_authentication_method_id = '{{ platform_credential_authentication_method_id }}' -- required
 ;
 ```
 </TabItem>

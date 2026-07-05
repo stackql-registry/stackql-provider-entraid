@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="addedByTenantId" /></td>
     <td><code>string (uuid)</code></td>
     <td>Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only. (pattern: <code>^&#91;0-9a-fA-F&#93;&#123;8&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;12&#125;$</code>)</td>
@@ -127,11 +122,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="addedByTenantId" /></td>
@@ -201,35 +191,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-multiTenantOrganizationMember-id"><code>multiTenantOrganizationMember-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-multi_tenant_organization_member_id"><code>multi_tenant_organization_member_id</code></a></td>
+    <td></td>
     <td>Get a tenant and its properties in the multitenant organization.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>List the tenants and their properties in the multitenant organization.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-multiTenantOrganizationMember-id"><code>multiTenantOrganizationMember-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-multi_tenant_organization_member_id"><code>multi_tenant_organization_member_id</code></a></td>
     <td></td>
     <td>Update the properties of a tenant in a multitenant organization. Only owner tenants can call this API.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-multiTenantOrganizationMember-id"><code>multiTenantOrganizationMember-id</code></a></td>
+    <td><a href="#parameter-multi_tenant_organization_member_id"><code>multi_tenant_organization_member_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios:</td>
 </tr>
@@ -249,50 +239,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-multiTenantOrganizationMember-id">
-    <td><CopyableCode code="multiTenantOrganizationMember-id" /></td>
+<tr id="parameter-multi_tenant_organization_member_id">
+    <td><CopyableCode code="multi_tenant_organization_member_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of multiTenantOrganizationMember</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -318,7 +268,6 @@ Get a tenant and its properties in the multitenant organization.
 ```sql
 SELECT
 id,
-@odata.type,
 addedByTenantId,
 addedDateTime,
 deletedDateTime,
@@ -329,9 +278,7 @@ state,
 tenantId,
 transitionDetails
 FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
-WHERE multiTenantOrganizationMember-id = '{{ multiTenantOrganizationMember-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE multi_tenant_organization_member_id = '{{ multi_tenant_organization_member_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,7 +289,6 @@ List the tenants and their properties in the multitenant organization.
 ```sql
 SELECT
 id,
-@odata.type,
 addedByTenantId,
 addedDateTime,
 deletedDateTime,
@@ -353,14 +299,6 @@ state,
 tenantId,
 transitionDetails
 FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -383,7 +321,6 @@ Add a tenant to a multitenant organization. The administrator of an owner tenant
 ```sql
 INSERT INTO entra_id.tenant_relationships.multi_tenant_organization_tenants (
 id,
-@odata.type,
 deletedDateTime,
 addedByTenantId,
 addedDateTime,
@@ -396,7 +333,6 @@ transitionDetails
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ addedByTenantId }}',
 '{{ addedDateTime }}',
@@ -408,7 +344,6 @@ SELECT
 '{{ transitionDetails }}'
 RETURNING
 id,
-@odata.type,
 addedByTenantId,
 addedDateTime,
 deletedDateTime,
@@ -430,8 +365,6 @@ transitionDetails
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -490,7 +423,6 @@ Update the properties of a tenant in a multitenant organization. Only owner tena
 UPDATE entra_id.tenant_relationships.multi_tenant_organization_tenants
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 addedByTenantId = '{{ addedByTenantId }}',
 addedDateTime = '{{ addedDateTime }}',
@@ -501,11 +433,9 @@ state = '{{ state }}',
 tenantId = '{{ tenantId }}',
 transitionDetails = '{{ transitionDetails }}'
 WHERE 
-multiTenantOrganizationMember-id = '{{ multiTenantOrganizationMember-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+multi_tenant_organization_member_id = '{{ multi_tenant_organization_member_id }}' --required
 RETURNING
 id,
-@odata.type,
 addedByTenantId,
 addedDateTime,
 deletedDateTime,
@@ -534,7 +464,7 @@ Remove a tenant from a multitenant organization. A tenant can be removed in the 
 
 ```sql
 DELETE FROM entra_id.tenant_relationships.multi_tenant_organization_tenants
-WHERE multiTenantOrganizationMember-id = '{{ multiTenantOrganizationMember-id }}' --required
+WHERE multi_tenant_organization_member_id = '{{ multi_tenant_organization_member_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

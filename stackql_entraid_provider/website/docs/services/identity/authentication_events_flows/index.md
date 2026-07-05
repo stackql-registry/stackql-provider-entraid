@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="conditions" /></td>
     <td><code></code></td>
     <td>The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.</td>
@@ -97,11 +92,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="conditions" /></td>
@@ -141,35 +131,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-authenticationEventsFlow-id"><code>authenticationEventsFlow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-authentication_events_flow_id"><code>authentication_events_flow_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. The @odata.type property in the response object indicates the type of the object, which can be one of the following derived subtypes:<br />- externalUsersSelfServiceSignupEventsFlow</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a collection of authentication events policies that are derived from authenticationEventsFlow. The following derived subtypes are supported: <br />- externalUsersSelfServiceSignupEventsFlow</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new authenticationEventsFlow object that is of the type specified in the request body. The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow object type.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-authenticationEventsFlow-id"><code>authenticationEventsFlow-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-authentication_events_flow_id"><code>authentication_events_flow_id</code></a></td>
     <td></td>
     <td>Update the properties of an authenticationEventsFlow object by ID. You must specify the @odata.type property and the value of the authenticationEventsFlow object type to update. The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-authenticationEventsFlow-id"><code>authenticationEventsFlow-id</code></a></td>
+    <td><a href="#parameter-authentication_events_flow_id"><code>authentication_events_flow_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a specific authenticationEventsFlow resource by ID. This operation also removes or unlinks all applications from the flow, which disables the customized authentication experience defined for the application.  The following derived subtypes are supported:<br />- externalUsersSelfServiceSignupEventsFlow</td>
 </tr>
@@ -189,50 +179,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-authenticationEventsFlow-id">
-    <td><CopyableCode code="authenticationEventsFlow-id" /></td>
+<tr id="parameter-authentication_events_flow_id">
+    <td><CopyableCode code="authentication_events_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of authenticationEventsFlow</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -258,14 +208,11 @@ Retrieve the properties and relationships of a specific authenticationEventsFlow
 ```sql
 SELECT
 id,
-@odata.type,
 conditions,
 description,
 displayName
 FROM entra_id.identity.authentication_events_flows
-WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE authentication_events_flow_id = '{{ authentication_events_flow_id }}' -- required
 ;
 ```
 </TabItem>
@@ -276,19 +223,10 @@ Get a collection of authentication events policies that are derived from authent
 ```sql
 SELECT
 id,
-@odata.type,
 conditions,
 description,
 displayName
 FROM entra_id.identity.authentication_events_flows
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -311,20 +249,17 @@ Create a new authenticationEventsFlow object that is of the type specified in th
 ```sql
 INSERT INTO entra_id.identity.authentication_events_flows (
 id,
-@odata.type,
 conditions,
 description,
 displayName
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ conditions }}',
 '{{ description }}',
 '{{ displayName }}'
 RETURNING
 id,
-@odata.type,
 conditions,
 description,
 displayName
@@ -340,8 +275,6 @@ displayName
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: conditions
       value: "{{ conditions }}"
       description: |
@@ -376,16 +309,13 @@ Update the properties of an authenticationEventsFlow object by ID. You must spec
 UPDATE entra_id.identity.authentication_events_flows
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 conditions = '{{ conditions }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}'
 WHERE 
-authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+authentication_events_flow_id = '{{ authentication_events_flow_id }}' --required
 RETURNING
 id,
-@odata.type,
 conditions,
 description,
 displayName;
@@ -408,7 +338,7 @@ Delete a specific authenticationEventsFlow resource by ID. This operation also r
 
 ```sql
 DELETE FROM entra_id.identity.authentication_events_flows
-WHERE authenticationEventsFlow-id = '{{ authenticationEventsFlow-id }}' --required
+WHERE authentication_events_flow_id = '{{ authentication_events_flow_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

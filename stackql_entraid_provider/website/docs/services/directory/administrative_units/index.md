@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="deletedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -137,11 +132,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="deletedDateTime" /></td>
@@ -221,35 +211,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-administrativeUnit-id"><code>administrativeUnit-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-administrative_unit_id"><code>administrative_unit_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of administrativeUnit objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new administrativeUnit.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-administrativeUnit-id"><code>administrativeUnit-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-administrative_unit_id"><code>administrative_unit_id</code></a></td>
     <td></td>
     <td>Update the properties of an administrativeUnit object.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-administrativeUnit-id"><code>administrativeUnit-id</code></a></td>
+    <td><a href="#parameter-administrative_unit_id"><code>administrative_unit_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an administrativeUnit.</td>
 </tr>
@@ -269,50 +259,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-administrativeUnit-id">
-    <td><CopyableCode code="administrativeUnit-id" /></td>
+<tr id="parameter-administrative_unit_id">
+    <td><CopyableCode code="administrative_unit_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of administrativeUnit</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -338,7 +288,6 @@ Retrieve the properties and relationships of an administrativeUnit object. The a
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime,
 description,
 displayName,
@@ -351,9 +300,7 @@ membershipType,
 scopedRoleMembers,
 visibility
 FROM entra_id.directory.administrative_units
-WHERE administrativeUnit-id = '{{ administrativeUnit-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE administrative_unit_id = '{{ administrative_unit_id }}' -- required
 ;
 ```
 </TabItem>
@@ -364,7 +311,6 @@ Retrieve a list of administrativeUnit objects.
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime,
 description,
 displayName,
@@ -377,14 +323,6 @@ membershipType,
 scopedRoleMembers,
 visibility
 FROM entra_id.directory.administrative_units
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -407,7 +345,6 @@ Create a new administrativeUnit.
 ```sql
 INSERT INTO entra_id.directory.administrative_units (
 id,
-@odata.type,
 deletedDateTime,
 description,
 displayName,
@@ -422,7 +359,6 @@ scopedRoleMembers
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ description }}',
 '{{ displayName }}',
@@ -436,7 +372,6 @@ SELECT
 '{{ scopedRoleMembers }}'
 RETURNING
 id,
-@odata.type,
 deletedDateTime,
 description,
 displayName,
@@ -460,8 +395,6 @@ visibility
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -499,26 +432,22 @@ visibility
         The collection of open extensions defined for this administrative unit. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
     - name: members
       description: |
         Users and groups that are members of this administrative unit. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: scopedRoleMembers
       description: |
         Scoped-role members of this administrative unit.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           administrativeUnitId: "{{ administrativeUnitId }}"
           roleId: "{{ roleId }}"
           roleMemberInfo:
             displayName: "{{ displayName }}"
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
 `}</CodeBlock>
 
 </TabItem>
@@ -541,7 +470,6 @@ Update the properties of an administrativeUnit object.
 UPDATE entra_id.directory.administrative_units
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
@@ -554,11 +482,9 @@ extensions = '{{ extensions }}',
 members = '{{ members }}',
 scopedRoleMembers = '{{ scopedRoleMembers }}'
 WHERE 
-administrativeUnit-id = '{{ administrativeUnit-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+administrative_unit_id = '{{ administrative_unit_id }}' --required
 RETURNING
 id,
-@odata.type,
 deletedDateTime,
 description,
 displayName,
@@ -589,7 +515,7 @@ Delete an administrativeUnit.
 
 ```sql
 DELETE FROM entra_id.directory.administrative_units
-WHERE administrativeUnit-id = '{{ administrativeUnit-id }}' --required
+WHERE administrative_unit_id = '{{ administrative_unit_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

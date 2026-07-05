@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackage" /></td>
     <td><code></code></td>
     <td>Access package containing this policy. Read-only. Supports $expand.</td>
@@ -164,8 +159,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageAssignment-id"><code>accessPackageAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_assignment_id"><code>access_package_assignment_id</code></a></td>
+    <td></td>
     <td>Read-only. Supports $filter (eq) on the id property and $expand query parameters.</td>
 </tr>
 </tbody>
@@ -184,20 +179,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageAssignment-id">
-    <td><CopyableCode code="accessPackageAssignment-id" /></td>
+<tr id="parameter-access_package_assignment_id">
+    <td><CopyableCode code="access_package_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageAssignment</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -217,7 +202,6 @@ Read-only. Supports $filter (eq) on the id property and $expand query parameters
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 allowedTargetScope,
 automaticRequestSettings,
@@ -235,9 +219,7 @@ requestorSettings,
 reviewSettings,
 specificAllowedTargets
 FROM entra_id.identity_governance.entitlement_management_assignments_assignment_policy
-WHERE accessPackageAssignment-id = '{{ accessPackageAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_assignment_id = '{{ access_package_assignment_id }}' -- required
 ;
 ```
 </TabItem>

@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackages" /></td>
     <td><code>array</code></td>
     <td>The access packages in this catalog. Read-only. Nullable.</td>
@@ -144,21 +139,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageResourceRequest-id"><code>accessPackageResourceRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_resource_request_id"><code>access_package_resource_request_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackageResourceRequest-id"><code>accessPackageResourceRequest-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_resource_request_id"><code>access_package_resource_request_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackageResourceRequest-id"><code>accessPackageResourceRequest-id</code></a></td>
+    <td><a href="#parameter-access_package_resource_request_id"><code>access_package_resource_request_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -178,20 +173,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageResourceRequest-id">
-    <td><CopyableCode code="accessPackageResourceRequest-id" /></td>
+<tr id="parameter-access_package_resource_request_id">
+    <td><CopyableCode code="access_package_resource_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageResourceRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -216,7 +201,6 @@ Retrieved navigation property
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -230,9 +214,7 @@ resourceScopes,
 resources,
 state
 FROM entra_id.identity_governance.entitlement_management_resource_requests_catalog
-WHERE accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_resource_request_id = '{{ access_package_resource_request_id }}' -- required
 ;
 ```
 </TabItem>
@@ -255,7 +237,6 @@ No description available.
 UPDATE entra_id.identity_governance.entitlement_management_resource_requests_catalog
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 catalogType = '{{ catalogType }}',
 createdDateTime = '{{ createdDateTime }}',
 description = '{{ description }}',
@@ -269,11 +250,9 @@ resourceRoles = '{{ resourceRoles }}',
 resources = '{{ resources }}',
 resourceScopes = '{{ resourceScopes }}'
 WHERE 
-accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_resource_request_id = '{{ access_package_resource_request_id }}' --required
 RETURNING
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -305,7 +284,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_resource_requests_catalog
-WHERE accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' --required
+WHERE access_package_resource_request_id = '{{ access_package_resource_request_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

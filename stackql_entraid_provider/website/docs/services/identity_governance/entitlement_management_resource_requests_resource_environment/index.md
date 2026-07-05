@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="connectionInfo" /></td>
     <td><code></code></td>
     <td>Connection information of an environment used to connect to a resource.</td>
@@ -129,8 +124,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageResourceRequest-id"><code>accessPackageResourceRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_resource_request_id"><code>access_package_resource_request_id</code></a></td>
+    <td></td>
     <td>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.</td>
 </tr>
 </tbody>
@@ -149,20 +144,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageResourceRequest-id">
-    <td><CopyableCode code="accessPackageResourceRequest-id" /></td>
+<tr id="parameter-access_package_resource_request_id">
+    <td><CopyableCode code="access_package_resource_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageResourceRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -182,7 +167,6 @@ Contains the environment information for the resource. This can be set using eit
 ```sql
 SELECT
 id,
-@odata.type,
 connectionInfo,
 createdDateTime,
 description,
@@ -193,9 +177,7 @@ originId,
 originSystem,
 resources
 FROM entra_id.identity_governance.entitlement_management_resource_requests_resource_environment
-WHERE accessPackageResourceRequest-id = '{{ accessPackageResourceRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_resource_request_id = '{{ access_package_resource_request_id }}' -- required
 ;
 ```
 </TabItem>

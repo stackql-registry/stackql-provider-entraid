@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="arguments" /></td>
     <td><code>array</code></td>
     <td>Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</td>
@@ -129,8 +124,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-task-id"><code>task-id</code></a>, <a href="#parameter-taskProcessingResult-id"><code>taskProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-task_id"><code>task_id</code></a>, <a href="#parameter-task_processing_result_id"><code>task_processing_result_id</code></a></td>
+    <td></td>
     <td>The related workflow task</td>
 </tr>
 </tbody>
@@ -149,30 +144,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-task-id">
-    <td><CopyableCode code="task-id" /></td>
+<tr id="parameter-task_id">
+    <td><CopyableCode code="task_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of task</td>
 </tr>
-<tr id="parameter-taskProcessingResult-id">
-    <td><CopyableCode code="taskProcessingResult-id" /></td>
+<tr id="parameter-task_processing_result_id">
+    <td><CopyableCode code="task_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of taskProcessingResult</td>
 </tr>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -192,7 +177,6 @@ The related workflow task
 ```sql
 SELECT
 id,
-@odata.type,
 arguments,
 category,
 continueOnError,
@@ -203,11 +187,9 @@ isEnabled,
 taskDefinitionId,
 taskProcessingResults
 FROM entra_id.identity_governance.lifecycle_workflows_workflows_tasks_task_processing_results_task
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND task-id = '{{ task-id }}' -- required
-AND taskProcessingResult-id = '{{ taskProcessingResult-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND task_id = '{{ task_id }}' -- required
+AND task_processing_result_id = '{{ task_processing_result_id }}' -- required
 ;
 ```
 </TabItem>

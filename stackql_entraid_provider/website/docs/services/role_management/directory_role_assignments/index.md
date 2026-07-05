@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appScope" /></td>
     <td><code></code></td>
     <td>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.</td>
@@ -127,11 +122,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="appScope" /></td>
@@ -201,35 +191,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a unifiedRoleAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:<br />- directory (Microsoft Entra ID)<br />- entitlement management (Microsoft Entra entitlement management)</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new unifiedRoleAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a unifiedRoleAssignment object.</td>
 </tr>
@@ -249,50 +239,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleAssignment-id">
-    <td><CopyableCode code="unifiedRoleAssignment-id" /></td>
+<tr id="parameter-unified_role_assignment_id">
+    <td><CopyableCode code="unified_role_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleAssignment</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -318,7 +268,6 @@ Retrieve the properties and relationships of a unifiedRoleAssignment object.
 ```sql
 SELECT
 id,
-@odata.type,
 appScope,
 appScopeId,
 condition,
@@ -329,9 +278,7 @@ principalId,
 roleDefinition,
 roleDefinitionId
 FROM entra_id.role_management.directory_role_assignments
-WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_assignment_id = '{{ unified_role_assignment_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,7 +289,6 @@ Get a list of unifiedRoleAssignment objects for the RBAC provider. The following
 ```sql
 SELECT
 id,
-@odata.type,
 appScope,
 appScopeId,
 condition,
@@ -353,14 +299,6 @@ principalId,
 roleDefinition,
 roleDefinitionId
 FROM entra_id.role_management.directory_role_assignments
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -383,7 +321,6 @@ Create a new unifiedRoleAssignment object.
 ```sql
 INSERT INTO entra_id.role_management.directory_role_assignments (
 id,
-@odata.type,
 appScopeId,
 condition,
 directoryScopeId,
@@ -396,7 +333,6 @@ roleDefinition
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ appScopeId }}',
 '{{ condition }}',
 '{{ directoryScopeId }}',
@@ -408,7 +344,6 @@ SELECT
 '{{ roleDefinition }}'
 RETURNING
 id,
-@odata.type,
 appScope,
 appScopeId,
 condition,
@@ -430,8 +365,6 @@ roleDefinitionId
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: appScopeId
       value: "{{ appScopeId }}"
       description: |
@@ -488,7 +421,6 @@ No description available.
 UPDATE entra_id.role_management.directory_role_assignments
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 appScopeId = '{{ appScopeId }}',
 condition = '{{ condition }}',
 directoryScopeId = '{{ directoryScopeId }}',
@@ -499,11 +431,9 @@ directoryScope = '{{ directoryScope }}',
 principal = '{{ principal }}',
 roleDefinition = '{{ roleDefinition }}'
 WHERE 
-unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unified_role_assignment_id = '{{ unified_role_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 appScope,
 appScopeId,
 condition,
@@ -532,7 +462,7 @@ Delete a unifiedRoleAssignment object.
 
 ```sql
 DELETE FROM entra_id.role_management.directory_role_assignments
-WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' --required
+WHERE unified_role_assignment_id = '{{ unified_role_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

@@ -53,11 +53,6 @@ Retrieved navigation property
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appServiceConnectInbound" /></td>
     <td><code>object</code></td>
     <td>Defines your partner-specific configuration for inbound app service connect settings that control which applications can connect across tenant boundaries with the partner organization. (title: crossTenantAccessPolicyAppServiceConnectSetting)</td>
@@ -143,11 +138,6 @@ Retrieved collection
     </tr>
 </thead>
 <tbody>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
 <tr>
     <td><CopyableCode code="appServiceConnectInbound" /></td>
     <td><code>object</code></td>
@@ -241,35 +231,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a partner-specific configuration.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new partner configuration in a cross-tenant access policy.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
     <td></td>
     <td>Update the properties of a partner-specific configuration.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.</td>
 </tr>
@@ -289,50 +279,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-crossTenantAccessPolicyConfigurationPartner-tenantId">
-    <td><CopyableCode code="crossTenantAccessPolicyConfigurationPartner-tenantId" /></td>
+<tr id="parameter-cross_tenant_access_policy_configuration_partner_tenant_id">
+    <td><CopyableCode code="cross_tenant_access_policy_configuration_partner_tenant_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of crossTenantAccessPolicyConfigurationPartner</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -357,7 +307,6 @@ Read the properties and relationships of a partner-specific configuration.
 
 ```sql
 SELECT
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -373,9 +322,7 @@ m365CollaborationOutbound,
 tenantId,
 tenantRestrictions
 FROM entra_id.policies.cross_tenant_access_policy_partners
-WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' -- required
 ;
 ```
 </TabItem>
@@ -385,7 +332,6 @@ Get a list of all partner configurations within a cross-tenant access policy. Yo
 
 ```sql
 SELECT
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -401,14 +347,6 @@ m365CollaborationOutbound,
 tenantId,
 tenantRestrictions
 FROM entra_id.policies.cross_tenant_access_policy_partners
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -443,8 +381,7 @@ m365CollaborationInbound,
 m365CollaborationOutbound,
 tenantId,
 tenantRestrictions,
-identitySynchronization,
-@odata.type
+identitySynchronization
 )
 SELECT 
 '{{ appServiceConnectInbound }}',
@@ -460,10 +397,8 @@ SELECT
 '{{ m365CollaborationOutbound }}',
 '{{ tenantId }}',
 '{{ tenantRestrictions }}',
-'{{ identitySynchronization }}',
-'{{ @odata.type }}' /* required */
+'{{ identitySynchronization }}'
 RETURNING
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -495,16 +430,12 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: automaticUserConsentSettings
       description: |
         Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
       value:
         inboundAllowed: {{ inboundAllowed }}
         outboundAllowed: {{ outboundAllowed }}
-        @odata.type: "{{ @odata.type }}"
     - name: b2bCollaborationInbound
       description: |
         Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
@@ -514,16 +445,11 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
         usersAndGroups:
           accessType: "{{ accessType }}"
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: b2bCollaborationOutbound
       description: |
         Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
@@ -533,16 +459,11 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
         usersAndGroups:
           accessType: "{{ accessType }}"
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: b2bDirectConnectInbound
       description: |
         Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
@@ -552,16 +473,11 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
         usersAndGroups:
           accessType: "{{ accessType }}"
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: b2bDirectConnectOutbound
       description: |
         Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
@@ -571,16 +487,11 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
         usersAndGroups:
           accessType: "{{ accessType }}"
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: inboundTrust
       description: |
         Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
@@ -588,7 +499,6 @@ tenantRestrictions
         isCompliantDeviceAccepted: {{ isCompliantDeviceAccepted }}
         isHybridAzureADJoinedDeviceAccepted: {{ isHybridAzureADJoinedDeviceAccepted }}
         isMfaAccepted: {{ isMfaAccepted }}
-        @odata.type: "{{ @odata.type }}"
     - name: isInMultiTenantOrganization
       value: {{ isInMultiTenantOrganization }}
       description: |
@@ -606,9 +516,6 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: m365CollaborationOutbound
       description: |
         Defines your partner-specific configuration for outbound Microsoft 365 collaboration settings that determine which users in your organization can collaborate with the partner organization using Microsoft 365 apps.
@@ -618,9 +525,6 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
     - name: tenantId
       value: "{{ tenantId }}"
       description: |
@@ -634,16 +538,11 @@ tenantRestrictions
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
         usersAndGroups:
           accessType: "{{ accessType }}"
           targets:
             - target: "{{ target }}"
               targetType: "{{ targetType }}"
-              @odata.type: "{{ @odata.type }}"
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
         devices: "{{ devices }}"
     - name: identitySynchronization
       description: |
@@ -653,10 +552,6 @@ tenantRestrictions
         tenantId: "{{ tenantId }}"
         userSyncInbound:
           isSyncAllowed: {{ isSyncAllowed }}
-          @odata.type: "{{ @odata.type }}"
-        @odata.type: "{{ @odata.type }}"
-    - name: @odata.type
-      value: "{{ @odata.type }}"
 `}</CodeBlock>
 
 </TabItem>
@@ -692,12 +587,9 @@ m365CollaborationOutbound = '{{ m365CollaborationOutbound }}',
 tenantId = '{{ tenantId }}',
 tenantRestrictions = '{{ tenantRestrictions }}',
 identitySynchronization = '{{ identitySynchronization }}',
-@odata.type = '{{ @odata.type }}'
 WHERE 
-crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' --required
 RETURNING
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -731,7 +623,7 @@ Delete a partner-specific configuration in a cross-tenant access policy. If a co
 
 ```sql
 DELETE FROM entra_id.policies.cross_tenant_access_policy_partners
-WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' --required
+WHERE cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

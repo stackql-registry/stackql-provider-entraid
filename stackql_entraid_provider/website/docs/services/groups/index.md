@@ -18,7 +18,7 @@ groups service documentation.
 
 :::info[Service Summary]
 
-total resources: __21__  
+total resources: __18__  
 
 :::
 
@@ -33,20 +33,17 @@ total resources: __21__
 <a href="/services/groups/group_lifecycle_policies/">group_lifecycle_policies</a><br />
 <a href="/services/groups/groups/">groups</a><br />
 <a href="/services/groups/member_of/">member_of</a><br />
-<a href="/services/groups/members/">members</a><br />
-<a href="/services/groups/members_with_license_errors/">members_with_license_errors</a><br />
-<a href="/services/groups/on_premises_sync_behavior/">on_premises_sync_behavior</a>
+<a href="/services/groups/members/">members</a>
 </div>
 <div class="providerDocColumn">
+<a href="/services/groups/members_with_license_errors/">members_with_license_errors</a><br />
+<a href="/services/groups/on_premises_sync_behavior/">on_premises_sync_behavior</a><br />
 <a href="/services/groups/owners/">owners</a><br />
 <a href="/services/groups/permission_grants/">permission_grants</a><br />
 <a href="/services/groups/rejected_senders/">rejected_senders</a><br />
 <a href="/services/groups/service_provisioning_errors/">service_provisioning_errors</a><br />
 <a href="/services/groups/settings/">settings</a><br />
-<a href="/services/groups/sites/">sites</a><br />
-<a href="/services/groups/subscribe_by_mail/">subscribe_by_mail</a><br />
 <a href="/services/groups/transitive_member_of/">transitive_member_of</a><br />
-<a href="/services/groups/transitive_members/">transitive_members</a><br />
-<a href="/services/groups/unsubscribe_by_mail/">unsubscribe_by_mail</a>
+<a href="/services/groups/transitive_members/">transitive_members</a>
 </div>
 </div>

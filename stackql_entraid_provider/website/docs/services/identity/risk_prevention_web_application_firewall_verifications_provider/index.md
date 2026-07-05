@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>The display name of the WAF provider.</td>
@@ -89,8 +84,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-webApplicationFirewallVerificationModel-id"><code>webApplicationFirewallVerificationModel-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-web_application_firewall_verification_model_id"><code>web_application_firewall_verification_model_id</code></a></td>
+    <td></td>
     <td>Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.</td>
 </tr>
 </tbody>
@@ -109,20 +104,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-webApplicationFirewallVerificationModel-id">
-    <td><CopyableCode code="webApplicationFirewallVerificationModel-id" /></td>
+<tr id="parameter-web_application_firewall_verification_model_id">
+    <td><CopyableCode code="web_application_firewall_verification_model_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of webApplicationFirewallVerificationModel</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -142,12 +127,9 @@ Reference to a provider resource associated with this verification model. Repres
 ```sql
 SELECT
 id,
-@odata.type,
 displayName
 FROM entra_id.identity.risk_prevention_web_application_firewall_verifications_provider
-WHERE webApplicationFirewallVerificationModel-id = '{{ webApplicationFirewallVerificationModel-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE web_application_firewall_verification_model_id = '{{ web_application_firewall_verification_model_id }}' -- required
 ;
 ```
 </TabItem>

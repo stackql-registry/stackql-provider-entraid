@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appRoleId" /></td>
     <td><code>string (uuid)</code></td>
     <td>The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. (pattern: <code>^&#91;0-9a-fA-F&#93;&#123;8&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;12&#125;$</code>)</td>
@@ -122,11 +117,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="appRoleId" /></td>
@@ -191,35 +181,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Represents the app roles a user is granted for an application. Supports $expand.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Retrieve the list of appRoleAssignments granted to an agentUser.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Grant an app role assignment to an agentUser.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-appRoleAssignment-id"><code>appRoleAssignment-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-app_role_assignment_id"><code>app_role_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an appRoleAssignment that has been granted to a user.</td>
 </tr>
@@ -239,55 +229,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-appRoleAssignment-id">
-    <td><CopyableCode code="appRoleAssignment-id" /></td>
+<tr id="parameter-app_role_assignment_id">
+    <td><CopyableCode code="app_role_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of appRoleAssignment</td>
 </tr>
-<tr id="parameter-user-id">
-    <td><CopyableCode code="user-id" /></td>
+<tr id="parameter-user_id">
+    <td><CopyableCode code="user_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of user</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -318,7 +268,6 @@ Represents the app roles a user is granted for an application. Supports $expand.
 ```sql
 SELECT
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -328,11 +277,9 @@ principalType,
 resourceDisplayName,
 resourceId
 FROM entra_id.users.app_role_assignments
-WHERE user-id = '{{ user-id }}' -- required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' -- required
+WHERE user_id = '{{ user_id }}' -- required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -343,7 +290,6 @@ Retrieve the list of appRoleAssignments granted to an agentUser.
 ```sql
 SELECT
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -353,16 +299,8 @@ principalType,
 resourceDisplayName,
 resourceId
 FROM entra_id.users.app_role_assignments
-WHERE user-id = '{{ user-id }}' -- required
+WHERE user_id = '{{ user_id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -385,7 +323,6 @@ Grant an app role assignment to an agentUser.
 ```sql
 INSERT INTO entra_id.users.app_role_assignments (
 id,
-@odata.type,
 deletedDateTime,
 appRoleId,
 createdDateTime,
@@ -394,11 +331,10 @@ principalId,
 principalType,
 resourceDisplayName,
 resourceId,
-user-id
+user_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ appRoleId }}',
 '{{ createdDateTime }}',
@@ -407,10 +343,9 @@ SELECT
 '{{ principalType }}',
 '{{ resourceDisplayName }}',
 '{{ resourceId }}',
-'{{ user-id }}'
+'{{ user_id }}'
 RETURNING
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -427,15 +362,13 @@ resourceId
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: app_role_assignments
   props:
-    - name: user-id
-      value: "{{ user-id }}"
+    - name: user_id
+      value: "{{ user_id }}"
       description: Required parameter for the app_role_assignments resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -490,7 +423,6 @@ No description available.
 UPDATE entra_id.users.app_role_assignments
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 appRoleId = '{{ appRoleId }}',
 createdDateTime = '{{ createdDateTime }}',
@@ -500,12 +432,10 @@ principalType = '{{ principalType }}',
 resourceDisplayName = '{{ resourceDisplayName }}',
 resourceId = '{{ resourceId }}'
 WHERE 
-user-id = '{{ user-id }}' --required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+user_id = '{{ user_id }}' --required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 appRoleId,
 createdDateTime,
 deletedDateTime,
@@ -533,8 +463,8 @@ Delete an appRoleAssignment that has been granted to a user.
 
 ```sql
 DELETE FROM entra_id.users.app_role_assignments
-WHERE user-id = '{{ user-id }}' --required
-AND appRoleAssignment-id = '{{ appRoleAssignment-id }}' --required
+WHERE user_id = '{{ user_id }}' --required
+AND app_role_assignment_id = '{{ app_role_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

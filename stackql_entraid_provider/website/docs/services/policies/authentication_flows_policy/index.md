@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>Inherited property. A description of the policy. Optional. Read-only.</td>
@@ -100,13 +95,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an authenticationFlowsPolicy object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified.</td>
 </tr>
@@ -133,16 +128,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -166,13 +151,10 @@ Read the properties and relationships of an authenticationFlowsPolicy object.
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 selfServiceSignUp
 FROM entra_id.policies.authentication_flows_policy
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -195,15 +177,11 @@ Update the selfServiceSignUp property of an authenticationFlowsPolicy object. Th
 UPDATE entra_id.policies.authentication_flows_policy
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
 selfServiceSignUp = '{{ selfServiceSignUp }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 selfServiceSignUp;

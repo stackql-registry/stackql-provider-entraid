@@ -107,7 +107,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /schemaExtensions/{schemaExtension_id}:
+  /schemaExtensions/{schema_extension_id}:
     get:
       tags:
         - schemaExtensions.schemaExtension
@@ -137,7 +137,7 @@ paths:
             type: array
             items:
               type: string
-        - name: schemaExtension-id
+        - name: schema_extension_id
           in: path
           description: The unique identifier of schemaExtension
           required: true
@@ -185,7 +185,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: schemaExtension-id
+        - name: schema_extension_id
           in: path
           description: The unique identifier of schemaExtension
           required: true
@@ -207,7 +207,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: schemaExtension-id
+        - name: schema_extension_id
           in: path
           description: The unique identifier of schemaExtension
           required: true
@@ -228,8 +228,6 @@ components:
     microsoft.graph.schemaExtension:
       x-ms-discriminator-value: '#microsoft.graph.schemaExtension'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1402,8 +1400,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2534,8 +2530,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.extensionSchemaProperty:
       title: extensionSchemaProperty
-      required:
-        - '@odata.type'
       type: object
       properties:
         name:
@@ -2597,8 +2591,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

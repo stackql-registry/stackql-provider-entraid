@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackage" /></td>
     <td><code></code></td>
     <td>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</td>
@@ -122,11 +117,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackage" /></td>
@@ -191,42 +181,42 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageAssignment-id"><code>accessPackageAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_assignment_id"><code>access_package_assignment_id</code></a></td>
+    <td></td>
     <td>In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackageAssignment-id"><code>accessPackageAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_assignment_id"><code>access_package_assignment_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackageAssignment-id"><code>accessPackageAssignment-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_id"><code>access_package_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#reprocess"><CopyableCode code="reprocess" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessPackageAssignment-id"><code>accessPackageAssignment-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_id"><code>access_package_assignment_id</code></a></td>
     <td></td>
     <td>In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user's assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.</td>
 </tr>
@@ -246,50 +236,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageAssignment-id">
-    <td><CopyableCode code="accessPackageAssignment-id" /></td>
+<tr id="parameter-access_package_assignment_id">
+    <td><CopyableCode code="access_package_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageAssignment</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -315,7 +265,6 @@ In Microsoft Entra entitlement management, retrieve the properties and relations
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -325,9 +274,7 @@ state,
 status,
 target
 FROM entra_id.identity_governance.entitlement_management_assignments
-WHERE accessPackageAssignment-id = '{{ accessPackageAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_assignment_id = '{{ access_package_assignment_id }}' -- required
 ;
 ```
 </TabItem>
@@ -338,7 +285,6 @@ In Microsoft Entra entitlement management, retrieve a list of accessPackageAssig
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -348,14 +294,6 @@ state,
 status,
 target
 FROM entra_id.identity_governance.entitlement_management_assignments
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -378,7 +316,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.identity_governance.entitlement_management_assignments (
 id,
-@odata.type,
 customExtensionCalloutInstances,
 expiredDateTime,
 schedule,
@@ -390,7 +327,6 @@ target
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ customExtensionCalloutInstances }}',
 '{{ expiredDateTime }}',
 '{{ schedule }}',
@@ -401,7 +337,6 @@ SELECT
 '{{ target }}'
 RETURNING
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -422,8 +357,6 @@ target
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: customExtensionCalloutInstances
       description: |
         Information about all the custom extension calls that were made during the access package assignment workflow.
@@ -433,7 +366,6 @@ target
           externalCorrelationId: "{{ externalCorrelationId }}"
           id: "{{ id }}"
           status: "{{ status }}"
-          @odata.type: "{{ @odata.type }}"
     - name: expiredDateTime
       value: "{{ expiredDateTime }}"
       description: |
@@ -484,7 +416,6 @@ No description available.
 UPDATE entra_id.identity_governance.entitlement_management_assignments
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 customExtensionCalloutInstances = '{{ customExtensionCalloutInstances }}',
 expiredDateTime = '{{ expiredDateTime }}',
 schedule = '{{ schedule }}',
@@ -494,11 +425,9 @@ accessPackage = '{{ accessPackage }}',
 assignmentPolicy = '{{ assignmentPolicy }}',
 target = '{{ target }}'
 WHERE 
-accessPackageAssignment-id = '{{ accessPackageAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_assignment_id = '{{ access_package_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -526,7 +455,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_assignments
-WHERE accessPackageAssignment-id = '{{ accessPackageAssignment-id }}' --required
+WHERE access_package_assignment_id = '{{ access_package_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -548,7 +477,7 @@ In Microsoft Entra entitlement management, callers can automatically reevaluate 
 
 ```sql
 EXEC entra_id.identity_governance.entitlement_management_assignments.reprocess 
-@accessPackageAssignment-id='{{ accessPackageAssignment-id }}' --required
+@access_package_assignment_id='{{ access_package_assignment_id }}' --required
 ;
 ```
 </TabItem>

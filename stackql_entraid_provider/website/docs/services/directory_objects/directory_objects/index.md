@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="deletedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -87,11 +82,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="deletedDateTime" /></td>
@@ -121,35 +111,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a directoryObject object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a directory object, for example, a group, user, application, or service principal.</td>
 </tr>
@@ -177,35 +167,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
 </tr>
 <tr>
     <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
 </tr>
 <tr>
     <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
 </tr>
 <tr>
     <td><a href="#restore"><CopyableCode code="restore" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td></td>
     <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
 </tr>
@@ -225,50 +215,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-directoryObject-id">
-    <td><CopyableCode code="directoryObject-id" /></td>
+<tr id="parameter-directory_object_id">
+    <td><CopyableCode code="directory_object_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of directoryObject</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -299,12 +249,9 @@ Retrieve the properties and relationships of a directoryObject object.
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime
 FROM entra_id.directory_objects.directory_objects
-WHERE directoryObject-id = '{{ directoryObject-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE directory_object_id = '{{ directory_object_id }}' -- required
 ;
 ```
 </TabItem>
@@ -315,18 +262,9 @@ Retrieved collection
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime
 FROM entra_id.directory_objects.directory_objects
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -349,16 +287,13 @@ No description available.
 ```sql
 INSERT INTO entra_id.directory_objects.directory_objects (
 id,
-@odata.type,
 deletedDateTime
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}'
 RETURNING
 id,
-@odata.type,
 deletedDateTime
 ;
 ```
@@ -372,8 +307,6 @@ deletedDateTime
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -400,14 +333,11 @@ No description available.
 UPDATE entra_id.directory_objects.directory_objects
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}'
 WHERE 
-directoryObject-id = '{{ directoryObject-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+directory_object_id = '{{ directory_object_id }}' --required
 RETURNING
 id,
-@odata.type,
 deletedDateTime;
 ```
 </TabItem>
@@ -428,7 +358,7 @@ Delete a directory object, for example, a group, user, application, or service p
 
 ```sql
 DELETE FROM entra_id.directory_objects.directory_objects
-WHERE directoryObject-id = '{{ directoryObject-id }}' --required
+WHERE directory_object_id = '{{ directory_object_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -500,7 +430,7 @@ Check for membership in a specified list of group IDs, and return from that list
 
 ```sql
 EXEC entra_id.directory_objects.directory_objects.check_member_groups 
-@directoryObject-id='{{ directoryObject-id }}' --required 
+@directory_object_id='{{ directory_object_id }}' --required 
 @@json=
 '{
 "groupIds": "{{ groupIds }}"
@@ -514,7 +444,7 @@ Success
 
 ```sql
 EXEC entra_id.directory_objects.directory_objects.check_member_objects 
-@directoryObject-id='{{ directoryObject-id }}' --required 
+@directory_object_id='{{ directory_object_id }}' --required 
 @@json=
 '{
 "ids": "{{ ids }}"
@@ -528,7 +458,7 @@ Return all the group IDs for the groups that the specified user, group, service 
 
 ```sql
 EXEC entra_id.directory_objects.directory_objects.get_member_groups 
-@directoryObject-id='{{ directoryObject-id }}' --required 
+@directory_object_id='{{ directory_object_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -542,7 +472,7 @@ Return all IDs for the groups, administrative units, and directory roles that an
 
 ```sql
 EXEC entra_id.directory_objects.directory_objects.get_member_objects 
-@directoryObject-id='{{ directoryObject-id }}' --required 
+@directory_object_id='{{ directory_object_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -556,7 +486,7 @@ Restore a recently deleted directory object from deleted items. The following ty
 
 ```sql
 EXEC entra_id.directory_objects.directory_objects.restore 
-@directoryObject-id='{{ directoryObject-id }}' --required
+@directory_object_id='{{ directory_object_id }}' --required
 ;
 ```
 </TabItem>

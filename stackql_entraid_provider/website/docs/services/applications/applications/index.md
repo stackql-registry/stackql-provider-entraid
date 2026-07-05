@@ -60,11 +60,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="addIns" /></td>
     <td><code>array</code></td>
     <td>Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</td>
@@ -344,11 +339,6 @@ Retrieved entity
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="addIns" /></td>
@@ -632,11 +622,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="addIns" /></td>
     <td><code>array</code></td>
     <td>Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</td>
@@ -916,11 +901,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="addIns" /></td>
@@ -1205,77 +1185,77 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
+    <td></td>
     <td>Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
+    <td></td>
     <td>Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.</td>
 </tr>
 <tr>
     <td><a href="#get_3"><CopyableCode code="get_3" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
+    <td></td>
     <td>Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
     <td></td>
     <td>Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.</td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
     <td></td>
     <td>Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.</td>
 </tr>
 <tr>
     <td><a href="#update_3"><CopyableCode code="update_3" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Create a new application object if it doesn't exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn't exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.</td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.</td>
 </tr>
 <tr>
     <td><a href="#delete_3"><CopyableCode code="delete_3" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.</td>
 </tr>
@@ -1301,74 +1281,95 @@ The following methods are available for this resource:
     <td>Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:<br />1. Validate the prefix and suffix naming policy<br />2. Validate the custom banned words policy<br />3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.</td>
 </tr>
 <tr>
+    <td><a href="#logo"><CopyableCode code="logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
+    <td></td>
+    <td>The main logo for the application. Not nullable.</td>
+</tr>
+<tr>
+    <td><a href="#logo_2"><CopyableCode code="logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>The main logo for the application. Not nullable.</td>
+</tr>
+<tr>
     <td><a href="#add_key"><CopyableCode code="add_key" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don't have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won't be able to use this service action. You can use the Update application operation to perform an update instead.</td>
 </tr>
 <tr>
     <td><a href="#add_password"><CopyableCode code="add_password" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Adds a strong password or secret to an application. You can also add passwords while creating the application.</td>
 </tr>
 <tr>
     <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
 </tr>
 <tr>
     <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
 </tr>
 <tr>
     <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
 </tr>
 <tr>
     <td><a href="#remove_key"><CopyableCode code="remove_key" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.</td>
 </tr>
 <tr>
     <td><a href="#remove_password"><CopyableCode code="remove_password" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Remove a password from an application.</td>
 </tr>
 <tr>
     <td><a href="#restore"><CopyableCode code="restore" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
 </tr>
 <tr>
     <td><a href="#set_verified_publisher"><CopyableCode code="set_verified_publisher" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Set the the verifiedPublisher on an agentIdentityBlueprint. For more information, including prerequisites to setting a verified publisher, see Publisher verification.</td>
+</tr>
+<tr>
+    <td><a href="#unset_verified_publisher"><CopyableCode code="unset_verified_publisher" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
+    <td></td>
+    <td>Unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.</td>
 </tr>
 </tbody>
 </table>
@@ -1386,60 +1387,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-appId">
-    <td><CopyableCode code="appId" /></td>
+<tr id="parameter-app_id">
+    <td><CopyableCode code="app_id" /></td>
     <td><code>string</code></td>
     <td>Alternate key of application</td>
 </tr>
-<tr id="parameter-application-id">
-    <td><CopyableCode code="application-id" /></td>
+<tr id="parameter-application_id">
+    <td><CopyableCode code="application_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of application</td>
 </tr>
-<tr id="parameter-uniqueName">
-    <td><CopyableCode code="uniqueName" /></td>
+<tr id="parameter-unique_name">
+    <td><CopyableCode code="unique_name" /></td>
     <td><code>string</code></td>
     <td>Alternate key of application</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -1472,7 +1433,6 @@ Get the properties and relationships of an application object. This API can be u
 ```sql
 SELECT
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -1526,9 +1486,7 @@ uniqueName,
 verifiedPublisher,
 web
 FROM entra_id.applications.applications
-WHERE appId = '{{ appId }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE app_id = '{{ app_id }}' -- required
 ;
 ```
 </TabItem>
@@ -1539,7 +1497,6 @@ Get the properties and relationships of an application object. This API can be u
 ```sql
 SELECT
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -1593,9 +1550,7 @@ uniqueName,
 verifiedPublisher,
 web
 FROM entra_id.applications.applications
-WHERE uniqueName = '{{ uniqueName }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unique_name = '{{ unique_name }}' -- required
 ;
 ```
 </TabItem>
@@ -1606,7 +1561,6 @@ Get the properties and relationships of an application object. This API can be u
 ```sql
 SELECT
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -1660,9 +1614,7 @@ uniqueName,
 verifiedPublisher,
 web
 FROM entra_id.applications.applications
-WHERE application-id = '{{ application-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE application_id = '{{ application_id }}' -- required
 ;
 ```
 </TabItem>
@@ -1673,7 +1625,6 @@ Get the list of applications in this organization. This API also returns agentId
 ```sql
 SELECT
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -1728,14 +1679,6 @@ verifiedPublisher,
 web
 FROM entra_id.applications.applications
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -1758,7 +1701,6 @@ Create a new application object. This API can also create an agentIdentityBluepr
 ```sql
 INSERT INTO entra_id.applications.applications (
 id,
-@odata.type,
 deletedDateTime,
 addIns,
 api,
@@ -1814,7 +1756,6 @@ tokenLifetimePolicies
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ addIns }}',
 '{{ api }}',
@@ -1869,7 +1810,6 @@ SELECT
 '{{ tokenLifetimePolicies }}'
 RETURNING
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -1934,8 +1874,6 @@ web
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -1947,7 +1885,6 @@ web
         - id: "{{ id }}"
           properties: "{{ properties }}"
           type: "{{ type }}"
-          @odata.type: "{{ @odata.type }}"
     - name: api
       value: "{{ api }}"
       description: |
@@ -1971,7 +1908,6 @@ web
           isEnabled: {{ isEnabled }}
           origin: "{{ origin }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: authenticationBehaviors
       value: "{{ authenticationBehaviors }}"
     - name: certification
@@ -2035,7 +1971,6 @@ web
           startDateTime: "{{ startDateTime }}"
           type: "{{ type }}"
           usage: "{{ usage }}"
-          @odata.type: "{{ @odata.type }}"
     - name: logo
       value: "{{ logo }}"
       description: |
@@ -2074,7 +2009,6 @@ web
           keyId: "{{ keyId }}"
           secretText: "{{ secretText }}"
           startDateTime: "{{ startDateTime }}"
-          @odata.type: "{{ @odata.type }}"
     - name: publicClient
       value: "{{ publicClient }}"
       description: |
@@ -2093,7 +2027,6 @@ web
       value:
         - resourceAccess: "{{ resourceAccess }}"
           resourceAppId: "{{ resourceAppId }}"
-          @odata.type: "{{ @odata.type }}"
     - name: samlMetadataUrl
       value: "{{ samlMetadataUrl }}"
       description: |
@@ -2140,7 +2073,6 @@ web
         The appManagementPolicy applied to this application.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -2156,7 +2088,6 @@ web
         Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           appDisplayName: "{{ appDisplayName }}"
           dataType: "{{ dataType }}"
@@ -2169,7 +2100,6 @@ web
         Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           audiences: "{{ audiences }}"
           description: "{{ description }}"
           issuer: "{{ issuer }}"
@@ -2178,7 +2108,6 @@ web
     - name: homeRealmDiscoveryPolicies
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -2190,7 +2119,6 @@ web
         Directory objects that are owners of this application. The owners are a set of nonadmin users or service principals who are allowed to modify this object. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: synchronization
       value: "{{ synchronization }}"
@@ -2199,7 +2127,6 @@ web
     - name: tokenIssuancePolicies
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -2209,7 +2136,6 @@ web
     - name: tokenLifetimePolicies
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -2240,7 +2166,6 @@ Create a new application object if it doesn't exist, or update the properties of
 UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 addIns = '{{ addIns }}',
 api = '{{ api }}',
@@ -2294,11 +2219,9 @@ synchronization = '{{ synchronization }}',
 tokenIssuancePolicies = '{{ tokenIssuancePolicies }}',
 tokenLifetimePolicies = '{{ tokenLifetimePolicies }}'
 WHERE 
-appId = '{{ appId }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+app_id = '{{ app_id }}' --required
 RETURNING
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -2361,7 +2284,6 @@ Create a new application object if it doesn't exist, or update the properties of
 UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 addIns = '{{ addIns }}',
 api = '{{ api }}',
@@ -2415,11 +2337,9 @@ synchronization = '{{ synchronization }}',
 tokenIssuancePolicies = '{{ tokenIssuancePolicies }}',
 tokenLifetimePolicies = '{{ tokenLifetimePolicies }}'
 WHERE 
-uniqueName = '{{ uniqueName }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unique_name = '{{ unique_name }}' --required
 RETURNING
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -2482,7 +2402,6 @@ Create a new application object if it doesn't exist, or update the properties of
 UPDATE entra_id.applications.applications
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 addIns = '{{ addIns }}',
 api = '{{ api }}',
@@ -2536,11 +2455,9 @@ synchronization = '{{ synchronization }}',
 tokenIssuancePolicies = '{{ tokenIssuancePolicies }}',
 tokenLifetimePolicies = '{{ tokenLifetimePolicies }}'
 WHERE 
-application-id = '{{ application-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+application_id = '{{ application_id }}' --required
 RETURNING
 id,
-@odata.type,
 addIns,
 api,
 appId,
@@ -2614,7 +2531,7 @@ Delete an application object. When deleted, apps are moved to a temporary contai
 
 ```sql
 DELETE FROM entra_id.applications.applications
-WHERE appId = '{{ appId }}' --required
+WHERE app_id = '{{ app_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2625,7 +2542,7 @@ Delete an application object. When deleted, apps are moved to a temporary contai
 
 ```sql
 DELETE FROM entra_id.applications.applications
-WHERE uniqueName = '{{ uniqueName }}' --required
+WHERE unique_name = '{{ unique_name }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2636,7 +2553,7 @@ Delete an application object. When deleted, apps are moved to a temporary contai
 
 ```sql
 DELETE FROM entra_id.applications.applications
-WHERE application-id = '{{ application-id }}' --required
+WHERE application_id = '{{ application_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2652,6 +2569,8 @@ AND If-Match = '{{ If-Match }}'
         { label: 'get_available_extension_properties', value: 'get_available_extension_properties' },
         { label: 'get_by_ids', value: 'get_by_ids' },
         { label: 'validate_properties', value: 'validate_properties' },
+        { label: 'logo', value: 'logo' },
+        { label: 'logo_2', value: 'logo_2' },
         { label: 'add_key', value: 'add_key' },
         { label: 'add_password', value: 'add_password' },
         { label: 'check_member_groups', value: 'check_member_groups' },
@@ -2661,7 +2580,8 @@ AND If-Match = '{{ If-Match }}'
         { label: 'remove_key', value: 'remove_key' },
         { label: 'remove_password', value: 'remove_password' },
         { label: 'restore', value: 'restore' },
-        { label: 'set_verified_publisher', value: 'set_verified_publisher' }
+        { label: 'set_verified_publisher', value: 'set_verified_publisher' },
+        { label: 'unset_verified_publisher', value: 'unset_verified_publisher' }
     ]}
 >
 <TabItem value="get_available_extension_properties">
@@ -2707,13 +2627,34 @@ EXEC entra_id.applications.applications.validate_properties
 ;
 ```
 </TabItem>
+<TabItem value="logo">
+
+The main logo for the application. Not nullable.
+
+```sql
+EXEC entra_id.applications.applications.logo 
+@application_id='{{ application_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="logo_2">
+
+The main logo for the application. Not nullable.
+
+```sql
+EXEC entra_id.applications.applications.logo_2 
+@application_id='{{ application_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
 <TabItem value="add_key">
 
 Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don't have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won't be able to use this service action. You can use the Update application operation to perform an update instead.
 
 ```sql
 EXEC entra_id.applications.applications.add_key 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "keyCredential": "{{ keyCredential }}", 
@@ -2729,7 +2670,7 @@ Adds a strong password or secret to an application. You can also add passwords w
 
 ```sql
 EXEC entra_id.applications.applications.add_password 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "passwordCredential": "{{ passwordCredential }}"
@@ -2743,7 +2684,7 @@ Check for membership in a specified list of group IDs, and return from that list
 
 ```sql
 EXEC entra_id.applications.applications.check_member_groups 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "groupIds": "{{ groupIds }}"
@@ -2757,7 +2698,7 @@ Success
 
 ```sql
 EXEC entra_id.applications.applications.check_member_objects 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "ids": "{{ ids }}"
@@ -2771,7 +2712,7 @@ Return all the group IDs for the groups that the specified user, group, service 
 
 ```sql
 EXEC entra_id.applications.applications.get_member_groups 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -2785,7 +2726,7 @@ Return all IDs for the groups, administrative units, and directory roles that an
 
 ```sql
 EXEC entra_id.applications.applications.get_member_objects 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -2799,7 +2740,7 @@ Remove a key credential from an agentIdentityBlueprint. This method along with a
 
 ```sql
 EXEC entra_id.applications.applications.remove_key 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "keyId": "{{ keyId }}", 
@@ -2814,7 +2755,7 @@ Remove a password from an application.
 
 ```sql
 EXEC entra_id.applications.applications.remove_password 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "keyId": "{{ keyId }}"
@@ -2828,7 +2769,7 @@ Restore a recently deleted directory object from deleted items. The following ty
 
 ```sql
 EXEC entra_id.applications.applications.restore 
-@application-id='{{ application-id }}' --required
+@application_id='{{ application_id }}' --required
 ;
 ```
 </TabItem>
@@ -2838,11 +2779,21 @@ Set the the verifiedPublisher on an agentIdentityBlueprint. For more information
 
 ```sql
 EXEC entra_id.applications.applications.set_verified_publisher 
-@application-id='{{ application-id }}' --required 
+@application_id='{{ application_id }}' --required 
 @@json=
 '{
 "verifiedPublisherId": "{{ verifiedPublisherId }}"
 }'
+;
+```
+</TabItem>
+<TabItem value="unset_verified_publisher">
+
+Unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.
+
+```sql
+EXEC entra_id.applications.applications.unset_verified_publisher 
+@application_id='{{ application_id }}' --required
 ;
 ```
 </TabItem>

@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>Description for the schema extension.</td>
@@ -107,11 +102,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="description" /></td>
@@ -161,35 +151,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-schemaExtension-id"><code>schemaExtension-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-schema_extension_id"><code>schema_extension_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of schemaExtension objects in your tenant. The schema extensions can be InDevelopment, Available, or Deprecated and includes schema extensions:</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new schemaExtension definition and its associated schema extension property to extend a supporting resource type. Schema extensions let you add strongly-typed custom data to a resource. The app that creates a schema extension is the owner app. Depending on the <br />state of the extension, the owner app, and only the owner app, may update or delete the extension.  See examples of how to define a schema extension that describes a training course, <br />use the schema extension definition to create a new group with training course data, and <br />add training course data to an existing group.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-schemaExtension-id"><code>schemaExtension-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-schema_extension_id"><code>schema_extension_id</code></a></td>
     <td></td>
     <td>Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the InDevelopment or Available status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the targetTypes property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the owner property of the extension is set to the appId of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the owner property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer. When using Graph Explorer to update a schemaExtension resource, include the owner property in the PATCH request body.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-schemaExtension-id"><code>schemaExtension-id</code></a></td>
+    <td><a href="#parameter-schema_extension_id"><code>schema_extension_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.</td>
 </tr>
@@ -209,50 +199,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-schemaExtension-id">
-    <td><CopyableCode code="schemaExtension-id" /></td>
+<tr id="parameter-schema_extension_id">
+    <td><CopyableCode code="schema_extension_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of schemaExtension</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -278,16 +228,13 @@ Retrieved entity
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 owner,
 properties,
 status,
 targetTypes
 FROM entra_id.schema_extensions.schema_extensions
-WHERE schemaExtension-id = '{{ schemaExtension-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE schema_extension_id = '{{ schema_extension_id }}' -- required
 ;
 ```
 </TabItem>
@@ -298,21 +245,12 @@ Get a list of schemaExtension objects in your tenant. The schema extensions can 
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 owner,
 properties,
 status,
 targetTypes
 FROM entra_id.schema_extensions.schema_extensions
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -335,7 +273,6 @@ Create a new schemaExtension definition and its associated schema extension prop
 ```sql
 INSERT INTO entra_id.schema_extensions.schema_extensions (
 id,
-@odata.type,
 description,
 owner,
 properties,
@@ -344,7 +281,6 @@ targetTypes
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ description }}',
 '{{ owner }}',
 '{{ properties }}',
@@ -352,7 +288,6 @@ SELECT
 '{{ targetTypes }}'
 RETURNING
 id,
-@odata.type,
 description,
 owner,
 properties,
@@ -370,8 +305,6 @@ targetTypes
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: description
       value: "{{ description }}"
       description: |
@@ -386,7 +319,6 @@ targetTypes
       value:
         - name: "{{ name }}"
           type: "{{ type }}"
-          @odata.type: "{{ @odata.type }}"
     - name: status
       value: "{{ status }}"
       description: |
@@ -418,18 +350,15 @@ Update properties in the definition of the specified schemaExtension. Additive u
 UPDATE entra_id.schema_extensions.schema_extensions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 description = '{{ description }}',
 owner = '{{ owner }}',
 properties = '{{ properties }}',
 status = '{{ status }}',
 targetTypes = '{{ targetTypes }}'
 WHERE 
-schemaExtension-id = '{{ schemaExtension-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+schema_extension_id = '{{ schema_extension_id }}' --required
 RETURNING
 id,
-@odata.type,
 description,
 owner,
 properties,
@@ -454,7 +383,7 @@ Delete the definition of a schema extension. Only the app that created the schem
 
 ```sql
 DELETE FROM entra_id.schema_extensions.schema_extensions
-WHERE schemaExtension-id = '{{ schemaExtension-id }}' --required
+WHERE schema_extension_id = '{{ schema_extension_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

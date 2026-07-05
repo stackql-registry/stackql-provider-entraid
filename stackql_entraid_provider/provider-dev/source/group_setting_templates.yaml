@@ -325,7 +325,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
     description: Provides operations to call the validateProperties method.
-  /groupSettingTemplates/{groupSettingTemplate_id}:
+  /groupSettingTemplates/{group_setting_template_id}:
     get:
       tags:
         - groupSettingTemplates.groupSettingTemplate
@@ -356,7 +356,7 @@ paths:
             type: array
             items:
               type: string
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -400,7 +400,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -418,7 +418,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -434,7 +434,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of groupSettingTemplate entities.
-  /groupSettingTemplates/{groupSettingTemplate_id}/checkMemberGroups:
+  /groupSettingTemplates/{group_setting_template_id}/checkMemberGroups:
     post:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
@@ -485,7 +485,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -493,7 +493,7 @@ paths:
             type: string
           x-ms-docs-key-type: groupSettingTemplate
     description: Provides operations to call the checkMemberGroups method.
-  /groupSettingTemplates/{groupSettingTemplate_id}/checkMemberObjects:
+  /groupSettingTemplates/{group_setting_template_id}/checkMemberObjects:
     post:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
@@ -540,7 +540,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -548,7 +548,7 @@ paths:
             type: string
           x-ms-docs-key-type: groupSettingTemplate
     description: Provides operations to call the checkMemberObjects method.
-  /groupSettingTemplates/{groupSettingTemplate_id}/getMemberGroups:
+  /groupSettingTemplates/{group_setting_template_id}/getMemberGroups:
     post:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
@@ -599,7 +599,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -607,7 +607,7 @@ paths:
             type: string
           x-ms-docs-key-type: groupSettingTemplate
     description: Provides operations to call the getMemberGroups method.
-  /groupSettingTemplates/{groupSettingTemplate_id}/getMemberObjects:
+  /groupSettingTemplates/{group_setting_template_id}/getMemberObjects:
     post:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
@@ -658,7 +658,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -666,7 +666,7 @@ paths:
             type: string
           x-ms-docs-key-type: groupSettingTemplate
     description: Provides operations to call the getMemberObjects method.
-  /groupSettingTemplates/{groupSettingTemplate_id}/restore:
+  /groupSettingTemplates/{group_setting_template_id}/restore:
     post:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
@@ -683,8 +683,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1827,7 +1825,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: groupSettingTemplate-id
+        - name: group_setting_template_id
           in: path
           description: The unique identifier of groupSettingTemplate
           required: true
@@ -1840,8 +1838,6 @@ components:
     microsoft.graph.groupSettingTemplate:
       x-ms-discriminator-value: '#microsoft.graph.groupSettingTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3002,8 +2998,6 @@ components:
           nullable: true
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4151,8 +4145,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5333,8 +5325,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.settingTemplateValue:
       title: settingTemplateValue
-      required:
-        - '@odata.type'
       type: object
       properties:
         defaultValue:
@@ -5357,8 +5347,6 @@ components:
           type: string
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6525,8 +6513,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

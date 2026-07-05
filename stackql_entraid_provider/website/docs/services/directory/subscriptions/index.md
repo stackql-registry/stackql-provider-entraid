@@ -59,11 +59,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="commerceSubscriptionId" /></td>
     <td><code>string</code></td>
     <td>The ID of this subscription in the commerce system. Alternate key.</td>
@@ -145,11 +140,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="commerceSubscriptionId" /></td>
     <td><code>string</code></td>
     <td>The ID of this subscription in the commerce system. Alternate key.</td>
@@ -229,11 +219,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="commerceSubscriptionId" /></td>
@@ -318,56 +303,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-commerceSubscriptionId"><code>commerceSubscriptionId</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-commerce_subscription_id"><code>commerce_subscription_id</code></a></td>
+    <td></td>
     <td>Get a specific commercial subscription that an organization acquired.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-companySubscription-id"><code>companySubscription-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-company_subscription_id"><code>company_subscription_id</code></a></td>
+    <td></td>
     <td>Get a specific commercial subscription that an organization acquired.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get the list of commercial subscriptions that an organization acquired.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-commerceSubscriptionId"><code>commerceSubscriptionId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-commerce_subscription_id"><code>commerce_subscription_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-companySubscription-id"><code>companySubscription-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-company_subscription_id"><code>company_subscription_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-commerceSubscriptionId"><code>commerceSubscriptionId</code></a></td>
+    <td><a href="#parameter-commerce_subscription_id"><code>commerce_subscription_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-companySubscription-id"><code>companySubscription-id</code></a></td>
+    <td><a href="#parameter-company_subscription_id"><code>company_subscription_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -387,55 +372,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-commerceSubscriptionId">
-    <td><CopyableCode code="commerceSubscriptionId" /></td>
+<tr id="parameter-commerce_subscription_id">
+    <td><CopyableCode code="commerce_subscription_id" /></td>
     <td><code>string</code></td>
     <td>Alternate key of companySubscription</td>
 </tr>
-<tr id="parameter-companySubscription-id">
-    <td><CopyableCode code="companySubscription-id" /></td>
+<tr id="parameter-company_subscription_id">
+    <td><CopyableCode code="company_subscription_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of companySubscription</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -462,7 +407,6 @@ Get a specific commercial subscription that an organization acquired.
 ```sql
 SELECT
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -476,9 +420,7 @@ skuPartNumber,
 status,
 totalLicenses
 FROM entra_id.directory.subscriptions
-WHERE commerceSubscriptionId = '{{ commerceSubscriptionId }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE commerce_subscription_id = '{{ commerce_subscription_id }}' -- required
 ;
 ```
 </TabItem>
@@ -489,7 +431,6 @@ Get a specific commercial subscription that an organization acquired.
 ```sql
 SELECT
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -503,9 +444,7 @@ skuPartNumber,
 status,
 totalLicenses
 FROM entra_id.directory.subscriptions
-WHERE companySubscription-id = '{{ companySubscription-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE company_subscription_id = '{{ company_subscription_id }}' -- required
 ;
 ```
 </TabItem>
@@ -516,7 +455,6 @@ Get the list of commercial subscriptions that an organization acquired.
 ```sql
 SELECT
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -530,14 +468,6 @@ skuPartNumber,
 status,
 totalLicenses
 FROM entra_id.directory.subscriptions
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -560,7 +490,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.directory.subscriptions (
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -576,7 +505,6 @@ totalLicenses
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ commerceSubscriptionId }}',
 '{{ createdDateTime }}',
 {{ isTrial }},
@@ -591,7 +519,6 @@ SELECT
 {{ totalLicenses }}
 RETURNING
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -616,8 +543,6 @@ totalLicenses
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: commerceSubscriptionId
       value: "{{ commerceSubscriptionId }}"
       description: |
@@ -654,7 +579,6 @@ totalLicenses
           provisioningStatus: "{{ provisioningStatus }}"
           servicePlanId: "{{ servicePlanId }}"
           servicePlanName: "{{ servicePlanName }}"
-          @odata.type: "{{ @odata.type }}"
     - name: skuId
       value: "{{ skuId }}"
       description: |
@@ -694,7 +618,6 @@ No description available.
 UPDATE entra_id.directory.subscriptions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 commerceSubscriptionId = '{{ commerceSubscriptionId }}',
 createdDateTime = '{{ createdDateTime }}',
 isTrial = {{ isTrial }},
@@ -708,11 +631,9 @@ skuPartNumber = '{{ skuPartNumber }}',
 status = '{{ status }}',
 totalLicenses = {{ totalLicenses }}
 WHERE 
-commerceSubscriptionId = '{{ commerceSubscriptionId }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+commerce_subscription_id = '{{ commerce_subscription_id }}' --required
 RETURNING
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -735,7 +656,6 @@ No description available.
 UPDATE entra_id.directory.subscriptions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 commerceSubscriptionId = '{{ commerceSubscriptionId }}',
 createdDateTime = '{{ createdDateTime }}',
 isTrial = {{ isTrial }},
@@ -749,11 +669,9 @@ skuPartNumber = '{{ skuPartNumber }}',
 status = '{{ status }}',
 totalLicenses = {{ totalLicenses }}
 WHERE 
-companySubscription-id = '{{ companySubscription-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+company_subscription_id = '{{ company_subscription_id }}' --required
 RETURNING
 id,
-@odata.type,
 commerceSubscriptionId,
 createdDateTime,
 isTrial,
@@ -786,7 +704,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.directory.subscriptions
-WHERE commerceSubscriptionId = '{{ commerceSubscriptionId }}' --required
+WHERE commerce_subscription_id = '{{ commerce_subscription_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -797,7 +715,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.directory.subscriptions
-WHERE companySubscription-id = '{{ companySubscription-id }}' --required
+WHERE company_subscription_id = '{{ company_subscription_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

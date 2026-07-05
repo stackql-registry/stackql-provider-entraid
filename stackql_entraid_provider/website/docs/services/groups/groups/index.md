@@ -59,11 +59,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="acceptedSenders" /></td>
     <td><code>array</code></td>
     <td>The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.</td>
@@ -455,11 +450,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="acceptedSenders" /></td>
     <td><code>array</code></td>
     <td>The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.</td>
@@ -849,11 +839,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="acceptedSenders" /></td>
@@ -1248,56 +1233,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
+    <td></td>
     <td>Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
+    <td></td>
     <td>Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the group and specify the properties in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
     <td></td>
     <td>Create a new group object if it doesn't exist, or update the properties of an existing group object.<br />You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.</td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Create a new group object if it doesn't exist, or update the properties of an existing group object.<br />You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-uniqueName"><code>uniqueName</code></a></td>
+    <td><a href="#parameter-unique_name"><code>unique_name</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This doesn't apply to Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.</td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This doesn't apply to Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.</td>
 </tr>
@@ -1325,91 +1310,105 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#add_favorite"><CopyableCode code="add_favorite" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.</td>
 </tr>
 <tr>
     <td><a href="#assign_license"><CopyableCode code="assign_license" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Add or remove licenses on a group. Licenses assigned to the group will be assigned to all users in the group. Group-based licensing is an alternative to direct user licensing. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.</td>
 </tr>
 <tr>
     <td><a href="#check_granted_permissions_for_app"><CopyableCode code="check_granted_permissions_for_app" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
 </tr>
 <tr>
     <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
 </tr>
 <tr>
     <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
 </tr>
 <tr>
     <td><a href="#remove_favorite"><CopyableCode code="remove_favorite" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only.</td>
 </tr>
 <tr>
     <td><a href="#renew"><CopyableCode code="renew" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.</td>
 </tr>
 <tr>
     <td><a href="#reset_unseen_count"><CopyableCode code="reset_unseen_count" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Reset the unseenCount of all the posts that the current user hasn't seen since their last visit. Supported for Microsoft 365 groups only.</td>
 </tr>
 <tr>
     <td><a href="#restore"><CopyableCode code="restore" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
 </tr>
 <tr>
     <td><a href="#retry_service_provisioning"><CopyableCode code="retry_service_provisioning" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Retry the group service provisioning.</td>
 </tr>
 <tr>
+    <td><a href="#subscribe_by_mail"><CopyableCode code="subscribe_by_mail" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
+    <td></td>
+    <td>Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.</td>
+</tr>
+<tr>
+    <td><a href="#unsubscribe_by_mail"><CopyableCode code="unsubscribe_by_mail" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
+    <td></td>
+    <td>Calling this method prevents the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.</td>
+</tr>
+<tr>
     <td><a href="#validate_properties_2"><CopyableCode code="validate_properties_2" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to update a Microsoft 365 group. To validate the properties before creating a group, use the directoryobject:validateProperties function. The following policy validations are performed for the display name and mail nickname properties: This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.</td>
 </tr>
@@ -1429,55 +1428,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-group-id">
-    <td><CopyableCode code="group-id" /></td>
+<tr id="parameter-group_id">
+    <td><CopyableCode code="group_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of group</td>
 </tr>
-<tr id="parameter-uniqueName">
-    <td><CopyableCode code="uniqueName" /></td>
+<tr id="parameter-unique_name">
+    <td><CopyableCode code="unique_name" /></td>
     <td><code>string</code></td>
     <td>Alternate key of group</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -1509,7 +1468,6 @@ Get the properties and relationships of a group object. This operation returns b
 ```sql
 SELECT
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -1585,9 +1543,7 @@ unseenCount,
 visibility,
 welcomeMessageEnabled
 FROM entra_id.groups.groups
-WHERE uniqueName = '{{ uniqueName }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unique_name = '{{ unique_name }}' -- required
 ;
 ```
 </TabItem>
@@ -1598,7 +1554,6 @@ Get the properties and relationships of a group object. This operation returns b
 ```sql
 SELECT
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -1674,9 +1629,7 @@ unseenCount,
 visibility,
 welcomeMessageEnabled
 FROM entra_id.groups.groups
-WHERE group-id = '{{ group-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE group_id = '{{ group_id }}' -- required
 ;
 ```
 </TabItem>
@@ -1687,7 +1640,6 @@ List all the groups available in an organization, excluding dynamic distribution
 ```sql
 SELECT
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -1764,14 +1716,6 @@ visibility,
 welcomeMessageEnabled
 FROM entra_id.groups.groups
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -1794,7 +1738,6 @@ Create a new group as specified in the request body. You can create the followin
 ```sql
 INSERT INTO entra_id.groups.groups (
 id,
-@odata.type,
 deletedDateTime,
 allowExternalSenders,
 assignedLabels,
@@ -1872,7 +1815,6 @@ transitiveMembers
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 {{ allowExternalSenders }},
 '{{ assignedLabels }}',
@@ -1949,7 +1891,6 @@ SELECT
 '{{ transitiveMembers }}'
 RETURNING
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -2036,8 +1977,6 @@ welcomeMessageEnabled
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -2052,14 +1991,12 @@ welcomeMessageEnabled
       value:
         - displayName: "{{ displayName }}"
           labelId: "{{ labelId }}"
-          @odata.type: "{{ @odata.type }}"
     - name: assignedLicenses
       description: |
         The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.
       value:
         - disabledPlans: "{{ disabledPlans }}"
           skuId: "{{ skuId }}"
-          @odata.type: "{{ @odata.type }}"
     - name: autoSubscribeNewMembers
       value: {{ autoSubscribeNewMembers }}
       description: |
@@ -2164,7 +2101,6 @@ welcomeMessageEnabled
           occurredDateTime: "{{ occurredDateTime }}"
           propertyCausingError: "{{ propertyCausingError }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: onPremisesSamAccountName
       value: "{{ onPremisesSamAccountName }}"
       description: |
@@ -2219,7 +2155,6 @@ welcomeMessageEnabled
         - createdDateTime: "{{ createdDateTime }}"
           isResolved: {{ isResolved }}
           serviceInstance: "{{ serviceInstance }}"
-          @odata.type: "{{ @odata.type }}"
     - name: theme
       value: "{{ theme }}"
       description: |
@@ -2243,14 +2178,12 @@ welcomeMessageEnabled
         The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: appRoleAssignments
       description: |
         Represents the app roles granted to a group for an application. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           appRoleId: "{{ appRoleId }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -2268,7 +2201,6 @@ welcomeMessageEnabled
         The calendar view for the calendar. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -2322,7 +2254,6 @@ welcomeMessageEnabled
         The group's conversations.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           hasAttachments: {{ hasAttachments }}
           lastDeliveredDateTime: "{{ lastDeliveredDateTime }}"
           preview: "{{ preview }}"
@@ -2342,7 +2273,6 @@ welcomeMessageEnabled
         The group's drives. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdBy: "{{ createdBy }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -2370,7 +2300,6 @@ welcomeMessageEnabled
         The group's calendar events.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -2424,13 +2353,11 @@ welcomeMessageEnabled
         The collection of open extensions defined for the group. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
     - name: groupLifecyclePolicies
       description: |
         The collection of lifecycle policies for this group. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           alternateNotificationEmails: "{{ alternateNotificationEmails }}"
           groupLifetimeInDays: {{ groupLifetimeInDays }}
           managedGroupTypes: "{{ managedGroupTypes }}"
@@ -2439,21 +2366,18 @@ welcomeMessageEnabled
         Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: members
       description: |
         The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: membersWithLicenseErrors
       description: |
         A list of group members with license errors from this group-based license assignment. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: onenote
       value: "{{ onenote }}"
@@ -2464,12 +2388,10 @@ welcomeMessageEnabled
         The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn't specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can't explicitly add themselves to this collection when they're creating the group. For more information, see the related known issue. For security groups, the admin user isn't automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: permissionGrants
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           clientAppId: "{{ clientAppId }}"
           clientId: "{{ clientId }}"
@@ -2485,7 +2407,6 @@ welcomeMessageEnabled
         The profile photos owned by the group. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           height: {{ height }}
           width: {{ width }}
     - name: planner
@@ -2497,14 +2418,12 @@ welcomeMessageEnabled
         The list of users or groups not allowed to create posts or calendar events in this group. Nullable
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: settings
       description: |
         Settings that can govern this group's behavior, like whether members can invite guests to the group. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
           templateId: "{{ templateId }}"
           values: "{{ values }}"
@@ -2513,7 +2432,6 @@ welcomeMessageEnabled
         The list of SharePoint sites in this group. Access the default site with /sites/root.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdBy: "{{ createdBy }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -2555,7 +2473,6 @@ welcomeMessageEnabled
         The group's conversation threads. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           ccRecipients: "{{ ccRecipients }}"
           hasAttachments: {{ hasAttachments }}
           isLocked: {{ isLocked }}
@@ -2570,14 +2487,12 @@ welcomeMessageEnabled
         The groups that a group is a member of, either directly or through nested membership. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: transitiveMembers
       description: |
         The direct and transitive members of a group. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
 `}</CodeBlock>
 
@@ -2602,7 +2517,6 @@ Create a new group object if it doesn't exist, or update the properties of an ex
 UPDATE entra_id.groups.groups
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 allowExternalSenders = {{ allowExternalSenders }},
 assignedLabels = '{{ assignedLabels }}',
@@ -2678,11 +2592,9 @@ threads = '{{ threads }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}',
 transitiveMembers = '{{ transitiveMembers }}'
 WHERE 
-uniqueName = '{{ uniqueName }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unique_name = '{{ unique_name }}' --required
 RETURNING
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -2767,7 +2679,6 @@ Create a new group object if it doesn't exist, or update the properties of an ex
 UPDATE entra_id.groups.groups
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 allowExternalSenders = {{ allowExternalSenders }},
 assignedLabels = '{{ assignedLabels }}',
@@ -2843,11 +2754,9 @@ threads = '{{ threads }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}',
 transitiveMembers = '{{ transitiveMembers }}'
 WHERE 
-group-id = '{{ group-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+group_id = '{{ group_id }}' --required
 RETURNING
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -2942,7 +2851,7 @@ Delete a group. When deleted, both Microsoft 365 and security groups are moved t
 
 ```sql
 DELETE FROM entra_id.groups.groups
-WHERE uniqueName = '{{ uniqueName }}' --required
+WHERE unique_name = '{{ unique_name }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2953,7 +2862,7 @@ Delete a group. When deleted, both Microsoft 365 and security groups are moved t
 
 ```sql
 DELETE FROM entra_id.groups.groups
-WHERE group-id = '{{ group-id }}' --required
+WHERE group_id = '{{ group_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2981,6 +2890,8 @@ AND If-Match = '{{ If-Match }}'
         { label: 'reset_unseen_count', value: 'reset_unseen_count' },
         { label: 'restore', value: 'restore' },
         { label: 'retry_service_provisioning', value: 'retry_service_provisioning' },
+        { label: 'subscribe_by_mail', value: 'subscribe_by_mail' },
+        { label: 'unsubscribe_by_mail', value: 'unsubscribe_by_mail' },
         { label: 'validate_properties_2', value: 'validate_properties_2' }
     ]}
 >
@@ -3033,7 +2944,7 @@ Add the group to the list of the current user's favorite groups.  The group show
 
 ```sql
 EXEC entra_id.groups.groups.add_favorite 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3043,7 +2954,7 @@ Add or remove licenses on a group. Licenses assigned to the group will be assign
 
 ```sql
 EXEC entra_id.groups.groups.assign_license 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "addLicenses": "{{ addLicenses }}", 
@@ -3058,7 +2969,7 @@ Success
 
 ```sql
 EXEC entra_id.groups.groups.check_granted_permissions_for_app 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3068,7 +2979,7 @@ Check for membership in a specified list of group IDs, and return from that list
 
 ```sql
 EXEC entra_id.groups.groups.check_member_groups 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "groupIds": "{{ groupIds }}"
@@ -3082,7 +2993,7 @@ Success
 
 ```sql
 EXEC entra_id.groups.groups.check_member_objects 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "ids": "{{ ids }}"
@@ -3096,7 +3007,7 @@ Return all the group IDs for the groups that the specified user, group, service 
 
 ```sql
 EXEC entra_id.groups.groups.get_member_groups 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -3110,7 +3021,7 @@ Return all IDs for the groups, administrative units, and directory roles that an
 
 ```sql
 EXEC entra_id.groups.groups.get_member_objects 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -3124,7 +3035,7 @@ Remove the group from the list of the current user's favorite groups. Supported 
 
 ```sql
 EXEC entra_id.groups.groups.remove_favorite 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3134,7 +3045,7 @@ Renew a group's expiration. When a group is renewed, the group expiration is ext
 
 ```sql
 EXEC entra_id.groups.groups.renew 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3144,7 +3055,7 @@ Reset the unseenCount of all the posts that the current user hasn't seen since t
 
 ```sql
 EXEC entra_id.groups.groups.reset_unseen_count 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3154,7 +3065,7 @@ Restore a recently deleted directory object from deleted items. The following ty
 
 ```sql
 EXEC entra_id.groups.groups.restore 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3164,7 +3075,27 @@ Retry the group service provisioning.
 
 ```sql
 EXEC entra_id.groups.groups.retry_service_provisioning 
-@group-id='{{ group-id }}' --required
+@group_id='{{ group_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="subscribe_by_mail">
+
+Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+
+```sql
+EXEC entra_id.groups.groups.subscribe_by_mail 
+@group_id='{{ group_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="unsubscribe_by_mail">
+
+Calling this method prevents the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+
+```sql
+EXEC entra_id.groups.groups.unsubscribe_by_mail 
+@group_id='{{ group_id }}' --required
 ;
 ```
 </TabItem>
@@ -3174,7 +3105,7 @@ Validate that a Microsoft 365 group's display name or mail nickname complies wit
 
 ```sql
 EXEC entra_id.groups.groups.validate_properties_2 
-@group-id='{{ group-id }}' --required 
+@group_id='{{ group_id }}' --required 
 @@json=
 '{
 "displayName": "{{ displayName }}", 

@@ -3163,7 +3163,7 @@ paths:
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/filterByCurrentUser(on='{on}')
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/filterByCurrentUser(on='{on}')
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/filterByCurrentUser(on='{on}')
-  /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace_id}:
+  /roleManagement/directory/resourceNamespaces/{unified_rbac_resource_namespace_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3190,7 +3190,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3234,7 +3234,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3252,7 +3252,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3270,7 +3270,7 @@ paths:
     description: Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}
-  /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions:
+  /roleManagement/directory/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3312,7 +3312,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3355,7 +3355,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3365,7 +3365,7 @@ paths:
     description: Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions
-  /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions/{unifiedRbacResourceAction_id}:
+  /roleManagement/directory/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions/{unified_rbac_resource_action_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3392,14 +3392,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -3443,14 +3443,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -3468,14 +3468,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -3493,7 +3493,7 @@ paths:
     description: Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}
-  /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions/$count:
+  /roleManagement/directory/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions/$count:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3502,7 +3502,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -3517,7 +3517,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}:
+  /roleManagement/directory/roleAssignments/{unified_role_assignment_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3548,7 +3548,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3592,7 +3592,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3614,7 +3614,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3632,7 +3632,7 @@ paths:
     description: Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}
-  /roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}/appScope:
+  /roleManagement/directory/roleAssignments/{unified_role_assignment_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3660,7 +3660,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3704,7 +3704,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3722,7 +3722,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3740,7 +3740,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/appScope
-  /roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}/directoryScope:
+  /roleManagement/directory/roleAssignments/{unified_role_assignment_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3768,7 +3768,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3790,7 +3790,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/directoryScope
-  /roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}/principal:
+  /roleManagement/directory/roleAssignments/{unified_role_assignment_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3818,7 +3818,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3840,7 +3840,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/principal
-  /roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}/roleDefinition:
+  /roleManagement/directory/roleAssignments/{unified_role_assignment_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3868,7 +3868,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -3890,7 +3890,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -3921,7 +3921,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -3965,7 +3965,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -3983,7 +3983,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4001,7 +4001,7 @@ paths:
     description: Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/activatedUsing:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4029,7 +4029,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4051,7 +4051,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleInstance entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/appScope:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4079,7 +4079,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4103,7 +4103,7 @@ paths:
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/directoryScope:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4131,7 +4131,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4155,7 +4155,7 @@ paths:
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/principal:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4183,7 +4183,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4207,7 +4207,7 @@ paths:
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
-  /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/roleDefinition:
+  /roleManagement/directory/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4235,7 +4235,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -4259,7 +4259,7 @@ paths:
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4290,7 +4290,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4334,7 +4334,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4352,7 +4352,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4370,7 +4370,7 @@ paths:
     description: Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/activatedUsing:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4398,7 +4398,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4420,7 +4420,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/activatedUsing
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/appScope:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4448,7 +4448,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4470,7 +4470,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/appScope
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/directoryScope:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4498,7 +4498,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4520,7 +4520,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/directoryScope
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/cancel:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/cancel:
     post:
       tags:
         - roleManagement.rbacApplication
@@ -4539,7 +4539,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4551,7 +4551,7 @@ paths:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/principal:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4579,7 +4579,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4601,7 +4601,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/principal
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/roleDefinition:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4629,7 +4629,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4651,7 +4651,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/roleDefinition
-  /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/targetSchedule:
+  /roleManagement/directory/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/targetSchedule:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4679,7 +4679,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -4701,7 +4701,7 @@ paths:
     description: Provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/targetSchedule
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4732,7 +4732,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4776,7 +4776,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4794,7 +4794,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4812,7 +4812,7 @@ paths:
     description: Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/activatedUsing:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4840,7 +4840,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4862,7 +4862,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentSchedule entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/appScope:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4890,7 +4890,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4914,7 +4914,7 @@ paths:
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/directoryScope:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4942,7 +4942,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -4966,7 +4966,7 @@ paths:
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/principal:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -4994,7 +4994,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -5018,7 +5018,7 @@ paths:
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
-  /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/roleDefinition:
+  /roleManagement/directory/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5046,7 +5046,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -5070,7 +5070,7 @@ paths:
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/roleDefinition
-  /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}:
+  /roleManagement/directory/roleDefinitions/{unified_role_definition_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5101,7 +5101,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5149,7 +5149,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5171,7 +5171,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5189,7 +5189,7 @@ paths:
     description: Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}
-  /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom:
+  /roleManagement/directory/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5232,7 +5232,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5275,7 +5275,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5285,7 +5285,7 @@ paths:
     description: Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom
-  /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/{unifiedRoleDefinition_id1}:
+  /roleManagement/directory/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom/{unified_role_definition_id1}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5313,14 +5313,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5364,14 +5364,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5389,14 +5389,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5414,7 +5414,7 @@ paths:
     description: Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}
-  /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/$count:
+  /roleManagement/directory/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom/$count:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5423,7 +5423,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -5438,7 +5438,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}:
+  /roleManagement/directory/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5469,7 +5469,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5513,7 +5513,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5531,7 +5531,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5549,7 +5549,7 @@ paths:
     description: Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}
-  /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/appScope:
+  /roleManagement/directory/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5577,7 +5577,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5601,7 +5601,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
-  /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/directoryScope:
+  /roleManagement/directory/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5629,7 +5629,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5653,7 +5653,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
-  /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/principal:
+  /roleManagement/directory/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5681,7 +5681,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5705,7 +5705,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
-  /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/roleDefinition:
+  /roleManagement/directory/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5733,7 +5733,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -5757,7 +5757,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5788,7 +5788,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5832,7 +5832,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5850,7 +5850,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5868,7 +5868,7 @@ paths:
     description: Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/appScope:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5896,7 +5896,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5918,7 +5918,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/appScope
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/directoryScope:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -5946,7 +5946,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5968,7 +5968,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/directoryScope
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/cancel:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/cancel:
     post:
       tags:
         - roleManagement.rbacApplication
@@ -5987,7 +5987,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -5999,7 +5999,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/principal:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6027,7 +6027,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -6049,7 +6049,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/principal
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/roleDefinition:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6077,7 +6077,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -6099,7 +6099,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/roleDefinition
-  /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/targetSchedule:
+  /roleManagement/directory/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/targetSchedule:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6127,7 +6127,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -6149,7 +6149,7 @@ paths:
     description: Provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/targetSchedule
-  /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}:
+  /roleManagement/directory/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6180,7 +6180,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6224,7 +6224,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6242,7 +6242,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6260,7 +6260,7 @@ paths:
     description: Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}
-  /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/appScope:
+  /roleManagement/directory/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6288,7 +6288,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6312,7 +6312,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
-  /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/directoryScope:
+  /roleManagement/directory/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6340,7 +6340,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6364,7 +6364,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
-  /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/principal:
+  /roleManagement/directory/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6392,7 +6392,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6416,7 +6416,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
-  /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/roleDefinition:
+  /roleManagement/directory/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6444,7 +6444,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -6468,7 +6468,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/roleDefinition
-  /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace_id}:
+  /roleManagement/entitlementManagement/resourceNamespaces/{unified_rbac_resource_namespace_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6495,7 +6495,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6539,7 +6539,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6557,7 +6557,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6575,7 +6575,7 @@ paths:
     description: Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}
-  /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions:
+  /roleManagement/entitlementManagement/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6617,7 +6617,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6660,7 +6660,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6670,7 +6670,7 @@ paths:
     description: Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions
-  /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions/{unifiedRbacResourceAction_id}:
+  /roleManagement/entitlementManagement/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions/{unified_rbac_resource_action_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6697,14 +6697,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -6748,14 +6748,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -6773,14 +6773,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
-        - name: unifiedRbacResourceAction-id
+        - name: unified_rbac_resource_action_id
           in: path
           description: The unique identifier of unifiedRbacResourceAction
           required: true
@@ -6798,7 +6798,7 @@ paths:
     description: Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}
-  /roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace_id}/resourceActions/$count:
+  /roleManagement/entitlementManagement/resourceNamespaces/{unified_rbac_resource_namespace_id}/resourceActions/$count:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6807,7 +6807,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRbacResourceNamespace-id
+        - name: unified_rbac_resource_namespace_id
           in: path
           description: The unique identifier of unifiedRbacResourceNamespace
           required: true
@@ -6822,7 +6822,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}:
+  /roleManagement/entitlementManagement/roleAssignments/{unified_role_assignment_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6850,7 +6850,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -6894,7 +6894,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -6912,7 +6912,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -6930,7 +6930,7 @@ paths:
     description: Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}
-  /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}/appScope:
+  /roleManagement/entitlementManagement/roleAssignments/{unified_role_assignment_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -6958,7 +6958,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7002,7 +7002,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7020,7 +7020,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7038,7 +7038,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope
-  /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleAssignments/{unified_role_assignment_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7066,7 +7066,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7088,7 +7088,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope
-  /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}/principal:
+  /roleManagement/entitlementManagement/roleAssignments/{unified_role_assignment_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7116,7 +7116,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7138,7 +7138,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal
-  /roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleAssignments/{unified_role_assignment_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7166,7 +7166,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignment-id
+        - name: unified_role_assignment_id
           in: path
           description: The unique identifier of unifiedRoleAssignment
           required: true
@@ -7188,7 +7188,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7216,7 +7216,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7260,7 +7260,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7278,7 +7278,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7296,7 +7296,7 @@ paths:
     description: Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/activatedUsing:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7324,7 +7324,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7346,7 +7346,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleInstance entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/appScope:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7374,7 +7374,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7398,7 +7398,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7426,7 +7426,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7450,7 +7450,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/principal:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7478,7 +7478,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7502,7 +7502,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
-  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unified_role_assignment_schedule_instance_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7530,7 +7530,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleInstance-id
+        - name: unified_role_assignment_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
@@ -7554,7 +7554,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7582,7 +7582,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7626,7 +7626,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7644,7 +7644,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7662,7 +7662,7 @@ paths:
     description: Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/activatedUsing:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7690,7 +7690,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7712,7 +7712,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/activatedUsing
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/appScope:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7740,7 +7740,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7762,7 +7762,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/appScope
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7790,7 +7790,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7812,7 +7812,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/directoryScope
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/cancel:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/cancel:
     post:
       tags:
         - roleManagement.rbacApplication
@@ -7831,7 +7831,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7843,7 +7843,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/principal:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7871,7 +7871,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7893,7 +7893,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/principal
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7921,7 +7921,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7943,7 +7943,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest_id}/targetSchedule:
+  /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unified_role_assignment_schedule_request_id}/targetSchedule:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -7971,7 +7971,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentScheduleRequest-id
+        - name: unified_role_assignment_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
@@ -7993,7 +7993,7 @@ paths:
     description: Provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/targetSchedule
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8021,7 +8021,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8065,7 +8065,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8083,7 +8083,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8101,7 +8101,7 @@ paths:
     description: Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/activatedUsing:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/activatedUsing:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8129,7 +8129,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8151,7 +8151,7 @@ paths:
     description: Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentSchedule entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/appScope:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8179,7 +8179,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8203,7 +8203,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8231,7 +8231,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8255,7 +8255,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/principal:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8283,7 +8283,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8307,7 +8307,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
-  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleAssignmentSchedules/{unified_role_assignment_schedule_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8335,7 +8335,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleAssignmentSchedule-id
+        - name: unified_role_assignment_schedule_id
           in: path
           description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
@@ -8359,7 +8359,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/roleDefinition
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition_id}:
+  /roleManagement/entitlementManagement/roleDefinitions/{unified_role_definition_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8387,7 +8387,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8431,7 +8431,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8449,7 +8449,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8467,7 +8467,7 @@ paths:
     description: Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}
-  /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom:
+  /roleManagement/entitlementManagement/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8510,7 +8510,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8553,7 +8553,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8563,7 +8563,7 @@ paths:
     description: Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom
-  /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/{unifiedRoleDefinition_id1}:
+  /roleManagement/entitlementManagement/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom/{unified_role_definition_id1}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8591,14 +8591,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8642,14 +8642,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8667,14 +8667,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
-        - name: unifiedRoleDefinition-id1
+        - name: unified_role_definition_id1
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8692,7 +8692,7 @@ paths:
     description: Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}
-  /roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/$count:
+  /roleManagement/entitlementManagement/roleDefinitions/{unified_role_definition_id}/inheritsPermissionsFrom/$count:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8701,7 +8701,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRoleDefinition-id
+        - name: unified_role_definition_id
           in: path
           description: The unique identifier of unifiedRoleDefinition
           required: true
@@ -8716,7 +8716,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8744,7 +8744,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8788,7 +8788,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8806,7 +8806,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8824,7 +8824,7 @@ paths:
     description: Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}
-  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/appScope:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8852,7 +8852,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8876,7 +8876,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/appScope
-  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8904,7 +8904,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8928,7 +8928,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/directoryScope
-  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/principal:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -8956,7 +8956,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -8980,7 +8980,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/principal
-  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unified_role_eligibility_schedule_instance_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9008,7 +9008,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleInstance-id
+        - name: unified_role_eligibility_schedule_instance_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
@@ -9032,7 +9032,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
       - /roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}/roleDefinition
       - /roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9060,7 +9060,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9104,7 +9104,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9122,7 +9122,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9140,7 +9140,7 @@ paths:
     description: Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/appScope:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9168,7 +9168,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9190,7 +9190,7 @@ paths:
     description: Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/appScope
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9218,7 +9218,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9240,7 +9240,7 @@ paths:
     description: Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/directoryScope
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/cancel:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/cancel:
     post:
       tags:
         - roleManagement.rbacApplication
@@ -9259,7 +9259,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9271,7 +9271,7 @@ paths:
       - /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/cancel
       - /roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/cancel
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/principal:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9299,7 +9299,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9321,7 +9321,7 @@ paths:
     description: Provides operations to manage the principal property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/principal
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9349,7 +9349,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9371,7 +9371,7 @@ paths:
     description: Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/roleDefinition
-  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}/targetSchedule:
+  /roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unified_role_eligibility_schedule_request_id}/targetSchedule:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9399,7 +9399,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilityScheduleRequest-id
+        - name: unified_role_eligibility_schedule_request_id
           in: path
           description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
@@ -9421,7 +9421,7 @@ paths:
     description: Provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/targetSchedule
-  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}:
+  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9449,7 +9449,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9493,7 +9493,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9511,7 +9511,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9529,7 +9529,7 @@ paths:
     description: Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
     x-ms-docs-grouped-path:
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}
-  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/appScope:
+  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/appScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9557,7 +9557,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9581,7 +9581,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/appScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/appScope
-  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/directoryScope:
+  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/directoryScope:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9609,7 +9609,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9633,7 +9633,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/directoryScope
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/directoryScope
-  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/principal:
+  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/principal:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9661,7 +9661,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9685,7 +9685,7 @@ paths:
       - /roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
       - /roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}/principal
       - /roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/principal
-  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule_id}/roleDefinition:
+  /roleManagement/entitlementManagement/roleEligibilitySchedules/{unified_role_eligibility_schedule_id}/roleDefinition:
     get:
       tags:
         - roleManagement.rbacApplication
@@ -9713,7 +9713,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleEligibilitySchedule-id
+        - name: unified_role_eligibility_schedule_id
           in: path
           description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
@@ -9741,16 +9741,12 @@ components:
   schemas:
     microsoft.graph.roleManagement:
       title: roleManagement
-      required:
-        - '@odata.type'
       type: object
       properties:
         directory:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.rbacApplication'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -10939,8 +10935,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.rbacApplication'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -12128,8 +12122,6 @@ components:
     microsoft.graph.rbacApplication:
       x-ms-discriminator-value: '#microsoft.graph.rbacApplication'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -13314,8 +13306,6 @@ components:
     microsoft.graph.unifiedRbacResourceNamespace:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRbacResourceNamespace'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -14454,8 +14444,6 @@ components:
     microsoft.graph.unifiedRbacResourceAction:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRbacResourceAction'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -15604,8 +15592,6 @@ components:
     microsoft.graph.unifiedRoleAssignment:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleAssignment'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -16788,8 +16774,6 @@ components:
     microsoft.graph.appScope:
       x-ms-discriminator-value: '#microsoft.graph.appScope'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17928,8 +17912,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -19067,8 +19049,6 @@ components:
     microsoft.graph.unifiedRoleDefinition:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleDefinition'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -20240,8 +20220,6 @@ components:
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleAssignmentScheduleInstance'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -21457,8 +21435,6 @@ components:
     microsoft.graph.unifiedRoleEligibilityScheduleInstance:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleEligibilityScheduleInstance'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -22675,8 +22651,6 @@ components:
     microsoft.graph.unifiedRoleAssignmentScheduleRequest:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleAssignmentScheduleRequest'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -23935,8 +23909,6 @@ components:
     microsoft.graph.unifiedRoleEligibilitySchedule:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleEligibilitySchedule'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -25147,8 +25119,6 @@ components:
     microsoft.graph.unifiedRoleAssignmentSchedule:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleAssignmentSchedule'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -26391,8 +26361,6 @@ components:
     microsoft.graph.unifiedRoleEligibilityScheduleRequest:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleEligibilityScheduleRequest'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -27663,8 +27631,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -28843,8 +28809,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedResourceActions:
@@ -28881,8 +28845,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
     microsoft.graph.unifiedRoleScheduleInstanceBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -30076,8 +30038,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
     microsoft.graph.request:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -31252,15 +31212,11 @@ components:
       type: string
     microsoft.graph.requestSchedule:
       title: requestSchedule
-      required:
-        - '@odata.type'
       type: object
       properties:
         expiration:
           description: When the eligible or active assignment expires.
           title: expirationPattern
-          required:
-            - '@odata.type'
           type: object
           properties:
             duration:
@@ -31291,15 +31247,11 @@ components:
         recurrence:
           description: The frequency of the  eligible or active assignment. This property is currently unsupported in PIM.
           title: patternedRecurrence
-          required:
-            - '@odata.type'
           type: object
           properties:
             pattern:
               description: 'The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.'
               title: recurrencePattern
-              required:
-                - '@odata.type'
               type: object
               properties:
                 dayOfMonth:
@@ -31371,8 +31323,6 @@ components:
             range:
               description: The duration of an event.
               title: recurrenceRange
-              required:
-                - '@odata.type'
               type: object
               properties:
                 endDate:
@@ -31422,8 +31372,6 @@ components:
           type: string
     microsoft.graph.ticketInfo:
       title: ticketInfo
-      required:
-        - '@odata.type'
       type: object
       properties:
         ticketNumber:
@@ -31438,8 +31386,6 @@ components:
           type: string
     microsoft.graph.unifiedRoleScheduleBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -32733,15 +32679,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.identitySet:
       title: identitySet
-      required:
-        - '@odata.type'
       type: object
       properties:
         application:
           description: Optional. The application associated with this action.
           title: identity
-          required:
-            - '@odata.type'
           type: object
           properties:
             displayName:
@@ -32782,8 +32724,6 @@ components:
         device:
           description: Optional. The device associated with this action.
           title: identity
-          required:
-            - '@odata.type'
           type: object
           properties:
             displayName:
@@ -32824,8 +32764,6 @@ components:
         user:
           description: Optional. The user associated with this action.
           title: identity
-          required:
-            - '@odata.type'
           type: object
           properties:
             displayName:
@@ -32877,8 +32815,6 @@ components:
           '#microsoft.graph.sharePointIdentitySet': '#/components/schemas/microsoft.graph.sharePointIdentitySet'
     microsoft.graph.expirationPattern:
       title: expirationPattern
-      required:
-        - '@odata.type'
       type: object
       properties:
         duration:
@@ -32907,15 +32843,11 @@ components:
           type: string
     microsoft.graph.patternedRecurrence:
       title: patternedRecurrence
-      required:
-        - '@odata.type'
       type: object
       properties:
         pattern:
           description: 'The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.'
           title: recurrencePattern
-          required:
-            - '@odata.type'
           type: object
           properties:
             dayOfMonth:
@@ -32987,8 +32919,6 @@ components:
         range:
           description: The duration of an event.
           title: recurrenceRange
-          required:
-            - '@odata.type'
           type: object
           properties:
             endDate:
@@ -33042,8 +32972,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:
@@ -33064,8 +32992,6 @@ components:
           type: string
     microsoft.graph.identity:
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -33112,8 +33038,6 @@ components:
       type: string
     microsoft.graph.recurrencePattern:
       title: recurrencePattern
-      required:
-        - '@odata.type'
       type: object
       properties:
         dayOfMonth:
@@ -33183,8 +33107,6 @@ components:
           type: string
     microsoft.graph.recurrenceRange:
       title: recurrenceRange
-      required:
-        - '@odata.type'
       type: object
       properties:
         endDate:

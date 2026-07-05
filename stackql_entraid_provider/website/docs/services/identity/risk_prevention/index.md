@@ -52,11 +52,6 @@ Retrieved navigation property
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="fraudProtectionProviders" /></td>
     <td><code>array</code></td>
     <td>Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.</td>
@@ -95,13 +90,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -128,16 +123,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -160,13 +145,10 @@ Represents the entry point for fraud and risk prevention configurations in Micro
 
 ```sql
 SELECT
-@odata.type,
 fraudProtectionProviders,
 webApplicationFirewallProviders,
 webApplicationFirewallVerifications
 FROM entra_id.identity.risk_prevention
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -190,12 +172,8 @@ UPDATE entra_id.identity.risk_prevention
 SET 
 fraudProtectionProviders = '{{ fraudProtectionProviders }}',
 webApplicationFirewallProviders = '{{ webApplicationFirewallProviders }}',
-webApplicationFirewallVerifications = '{{ webApplicationFirewallVerifications }}',
-@odata.type = '{{ @odata.type }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
+webApplicationFirewallVerifications = '{{ webApplicationFirewallVerifications }}'
 RETURNING
-@odata.type,
 fraudProtectionProviders,
 webApplicationFirewallProviders,
 webApplicationFirewallVerifications;

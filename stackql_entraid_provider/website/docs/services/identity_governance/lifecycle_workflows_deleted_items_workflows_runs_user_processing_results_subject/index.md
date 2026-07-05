@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -759,8 +754,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-run-id"><code>run-id</code></a>, <a href="#parameter-userProcessingResult-id"><code>userProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-run_id"><code>run_id</code></a>, <a href="#parameter-user_processing_result_id"><code>user_processing_result_id</code></a></td>
+    <td></td>
     <td>The unique identifier of the user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.</td>
 </tr>
 </tbody>
@@ -779,30 +774,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-run-id">
-    <td><CopyableCode code="run-id" /></td>
+<tr id="parameter-run_id">
+    <td><CopyableCode code="run_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of run</td>
 </tr>
-<tr id="parameter-userProcessingResult-id">
-    <td><CopyableCode code="userProcessingResult-id" /></td>
+<tr id="parameter-user_processing_result_id">
+    <td><CopyableCode code="user_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of userProcessingResult</td>
 </tr>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -822,7 +807,6 @@ The unique identifier of the user targeted for the taskProcessingResult.Supports
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -959,11 +943,9 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.identity_governance.lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND run-id = '{{ run-id }}' -- required
-AND userProcessingResult-id = '{{ userProcessingResult-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND run_id = '{{ run_id }}' -- required
+AND user_processing_result_id = '{{ user_processing_result_id }}' -- required
 ;
 ```
 </TabItem>

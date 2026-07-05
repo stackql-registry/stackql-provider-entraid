@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackages" /></td>
     <td><code>array</code></td>
     <td>The access packages in this catalog. Read-only. Nullable.</td>
@@ -142,11 +137,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackages" /></td>
@@ -231,35 +221,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of an accessPackageCatalog object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of accessPackageCatalog objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new accessPackageCatalog object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a></td>
     <td></td>
     <td>Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an accessPackageCatalog.</td>
 </tr>
@@ -279,50 +269,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageCatalog-id">
-    <td><CopyableCode code="accessPackageCatalog-id" /></td>
+<tr id="parameter-access_package_catalog_id">
+    <td><CopyableCode code="access_package_catalog_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageCatalog</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -348,7 +298,6 @@ Retrieve the properties and relationships of an accessPackageCatalog object.
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -362,9 +311,7 @@ resourceScopes,
 resources,
 state
 FROM entra_id.identity_governance.entitlement_management_catalogs
-WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_catalog_id = '{{ access_package_catalog_id }}' -- required
 ;
 ```
 </TabItem>
@@ -375,7 +322,6 @@ Retrieve a list of accessPackageCatalog objects.
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -389,14 +335,6 @@ resourceScopes,
 resources,
 state
 FROM entra_id.identity_governance.entitlement_management_catalogs
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -419,7 +357,6 @@ Create a new accessPackageCatalog object.
 ```sql
 INSERT INTO entra_id.identity_governance.entitlement_management_catalogs (
 id,
-@odata.type,
 catalogType,
 createdDateTime,
 description,
@@ -435,7 +372,6 @@ resourceScopes
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ catalogType }}',
 '{{ createdDateTime }}',
 '{{ description }}',
@@ -450,7 +386,6 @@ SELECT
 '{{ resourceScopes }}'
 RETURNING
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -475,8 +410,6 @@ state
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: catalogType
       value: "{{ catalogType }}"
       description: |
@@ -510,7 +443,6 @@ state
         The access packages in this catalog. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -525,7 +457,6 @@ state
     - name: customWorkflowExtensions
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           authenticationConfiguration: "{{ authenticationConfiguration }}"
           clientConfiguration: "{{ clientConfiguration }}"
           description: "{{ description }}"
@@ -534,7 +465,6 @@ state
     - name: resourceRoles
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
           originId: "{{ originId }}"
@@ -545,7 +475,6 @@ state
         Access package resources in this catalog.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           attributes: "{{ attributes }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -559,7 +488,6 @@ state
     - name: resourceScopes
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
           isRootScope: {{ isRootScope }}
@@ -588,7 +516,6 @@ Update an existing accessPackageCatalog object to change one or more of its prop
 UPDATE entra_id.identity_governance.entitlement_management_catalogs
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 catalogType = '{{ catalogType }}',
 createdDateTime = '{{ createdDateTime }}',
 description = '{{ description }}',
@@ -602,11 +529,9 @@ resourceRoles = '{{ resourceRoles }}',
 resources = '{{ resources }}',
 resourceScopes = '{{ resourceScopes }}'
 WHERE 
-accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_catalog_id = '{{ access_package_catalog_id }}' --required
 RETURNING
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -638,7 +563,7 @@ Delete an accessPackageCatalog.
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_catalogs
-WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
+WHERE access_package_catalog_id = '{{ access_package_catalog_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

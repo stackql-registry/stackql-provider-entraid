@@ -35,9 +35,7 @@ The following fields are returned by `SELECT` queries:
 <Tabs
     defaultValue="get"
     values={[
-        { label: 'get', value: 'get' },
-        { label: 'post_attribute_collection', value: 'post_attribute_collection' },
-        { label: 'post_federation_signup', value: 'post_federation_signup' }
+        { label: 'get', value: 'get' }
     ]}
 >
 <TabItem value="get">
@@ -54,11 +52,6 @@ Entity result.
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="postAttributeCollection" /></td>
     <td><code>object</code></td>
     <td>(opaque JSON object) (x-ms-discriminator-value: #microsoft.graph.identityApiConnector, title: entity)</td>
@@ -67,88 +60,6 @@ Entity result.
     <td><CopyableCode code="postFederationSignup" /></td>
     <td><code>object</code></td>
     <td>(opaque JSON object) (x-ms-discriminator-value: #microsoft.graph.identityApiConnector, title: entity)</td>
-</tr>
-</tbody>
-</table>
-</TabItem>
-<TabItem value="post_attribute_collection">
-
-Retrieved navigation property
-
-<table>
-<thead>
-    <tr>
-    <th>Name</th>
-    <th>Datatype</th>
-    <th>Description</th>
-    </tr>
-</thead>
-<tbody>
-<tr>
-    <td><CopyableCode code="id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
-    <td><CopyableCode code="authenticationConfiguration" /></td>
-    <td><code></code></td>
-    <td>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="displayName" /></td>
-    <td><code>string</code></td>
-    <td>The name of the API connector.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="targetUrl" /></td>
-    <td><code>string</code></td>
-    <td>The URL of the API endpoint to call.</td>
-</tr>
-</tbody>
-</table>
-</TabItem>
-<TabItem value="post_federation_signup">
-
-Retrieved navigation property
-
-<table>
-<thead>
-    <tr>
-    <th>Name</th>
-    <th>Datatype</th>
-    <th>Description</th>
-    </tr>
-</thead>
-<tbody>
-<tr>
-    <td><CopyableCode code="id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
-    <td><CopyableCode code="authenticationConfiguration" /></td>
-    <td><code></code></td>
-    <td>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="displayName" /></td>
-    <td><code>string</code></td>
-    <td>The name of the API connector.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="targetUrl" /></td>
-    <td><code>string</code></td>
-    <td>The URL of the API endpoint to call.</td>
 </tr>
 </tbody>
 </table>
@@ -173,22 +84,50 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
     <td>Get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail the API connectors enabled for the user flow.</td>
 </tr>
 <tr>
-    <td><a href="#post_attribute_collection"><CopyableCode code="post_attribute_collection" /></a></td>
-    <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#get_post_attribute_collection"><CopyableCode code="get_post_attribute_collection" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
-    <td><a href="#post_federation_signup"><CopyableCode code="post_federation_signup" /></a></td>
-    <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#update_post_attribute_collection"><CopyableCode code="update_post_attribute_collection" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete_post_attribute_collection"><CopyableCode code="delete_post_attribute_collection" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#get_post_federation_signup"><CopyableCode code="get_post_federation_signup" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#update_post_federation_signup"><CopyableCode code="update_post_federation_signup" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete_post_federation_signup"><CopyableCode code="delete_post_federation_signup" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 </tbody>
@@ -207,20 +146,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-b2xIdentityUserFlow-id">
-    <td><CopyableCode code="b2xIdentityUserFlow-id" /></td>
+<tr id="parameter-b2x_identity_user_flow_id">
+    <td><CopyableCode code="b2x_identity_user_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of b2xIdentityUserFlow</td>
 </tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
+<tr id="parameter-If-Match">
+    <td><CopyableCode code="If-Match" /></td>
+    <td><code>string</code></td>
+    <td>ETag</td>
 </tr>
 </tbody>
 </table>
@@ -230,9 +164,7 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 <Tabs
     defaultValue="get"
     values={[
-        { label: 'get', value: 'get' },
-        { label: 'post_attribute_collection', value: 'post_attribute_collection' },
-        { label: 'post_federation_signup', value: 'post_federation_signup' }
+        { label: 'get', value: 'get' }
     ]}
 >
 <TabItem value="get">
@@ -241,49 +173,106 @@ Get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail th
 
 ```sql
 SELECT
-@odata.type,
 postAttributeCollection,
 postFederationSignup
 FROM entra_id.identity.b2x_user_flows_api_connector_configuration
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
 ;
 ```
 </TabItem>
-<TabItem value="post_attribute_collection">
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="get_post_attribute_collection"
+    values={[
+        { label: 'get_post_attribute_collection', value: 'get_post_attribute_collection' },
+        { label: 'update_post_attribute_collection', value: 'update_post_attribute_collection' },
+        { label: 'delete_post_attribute_collection', value: 'delete_post_attribute_collection' },
+        { label: 'get_post_federation_signup', value: 'get_post_federation_signup' },
+        { label: 'update_post_federation_signup', value: 'update_post_federation_signup' },
+        { label: 'delete_post_federation_signup', value: 'delete_post_federation_signup' }
+    ]}
+>
+<TabItem value="get_post_attribute_collection">
 
 Retrieved navigation property
 
 ```sql
-SELECT
-id,
-@odata.type,
-authenticationConfiguration,
-displayName,
-targetUrl
-FROM entra_id.identity.b2x_user_flows_api_connector_configuration
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.get_post_attribute_collection 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@$select='{{ $select }}', 
+@$expand='{{ $expand }}'
 ;
 ```
 </TabItem>
-<TabItem value="post_federation_signup">
+<TabItem value="update_post_attribute_collection">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.update_post_attribute_collection 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+"id": "{{ id }}", 
+"authenticationConfiguration": "{{ authenticationConfiguration }}", 
+"displayName": "{{ displayName }}", 
+"targetUrl": "{{ targetUrl }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="delete_post_attribute_collection">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.delete_post_attribute_collection 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="get_post_federation_signup">
 
 Retrieved navigation property
 
 ```sql
-SELECT
-id,
-@odata.type,
-authenticationConfiguration,
-displayName,
-targetUrl
-FROM entra_id.identity.b2x_user_flows_api_connector_configuration
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.get_post_federation_signup 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@$select='{{ $select }}', 
+@$expand='{{ $expand }}'
+;
+```
+</TabItem>
+<TabItem value="update_post_federation_signup">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.update_post_federation_signup 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
+@@json=
+'{
+"id": "{{ id }}", 
+"authenticationConfiguration": "{{ authenticationConfiguration }}", 
+"displayName": "{{ displayName }}", 
+"targetUrl": "{{ targetUrl }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="delete_post_federation_signup">
+
+Success
+
+```sql
+EXEC entra_id.identity.b2x_user_flows_api_connector_configuration.delete_post_federation_signup 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required, 
+@If-Match='{{ If-Match }}'
 ;
 ```
 </TabItem>

@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="acceptedSenders" /></td>
     <td><code>array</code></td>
     <td>The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.</td>
@@ -454,8 +449,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-privilegedAccessGroupAssignmentScheduleInstance-id"><code>privilegedAccessGroupAssignmentScheduleInstance-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-privileged_access_group_assignment_schedule_instance_id"><code>privileged_access_group_assignment_schedule_instance_id</code></a></td>
+    <td></td>
     <td>References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand.</td>
 </tr>
 </tbody>
@@ -474,20 +469,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-privilegedAccessGroupAssignmentScheduleInstance-id">
-    <td><CopyableCode code="privilegedAccessGroupAssignmentScheduleInstance-id" /></td>
+<tr id="parameter-privileged_access_group_assignment_schedule_instance_id">
+    <td><CopyableCode code="privileged_access_group_assignment_schedule_instance_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of privilegedAccessGroupAssignmentScheduleInstance</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -507,7 +492,6 @@ References the group that is the scope of the membership or ownership assignment
 ```sql
 SELECT
 id,
-@odata.type,
 acceptedSenders,
 allowExternalSenders,
 appRoleAssignments,
@@ -583,9 +567,7 @@ unseenCount,
 visibility,
 welcomeMessageEnabled
 FROM entra_id.identity_governance.privileged_access_group_assignment_schedule_instances_group
-WHERE privilegedAccessGroupAssignmentScheduleInstance-id = '{{ privilegedAccessGroupAssignmentScheduleInstance-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE privileged_access_group_assignment_schedule_instance_id = '{{ privileged_access_group_assignment_schedule_instance_id }}' -- required
 ;
 ```
 </TabItem>

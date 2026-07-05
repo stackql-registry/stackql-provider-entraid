@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -759,8 +754,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflowTemplate-id"><code>workflowTemplate-id</code></a>, <a href="#parameter-task-id"><code>task-id</code></a>, <a href="#parameter-taskProcessingResult-id"><code>taskProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_template_id"><code>workflow_template_id</code></a>, <a href="#parameter-task_id"><code>task_id</code></a>, <a href="#parameter-task_processing_result_id"><code>task_processing_result_id</code></a></td>
+    <td></td>
     <td>The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.</td>
 </tr>
 </tbody>
@@ -779,30 +774,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-task-id">
-    <td><CopyableCode code="task-id" /></td>
+<tr id="parameter-task_id">
+    <td><CopyableCode code="task_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of task</td>
 </tr>
-<tr id="parameter-taskProcessingResult-id">
-    <td><CopyableCode code="taskProcessingResult-id" /></td>
+<tr id="parameter-task_processing_result_id">
+    <td><CopyableCode code="task_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of taskProcessingResult</td>
 </tr>
-<tr id="parameter-workflowTemplate-id">
-    <td><CopyableCode code="workflowTemplate-id" /></td>
+<tr id="parameter-workflow_template_id">
+    <td><CopyableCode code="workflow_template_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflowTemplate</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -822,7 +807,6 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -959,11 +943,9 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.identity_governance.lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject
-WHERE workflowTemplate-id = '{{ workflowTemplate-id }}' -- required
-AND task-id = '{{ task-id }}' -- required
-AND taskProcessingResult-id = '{{ taskProcessingResult-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_template_id = '{{ workflow_template_id }}' -- required
+AND task_id = '{{ task_id }}' -- required
+AND task_processing_result_id = '{{ task_processing_result_id }}' -- required
 ;
 ```
 </TabItem>

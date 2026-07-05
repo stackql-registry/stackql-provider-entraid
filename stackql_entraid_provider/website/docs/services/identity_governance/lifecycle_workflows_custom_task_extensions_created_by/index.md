@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -759,8 +754,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-customTaskExtension-id"><code>customTaskExtension-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-custom_task_extension_id"><code>custom_task_extension_id</code></a></td>
+    <td></td>
     <td>The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.</td>
 </tr>
 </tbody>
@@ -779,20 +774,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-customTaskExtension-id">
-    <td><CopyableCode code="customTaskExtension-id" /></td>
+<tr id="parameter-custom_task_extension_id">
+    <td><CopyableCode code="custom_task_extension_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of customTaskExtension</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -812,7 +797,6 @@ The unique identifier of the Microsoft Entra user that created the custom task e
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -949,9 +933,7 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.identity_governance.lifecycle_workflows_custom_task_extensions_created_by
-WHERE customTaskExtension-id = '{{ customTaskExtension-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE custom_task_extension_id = '{{ custom_task_extension_id }}' -- required
 ;
 ```
 </TabItem>

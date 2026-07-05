@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="stages" /></td>
     <td><code>array</code></td>
     <td>A collection of stages in the approval decision.</td>
@@ -89,21 +84,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-appConsentRequest-id"><code>appConsentRequest-id</code></a>, <a href="#parameter-userConsentRequest-id"><code>userConsentRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-app_consent_request_id"><code>app_consent_request_id</code></a>, <a href="#parameter-user_consent_request_id"><code>user_consent_request_id</code></a></td>
+    <td></td>
     <td>Approval decisions associated with a request.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-appConsentRequest-id"><code>appConsentRequest-id</code></a>, <a href="#parameter-userConsentRequest-id"><code>userConsentRequest-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-app_consent_request_id"><code>app_consent_request_id</code></a>, <a href="#parameter-user_consent_request_id"><code>user_consent_request_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-appConsentRequest-id"><code>appConsentRequest-id</code></a>, <a href="#parameter-userConsentRequest-id"><code>userConsentRequest-id</code></a></td>
+    <td><a href="#parameter-app_consent_request_id"><code>app_consent_request_id</code></a>, <a href="#parameter-user_consent_request_id"><code>user_consent_request_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -123,25 +118,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-appConsentRequest-id">
-    <td><CopyableCode code="appConsentRequest-id" /></td>
+<tr id="parameter-app_consent_request_id">
+    <td><CopyableCode code="app_consent_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of appConsentRequest</td>
 </tr>
-<tr id="parameter-userConsentRequest-id">
-    <td><CopyableCode code="userConsentRequest-id" /></td>
+<tr id="parameter-user_consent_request_id">
+    <td><CopyableCode code="user_consent_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of userConsentRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -166,13 +151,10 @@ Approval decisions associated with a request.
 ```sql
 SELECT
 id,
-@odata.type,
 stages
 FROM entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval
-WHERE appConsentRequest-id = '{{ appConsentRequest-id }}' -- required
-AND userConsentRequest-id = '{{ userConsentRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE app_consent_request_id = '{{ app_consent_request_id }}' -- required
+AND user_consent_request_id = '{{ user_consent_request_id }}' -- required
 ;
 ```
 </TabItem>
@@ -195,15 +177,12 @@ No description available.
 UPDATE entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 stages = '{{ stages }}'
 WHERE 
-appConsentRequest-id = '{{ appConsentRequest-id }}' --required
-AND userConsentRequest-id = '{{ userConsentRequest-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+app_consent_request_id = '{{ app_consent_request_id }}' --required
+AND user_consent_request_id = '{{ user_consent_request_id }}' --required
 RETURNING
 id,
-@odata.type,
 stages;
 ```
 </TabItem>
@@ -224,8 +203,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_governance.app_consent_app_consent_requests_user_consent_requests_approval
-WHERE appConsentRequest-id = '{{ appConsentRequest-id }}' --required
-AND userConsentRequest-id = '{{ userConsentRequest-id }}' --required
+WHERE app_consent_request_id = '{{ app_consent_request_id }}' --required
+AND user_consent_request_id = '{{ user_consent_request_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

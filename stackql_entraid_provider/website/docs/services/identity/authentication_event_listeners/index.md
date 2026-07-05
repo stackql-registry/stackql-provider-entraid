@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="authenticationEventsFlowId" /></td>
     <td><code>string</code></td>
     <td>The identifier of the authenticationEventsFlow object.</td>
@@ -97,11 +92,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="authenticationEventsFlowId" /></td>
@@ -141,35 +131,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-authenticationEventListener-id"><code>authenticationEventListener-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-authentication_event_listener_id"><code>authentication_event_listener_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-authenticationEventListener-id"><code>authenticationEventListener-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-authentication_event_listener_id"><code>authentication_event_listener_id</code></a></td>
     <td></td>
     <td>Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-authenticationEventListener-id"><code>authenticationEventListener-id</code></a></td>
+    <td><a href="#parameter-authentication_event_listener_id"><code>authentication_event_listener_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an authenticationEventListener object. The following derived types are currently supported.</td>
 </tr>
@@ -189,50 +179,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-authenticationEventListener-id">
-    <td><CopyableCode code="authenticationEventListener-id" /></td>
+<tr id="parameter-authentication_event_listener_id">
+    <td><CopyableCode code="authentication_event_listener_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of authenticationEventListener</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -258,14 +208,11 @@ Read the properties and relationships of an authenticationEventListener object. 
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationEventsFlowId,
 conditions,
 displayName
 FROM entra_id.identity.authentication_event_listeners
-WHERE authenticationEventListener-id = '{{ authenticationEventListener-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE authentication_event_listener_id = '{{ authentication_event_listener_id }}' -- required
 ;
 ```
 </TabItem>
@@ -276,19 +223,10 @@ Get a list of the authenticationEventListener objects and their properties. The 
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationEventsFlowId,
 conditions,
 displayName
 FROM entra_id.identity.authentication_event_listeners
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -311,20 +249,17 @@ Create a new authenticationEventListener object. You can create one of the follo
 ```sql
 INSERT INTO entra_id.identity.authentication_event_listeners (
 id,
-@odata.type,
 authenticationEventsFlowId,
 conditions,
 displayName
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ authenticationEventsFlowId }}',
 '{{ conditions }}',
 '{{ displayName }}'
 RETURNING
 id,
-@odata.type,
 authenticationEventsFlowId,
 conditions,
 displayName
@@ -340,8 +275,6 @@ displayName
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: authenticationEventsFlowId
       value: "{{ authenticationEventsFlowId }}"
       description: |
@@ -376,16 +309,13 @@ Update the properties of an authenticationEventListener object. You must specify
 UPDATE entra_id.identity.authentication_event_listeners
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 authenticationEventsFlowId = '{{ authenticationEventsFlowId }}',
 conditions = '{{ conditions }}',
 displayName = '{{ displayName }}'
 WHERE 
-authenticationEventListener-id = '{{ authenticationEventListener-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+authentication_event_listener_id = '{{ authentication_event_listener_id }}' --required
 RETURNING
 id,
-@odata.type,
 authenticationEventsFlowId,
 conditions,
 displayName;
@@ -408,7 +338,7 @@ Delete an authenticationEventListener object. The following derived types are cu
 
 ```sql
 DELETE FROM entra_id.identity.authentication_event_listeners
-WHERE authenticationEventListener-id = '{{ authenticationEventListener-id }}' --required
+WHERE authentication_event_listener_id = '{{ authentication_event_listener_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

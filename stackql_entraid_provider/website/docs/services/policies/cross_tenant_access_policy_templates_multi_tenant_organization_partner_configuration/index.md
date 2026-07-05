@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="automaticUserConsentSettings" /></td>
     <td><code></code></td>
     <td>Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.</td>
@@ -120,13 +115,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.</td>
 </tr>
@@ -153,16 +148,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -186,7 +171,6 @@ Get the cross-tenant access policy template with inbound and outbound partner co
 ```sql
 SELECT
 id,
-@odata.type,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
 b2bCollaborationOutbound,
@@ -195,8 +179,6 @@ b2bDirectConnectOutbound,
 inboundTrust,
 templateApplicationLevel
 FROM entra_id.policies.cross_tenant_access_policy_templates_multi_tenant_organization_partner_configuration
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -219,7 +201,6 @@ Update the cross-tenant access policy template with inbound and outbound partner
 UPDATE entra_id.policies.cross_tenant_access_policy_templates_multi_tenant_organization_partner_configuration
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 automaticUserConsentSettings = '{{ automaticUserConsentSettings }}',
 b2bCollaborationInbound = '{{ b2bCollaborationInbound }}',
 b2bCollaborationOutbound = '{{ b2bCollaborationOutbound }}',
@@ -227,11 +208,8 @@ b2bDirectConnectInbound = '{{ b2bDirectConnectInbound }}',
 b2bDirectConnectOutbound = '{{ b2bDirectConnectOutbound }}',
 inboundTrust = '{{ inboundTrust }}',
 templateApplicationLevel = '{{ templateApplicationLevel }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
 b2bCollaborationOutbound,

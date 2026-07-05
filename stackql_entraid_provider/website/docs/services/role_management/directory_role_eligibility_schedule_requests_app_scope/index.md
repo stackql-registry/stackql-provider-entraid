@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>Provides the display name of the app-specific resource represented by the app scope. Read-only.</td>
@@ -94,8 +89,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleEligibilityScheduleRequest-id"><code>unifiedRoleEligibilityScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_eligibility_schedule_request_id"><code>unified_role_eligibility_schedule_request_id</code></a></td>
+    <td></td>
     <td>Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.</td>
 </tr>
 </tbody>
@@ -114,20 +109,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleEligibilityScheduleRequest-id">
-    <td><CopyableCode code="unifiedRoleEligibilityScheduleRequest-id" /></td>
+<tr id="parameter-unified_role_eligibility_schedule_request_id">
+    <td><CopyableCode code="unified_role_eligibility_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleEligibilityScheduleRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -147,13 +132,10 @@ Read-only property with details of the app-specific scope when the role eligibil
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 type
 FROM entra_id.role_management.directory_role_eligibility_schedule_requests_app_scope
-WHERE unifiedRoleEligibilityScheduleRequest-id = '{{ unifiedRoleEligibilityScheduleRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_eligibility_schedule_request_id = '{{ unified_role_eligibility_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>

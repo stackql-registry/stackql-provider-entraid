@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="decisions" /></td>
     <td><code>array</code></td>
     <td>Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.</td>
@@ -112,11 +107,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="decisions" /></td>
@@ -171,42 +161,42 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a>, <a href="#parameter-accessReviewStage-id"><code>accessReviewStage-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a>, <a href="#parameter-access_review_stage_id"><code>access_review_stage_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of an accessReviewStage object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a></td>
+    <td></td>
     <td>Retrieve the stages in a multi-stage access review instance.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a>, <a href="#parameter-accessReviewStage-id"><code>accessReviewStage-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a>, <a href="#parameter-access_review_stage_id"><code>access_review_stage_id</code></a></td>
     <td></td>
     <td>Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a>, <a href="#parameter-accessReviewStage-id"><code>accessReviewStage-id</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a>, <a href="#parameter-access_review_stage_id"><code>access_review_stage_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#stop"><CopyableCode code="stop" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessReviewScheduleDefinition-id"><code>accessReviewScheduleDefinition-id</code></a>, <a href="#parameter-accessReviewInstance-id"><code>accessReviewInstance-id</code></a>, <a href="#parameter-accessReviewStage-id"><code>accessReviewStage-id</code></a></td>
+    <td><a href="#parameter-access_review_schedule_definition_id"><code>access_review_schedule_definition_id</code></a>, <a href="#parameter-access_review_instance_id"><code>access_review_instance_id</code></a>, <a href="#parameter-access_review_stage_id"><code>access_review_stage_id</code></a></td>
     <td></td>
     <td>Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.</td>
 </tr>
@@ -226,60 +216,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessReviewInstance-id">
-    <td><CopyableCode code="accessReviewInstance-id" /></td>
+<tr id="parameter-access_review_instance_id">
+    <td><CopyableCode code="access_review_instance_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessReviewInstance</td>
 </tr>
-<tr id="parameter-accessReviewScheduleDefinition-id">
-    <td><CopyableCode code="accessReviewScheduleDefinition-id" /></td>
+<tr id="parameter-access_review_schedule_definition_id">
+    <td><CopyableCode code="access_review_schedule_definition_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessReviewScheduleDefinition</td>
 </tr>
-<tr id="parameter-accessReviewStage-id">
-    <td><CopyableCode code="accessReviewStage-id" /></td>
+<tr id="parameter-access_review_stage_id">
+    <td><CopyableCode code="access_review_stage_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessReviewStage</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -305,7 +255,6 @@ Retrieve the properties and relationships of an accessReviewStage object.
 ```sql
 SELECT
 id,
-@odata.type,
 decisions,
 endDateTime,
 fallbackReviewers,
@@ -313,11 +262,9 @@ reviewers,
 startDateTime,
 status
 FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
-WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
-AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
-AND accessReviewStage-id = '{{ accessReviewStage-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_review_schedule_definition_id = '{{ access_review_schedule_definition_id }}' -- required
+AND access_review_instance_id = '{{ access_review_instance_id }}' -- required
+AND access_review_stage_id = '{{ access_review_stage_id }}' -- required
 ;
 ```
 </TabItem>
@@ -328,7 +275,6 @@ Retrieve the stages in a multi-stage access review instance.
 ```sql
 SELECT
 id,
-@odata.type,
 decisions,
 endDateTime,
 fallbackReviewers,
@@ -336,16 +282,8 @@ reviewers,
 startDateTime,
 status
 FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
-WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' -- required
-AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_review_schedule_definition_id = '{{ access_review_schedule_definition_id }}' -- required
+AND access_review_instance_id = '{{ access_review_instance_id }}' -- required
 ;
 ```
 </TabItem>
@@ -368,30 +306,27 @@ No description available.
 ```sql
 INSERT INTO entra_id.identity_governance.access_reviews_definitions_instances_stages (
 id,
-@odata.type,
 endDateTime,
 fallbackReviewers,
 reviewers,
 startDateTime,
 status,
 decisions,
-accessReviewScheduleDefinition-id,
-accessReviewInstance-id
+access_review_schedule_definition_id,
+access_review_instance_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ endDateTime }}',
 '{{ fallbackReviewers }}',
 '{{ reviewers }}',
 '{{ startDateTime }}',
 '{{ status }}',
 '{{ decisions }}',
-'{{ accessReviewScheduleDefinition-id }}',
-'{{ accessReviewInstance-id }}'
+'{{ access_review_schedule_definition_id }}',
+'{{ access_review_instance_id }}'
 RETURNING
 id,
-@odata.type,
 decisions,
 endDateTime,
 fallbackReviewers,
@@ -406,18 +341,16 @@ status
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: access_reviews_definitions_instances_stages
   props:
-    - name: accessReviewScheduleDefinition-id
-      value: "{{ accessReviewScheduleDefinition-id }}"
+    - name: access_review_schedule_definition_id
+      value: "{{ access_review_schedule_definition_id }}"
       description: Required parameter for the access_reviews_definitions_instances_stages resource.
-    - name: accessReviewInstance-id
-      value: "{{ accessReviewInstance-id }}"
+    - name: access_review_instance_id
+      value: "{{ access_review_instance_id }}"
       description: Required parameter for the access_reviews_definitions_instances_stages resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: endDateTime
       value: "{{ endDateTime }}"
       description: |
@@ -429,7 +362,6 @@ status
         - query: "{{ query }}"
           queryRoot: "{{ queryRoot }}"
           queryType: "{{ queryType }}"
-          @odata.type: "{{ @odata.type }}"
     - name: reviewers
       description: |
         This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
@@ -437,7 +369,6 @@ status
         - query: "{{ query }}"
           queryRoot: "{{ queryRoot }}"
           queryType: "{{ queryType }}"
-          @odata.type: "{{ @odata.type }}"
     - name: startDateTime
       value: "{{ startDateTime }}"
       description: |
@@ -451,7 +382,6 @@ status
         Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           accessReviewId: "{{ accessReviewId }}"
           appliedBy: "{{ appliedBy }}"
           appliedDateTime: "{{ appliedDateTime }}"
@@ -488,7 +418,6 @@ Update the properties of an accessReviewStage object. Only the reviewers and fal
 UPDATE entra_id.identity_governance.access_reviews_definitions_instances_stages
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 endDateTime = '{{ endDateTime }}',
 fallbackReviewers = '{{ fallbackReviewers }}',
 reviewers = '{{ reviewers }}',
@@ -496,13 +425,11 @@ startDateTime = '{{ startDateTime }}',
 status = '{{ status }}',
 decisions = '{{ decisions }}'
 WHERE 
-accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' --required
-AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' --required
-AND accessReviewStage-id = '{{ accessReviewStage-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_review_schedule_definition_id = '{{ access_review_schedule_definition_id }}' --required
+AND access_review_instance_id = '{{ access_review_instance_id }}' --required
+AND access_review_stage_id = '{{ access_review_stage_id }}' --required
 RETURNING
 id,
-@odata.type,
 decisions,
 endDateTime,
 fallbackReviewers,
@@ -528,9 +455,9 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_governance.access_reviews_definitions_instances_stages
-WHERE accessReviewScheduleDefinition-id = '{{ accessReviewScheduleDefinition-id }}' --required
-AND accessReviewInstance-id = '{{ accessReviewInstance-id }}' --required
-AND accessReviewStage-id = '{{ accessReviewStage-id }}' --required
+WHERE access_review_schedule_definition_id = '{{ access_review_schedule_definition_id }}' --required
+AND access_review_instance_id = '{{ access_review_instance_id }}' --required
+AND access_review_stage_id = '{{ access_review_stage_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -552,9 +479,9 @@ Stop an access review stage that is inProgress. After the access review stage st
 
 ```sql
 EXEC entra_id.identity_governance.access_reviews_definitions_instances_stages.stop 
-@accessReviewScheduleDefinition-id='{{ accessReviewScheduleDefinition-id }}' --required, 
-@accessReviewInstance-id='{{ accessReviewInstance-id }}' --required, 
-@accessReviewStage-id='{{ accessReviewStage-id }}' --required
+@access_review_schedule_definition_id='{{ access_review_schedule_definition_id }}' --required, 
+@access_review_instance_id='{{ access_review_instance_id }}' --required, 
+@access_review_stage_id='{{ access_review_stage_id }}' --required
 ;
 ```
 </TabItem>

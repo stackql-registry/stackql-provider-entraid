@@ -194,7 +194,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /filterOperators/{filterOperatorSchema_id}:
+  /filterOperators/{filter_operator_schema_id}:
     get:
       tags:
         - filterOperators.filterOperatorSchema
@@ -221,7 +221,7 @@ paths:
             type: array
             items:
               type: string
-        - name: filterOperatorSchema-id
+        - name: filter_operator_schema_id
           in: path
           description: The unique identifier of filterOperatorSchema
           required: true
@@ -265,7 +265,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: filterOperatorSchema-id
+        - name: filter_operator_schema_id
           in: path
           description: The unique identifier of filterOperatorSchema
           required: true
@@ -283,7 +283,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: filterOperatorSchema-id
+        - name: filter_operator_schema_id
           in: path
           description: The unique identifier of filterOperatorSchema
           required: true
@@ -299,7 +299,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of filterOperatorSchema entities.
-  /functions/{attributeMappingFunctionSchema_id}:
+  /functions/{attribute_mapping_function_schema_id}:
     get:
       tags:
         - functions.attributeMappingFunctionSchema
@@ -326,7 +326,7 @@ paths:
             type: array
             items:
               type: string
-        - name: attributeMappingFunctionSchema-id
+        - name: attribute_mapping_function_schema_id
           in: path
           description: The unique identifier of attributeMappingFunctionSchema
           required: true
@@ -370,7 +370,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: attributeMappingFunctionSchema-id
+        - name: attribute_mapping_function_schema_id
           in: path
           description: The unique identifier of attributeMappingFunctionSchema
           required: true
@@ -388,7 +388,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: attributeMappingFunctionSchema-id
+        - name: attribute_mapping_function_schema_id
           in: path
           description: The unique identifier of attributeMappingFunctionSchema
           required: true
@@ -409,8 +409,6 @@ components:
     microsoft.graph.filterOperatorSchema:
       x-ms-discriminator-value: '#microsoft.graph.filterOperatorSchema'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1551,8 +1549,6 @@ components:
     microsoft.graph.attributeMappingFunctionSchema:
       x-ms-discriminator-value: '#microsoft.graph.attributeMappingFunctionSchema'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2710,8 +2706,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3882,8 +3876,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
     microsoft.graph.attributeMappingParameterSchema:
       title: attributeMappingParameterSchema
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowMultipleOccurrences:
@@ -3946,8 +3938,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

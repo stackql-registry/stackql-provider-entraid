@@ -59,11 +59,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -760,11 +755,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="aboutMe" /></td>
     <td><code>string</code></td>
     <td>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</td>
@@ -1459,11 +1449,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="aboutMe" /></td>
@@ -2163,56 +2148,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-userPrincipalName"><code>userPrincipalName</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_principal_name"><code>user_principal_name</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Retrieve a list of user objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new user.<br />The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-userPrincipalName"><code>userPrincipalName</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-user_principal_name"><code>user_principal_name</code></a></td>
     <td></td>
     <td>Update the properties of a user object.</td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Update the properties of a user object.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-userPrincipalName"><code>userPrincipalName</code></a></td>
+    <td><a href="#parameter-user_principal_name"><code>user_principal_name</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.</td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.</td>
 </tr>
@@ -2240,105 +2225,133 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#assign_license"><CopyableCode code="assign_license" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.</td>
 </tr>
 <tr>
+    <td><a href="#change_password"><CopyableCode code="change_password" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td></td>
+    <td>Update the signed-in user's password. Any user can update their password without belonging to any administrator role.<br />To update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.</td>
+</tr>
+<tr>
     <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
 </tr>
 <tr>
     <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#export_device_and_app_management_data"><CopyableCode code="export_device_and_app_management_data" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#export_device_and_app_management_data_2"><CopyableCode code="export_device_and_app_management_data_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-skip"><code>skip</code></a>, <a href="#parameter-top"><code>top</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#export_personal_data"><CopyableCode code="export_personal_data" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.</td>
 </tr>
 <tr>
     <td><a href="#find_meeting_times"><CopyableCode code="find_meeting_times" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.<br />Based on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.</td>
 </tr>
 <tr>
     <td><a href="#get_mail_tips"><CopyableCode code="get_mail_tips" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to<br />be returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.</td>
 </tr>
 <tr>
     <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
 </tr>
 <tr>
     <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
 </tr>
 <tr>
     <td><a href="#remove_all_devices_from_management"><CopyableCode code="remove_all_devices_from_management" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Retire all devices from management for this user</td>
 </tr>
 <tr>
     <td><a href="#reprocess_license_assignment"><CopyableCode code="reprocess_license_assignment" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.</td>
 </tr>
 <tr>
     <td><a href="#restore"><CopyableCode code="restore" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
 </tr>
 <tr>
     <td><a href="#retry_service_provisioning"><CopyableCode code="retry_service_provisioning" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Retry the provisioning of a user object in Microsoft Entra ID.</td>
 </tr>
 <tr>
     <td><a href="#revoke_sign_in_sessions"><CopyableCode code="revoke_sign_in_sessions" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.</td>
 </tr>
 <tr>
     <td><a href="#send_mail"><CopyableCode code="send_mail" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include a file attachment in the same sendMail action call. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.</td>
 </tr>
 <tr>
+    <td><a href="#translate_exchange_ids"><CopyableCode code="translate_exchange_ids" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
+    <td></td>
+    <td>Translate identifiers of Outlook-related resources between formats.</td>
+</tr>
+<tr>
     <td><a href="#wipe_managed_app_registrations_by_device_tag"><CopyableCode code="wipe_managed_app_registrations_by_device_tag" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a></td>
     <td></td>
     <td>Issues a wipe operation on an app registration with specified device tag.</td>
 </tr>
@@ -2358,50 +2371,25 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-user-id">
-    <td><CopyableCode code="user-id" /></td>
+<tr id="parameter-skip">
+    <td><CopyableCode code="skip" /></td>
+    <td><code>number (int32)</code></td>
+    <td>Usage: skip=&#123;skip&#125;</td>
+</tr>
+<tr id="parameter-top">
+    <td><CopyableCode code="top" /></td>
+    <td><code>number (int32)</code></td>
+    <td>Usage: top=&#123;top&#125;</td>
+</tr>
+<tr id="parameter-user_id">
+    <td><CopyableCode code="user_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of user</td>
 </tr>
-<tr id="parameter-userPrincipalName">
-    <td><CopyableCode code="userPrincipalName" /></td>
+<tr id="parameter-user_principal_name">
+    <td><CopyableCode code="user_principal_name" /></td>
     <td><code>string</code></td>
     <td>Alternate key of user</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -2433,7 +2421,6 @@ Retrieve the properties and relationships of user object. This operation returns
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -2570,9 +2557,7 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.users.users
-WHERE userPrincipalName = '{{ userPrincipalName }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE user_principal_name = '{{ user_principal_name }}' -- required
 ;
 ```
 </TabItem>
@@ -2583,7 +2568,6 @@ Retrieve the properties and relationships of user object. This operation returns
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -2720,9 +2704,7 @@ usageLocation,
 userPrincipalName,
 userType
 FROM entra_id.users.users
-WHERE user-id = '{{ user-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE user_id = '{{ user_id }}' -- required
 ;
 ```
 </TabItem>
@@ -2733,7 +2715,6 @@ Retrieve a list of user objects.
 ```sql
 SELECT
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -2871,13 +2852,6 @@ userPrincipalName,
 userType
 FROM entra_id.users.users
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -2900,7 +2874,6 @@ Create a new user.<br />The request body contains the user to create. At a minim
 ```sql
 INSERT INTO entra_id.users.users (
 id,
-@odata.type,
 deletedDateTime,
 aboutMe,
 accountEnabled,
@@ -3039,7 +3012,6 @@ transitiveMemberOf
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ aboutMe }}',
 {{ accountEnabled }},
@@ -3177,7 +3149,6 @@ SELECT
 '{{ transitiveMemberOf }}'
 RETURNING
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -3325,8 +3296,6 @@ userType
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -3349,7 +3318,6 @@ userType
       value:
         - disabledPlans: "{{ disabledPlans }}"
           skuId: "{{ skuId }}"
-          @odata.type: "{{ @odata.type }}"
     - name: assignedPlans
       description: |
         The plans that are assigned to the user. Read-only. Not nullable. Requires $select to retrieve. Supports $filter (eq and not).
@@ -3358,7 +3326,6 @@ userType
           capabilityStatus: "{{ capabilityStatus }}"
           service: "{{ service }}"
           servicePlanId: "{{ servicePlanId }}"
-          @odata.type: "{{ @odata.type }}"
     - name: authorizationInfo
       value: "{{ authorizationInfo }}"
     - name: birthday
@@ -3457,7 +3424,6 @@ userType
         - issuer: "{{ issuer }}"
           issuerAssignedId: "{{ issuerAssignedId }}"
           signInType: "{{ signInType }}"
-          @odata.type: "{{ @odata.type }}"
     - name: identityParentId
       value: "{{ identityParentId }}"
     - name: imAddresses
@@ -3500,7 +3466,6 @@ userType
           lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
           skuId: "{{ skuId }}"
           state: "{{ state }}"
-          @odata.type: "{{ @odata.type }}"
     - name: mail
       value: "{{ mail }}"
       description: |
@@ -3553,7 +3518,6 @@ userType
           occurredDateTime: "{{ occurredDateTime }}"
           propertyCausingError: "{{ propertyCausingError }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: onPremisesSamAccountName
       value: "{{ onPremisesSamAccountName }}"
       description: |
@@ -3613,7 +3577,6 @@ userType
         - capabilityStatus: "{{ capabilityStatus }}"
           provisioningStatus: "{{ provisioningStatus }}"
           service: "{{ service }}"
-          @odata.type: "{{ @odata.type }}"
     - name: proxyAddresses
       value:
         - "{{ proxyAddresses }}"
@@ -3640,7 +3603,6 @@ userType
         - createdDateTime: "{{ createdDateTime }}"
           isResolved: {{ isResolved }}
           serviceInstance: "{{ serviceInstance }}"
-          @odata.type: "{{ @odata.type }}"
     - name: showInAddressList
       value: {{ showInAddressList }}
       description: |
@@ -3687,7 +3649,6 @@ userType
         The user's activities across devices. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           activationUrl: "{{ activationUrl }}"
           activitySourceHost: "{{ activitySourceHost }}"
           appActivityId: "{{ appActivityId }}"
@@ -3706,19 +3667,16 @@ userType
               alternateText: "{{ alternateText }}"
               alternativeText: "{{ alternativeText }}"
               iconUrl: "{{ iconUrl }}"
-              @odata.type: "{{ @odata.type }}"
             backgroundColor: "{{ backgroundColor }}"
             content: "{{ content }}"
             description: "{{ description }}"
             displayText: "{{ displayText }}"
-            @odata.type: "{{ @odata.type }}"
           historyItems: "{{ historyItems }}"
     - name: adhocCalls
       description: |
         Ad hoc calls associated with the user. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           recordings: "{{ recordings }}"
           transcripts: "{{ transcripts }}"
     - name: agreementAcceptances
@@ -3726,7 +3684,6 @@ userType
         The user's terms of use acceptance statuses. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           agreementFileId: "{{ agreementFileId }}"
           agreementId: "{{ agreementId }}"
           deviceDisplayName: "{{ deviceDisplayName }}"
@@ -3745,7 +3702,6 @@ userType
         Represents the app roles a user is granted for an application. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           appRoleId: "{{ appRoleId }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -3767,7 +3723,6 @@ userType
         The user's calendar groups. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           changeKey: "{{ changeKey }}"
           classId: "{{ classId }}"
           name: "{{ name }}"
@@ -3777,7 +3732,6 @@ userType
         The user's calendars. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
           canEdit: {{ canEdit }}
           canShare: {{ canShare }}
@@ -3801,7 +3755,6 @@ userType
         The calendar view for the calendar. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -3853,7 +3806,6 @@ userType
     - name: chats
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           chatType: "{{ chatType }}"
           createdDateTime: "{{ createdDateTime }}"
           isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -3879,7 +3831,6 @@ userType
         The user's Cloud PCs. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           aadDeviceId: "{{ aadDeviceId }}"
           displayName: "{{ displayName }}"
           gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -3899,7 +3850,6 @@ userType
         The user's contacts folders. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
           parentFolderId: "{{ parentFolderId }}"
           childFolders: "{{ childFolders }}"
@@ -3911,7 +3861,6 @@ userType
         The user's contacts. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -3961,7 +3910,6 @@ userType
         Directory objects that the user created. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: dataSecurityAndGovernance
       value: "{{ dataSecurityAndGovernance }}"
@@ -3972,7 +3920,6 @@ userType
         The list of troubleshooting events for this user.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           correlationId: "{{ correlationId }}"
           eventDateTime: "{{ eventDateTime }}"
     - name: directReports
@@ -3980,7 +3927,6 @@ userType
         The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: drive
       value: "{{ drive }}"
@@ -3991,7 +3937,6 @@ userType
         A collection of drives available for this user. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdBy: "{{ createdBy }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -4021,7 +3966,6 @@ userType
         The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -4075,11 +4019,9 @@ userType
         The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
     - name: followedSites
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdBy: "{{ createdBy }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -4123,7 +4065,6 @@ userType
     - name: joinedTeams
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           classification: "{{ classification }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
@@ -4158,7 +4099,6 @@ userType
         A collection of this user's license details. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           servicePlans: "{{ servicePlans }}"
           skuId: "{{ skuId }}"
           skuPartNumber: "{{ skuPartNumber }}"
@@ -4167,7 +4107,6 @@ userType
         The user's mail folders. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           childFolderCount: {{ childFolderCount }}
           displayName: "{{ displayName }}"
           isHidden: {{ isHidden }}
@@ -4184,7 +4123,6 @@ userType
         Zero or more managed app registrations that belong to the user.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           appIdentifier: "{{ appIdentifier }}"
           applicationVersion: "{{ applicationVersion }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -4205,7 +4143,6 @@ userType
         The managed devices associated with the user.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           activationLockBypassCode: "{{ activationLockBypassCode }}"
           androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
           azureADDeviceId: "{{ azureADDeviceId }}"
@@ -4276,14 +4213,12 @@ userType
         The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: messages
       description: |
         The messages in a mailbox or folder. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           categories: "{{ categories }}"
           changeKey: "{{ changeKey }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -4321,7 +4256,6 @@ userType
     - name: oauth2PermissionGrants
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           clientId: "{{ clientId }}"
           consentType: "{{ consentType }}"
           principalId: "{{ principalId }}"
@@ -4334,7 +4268,6 @@ userType
         Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
           allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
           allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -4388,21 +4321,18 @@ userType
         Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: ownedObjects
       description: |
         Directory objects the user owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: people
       description: |
         People that are relevant to the user. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           birthday: "{{ birthday }}"
           companyName: "{{ companyName }}"
           department: "{{ department }}"
@@ -4427,7 +4357,6 @@ userType
         List all resource-specific permission grants of a user.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           clientAppId: "{{ clientAppId }}"
           clientId: "{{ clientId }}"
@@ -4443,7 +4372,6 @@ userType
         The collection of the user's profile photos in different sizes. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           height: {{ height }}
           width: {{ width }}
     - name: planner
@@ -4457,18 +4385,15 @@ userType
         Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: scopedRoleMemberOf
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           administrativeUnitId: "{{ administrativeUnitId }}"
           roleId: "{{ roleId }}"
           roleMemberInfo:
             displayName: "{{ displayName }}"
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
     - name: settings
       value: "{{ settings }}"
     - name: solutions
@@ -4480,7 +4405,6 @@ userType
         The users and groups responsible for this guest's privileges in the tenant and keeping the guest's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: teamwork
       value: "{{ teamwork }}"
@@ -4495,7 +4419,6 @@ userType
         The groups, including nested groups, and directory roles that a user is a member of. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
 `}</CodeBlock>
 
@@ -4520,7 +4443,6 @@ Update the properties of a user object.
 UPDATE entra_id.users.users
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 aboutMe = '{{ aboutMe }}',
 accountEnabled = {{ accountEnabled }},
@@ -4657,11 +4579,9 @@ teamwork = '{{ teamwork }}',
 todo = '{{ todo }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}'
 WHERE 
-userPrincipalName = '{{ userPrincipalName }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+user_principal_name = '{{ user_principal_name }}' --required
 RETURNING
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -4807,7 +4727,6 @@ Update the properties of a user object.
 UPDATE entra_id.users.users
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 aboutMe = '{{ aboutMe }}',
 accountEnabled = {{ accountEnabled }},
@@ -4944,11 +4863,9 @@ teamwork = '{{ teamwork }}',
 todo = '{{ todo }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}'
 WHERE 
-user-id = '{{ user-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+user_id = '{{ user_id }}' --required
 RETURNING
 id,
-@odata.type,
 aboutMe,
 accountEnabled,
 activities,
@@ -5104,7 +5021,7 @@ Delete a user object.   When deleted, user resources, including their mailbox an
 
 ```sql
 DELETE FROM entra_id.users.users
-WHERE userPrincipalName = '{{ userPrincipalName }}' --required
+WHERE user_principal_name = '{{ user_principal_name }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -5115,7 +5032,7 @@ Delete a user object.   When deleted, user resources, including their mailbox an
 
 ```sql
 DELETE FROM entra_id.users.users
-WHERE user-id = '{{ user-id }}' --required
+WHERE user_id = '{{ user_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -5132,8 +5049,11 @@ AND If-Match = '{{ If-Match }}'
         { label: 'get_by_ids', value: 'get_by_ids' },
         { label: 'validate_properties', value: 'validate_properties' },
         { label: 'assign_license', value: 'assign_license' },
+        { label: 'change_password', value: 'change_password' },
         { label: 'check_member_groups', value: 'check_member_groups' },
         { label: 'check_member_objects', value: 'check_member_objects' },
+        { label: 'export_device_and_app_management_data', value: 'export_device_and_app_management_data' },
+        { label: 'export_device_and_app_management_data_2', value: 'export_device_and_app_management_data_2' },
         { label: 'export_personal_data', value: 'export_personal_data' },
         { label: 'find_meeting_times', value: 'find_meeting_times' },
         { label: 'get_mail_tips', value: 'get_mail_tips' },
@@ -5145,6 +5065,7 @@ AND If-Match = '{{ If-Match }}'
         { label: 'retry_service_provisioning', value: 'retry_service_provisioning' },
         { label: 'revoke_sign_in_sessions', value: 'revoke_sign_in_sessions' },
         { label: 'send_mail', value: 'send_mail' },
+        { label: 'translate_exchange_ids', value: 'translate_exchange_ids' },
         { label: 'wipe_managed_app_registrations_by_device_tag', value: 'wipe_managed_app_registrations_by_device_tag' }
     ]}
 >
@@ -5197,11 +5118,26 @@ Add or remove licenses for the user to enable or disable their use of Microsoft 
 
 ```sql
 EXEC entra_id.users.users.assign_license 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "addLicenses": "{{ addLicenses }}", 
 "removeLicenses": "{{ removeLicenses }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="change_password">
+
+Update the signed-in user's password. Any user can update their password without belonging to any administrator role.<br />To update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
+
+```sql
+EXEC entra_id.users.users.change_password 
+@user_id='{{ user_id }}' --required 
+@@json=
+'{
+"currentPassword": "{{ currentPassword }}", 
+"newPassword": "{{ newPassword }}"
 }'
 ;
 ```
@@ -5212,7 +5148,7 @@ Check for membership in a specified list of group IDs, and return from that list
 
 ```sql
 EXEC entra_id.users.users.check_member_groups 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "groupIds": "{{ groupIds }}"
@@ -5226,11 +5162,33 @@ Success
 
 ```sql
 EXEC entra_id.users.users.check_member_objects 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "ids": "{{ ids }}"
 }'
+;
+```
+</TabItem>
+<TabItem value="export_device_and_app_management_data">
+
+Success
+
+```sql
+EXEC entra_id.users.users.export_device_and_app_management_data 
+@user_id='{{ user_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="export_device_and_app_management_data_2">
+
+Success
+
+```sql
+EXEC entra_id.users.users.export_device_and_app_management_data_2 
+@user_id='{{ user_id }}' --required, 
+@skip='{{ skip }}' --required, 
+@top='{{ top }}' --required
 ;
 ```
 </TabItem>
@@ -5240,7 +5198,7 @@ Submit a data policy operation request from a company administrator or an applic
 
 ```sql
 EXEC entra_id.users.users.export_personal_data 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "storageLocation": "{{ storageLocation }}"
@@ -5254,7 +5212,7 @@ Suggest meeting times and locations based on organizer and attendee availability
 
 ```sql
 EXEC entra_id.users.users.find_meeting_times 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "attendees": "{{ attendees }}", 
@@ -5275,7 +5233,7 @@ Get the MailTips of one or more recipients as available to the signed-in user. N
 
 ```sql
 EXEC entra_id.users.users.get_mail_tips 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "EmailAddresses": "{{ EmailAddresses }}", 
@@ -5290,7 +5248,7 @@ Return all the group IDs for the groups that the specified user, group, service 
 
 ```sql
 EXEC entra_id.users.users.get_member_groups 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -5304,7 +5262,7 @@ Return all IDs for the groups, administrative units, and directory roles that an
 
 ```sql
 EXEC entra_id.users.users.get_member_objects 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -5318,7 +5276,7 @@ Retire all devices from management for this user
 
 ```sql
 EXEC entra_id.users.users.remove_all_devices_from_management 
-@user-id='{{ user-id }}' --required
+@user_id='{{ user_id }}' --required
 ;
 ```
 </TabItem>
@@ -5328,7 +5286,7 @@ Reprocess all group-based license assignments for the user. To learn more about 
 
 ```sql
 EXEC entra_id.users.users.reprocess_license_assignment 
-@user-id='{{ user-id }}' --required
+@user_id='{{ user_id }}' --required
 ;
 ```
 </TabItem>
@@ -5338,7 +5296,7 @@ Restore a recently deleted directory object from deleted items. The following ty
 
 ```sql
 EXEC entra_id.users.users.restore 
-@user-id='{{ user-id }}' --required
+@user_id='{{ user_id }}' --required
 ;
 ```
 </TabItem>
@@ -5348,7 +5306,7 @@ Retry the provisioning of a user object in Microsoft Entra ID.
 
 ```sql
 EXEC entra_id.users.users.retry_service_provisioning 
-@user-id='{{ user-id }}' --required
+@user_id='{{ user_id }}' --required
 ;
 ```
 </TabItem>
@@ -5358,7 +5316,7 @@ Invalidates all the refresh tokens issued to applications for a user (and sessio
 
 ```sql
 EXEC entra_id.users.users.revoke_sign_in_sessions 
-@user-id='{{ user-id }}' --required
+@user_id='{{ user_id }}' --required
 ;
 ```
 </TabItem>
@@ -5368,11 +5326,27 @@ Send the message specified in the request body using either JSON or MIME format.
 
 ```sql
 EXEC entra_id.users.users.send_mail 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "Message": "{{ Message }}", 
 "SaveToSentItems": {{ SaveToSentItems }}
+}'
+;
+```
+</TabItem>
+<TabItem value="translate_exchange_ids">
+
+Translate identifiers of Outlook-related resources between formats.
+
+```sql
+EXEC entra_id.users.users.translate_exchange_ids 
+@user_id='{{ user_id }}' --required 
+@@json=
+'{
+"InputIds": "{{ InputIds }}", 
+"TargetIdType": "{{ TargetIdType }}", 
+"SourceIdType": "{{ SourceIdType }}"
 }'
 ;
 ```
@@ -5383,7 +5357,7 @@ Issues a wipe operation on an app registration with specified device tag.
 
 ```sql
 EXEC entra_id.users.users.wipe_managed_app_registrations_by_device_tag 
-@user-id='{{ user-id }}' --required 
+@user_id='{{ user_id }}' --required 
 @@json=
 '{
 "deviceTag": "{{ deviceTag }}"

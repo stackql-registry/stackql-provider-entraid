@@ -50,11 +50,6 @@ The following fields are returned by `SELECT` queries:
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="changeKey" /></td>
     <td><code>string</code></td>
     <td>Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.</td>
@@ -117,8 +112,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-user-id"><code>user-id</code></a>, <a href="#parameter-StartDateTime"><code>StartDateTime</code></a>, <a href="#parameter-EndDateTime"><code>EndDateTime</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a></td>
+    <td><a href="#parameter-user_id"><code>user_id</code></a>, <a href="#parameter-start_date_time"><code>start_date_time</code></a>, <a href="#parameter-end_date_time"><code>end_date_time</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 </tbody>
@@ -137,45 +132,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-EndDateTime">
-    <td><CopyableCode code="EndDateTime" /></td>
+<tr id="parameter-end_date_time">
+    <td><CopyableCode code="end_date_time" /></td>
     <td><code>string</code></td>
     <td>Usage: EndDateTime='&#123;EndDateTime&#125;'</td>
 </tr>
-<tr id="parameter-StartDateTime">
-    <td><CopyableCode code="StartDateTime" /></td>
+<tr id="parameter-start_date_time">
+    <td><CopyableCode code="start_date_time" /></td>
     <td><code>string</code></td>
     <td>Usage: StartDateTime='&#123;StartDateTime&#125;'</td>
 </tr>
-<tr id="parameter-user-id">
-    <td><CopyableCode code="user-id" /></td>
+<tr id="parameter-user_id">
+    <td><CopyableCode code="user_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of user</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +164,6 @@ Success
 
 ```sql
 SELECT
-@odata.type,
 changeKey,
 eventEndTime,
 eventId,
@@ -204,14 +173,9 @@ eventSubject,
 eventWebLink,
 reminderFireTime
 FROM entra_id.users.reminder_view
-WHERE user-id = '{{ user-id }}' -- required
-AND StartDateTime = '{{ StartDateTime }}' -- required
-AND EndDateTime = '{{ EndDateTime }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
+WHERE user_id = '{{ user_id }}' -- required
+AND start_date_time = '{{ start_date_time }}' -- required
+AND end_date_time = '{{ end_date_time }}' -- required
 ;
 ```
 </TabItem>

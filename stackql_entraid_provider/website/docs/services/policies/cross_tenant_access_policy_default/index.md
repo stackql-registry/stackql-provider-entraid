@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appServiceConnectInbound" /></td>
     <td><code></code></td>
     <td>Defines your default configuration for inbound app service connect settings that control which applications can connect across tenant boundaries.</td>
@@ -145,13 +140,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update the default configuration of a cross-tenant access policy.</td>
 </tr>
@@ -185,16 +180,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -218,7 +203,6 @@ Read the default configuration of a cross-tenant access policy. This default con
 ```sql
 SELECT
 id,
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,
@@ -232,8 +216,6 @@ m365CollaborationInbound,
 m365CollaborationOutbound,
 tenantRestrictions
 FROM entra_id.policies.cross_tenant_access_policy_default
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -256,7 +238,6 @@ Update the default configuration of a cross-tenant access policy.
 UPDATE entra_id.policies.cross_tenant_access_policy_default
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 appServiceConnectInbound = '{{ appServiceConnectInbound }}',
 automaticUserConsentSettings = '{{ automaticUserConsentSettings }}',
 b2bCollaborationInbound = '{{ b2bCollaborationInbound }}',
@@ -269,11 +250,8 @@ isServiceDefault = {{ isServiceDefault }},
 m365CollaborationInbound = '{{ m365CollaborationInbound }}',
 m365CollaborationOutbound = '{{ m365CollaborationOutbound }}',
 tenantRestrictions = '{{ tenantRestrictions }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 appServiceConnectInbound,
 automaticUserConsentSettings,
 b2bCollaborationInbound,

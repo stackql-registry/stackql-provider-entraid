@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackage" /></td>
     <td><code></code></td>
     <td>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.</td>
@@ -142,11 +137,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackage" /></td>
@@ -231,56 +221,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
+    <td></td>
     <td>In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object. This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.</td>
 </tr>
 <tr>
     <td><a href="#cancel"><CopyableCode code="cancel" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
     <td></td>
     <td>In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.</td>
 </tr>
 <tr>
     <td><a href="#reprocess"><CopyableCode code="reprocess" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
     <td></td>
     <td>In Microsoft Entra entitlement management, callers can automatically retry a user's request for access to an access package. It's performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.</td>
 </tr>
 <tr>
     <td><a href="#resume"><CopyableCode code="resume" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessPackageAssignmentRequest-id"><code>accessPackageAssignmentRequest-id</code></a></td>
+    <td><a href="#parameter-access_package_assignment_request_id"><code>access_package_assignment_request_id</code></a></td>
     <td></td>
     <td>Resume a user's access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It's performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.</td>
 </tr>
@@ -300,50 +290,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageAssignmentRequest-id">
-    <td><CopyableCode code="accessPackageAssignmentRequest-id" /></td>
+<tr id="parameter-access_package_assignment_request_id">
+    <td><CopyableCode code="access_package_assignment_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageAssignmentRequest</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -369,7 +319,6 @@ In Microsoft Entra entitlement management, retrieve the properties and relations
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 answers,
 assignment,
@@ -383,9 +332,7 @@ schedule,
 state,
 status
 FROM entra_id.identity_governance.entitlement_management_assignment_requests
-WHERE accessPackageAssignmentRequest-id = '{{ accessPackageAssignmentRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_assignment_request_id = '{{ access_package_assignment_request_id }}' -- required
 ;
 ```
 </TabItem>
@@ -396,7 +343,6 @@ In Microsoft Entra entitlement management, retrieve a list of accessPackageAssig
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 answers,
 assignment,
@@ -410,14 +356,6 @@ schedule,
 state,
 status
 FROM entra_id.identity_governance.entitlement_management_assignment_requests
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -440,7 +378,6 @@ In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentR
 ```sql
 INSERT INTO entra_id.identity_governance.entitlement_management_assignment_requests (
 id,
-@odata.type,
 answers,
 completedDateTime,
 createdDateTime,
@@ -456,7 +393,6 @@ requestor
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ answers }}',
 '{{ completedDateTime }}',
 '{{ createdDateTime }}',
@@ -471,7 +407,6 @@ SELECT
 '{{ requestor }}'
 RETURNING
 id,
-@odata.type,
 accessPackage,
 answers,
 assignment,
@@ -496,8 +431,6 @@ status
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: answers
       description: |
         Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
@@ -505,16 +438,13 @@ status
         - displayValue: "{{ displayValue }}"
           answeredQuestion:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             isAnswerEditable: {{ isAnswerEditable }}
             isRequired: {{ isRequired }}
             localizations:
               - languageCode: "{{ languageCode }}"
                 text: "{{ text }}"
-                @odata.type: "{{ @odata.type }}"
             sequence: {{ sequence }}
             text: "{{ text }}"
-          @odata.type: "{{ @odata.type }}"
     - name: completedDateTime
       value: "{{ completedDateTime }}"
       description: |
@@ -532,7 +462,6 @@ status
           externalCorrelationId: "{{ externalCorrelationId }}"
           id: "{{ id }}"
           status: "{{ status }}"
-          @odata.type: "{{ @odata.type }}"
     - name: justification
       value: "{{ justification }}"
       description: |
@@ -587,7 +516,6 @@ No description available.
 UPDATE entra_id.identity_governance.entitlement_management_assignment_requests
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 answers = '{{ answers }}',
 completedDateTime = '{{ completedDateTime }}',
 createdDateTime = '{{ createdDateTime }}',
@@ -601,11 +529,9 @@ accessPackage = '{{ accessPackage }}',
 assignment = '{{ assignment }}',
 requestor = '{{ requestor }}'
 WHERE 
-accessPackageAssignmentRequest-id = '{{ accessPackageAssignmentRequest-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_assignment_request_id = '{{ access_package_assignment_request_id }}' --required
 RETURNING
 id,
-@odata.type,
 accessPackage,
 answers,
 assignment,
@@ -637,7 +563,7 @@ Delete an accessPackageAssignmentRequest object. This request can be made to rem
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_assignment_requests
-WHERE accessPackageAssignmentRequest-id = '{{ accessPackageAssignmentRequest-id }}' --required
+WHERE access_package_assignment_request_id = '{{ access_package_assignment_request_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -661,7 +587,7 @@ In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest
 
 ```sql
 EXEC entra_id.identity_governance.entitlement_management_assignment_requests.cancel 
-@accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required
+@access_package_assignment_request_id='{{ access_package_assignment_request_id }}' --required
 ;
 ```
 </TabItem>
@@ -671,7 +597,7 @@ In Microsoft Entra entitlement management, callers can automatically retry a use
 
 ```sql
 EXEC entra_id.identity_governance.entitlement_management_assignment_requests.reprocess 
-@accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required
+@access_package_assignment_request_id='{{ access_package_assignment_request_id }}' --required
 ;
 ```
 </TabItem>
@@ -681,7 +607,7 @@ Resume a user's access package request after waiting for a callback from a custo
 
 ```sql
 EXEC entra_id.identity_governance.entitlement_management_assignment_requests.resume 
-@accessPackageAssignmentRequest-id='{{ accessPackageAssignmentRequest-id }}' --required 
+@access_package_assignment_request_id='{{ access_package_assignment_request_id }}' --required 
 @@json=
 '{
 "source": "{{ source }}", 

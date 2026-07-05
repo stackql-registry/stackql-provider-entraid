@@ -52,11 +52,6 @@ Retrieved collection
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="createdDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>The date and time at which the error occurred. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -94,8 +89,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-privilegedAccessGroupAssignmentScheduleRequest-id"><code>privilegedAccessGroupAssignmentScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-privileged_access_group_assignment_schedule_request_id"><code>privileged_access_group_assignment_schedule_request_id</code></a></td>
+    <td></td>
     <td>Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).</td>
 </tr>
 </tbody>
@@ -114,50 +109,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-privilegedAccessGroupAssignmentScheduleRequest-id">
-    <td><CopyableCode code="privilegedAccessGroupAssignmentScheduleRequest-id" /></td>
+<tr id="parameter-privileged_access_group_assignment_schedule_request_id">
+    <td><CopyableCode code="privileged_access_group_assignment_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of privilegedAccessGroupAssignmentScheduleRequest</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -176,20 +131,11 @@ Errors published by a federated service describing a nontransient, service-speci
 
 ```sql
 SELECT
-@odata.type,
 createdDateTime,
 isResolved,
 serviceInstance
 FROM entra_id.identity_governance.privileged_access_group_assignment_schedule_requests_group_service_provisioning_errors
-WHERE privilegedAccessGroupAssignmentScheduleRequest-id = '{{ privilegedAccessGroupAssignmentScheduleRequest-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE privileged_access_group_assignment_schedule_request_id = '{{ privileged_access_group_assignment_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>

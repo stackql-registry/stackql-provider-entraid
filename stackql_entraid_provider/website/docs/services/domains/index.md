@@ -18,7 +18,7 @@ domains service documentation.
 
 :::info[Service Summary]
 
-total resources: __8__  
+total resources: __6__  
 
 :::
 
@@ -27,11 +27,9 @@ total resources: __8__
 <div class="providerDocColumn">
 <a href="/services/domains/domain_name_references/">domain_name_references</a><br />
 <a href="/services/domains/domains/">domains</a><br />
-<a href="/services/domains/federation_configuration/">federation_configuration</a><br />
-<a href="/services/domains/force_delete/">force_delete</a>
+<a href="/services/domains/federation_configuration/">federation_configuration</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/domains/promote/">promote</a><br />
 <a href="/services/domains/root_domain/">root_domain</a><br />
 <a href="/services/domains/service_configuration_records/">service_configuration_records</a><br />
 <a href="/services/domains/verification_dns_records/">verification_dns_records</a>

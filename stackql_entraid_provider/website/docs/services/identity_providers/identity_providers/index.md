@@ -63,11 +63,6 @@ Retrieved entity
     <td>The display name of the identity provider. Not nullable.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="clientId" /></td>
     <td><code>string</code></td>
     <td>The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.</td>
@@ -109,11 +104,6 @@ Retrieved collection
     <td>The display name of the identity provider. Not nullable.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="clientId" /></td>
     <td><code>string</code></td>
     <td>The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.</td>
@@ -151,35 +141,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-identityProvider-id"><code>identityProvider-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-identity_provider_id"><code>identity_provider_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties of an existing identityProvider.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve all identityProviders in the directory.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-identityProvider-id"><code>identityProvider-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-identity_provider_id"><code>identity_provider_id</code></a></td>
     <td></td>
     <td>Update properties in an existing identityProvider.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-identityProvider-id"><code>identityProvider-id</code></a></td>
+    <td><a href="#parameter-identity_provider_id"><code>identity_provider_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an existing identityProvider.</td>
 </tr>
@@ -199,50 +189,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-identityProvider-id">
-    <td><CopyableCode code="identityProvider-id" /></td>
+<tr id="parameter-identity_provider_id">
+    <td><CopyableCode code="identity_provider_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of identityProvider</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -269,14 +219,11 @@ Retrieve the properties of an existing identityProvider.
 SELECT
 id,
 name,
-@odata.type,
 clientId,
 clientSecret,
 type
 FROM entra_id.identity_providers.identity_providers
-WHERE identityProvider-id = '{{ identityProvider-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE identity_provider_id = '{{ identity_provider_id }}' -- required
 ;
 ```
 </TabItem>
@@ -288,19 +235,10 @@ Retrieve all identityProviders in the directory.
 SELECT
 id,
 name,
-@odata.type,
 clientId,
 clientSecret,
 type
 FROM entra_id.identity_providers.identity_providers
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -323,7 +261,6 @@ Create a new identityProvider by specifying display name, identityProvider type,
 ```sql
 INSERT INTO entra_id.identity_providers.identity_providers (
 id,
-@odata.type,
 clientId,
 clientSecret,
 name,
@@ -331,7 +268,6 @@ type
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ clientId }}',
 '{{ clientSecret }}',
 '{{ name }}',
@@ -339,7 +275,6 @@ SELECT
 RETURNING
 id,
 name,
-@odata.type,
 clientId,
 clientSecret,
 type
@@ -355,8 +290,6 @@ type
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: clientId
       value: "{{ clientId }}"
       description: |
@@ -395,18 +328,15 @@ Update properties in an existing identityProvider.
 UPDATE entra_id.identity_providers.identity_providers
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 clientId = '{{ clientId }}',
 clientSecret = '{{ clientSecret }}',
 name = '{{ name }}',
 type = '{{ type }}'
 WHERE 
-identityProvider-id = '{{ identityProvider-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+identity_provider_id = '{{ identity_provider_id }}' --required
 RETURNING
 id,
 name,
-@odata.type,
 clientId,
 clientSecret,
 type;
@@ -429,7 +359,7 @@ Delete an existing identityProvider.
 
 ```sql
 DELETE FROM entra_id.identity_providers.identity_providers
-WHERE identityProvider-id = '{{ identityProvider-id }}' --required
+WHERE identity_provider_id = '{{ identity_provider_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

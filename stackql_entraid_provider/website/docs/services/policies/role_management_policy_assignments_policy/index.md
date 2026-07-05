@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>Description for the policy.</td>
@@ -129,8 +124,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleManagementPolicyAssignment-id"><code>unifiedRoleManagementPolicyAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_management_policy_assignment_id"><code>unified_role_management_policy_assignment_id</code></a></td>
+    <td></td>
     <td>The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</td>
 </tr>
 </tbody>
@@ -149,20 +144,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleManagementPolicyAssignment-id">
-    <td><CopyableCode code="unifiedRoleManagementPolicyAssignment-id" /></td>
+<tr id="parameter-unified_role_management_policy_assignment_id">
+    <td><CopyableCode code="unified_role_management_policy_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleManagementPolicyAssignment</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -182,7 +167,6 @@ The policy that's associated with a policy assignment. Supports $expand and a ne
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 effectiveRules,
@@ -193,9 +177,7 @@ rules,
 scopeId,
 scopeType
 FROM entra_id.policies.role_management_policy_assignments_policy
-WHERE unifiedRoleManagementPolicyAssignment-id = '{{ unifiedRoleManagementPolicyAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_management_policy_assignment_id = '{{ unified_role_management_policy_assignment_id }}' -- required
 ;
 ```
 </TabItem>

@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="activatedOnScope" /></td>
     <td><code></code></td>
     <td>The scope for which the workflow runs.</td>
@@ -162,11 +157,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="activatedOnScope" /></td>
@@ -271,15 +261,15 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-run-id"><code>run-id</code></a>, <a href="#parameter-userProcessingResult-id"><code>userProcessingResult-id</code></a>, <a href="#parameter-run-id1"><code>run-id1</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-run_id"><code>run_id</code></a>, <a href="#parameter-user_processing_result_id"><code>user_processing_result_id</code></a>, <a href="#parameter-run_id1"><code>run_id1</code></a></td>
+    <td></td>
     <td>The related reprocessed workflow run.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-run-id"><code>run-id</code></a>, <a href="#parameter-userProcessingResult-id"><code>userProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-run_id"><code>run_id</code></a>, <a href="#parameter-user_processing_result_id"><code>user_processing_result_id</code></a></td>
+    <td></td>
     <td>The related reprocessed workflow run.</td>
 </tr>
 </tbody>
@@ -298,65 +288,25 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-run-id">
-    <td><CopyableCode code="run-id" /></td>
+<tr id="parameter-run_id">
+    <td><CopyableCode code="run_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of run</td>
 </tr>
-<tr id="parameter-run-id1">
-    <td><CopyableCode code="run-id1" /></td>
+<tr id="parameter-run_id1">
+    <td><CopyableCode code="run_id1" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of run</td>
 </tr>
-<tr id="parameter-userProcessingResult-id">
-    <td><CopyableCode code="userProcessingResult-id" /></td>
+<tr id="parameter-user_processing_result_id">
+    <td><CopyableCode code="user_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of userProcessingResult</td>
 </tr>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -377,7 +327,6 @@ The related reprocessed workflow run.
 ```sql
 SELECT
 id,
-@odata.type,
 activatedOnScope,
 completedDateTime,
 failedTasksCount,
@@ -395,12 +344,10 @@ totalUsersCount,
 userProcessingResults,
 workflowExecutionType
 FROM entra_id.identity_governance.lifecycle_workflows_workflows_runs_user_processing_results_reprocessed_runs
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND run-id = '{{ run-id }}' -- required
-AND userProcessingResult-id = '{{ userProcessingResult-id }}' -- required
-AND run-id1 = '{{ run-id1 }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND run_id = '{{ run_id }}' -- required
+AND user_processing_result_id = '{{ user_processing_result_id }}' -- required
+AND run_id1 = '{{ run_id1 }}' -- required
 ;
 ```
 </TabItem>
@@ -411,7 +358,6 @@ The related reprocessed workflow run.
 ```sql
 SELECT
 id,
-@odata.type,
 activatedOnScope,
 completedDateTime,
 failedTasksCount,
@@ -429,17 +375,9 @@ totalUsersCount,
 userProcessingResults,
 workflowExecutionType
 FROM entra_id.identity_governance.lifecycle_workflows_workflows_runs_user_processing_results_reprocessed_runs
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND run-id = '{{ run-id }}' -- required
-AND userProcessingResult-id = '{{ userProcessingResult-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND run_id = '{{ run_id }}' -- required
+AND user_processing_result_id = '{{ user_processing_result_id }}' -- required
 ;
 ```
 </TabItem>

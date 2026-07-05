@@ -57,11 +57,6 @@ Retrieved collection
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appliesTo" /></td>
     <td><code>array</code></td>
     <td></td>
@@ -114,28 +109,28 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>List the claimsMappingPolicy objects that are assigned to a servicePrincipal.</td>
 </tr>
 <tr>
     <td><a href="#add_ref"><CopyableCode code="add_ref" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Assign a claimsMappingPolicy to a servicePrincipal.</td>
 </tr>
 <tr>
     <td><a href="#remove_ref"><CopyableCode code="remove_ref" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-claimsMappingPolicy-id"><code>claimsMappingPolicy-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-claims_mapping_policy_id"><code>claims_mapping_policy_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove a claimsMappingPolicy from a servicePrincipal.</td>
 </tr>
 <tr>
     <td><a href="#remove_ref_2"><CopyableCode code="remove_ref_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-@id"><code>@id</code></a>, <a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove a claimsMappingPolicy from a servicePrincipal.</td>
 </tr>
@@ -155,60 +150,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-@id">
-    <td><CopyableCode code="@id" /></td>
-    <td><code>string</code></td>
-    <td>The delete Uri</td>
-</tr>
-<tr id="parameter-claimsMappingPolicy-id">
-    <td><CopyableCode code="claimsMappingPolicy-id" /></td>
+<tr id="parameter-claims_mapping_policy_id">
+    <td><CopyableCode code="claims_mapping_policy_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of claimsMappingPolicy</td>
 </tr>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -233,7 +183,6 @@ List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 ```sql
 SELECT
 id,
-@odata.type,
 appliesTo,
 definition,
 deletedDateTime,
@@ -241,15 +190,7 @@ description,
 displayName,
 isOrganizationDefault
 FROM entra_id.service_principals.claims_mapping_policies
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -271,12 +212,12 @@ Assign a claimsMappingPolicy to a servicePrincipal.
 
 ```sql
 INSERT INTO entra_id.service_principals.claims_mapping_policies (
-@odata.id,
-servicePrincipal-id
+directoryObjectId,
+service_principal_id
 )
 SELECT 
-'{{ @odata.id }}',
-'{{ servicePrincipal-id }}'
+'{{ directoryObjectId }}',
+'{{ service_principal_id }}'
 ;
 ```
 </TabItem>
@@ -285,11 +226,13 @@ SELECT
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: claims_mapping_policies
   props:
-    - name: servicePrincipal-id
-      value: "{{ servicePrincipal-id }}"
+    - name: service_principal_id
+      value: "{{ service_principal_id }}"
       description: Required parameter for the claims_mapping_policies resource.
-    - name: @odata.id
-      value: "{{ @odata.id }}"
+    - name: directoryObjectId
+      value: "{{ directoryObjectId }}"
+      description: |
+        The id of the directory object to reference (a user, group, service principal, device, ...). Sent on the wire as '@odata.id': 'https://graph.microsoft.com/v1.0/directoryObjects/{id}'.
 `}</CodeBlock>
 
 </TabItem>
@@ -311,8 +254,8 @@ Remove a claimsMappingPolicy from a servicePrincipal.
 
 ```sql
 DELETE FROM entra_id.service_principals.claims_mapping_policies
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND claimsMappingPolicy-id = '{{ claimsMappingPolicy-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND claims_mapping_policy_id = '{{ claims_mapping_policy_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -323,8 +266,7 @@ Remove a claimsMappingPolicy from a servicePrincipal.
 
 ```sql
 DELETE FROM entra_id.service_principals.claims_mapping_policies
-WHERE @id = '{{ @id }}' --required
-AND servicePrincipal-id = '{{ servicePrincipal-id }}' --required
+AND service_principal_id = '{{ service_principal_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

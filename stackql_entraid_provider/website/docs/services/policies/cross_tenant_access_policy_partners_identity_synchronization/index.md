@@ -52,11 +52,6 @@ Retrieved navigation property
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.</td>
@@ -94,21 +89,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
+    <td></td>
     <td>Get the user synchronization policy of a partner-specific configuration.</td>
 </tr>
 <tr>
     <td><a href="#replace"><CopyableCode code="replace" /></a></td>
     <td><CopyableCode code="replace" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
     <td></td>
     <td>Create a cross-tenant user synchronization policy for a partner-specific configuration.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-crossTenantAccessPolicyConfigurationPartner-tenantId"><code>crossTenantAccessPolicyConfigurationPartner-tenantId</code></a></td>
+    <td><a href="#parameter-cross_tenant_access_policy_configuration_partner_tenant_id"><code>cross_tenant_access_policy_configuration_partner_tenant_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete the user synchronization policy for a partner-specific configuration.</td>
 </tr>
@@ -128,20 +123,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-crossTenantAccessPolicyConfigurationPartner-tenantId">
-    <td><CopyableCode code="crossTenantAccessPolicyConfigurationPartner-tenantId" /></td>
+<tr id="parameter-cross_tenant_access_policy_configuration_partner_tenant_id">
+    <td><CopyableCode code="cross_tenant_access_policy_configuration_partner_tenant_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of crossTenantAccessPolicyConfigurationPartner</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -165,14 +150,11 @@ Get the user synchronization policy of a partner-specific configuration.
 
 ```sql
 SELECT
-@odata.type,
 displayName,
 tenantId,
 userSyncInbound
 FROM entra_id.policies.cross_tenant_access_policy_partners_identity_synchronization
-WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' -- required
 ;
 ```
 </TabItem>
@@ -197,12 +179,9 @@ SET
 displayName = '{{ displayName }}',
 tenantId = '{{ tenantId }}',
 userSyncInbound = '{{ userSyncInbound }}',
-@odata.type = '{{ @odata.type }}'
 WHERE 
-crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' --required
 RETURNING
-@odata.type,
 displayName,
 tenantId,
 userSyncInbound;
@@ -225,7 +204,7 @@ Delete the user synchronization policy for a partner-specific configuration.
 
 ```sql
 DELETE FROM entra_id.policies.cross_tenant_access_policy_partners_identity_synchronization
-WHERE crossTenantAccessPolicyConfigurationPartner-tenantId = '{{ crossTenantAccessPolicyConfigurationPartner-tenantId }}' --required
+WHERE cross_tenant_access_policy_configuration_partner_tenant_id = '{{ cross_tenant_access_policy_configuration_partner_tenant_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

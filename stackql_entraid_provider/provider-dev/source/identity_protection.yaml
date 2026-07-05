@@ -632,7 +632,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identityProtection/riskDetections/{riskDetection_id}:
+  /identityProtection/riskDetections/{risk_detection_id}:
     get:
       tags:
         - identityProtection.riskDetection
@@ -663,7 +663,7 @@ paths:
             type: array
             items:
               type: string
-        - name: riskDetection-id
+        - name: risk_detection_id
           in: path
           description: The unique identifier of riskDetection
           required: true
@@ -707,7 +707,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskDetection-id
+        - name: risk_detection_id
           in: path
           description: The unique identifier of riskDetection
           required: true
@@ -725,7 +725,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: riskDetection-id
+        - name: risk_detection_id
           in: path
           description: The unique identifier of riskDetection
           required: true
@@ -741,7 +741,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-  /identityProtection/riskyServicePrincipals/{riskyServicePrincipal_id}:
+  /identityProtection/riskyServicePrincipals/{risky_service_principal_id}:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
@@ -772,7 +772,7 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -816,7 +816,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -834,7 +834,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -850,7 +850,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
-  /identityProtection/riskyServicePrincipals/{riskyServicePrincipal_id}/history:
+  /identityProtection/riskyServicePrincipals/{risky_service_principal_id}/history:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
@@ -896,7 +896,7 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -939,7 +939,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -947,7 +947,7 @@ paths:
             type: string
           x-ms-docs-key-type: riskyServicePrincipal
     description: Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
-  /identityProtection/riskyServicePrincipals/{riskyServicePrincipal_id}/history/{riskyServicePrincipalHistoryItem_id}:
+  /identityProtection/riskyServicePrincipals/{risky_service_principal_id}/history/{risky_service_principal_history_item_id}:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
@@ -975,14 +975,14 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyServicePrincipal
-        - name: riskyServicePrincipalHistoryItem-id
+        - name: risky_service_principal_history_item_id
           in: path
           description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
@@ -1026,14 +1026,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyServicePrincipal
-        - name: riskyServicePrincipalHistoryItem-id
+        - name: risky_service_principal_history_item_id
           in: path
           description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
@@ -1051,14 +1051,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyServicePrincipal
-        - name: riskyServicePrincipalHistoryItem-id
+        - name: risky_service_principal_history_item_id
           in: path
           description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
@@ -1074,7 +1074,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
-  /identityProtection/riskyServicePrincipals/{riskyServicePrincipal_id}/history/$count:
+  /identityProtection/riskyServicePrincipals/{risky_service_principal_id}/history/$count:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
@@ -1083,7 +1083,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: riskyServicePrincipal-id
+        - name: risky_service_principal_id
           in: path
           description: The unique identifier of riskyServicePrincipal
           required: true
@@ -1098,7 +1098,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identityProtection/riskyUsers/{riskyUser_id}:
+  /identityProtection/riskyUsers/{risky_user_id}:
     get:
       tags:
         - identityProtection.riskyUser
@@ -1129,7 +1129,7 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1173,7 +1173,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1191,7 +1191,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1207,7 +1207,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-  /identityProtection/riskyUsers/{riskyUser_id}/history:
+  /identityProtection/riskyUsers/{risky_user_id}/history:
     get:
       tags:
         - identityProtection.riskyUser
@@ -1253,7 +1253,7 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1296,7 +1296,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1304,7 +1304,7 @@ paths:
             type: string
           x-ms-docs-key-type: riskyUser
     description: Provides operations to manage the history property of the microsoft.graph.riskyUser entity.
-  /identityProtection/riskyUsers/{riskyUser_id}/history/{riskyUserHistoryItem_id}:
+  /identityProtection/riskyUsers/{risky_user_id}/history/{risky_user_history_item_id}:
     get:
       tags:
         - identityProtection.riskyUser
@@ -1332,14 +1332,14 @@ paths:
             type: array
             items:
               type: string
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyUser
-        - name: riskyUserHistoryItem-id
+        - name: risky_user_history_item_id
           in: path
           description: The unique identifier of riskyUserHistoryItem
           required: true
@@ -1383,14 +1383,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyUser
-        - name: riskyUserHistoryItem-id
+        - name: risky_user_history_item_id
           in: path
           description: The unique identifier of riskyUserHistoryItem
           required: true
@@ -1408,14 +1408,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyUser
-        - name: riskyUserHistoryItem-id
+        - name: risky_user_history_item_id
           in: path
           description: The unique identifier of riskyUserHistoryItem
           required: true
@@ -1431,7 +1431,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the history property of the microsoft.graph.riskyUser entity.
-  /identityProtection/riskyUsers/{riskyUser_id}/history/$count:
+  /identityProtection/riskyUsers/{risky_user_id}/history/$count:
     get:
       tags:
         - identityProtection.riskyUser
@@ -1440,7 +1440,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: riskyUser-id
+        - name: risky_user_id
           in: path
           description: The unique identifier of riskyUser
           required: true
@@ -1455,7 +1455,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection_id}:
+  /identityProtection/servicePrincipalRiskDetections/{service_principal_risk_detection_id}:
     get:
       tags:
         - identityProtection.servicePrincipalRiskDetection
@@ -1486,7 +1486,7 @@ paths:
             type: array
             items:
               type: string
-        - name: servicePrincipalRiskDetection-id
+        - name: service_principal_risk_detection_id
           in: path
           description: The unique identifier of servicePrincipalRiskDetection
           required: true
@@ -1530,7 +1530,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: servicePrincipalRiskDetection-id
+        - name: service_principal_risk_detection_id
           in: path
           description: The unique identifier of servicePrincipalRiskDetection
           required: true
@@ -1548,7 +1548,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: servicePrincipalRiskDetection-id
+        - name: service_principal_risk_detection_id
           in: path
           description: The unique identifier of servicePrincipalRiskDetection
           required: true
@@ -1568,8 +1568,6 @@ components:
   schemas:
     microsoft.graph.identityProtectionRoot:
       title: identityProtectionRoot
-      required:
-        - '@odata.type'
       type: object
       properties:
         riskDetections:
@@ -1601,8 +1599,6 @@ components:
     microsoft.graph.riskDetection:
       x-ms-discriminator-value: '#microsoft.graph.riskDetection'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2836,8 +2832,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.riskyServicePrincipal:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4022,8 +4016,6 @@ components:
     microsoft.graph.riskyServicePrincipalHistoryItem:
       x-ms-discriminator-value: '#microsoft.graph.riskyServicePrincipalHistoryItem'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5218,8 +5210,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.riskyUser:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6400,8 +6390,6 @@ components:
     microsoft.graph.riskyUserHistoryItem:
       x-ms-discriminator-value: '#microsoft.graph.riskyUserHistoryItem'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -7597,8 +7585,6 @@ components:
     microsoft.graph.servicePrincipalRiskDetection:
       x-ms-discriminator-value: '#microsoft.graph.servicePrincipalRiskDetection'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8860,8 +8846,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.riskDetection'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -10009,8 +9993,6 @@ components:
       type: string
     microsoft.graph.signInLocation:
       title: signInLocation
-      required:
-        - '@odata.type'
       type: object
       properties:
         city:
@@ -10024,8 +10006,6 @@ components:
         geoCoordinates:
           description: Provides the latitude, longitude and altitude where the sign-in originated.
           title: geoCoordinates
-          required:
-            - '@odata.type'
           type: object
           properties:
             altitude:
@@ -10153,8 +10133,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipalHistoryItem'
     microsoft.graph.riskServicePrincipalActivity:
       title: riskServicePrincipalActivity
-      required:
-        - '@odata.type'
       type: object
       properties:
         detail:
@@ -10222,8 +10200,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
     microsoft.graph.riskUserActivity:
       title: riskUserActivity
-      required:
-        - '@odata.type'
       type: object
       properties:
         detail:
@@ -10307,8 +10283,6 @@ components:
           nullable: true
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
-      required:
-        - '@odata.type'
       type: object
       properties:
         altitude:
@@ -10355,8 +10329,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

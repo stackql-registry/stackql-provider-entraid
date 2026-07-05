@@ -356,7 +356,7 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -404,7 +404,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -422,7 +422,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -469,7 +469,7 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -517,7 +517,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -539,7 +539,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -599,7 +599,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -652,7 +652,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -671,7 +671,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -730,7 +730,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -783,7 +783,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -802,7 +802,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -861,7 +861,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -914,7 +914,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -933,7 +933,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -992,7 +992,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1045,7 +1045,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1064,7 +1064,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1123,7 +1123,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1176,7 +1176,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1195,7 +1195,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1256,7 +1256,7 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1303,7 +1303,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -1311,7 +1311,7 @@ paths:
             type: string
           x-ms-docs-key-type: organization
     description: Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}:
     get:
       tags:
         - organization.organizationalBranding
@@ -1342,14 +1342,14 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1397,14 +1397,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1426,14 +1426,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1449,7 +1449,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/backgroundImage:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/backgroundImage:
     get:
       tags:
         - organization.organizationalBranding
@@ -1493,14 +1493,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1553,14 +1553,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1579,14 +1579,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1601,7 +1601,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/bannerLogo:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/bannerLogo:
     get:
       tags:
         - organization.organizationalBranding
@@ -1648,14 +1648,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1711,14 +1711,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1737,14 +1737,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1759,7 +1759,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/customCSS:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/customCSS:
     get:
       tags:
         - organization.organizationalBranding
@@ -1803,14 +1803,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1863,14 +1863,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1889,14 +1889,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -1911,7 +1911,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/favicon:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/favicon:
     get:
       tags:
         - organization.organizationalBranding
@@ -1955,14 +1955,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2015,14 +2015,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2041,14 +2041,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2063,7 +2063,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/headerLogo:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/headerLogo:
     get:
       tags:
         - organization.organizationalBranding
@@ -2107,14 +2107,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2167,14 +2167,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2193,14 +2193,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2215,7 +2215,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/squareLogo:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/squareLogo:
     get:
       tags:
         - organization.organizationalBranding
@@ -2259,14 +2259,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2319,14 +2319,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2345,14 +2345,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2367,7 +2367,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the organization entity.
-  /organization/{organization_id}/branding/localizations/{organizationalBrandingLocalization_id}/squareLogoDark:
+  /organization/{organization_id}/branding/localizations/{organizational_branding_localization_id}/squareLogoDark:
     get:
       tags:
         - organization.organizationalBranding
@@ -2411,14 +2411,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2471,14 +2471,14 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2497,14 +2497,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: organizationalBrandingLocalization-id
+        - name: organizational_branding_localization_id
           in: path
           description: The unique identifier of organizationalBrandingLocalization
           required: true
@@ -2528,7 +2528,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2587,7 +2587,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2640,7 +2640,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2659,7 +2659,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2718,7 +2718,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2771,7 +2771,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2790,7 +2790,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2851,7 +2851,7 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2898,7 +2898,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -2906,7 +2906,7 @@ paths:
             type: string
           x-ms-docs-key-type: organization
     description: Provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-  /organization/{organization_id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration_id}:
+  /organization/{organization_id}/certificateBasedAuthConfiguration/{certificate_based_auth_configuration_id}:
     get:
       tags:
         - organization.certificateBasedAuthConfiguration
@@ -2937,14 +2937,14 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: certificateBasedAuthConfiguration-id
+        - name: certificate_based_auth_configuration_id
           in: path
           description: The unique identifier of certificateBasedAuthConfiguration
           required: true
@@ -2978,14 +2978,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: certificateBasedAuthConfiguration-id
+        - name: certificate_based_auth_configuration_id
           in: path
           description: The unique identifier of certificateBasedAuthConfiguration
           required: true
@@ -3010,7 +3010,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3068,7 +3068,7 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3111,7 +3111,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3147,14 +3147,14 @@ paths:
             type: array
             items:
               type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: extension-id
+        - name: extension_id
           in: path
           description: The unique identifier of extension
           required: true
@@ -3198,14 +3198,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: extension-id
+        - name: extension_id
           in: path
           description: The unique identifier of extension
           required: true
@@ -3223,14 +3223,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
-        - name: extension-id
+        - name: extension_id
           in: path
           description: The unique identifier of extension
           required: true
@@ -3255,7 +3255,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3321,7 +3321,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3376,7 +3376,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3435,7 +3435,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3494,7 +3494,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -3519,8 +3519,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -4663,7 +4661,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -4697,7 +4695,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: organization-id
+        - name: organization_id
           in: path
           description: The unique identifier of organization
           required: true
@@ -4710,8 +4708,6 @@ components:
     microsoft.graph.organization:
       x-ms-discriminator-value: '#microsoft.graph.organization'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5981,8 +5977,6 @@ components:
     microsoft.graph.organizationalBranding:
       x-ms-discriminator-value: '#microsoft.graph.organizationalBranding'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -7262,8 +7256,6 @@ components:
     microsoft.graph.organizationalBrandingLocalization:
       x-ms-discriminator-value: '#microsoft.graph.organizationalBrandingLocalization'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8537,8 +8529,6 @@ components:
     microsoft.graph.certificateBasedAuthConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.certificateBasedAuthConfiguration'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -9674,8 +9664,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.extension:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -10817,8 +10805,6 @@ components:
           nullable: true
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -11966,8 +11952,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -13148,8 +13132,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.assignedPlan:
       title: assignedPlan
-      required:
-        - '@odata.type'
       type: object
       properties:
         assignedDateTime:
@@ -13212,8 +13194,6 @@ components:
       type: string
     microsoft.graph.privacyProfile:
       title: privacyProfile
-      required:
-        - '@odata.type'
       type: object
       properties:
         contactEmail:
@@ -13228,8 +13208,6 @@ components:
           type: string
     microsoft.graph.provisionedPlan:
       title: provisionedPlan
-      required:
-        - '@odata.type'
       type: object
       properties:
         capabilityStatus:
@@ -13248,8 +13226,6 @@ components:
           type: string
     microsoft.graph.verifiedDomain:
       title: verifiedDomain
-      required:
-        - '@odata.type'
       type: object
       properties:
         capabilities:
@@ -13276,8 +13252,6 @@ components:
           type: string
     microsoft.graph.organizationalBrandingProperties:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -14583,8 +14557,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -15715,8 +15687,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
-      required:
-        - '@odata.type'
       type: object
       properties:
         certificate:
@@ -15779,8 +15749,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.contentCustomization:
       title: contentCustomization
-      required:
-        - '@odata.type'
       type: object
       properties:
         attributeCollection:
@@ -15805,8 +15773,6 @@ components:
           type: string
     microsoft.graph.loginPageLayoutConfiguration:
       title: loginPageLayoutConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         isFooterShown:
@@ -15830,8 +15796,6 @@ components:
           type: string
     microsoft.graph.loginPageTextVisibilitySettings:
       title: loginPageTextVisibilitySettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         hideAccountResetCredentials:
@@ -15875,8 +15839,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:
@@ -15897,8 +15859,6 @@ components:
           type: string
     microsoft.graph.keyValue:
       title: keyValue
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:

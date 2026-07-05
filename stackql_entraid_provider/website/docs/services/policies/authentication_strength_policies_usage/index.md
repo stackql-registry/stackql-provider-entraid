@@ -50,11 +50,6 @@ The following fields are returned by `SELECT` queries:
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="mfa" /></td>
     <td><code>array</code></td>
     <td></td>
@@ -87,7 +82,7 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-authenticationStrengthPolicy-id"><code>authenticationStrengthPolicy-id</code></a></td>
+    <td><a href="#parameter-authentication_strength_policy_id"><code>authentication_strength_policy_id</code></a></td>
     <td></td>
     <td>Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.</td>
 </tr>
@@ -107,8 +102,8 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-authenticationStrengthPolicy-id">
-    <td><CopyableCode code="authenticationStrengthPolicy-id" /></td>
+<tr id="parameter-authentication_strength_policy_id">
+    <td><CopyableCode code="authentication_strength_policy_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of authenticationStrengthPolicy</td>
 </tr>
@@ -129,11 +124,10 @@ Allows the caller to see which Conditional Access policies reference a specified
 
 ```sql
 SELECT
-@odata.type,
 mfa,
 none
 FROM entra_id.policies.authentication_strength_policies_usage
-WHERE authenticationStrengthPolicy-id = '{{ authenticationStrengthPolicy-id }}' -- required
+WHERE authentication_strength_policy_id = '{{ authentication_strength_policy_id }}' -- required
 ;
 ```
 </TabItem>

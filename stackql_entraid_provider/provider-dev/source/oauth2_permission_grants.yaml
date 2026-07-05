@@ -181,7 +181,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
     description: Provides operations to call the delta method.
-  /oauth2PermissionGrants/{oAuth2PermissionGrant_id}:
+  /oauth2PermissionGrants/{o_auth2_permission_grant_id}:
     get:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
@@ -212,7 +212,7 @@ paths:
             type: array
             items:
               type: string
-        - name: oAuth2PermissionGrant-id
+        - name: o_auth2_permission_grant_id
           in: path
           description: The unique identifier of oAuth2PermissionGrant
           required: true
@@ -260,7 +260,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: oAuth2PermissionGrant-id
+        - name: o_auth2_permission_grant_id
           in: path
           description: The unique identifier of oAuth2PermissionGrant
           required: true
@@ -282,7 +282,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: oAuth2PermissionGrant-id
+        - name: o_auth2_permission_grant_id
           in: path
           description: The unique identifier of oAuth2PermissionGrant
           required: true
@@ -303,8 +303,6 @@ components:
     microsoft.graph.oAuth2PermissionGrant:
       x-ms-discriminator-value: '#microsoft.graph.oAuth2PermissionGrant'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1485,8 +1483,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2664,8 +2660,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

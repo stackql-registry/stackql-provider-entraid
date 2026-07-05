@@ -325,7 +325,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
     description: Provides operations to call the validateProperties method.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}:
+  /directoryRoleTemplates/{directory_role_template_id}:
     get:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
@@ -356,7 +356,7 @@ paths:
             type: array
             items:
               type: string
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -400,7 +400,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -418,7 +418,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -434,7 +434,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of directoryRoleTemplate entities.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}/checkMemberGroups:
+  /directoryRoleTemplates/{directory_role_template_id}/checkMemberGroups:
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
@@ -485,7 +485,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -493,7 +493,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryRoleTemplate
     description: Provides operations to call the checkMemberGroups method.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}/checkMemberObjects:
+  /directoryRoleTemplates/{directory_role_template_id}/checkMemberObjects:
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
@@ -540,7 +540,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -548,7 +548,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryRoleTemplate
     description: Provides operations to call the checkMemberObjects method.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}/getMemberGroups:
+  /directoryRoleTemplates/{directory_role_template_id}/getMemberGroups:
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
@@ -599,7 +599,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -607,7 +607,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryRoleTemplate
     description: Provides operations to call the getMemberGroups method.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}/getMemberObjects:
+  /directoryRoleTemplates/{directory_role_template_id}/getMemberObjects:
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
@@ -658,7 +658,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -666,7 +666,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryRoleTemplate
     description: Provides operations to call the getMemberObjects method.
-  /directoryRoleTemplates/{directoryRoleTemplate_id}/restore:
+  /directoryRoleTemplates/{directory_role_template_id}/restore:
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
@@ -683,8 +683,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1827,7 +1825,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: directoryRoleTemplate-id
+        - name: directory_role_template_id
           in: path
           description: The unique identifier of directoryRoleTemplate
           required: true
@@ -1840,8 +1838,6 @@ components:
     microsoft.graph.directoryRoleTemplate:
       x-ms-discriminator-value: '#microsoft.graph.directoryRoleTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2997,8 +2993,6 @@ components:
           nullable: true
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4146,8 +4140,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5328,8 +5320,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6496,8 +6486,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

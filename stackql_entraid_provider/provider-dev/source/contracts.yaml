@@ -356,7 +356,7 @@ paths:
             type: array
             items:
               type: string
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -400,7 +400,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -418,7 +418,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -485,7 +485,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -540,7 +540,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -599,7 +599,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -658,7 +658,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -683,8 +683,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1827,7 +1825,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: contract-id
+        - name: contract_id
           in: path
           description: The unique identifier of contract
           required: true
@@ -1840,8 +1838,6 @@ components:
     microsoft.graph.contract:
       x-ms-discriminator-value: '#microsoft.graph.contract'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3007,8 +3003,6 @@ components:
           nullable: true
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4156,8 +4150,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5338,8 +5330,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6506,8 +6496,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

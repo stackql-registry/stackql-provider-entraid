@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="authenticationConfiguration" /></td>
     <td><code></code></td>
     <td>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</td>
@@ -109,8 +104,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-accessPackageAssignmentPolicy-id"><code>accessPackageAssignmentPolicy-id</code></a>, <a href="#parameter-customExtensionStageSetting-id"><code>customExtensionStageSetting-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-access_package_assignment_policy_id"><code>access_package_assignment_policy_id</code></a>, <a href="#parameter-custom_extension_stage_setting_id"><code>custom_extension_stage_setting_id</code></a></td>
+    <td></td>
     <td>Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.</td>
 </tr>
 </tbody>
@@ -129,30 +124,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackage-id">
-    <td><CopyableCode code="accessPackage-id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier of accessPackage</td>
-</tr>
-<tr id="parameter-accessPackageAssignmentPolicy-id">
-    <td><CopyableCode code="accessPackageAssignmentPolicy-id" /></td>
+<tr id="parameter-access_package_assignment_policy_id">
+    <td><CopyableCode code="access_package_assignment_policy_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageAssignmentPolicy</td>
 </tr>
-<tr id="parameter-customExtensionStageSetting-id">
-    <td><CopyableCode code="customExtensionStageSetting-id" /></td>
+<tr id="parameter-access_package_id">
+    <td><CopyableCode code="access_package_id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier of accessPackage</td>
+</tr>
+<tr id="parameter-custom_extension_stage_setting_id">
+    <td><CopyableCode code="custom_extension_stage_setting_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of customExtensionStageSetting</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -172,18 +157,15 @@ Indicates the custom workflow extension that will be executed at this stage. Nul
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
 displayName,
 endpointConfiguration
 FROM entra_id.identity_governance.entitlement_management_access_packages_assignment_policies_custom_extension_stage_settings_custom_extension
-WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
-AND accessPackageAssignmentPolicy-id = '{{ accessPackageAssignmentPolicy-id }}' -- required
-AND customExtensionStageSetting-id = '{{ customExtensionStageSetting-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
+AND access_package_assignment_policy_id = '{{ access_package_assignment_policy_id }}' -- required
+AND custom_extension_stage_setting_id = '{{ custom_extension_stage_setting_id }}' -- required
 ;
 ```
 </TabItem>

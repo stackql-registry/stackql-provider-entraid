@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="addedByTenantId" /></td>
     <td><code>string</code></td>
     <td>Tenant ID of the Microsoft Entra tenant that added a tenant to the multitenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.</td>
@@ -105,13 +100,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get the status of a tenant joining a multitenant organization.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Join a multitenant organization, after the owner of the multitenant organization has added your tenant to the multitenant organization as pending. Before a tenant added to a multitenant organization can participate in the multitenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait up to 2 hours before joining a multitenant organization is completed.</td>
 </tr>
@@ -131,16 +126,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 </tbody>
 </table>
 
@@ -159,14 +144,11 @@ Get the status of a tenant joining a multitenant organization.
 ```sql
 SELECT
 id,
-@odata.type,
 addedByTenantId,
 memberState,
 role,
 transitionDetails
 FROM entra_id.tenant_relationships.multi_tenant_organization_join_request
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -189,16 +171,12 @@ Join a multitenant organization, after the owner of the multitenant organization
 UPDATE entra_id.tenant_relationships.multi_tenant_organization_join_request
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 addedByTenantId = '{{ addedByTenantId }}',
 memberState = '{{ memberState }}',
 role = '{{ role }}',
 transitionDetails = '{{ transitionDetails }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 addedByTenantId,
 memberState,
 role,

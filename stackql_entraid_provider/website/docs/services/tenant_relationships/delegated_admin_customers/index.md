@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.</td>
@@ -97,11 +92,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="displayName" /></td>
@@ -141,35 +131,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-delegatedAdminCustomer-id"><code>delegatedAdminCustomer-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-delegated_admin_customer_id"><code>delegated_admin_customer_id</code></a></td>
+    <td></td>
     <td>Read the properties of a delegatedAdminCustomer object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of the delegatedAdminCustomer objects and their properties.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-delegatedAdminCustomer-id"><code>delegatedAdminCustomer-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-delegated_admin_customer_id"><code>delegated_admin_customer_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-delegatedAdminCustomer-id"><code>delegatedAdminCustomer-id</code></a></td>
+    <td><a href="#parameter-delegated_admin_customer_id"><code>delegated_admin_customer_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -189,50 +179,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-delegatedAdminCustomer-id">
-    <td><CopyableCode code="delegatedAdminCustomer-id" /></td>
+<tr id="parameter-delegated_admin_customer_id">
+    <td><CopyableCode code="delegated_admin_customer_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of delegatedAdminCustomer</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -258,14 +208,11 @@ Read the properties of a delegatedAdminCustomer object.
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 serviceManagementDetails,
 tenantId
 FROM entra_id.tenant_relationships.delegated_admin_customers
-WHERE delegatedAdminCustomer-id = '{{ delegatedAdminCustomer-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE delegated_admin_customer_id = '{{ delegated_admin_customer_id }}' -- required
 ;
 ```
 </TabItem>
@@ -276,19 +223,10 @@ Get a list of the delegatedAdminCustomer objects and their properties.
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 serviceManagementDetails,
 tenantId
 FROM entra_id.tenant_relationships.delegated_admin_customers
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -311,20 +249,17 @@ No description available.
 ```sql
 INSERT INTO entra_id.tenant_relationships.delegated_admin_customers (
 id,
-@odata.type,
 displayName,
 tenantId,
 serviceManagementDetails
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ displayName }}',
 '{{ tenantId }}',
 '{{ serviceManagementDetails }}'
 RETURNING
 id,
-@odata.type,
 displayName,
 serviceManagementDetails,
 tenantId
@@ -340,8 +275,6 @@ tenantId
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: displayName
       value: "{{ displayName }}"
       description: |
@@ -355,7 +288,6 @@ tenantId
         Contains the management details of a service in the customer tenant that's managed by delegated administration.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           serviceManagementUrl: "{{ serviceManagementUrl }}"
           serviceName: "{{ serviceName }}"
 `}</CodeBlock>
@@ -380,16 +312,13 @@ No description available.
 UPDATE entra_id.tenant_relationships.delegated_admin_customers
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 displayName = '{{ displayName }}',
 tenantId = '{{ tenantId }}',
 serviceManagementDetails = '{{ serviceManagementDetails }}'
 WHERE 
-delegatedAdminCustomer-id = '{{ delegatedAdminCustomer-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+delegated_admin_customer_id = '{{ delegated_admin_customer_id }}' --required
 RETURNING
 id,
-@odata.type,
 displayName,
 serviceManagementDetails,
 tenantId;
@@ -412,7 +341,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.tenant_relationships.delegated_admin_customers
-WHERE delegatedAdminCustomer-id = '{{ delegatedAdminCustomer-id }}' --required
+WHERE delegated_admin_customer_id = '{{ delegated_admin_customer_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

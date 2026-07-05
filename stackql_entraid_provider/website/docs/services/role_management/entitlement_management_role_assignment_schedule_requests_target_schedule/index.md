@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="activatedUsing" /></td>
     <td><code></code></td>
     <td>If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.</td>
@@ -164,8 +159,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentScheduleRequest-id"><code>unifiedRoleAssignmentScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_request_id"><code>unified_role_assignment_schedule_request_id</code></a></td>
+    <td></td>
     <td>The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.</td>
 </tr>
 </tbody>
@@ -184,20 +179,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleAssignmentScheduleRequest-id">
-    <td><CopyableCode code="unifiedRoleAssignmentScheduleRequest-id" /></td>
+<tr id="parameter-unified_role_assignment_schedule_request_id">
+    <td><CopyableCode code="unified_role_assignment_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleAssignmentScheduleRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -217,7 +202,6 @@ The schedule for an eligible role assignment that is referenced through the targ
 ```sql
 SELECT
 id,
-@odata.type,
 activatedUsing,
 appScope,
 appScopeId,
@@ -235,9 +219,7 @@ roleDefinitionId,
 scheduleInfo,
 status
 FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests_target_schedule
-WHERE unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_assignment_schedule_request_id = '{{ unified_role_assignment_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>

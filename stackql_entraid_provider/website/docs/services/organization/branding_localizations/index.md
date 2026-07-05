@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="backgroundColor" /></td>
     <td><code>string</code></td>
     <td>Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.</td>
@@ -237,11 +232,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="backgroundColor" /></td>
@@ -421,37 +411,135 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a>, <a href="#parameter-organizationalBrandingLocalization-id"><code>organizationalBrandingLocalization-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
     <td>Retrieve all localization branding objects, including the default branding.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
     <td></td>
     <td>Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn't exist. The default branding is created only once. It's loaded when a localized branding isn't configured for the user's browser language. To retrieve the default branding, see Get branding.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a>, <a href="#parameter-organizationalBrandingLocalization-id"><code>organizationalBrandingLocalization-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
     <td></td>
     <td>Update the properties of an organizationalBrandingLocalization object for a specific localization.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a>, <a href="#parameter-organizationalBrandingLocalization-id"><code>organizationalBrandingLocalization-id</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.</td>
+</tr>
+<tr>
+    <td><a href="#background_image"><CopyableCode code="background_image" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.</td>
+</tr>
+<tr>
+    <td><a href="#background_image_2"><CopyableCode code="background_image_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.</td>
+</tr>
+<tr>
+    <td><a href="#banner_logo"><CopyableCode code="banner_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>Update the properties of an organizationalBrandingLocalization object for a specific localization.</td>
+</tr>
+<tr>
+    <td><a href="#banner_logo_2"><CopyableCode code="banner_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#custom_css"><CopyableCode code="custom_css" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.</td>
+</tr>
+<tr>
+    <td><a href="#custom_css_2"><CopyableCode code="custom_css_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.</td>
+</tr>
+<tr>
+    <td><a href="#favicon"><CopyableCode code="favicon" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.</td>
+</tr>
+<tr>
+    <td><a href="#favicon_2"><CopyableCode code="favicon_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.</td>
+</tr>
+<tr>
+    <td><a href="#header_logo"><CopyableCode code="header_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#header_logo_2"><CopyableCode code="header_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo"><CopyableCode code="square_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_2"><CopyableCode code="square_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_dark"><CopyableCode code="square_logo_dark" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td></td>
+    <td>A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_dark_2"><CopyableCode code="square_logo_dark_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a>, <a href="#parameter-organizational_branding_localization_id"><code>organizational_branding_localization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
 </tr>
 </tbody>
 </table>
@@ -469,55 +557,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-organization-id">
-    <td><CopyableCode code="organization-id" /></td>
+<tr id="parameter-organization_id">
+    <td><CopyableCode code="organization_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of organization</td>
 </tr>
-<tr id="parameter-organizationalBrandingLocalization-id">
-    <td><CopyableCode code="organizationalBrandingLocalization-id" /></td>
+<tr id="parameter-organizational_branding_localization_id">
+    <td><CopyableCode code="organizational_branding_localization_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of organizationalBrandingLocalization</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -543,7 +591,6 @@ Read the properties and relationships of an organizationalBrandingLocalization o
 ```sql
 SELECT
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -576,10 +623,8 @@ squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
 FROM entra_id.organization.branding_localizations
-WHERE organization-id = '{{ organization-id }}' -- required
-AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE organization_id = '{{ organization_id }}' -- required
+AND organizational_branding_localization_id = '{{ organizational_branding_localization_id }}' -- required
 ;
 ```
 </TabItem>
@@ -590,7 +635,6 @@ Retrieve all localization branding objects, including the default branding.
 ```sql
 SELECT
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -623,15 +667,7 @@ squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
 FROM entra_id.organization.branding_localizations
-WHERE organization-id = '{{ organization-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE organization_id = '{{ organization_id }}' -- required
 ;
 ```
 </TabItem>
@@ -654,7 +690,6 @@ Create a new organizationalBrandingLocalization object. This creates a localized
 ```sql
 INSERT INTO entra_id.organization.branding_localizations (
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -686,11 +721,10 @@ squareLogoDark,
 squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText,
-organization-id
+organization_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ backgroundColor }}',
 '{{ backgroundImage }}',
 '{{ backgroundImageRelativeUrl }}',
@@ -722,10 +756,9 @@ SELECT
 '{{ squareLogoDarkRelativeUrl }}',
 '{{ squareLogoRelativeUrl }}',
 '{{ usernameHintText }}',
-'{{ organization-id }}'
+'{{ organization_id }}'
 RETURNING
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -765,15 +798,13 @@ usernameHintText
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: branding_localizations
   props:
-    - name: organization-id
-      value: "{{ organization-id }}"
+    - name: organization_id
+      value: "{{ organization_id }}"
       description: Required parameter for the branding_localizations resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: backgroundColor
       value: "{{ backgroundColor }}"
       description: |
@@ -921,7 +952,6 @@ Update the properties of an organizationalBrandingLocalization object for a spec
 UPDATE entra_id.organization.branding_localizations
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 backgroundColor = '{{ backgroundColor }}',
 backgroundImage = '{{ backgroundImage }}',
 backgroundImageRelativeUrl = '{{ backgroundImageRelativeUrl }}',
@@ -954,12 +984,10 @@ squareLogoDarkRelativeUrl = '{{ squareLogoDarkRelativeUrl }}',
 squareLogoRelativeUrl = '{{ squareLogoRelativeUrl }}',
 usernameHintText = '{{ usernameHintText }}'
 WHERE 
-organization-id = '{{ organization-id }}' --required
-AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+organization_id = '{{ organization_id }}' --required
+AND organizational_branding_localization_id = '{{ organizational_branding_localization_id }}' --required
 RETURNING
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -1010,9 +1038,194 @@ Delete a localized branding object. To delete the organizationalBrandingLocaliza
 
 ```sql
 DELETE FROM entra_id.organization.branding_localizations
-WHERE organization-id = '{{ organization-id }}' --required
-AND organizationalBrandingLocalization-id = '{{ organizationalBrandingLocalization-id }}' --required
+WHERE organization_id = '{{ organization_id }}' --required
+AND organizational_branding_localization_id = '{{ organizational_branding_localization_id }}' --required
 AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="background_image"
+    values={[
+        { label: 'background_image', value: 'background_image' },
+        { label: 'background_image_2', value: 'background_image_2' },
+        { label: 'banner_logo', value: 'banner_logo' },
+        { label: 'banner_logo_2', value: 'banner_logo_2' },
+        { label: 'custom_css', value: 'custom_css' },
+        { label: 'custom_css_2', value: 'custom_css_2' },
+        { label: 'favicon', value: 'favicon' },
+        { label: 'favicon_2', value: 'favicon_2' },
+        { label: 'header_logo', value: 'header_logo' },
+        { label: 'header_logo_2', value: 'header_logo_2' },
+        { label: 'square_logo', value: 'square_logo' },
+        { label: 'square_logo_2', value: 'square_logo_2' },
+        { label: 'square_logo_dark', value: 'square_logo_dark' },
+        { label: 'square_logo_dark_2', value: 'square_logo_dark_2' }
+    ]}
+>
+<TabItem value="background_image">
+
+Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+
+```sql
+EXEC entra_id.organization.branding_localizations.background_image 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="background_image_2">
+
+Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+
+```sql
+EXEC entra_id.organization.branding_localizations.background_image_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="banner_logo">
+
+Update the properties of an organizationalBrandingLocalization object for a specific localization.
+
+```sql
+EXEC entra_id.organization.branding_localizations.banner_logo 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="banner_logo_2">
+
+A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.banner_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="custom_css">
+
+CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+
+```sql
+EXEC entra_id.organization.branding_localizations.custom_css 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="custom_css_2">
+
+CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+
+```sql
+EXEC entra_id.organization.branding_localizations.custom_css_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="favicon">
+
+A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+
+```sql
+EXEC entra_id.organization.branding_localizations.favicon 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="favicon_2">
+
+A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+
+```sql
+EXEC entra_id.organization.branding_localizations.favicon_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="header_logo">
+
+A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.header_logo 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="header_logo_2">
+
+A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.header_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="square_logo">
+
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.square_logo 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="square_logo_2">
+
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.square_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="square_logo_dark">
+
+A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.square_logo_dark 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="square_logo_dark_2">
+
+A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding_localizations.square_logo_dark_2 
+@organization_id='{{ organization_id }}' --required, 
+@organizational_branding_localization_id='{{ organizational_branding_localization_id }}' --required, 
+@If-Match='{{ If-Match }}'
 ;
 ```
 </TabItem>

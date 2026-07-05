@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="authenticationConfiguration" /></td>
     <td><code></code></td>
     <td>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</td>
@@ -107,11 +102,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="authenticationConfiguration" /></td>
@@ -161,35 +151,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a>, <a href="#parameter-customCalloutExtension-id"><code>customCalloutExtension-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a>, <a href="#parameter-custom_callout_extension_id"><code>custom_callout_extension_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a></td>
+    <td></td>
     <td>Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a></td>
     <td></td>
     <td>Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a>, <a href="#parameter-customCalloutExtension-id"><code>customCalloutExtension-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a>, <a href="#parameter-custom_callout_extension_id"><code>custom_callout_extension_id</code></a></td>
     <td></td>
     <td>Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackageCatalog-id"><code>accessPackageCatalog-id</code></a>, <a href="#parameter-customCalloutExtension-id"><code>customCalloutExtension-id</code></a></td>
+    <td><a href="#parameter-access_package_catalog_id"><code>access_package_catalog_id</code></a>, <a href="#parameter-custom_callout_extension_id"><code>custom_callout_extension_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:</td>
 </tr>
@@ -209,55 +199,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageCatalog-id">
-    <td><CopyableCode code="accessPackageCatalog-id" /></td>
+<tr id="parameter-access_package_catalog_id">
+    <td><CopyableCode code="access_package_catalog_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageCatalog</td>
 </tr>
-<tr id="parameter-customCalloutExtension-id">
-    <td><CopyableCode code="customCalloutExtension-id" /></td>
+<tr id="parameter-custom_callout_extension_id">
+    <td><CopyableCode code="custom_callout_extension_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of customCalloutExtension</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -283,17 +233,14 @@ Read the properties and relationships of an accessPackageAssignmentRequestWorkfl
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
 displayName,
 endpointConfiguration
 FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
-WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
-AND customCalloutExtension-id = '{{ customCalloutExtension-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_catalog_id = '{{ access_package_catalog_id }}' -- required
+AND custom_callout_extension_id = '{{ custom_callout_extension_id }}' -- required
 ;
 ```
 </TabItem>
@@ -304,22 +251,13 @@ Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPack
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
 displayName,
 endpointConfiguration
 FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
-WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_catalog_id = '{{ access_package_catalog_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,26 +280,23 @@ Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAss
 ```sql
 INSERT INTO entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions (
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
 displayName,
 endpointConfiguration,
-accessPackageCatalog-id
+access_package_catalog_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ authenticationConfiguration }}',
 '{{ clientConfiguration }}',
 '{{ description }}',
 '{{ displayName }}',
 '{{ endpointConfiguration }}',
-'{{ accessPackageCatalog-id }}'
+'{{ access_package_catalog_id }}'
 RETURNING
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
@@ -375,15 +310,13 @@ endpointConfiguration
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: entitlement_management_catalogs_custom_workflow_extensions
   props:
-    - name: accessPackageCatalog-id
-      value: "{{ accessPackageCatalog-id }}"
+    - name: access_package_catalog_id
+      value: "{{ access_package_catalog_id }}"
       description: Required parameter for the entitlement_management_catalogs_custom_workflow_extensions resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: authenticationConfiguration
       value: "{{ authenticationConfiguration }}"
       description: |
@@ -426,19 +359,16 @@ Update the properties of an accessPackageAssignmentRequestWorkflowExtension obje
 UPDATE entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 authenticationConfiguration = '{{ authenticationConfiguration }}',
 clientConfiguration = '{{ clientConfiguration }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
 endpointConfiguration = '{{ endpointConfiguration }}'
 WHERE 
-accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
-AND customCalloutExtension-id = '{{ customCalloutExtension-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_catalog_id = '{{ access_package_catalog_id }}' --required
+AND custom_callout_extension_id = '{{ custom_callout_extension_id }}' --required
 RETURNING
 id,
-@odata.type,
 authenticationConfiguration,
 clientConfiguration,
 description,
@@ -463,8 +393,8 @@ Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom wor
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_catalogs_custom_workflow_extensions
-WHERE accessPackageCatalog-id = '{{ accessPackageCatalog-id }}' --required
-AND customCalloutExtension-id = '{{ customCalloutExtension-id }}' --required
+WHERE access_package_catalog_id = '{{ access_package_catalog_id }}' --required
+AND custom_callout_extension_id = '{{ custom_callout_extension_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

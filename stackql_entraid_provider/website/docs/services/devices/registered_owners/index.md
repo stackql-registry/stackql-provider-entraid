@@ -57,11 +57,6 @@ Retrieved collection
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="deletedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>Date and time when this object was deleted. Always null when the object hasn't been deleted. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -89,28 +84,28 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-device-id"><code>device-id</code></a></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-device_id"><code>device_id</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.</td>
 </tr>
 <tr>
     <td><a href="#add_ref"><CopyableCode code="add_ref" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-device-id"><code>device-id</code></a></td>
+    <td><a href="#parameter-device_id"><code>device_id</code></a></td>
     <td></td>
     <td>Add a user as a registered owner of the device.</td>
 </tr>
 <tr>
     <td><a href="#remove_ref"><CopyableCode code="remove_ref" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-device-id"><code>device-id</code></a>, <a href="#parameter-directoryObject-id"><code>directoryObject-id</code></a></td>
+    <td><a href="#parameter-device_id"><code>device_id</code></a>, <a href="#parameter-directory_object_id"><code>directory_object_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove a user as a registered owner of the device.</td>
 </tr>
 <tr>
     <td><a href="#remove_ref_2"><CopyableCode code="remove_ref_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-@id"><code>@id</code></a>, <a href="#parameter-device-id"><code>device-id</code></a></td>
+    <td><a href="#parameter-device_id"><code>device_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Remove a user as a registered owner of the device.</td>
 </tr>
@@ -130,60 +125,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-@id">
-    <td><CopyableCode code="@id" /></td>
-    <td><code>string</code></td>
-    <td>The delete Uri</td>
-</tr>
-<tr id="parameter-device-id">
-    <td><CopyableCode code="device-id" /></td>
+<tr id="parameter-device_id">
+    <td><CopyableCode code="device_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of device</td>
 </tr>
-<tr id="parameter-directoryObject-id">
-    <td><CopyableCode code="directoryObject-id" /></td>
+<tr id="parameter-directory_object_id">
+    <td><CopyableCode code="directory_object_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of directoryObject</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -213,19 +163,10 @@ Retrieve a list of users that are registered owners of the device. A registered 
 ```sql
 SELECT
 id,
-@odata.type,
 deletedDateTime
 FROM entra_id.devices.registered_owners
-WHERE device-id = '{{ device-id }}' -- required
+WHERE device_id = '{{ device_id }}' -- required
 AND ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -247,12 +188,12 @@ Add a user as a registered owner of the device.
 
 ```sql
 INSERT INTO entra_id.devices.registered_owners (
-@odata.id,
-device-id
+directoryObjectId,
+device_id
 )
 SELECT 
-'{{ @odata.id }}',
-'{{ device-id }}'
+'{{ directoryObjectId }}',
+'{{ device_id }}'
 ;
 ```
 </TabItem>
@@ -261,11 +202,13 @@ SELECT
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: registered_owners
   props:
-    - name: device-id
-      value: "{{ device-id }}"
+    - name: device_id
+      value: "{{ device_id }}"
       description: Required parameter for the registered_owners resource.
-    - name: @odata.id
-      value: "{{ @odata.id }}"
+    - name: directoryObjectId
+      value: "{{ directoryObjectId }}"
+      description: |
+        The id of the directory object to reference (a user, group, service principal, device, ...). Sent on the wire as '@odata.id': 'https://graph.microsoft.com/v1.0/directoryObjects/{id}'.
 `}</CodeBlock>
 
 </TabItem>
@@ -287,8 +230,8 @@ Remove a user as a registered owner of the device.
 
 ```sql
 DELETE FROM entra_id.devices.registered_owners
-WHERE device-id = '{{ device-id }}' --required
-AND directoryObject-id = '{{ directoryObject-id }}' --required
+WHERE device_id = '{{ device_id }}' --required
+AND directory_object_id = '{{ directory_object_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -299,8 +242,7 @@ Remove a user as a registered owner of the device.
 
 ```sql
 DELETE FROM entra_id.devices.registered_owners
-WHERE @id = '{{ @id }}' --required
-AND device-id = '{{ device-id }}' --required
+AND device_id = '{{ device_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

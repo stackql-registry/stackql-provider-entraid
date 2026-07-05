@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="completedDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -122,11 +117,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="completedDateTime" /></td>
@@ -191,15 +181,15 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-taskReport-id"><code>taskReport-id</code></a>, <a href="#parameter-taskProcessingResult-id"><code>taskProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-task_report_id"><code>task_report_id</code></a>, <a href="#parameter-task_processing_result_id"><code>task_processing_result_id</code></a></td>
+    <td></td>
     <td>The related lifecycle workflow taskProcessingResults.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-taskReport-id"><code>taskReport-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-task_report_id"><code>task_report_id</code></a></td>
+    <td></td>
     <td>The related lifecycle workflow taskProcessingResults.</td>
 </tr>
 </tbody>
@@ -218,60 +208,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-taskProcessingResult-id">
-    <td><CopyableCode code="taskProcessingResult-id" /></td>
+<tr id="parameter-task_processing_result_id">
+    <td><CopyableCode code="task_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of taskProcessingResult</td>
 </tr>
-<tr id="parameter-taskReport-id">
-    <td><CopyableCode code="taskReport-id" /></td>
+<tr id="parameter-task_report_id">
+    <td><CopyableCode code="task_report_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of taskReport</td>
 </tr>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -292,7 +242,6 @@ The related lifecycle workflow taskProcessingResults.
 ```sql
 SELECT
 id,
-@odata.type,
 completedDateTime,
 createdDateTime,
 failureReason,
@@ -302,11 +251,9 @@ startedDateTime,
 subject,
 task
 FROM entra_id.identity_governance.lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND taskReport-id = '{{ taskReport-id }}' -- required
-AND taskProcessingResult-id = '{{ taskProcessingResult-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND task_report_id = '{{ task_report_id }}' -- required
+AND task_processing_result_id = '{{ task_processing_result_id }}' -- required
 ;
 ```
 </TabItem>
@@ -317,7 +264,6 @@ The related lifecycle workflow taskProcessingResults.
 ```sql
 SELECT
 id,
-@odata.type,
 completedDateTime,
 createdDateTime,
 failureReason,
@@ -327,16 +273,8 @@ startedDateTime,
 subject,
 task
 FROM entra_id.identity_governance.lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND taskReport-id = '{{ taskReport-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND task_report_id = '{{ task_report_id }}' -- required
 ;
 ```
 </TabItem>

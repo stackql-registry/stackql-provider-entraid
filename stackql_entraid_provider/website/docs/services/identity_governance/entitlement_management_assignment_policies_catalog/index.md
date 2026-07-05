@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackages" /></td>
     <td><code>array</code></td>
     <td>The access packages in this catalog. Read-only. Nullable.</td>
@@ -144,8 +139,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageAssignmentPolicy-id"><code>accessPackageAssignmentPolicy-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_assignment_policy_id"><code>access_package_assignment_policy_id</code></a></td>
+    <td></td>
     <td>Catalog of the access package containing this policy. Read-only.</td>
 </tr>
 </tbody>
@@ -164,20 +159,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageAssignmentPolicy-id">
-    <td><CopyableCode code="accessPackageAssignmentPolicy-id" /></td>
+<tr id="parameter-access_package_assignment_policy_id">
+    <td><CopyableCode code="access_package_assignment_policy_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageAssignmentPolicy</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -197,7 +182,6 @@ Catalog of the access package containing this policy. Read-only.
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackages,
 catalogType,
 createdDateTime,
@@ -211,9 +195,7 @@ resourceScopes,
 resources,
 state
 FROM entra_id.identity_governance.entitlement_management_assignment_policies_catalog
-WHERE accessPackageAssignmentPolicy-id = '{{ accessPackageAssignmentPolicy-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_assignment_policy_id = '{{ access_package_assignment_policy_id }}' -- required
 ;
 ```
 </TabItem>

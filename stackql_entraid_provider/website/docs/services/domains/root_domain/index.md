@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="authenticationType" /></td>
     <td><code>string</code></td>
     <td>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Domain-InternalFederation.ReadWrite.All permission.</td>
@@ -174,8 +169,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
+    <td></td>
     <td>Get the root domain of a subdomain. This API returns a single object.</td>
 </tr>
 </tbody>
@@ -194,20 +189,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-domain-id">
-    <td><CopyableCode code="domain-id" /></td>
+<tr id="parameter-domain_id">
+    <td><CopyableCode code="domain_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of domain</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +212,6 @@ Get the root domain of a subdomain. This API returns a single object.
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 domainNameReferences,
@@ -247,9 +231,7 @@ state,
 supportedServices,
 verificationDnsRecords
 FROM entra_id.domains.root_domain
-WHERE domain-id = '{{ domain-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE domain_id = '{{ domain_id }}' -- required
 ;
 ```
 </TabItem>

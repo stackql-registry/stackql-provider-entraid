@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="authenticationType" /></td>
     <td><code>string</code></td>
     <td>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Domain-InternalFederation.ReadWrite.All permission.</td>
@@ -172,11 +167,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="authenticationType" /></td>
@@ -291,42 +281,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of domain object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of domain objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Adds a domain to the tenant. Important: You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
     <td></td>
     <td>Update the properties of domain object. Only verified domains can be updated.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a domain from a tenant.</td>
 </tr>
 <tr>
+    <td><a href="#force_delete"><CopyableCode code="force_delete" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
+    <td></td>
+    <td>Delete a domain using an asynchronous long-running operation. Before performing this operation, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.</td>
+</tr>
+<tr>
+    <td><a href="#promote"><CopyableCode code="promote" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
+    <td></td>
+    <td>Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.</td>
+</tr>
+<tr>
     <td><a href="#verify"><CopyableCode code="verify" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-domain-id"><code>domain-id</code></a></td>
+    <td><a href="#parameter-domain_id"><code>domain_id</code></a></td>
     <td></td>
     <td>Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.</td>
 </tr>
@@ -346,50 +350,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-domain-id">
-    <td><CopyableCode code="domain-id" /></td>
+<tr id="parameter-domain_id">
+    <td><CopyableCode code="domain_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of domain</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -415,7 +379,6 @@ Retrieve the properties and relationships of domain object.
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 domainNameReferences,
@@ -435,9 +398,7 @@ state,
 supportedServices,
 verificationDnsRecords
 FROM entra_id.domains.domains
-WHERE domain-id = '{{ domain-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE domain_id = '{{ domain_id }}' -- required
 ;
 ```
 </TabItem>
@@ -448,7 +409,6 @@ Retrieve a list of domain objects.
 ```sql
 SELECT
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 domainNameReferences,
@@ -468,14 +428,6 @@ state,
 supportedServices,
 verificationDnsRecords
 FROM entra_id.domains.domains
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -498,7 +450,6 @@ Adds a domain to the tenant. Important: You cannot use an associated domain with
 ```sql
 INSERT INTO entra_id.domains.domains (
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 isAdminManaged,
@@ -520,7 +471,6 @@ verificationDnsRecords
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ authenticationType }}',
 '{{ availabilityStatus }}',
 {{ isAdminManaged }},
@@ -541,7 +491,6 @@ SELECT
 '{{ verificationDnsRecords }}'
 RETURNING
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 domainNameReferences,
@@ -572,8 +521,6 @@ verificationDnsRecords
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: authenticationType
       value: "{{ authenticationType }}"
       description: |
@@ -628,14 +575,12 @@ verificationDnsRecords
         The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: federationConfiguration
       description: |
         Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           displayName: "{{ displayName }}"
           issuerUri: "{{ issuerUri }}"
           metadataExchangeUri: "{{ metadataExchangeUri }}"
@@ -659,7 +604,6 @@ verificationDnsRecords
         DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           isOptional: {{ isOptional }}
           label: "{{ label }}"
           recordType: "{{ recordType }}"
@@ -670,7 +614,6 @@ verificationDnsRecords
         DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           isOptional: {{ isOptional }}
           label: "{{ label }}"
           recordType: "{{ recordType }}"
@@ -698,7 +641,6 @@ Update the properties of domain object. Only verified domains can be updated.
 UPDATE entra_id.domains.domains
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 authenticationType = '{{ authenticationType }}',
 availabilityStatus = '{{ availabilityStatus }}',
 isAdminManaged = {{ isAdminManaged }},
@@ -718,11 +660,9 @@ rootDomain = '{{ rootDomain }}',
 serviceConfigurationRecords = '{{ serviceConfigurationRecords }}',
 verificationDnsRecords = '{{ verificationDnsRecords }}'
 WHERE 
-domain-id = '{{ domain-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+domain_id = '{{ domain_id }}' --required
 RETURNING
 id,
-@odata.type,
 authenticationType,
 availabilityStatus,
 domainNameReferences,
@@ -760,7 +700,7 @@ Delete a domain from a tenant.
 
 ```sql
 DELETE FROM entra_id.domains.domains
-WHERE domain-id = '{{ domain-id }}' --required
+WHERE domain_id = '{{ domain_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -771,18 +711,44 @@ AND If-Match = '{{ If-Match }}'
 ## Lifecycle Methods
 
 <Tabs
-    defaultValue="verify"
+    defaultValue="force_delete"
     values={[
+        { label: 'force_delete', value: 'force_delete' },
+        { label: 'promote', value: 'promote' },
         { label: 'verify', value: 'verify' }
     ]}
 >
+<TabItem value="force_delete">
+
+Delete a domain using an asynchronous long-running operation. Before performing this operation, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.
+
+```sql
+EXEC entra_id.domains.domains.force_delete 
+@domain_id='{{ domain_id }}' --required 
+@@json=
+'{
+"disableUserAccounts": {{ disableUserAccounts }}
+}'
+;
+```
+</TabItem>
+<TabItem value="promote">
+
+Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
+
+```sql
+EXEC entra_id.domains.domains.promote 
+@domain_id='{{ domain_id }}' --required
+;
+```
+</TabItem>
 <TabItem value="verify">
 
 Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
 
 ```sql
 EXEC entra_id.domains.domains.verify 
-@domain-id='{{ domain-id }}' --required
+@domain_id='{{ domain_id }}' --required
 ;
 ```
 </TabItem>

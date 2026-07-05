@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>The display name of the identityUserFlowAttribute within a user flow.</td>
@@ -112,11 +107,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="displayName" /></td>
@@ -171,42 +161,42 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-identityUserFlowAttributeAssignment-id"><code>identityUserFlowAttributeAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a>, <a href="#parameter-identity_user_flow_attribute_assignment_id"><code>identity_user_flow_attribute_assignment_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an identityUserFlowAttributeAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
     <td>Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td></td>
     <td>Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-identityUserFlowAttributeAssignment-id"><code>identityUserFlowAttributeAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a>, <a href="#parameter-identity_user_flow_attribute_assignment_id"><code>identity_user_flow_attribute_assignment_id</code></a></td>
     <td></td>
     <td>Update the properties of a identityUserFlowAttributeAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-identityUserFlowAttributeAssignment-id"><code>identityUserFlowAttributeAssignment-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a>, <a href="#parameter-identity_user_flow_attribute_assignment_id"><code>identity_user_flow_attribute_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an identityUserFlowAttributeAssignment object.</td>
 </tr>
 <tr>
     <td><a href="#set_order"><CopyableCode code="set_order" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td></td>
     <td>Set the order of identityUserFlowAttributeAssignments being collected within a user flow.</td>
 </tr>
@@ -226,55 +216,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-b2xIdentityUserFlow-id">
-    <td><CopyableCode code="b2xIdentityUserFlow-id" /></td>
+<tr id="parameter-b2x_identity_user_flow_id">
+    <td><CopyableCode code="b2x_identity_user_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of b2xIdentityUserFlow</td>
 </tr>
-<tr id="parameter-identityUserFlowAttributeAssignment-id">
-    <td><CopyableCode code="identityUserFlowAttributeAssignment-id" /></td>
+<tr id="parameter-identity_user_flow_attribute_assignment_id">
+    <td><CopyableCode code="identity_user_flow_attribute_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of identityUserFlowAttributeAssignment</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -300,7 +250,6 @@ Read the properties and relationships of an identityUserFlowAttributeAssignment 
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 isOptional,
 requiresVerification,
@@ -308,10 +257,8 @@ userAttribute,
 userAttributeValues,
 userInputType
 FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
+AND identity_user_flow_attribute_assignment_id = '{{ identity_user_flow_attribute_assignment_id }}' -- required
 ;
 ```
 </TabItem>
@@ -322,7 +269,6 @@ Get the identityUserFlowAttributeAssignment resources from the userAttributeAssi
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 isOptional,
 requiresVerification,
@@ -330,15 +276,7 @@ userAttribute,
 userAttributeValues,
 userInputType
 FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
 ;
 ```
 </TabItem>
@@ -361,28 +299,25 @@ Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow
 ```sql
 INSERT INTO entra_id.identity.b2x_user_flows_user_attribute_assignments (
 id,
-@odata.type,
 displayName,
 isOptional,
 requiresVerification,
 userAttributeValues,
 userInputType,
 userAttribute,
-b2xIdentityUserFlow-id
+b2x_identity_user_flow_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ displayName }}',
 {{ isOptional }},
 {{ requiresVerification }},
 '{{ userAttributeValues }}',
 '{{ userInputType }}',
 '{{ userAttribute }}',
-'{{ b2xIdentityUserFlow-id }}'
+'{{ b2x_identity_user_flow_id }}'
 RETURNING
 id,
-@odata.type,
 displayName,
 isOptional,
 requiresVerification,
@@ -397,15 +332,13 @@ userInputType
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: b2x_user_flows_user_attribute_assignments
   props:
-    - name: b2xIdentityUserFlow-id
-      value: "{{ b2xIdentityUserFlow-id }}"
+    - name: b2x_identity_user_flow_id
+      value: "{{ b2x_identity_user_flow_id }}"
       description: Required parameter for the b2x_user_flows_user_attribute_assignments resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: displayName
       value: "{{ displayName }}"
       description: |
@@ -425,7 +358,6 @@ userInputType
         - isDefault: {{ isDefault }}
           name: "{{ name }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: userInputType
       value: "{{ userInputType }}"
       valid_values: ['textBox', 'dateTimeDropdown', 'radioSingleSelect', 'dropdownSingleSelect', 'emailBox', 'checkboxMultiSelect']
@@ -455,7 +387,6 @@ Update the properties of a identityUserFlowAttributeAssignment object.
 UPDATE entra_id.identity.b2x_user_flows_user_attribute_assignments
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 displayName = '{{ displayName }}',
 isOptional = {{ isOptional }},
 requiresVerification = {{ requiresVerification }},
@@ -463,12 +394,10 @@ userAttributeValues = '{{ userAttributeValues }}',
 userInputType = '{{ userInputType }}',
 userAttribute = '{{ userAttribute }}'
 WHERE 
-b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
-AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
+AND identity_user_flow_attribute_assignment_id = '{{ identity_user_flow_attribute_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 displayName,
 isOptional,
 requiresVerification,
@@ -494,8 +423,8 @@ Delete an identityUserFlowAttributeAssignment object.
 
 ```sql
 DELETE FROM entra_id.identity.b2x_user_flows_user_attribute_assignments
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
-AND identityUserFlowAttributeAssignment-id = '{{ identityUserFlowAttributeAssignment-id }}' --required
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
+AND identity_user_flow_attribute_assignment_id = '{{ identity_user_flow_attribute_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -517,7 +446,7 @@ Set the order of identityUserFlowAttributeAssignments being collected within a u
 
 ```sql
 EXEC entra_id.identity.b2x_user_flows_user_attribute_assignments.set_order 
-@b2xIdentityUserFlow-id='{{ b2xIdentityUserFlow-id }}' --required 
+@b2x_identity_user_flow_id='{{ b2x_identity_user_flow_id }}' --required 
 @@json=
 '{
 "newAssignmentOrder": "{{ newAssignmentOrder }}"

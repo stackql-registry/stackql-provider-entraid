@@ -99,7 +99,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -143,7 +143,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -161,7 +161,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -220,7 +220,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -263,7 +263,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -271,7 +271,7 @@ paths:
             type: string
           x-ms-docs-key-type: agreement
     description: Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-  /agreements/{agreement_id}/acceptances/{agreementAcceptance_id}:
+  /agreements/{agreement_id}/acceptances/{agreement_acceptance_id}:
     get:
       tags:
         - agreements.agreementAcceptance
@@ -299,14 +299,14 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -350,14 +350,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -375,14 +375,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementAcceptance-id
+        - name: agreement_acceptance_id
           in: path
           description: The unique identifier of agreementAcceptance
           required: true
@@ -407,7 +407,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -453,7 +453,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -497,7 +497,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -515,7 +515,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -577,7 +577,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -620,7 +620,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -628,7 +628,7 @@ paths:
             type: string
           x-ms-docs-key-type: agreement
     description: Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
-  /agreements/{agreement_id}/file/localizations/{agreementFileLocalization_id}:
+  /agreements/{agreement_id}/file/localizations/{agreement_file_localization_id}:
     get:
       tags:
         - agreements.agreementFile
@@ -656,14 +656,14 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -707,14 +707,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -732,14 +732,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -755,7 +755,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
-  /agreements/{agreement_id}/file/localizations/{agreementFileLocalization_id}/versions:
+  /agreements/{agreement_id}/file/localizations/{agreement_file_localization_id}/versions:
     get:
       tags:
         - agreements.agreementFile
@@ -798,14 +798,14 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -848,14 +848,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -865,7 +865,7 @@ paths:
     description: Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
     x-ms-docs-grouped-path:
       - /agreements/{agreement-id}/files/{agreementFileLocalization-id}/versions
-  /agreements/{agreement_id}/file/localizations/{agreementFileLocalization_id}/versions/{agreementFileVersion_id}:
+  /agreements/{agreement_id}/file/localizations/{agreement_file_localization_id}/versions/{agreement_file_version_id}:
     get:
       tags:
         - agreements.agreementFile
@@ -893,21 +893,21 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -951,21 +951,21 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -983,21 +983,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -1015,7 +1015,7 @@ paths:
     description: Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
     x-ms-docs-grouped-path:
       - /agreements/{agreement-id}/files/{agreementFileLocalization-id}/versions/{agreementFileVersion-id}
-  /agreements/{agreement_id}/file/localizations/{agreementFileLocalization_id}/versions/$count:
+  /agreements/{agreement_id}/file/localizations/{agreement_file_localization_id}/versions/$count:
     get:
       tags:
         - agreements.agreementFile
@@ -1024,14 +1024,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1055,7 +1055,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -1113,7 +1113,7 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -1156,7 +1156,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -1164,7 +1164,7 @@ paths:
             type: string
           x-ms-docs-key-type: agreement
     description: Provides operations to manage the files property of the microsoft.graph.agreement entity.
-  /agreements/{agreement_id}/files/{agreementFileLocalization_id}:
+  /agreements/{agreement_id}/files/{agreement_file_localization_id}:
     get:
       tags:
         - agreements.agreementFileLocalization
@@ -1192,14 +1192,14 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1243,14 +1243,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1268,14 +1268,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1291,7 +1291,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the files property of the microsoft.graph.agreement entity.
-  /agreements/{agreement_id}/files/{agreementFileLocalization_id}/versions:
+  /agreements/{agreement_id}/files/{agreement_file_localization_id}/versions:
     get:
       tags:
         - agreements.agreementFileLocalization
@@ -1334,14 +1334,14 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1384,14 +1384,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1401,7 +1401,7 @@ paths:
     description: Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
     x-ms-docs-grouped-path:
       - /agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}/versions
-  /agreements/{agreement_id}/files/{agreementFileLocalization_id}/versions/{agreementFileVersion_id}:
+  /agreements/{agreement_id}/files/{agreement_file_localization_id}/versions/{agreement_file_version_id}:
     get:
       tags:
         - agreements.agreementFileLocalization
@@ -1429,21 +1429,21 @@ paths:
             type: array
             items:
               type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -1487,21 +1487,21 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -1519,21 +1519,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
-        - name: agreementFileVersion-id
+        - name: agreement_file_version_id
           in: path
           description: The unique identifier of agreementFileVersion
           required: true
@@ -1551,7 +1551,7 @@ paths:
     description: Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
     x-ms-docs-grouped-path:
       - /agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}/versions/{agreementFileVersion-id}
-  /agreements/{agreement_id}/files/{agreementFileLocalization_id}/versions/$count:
+  /agreements/{agreement_id}/files/{agreement_file_localization_id}/versions/$count:
     get:
       tags:
         - agreements.agreementFileLocalization
@@ -1560,14 +1560,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
           schema:
             type: string
           x-ms-docs-key-type: agreement
-        - name: agreementFileLocalization-id
+        - name: agreement_file_localization_id
           in: path
           description: The unique identifier of agreementFileLocalization
           required: true
@@ -1591,7 +1591,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: agreement-id
+        - name: agreement_id
           in: path
           description: The unique identifier of agreement
           required: true
@@ -1611,8 +1611,6 @@ components:
     microsoft.graph.agreement:
       x-ms-discriminator-value: '#microsoft.graph.agreement'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -1635,8 +1633,6 @@ components:
         termsExpiration:
           description: Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
           title: termsExpiration
-          required:
-            - '@odata.type'
           type: object
           properties:
             frequency:
@@ -1671,8 +1667,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.agreementFile'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -1693,8 +1687,6 @@ components:
             fileData:
               description: Data that represents the terms of use PDF document. Read-only.
               title: agreementFileData
-              required:
-                - '@odata.type'
               type: object
               properties:
                 data:
@@ -3979,8 +3971,6 @@ components:
     microsoft.graph.agreementAcceptance:
       x-ms-discriminator-value: '#microsoft.graph.agreementAcceptance'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5173,8 +5163,6 @@ components:
     microsoft.graph.agreementFile:
       x-ms-discriminator-value: '#microsoft.graph.agreementFile'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5195,8 +5183,6 @@ components:
         fileData:
           description: Data that represents the terms of use PDF document. Read-only.
           title: agreementFileData
-          required:
-            - '@odata.type'
           type: object
           properties:
             data:
@@ -6353,8 +6339,6 @@ components:
     microsoft.graph.agreementFileLocalization:
       x-ms-discriminator-value: '#microsoft.graph.agreementFileLocalization'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6375,8 +6359,6 @@ components:
         fileData:
           description: Data that represents the terms of use PDF document. Read-only.
           title: agreementFileData
-          required:
-            - '@odata.type'
           type: object
           properties:
             data:
@@ -7533,8 +7515,6 @@ components:
     microsoft.graph.agreementFileVersion:
       x-ms-discriminator-value: '#microsoft.graph.agreementFileVersion'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -7555,8 +7535,6 @@ components:
         fileData:
           description: Data that represents the terms of use PDF document. Read-only.
           title: agreementFileData
-          required:
-            - '@odata.type'
           type: object
           properties:
             data:
@@ -8728,8 +8706,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -9860,8 +9836,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.termsExpiration:
       title: termsExpiration
-      required:
-        - '@odata.type'
       type: object
       properties:
         frequency:
@@ -9905,8 +9879,6 @@ components:
       format: int32
     microsoft.graph.agreementFileProperties:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -9927,8 +9899,6 @@ components:
         fileData:
           description: Data that represents the terms of use PDF document. Read-only.
           title: agreementFileData
-          required:
-            - '@odata.type'
           type: object
           properties:
             data:
@@ -11139,8 +11109,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.agreementFileData:
       title: agreementFileData
-      required:
-        - '@odata.type'
       type: object
       properties:
         data:
@@ -11165,8 +11133,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

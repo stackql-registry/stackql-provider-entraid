@@ -59,11 +59,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accountEnabled" /></td>
     <td><code>boolean</code></td>
     <td>true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).</td>
@@ -137,6 +132,11 @@ Retrieved entity
     <td><CopyableCode code="createdByAppId" /></td>
     <td><code>string</code></td>
     <td>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="createdDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>The date and time the service principal was created. Read-only. (Returned by the service but omitted from Microsoft's published OpenAPI description; declared here by curate_source_specs.py.)</td>
 </tr>
 <tr>
     <td><CopyableCode code="createdObjects" /></td>
@@ -360,11 +360,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accountEnabled" /></td>
     <td><code>boolean</code></td>
     <td>true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).</td>
@@ -438,6 +433,11 @@ Retrieved entity
     <td><CopyableCode code="createdByAppId" /></td>
     <td><code>string</code></td>
     <td>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="createdDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>The date and time the service principal was created. Read-only. (Returned by the service but omitted from Microsoft's published OpenAPI description; declared here by curate_source_specs.py.)</td>
 </tr>
 <tr>
     <td><CopyableCode code="createdObjects" /></td>
@@ -661,11 +661,6 @@ Retrieved collection
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accountEnabled" /></td>
     <td><code>boolean</code></td>
     <td>true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).</td>
@@ -739,6 +734,11 @@ Retrieved collection
     <td><CopyableCode code="createdByAppId" /></td>
     <td><code>string</code></td>
     <td>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</td>
+</tr>
+<tr>
+    <td><CopyableCode code="createdDateTime" /></td>
+    <td><code>string (date-time)</code></td>
+    <td>The date and time the service principal was created. Read-only. (Returned by the service but omitted from Microsoft's published OpenAPI description; declared here by curate_source_specs.py.)</td>
 </tr>
 <tr>
     <td><CopyableCode code="createdObjects" /></td>
@@ -963,56 +963,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a>, <a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-ConsistencyLevel"><code>ConsistencyLevel</code></a></td>
     <td>Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
     <td></td>
     <td>Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.</td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-appId"><code>appId</code></a></td>
+    <td><a href="#parameter-app_id"><code>app_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.</td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.</td>
 </tr>
@@ -1040,70 +1040,70 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#add_key"><CopyableCode code="add_key" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don't have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won't be able to use this service action. Update servicePrincipal can be used to perform an update instead.</td>
 </tr>
 <tr>
     <td><a href="#add_password"><CopyableCode code="add_password" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Add a strong password or secret to a servicePrincipal object.</td>
 </tr>
 <tr>
     <td><a href="#add_token_signing_certificate"><CopyableCode code="add_token_signing_certificate" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: <br />+ The keyCredentials object with the following objects:<br />    + A private key object with usage set to Sign.<br />    + A public key object with usage set to Verify.<br />+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created.</td>
 </tr>
 <tr>
     <td><a href="#check_member_groups"><CopyableCode code="check_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.</td>
 </tr>
 <tr>
     <td><a href="#check_member_objects"><CopyableCode code="check_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#get_member_groups"><CopyableCode code="get_member_groups" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.</td>
 </tr>
 <tr>
     <td><a href="#get_member_objects"><CopyableCode code="get_member_objects" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:<br />- user<br />- group<br />- service principal<br />- organizational contact<br />- device<br />- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.</td>
 </tr>
 <tr>
     <td><a href="#remove_key"><CopyableCode code="remove_key" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.</td>
 </tr>
 <tr>
     <td><a href="#remove_password"><CopyableCode code="remove_password" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Remove a password from a servicePrincipal object.</td>
 </tr>
 <tr>
     <td><a href="#restore"><CopyableCode code="restore" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Restore a recently deleted directory object from deleted items. The following types are supported:<br />- administrativeUnit<br />- application<br />- agentIdentityBlueprint<br />- agentIdentity<br />- agentIdentityBlueprintPrincipal<br />- agentUser<br />- certificateBasedAuthPki<br />- certificateAuthorityDetail<br />- group<br />- servicePrincipal<br />- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.</td>
 </tr>
@@ -1123,55 +1123,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-appId">
-    <td><CopyableCode code="appId" /></td>
+<tr id="parameter-app_id">
+    <td><CopyableCode code="app_id" /></td>
     <td><code>string</code></td>
     <td>Alternate key of servicePrincipal</td>
 </tr>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-ConsistencyLevel">
     <td><CopyableCode code="ConsistencyLevel" /></td>
@@ -1203,7 +1163,6 @@ Retrieve the properties and relationships of a servicePrincipal object. This API
 ```sql
 SELECT
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -1219,6 +1178,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -1260,9 +1220,7 @@ tokenLifetimePolicies,
 transitiveMemberOf,
 verifiedPublisher
 FROM entra_id.service_principals.service_principals
-WHERE appId = '{{ appId }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE app_id = '{{ app_id }}' -- required
 ;
 ```
 </TabItem>
@@ -1273,7 +1231,6 @@ Retrieve the properties and relationships of a servicePrincipal object. This API
 ```sql
 SELECT
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -1289,6 +1246,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -1330,9 +1288,7 @@ tokenLifetimePolicies,
 transitiveMemberOf,
 verifiedPublisher
 FROM entra_id.service_principals.service_principals
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -1343,7 +1299,6 @@ Retrieve a list of servicePrincipal objects. This API also returns agentIdentity
 ```sql
 SELECT
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -1359,6 +1314,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -1401,14 +1357,6 @@ transitiveMemberOf,
 verifiedPublisher
 FROM entra_id.service_principals.service_principals
 WHERE ConsistencyLevel = '{{ ConsistencyLevel }}'
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -1430,8 +1378,8 @@ Create a new servicePrincipal object. This API can also create an agentIdentityB
 
 ```sql
 INSERT INTO entra_id.service_principals.service_principals (
+createdDateTime,
 id,
-@odata.type,
 deletedDateTime,
 accountEnabled,
 addIns,
@@ -1489,8 +1437,8 @@ tokenLifetimePolicies,
 transitiveMemberOf
 )
 SELECT 
+'{{ createdDateTime }}',
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 {{ accountEnabled }},
 '{{ addIns }}',
@@ -1548,7 +1496,6 @@ SELECT
 '{{ transitiveMemberOf }}'
 RETURNING
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -1564,6 +1511,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -1612,12 +1560,14 @@ verifiedPublisher
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: service_principals
   props:
+    - name: createdDateTime
+      value: "{{ createdDateTime }}"
+      description: |
+        The date and time the service principal was created. Read-only. (Returned by the service but omitted from Microsoft's published OpenAPI description; declared here by curate_source_specs.py.)
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -1633,7 +1583,6 @@ verifiedPublisher
         - id: "{{ id }}"
           properties: "{{ properties }}"
           type: "{{ type }}"
-          @odata.type: "{{ @odata.type }}"
     - name: alternativeNames
       value:
         - "{{ alternativeNames }}"
@@ -1674,7 +1623,6 @@ verifiedPublisher
           isEnabled: {{ isEnabled }}
           origin: "{{ origin }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: createdByAppId
       value: "{{ createdByAppId }}"
       description: |
@@ -1717,7 +1665,6 @@ verifiedPublisher
           startDateTime: "{{ startDateTime }}"
           type: "{{ type }}"
           usage: "{{ usage }}"
-          @odata.type: "{{ @odata.type }}"
     - name: loginUrl
       value: "{{ loginUrl }}"
       description: |
@@ -1748,7 +1695,6 @@ verifiedPublisher
           userConsentDescription: "{{ userConsentDescription }}"
           userConsentDisplayName: "{{ userConsentDisplayName }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: passwordCredentials
       description: |
         The collection of password credentials associated with the application. Not nullable.
@@ -1760,7 +1706,6 @@ verifiedPublisher
           keyId: "{{ keyId }}"
           secretText: "{{ secretText }}"
           startDateTime: "{{ startDateTime }}"
-          @odata.type: "{{ @odata.type }}"
     - name: preferredSingleSignOnMode
       value: "{{ preferredSingleSignOnMode }}"
       description: |
@@ -1783,7 +1728,6 @@ verifiedPublisher
           id: "{{ id }}"
           isEnabled: {{ isEnabled }}
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: samlSingleSignOnSettings
       value: "{{ samlSingleSignOnSettings }}"
       description: |
@@ -1819,7 +1763,6 @@ verifiedPublisher
         The appManagementPolicy applied to this application.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -1831,7 +1774,6 @@ verifiedPublisher
         App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           appRoleId: "{{ appRoleId }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -1845,7 +1787,6 @@ verifiedPublisher
         App role assignment for another app or service, granted to this service principal. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           appRoleId: "{{ appRoleId }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -1859,7 +1800,6 @@ verifiedPublisher
         The claimsMappingPolicies assigned to this service principal. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -1871,19 +1811,16 @@ verifiedPublisher
         Directory objects created by this service principal. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: delegatedPermissionClassifications
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           classification: "{{ classification }}"
           permissionId: "{{ permissionId }}"
           permissionName: "{{ permissionName }}"
     - name: endpoints
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           capability: "{{ capability }}"
           providerId: "{{ providerId }}"
@@ -1895,7 +1832,6 @@ verifiedPublisher
         Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           audiences: "{{ audiences }}"
           description: "{{ description }}"
           issuer: "{{ issuer }}"
@@ -1906,7 +1842,6 @@ verifiedPublisher
         The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -1918,14 +1853,12 @@ verifiedPublisher
         Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: oauth2PermissionGrants
       description: |
         Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           clientId: "{{ clientId }}"
           consentType: "{{ consentType }}"
           principalId: "{{ principalId }}"
@@ -1936,14 +1869,12 @@ verifiedPublisher
         Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: owners
       description: |
         Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: remoteDesktopSecurityConfiguration
       value: "{{ remoteDesktopSecurityConfiguration }}"
@@ -1958,7 +1889,6 @@ verifiedPublisher
         The tokenIssuancePolicies assigned to this service principal.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -1970,7 +1900,6 @@ verifiedPublisher
         The tokenLifetimePolicies assigned to this service principal.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -1980,7 +1909,6 @@ verifiedPublisher
     - name: transitiveMemberOf
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
 `}</CodeBlock>
 
@@ -2004,8 +1932,8 @@ Create a new servicePrincipal object if it doesn't exist, or update the properti
 ```sql
 UPDATE entra_id.service_principals.service_principals
 SET 
+createdDateTime = '{{ createdDateTime }}',
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 accountEnabled = {{ accountEnabled }},
 addIns = '{{ addIns }}',
@@ -2062,11 +1990,9 @@ tokenIssuancePolicies = '{{ tokenIssuancePolicies }}',
 tokenLifetimePolicies = '{{ tokenLifetimePolicies }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}'
 WHERE 
-appId = '{{ appId }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+app_id = '{{ app_id }}' --required
 RETURNING
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -2082,6 +2008,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -2131,8 +2058,8 @@ Create a new servicePrincipal object if it doesn't exist, or update the properti
 ```sql
 UPDATE entra_id.service_principals.service_principals
 SET 
+createdDateTime = '{{ createdDateTime }}',
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 accountEnabled = {{ accountEnabled }},
 addIns = '{{ addIns }}',
@@ -2189,11 +2116,9 @@ tokenIssuancePolicies = '{{ tokenIssuancePolicies }}',
 tokenLifetimePolicies = '{{ tokenLifetimePolicies }}',
 transitiveMemberOf = '{{ transitiveMemberOf }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
 RETURNING
 id,
-@odata.type,
 accountEnabled,
 addIns,
 alternativeNames,
@@ -2209,6 +2134,7 @@ appRoles,
 applicationTemplateId,
 claimsMappingPolicies,
 createdByAppId,
+createdDateTime,
 createdObjects,
 customSecurityAttributes,
 delegatedPermissionClassifications,
@@ -2269,7 +2195,7 @@ Delete a servicePrincipal object. This API can also delete an agentIdentityBluep
 
 ```sql
 DELETE FROM entra_id.service_principals.service_principals
-WHERE appId = '{{ appId }}' --required
+WHERE app_id = '{{ app_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2280,7 +2206,7 @@ Delete a servicePrincipal object. This API can also delete an agentIdentityBluep
 
 ```sql
 DELETE FROM entra_id.service_principals.service_principals
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -2357,7 +2283,7 @@ Adds a key credential to a servicePrincipal. This method along with removeKey ca
 
 ```sql
 EXEC entra_id.service_principals.service_principals.add_key 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "keyCredential": "{{ keyCredential }}", 
@@ -2373,7 +2299,7 @@ Add a strong password or secret to a servicePrincipal object.
 
 ```sql
 EXEC entra_id.service_principals.service_principals.add_password 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "passwordCredential": "{{ passwordCredential }}"
@@ -2387,7 +2313,7 @@ Create a self-signed signing certificate and return a selfSignedCertificate obje
 
 ```sql
 EXEC entra_id.service_principals.service_principals.add_token_signing_certificate 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "displayName": "{{ displayName }}", 
@@ -2402,7 +2328,7 @@ Check for membership in a specified list of group IDs, and return from that list
 
 ```sql
 EXEC entra_id.service_principals.service_principals.check_member_groups 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "groupIds": "{{ groupIds }}"
@@ -2416,7 +2342,7 @@ Success
 
 ```sql
 EXEC entra_id.service_principals.service_principals.check_member_objects 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "ids": "{{ ids }}"
@@ -2430,7 +2356,7 @@ Return all the group IDs for the groups that the specified user, group, service 
 
 ```sql
 EXEC entra_id.service_principals.service_principals.get_member_groups 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -2444,7 +2370,7 @@ Return all IDs for the groups, administrative units, and directory roles that an
 
 ```sql
 EXEC entra_id.service_principals.service_principals.get_member_objects 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "securityEnabledOnly": {{ securityEnabledOnly }}
@@ -2458,7 +2384,7 @@ Remove a key credential from a servicePrincipal. This method along with addKey c
 
 ```sql
 EXEC entra_id.service_principals.service_principals.remove_key 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "keyId": "{{ keyId }}", 
@@ -2473,7 +2399,7 @@ Remove a password from a servicePrincipal object.
 
 ```sql
 EXEC entra_id.service_principals.service_principals.remove_password 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "keyId": "{{ keyId }}"
@@ -2487,7 +2413,7 @@ Restore a recently deleted directory object from deleted items. The following ty
 
 ```sql
 EXEC entra_id.service_principals.service_principals.restore 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required
+@service_principal_id='{{ service_principal_id }}' --required
 ;
 ```
 </TabItem>

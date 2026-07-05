@@ -79,7 +79,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /applicationTemplates/{applicationTemplate_id}:
+  /applicationTemplates/{application_template_id}:
     get:
       tags:
         - applicationTemplates.applicationTemplate
@@ -110,7 +110,7 @@ paths:
             type: array
             items:
               type: string
-        - name: applicationTemplate-id
+        - name: application_template_id
           in: path
           description: The unique identifier of applicationTemplate
           required: true
@@ -130,7 +130,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of applicationTemplate entities.
-  /applicationTemplates/{applicationTemplate_id}/instantiate:
+  /applicationTemplates/{application_template_id}/instantiate:
     post:
       tags:
         - applicationTemplates.applicationTemplate.Actions
@@ -161,15 +161,11 @@ paths:
             application/json:
               schema:
                 title: applicationServicePrincipal
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   application:
                     x-ms-navigationProperty: true
                     title: entity
-                    required:
-                      - '@odata.type'
                     type: object
                     properties:
                       id:
@@ -1580,8 +1576,6 @@ paths:
                   servicePrincipal:
                     x-ms-navigationProperty: true
                     title: entity
-                    required:
-                      - '@odata.type'
                     type: object
                     properties:
                       id:
@@ -3006,7 +3000,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: applicationTemplate-id
+        - name: application_template_id
           in: path
           description: The unique identifier of applicationTemplate
           required: true
@@ -3019,8 +3013,6 @@ components:
     microsoft.graph.applicationTemplate:
       x-ms-discriminator-value: '#microsoft.graph.applicationTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4189,15 +4181,11 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.applicationServicePrincipal:
       title: applicationServicePrincipal
-      required:
-        - '@odata.type'
       type: object
       properties:
         application:
           x-ms-navigationProperty: true
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -5608,8 +5596,6 @@ components:
         servicePrincipal:
           x-ms-navigationProperty: true
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -7050,8 +7036,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8182,8 +8166,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.application:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8205,8 +8187,6 @@ components:
         api:
           description: Specifies settings for an application that implements a web API.
           title: apiApplication
-          required:
-            - '@odata.type'
           type: object
           properties:
             acceptMappedClaims:
@@ -8256,8 +8236,6 @@ components:
           description: The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
         authenticationBehaviors:
           title: authenticationBehaviors
-          required:
-            - '@odata.type'
           type: object
           properties:
             blockAzureADGraphAccess:
@@ -8276,8 +8254,6 @@ components:
         certification:
           description: Specifies the certification status of the application.
           title: certification
-          required:
-            - '@odata.type'
           type: object
           properties:
             certificationDetailsUrl:
@@ -8346,8 +8322,6 @@ components:
         info:
           description: 'Basic profile information of the application such as  app''s marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).'
           title: informationalUrl
-          required:
-            - '@odata.type'
           type: object
           properties:
             logoUrl:
@@ -8420,8 +8394,6 @@ components:
         optionalClaims:
           description: 'Application developers can configure optional claims in their Microsoft Entra applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.'
           title: optionalClaims
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessToken:
@@ -8445,8 +8417,6 @@ components:
         parentalControlSettings:
           description: Specifies parental control settings for an application.
           title: parentalControlSettings
-          required:
-            - '@odata.type'
           type: object
           properties:
             countriesBlockedForMinors:
@@ -8470,8 +8440,6 @@ components:
         publicClient:
           description: Specifies settings for installed clients such as desktop or mobile devices.
           title: publicClientApplication
-          required:
-            - '@odata.type'
           type: object
           properties:
             redirectUris:
@@ -8489,8 +8457,6 @@ components:
         requestSignatureVerification:
           description: Specifies whether this application requires Microsoft Entra ID to verify the signed authentication requests.
           title: requestSignatureVerification
-          required:
-            - '@odata.type'
           type: object
           properties:
             allowedWeakAlgorithms:
@@ -8525,8 +8491,6 @@ components:
         servicePrincipalLockConfiguration:
           description: Specifies whether sensitive properties of a multitenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
           title: servicePrincipalLockConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             allProperties:
@@ -8558,8 +8522,6 @@ components:
         spa:
           description: Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
           title: spaApplication
-          required:
-            - '@odata.type'
           type: object
           properties:
             redirectUris:
@@ -8588,8 +8550,6 @@ components:
         verifiedPublisher:
           description: Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
           title: verifiedPublisher
-          required:
-            - '@odata.type'
           type: object
           properties:
             addedDateTime:
@@ -8612,8 +8572,6 @@ components:
         web:
           description: Specifies settings for a web application.
           title: webApplication
-          required:
-            - '@odata.type'
           type: object
           properties:
             homePageUrl:
@@ -8623,8 +8581,6 @@ components:
             implicitGrantSettings:
               description: Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
               title: implicitGrantSettings
-              required:
-                - '@odata.type'
               type: object
               properties:
                 enableAccessTokenIssuance:
@@ -8664,8 +8620,6 @@ components:
           description: Supports $filter (/$count eq 0, /$count ne 0). Read-only.
           x-ms-navigationProperty: true
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -9829,8 +9783,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.synchronization'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -12110,10 +12062,16 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.servicePrincipal:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
+        createdDateTime:
+          type: string
+          format: date-time
+          description: >-
+            The date and time the service principal was created.
+            Read-only. (Returned by the service but omitted from
+            Microsoft's published OpenAPI description; declared here
+            by curate_source_specs.py.)
         id:
           type: string
           description: The unique identifier for an entity. Read-only.
@@ -12176,8 +12134,6 @@ components:
         customSecurityAttributes:
           description: An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role.
           title: customSecurityAttributeValue
-          required:
-            - '@odata.type'
           type: object
           properties:
             '@odata.type':
@@ -12202,8 +12158,6 @@ components:
         info:
           description: 'Basic profile information of the acquired application such as app''s marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).'
           title: informationalUrl
-          required:
-            - '@odata.type'
           type: object
           properties:
             logoUrl:
@@ -12285,8 +12239,6 @@ components:
         samlSingleSignOnSettings:
           description: The collection for settings related to saml single sign-on.
           title: samlSingleSignOnSettings
-          required:
-            - '@odata.type'
           type: object
           properties:
             relayState:
@@ -12323,8 +12275,6 @@ components:
         verifiedPublisher:
           description: Specifies the verified publisher of the application that's linked to this service principal.
           title: verifiedPublisher
-          required:
-            - '@odata.type'
           type: object
           properties:
             addedDateTime:
@@ -12425,8 +12375,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.remoteDesktopSecurityConfiguration'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -13576,8 +13524,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.synchronization'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -15898,8 +15844,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17036,8 +16980,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.addIn:
       title: addIn
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17058,8 +17000,6 @@ components:
           type: string
     microsoft.graph.apiApplication:
       title: apiApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         acceptMappedClaims:
@@ -17095,8 +17035,6 @@ components:
           type: string
     microsoft.graph.appRole:
       title: appRole
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedMemberTypes:
@@ -17132,8 +17070,6 @@ components:
           type: string
     microsoft.graph.authenticationBehaviors:
       title: authenticationBehaviors
-      required:
-        - '@odata.type'
       type: object
       properties:
         blockAzureADGraphAccess:
@@ -17149,8 +17085,6 @@ components:
           type: string
     microsoft.graph.certification:
       title: certification
-      required:
-        - '@odata.type'
       type: object
       properties:
         certificationDetailsUrl:
@@ -17183,8 +17117,6 @@ components:
           type: string
     microsoft.graph.informationalUrl:
       title: informationalUrl
-      required:
-        - '@odata.type'
       type: object
       properties:
         logoUrl:
@@ -17211,8 +17143,6 @@ components:
           type: string
     microsoft.graph.keyCredential:
       title: keyCredential
-      required:
-        - '@odata.type'
       type: object
       properties:
         customKeyIdentifier:
@@ -17268,8 +17198,6 @@ components:
         isFlags: true
     microsoft.graph.optionalClaims:
       title: optionalClaims
-      required:
-        - '@odata.type'
       type: object
       properties:
         accessToken:
@@ -17291,8 +17219,6 @@ components:
           type: string
     microsoft.graph.parentalControlSettings:
       title: parentalControlSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         countriesBlockedForMinors:
@@ -17309,8 +17235,6 @@ components:
           type: string
     microsoft.graph.passwordCredential:
       title: passwordCredential
-      required:
-        - '@odata.type'
       type: object
       properties:
         customKeyIdentifier:
@@ -17352,8 +17276,6 @@ components:
           type: string
     microsoft.graph.publicClientApplication:
       title: publicClientApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         redirectUris:
@@ -17365,8 +17287,6 @@ components:
           type: string
     microsoft.graph.requestSignatureVerification:
       title: requestSignatureVerification
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedWeakAlgorithms:
@@ -17386,8 +17306,6 @@ components:
           type: string
     microsoft.graph.requiredResourceAccess:
       title: requiredResourceAccess
-      required:
-        - '@odata.type'
       type: object
       properties:
         resourceAccess:
@@ -17402,8 +17320,6 @@ components:
           type: string
     microsoft.graph.servicePrincipalLockConfiguration:
       title: servicePrincipalLockConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         allProperties:
@@ -17429,8 +17345,6 @@ components:
           type: string
     microsoft.graph.spaApplication:
       title: spaApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         redirectUris:
@@ -17442,8 +17356,6 @@ components:
           type: string
     microsoft.graph.verifiedPublisher:
       title: verifiedPublisher
-      required:
-        - '@odata.type'
       type: object
       properties:
         addedDateTime:
@@ -17464,8 +17376,6 @@ components:
           type: string
     microsoft.graph.webApplication:
       title: webApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         homePageUrl:
@@ -17475,8 +17385,6 @@ components:
         implicitGrantSettings:
           description: Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
           title: implicitGrantSettings
-          required:
-            - '@odata.type'
           type: object
           properties:
             enableAccessTokenIssuance:
@@ -17508,8 +17416,6 @@ components:
     microsoft.graph.appManagementPolicy:
       x-ms-discriminator-value: '#microsoft.graph.appManagementPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17538,8 +17444,6 @@ components:
           description: Restrictions that apply to an application or service principal object.
           x-ms-discriminator-value: '#microsoft.graph.customAppManagementConfiguration'
           title: appManagementConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             keyCredentials:
@@ -17557,29 +17461,21 @@ components:
             applicationRestrictions:
               description: Restrictions that are applicable only to application objects to which the policy is attached.
               title: customAppManagementApplicationConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 identifierUris:
                   description: Configuration for identifierUris restrictions.
                   title: identifierUriConfiguration
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     nonDefaultUriAddition:
                       description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
                       title: identifierUriRestriction
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         excludeActors:
                           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                           title: appManagementPolicyActorExemptions
-                          required:
-                            - '@odata.type'
                           type: object
                           properties:
                             customSecurityAttributes:
@@ -17616,15 +17512,11 @@ components:
                     uriAdditionWithoutUniqueTenantIdentifier:
                       description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
                       title: identifierUriRestriction
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         excludeActors:
                           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                           title: appManagementPolicyActorExemptions
-                          required:
-                            - '@odata.type'
                           type: object
                           properties:
                             customSecurityAttributes:
@@ -18801,8 +18693,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -19962,8 +19852,6 @@ components:
     microsoft.graph.federatedIdentityCredential:
       x-ms-discriminator-value: '#microsoft.graph.federatedIdentityCredential'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -21113,8 +21001,6 @@ components:
     microsoft.graph.homeRealmDiscoveryPolicy:
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -22274,8 +22160,6 @@ components:
     microsoft.graph.synchronization:
       x-ms-discriminator-value: '#microsoft.graph.synchronization'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -23424,8 +23308,6 @@ components:
     microsoft.graph.tokenIssuancePolicy:
       x-ms-discriminator-value: '#microsoft.graph.tokenIssuancePolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -24585,8 +24467,6 @@ components:
     microsoft.graph.tokenLifetimePolicy:
       x-ms-discriminator-value: '#microsoft.graph.tokenLifetimePolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -25745,16 +25625,12 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.customSecurityAttributeValue:
       title: customSecurityAttributeValue
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
           type: string
     microsoft.graph.permissionScope:
       title: permissionScope
-      required:
-        - '@odata.type'
       type: object
       properties:
         adminConsentDescription:
@@ -25796,8 +25672,6 @@ components:
           type: string
     microsoft.graph.resourceSpecificPermission:
       title: resourceSpecificPermission
-      required:
-        - '@odata.type'
       type: object
       properties:
         description:
@@ -25824,8 +25698,6 @@ components:
           type: string
     microsoft.graph.samlSingleSignOnSettings:
       title: samlSingleSignOnSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         relayState:
@@ -25837,8 +25709,6 @@ components:
     microsoft.graph.appRoleAssignment:
       x-ms-discriminator-value: '#microsoft.graph.appRoleAssignment'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -27011,8 +26881,6 @@ components:
     microsoft.graph.claimsMappingPolicy:
       x-ms-discriminator-value: '#microsoft.graph.claimsMappingPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -28172,8 +28040,6 @@ components:
     microsoft.graph.delegatedPermissionClassification:
       x-ms-discriminator-value: '#microsoft.graph.delegatedPermissionClassification'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -29323,8 +29189,6 @@ components:
     microsoft.graph.endpoint:
       x-ms-discriminator-value: '#microsoft.graph.endpoint'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -30475,8 +30339,6 @@ components:
     microsoft.graph.oAuth2PermissionGrant:
       x-ms-discriminator-value: '#microsoft.graph.oAuth2PermissionGrant'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -31626,8 +31488,6 @@ components:
     microsoft.graph.remoteDesktopSecurityConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.remoteDesktopSecurityConfiguration'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -32786,8 +32646,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:
@@ -32808,8 +32666,6 @@ components:
           type: string
     microsoft.graph.keyValue:
       title: keyValue
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -32824,8 +32680,6 @@ components:
           type: string
     microsoft.graph.preAuthorizedApplication:
       title: preAuthorizedApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         appId:
@@ -32841,8 +32695,6 @@ components:
           type: string
     microsoft.graph.optionalClaim:
       title: optionalClaim
-      required:
-        - '@odata.type'
       type: object
       properties:
         additionalProperties:
@@ -32873,8 +32725,6 @@ components:
         isFlags: true
     microsoft.graph.resourceAccess:
       title: resourceAccess
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -32890,8 +32740,6 @@ components:
           type: string
     microsoft.graph.implicitGrantSettings:
       title: implicitGrantSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         enableAccessTokenIssuance:
@@ -32906,8 +32754,6 @@ components:
           type: string
     microsoft.graph.redirectUriSettings:
       title: redirectUriSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         index:
@@ -32923,8 +32769,6 @@ components:
           type: string
     microsoft.graph.policyBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -34070,8 +33914,6 @@ components:
     microsoft.graph.customAppManagementConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.customAppManagementConfiguration'
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -34089,29 +33931,21 @@ components:
         applicationRestrictions:
           description: Restrictions that are applicable only to application objects to which the policy is attached.
           title: customAppManagementApplicationConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             identifierUris:
               description: Configuration for identifierUris restrictions.
               title: identifierUriConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 nonDefaultUriAddition:
                   description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
                   title: identifierUriRestriction
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     excludeActors:
                       description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                       title: appManagementPolicyActorExemptions
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         customSecurityAttributes:
@@ -34148,15 +33982,11 @@ components:
                 uriAdditionWithoutUniqueTenantIdentifier:
                   description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
                   title: identifierUriRestriction
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     excludeActors:
                       description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                       title: appManagementPolicyActorExemptions
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         customSecurityAttributes:
@@ -34204,8 +34034,6 @@ components:
           '#microsoft.graph.customAppManagementConfiguration': '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
     microsoft.graph.stsPolicy:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -35364,8 +35192,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -35379,8 +35205,6 @@ components:
     microsoft.graph.synchronizationJob:
       x-ms-discriminator-value: '#microsoft.graph.synchronizationJob'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -35391,8 +35215,6 @@ components:
         schedule:
           description: Schedule used to run the job. Read-only.
           title: synchronizationSchedule
-          required:
-            - '@odata.type'
           type: object
           properties:
             expiration:
@@ -35414,8 +35236,6 @@ components:
         status:
           description: Status of the job, which includes when the job was last run, current job state, and errors.
           title: synchronizationStatus
-          required:
-            - '@odata.type'
           type: object
           properties:
             code:
@@ -35430,8 +35250,6 @@ components:
             lastExecution:
               description: Details of the last execution of the job.
               title: synchronizationTaskExecution
-              required:
-                - '@odata.type'
               type: object
               properties:
                 activityIdentifier:
@@ -35477,8 +35295,6 @@ components:
                 error:
                   description: If an error was encountered, contains a synchronizationError object with details.
                   title: synchronizationError
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     code:
@@ -35513,8 +35329,6 @@ components:
             lastSuccessfulExecution:
               description: Details of the last execution of this job, which didn't have any errors.
               title: synchronizationTaskExecution
-              required:
-                - '@odata.type'
               type: object
               properties:
                 activityIdentifier:
@@ -35560,8 +35374,6 @@ components:
                 error:
                   description: If an error was encountered, contains a synchronizationError object with details.
                   title: synchronizationError
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     code:
@@ -35596,8 +35408,6 @@ components:
             lastSuccessfulExecutionWithExports:
               description: Details of the last execution of the job, which exported objects into the target directory.
               title: synchronizationTaskExecution
-              required:
-                - '@odata.type'
               type: object
               properties:
                 activityIdentifier:
@@ -35643,8 +35453,6 @@ components:
                 error:
                   description: If an error was encountered, contains a synchronizationError object with details.
                   title: synchronizationError
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     code:
@@ -35684,8 +35492,6 @@ components:
             quarantine:
               description: If job is in quarantine, quarantine details.
               title: synchronizationQuarantine
-              required:
-                - '@odata.type'
               type: object
               properties:
                 currentBegan:
@@ -35696,8 +35502,6 @@ components:
                 error:
                   description: Describes the error(s) that occurred when putting the synchronization job into quarantine.
                   title: synchronizationError
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     code:
@@ -35769,8 +35573,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.bulkUpload'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -36905,8 +36707,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.synchronizationSchema'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -39175,8 +38975,6 @@ components:
     microsoft.graph.synchronizationTemplate:
       x-ms-discriminator-value: '#microsoft.graph.synchronizationTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -39213,8 +39011,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.synchronizationSchema'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -41491,8 +41287,6 @@ components:
     microsoft.graph.approvedClientApp:
       x-ms-discriminator-value: '#microsoft.graph.approvedClientApp'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -42628,8 +42422,6 @@ components:
     microsoft.graph.targetDeviceGroup:
       x-ms-discriminator-value: '#microsoft.graph.targetDeviceGroup'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -43764,8 +43556,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.appManagementConfiguration:
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -43788,29 +43578,21 @@ components:
           '#microsoft.graph.customAppManagementConfiguration': '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
     microsoft.graph.customAppManagementApplicationConfiguration:
       title: customAppManagementApplicationConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         identifierUris:
           description: Configuration for identifierUris restrictions.
           title: identifierUriConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             nonDefaultUriAddition:
               description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
               title: identifierUriRestriction
-              required:
-                - '@odata.type'
               type: object
               properties:
                 excludeActors:
                   description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                   title: appManagementPolicyActorExemptions
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     customSecurityAttributes:
@@ -43847,15 +43629,11 @@ components:
             uriAdditionWithoutUniqueTenantIdentifier:
               description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
               title: identifierUriRestriction
-              required:
-                - '@odata.type'
               type: object
               properties:
                 excludeActors:
                   description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                   title: appManagementPolicyActorExemptions
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     customSecurityAttributes:
@@ -43945,8 +43723,6 @@ components:
       type: string
     microsoft.graph.synchronizationSchedule:
       title: synchronizationSchedule
-      required:
-        - '@odata.type'
       type: object
       properties:
         expiration:
@@ -43966,8 +43742,6 @@ components:
           type: string
     microsoft.graph.synchronizationStatus:
       title: synchronizationStatus
-      required:
-        - '@odata.type'
       type: object
       properties:
         code:
@@ -43982,8 +43756,6 @@ components:
         lastExecution:
           description: Details of the last execution of the job.
           title: synchronizationTaskExecution
-          required:
-            - '@odata.type'
           type: object
           properties:
             activityIdentifier:
@@ -44029,8 +43801,6 @@ components:
             error:
               description: If an error was encountered, contains a synchronizationError object with details.
               title: synchronizationError
-              required:
-                - '@odata.type'
               type: object
               properties:
                 code:
@@ -44065,8 +43835,6 @@ components:
         lastSuccessfulExecution:
           description: Details of the last execution of this job, which didn't have any errors.
           title: synchronizationTaskExecution
-          required:
-            - '@odata.type'
           type: object
           properties:
             activityIdentifier:
@@ -44112,8 +43880,6 @@ components:
             error:
               description: If an error was encountered, contains a synchronizationError object with details.
               title: synchronizationError
-              required:
-                - '@odata.type'
               type: object
               properties:
                 code:
@@ -44148,8 +43914,6 @@ components:
         lastSuccessfulExecutionWithExports:
           description: Details of the last execution of the job, which exported objects into the target directory.
           title: synchronizationTaskExecution
-          required:
-            - '@odata.type'
           type: object
           properties:
             activityIdentifier:
@@ -44195,8 +43959,6 @@ components:
             error:
               description: If an error was encountered, contains a synchronizationError object with details.
               title: synchronizationError
-              required:
-                - '@odata.type'
               type: object
               properties:
                 code:
@@ -44236,8 +43998,6 @@ components:
         quarantine:
           description: If job is in quarantine, quarantine details.
           title: synchronizationQuarantine
-          required:
-            - '@odata.type'
           type: object
           properties:
             currentBegan:
@@ -44248,8 +44008,6 @@ components:
             error:
               description: Describes the error(s) that occurred when putting the synchronization job into quarantine.
               title: synchronizationError
-              required:
-                - '@odata.type'
               type: object
               properties:
                 code:
@@ -44308,8 +44066,6 @@ components:
           type: string
     microsoft.graph.keyValuePair:
       title: keyValuePair
-      required:
-        - '@odata.type'
       type: object
       properties:
         name:
@@ -44324,8 +44080,6 @@ components:
     microsoft.graph.bulkUpload:
       x-ms-discriminator-value: '#microsoft.graph.bulkUpload'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -45457,8 +45211,6 @@ components:
     microsoft.graph.synchronizationSchema:
       x-ms-discriminator-value: '#microsoft.graph.synchronizationSchema'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -46604,8 +46356,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.synchronizationMetadataEntry:
       title: synchronizationMetadataEntry
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -46631,15 +46381,11 @@ components:
           type: string
     microsoft.graph.keyCredentialConfiguration:
       title: keyCredentialConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -46676,15 +46422,11 @@ components:
           type: string
     microsoft.graph.passwordCredentialConfiguration:
       title: passwordCredentialConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -46725,22 +46467,16 @@ components:
           type: string
     microsoft.graph.identifierUriConfiguration:
       title: identifierUriConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         nonDefaultUriAddition:
           description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
           title: identifierUriRestriction
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeActors:
               description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
               title: appManagementPolicyActorExemptions
-              required:
-                - '@odata.type'
               type: object
               properties:
                 customSecurityAttributes:
@@ -46777,15 +46513,11 @@ components:
         uriAdditionWithoutUniqueTenantIdentifier:
           description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
           title: identifierUriRestriction
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeActors:
               description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
               title: appManagementPolicyActorExemptions
-              required:
-                - '@odata.type'
               type: object
               properties:
                 customSecurityAttributes:
@@ -46839,8 +46571,6 @@ components:
       type: string
     microsoft.graph.synchronizationTaskExecution:
       title: synchronizationTaskExecution
-      required:
-        - '@odata.type'
       type: object
       properties:
         activityIdentifier:
@@ -46886,8 +46616,6 @@ components:
         error:
           description: If an error was encountered, contains a synchronizationError object with details.
           title: synchronizationError
-          required:
-            - '@odata.type'
           type: object
           properties:
             code:
@@ -46920,8 +46648,6 @@ components:
           type: string
     microsoft.graph.synchronizationProgress:
       title: synchronizationProgress
-      required:
-        - '@odata.type'
       type: object
       properties:
         completedUnits:
@@ -46945,8 +46671,6 @@ components:
           type: string
     microsoft.graph.synchronizationQuarantine:
       title: synchronizationQuarantine
-      required:
-        - '@odata.type'
       type: object
       properties:
         currentBegan:
@@ -46957,8 +46681,6 @@ components:
         error:
           description: Describes the error(s) that occurred when putting the synchronization job into quarantine.
           title: synchronizationError
-          required:
-            - '@odata.type'
           type: object
           properties:
             code:
@@ -46995,8 +46717,6 @@ components:
           type: string
     microsoft.graph.stringKeyLongValuePair:
       title: stringKeyLongValuePair
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -47011,14 +46731,10 @@ components:
           type: string
     microsoft.graph.synchronizationRule:
       title: synchronizationRule
-      required:
-        - '@odata.type'
       type: object
       properties:
         containerFilter:
           title: containerFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             includedContainers:
@@ -47035,8 +46751,6 @@ components:
           description: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         groupFilter:
           title: groupFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             includedGroups:
@@ -47085,8 +46799,6 @@ components:
     microsoft.graph.directoryDefinition:
       x-ms-discriminator-value: '#microsoft.graph.directoryDefinition'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -48254,8 +47966,6 @@ components:
       type: string
     microsoft.graph.appManagementPolicyActorExemptions:
       title: appManagementPolicyActorExemptions
-      required:
-        - '@odata.type'
       type: object
       properties:
         customSecurityAttributes:
@@ -48290,15 +48000,11 @@ components:
       type: string
     microsoft.graph.identifierUriRestriction:
       title: identifierUriRestriction
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -48333,8 +48039,6 @@ components:
           type: string
     microsoft.graph.synchronizationError:
       title: synchronizationError
-      required:
-        - '@odata.type'
       type: object
       properties:
         code:
@@ -48371,8 +48075,6 @@ components:
       type: string
     microsoft.graph.containerFilter:
       title: containerFilter
-      required:
-        - '@odata.type'
       type: object
       properties:
         includedContainers:
@@ -48384,8 +48086,6 @@ components:
           type: string
     microsoft.graph.groupFilter:
       title: groupFilter
-      required:
-        - '@odata.type'
       type: object
       properties:
         includedGroups:
@@ -48397,8 +48097,6 @@ components:
           type: string
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -48413,8 +48111,6 @@ components:
           type: string
     microsoft.graph.objectMapping:
       title: objectMapping
-      required:
-        - '@odata.type'
       type: object
       properties:
         attributeMappings:
@@ -48439,8 +48135,6 @@ components:
         scope:
           description: Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
           title: filter
-          required:
-            - '@odata.type'
           type: object
           properties:
             categoryFilterGroups:
@@ -48485,8 +48179,6 @@ components:
         isFlags: true
     microsoft.graph.objectDefinition:
       title: objectDefinition
-      required:
-        - '@odata.type'
       type: object
       properties:
         attributes:
@@ -48513,8 +48205,6 @@ components:
           type: string
     microsoft.graph.customSecurityAttributeExemption:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -49648,8 +49338,6 @@ components:
           '#microsoft.graph.customSecurityAttributeStringValueExemption': '#/components/schemas/microsoft.graph.customSecurityAttributeStringValueExemption'
     microsoft.graph.attributeMapping:
       title: attributeMapping
-      required:
-        - '@odata.type'
       type: object
       properties:
         defaultValue:
@@ -49672,8 +49360,6 @@ components:
         source:
           description: Defines how a value should be extracted (or transformed) from the source object.
           title: attributeMappingSource
-          required:
-            - '@odata.type'
           type: object
           properties:
             expression:
@@ -49712,8 +49398,6 @@ components:
         isFlags: true
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -49737,8 +49421,6 @@ components:
           type: string
     microsoft.graph.filter:
       title: filter
-      required:
-        - '@odata.type'
       type: object
       properties:
         categoryFilterGroups:
@@ -49760,8 +49442,6 @@ components:
           type: string
     microsoft.graph.attributeDefinition:
       title: attributeDefinition
-      required:
-        - '@odata.type'
       type: object
       properties:
         anchor:
@@ -49809,8 +49489,6 @@ components:
           type: string
     microsoft.graph.objectDefinitionMetadataEntry:
       title: objectDefinitionMetadataEntry
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -49855,8 +49533,6 @@ components:
       type: string
     microsoft.graph.attributeMappingSource:
       title: attributeMappingSource
-      required:
-        - '@odata.type'
       type: object
       properties:
         expression:
@@ -49889,8 +49565,6 @@ components:
       type: string
     microsoft.graph.filterGroup:
       title: filterGroup
-      required:
-        - '@odata.type'
       type: object
       properties:
         clauses:
@@ -49906,8 +49580,6 @@ components:
           type: string
     microsoft.graph.attributeDefinitionMetadataEntry:
       title: attributeDefinitionMetadataEntry
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -49941,8 +49613,6 @@ components:
       type: string
     microsoft.graph.referencedObject:
       title: referencedObject
-      required:
-        - '@odata.type'
       type: object
       properties:
         referencedObjectName:
@@ -49978,8 +49648,6 @@ components:
       type: string
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
-      required:
-        - '@odata.type'
       type: object
       properties:
         key:
@@ -49989,8 +49657,6 @@ components:
         value:
           description: The value of the parameter.
           title: attributeMappingSource
-          required:
-            - '@odata.type'
           type: object
           properties:
             expression:
@@ -50022,8 +49688,6 @@ components:
       type: string
     microsoft.graph.filterClause:
       title: filterClause
-      required:
-        - '@odata.type'
       type: object
       properties:
         operatorName:
@@ -50037,8 +49701,6 @@ components:
         targetOperand:
           description: Values that the source operand will be tested against.
           title: filterOperand
-          required:
-            - '@odata.type'
           type: object
           properties:
             values:
@@ -50067,8 +49729,6 @@ components:
       type: string
     microsoft.graph.filterOperand:
       title: filterOperand
-      required:
-        - '@odata.type'
       type: object
       properties:
         values:

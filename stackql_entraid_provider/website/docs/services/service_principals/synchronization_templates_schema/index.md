@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="directories" /></td>
     <td><code>array</code></td>
     <td>Contains the collection of directories and all of their objects.</td>
@@ -99,21 +94,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
+    <td></td>
     <td>Default synchronization schema for the jobs based on this template.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -133,25 +128,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
 </tr>
-<tr id="parameter-synchronizationTemplate-id">
-    <td><CopyableCode code="synchronizationTemplate-id" /></td>
+<tr id="parameter-synchronization_template_id">
+    <td><CopyableCode code="synchronization_template_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of synchronizationTemplate</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -176,15 +161,12 @@ Default synchronization schema for the jobs based on this template.
 ```sql
 SELECT
 id,
-@odata.type,
 directories,
 synchronizationRules,
 version
 FROM entra_id.service_principals.synchronization_templates_schema
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND synchronization_template_id = '{{ synchronization_template_id }}' -- required
 ;
 ```
 </TabItem>
@@ -207,17 +189,14 @@ No description available.
 UPDATE entra_id.service_principals.synchronization_templates_schema
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 synchronizationRules = '{{ synchronizationRules }}',
 version = '{{ version }}',
 directories = '{{ directories }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_template_id = '{{ synchronization_template_id }}' --required
 RETURNING
 id,
-@odata.type,
 directories,
 synchronizationRules,
 version;
@@ -240,8 +219,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.service_principals.synchronization_templates_schema
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_template_id = '{{ synchronization_template_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

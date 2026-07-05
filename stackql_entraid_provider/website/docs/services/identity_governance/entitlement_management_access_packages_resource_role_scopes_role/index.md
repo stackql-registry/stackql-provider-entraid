@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>A description for the resource role.</td>
@@ -109,21 +104,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-accessPackageResourceRoleScope-id"><code>accessPackageResourceRoleScope-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-access_package_resource_role_scope_id"><code>access_package_resource_role_scope_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-accessPackageResourceRoleScope-id"><code>accessPackageResourceRoleScope-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-access_package_resource_role_scope_id"><code>access_package_resource_role_scope_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-accessPackageResourceRoleScope-id"><code>accessPackageResourceRoleScope-id</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-access_package_resource_role_scope_id"><code>access_package_resource_role_scope_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -143,25 +138,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackage-id">
-    <td><CopyableCode code="accessPackage-id" /></td>
+<tr id="parameter-access_package_id">
+    <td><CopyableCode code="access_package_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackage</td>
 </tr>
-<tr id="parameter-accessPackageResourceRoleScope-id">
-    <td><CopyableCode code="accessPackageResourceRoleScope-id" /></td>
+<tr id="parameter-access_package_resource_role_scope_id">
+    <td><CopyableCode code="access_package_resource_role_scope_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackageResourceRoleScope</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -186,17 +171,14 @@ Retrieved navigation property
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 originId,
 originSystem,
 resource
 FROM entra_id.identity_governance.entitlement_management_access_packages_resource_role_scopes_role
-WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
-AND accessPackageResourceRoleScope-id = '{{ accessPackageResourceRoleScope-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
+AND access_package_resource_role_scope_id = '{{ access_package_resource_role_scope_id }}' -- required
 ;
 ```
 </TabItem>
@@ -219,19 +201,16 @@ No description available.
 UPDATE entra_id.identity_governance.entitlement_management_access_packages_resource_role_scopes_role
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
 originId = '{{ originId }}',
 originSystem = '{{ originSystem }}',
 resource = '{{ resource }}'
 WHERE 
-accessPackage-id = '{{ accessPackage-id }}' --required
-AND accessPackageResourceRoleScope-id = '{{ accessPackageResourceRoleScope-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_id = '{{ access_package_id }}' --required
+AND access_package_resource_role_scope_id = '{{ access_package_resource_role_scope_id }}' --required
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 originId,
@@ -256,8 +235,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_access_packages_resource_role_scopes_role
-WHERE accessPackage-id = '{{ accessPackage-id }}' --required
-AND accessPackageResourceRoleScope-id = '{{ accessPackageResourceRoleScope-id }}' --required
+WHERE access_package_id = '{{ access_package_id }}' --required
+AND access_package_resource_role_scope_id = '{{ access_package_resource_role_scope_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

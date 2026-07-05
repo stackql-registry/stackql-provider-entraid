@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</td>
@@ -127,11 +122,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="description" /></td>
@@ -201,35 +191,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a>, <a href="#parameter-unifiedRoleDefinition-id1"><code>unifiedRoleDefinition-id1</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a>, <a href="#parameter-unified_role_definition_id1"><code>unified_role_definition_id1</code></a></td>
+    <td></td>
     <td>Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a></td>
+    <td></td>
     <td>Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a>, <a href="#parameter-unifiedRoleDefinition-id1"><code>unifiedRoleDefinition-id1</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a>, <a href="#parameter-unified_role_definition_id1"><code>unified_role_definition_id1</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a>, <a href="#parameter-unifiedRoleDefinition-id1"><code>unifiedRoleDefinition-id1</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a>, <a href="#parameter-unified_role_definition_id1"><code>unified_role_definition_id1</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -249,55 +239,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleDefinition-id">
-    <td><CopyableCode code="unifiedRoleDefinition-id" /></td>
+<tr id="parameter-unified_role_definition_id">
+    <td><CopyableCode code="unified_role_definition_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleDefinition</td>
 </tr>
-<tr id="parameter-unifiedRoleDefinition-id1">
-    <td><CopyableCode code="unifiedRoleDefinition-id1" /></td>
+<tr id="parameter-unified_role_definition_id1">
+    <td><CopyableCode code="unified_role_definition_id1" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleDefinition</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -323,7 +273,6 @@ Read-only collection of role definitions that the given role definition inherits
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -334,10 +283,8 @@ rolePermissions,
 templateId,
 version
 FROM entra_id.role_management.entitlement_management_role_definitions_inherits_permissions_from
-WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' -- required
-AND unifiedRoleDefinition-id1 = '{{ unifiedRoleDefinition-id1 }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_definition_id = '{{ unified_role_definition_id }}' -- required
+AND unified_role_definition_id1 = '{{ unified_role_definition_id1 }}' -- required
 ;
 ```
 </TabItem>
@@ -348,7 +295,6 @@ Read-only collection of role definitions that the given role definition inherits
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -359,15 +305,7 @@ rolePermissions,
 templateId,
 version
 FROM entra_id.role_management.entitlement_management_role_definitions_inherits_permissions_from
-WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_definition_id = '{{ unified_role_definition_id }}' -- required
 ;
 ```
 </TabItem>
@@ -390,7 +328,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.role_management.entitlement_management_role_definitions_inherits_permissions_from (
 id,
-@odata.type,
 description,
 displayName,
 isBuiltIn,
@@ -400,11 +337,10 @@ rolePermissions,
 templateId,
 version,
 inheritsPermissionsFrom,
-unifiedRoleDefinition-id
+unified_role_definition_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ description }}',
 '{{ displayName }}',
 {{ isBuiltIn }},
@@ -414,10 +350,9 @@ SELECT
 '{{ templateId }}',
 '{{ version }}',
 '{{ inheritsPermissionsFrom }}',
-'{{ unifiedRoleDefinition-id }}'
+'{{ unified_role_definition_id }}'
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -435,15 +370,13 @@ version
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: entitlement_management_role_definitions_inherits_permissions_from
   props:
-    - name: unifiedRoleDefinition-id
-      value: "{{ unifiedRoleDefinition-id }}"
+    - name: unified_role_definition_id
+      value: "{{ unified_role_definition_id }}"
       description: Required parameter for the entitlement_management_role_definitions_inherits_permissions_from resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: description
       value: "{{ description }}"
       description: |
@@ -472,7 +405,6 @@ version
         - allowedResourceActions: "{{ allowedResourceActions }}"
           condition: "{{ condition }}"
           excludedResourceActions: "{{ excludedResourceActions }}"
-          @odata.type: "{{ @odata.type }}"
     - name: templateId
       value: "{{ templateId }}"
       description: |
@@ -486,7 +418,6 @@ version
         Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
           isBuiltIn: {{ isBuiltIn }}
@@ -518,7 +449,6 @@ No description available.
 UPDATE entra_id.role_management.entitlement_management_role_definitions_inherits_permissions_from
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
 isBuiltIn = {{ isBuiltIn }},
@@ -529,12 +459,10 @@ templateId = '{{ templateId }}',
 version = '{{ version }}',
 inheritsPermissionsFrom = '{{ inheritsPermissionsFrom }}'
 WHERE 
-unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' --required
-AND unifiedRoleDefinition-id1 = '{{ unifiedRoleDefinition-id1 }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unified_role_definition_id = '{{ unified_role_definition_id }}' --required
+AND unified_role_definition_id1 = '{{ unified_role_definition_id1 }}' --required
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -563,8 +491,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.role_management.entitlement_management_role_definitions_inherits_permissions_from
-WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' --required
-AND unifiedRoleDefinition-id1 = '{{ unifiedRoleDefinition-id1 }}' --required
+WHERE unified_role_definition_id = '{{ unified_role_definition_id }}' --required
+AND unified_role_definition_id1 = '{{ unified_role_definition_id1 }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

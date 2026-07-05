@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="allowedCloudEndpoints" /></td>
     <td><code>array</code></td>
     <td>Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.</td>
@@ -120,13 +115,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a crossTenantAccessPolicy object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update the properties of a cross-tenant access policy.</td>
 </tr>
@@ -153,16 +148,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -186,7 +171,6 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 ```sql
 SELECT
 id,
-@odata.type,
 allowedCloudEndpoints,
 default,
 deletedDateTime,
@@ -195,8 +179,6 @@ displayName,
 partners,
 templates
 FROM entra_id.policies.cross_tenant_access_policy
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -219,7 +201,6 @@ Update the properties of a cross-tenant access policy.
 UPDATE entra_id.policies.cross_tenant_access_policy
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
@@ -227,11 +208,8 @@ allowedCloudEndpoints = '{{ allowedCloudEndpoints }}',
 default = '{{ default }}',
 partners = '{{ partners }}',
 templates = '{{ templates }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 allowedCloudEndpoints,
 default,
 deletedDateTime,

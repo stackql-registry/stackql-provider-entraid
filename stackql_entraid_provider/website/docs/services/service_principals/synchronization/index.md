@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="jobs" /></td>
     <td><code>array</code></td>
     <td>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</td>
@@ -99,23 +94,37 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.</td>
 </tr>
 <tr>
     <td><a href="#replace"><CopyableCode code="replace" /></a></td>
     <td><CopyableCode code="replace" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
+</tr>
+<tr>
+    <td><a href="#acquire_access_token"><CopyableCode code="acquire_access_token" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
+    <td>Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.</td>
+</tr>
+<tr>
+    <td><a href="#secrets"><CopyableCode code="secrets" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
+    <td>Provide credentials for establishing connectivity with the target system.</td>
 </tr>
 </tbody>
 </table>
@@ -133,20 +142,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -171,14 +170,11 @@ Represents the capability for Microsoft Entra identity synchronization through t
 ```sql
 SELECT
 id,
-@odata.type,
 jobs,
 secrets,
 templates
 FROM entra_id.service_principals.synchronization
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -201,16 +197,13 @@ No description available.
 REPLACE entra_id.service_principals.synchronization
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 secrets = '{{ secrets }}',
 jobs = '{{ jobs }}',
 templates = '{{ templates }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
 RETURNING
 id,
-@odata.type,
 jobs,
 secrets,
 templates;
@@ -233,8 +226,48 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.service_principals.synchronization
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
 AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="acquire_access_token"
+    values={[
+        { label: 'acquire_access_token', value: 'acquire_access_token' },
+        { label: 'secrets', value: 'secrets' }
+    ]}
+>
+<TabItem value="acquire_access_token">
+
+Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+
+```sql
+EXEC entra_id.service_principals.synchronization.acquire_access_token 
+@service_principal_id='{{ service_principal_id }}' --required 
+@@json=
+'{
+"credentials": "{{ credentials }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="secrets">
+
+Provide credentials for establishing connectivity with the target system.
+
+```sql
+EXEC entra_id.service_principals.synchronization.secrets 
+@service_principal_id='{{ service_principal_id }}' --required 
+@@json=
+'{
+"value": "{{ value }}"
+}'
 ;
 ```
 </TabItem>

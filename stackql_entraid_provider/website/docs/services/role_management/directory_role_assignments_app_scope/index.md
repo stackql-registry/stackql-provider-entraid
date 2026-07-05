@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>Provides the display name of the app-specific resource represented by the app scope. Read-only.</td>
@@ -94,21 +89,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
+    <td></td>
     <td>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-unifiedRoleAssignment-id"><code>unifiedRoleAssignment-id</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_id"><code>unified_role_assignment_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -128,20 +123,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleAssignment-id">
-    <td><CopyableCode code="unifiedRoleAssignment-id" /></td>
+<tr id="parameter-unified_role_assignment_id">
+    <td><CopyableCode code="unified_role_assignment_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleAssignment</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -166,13 +151,10 @@ Read-only property with details of the app specific scope when the assignment sc
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 type
 FROM entra_id.role_management.directory_role_assignments_app_scope
-WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_assignment_id = '{{ unified_role_assignment_id }}' -- required
 ;
 ```
 </TabItem>
@@ -195,15 +177,12 @@ No description available.
 UPDATE entra_id.role_management.directory_role_assignments_app_scope
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 displayName = '{{ displayName }}',
 type = '{{ type }}'
 WHERE 
-unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unified_role_assignment_id = '{{ unified_role_assignment_id }}' --required
 RETURNING
 id,
-@odata.type,
 displayName,
 type;
 ```
@@ -225,7 +204,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.role_management.directory_role_assignments_app_scope
-WHERE unifiedRoleAssignment-id = '{{ unifiedRoleAssignment-id }}' --required
+WHERE unified_role_assignment_id = '{{ unified_role_assignment_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

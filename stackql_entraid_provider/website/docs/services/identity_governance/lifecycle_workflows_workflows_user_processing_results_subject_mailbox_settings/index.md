@@ -52,11 +52,6 @@ Entity result.
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="archiveFolder" /></td>
     <td><code>string</code></td>
     <td>Folder ID of an archive folder for the user.</td>
@@ -124,14 +119,14 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-userProcessingResult-id"><code>userProcessingResult-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-user_processing_result_id"><code>user_processing_result_id</code></a></td>
+    <td></td>
     <td>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-userProcessingResult-id"><code>userProcessingResult-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a>, <a href="#parameter-user_processing_result_id"><code>user_processing_result_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
@@ -151,25 +146,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-userProcessingResult-id">
-    <td><CopyableCode code="userProcessingResult-id" /></td>
+<tr id="parameter-user_processing_result_id">
+    <td><CopyableCode code="user_processing_result_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of userProcessingResult</td>
 </tr>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -188,7 +173,6 @@ Settings for the primary mailbox of the signed-in user. You can get or update se
 
 ```sql
 SELECT
-@odata.type,
 archiveFolder,
 automaticRepliesSetting,
 dateFormat,
@@ -199,10 +183,8 @@ timeZone,
 userPurpose,
 workingHours
 FROM entra_id.identity_governance.lifecycle_workflows_workflows_user_processing_results_subject_mailbox_settings
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND userProcessingResult-id = '{{ userProcessingResult-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
+AND user_processing_result_id = '{{ user_processing_result_id }}' -- required
 ;
 ```
 </TabItem>
@@ -233,13 +215,10 @@ timeFormat = '{{ timeFormat }}',
 timeZone = '{{ timeZone }}',
 userPurpose = '{{ userPurpose }}',
 workingHours = '{{ workingHours }}',
-@odata.type = '{{ @odata.type }}'
 WHERE 
-workflow-id = '{{ workflow-id }}' --required
-AND userProcessingResult-id = '{{ userProcessingResult-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+workflow_id = '{{ workflow_id }}' --required
+AND user_processing_result_id = '{{ user_processing_result_id }}' --required
 RETURNING
-@odata.type,
 archiveFolder,
 automaticRepliesSetting,
 dateFormat,

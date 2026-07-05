@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="action" /></td>
     <td><code></code></td>
     <td>Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.</td>
@@ -192,11 +187,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="action" /></td>
@@ -331,42 +321,42 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentScheduleRequest-id"><code>unifiedRoleAssignmentScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_request_id"><code>unified_role_assignment_schedule_request_id</code></a></td>
+    <td></td>
     <td>Requests for active role assignments to principals through PIM.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Requests for active role assignments to principals through PIM.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentScheduleRequest-id"><code>unifiedRoleAssignmentScheduleRequest-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_request_id"><code>unified_role_assignment_schedule_request_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentScheduleRequest-id"><code>unifiedRoleAssignmentScheduleRequest-id</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_request_id"><code>unified_role_assignment_schedule_request_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#cancel"><CopyableCode code="cancel" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentScheduleRequest-id"><code>unifiedRoleAssignmentScheduleRequest-id</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_request_id"><code>unified_role_assignment_schedule_request_id</code></a></td>
     <td></td>
     <td>Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.</td>
 </tr>
@@ -386,50 +376,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleAssignmentScheduleRequest-id">
-    <td><CopyableCode code="unifiedRoleAssignmentScheduleRequest-id" /></td>
+<tr id="parameter-unified_role_assignment_schedule_request_id">
+    <td><CopyableCode code="unified_role_assignment_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleAssignmentScheduleRequest</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -455,7 +405,6 @@ Requests for active role assignments to principals through PIM.
 ```sql
 SELECT
 id,
-@odata.type,
 action,
 activatedUsing,
 appScope,
@@ -479,9 +428,7 @@ targetSchedule,
 targetScheduleId,
 ticketInfo
 FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
-WHERE unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_assignment_schedule_request_id = '{{ unified_role_assignment_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>
@@ -492,7 +439,6 @@ Requests for active role assignments to principals through PIM.
 ```sql
 SELECT
 id,
-@odata.type,
 action,
 activatedUsing,
 appScope,
@@ -516,14 +462,6 @@ targetSchedule,
 targetScheduleId,
 ticketInfo
 FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -546,7 +484,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.role_management.entitlement_management_role_assignment_schedule_requests (
 id,
-@odata.type,
 approvalId,
 completedDateTime,
 createdBy,
@@ -572,7 +509,6 @@ targetSchedule
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ approvalId }}',
 '{{ completedDateTime }}',
 '{{ createdBy }}',
@@ -597,7 +533,6 @@ SELECT
 '{{ targetSchedule }}'
 RETURNING
 id,
-@odata.type,
 action,
 activatedUsing,
 appScope,
@@ -632,8 +567,6 @@ ticketInfo
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: approvalId
       value: "{{ approvalId }}"
       description: |
@@ -744,7 +677,6 @@ No description available.
 UPDATE entra_id.role_management.entitlement_management_role_assignment_schedule_requests
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 approvalId = '{{ approvalId }}',
 completedDateTime = '{{ completedDateTime }}',
 createdBy = '{{ createdBy }}',
@@ -768,11 +700,9 @@ principal = '{{ principal }}',
 roleDefinition = '{{ roleDefinition }}',
 targetSchedule = '{{ targetSchedule }}'
 WHERE 
-unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unified_role_assignment_schedule_request_id = '{{ unified_role_assignment_schedule_request_id }}' --required
 RETURNING
 id,
-@odata.type,
 action,
 activatedUsing,
 appScope,
@@ -814,7 +744,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.role_management.entitlement_management_role_assignment_schedule_requests
-WHERE unifiedRoleAssignmentScheduleRequest-id = '{{ unifiedRoleAssignmentScheduleRequest-id }}' --required
+WHERE unified_role_assignment_schedule_request_id = '{{ unified_role_assignment_schedule_request_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -836,7 +766,7 @@ Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Gr
 
 ```sql
 EXEC entra_id.role_management.entitlement_management_role_assignment_schedule_requests.cancel 
-@unifiedRoleAssignmentScheduleRequest-id='{{ unifiedRoleAssignmentScheduleRequest-id }}' --required
+@unified_role_assignment_schedule_request_id='{{ unified_role_assignment_schedule_request_id }}' --required
 ;
 ```
 </TabItem>

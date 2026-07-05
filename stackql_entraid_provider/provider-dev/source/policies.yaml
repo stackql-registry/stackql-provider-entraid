@@ -2617,7 +2617,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy_id}:
+  /policies/activityBasedTimeoutPolicies/{activity_based_timeout_policy_id}:
     get:
       tags:
         - policies.activityBasedTimeoutPolicy
@@ -2648,7 +2648,7 @@ paths:
             type: array
             items:
               type: string
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
@@ -2696,7 +2696,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
@@ -2718,7 +2718,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
@@ -2734,7 +2734,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy_id}/appliesTo:
+  /policies/activityBasedTimeoutPolicies/{activity_based_timeout_policy_id}/appliesTo:
     get:
       tags:
         - policies.activityBasedTimeoutPolicy
@@ -2776,7 +2776,7 @@ paths:
             type: array
             items:
               type: string
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
@@ -2800,7 +2800,7 @@ paths:
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo
-  /policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/activityBasedTimeoutPolicies/{activity_based_timeout_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.activityBasedTimeoutPolicy
@@ -2827,14 +2827,14 @@ paths:
             type: array
             items:
               type: string
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: activityBasedTimeoutPolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -2859,7 +2859,7 @@ paths:
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo/{directoryObject-id}
-  /policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy_id}/appliesTo/$count:
+  /policies/activityBasedTimeoutPolicies/{activity_based_timeout_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.activityBasedTimeoutPolicy
@@ -2868,7 +2868,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: activityBasedTimeoutPolicy-id
+        - name: activity_based_timeout_policy_id
           in: path
           description: The unique identifier of activityBasedTimeoutPolicy
           required: true
@@ -2883,7 +2883,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/appManagementPolicies/{appManagementPolicy_id}:
+  /policies/appManagementPolicies/{app_management_policy_id}:
     get:
       tags:
         - policies.appManagementPolicy
@@ -2914,7 +2914,7 @@ paths:
             type: array
             items:
               type: string
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
@@ -2962,7 +2962,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
@@ -2984,7 +2984,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
@@ -3000,7 +3000,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/appManagementPolicies/{appManagementPolicy_id}/appliesTo:
+  /policies/appManagementPolicies/{app_management_policy_id}/appliesTo:
     get:
       tags:
         - policies.appManagementPolicy
@@ -3046,7 +3046,7 @@ paths:
             type: array
             items:
               type: string
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
@@ -3065,7 +3065,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
-  /policies/appManagementPolicies/{appManagementPolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/appManagementPolicies/{app_management_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.appManagementPolicy
@@ -3093,14 +3093,14 @@ paths:
             type: array
             items:
               type: string
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: appManagementPolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -3120,7 +3120,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
-  /policies/appManagementPolicies/{appManagementPolicy_id}/appliesTo/$count:
+  /policies/appManagementPolicies/{app_management_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.appManagementPolicy
@@ -3129,7 +3129,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: appManagementPolicy-id
+        - name: app_management_policy_id
           in: path
           description: The unique identifier of appManagementPolicy
           required: true
@@ -3144,7 +3144,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/{authenticationMethodConfiguration_id}:
+  /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/{authentication_method_configuration_id}:
     get:
       tags:
         - policies.authenticationMethodsPolicy
@@ -3175,7 +3175,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -3223,7 +3223,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -3245,7 +3245,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationMethodConfiguration-id
+        - name: authentication_method_configuration_id
           in: path
           description: The unique identifier of authenticationMethodConfiguration
           required: true
@@ -3261,7 +3261,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}:
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}:
     get:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3292,7 +3292,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3340,7 +3340,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3362,7 +3362,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3378,7 +3378,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}/combinationConfigurations:
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}/combinationConfigurations:
     get:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3421,7 +3421,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3464,7 +3464,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3472,7 +3472,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}/combinationConfigurations/{authenticationCombinationConfiguration_id}:
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}/combinationConfigurations/{authentication_combination_configuration_id}:
     get:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3500,14 +3500,14 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -3551,14 +3551,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -3576,14 +3576,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -3599,7 +3599,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}/combinationConfigurations/$count:
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}/combinationConfigurations/$count:
     get:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3608,7 +3608,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3623,7 +3623,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}/updateAllowedCombinations:
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}/updateAllowedCombinations:
     post:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3656,8 +3656,6 @@ paths:
             application/json:
               schema:
                 title: updateAllowedCombinationsResult
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   additionalInformation:
@@ -3690,7 +3688,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3698,7 +3696,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to call the updateAllowedCombinations method.
-  /policies/authenticationStrengthPolicies/{authenticationStrengthPolicy_id}/usage():
+  /policies/authenticationStrengthPolicies/{authentication_strength_policy_id}/usage():
     get:
       tags:
         - policies.authenticationStrengthPolicy
@@ -3715,8 +3713,6 @@ paths:
             application/json:
               schema:
                 title: authenticationStrengthUsage
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   mfa:
@@ -3739,7 +3735,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -3747,7 +3743,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to call the usage method.
-  /policies/claimsMappingPolicies/{claimsMappingPolicy_id}:
+  /policies/claimsMappingPolicies/{claims_mapping_policy_id}:
     get:
       tags:
         - policies.claimsMappingPolicy
@@ -3778,7 +3774,7 @@ paths:
             type: array
             items:
               type: string
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
@@ -3826,7 +3822,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
@@ -3848,7 +3844,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
@@ -3864,7 +3860,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/claimsMappingPolicies/{claimsMappingPolicy_id}/appliesTo:
+  /policies/claimsMappingPolicies/{claims_mapping_policy_id}/appliesTo:
     get:
       tags:
         - policies.claimsMappingPolicy
@@ -3910,7 +3906,7 @@ paths:
             type: array
             items:
               type: string
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
@@ -3934,7 +3930,7 @@ paths:
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo
-  /policies/claimsMappingPolicies/{claimsMappingPolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/claimsMappingPolicies/{claims_mapping_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.claimsMappingPolicy
@@ -3961,14 +3957,14 @@ paths:
             type: array
             items:
               type: string
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: claimsMappingPolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -3993,7 +3989,7 @@ paths:
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo/{directoryObject-id}
-  /policies/claimsMappingPolicies/{claimsMappingPolicy_id}/appliesTo/$count:
+  /policies/claimsMappingPolicies/{claims_mapping_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.claimsMappingPolicy
@@ -4002,7 +3998,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: claimsMappingPolicy-id
+        - name: claims_mapping_policy_id
           in: path
           description: The unique identifier of claimsMappingPolicy
           required: true
@@ -4017,7 +4013,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/conditionalAccessPolicies/{conditionalAccessPolicy_id}:
+  /policies/conditionalAccessPolicies/{conditional_access_policy_id}:
     get:
       tags:
         - policies.conditionalAccessPolicy
@@ -4045,7 +4041,7 @@ paths:
             type: array
             items:
               type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -4089,7 +4085,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -4107,7 +4103,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -4123,7 +4119,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/conditionalAccessPolicies/{conditionalAccessPolicy_id}/restore:
+  /policies/conditionalAccessPolicies/{conditional_access_policy_id}/restore:
     post:
       tags:
         - policies.conditionalAccessPolicy
@@ -4136,8 +4132,6 @@ paths:
             application/json:
               schema:
                 title: policyDeletableItem
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   deletedDateTime:
@@ -4206,7 +4200,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -4214,7 +4208,7 @@ paths:
             type: string
           x-ms-docs-key-type: conditionalAccessPolicy
     description: Provides operations to call the restore method.
-  /policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner_tenantId}:
+  /policies/crossTenantAccessPolicy/partners/{cross_tenant_access_policy_configuration_partner_tenant_id}:
     get:
       tags:
         - policies.crossTenantAccessPolicy
@@ -4245,7 +4239,7 @@ paths:
             type: array
             items:
               type: string
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4293,7 +4287,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4315,7 +4309,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4331,7 +4325,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
-  /policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner_tenantId}/identitySynchronization:
+  /policies/crossTenantAccessPolicy/partners/{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization:
     get:
       tags:
         - policies.crossTenantAccessPolicy
@@ -4362,7 +4356,7 @@ paths:
             type: array
             items:
               type: string
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4410,7 +4404,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4432,7 +4426,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+        - name: cross_tenant_access_policy_configuration_partner_tenant_id
           in: path
           description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
@@ -4448,7 +4442,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the identitySynchronization property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
-  /policies/featureRolloutPolicies/{featureRolloutPolicy_id}:
+  /policies/featureRolloutPolicies/{feature_rollout_policy_id}:
     get:
       tags:
         - policies.featureRolloutPolicy
@@ -4479,7 +4473,7 @@ paths:
             type: array
             items:
               type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4527,7 +4521,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4549,7 +4543,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4565,7 +4559,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/featureRolloutPolicies/{featureRolloutPolicy_id}/appliesTo:
+  /policies/featureRolloutPolicies/{feature_rollout_policy_id}/appliesTo:
     get:
       tags:
         - policies.featureRolloutPolicy
@@ -4608,7 +4602,7 @@ paths:
             type: array
             items:
               type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4655,7 +4649,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4663,7 +4657,7 @@ paths:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
     description: Provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.
-  /policies/featureRolloutPolicies/{featureRolloutPolicy_id}/appliesTo/{directoryObject_id}/$ref:
+  /policies/featureRolloutPolicies/{feature_rollout_policy_id}/appliesTo/{directory_object_id}/$ref:
     delete:
       tags:
         - policies.featureRolloutPolicy
@@ -4679,14 +4673,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -4702,7 +4696,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of policyRoot entities.
-  /policies/featureRolloutPolicies/{featureRolloutPolicy_id}/appliesTo/$count:
+  /policies/featureRolloutPolicies/{feature_rollout_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.featureRolloutPolicy
@@ -4711,7 +4705,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4726,7 +4720,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/featureRolloutPolicies/{featureRolloutPolicy_id}/appliesTo/$ref:
+  /policies/featureRolloutPolicies/{feature_rollout_policy_id}/appliesTo/$ref:
     get:
       tags:
         - policies.featureRolloutPolicy
@@ -4749,7 +4743,7 @@ paths:
             type: array
             items:
               type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4787,7 +4781,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4815,7 +4809,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: featureRolloutPolicy-id
+        - name: feature_rollout_policy_id
           in: path
           description: The unique identifier of featureRolloutPolicy
           required: true
@@ -4831,7 +4825,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of policyRoot entities.
-  /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy_id}:
+  /policies/homeRealmDiscoveryPolicies/{home_realm_discovery_policy_id}:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
@@ -4862,7 +4856,7 @@ paths:
             type: array
             items:
               type: string
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
@@ -4910,7 +4904,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
@@ -4932,7 +4926,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
@@ -4948,7 +4942,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy_id}/appliesTo:
+  /policies/homeRealmDiscoveryPolicies/{home_realm_discovery_policy_id}/appliesTo:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
@@ -4994,7 +4988,7 @@ paths:
             type: array
             items:
               type: string
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
@@ -5018,7 +5012,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo
-  /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/homeRealmDiscoveryPolicies/{home_realm_discovery_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
@@ -5045,14 +5039,14 @@ paths:
             type: array
             items:
               type: string
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: homeRealmDiscoveryPolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -5077,7 +5071,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo/{directoryObject-id}
-  /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy_id}/appliesTo/$count:
+  /policies/homeRealmDiscoveryPolicies/{home_realm_discovery_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
@@ -5086,7 +5080,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: homeRealmDiscoveryPolicy-id
+        - name: home_realm_discovery_policy_id
           in: path
           description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
@@ -5101,7 +5095,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5132,7 +5126,7 @@ paths:
             type: array
             items:
               type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5180,7 +5174,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5202,7 +5196,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5218,7 +5212,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/excludes:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/excludes:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5264,7 +5258,7 @@ paths:
             type: array
             items:
               type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5311,7 +5305,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5319,7 +5313,7 @@ paths:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
     description: Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/excludes/{permissionGrantConditionSet_id}:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/excludes/{permission_grant_condition_set_id}:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5347,14 +5341,14 @@ paths:
             type: array
             items:
               type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5398,14 +5392,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5427,14 +5421,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5450,7 +5444,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/excludes/$count:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/excludes/$count:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5459,7 +5453,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5474,7 +5468,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/includes:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/includes:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5520,7 +5514,7 @@ paths:
             type: array
             items:
               type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5567,7 +5561,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5575,7 +5569,7 @@ paths:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
     description: Provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/includes/{permissionGrantConditionSet_id}:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/includes/{permission_grant_condition_set_id}:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5603,14 +5597,14 @@ paths:
             type: array
             items:
               type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5654,14 +5648,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5683,14 +5677,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantPolicy
-        - name: permissionGrantConditionSet-id
+        - name: permission_grant_condition_set_id
           in: path
           description: The unique identifier of permissionGrantConditionSet
           required: true
@@ -5706,7 +5700,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
-  /policies/permissionGrantPolicies/{permissionGrantPolicy_id}/includes/$count:
+  /policies/permissionGrantPolicies/{permission_grant_policy_id}/includes/$count:
     get:
       tags:
         - policies.permissionGrantPolicy
@@ -5715,7 +5709,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: permissionGrantPolicy-id
+        - name: permission_grant_policy_id
           in: path
           description: The unique identifier of permissionGrantPolicy
           required: true
@@ -5730,7 +5724,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -5761,7 +5755,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -5805,7 +5799,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -5823,7 +5817,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -5839,7 +5833,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/effectiveRules:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/effectiveRules:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -5882,7 +5876,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -5925,7 +5919,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -5933,7 +5927,7 @@ paths:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
     description: Provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/effectiveRules/{unifiedRoleManagementPolicyRule_id}:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/effectiveRules/{unified_role_management_policy_rule_id}:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -5961,14 +5955,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6012,14 +6006,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6037,14 +6031,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6060,7 +6054,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/effectiveRules/$count:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/effectiveRules/$count:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -6069,7 +6063,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -6084,7 +6078,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/rules:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/rules:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -6130,7 +6124,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -6173,7 +6167,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -6181,7 +6175,7 @@ paths:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
     description: Provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/rules/{unifiedRoleManagementPolicyRule_id}:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/rules/{unified_role_management_policy_rule_id}:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -6212,14 +6206,14 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6267,14 +6261,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6292,14 +6286,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleManagementPolicy
-        - name: unifiedRoleManagementPolicyRule-id
+        - name: unified_role_management_policy_rule_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
@@ -6315,7 +6309,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-  /policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}/rules/$count:
+  /policies/roleManagementPolicies/{unified_role_management_policy_id}/rules/$count:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
@@ -6324,7 +6318,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: unifiedRoleManagementPolicy-id
+        - name: unified_role_management_policy_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicy
           required: true
@@ -6339,7 +6333,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment_id}:
+  /policies/roleManagementPolicyAssignments/{unified_role_management_policy_assignment_id}:
     get:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
@@ -6370,7 +6364,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicyAssignment-id
+        - name: unified_role_management_policy_assignment_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
@@ -6414,7 +6408,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: unifiedRoleManagementPolicyAssignment-id
+        - name: unified_role_management_policy_assignment_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
@@ -6432,7 +6426,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: unifiedRoleManagementPolicyAssignment-id
+        - name: unified_role_management_policy_assignment_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
@@ -6448,7 +6442,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
-  /policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment_id}/policy:
+  /policies/roleManagementPolicyAssignments/{unified_role_management_policy_assignment_id}/policy:
     get:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
@@ -6476,7 +6470,7 @@ paths:
             type: array
             items:
               type: string
-        - name: unifiedRoleManagementPolicyAssignment-id
+        - name: unified_role_management_policy_assignment_id
           in: path
           description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
@@ -6496,7 +6490,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the policy property of the microsoft.graph.unifiedRoleManagementPolicyAssignment entity.
-  /policies/tokenIssuancePolicies/{tokenIssuancePolicy_id}:
+  /policies/tokenIssuancePolicies/{token_issuance_policy_id}:
     get:
       tags:
         - policies.tokenIssuancePolicy
@@ -6524,7 +6518,7 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
@@ -6572,7 +6566,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
@@ -6594,7 +6588,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
@@ -6610,7 +6604,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
-  /policies/tokenIssuancePolicies/{tokenIssuancePolicy_id}/appliesTo:
+  /policies/tokenIssuancePolicies/{token_issuance_policy_id}/appliesTo:
     get:
       tags:
         - policies.tokenIssuancePolicy
@@ -6656,7 +6650,7 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
@@ -6680,7 +6674,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo
-  /policies/tokenIssuancePolicies/{tokenIssuancePolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/tokenIssuancePolicies/{token_issuance_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.tokenIssuancePolicy
@@ -6707,14 +6701,14 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: tokenIssuancePolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -6739,7 +6733,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}/appliesTo/{directoryObject-id}
-  /policies/tokenIssuancePolicies/{tokenIssuancePolicy_id}/appliesTo/$count:
+  /policies/tokenIssuancePolicies/{token_issuance_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.tokenIssuancePolicy
@@ -6748,7 +6742,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: tokenIssuancePolicy-id
+        - name: token_issuance_policy_id
           in: path
           description: The unique identifier of tokenIssuancePolicy
           required: true
@@ -6763,7 +6757,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /policies/tokenLifetimePolicies/{tokenLifetimePolicy_id}:
+  /policies/tokenLifetimePolicies/{token_lifetime_policy_id}:
     get:
       tags:
         - policies.tokenLifetimePolicy
@@ -6794,7 +6788,7 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
@@ -6842,7 +6836,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
@@ -6864,7 +6858,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
@@ -6880,7 +6874,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
-  /policies/tokenLifetimePolicies/{tokenLifetimePolicy_id}/appliesTo:
+  /policies/tokenLifetimePolicies/{token_lifetime_policy_id}/appliesTo:
     get:
       tags:
         - policies.tokenLifetimePolicy
@@ -6926,7 +6920,7 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
@@ -6950,7 +6944,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo
-  /policies/tokenLifetimePolicies/{tokenLifetimePolicy_id}/appliesTo/{directoryObject_id}:
+  /policies/tokenLifetimePolicies/{token_lifetime_policy_id}/appliesTo/{directory_object_id}:
     get:
       tags:
         - policies.tokenLifetimePolicy
@@ -6977,14 +6971,14 @@ paths:
             type: array
             items:
               type: string
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: tokenLifetimePolicy
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -7009,7 +7003,7 @@ paths:
       - /policies/claimsMappingPolicies/{claimsMappingPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/appliesTo/{directoryObject-id}
       - /policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}/appliesTo/{directoryObject-id}
-  /policies/tokenLifetimePolicies/{tokenLifetimePolicy_id}/appliesTo/$count:
+  /policies/tokenLifetimePolicies/{token_lifetime_policy_id}/appliesTo/$count:
     get:
       tags:
         - policies.tokenLifetimePolicy
@@ -7018,7 +7012,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: tokenLifetimePolicy-id
+        - name: token_lifetime_policy_id
           in: path
           description: The unique identifier of tokenLifetimePolicy
           required: true
@@ -7038,8 +7032,6 @@ components:
     microsoft.graph.policyRoot:
       x-ms-discriminator-value: '#microsoft.graph.policyRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8314,8 +8306,6 @@ components:
     microsoft.graph.activityBasedTimeoutPolicy:
       x-ms-discriminator-value: '#microsoft.graph.activityBasedTimeoutPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -9474,8 +9464,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -10613,8 +10601,6 @@ components:
     microsoft.graph.adminConsentRequestPolicy:
       x-ms-discriminator-value: '#microsoft.graph.adminConsentRequestPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -11772,8 +11758,6 @@ components:
     microsoft.graph.appManagementPolicy:
       x-ms-discriminator-value: '#microsoft.graph.appManagementPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -12935,8 +12919,6 @@ components:
     microsoft.graph.authenticationFlowsPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authenticationFlowsPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -14083,8 +14065,6 @@ components:
     microsoft.graph.authenticationMethodsPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authenticationMethodsPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -15259,8 +15239,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationMethodConfiguration:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -16404,8 +16382,6 @@ components:
     microsoft.graph.authenticationStrengthPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17568,8 +17544,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationCombinationConfiguration:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -18729,8 +18703,6 @@ components:
         isFlags: true
     microsoft.graph.updateAllowedCombinationsResult:
       title: updateAllowedCombinationsResult
-      required:
-        - '@odata.type'
       type: object
       properties:
         additionalInformation:
@@ -18757,8 +18729,6 @@ components:
           type: string
     microsoft.graph.authenticationStrengthUsage:
       title: authenticationStrengthUsage
-      required:
-        - '@odata.type'
       type: object
       properties:
         mfa:
@@ -18776,8 +18746,6 @@ components:
     microsoft.graph.authorizationPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authorizationPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -19955,8 +19923,6 @@ components:
     microsoft.graph.claimsMappingPolicy:
       x-ms-discriminator-value: '#microsoft.graph.claimsMappingPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -21115,8 +21081,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.conditionalAccessPolicy:
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -21180,8 +21144,6 @@ components:
     microsoft.graph.crossTenantAccessPolicy:
       x-ms-discriminator-value: '#microsoft.graph.crossTenantAccessPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -22354,8 +22316,6 @@ components:
     microsoft.graph.crossTenantAccessPolicyConfigurationDefault:
       x-ms-discriminator-value: '#microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -23567,22 +23527,16 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.crossTenantAccessPolicyConfigurationPartner:
       title: crossTenantAccessPolicyConfigurationPartner
-      required:
-        - '@odata.type'
       type: object
       properties:
         appServiceConnectInbound:
           description: Defines your partner-specific configuration for inbound app service connect settings that control which applications can connect across tenant boundaries with the partner organization.
           title: crossTenantAccessPolicyAppServiceConnectSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: Defines the target applications that are allowed for inbound app service connect across tenant boundaries.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23608,8 +23562,6 @@ components:
         automaticUserConsentSettings:
           description: Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
           title: inboundOutboundPolicyConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             inboundAllowed:
@@ -23626,15 +23578,11 @@ components:
         b2bCollaborationInbound:
           description: Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
           title: crossTenantAccessPolicyB2BSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: The list of applications targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23657,8 +23605,6 @@ components:
             usersAndGroups:
               description: The list of users and groups targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23688,15 +23634,11 @@ components:
         b2bCollaborationOutbound:
           description: Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
           title: crossTenantAccessPolicyB2BSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: The list of applications targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23719,8 +23661,6 @@ components:
             usersAndGroups:
               description: The list of users and groups targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23750,15 +23690,11 @@ components:
         b2bDirectConnectInbound:
           description: Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
           title: crossTenantAccessPolicyB2BSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: The list of applications targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23781,8 +23717,6 @@ components:
             usersAndGroups:
               description: The list of users and groups targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23812,15 +23746,11 @@ components:
         b2bDirectConnectOutbound:
           description: Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
           title: crossTenantAccessPolicyB2BSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: The list of applications targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23843,8 +23773,6 @@ components:
             usersAndGroups:
               description: The list of users and groups targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23874,8 +23802,6 @@ components:
         inboundTrust:
           description: Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
           title: crossTenantAccessPolicyInboundTrust
-          required:
-            - '@odata.type'
           type: object
           properties:
             isCompliantDeviceAccepted:
@@ -23904,15 +23830,11 @@ components:
         m365CollaborationInbound:
           description: Defines your partner-specific configuration for inbound Microsoft 365 collaboration settings that determine which users from the partner organization can collaborate with your organization using Microsoft 365 apps.
           title: crossTenantAccessPolicyM365CollaborationInboundSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             users:
               description: Defines the target users from other organizations who are allowed inbound Microsoft 365 collaboration with your organization.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23938,15 +23860,11 @@ components:
         m365CollaborationOutbound:
           description: Defines your partner-specific configuration for outbound Microsoft 365 collaboration settings that determine which users in your organization can collaborate with the partner organization using Microsoft 365 apps.
           title: crossTenantAccessPolicyM365CollaborationOutboundSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             usersAndGroups:
               description: Defines the target users and groups in your organization who are allowed outbound Microsoft 365 collaboration with external organizations.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -23976,15 +23894,11 @@ components:
           description: Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
           x-ms-discriminator-value: '#microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
           title: crossTenantAccessPolicyB2BSetting
-          required:
-            - '@odata.type'
           type: object
           properties:
             applications:
               description: The list of applications targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -24007,8 +23921,6 @@ components:
             usersAndGroups:
               description: The list of users and groups targeted with your cross-tenant access policy.
               title: crossTenantAccessPolicyTargetConfiguration
-              required:
-                - '@odata.type'
               type: object
               properties:
                 accessType:
@@ -24046,8 +23958,6 @@ components:
           description: Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
           x-ms-navigationProperty: true
           title: crossTenantIdentitySyncPolicyPartner
-          required:
-            - '@odata.type'
           type: object
           properties:
             displayName:
@@ -24060,8 +23970,6 @@ components:
             userSyncInbound:
               description: Defines whether users can be synchronized from the partner tenant. Key.
               title: crossTenantUserSyncInbound
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isSyncAllowed:
@@ -24078,8 +23986,6 @@ components:
           type: string
     microsoft.graph.crossTenantIdentitySyncPolicyPartner:
       title: crossTenantIdentitySyncPolicyPartner
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -24092,8 +23998,6 @@ components:
         userSyncInbound:
           description: Defines whether users can be synchronized from the partner tenant. Key.
           title: crossTenantUserSyncInbound
-          required:
-            - '@odata.type'
           type: object
           properties:
             isSyncAllowed:
@@ -24108,8 +24012,6 @@ components:
     microsoft.graph.policyTemplate:
       x-ms-discriminator-value: '#microsoft.graph.policyTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -25257,8 +25159,6 @@ components:
     microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate:
       x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -26399,8 +26299,6 @@ components:
     microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate:
       x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -27576,8 +27474,6 @@ components:
     microsoft.graph.tenantAppManagementPolicy:
       x-ms-discriminator-value: '#microsoft.graph.tenantAppManagementPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -28740,8 +28636,6 @@ components:
     microsoft.graph.deviceRegistrationPolicy:
       x-ms-discriminator-value: '#microsoft.graph.deviceRegistrationPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -29910,8 +29804,6 @@ components:
     microsoft.graph.featureRolloutPolicy:
       x-ms-discriminator-value: '#microsoft.graph.featureRolloutPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -31064,8 +30956,6 @@ components:
     microsoft.graph.homeRealmDiscoveryPolicy:
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -32225,8 +32115,6 @@ components:
     microsoft.graph.identitySecurityDefaultsEnforcementPolicy:
       x-ms-discriminator-value: '#microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -33375,8 +33263,6 @@ components:
     microsoft.graph.ownerlessGroupPolicy:
       x-ms-discriminator-value: '#microsoft.graph.ownerlessGroupPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -34532,8 +34418,6 @@ components:
     microsoft.graph.permissionGrantPolicy:
       x-ms-discriminator-value: '#microsoft.graph.permissionGrantPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -35691,8 +35575,6 @@ components:
     microsoft.graph.permissionGrantConditionSet:
       x-ms-discriminator-value: '#microsoft.graph.permissionGrantConditionSet'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -36867,8 +36749,6 @@ components:
     microsoft.graph.unifiedRoleManagementPolicy:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleManagementPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -38040,8 +37920,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.unifiedRoleManagementPolicyRule:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -39180,8 +39058,6 @@ components:
     microsoft.graph.unifiedRoleManagementPolicyAssignment:
       x-ms-discriminator-value: '#microsoft.graph.unifiedRoleManagementPolicyAssignment'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -40334,8 +40210,6 @@ components:
     microsoft.graph.tokenIssuancePolicy:
       x-ms-discriminator-value: '#microsoft.graph.tokenIssuancePolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -41495,8 +41369,6 @@ components:
     microsoft.graph.tokenLifetimePolicy:
       x-ms-discriminator-value: '#microsoft.graph.tokenLifetimePolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -42655,8 +42527,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -43809,8 +43679,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
     microsoft.graph.stsPolicy:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -44987,8 +44855,6 @@ components:
       format: int32
     microsoft.graph.accessReviewReviewerScope:
       title: accessReviewReviewerScope
-      required:
-        - '@odata.type'
       type: object
       properties:
         query:
@@ -45022,8 +44888,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
     microsoft.graph.policyBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -46169,8 +46033,6 @@ components:
     microsoft.graph.customAppManagementConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.customAppManagementConfiguration'
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -46200,8 +46062,6 @@ components:
           '#microsoft.graph.customAppManagementConfiguration': '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
     microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration:
       title: selfServiceSignUpAuthenticationFlowConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -46219,15 +46079,11 @@ components:
       type: string
     microsoft.graph.registrationEnforcement:
       title: registrationEnforcement
-      required:
-        - '@odata.type'
       type: object
       properties:
         authenticationMethodsRegistrationCampaign:
           description: Run campaigns to remind users to set up targeted authentication methods.
           title: authenticationMethodsRegistrationCampaign
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeTargets:
@@ -46270,8 +46126,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
     microsoft.graph.excludeTarget:
       title: excludeTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -46344,8 +46198,6 @@ components:
       type: string
     microsoft.graph.defaultUserRolePermissions:
       title: defaultUserRolePermissions
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedToCreateApps:
@@ -46405,8 +46257,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
     microsoft.graph.policyDeletableItem:
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -46426,22 +46276,16 @@ components:
           '#microsoft.graph.ipNamedLocation': '#/components/schemas/microsoft.graph.ipNamedLocation'
     microsoft.graph.conditionalAccessConditionSet:
       title: conditionalAccessConditionSet
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: Applications and user actions included in and excluded from the policy. Required.
           title: conditionalAccessApplications
-          required:
-            - '@odata.type'
           type: object
           properties:
             applicationFilter:
               description: Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -46477,8 +46321,6 @@ components:
         authenticationFlows:
           description: Authentication flows included in the policy scope.
           title: conditionalAccessAuthenticationFlows
-          required:
-            - '@odata.type'
           type: object
           properties:
             transferMethods:
@@ -46489,8 +46331,6 @@ components:
         clientApplications:
           description: Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
           title: conditionalAccessClientApplications
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeServicePrincipals:
@@ -46506,8 +46346,6 @@ components:
             servicePrincipalFilter:
               description: Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -46529,15 +46367,11 @@ components:
         devices:
           description: Devices in the policy.
           title: conditionalAccessDevices
-          required:
-            - '@odata.type'
           type: object
           properties:
             deviceFilter:
               description: Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -46566,8 +46400,6 @@ components:
         locations:
           description: Locations included in and excluded from the policy.
           title: conditionalAccessLocations
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeLocations:
@@ -46586,8 +46418,6 @@ components:
         platforms:
           description: Platforms included in and excluded from the policy.
           title: conditionalAccessPlatforms
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludePlatforms:
@@ -46621,8 +46451,6 @@ components:
         users:
           description: Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
           title: conditionalAccessUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeGroups:
@@ -46633,15 +46461,11 @@ components:
             excludeGuestsOrExternalUsers:
               description: Internal guests or external users excluded from the policy scope. Optionally populated.
               title: conditionalAccessGuestsOrExternalUsers
-              required:
-                - '@odata.type'
               type: object
               properties:
                 externalTenants:
                   description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
                   title: conditionalAccessExternalTenants
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     membershipKind:
@@ -46684,15 +46508,11 @@ components:
             includeGuestsOrExternalUsers:
               description: Internal guests or external users included in the policy scope. Optionally populated.
               title: conditionalAccessGuestsOrExternalUsers
-              required:
-                - '@odata.type'
               type: object
               properties:
                 externalTenants:
                   description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
                   title: conditionalAccessExternalTenants
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     membershipKind:
@@ -46734,8 +46554,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessGrantControls:
       title: conditionalAccessGrantControls
-      required:
-        - '@odata.type'
       type: object
       properties:
         builtInControls:
@@ -46761,8 +46579,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -47929,16 +47745,12 @@ components:
           type: string
     microsoft.graph.conditionalAccessSessionControls:
       title: conditionalAccessSessionControls
-      required:
-        - '@odata.type'
       type: object
       properties:
         applicationEnforcedRestrictions:
           description: Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
           x-ms-discriminator-value: '#microsoft.graph.applicationEnforcedRestrictionsSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -47960,8 +47772,6 @@ components:
           description: Session control to apply cloud app security.
           x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -47994,8 +47804,6 @@ components:
           description: Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
           x-ms-discriminator-value: '#microsoft.graph.persistentBrowserSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -48023,8 +47831,6 @@ components:
         secureSignInSession:
           x-ms-discriminator-value: '#microsoft.graph.secureSignInSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -48047,8 +47853,6 @@ components:
           description: Session control to enforce signin frequency.
           x-ms-discriminator-value: '#microsoft.graph.signInFrequencySessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -48105,15 +47909,11 @@ components:
       type: string
     microsoft.graph.crossTenantAccessPolicyAppServiceConnectSetting:
       title: crossTenantAccessPolicyAppServiceConnectSetting
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: Defines the target applications that are allowed for inbound app service connect across tenant boundaries.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48137,8 +47937,6 @@ components:
           type: string
     microsoft.graph.inboundOutboundPolicyConfiguration:
       title: inboundOutboundPolicyConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         inboundAllowed:
@@ -48153,15 +47951,11 @@ components:
           type: string
     microsoft.graph.crossTenantAccessPolicyB2BSetting:
       title: crossTenantAccessPolicyB2BSetting
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: The list of applications targeted with your cross-tenant access policy.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48184,8 +47978,6 @@ components:
         usersAndGroups:
           description: The list of users and groups targeted with your cross-tenant access policy.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48213,8 +48005,6 @@ components:
           '#microsoft.graph.crossTenantAccessPolicyTenantRestrictions': '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
     microsoft.graph.crossTenantAccessPolicyInboundTrust:
       title: crossTenantAccessPolicyInboundTrust
-      required:
-        - '@odata.type'
       type: object
       properties:
         isCompliantDeviceAccepted:
@@ -48234,8 +48024,6 @@ components:
     microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration'
       title: invitationRedemptionIdentityProviderConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         fallbackIdentityProvider:
@@ -48268,15 +48056,11 @@ components:
           '#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration': '#/components/schemas/microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration'
     microsoft.graph.crossTenantAccessPolicyM365CollaborationInboundSetting:
       title: crossTenantAccessPolicyM365CollaborationInboundSetting
-      required:
-        - '@odata.type'
       type: object
       properties:
         users:
           description: Defines the target users from other organizations who are allowed inbound Microsoft 365 collaboration with your organization.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48300,15 +48084,11 @@ components:
           type: string
     microsoft.graph.crossTenantAccessPolicyM365CollaborationOutboundSetting:
       title: crossTenantAccessPolicyM365CollaborationOutboundSetting
-      required:
-        - '@odata.type'
       type: object
       properties:
         usersAndGroups:
           description: Defines the target users and groups in your organization who are allowed outbound Microsoft 365 collaboration with external organizations.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48333,15 +48113,11 @@ components:
     microsoft.graph.crossTenantAccessPolicyTenantRestrictions:
       x-ms-discriminator-value: '#microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
       title: crossTenantAccessPolicyB2BSetting
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: The list of applications targeted with your cross-tenant access policy.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48364,8 +48140,6 @@ components:
         usersAndGroups:
           description: The list of users and groups targeted with your cross-tenant access policy.
           title: crossTenantAccessPolicyTargetConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             accessType:
@@ -48415,8 +48189,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
     microsoft.graph.crossTenantUserSyncInbound:
       title: crossTenantUserSyncInbound
-      required:
-        - '@odata.type'
       type: object
       properties:
         isSyncAllowed:
@@ -48438,8 +48210,6 @@ components:
     microsoft.graph.appManagementApplicationConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.appManagementApplicationConfiguration'
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -48470,8 +48240,6 @@ components:
     microsoft.graph.appManagementServicePrincipalConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.appManagementServicePrincipalConfiguration'
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -48494,15 +48262,11 @@ components:
           '#microsoft.graph.customAppManagementConfiguration': '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
     microsoft.graph.azureADJoinPolicy:
       title: azureADJoinPolicy
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedToJoin:
           description: Determines if Microsoft Entra join is allowed.
           title: deviceRegistrationMembership
-          required:
-            - '@odata.type'
           type: object
           properties:
             '@odata.type':
@@ -48521,8 +48285,6 @@ components:
         localAdmins:
           description: Determines who becomes a local administrator on joined devices.
           title: localAdminSettings
-          required:
-            - '@odata.type'
           type: object
           properties:
             enableGlobalAdmins:
@@ -48532,8 +48294,6 @@ components:
             registeringUsers:
               description: Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.
               title: deviceRegistrationMembership
-              required:
-                - '@odata.type'
               type: object
               properties:
                 '@odata.type':
@@ -48552,15 +48312,11 @@ components:
           type: string
     microsoft.graph.azureADRegistrationPolicy:
       title: azureADRegistrationPolicy
-      required:
-        - '@odata.type'
       type: object
       properties:
         allowedToRegister:
           description: Determines if Microsoft Entra registered is allowed.
           title: deviceRegistrationMembership
-          required:
-            - '@odata.type'
           type: object
           properties:
             '@odata.type':
@@ -48580,8 +48336,6 @@ components:
           type: string
     microsoft.graph.localAdminPasswordSettings:
       title: localAdminPasswordSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -48643,6 +48397,13 @@ components:
       properties:
         '@odata.id':
           type: string
+        directoryObjectId:
+          type: string
+          description: >-
+            The id of the directory object to reference (a user, group,
+            service principal, device, ...). Sent on the wire as
+            '@odata.id':
+            'https://graph.microsoft.com/v1.0/directoryObjects/{id}'.
       additionalProperties:
         type: string
         description: (opaque JSON object)
@@ -48663,8 +48424,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
     microsoft.graph.emailDetails:
       title: emailDetails
-      required:
-        - '@odata.type'
       type: object
       properties:
         body:
@@ -48680,8 +48439,6 @@ components:
           type: string
     microsoft.graph.targetOwners:
       title: targetOwners
-      required:
-        - '@odata.type'
       type: object
       properties:
         notifyMembers:
@@ -48747,8 +48504,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
     microsoft.graph.identity:
       title: identity
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -48802,8 +48557,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
     microsoft.graph.unifiedRoleManagementPolicyRuleTarget:
       title: unifiedRoleManagementPolicyRuleTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         caller:
@@ -48920,8 +48673,6 @@ components:
           nullable: true
     microsoft.graph.appManagementConfiguration:
       title: appManagementConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         keyCredentials:
@@ -48944,29 +48695,21 @@ components:
           '#microsoft.graph.customAppManagementConfiguration': '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
     microsoft.graph.customAppManagementApplicationConfiguration:
       title: customAppManagementApplicationConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         identifierUris:
           description: Configuration for identifierUris restrictions.
           title: identifierUriConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             nonDefaultUriAddition:
               description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
               title: identifierUriRestriction
-              required:
-                - '@odata.type'
               type: object
               properties:
                 excludeActors:
                   description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                   title: appManagementPolicyActorExemptions
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     customSecurityAttributes:
@@ -49003,15 +48746,11 @@ components:
             uriAdditionWithoutUniqueTenantIdentifier:
               description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
               title: identifierUriRestriction
-              required:
-                - '@odata.type'
               type: object
               properties:
                 excludeActors:
                   description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
                   title: appManagementPolicyActorExemptions
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     customSecurityAttributes:
@@ -49052,8 +48791,6 @@ components:
           type: string
     microsoft.graph.authenticationMethodsRegistrationCampaign:
       title: authenticationMethodsRegistrationCampaign
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeTargets:
@@ -49085,15 +48822,11 @@ components:
       type: string
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
-      required:
-        - '@odata.type'
       type: object
       properties:
         applicationFilter:
           description: Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -49127,8 +48860,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessAuthenticationFlows:
       title: conditionalAccessAuthenticationFlows
-      required:
-        - '@odata.type'
       type: object
       properties:
         transferMethods:
@@ -49137,8 +48868,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessClientApplications:
       title: conditionalAccessClientApplications
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeServicePrincipals:
@@ -49154,8 +48883,6 @@ components:
         servicePrincipalFilter:
           description: Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -49181,15 +48908,11 @@ components:
       type: string
     microsoft.graph.conditionalAccessDevices:
       title: conditionalAccessDevices
-      required:
-        - '@odata.type'
       type: object
       properties:
         deviceFilter:
           description: Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -49214,8 +48937,6 @@ components:
         isFlags: true
     microsoft.graph.conditionalAccessLocations:
       title: conditionalAccessLocations
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeLocations:
@@ -49232,8 +48953,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessPlatforms:
       title: conditionalAccessPlatforms
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludePlatforms:
@@ -49260,8 +48979,6 @@ components:
       type: string
     microsoft.graph.conditionalAccessUsers:
       title: conditionalAccessUsers
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeGroups:
@@ -49272,15 +48989,11 @@ components:
         excludeGuestsOrExternalUsers:
           description: Internal guests or external users excluded from the policy scope. Optionally populated.
           title: conditionalAccessGuestsOrExternalUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             externalTenants:
               description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
               title: conditionalAccessExternalTenants
-              required:
-                - '@odata.type'
               type: object
               properties:
                 membershipKind:
@@ -49323,15 +49036,11 @@ components:
         includeGuestsOrExternalUsers:
           description: Internal guests or external users included in the policy scope. Optionally populated.
           title: conditionalAccessGuestsOrExternalUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             externalTenants:
               description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
               title: conditionalAccessExternalTenants
-              required:
-                - '@odata.type'
               type: object
               properties:
                 membershipKind:
@@ -49384,8 +49093,6 @@ components:
     microsoft.graph.applicationEnforcedRestrictionsSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.applicationEnforcedRestrictionsSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -49405,8 +49112,6 @@ components:
     microsoft.graph.cloudAppSecuritySessionControl:
       x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -49433,8 +49138,6 @@ components:
     microsoft.graph.persistentBrowserSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.persistentBrowserSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -49461,8 +49164,6 @@ components:
     microsoft.graph.secureSignInSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.secureSignInSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -49482,8 +49183,6 @@ components:
     microsoft.graph.signInFrequencySessionControl:
       x-ms-discriminator-value: '#microsoft.graph.signInFrequencySessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -49530,8 +49229,6 @@ components:
           '#microsoft.graph.signInFrequencySessionControl': '#/components/schemas/microsoft.graph.signInFrequencySessionControl'
     microsoft.graph.crossTenantAccessPolicyTargetConfiguration:
       title: crossTenantAccessPolicyTargetConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         accessType:
@@ -49552,8 +49249,6 @@ components:
           type: string
     microsoft.graph.invitationRedemptionIdentityProviderConfiguration:
       title: invitationRedemptionIdentityProviderConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         fallbackIdentityProvider:
@@ -49586,8 +49281,6 @@ components:
           '#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration': '#/components/schemas/microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration'
     microsoft.graph.devicesFilter:
       title: devicesFilter
-      required:
-        - '@odata.type'
       type: object
       properties:
         mode:
@@ -49607,22 +49300,16 @@ components:
           type: string
     microsoft.graph.identifierUriConfiguration:
       title: identifierUriConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         nonDefaultUriAddition:
           description: Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
           title: identifierUriRestriction
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeActors:
               description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
               title: appManagementPolicyActorExemptions
-              required:
-                - '@odata.type'
               type: object
               properties:
                 customSecurityAttributes:
@@ -49659,15 +49346,11 @@ components:
         uriAdditionWithoutUniqueTenantIdentifier:
           description: Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
           title: identifierUriRestriction
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeActors:
               description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
               title: appManagementPolicyActorExemptions
-              required:
-                - '@odata.type'
               type: object
               properties:
                 customSecurityAttributes:
@@ -49705,8 +49388,6 @@ components:
           type: string
     microsoft.graph.deviceRegistrationMembership:
       title: deviceRegistrationMembership
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -49719,8 +49400,6 @@ components:
           '#microsoft.graph.noDeviceRegistrationMembership': '#/components/schemas/microsoft.graph.noDeviceRegistrationMembership'
     microsoft.graph.localAdminSettings:
       title: localAdminSettings
-      required:
-        - '@odata.type'
       type: object
       properties:
         enableGlobalAdmins:
@@ -49730,8 +49409,6 @@ components:
         registeringUsers:
           description: Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.
           title: deviceRegistrationMembership
-          required:
-            - '@odata.type'
           type: object
           properties:
             '@odata.type':
@@ -49781,8 +49458,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:
@@ -49803,15 +49478,11 @@ components:
           type: string
     microsoft.graph.keyCredentialConfiguration:
       title: keyCredentialConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -49848,15 +49519,11 @@ components:
           type: string
     microsoft.graph.passwordCredentialConfiguration:
       title: passwordCredentialConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -49897,8 +49564,6 @@ components:
           type: string
     microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget:
       title: authenticationMethodsRegistrationCampaignIncludeTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -49922,8 +49587,6 @@ components:
       type: string
     microsoft.graph.conditionalAccessFilter:
       title: conditionalAccessFilter
-      required:
-        - '@odata.type'
       type: object
       properties:
         mode:
@@ -49957,15 +49620,11 @@ components:
       type: string
     microsoft.graph.conditionalAccessGuestsOrExternalUsers:
       title: conditionalAccessGuestsOrExternalUsers
-      required:
-        - '@odata.type'
       type: object
       properties:
         externalTenants:
           description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
           title: conditionalAccessExternalTenants
-          required:
-            - '@odata.type'
           type: object
           properties:
             membershipKind:
@@ -49991,8 +49650,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessSessionControl:
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -50052,8 +49709,6 @@ components:
       type: string
     microsoft.graph.crossTenantAccessPolicyTarget:
       title: crossTenantAccessPolicyTarget
-      required:
-        - '@odata.type'
       type: object
       properties:
         target:
@@ -50085,15 +49740,11 @@ components:
       type: string
     microsoft.graph.identifierUriRestriction:
       title: identifierUriRestriction
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeActors:
           description: Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they're exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.
           title: appManagementPolicyActorExemptions
-          required:
-            - '@odata.type'
           type: object
           properties:
             customSecurityAttributes:
@@ -50128,8 +49779,6 @@ components:
           type: string
     microsoft.graph.appManagementPolicyActorExemptions:
       title: appManagementPolicyActorExemptions
-      required:
-        - '@odata.type'
       type: object
       properties:
         customSecurityAttributes:
@@ -50170,8 +49819,6 @@ components:
       type: string
     microsoft.graph.conditionalAccessExternalTenants:
       title: conditionalAccessExternalTenants
-      required:
-        - '@odata.type'
       type: object
       properties:
         membershipKind:
@@ -50214,8 +49861,6 @@ components:
       type: string
     microsoft.graph.customSecurityAttributeExemption:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:

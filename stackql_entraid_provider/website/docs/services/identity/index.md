@@ -18,7 +18,7 @@ identity service documentation.
 
 :::info[Service Summary]
 
-total resources: __42__  
+total resources: __38__  
 
 :::
 
@@ -32,24 +32,20 @@ total resources: __42__
 <a href="/services/identity/authentication_events_flows_conditions_applications_include_applications/">authentication_events_flows_conditions_applications_include_applications</a><br />
 <a href="/services/identity/b2x_user_flows/">b2x_user_flows</a><br />
 <a href="/services/identity/b2x_user_flows_api_connector_configuration/">b2x_user_flows_api_connector_configuration</a><br />
-<a href="/services/identity/b2x_user_flows_api_connector_configuration_post_attribute_collection/">b2x_user_flows_api_connector_configuration_post_attribute_collection</a><br />
-<a href="/services/identity/b2x_user_flows_api_connector_configuration_post_federation_signup/">b2x_user_flows_api_connector_configuration_post_federation_signup</a><br />
 <a href="/services/identity/b2x_user_flows_identity_providers/">b2x_user_flows_identity_providers</a><br />
 <a href="/services/identity/b2x_user_flows_languages/">b2x_user_flows_languages</a><br />
 <a href="/services/identity/b2x_user_flows_languages_default_pages/">b2x_user_flows_languages_default_pages</a><br />
 <a href="/services/identity/b2x_user_flows_languages_overrides_pages/">b2x_user_flows_languages_overrides_pages</a><br />
 <a href="/services/identity/b2x_user_flows_user_attribute_assignments/">b2x_user_flows_user_attribute_assignments</a><br />
-<a href="/services/identity/b2x_user_flows_user_attribute_assignments_get_order/">b2x_user_flows_user_attribute_assignments_get_order</a><br />
 <a href="/services/identity/b2x_user_flows_user_attribute_assignments_user_attribute/">b2x_user_flows_user_attribute_assignments_user_attribute</a><br />
 <a href="/services/identity/b2x_user_flows_user_flow_identity_providers/">b2x_user_flows_user_flow_identity_providers</a><br />
-<a href="/services/identity/conditional_access/">conditional_access</a><br />
 <a href="/services/identity/conditional_access_authentication_context_class_references/">conditional_access_authentication_context_class_references</a><br />
 <a href="/services/identity/conditional_access_authentication_strength/">conditional_access_authentication_strength</a><br />
-<a href="/services/identity/conditional_access_authentication_strength_authentication_method_modes/">conditional_access_authentication_strength_authentication_method_modes</a>
+<a href="/services/identity/conditional_access_authentication_strength_authentication_method_modes/">conditional_access_authentication_strength_authentication_method_modes</a><br />
+<a href="/services/identity/conditional_access_authentication_strength_policies/">conditional_access_authentication_strength_policies</a><br />
+<a href="/services/identity/conditional_access_authentication_strength_policies_combination_configurations/">conditional_access_authentication_strength_policies_combination_configurations</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/identity/conditional_access_authentication_strength_policies/">conditional_access_authentication_strength_policies</a><br />
-<a href="/services/identity/conditional_access_authentication_strength_policies_combination_configurations/">conditional_access_authentication_strength_policies_combination_configurations</a><br />
 <a href="/services/identity/conditional_access_authentication_strength_policies_usage/">conditional_access_authentication_strength_policies_usage</a><br />
 <a href="/services/identity/conditional_access_deleted_items/">conditional_access_deleted_items</a><br />
 <a href="/services/identity/conditional_access_deleted_items_named_locations/">conditional_access_deleted_items_named_locations</a><br />

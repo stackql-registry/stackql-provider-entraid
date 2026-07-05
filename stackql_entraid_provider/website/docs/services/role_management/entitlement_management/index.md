@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="resourceNamespaces" /></td>
     <td><code>array</code></td>
     <td></td>
@@ -130,13 +125,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Container for roles and assignments for entitlement management resources.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
@@ -163,16 +158,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -196,7 +181,6 @@ Container for roles and assignments for entitlement management resources.
 ```sql
 SELECT
 id,
-@odata.type,
 resourceNamespaces,
 roleAssignmentScheduleInstances,
 roleAssignmentScheduleRequests,
@@ -207,8 +191,6 @@ roleEligibilityScheduleInstances,
 roleEligibilityScheduleRequests,
 roleEligibilitySchedules
 FROM entra_id.role_management.entitlement_management
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -231,7 +213,6 @@ No description available.
 UPDATE entra_id.role_management.entitlement_management
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 resourceNamespaces = '{{ resourceNamespaces }}',
 roleAssignments = '{{ roleAssignments }}',
 roleAssignmentScheduleInstances = '{{ roleAssignmentScheduleInstances }}',
@@ -241,11 +222,8 @@ roleDefinitions = '{{ roleDefinitions }}',
 roleEligibilityScheduleInstances = '{{ roleEligibilityScheduleInstances }}',
 roleEligibilityScheduleRequests = '{{ roleEligibilityScheduleRequests }}',
 roleEligibilitySchedules = '{{ roleEligibilitySchedules }}'
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 resourceNamespaces,
 roleAssignmentScheduleInstances,
 roleAssignmentScheduleRequests,

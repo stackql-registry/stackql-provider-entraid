@@ -57,11 +57,6 @@ Retrieved collection
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>The display name of the identity provider.</td>
@@ -89,28 +84,28 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#add_ref"><CopyableCode code="add_ref" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#remove_ref"><CopyableCode code="remove_ref" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a>, <a href="#parameter-identityProviderBase-id"><code>identityProviderBase-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a>, <a href="#parameter-identity_provider_base_id"><code>identity_provider_base_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#remove_ref_2"><CopyableCode code="remove_ref_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-@id"><code>@id</code></a>, <a href="#parameter-b2xIdentityUserFlow-id"><code>b2xIdentityUserFlow-id</code></a></td>
+    <td><a href="#parameter-b2x_identity_user_flow_id"><code>b2x_identity_user_flow_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -130,60 +125,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-@id">
-    <td><CopyableCode code="@id" /></td>
-    <td><code>string</code></td>
-    <td>The delete Uri</td>
-</tr>
-<tr id="parameter-b2xIdentityUserFlow-id">
-    <td><CopyableCode code="b2xIdentityUserFlow-id" /></td>
+<tr id="parameter-b2x_identity_user_flow_id">
+    <td><CopyableCode code="b2x_identity_user_flow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of b2xIdentityUserFlow</td>
 </tr>
-<tr id="parameter-identityProviderBase-id">
-    <td><CopyableCode code="identityProviderBase-id" /></td>
+<tr id="parameter-identity_provider_base_id">
+    <td><CopyableCode code="identity_provider_base_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of identityProviderBase</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -208,18 +158,9 @@ Retrieved collection
 ```sql
 SELECT
 id,
-@odata.type,
 displayName
 FROM entra_id.identity.b2x_user_flows_user_flow_identity_providers
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' -- required
 ;
 ```
 </TabItem>
@@ -241,12 +182,12 @@ No description available.
 
 ```sql
 INSERT INTO entra_id.identity.b2x_user_flows_user_flow_identity_providers (
-@odata.id,
-b2xIdentityUserFlow-id
+directoryObjectId,
+b2x_identity_user_flow_id
 )
 SELECT 
-'{{ @odata.id }}',
-'{{ b2xIdentityUserFlow-id }}'
+'{{ directoryObjectId }}',
+'{{ b2x_identity_user_flow_id }}'
 ;
 ```
 </TabItem>
@@ -255,11 +196,13 @@ SELECT
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: b2x_user_flows_user_flow_identity_providers
   props:
-    - name: b2xIdentityUserFlow-id
-      value: "{{ b2xIdentityUserFlow-id }}"
+    - name: b2x_identity_user_flow_id
+      value: "{{ b2x_identity_user_flow_id }}"
       description: Required parameter for the b2x_user_flows_user_flow_identity_providers resource.
-    - name: @odata.id
-      value: "{{ @odata.id }}"
+    - name: directoryObjectId
+      value: "{{ directoryObjectId }}"
+      description: |
+        The id of the directory object to reference (a user, group, service principal, device, ...). Sent on the wire as '@odata.id': 'https://graph.microsoft.com/v1.0/directoryObjects/{id}'.
 `}</CodeBlock>
 
 </TabItem>
@@ -281,8 +224,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity.b2x_user_flows_user_flow_identity_providers
-WHERE b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
-AND identityProviderBase-id = '{{ identityProviderBase-id }}' --required
+WHERE b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
+AND identity_provider_base_id = '{{ identity_provider_base_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -293,8 +236,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity.b2x_user_flows_user_flow_identity_providers
-WHERE @id = '{{ @id }}' --required
-AND b2xIdentityUserFlow-id = '{{ b2xIdentityUserFlow-id }}' --required
+AND b2x_identity_user_flow_id = '{{ b2x_identity_user_flow_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

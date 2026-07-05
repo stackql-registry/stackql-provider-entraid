@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</td>
@@ -127,11 +122,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="description" /></td>
@@ -201,35 +191,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:<br />- directory (Microsoft Entra ID)<br />- entitlement management (Microsoft Entra Entitlement Management)</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a></td>
     <td></td>
     <td>Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-unifiedRoleDefinition-id"><code>unifiedRoleDefinition-id</code></a></td>
+    <td><a href="#parameter-unified_role_definition_id"><code>unified_role_definition_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.</td>
 </tr>
@@ -249,50 +239,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleDefinition-id">
-    <td><CopyableCode code="unifiedRoleDefinition-id" /></td>
+<tr id="parameter-unified_role_definition_id">
+    <td><CopyableCode code="unified_role_definition_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleDefinition</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -318,7 +268,6 @@ Read the properties and relationships of a unifiedRoleDefinition object. The fol
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -329,9 +278,7 @@ rolePermissions,
 templateId,
 version
 FROM entra_id.role_management.directory_role_definitions
-WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_definition_id = '{{ unified_role_definition_id }}' -- required
 ;
 ```
 </TabItem>
@@ -342,7 +289,6 @@ Get a list of unifiedRoleDefinition objects for the provider. The following RBAC
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -353,14 +299,6 @@ rolePermissions,
 templateId,
 version
 FROM entra_id.role_management.directory_role_definitions
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -383,7 +321,6 @@ Create a new custom unifiedRoleDefinition object. This feature requires a Micros
 ```sql
 INSERT INTO entra_id.role_management.directory_role_definitions (
 id,
-@odata.type,
 description,
 displayName,
 isBuiltIn,
@@ -396,7 +333,6 @@ inheritsPermissionsFrom
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ description }}',
 '{{ displayName }}',
 {{ isBuiltIn }},
@@ -408,7 +344,6 @@ SELECT
 '{{ inheritsPermissionsFrom }}'
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -430,8 +365,6 @@ version
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: description
       value: "{{ description }}"
       description: |
@@ -460,7 +393,6 @@ version
         - allowedResourceActions: "{{ allowedResourceActions }}"
           condition: "{{ condition }}"
           excludedResourceActions: "{{ excludedResourceActions }}"
-          @odata.type: "{{ @odata.type }}"
     - name: templateId
       value: "{{ templateId }}"
       description: |
@@ -474,7 +406,6 @@ version
         Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
           isBuiltIn: {{ isBuiltIn }}
@@ -506,7 +437,6 @@ Update the properties of a unifiedRoleDefinition object. You cannot update built
 UPDATE entra_id.role_management.directory_role_definitions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
 isBuiltIn = {{ isBuiltIn }},
@@ -517,11 +447,9 @@ templateId = '{{ templateId }}',
 version = '{{ version }}',
 inheritsPermissionsFrom = '{{ inheritsPermissionsFrom }}'
 WHERE 
-unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+unified_role_definition_id = '{{ unified_role_definition_id }}' --required
 RETURNING
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -550,7 +478,7 @@ Delete a unifiedRoleDefinition object. You can't delete built-in roles. This fea
 
 ```sql
 DELETE FROM entra_id.role_management.directory_role_definitions
-WHERE unifiedRoleDefinition-id = '{{ unifiedRoleDefinition-id }}' --required
+WHERE unified_role_definition_id = '{{ unified_role_definition_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

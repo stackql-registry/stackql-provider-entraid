@@ -138,7 +138,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -186,7 +186,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -208,7 +208,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -270,7 +270,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -289,7 +289,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
-  /domains/{domain_id}/domainNameReferences/{directoryObject_id}:
+  /domains/{domain_id}/domainNameReferences/{directory_object_id}:
     get:
       tags:
         - domains.directoryObject
@@ -317,14 +317,14 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -353,7 +353,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -414,7 +414,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -461,7 +461,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -469,7 +469,7 @@ paths:
             type: string
           x-ms-docs-key-type: domain
     description: Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
-  /domains/{domain_id}/federationConfiguration/{internalDomainFederation_id}:
+  /domains/{domain_id}/federationConfiguration/{internal_domain_federation_id}:
     get:
       tags:
         - domains.internalDomainFederation
@@ -500,14 +500,14 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: internalDomainFederation-id
+        - name: internal_domain_federation_id
           in: path
           description: The unique identifier of internalDomainFederation
           required: true
@@ -555,14 +555,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: internalDomainFederation-id
+        - name: internal_domain_federation_id
           in: path
           description: The unique identifier of internalDomainFederation
           required: true
@@ -584,14 +584,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: internalDomainFederation-id
+        - name: internal_domain_federation_id
           in: path
           description: The unique identifier of internalDomainFederation
           required: true
@@ -616,7 +616,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -662,7 +662,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -698,7 +698,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -724,8 +724,6 @@ paths:
               schema:
                 x-ms-discriminator-value: '#microsoft.graph.domain'
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1948,7 +1946,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -1987,7 +1985,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2053,7 +2051,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2096,7 +2094,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2104,7 +2102,7 @@ paths:
             type: string
           x-ms-docs-key-type: domain
     description: Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
-  /domains/{domain_id}/serviceConfigurationRecords/{domainDnsRecord_id}:
+  /domains/{domain_id}/serviceConfigurationRecords/{domain_dns_record_id}:
     get:
       tags:
         - domains.domainDnsRecord
@@ -2132,14 +2130,14 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2183,14 +2181,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2208,14 +2206,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2240,7 +2238,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2301,7 +2299,7 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2344,7 +2342,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2352,7 +2350,7 @@ paths:
             type: string
           x-ms-docs-key-type: domain
     description: Provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
-  /domains/{domain_id}/verificationDnsRecords/{domainDnsRecord_id}:
+  /domains/{domain_id}/verificationDnsRecords/{domain_dns_record_id}:
     get:
       tags:
         - domains.domainDnsRecord
@@ -2380,14 +2378,14 @@ paths:
             type: array
             items:
               type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2431,14 +2429,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2456,14 +2454,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
-        - name: domainDnsRecord-id
+        - name: domain_dns_record_id
           in: path
           description: The unique identifier of domainDnsRecord
           required: true
@@ -2488,7 +2486,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: domain-id
+        - name: domain_id
           in: path
           description: The unique identifier of domain
           required: true
@@ -2508,8 +2506,6 @@ components:
     microsoft.graph.domain:
       x-ms-discriminator-value: '#microsoft.graph.domain'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3726,8 +3722,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4865,8 +4859,6 @@ components:
     microsoft.graph.internalDomainFederation:
       x-ms-discriminator-value: '#microsoft.graph.internalDomainFederation'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6064,8 +6056,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.domainDnsRecord:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -7237,8 +7227,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8369,8 +8357,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.domainState:
       title: domainState
-      required:
-        - '@odata.type'
       type: object
       properties:
         lastActionDateTime:
@@ -8424,8 +8410,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
     microsoft.graph.samlOrWsFedProvider:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -9599,8 +9583,6 @@ components:
       type: string
     microsoft.graph.signingCertificateUpdateStatus:
       title: signingCertificateUpdateStatus
-      required:
-        - '@odata.type'
       type: object
       properties:
         certificateUpdateResult:
@@ -9663,8 +9645,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.identityProviderBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -10819,8 +10799,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

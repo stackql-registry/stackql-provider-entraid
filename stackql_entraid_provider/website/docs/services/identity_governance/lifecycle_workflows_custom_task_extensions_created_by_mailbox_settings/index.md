@@ -52,11 +52,6 @@ Entity result.
 </thead>
 <tbody>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="archiveFolder" /></td>
     <td><code>string</code></td>
     <td>Folder ID of an archive folder for the user.</td>
@@ -124,14 +119,14 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-customTaskExtension-id"><code>customTaskExtension-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-custom_task_extension_id"><code>custom_task_extension_id</code></a></td>
+    <td></td>
     <td>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-customTaskExtension-id"><code>customTaskExtension-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-custom_task_extension_id"><code>custom_task_extension_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
@@ -151,20 +146,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-customTaskExtension-id">
-    <td><CopyableCode code="customTaskExtension-id" /></td>
+<tr id="parameter-custom_task_extension_id">
+    <td><CopyableCode code="custom_task_extension_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of customTaskExtension</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -183,7 +168,6 @@ Settings for the primary mailbox of the signed-in user. You can get or update se
 
 ```sql
 SELECT
-@odata.type,
 archiveFolder,
 automaticRepliesSetting,
 dateFormat,
@@ -194,9 +178,7 @@ timeZone,
 userPurpose,
 workingHours
 FROM entra_id.identity_governance.lifecycle_workflows_custom_task_extensions_created_by_mailbox_settings
-WHERE customTaskExtension-id = '{{ customTaskExtension-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE custom_task_extension_id = '{{ custom_task_extension_id }}' -- required
 ;
 ```
 </TabItem>
@@ -227,12 +209,9 @@ timeFormat = '{{ timeFormat }}',
 timeZone = '{{ timeZone }}',
 userPurpose = '{{ userPurpose }}',
 workingHours = '{{ workingHours }}',
-@odata.type = '{{ @odata.type }}'
 WHERE 
-customTaskExtension-id = '{{ customTaskExtension-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+custom_task_extension_id = '{{ custom_task_extension_id }}' --required
 RETURNING
-@odata.type,
 archiveFolder,
 automaticRepliesSetting,
 dateFormat,

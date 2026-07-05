@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="backgroundColor" /></td>
     <td><code>string</code></td>
     <td>Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.</td>
@@ -244,23 +239,121 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
     <td>Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
     <td></td>
     <td>Update the properties of the default branding object specified by the organizationalBranding resource.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-organization-id"><code>organization-id</code></a></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.</td>
+</tr>
+<tr>
+    <td><a href="#background_image"><CopyableCode code="background_image" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.</td>
+</tr>
+<tr>
+    <td><a href="#background_image_2"><CopyableCode code="background_image_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.</td>
+</tr>
+<tr>
+    <td><a href="#banner_logo"><CopyableCode code="banner_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#banner_logo_2"><CopyableCode code="banner_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#custom_css"><CopyableCode code="custom_css" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.</td>
+</tr>
+<tr>
+    <td><a href="#custom_css_2"><CopyableCode code="custom_css_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.</td>
+</tr>
+<tr>
+    <td><a href="#favicon"><CopyableCode code="favicon" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.</td>
+</tr>
+<tr>
+    <td><a href="#favicon_2"><CopyableCode code="favicon_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.</td>
+</tr>
+<tr>
+    <td><a href="#header_logo"><CopyableCode code="header_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#header_logo_2"><CopyableCode code="header_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo"><CopyableCode code="square_logo" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_2"><CopyableCode code="square_logo_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_dark"><CopyableCode code="square_logo_dark" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td></td>
+    <td>A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
+</tr>
+<tr>
+    <td><a href="#square_logo_dark_2"><CopyableCode code="square_logo_dark_2" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-organization_id"><code>organization_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td>A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</td>
 </tr>
 </tbody>
 </table>
@@ -278,20 +371,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-organization-id">
-    <td><CopyableCode code="organization-id" /></td>
+<tr id="parameter-organization_id">
+    <td><CopyableCode code="organization_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of organization</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -316,7 +399,6 @@ Retrieve the default organizational branding object, if the Accept-Language head
 ```sql
 SELECT
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -350,9 +432,7 @@ squareLogoDarkRelativeUrl,
 squareLogoRelativeUrl,
 usernameHintText
 FROM entra_id.organization.branding
-WHERE organization-id = '{{ organization-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE organization_id = '{{ organization_id }}' -- required
 ;
 ```
 </TabItem>
@@ -375,7 +455,6 @@ Update the properties of the default branding object specified by the organizati
 UPDATE entra_id.organization.branding
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 backgroundColor = '{{ backgroundColor }}',
 backgroundImage = '{{ backgroundImage }}',
 backgroundImageRelativeUrl = '{{ backgroundImageRelativeUrl }}',
@@ -409,11 +488,9 @@ squareLogoRelativeUrl = '{{ squareLogoRelativeUrl }}',
 usernameHintText = '{{ usernameHintText }}',
 localizations = '{{ localizations }}'
 WHERE 
-organization-id = '{{ organization-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+organization_id = '{{ organization_id }}' --required
 RETURNING
 id,
-@odata.type,
 backgroundColor,
 backgroundImage,
 backgroundImageRelativeUrl,
@@ -465,8 +542,179 @@ Delete the default organizational branding object. To delete the organizationalB
 
 ```sql
 DELETE FROM entra_id.organization.branding
-WHERE organization-id = '{{ organization-id }}' --required
+WHERE organization_id = '{{ organization_id }}' --required
 AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="background_image"
+    values={[
+        { label: 'background_image', value: 'background_image' },
+        { label: 'background_image_2', value: 'background_image_2' },
+        { label: 'banner_logo', value: 'banner_logo' },
+        { label: 'banner_logo_2', value: 'banner_logo_2' },
+        { label: 'custom_css', value: 'custom_css' },
+        { label: 'custom_css_2', value: 'custom_css_2' },
+        { label: 'favicon', value: 'favicon' },
+        { label: 'favicon_2', value: 'favicon_2' },
+        { label: 'header_logo', value: 'header_logo' },
+        { label: 'header_logo_2', value: 'header_logo_2' },
+        { label: 'square_logo', value: 'square_logo' },
+        { label: 'square_logo_2', value: 'square_logo_2' },
+        { label: 'square_logo_dark', value: 'square_logo_dark' },
+        { label: 'square_logo_dark_2', value: 'square_logo_dark_2' }
+    ]}
+>
+<TabItem value="background_image">
+
+Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+
+```sql
+EXEC entra_id.organization.branding.background_image 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="background_image_2">
+
+Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+
+```sql
+EXEC entra_id.organization.branding.background_image_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="banner_logo">
+
+A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.banner_logo 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="banner_logo_2">
+
+A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.banner_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="custom_css">
+
+CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+
+```sql
+EXEC entra_id.organization.branding.custom_css 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="custom_css_2">
+
+CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+
+```sql
+EXEC entra_id.organization.branding.custom_css_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="favicon">
+
+A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+
+```sql
+EXEC entra_id.organization.branding.favicon 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="favicon_2">
+
+A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+
+```sql
+EXEC entra_id.organization.branding.favicon_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="header_logo">
+
+A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.header_logo 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="header_logo_2">
+
+A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.header_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="square_logo">
+
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.square_logo 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="square_logo_2">
+
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.square_logo_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
+<TabItem value="square_logo_dark">
+
+A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.square_logo_dark 
+@organization_id='{{ organization_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="square_logo_dark_2">
+
+A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+
+```sql
+EXEC entra_id.organization.branding.square_logo_dark_2 
+@organization_id='{{ organization_id }}' --required, 
+@If-Match='{{ If-Match }}'
 ;
 ```
 </TabItem>

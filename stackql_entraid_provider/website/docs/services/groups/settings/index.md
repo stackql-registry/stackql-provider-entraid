@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="displayName" /></td>
     <td><code>string</code></td>
     <td>Display name of this group of settings, which comes from the associated template.</td>
@@ -97,11 +92,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="displayName" /></td>
@@ -141,35 +131,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupSetting-id"><code>groupSetting-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_setting_id"><code>group_setting_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
+    <td></td>
     <td>Retrieve a list of tenant-level or group-specific group settings objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a></td>
     <td></td>
     <td>Create a new group setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupSetting-id"><code>groupSetting-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_setting_id"><code>group_setting_id</code></a></td>
     <td></td>
     <td>Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-group-id"><code>group-id</code></a>, <a href="#parameter-groupSetting-id"><code>groupSetting-id</code></a></td>
+    <td><a href="#parameter-group_id"><code>group_id</code></a>, <a href="#parameter-group_setting_id"><code>group_setting_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -189,55 +179,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-group-id">
-    <td><CopyableCode code="group-id" /></td>
+<tr id="parameter-group_id">
+    <td><CopyableCode code="group_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of group</td>
 </tr>
-<tr id="parameter-groupSetting-id">
-    <td><CopyableCode code="groupSetting-id" /></td>
+<tr id="parameter-group_setting_id">
+    <td><CopyableCode code="group_setting_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of groupSetting</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -263,15 +213,12 @@ Retrieve the properties of a specific group setting object. The setting can be a
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 templateId,
 values
 FROM entra_id.groups.settings
-WHERE group-id = '{{ group-id }}' -- required
-AND groupSetting-id = '{{ groupSetting-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE group_id = '{{ group_id }}' -- required
+AND group_setting_id = '{{ group_setting_id }}' -- required
 ;
 ```
 </TabItem>
@@ -282,20 +229,11 @@ Retrieve a list of tenant-level or group-specific group settings objects.
 ```sql
 SELECT
 id,
-@odata.type,
 displayName,
 templateId,
 values
 FROM entra_id.groups.settings
-WHERE group-id = '{{ group-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE group_id = '{{ group_id }}' -- required
 ;
 ```
 </TabItem>
@@ -318,22 +256,19 @@ Create a new group setting based on the templates available in groupSettingTempl
 ```sql
 INSERT INTO entra_id.groups.settings (
 id,
-@odata.type,
 displayName,
 templateId,
 values,
-group-id
+group_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ displayName }}',
 '{{ templateId }}',
 '{{ values }}',
-'{{ group-id }}'
+'{{ group_id }}'
 RETURNING
 id,
-@odata.type,
 displayName,
 templateId,
 values
@@ -345,15 +280,13 @@ values
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: settings
   props:
-    - name: group-id
-      value: "{{ group-id }}"
+    - name: group_id
+      value: "{{ group_id }}"
       description: Required parameter for the settings resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: displayName
       value: "{{ displayName }}"
       description: |
@@ -368,7 +301,6 @@ values
       value:
         - name: "{{ name }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
 `}</CodeBlock>
 
 </TabItem>
@@ -391,17 +323,14 @@ Update the properties of a groupSetting object for tenant-wide group settings or
 UPDATE entra_id.groups.settings
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 displayName = '{{ displayName }}',
 templateId = '{{ templateId }}',
 values = '{{ values }}'
 WHERE 
-group-id = '{{ group-id }}' --required
-AND groupSetting-id = '{{ groupSetting-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+group_id = '{{ group_id }}' --required
+AND group_setting_id = '{{ group_setting_id }}' --required
 RETURNING
 id,
-@odata.type,
 displayName,
 templateId,
 values;
@@ -424,8 +353,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.groups.settings
-WHERE group-id = '{{ group-id }}' --required
-AND groupSetting-id = '{{ groupSetting-id }}' --required
+WHERE group_id = '{{ group_id }}' --required
+AND group_setting_id = '{{ group_setting_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

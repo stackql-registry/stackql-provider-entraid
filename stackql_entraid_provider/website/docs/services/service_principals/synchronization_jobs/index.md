@@ -36,7 +36,6 @@ The following fields are returned by `SELECT` queries:
     defaultValue="get"
     values={[
         { label: 'get', value: 'get' },
-        { label: 'bulk_upload', value: 'bulk_upload' },
         { label: 'list', value: 'list' }
     ]}
 >
@@ -57,11 +56,6 @@ Retrieved navigation property
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="bulkUpload" /></td>
@@ -96,32 +90,6 @@ Retrieved navigation property
 </tbody>
 </table>
 </TabItem>
-<TabItem value="bulk_upload">
-
-Retrieved navigation property
-
-<table>
-<thead>
-    <tr>
-    <th>Name</th>
-    <th>Datatype</th>
-    <th>Description</th>
-    </tr>
-</thead>
-<tbody>
-<tr>
-    <td><CopyableCode code="id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-</tbody>
-</table>
-</TabItem>
 <TabItem value="list">
 
 Retrieved collection
@@ -139,11 +107,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="bulkUpload" /></td>
@@ -198,77 +161,112 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
     <td>Retrieve the existing synchronization job and its properties.</td>
-</tr>
-<tr>
-    <td><a href="#bulk_upload"><CopyableCode code="bulk_upload" /></a></td>
-    <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
-    <td>The bulk upload operation for the job.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>List existing jobs for a given application instance (service principal).</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td>Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.</td>
 </tr>
 <tr>
+    <td><a href="#get_bulk_upload"><CopyableCode code="get_bulk_upload" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
+    <td>The bulk upload operation for the job.</td>
+</tr>
+<tr>
+    <td><a href="#update_bulk_upload"><CopyableCode code="update_bulk_upload" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="#delete_bulk_upload"><CopyableCode code="delete_bulk_upload" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
+    <td></td>
+</tr>
+<tr>
     <td><a href="#pause"><CopyableCode code="pause" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td>Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.</td>
 </tr>
 <tr>
     <td><a href="#provision_on_demand"><CopyableCode code="provision_on_demand" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td>Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.</td>
 </tr>
 <tr>
+    <td><a href="#restart"><CopyableCode code="restart" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
+    <td>Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.</td>
+</tr>
+<tr>
     <td><a href="#start"><CopyableCode code="start" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td>Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don't create scripts to call the start job continuously while it's running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. </td>
 </tr>
 <tr>
     <td><a href="#validate_credentials"><CopyableCode code="validate_credentials" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td>Validate that the credentials are valid in the tenant.</td>
 </tr>
 <tr>
+    <td><a href="#schema_directories_discover"><CopyableCode code="schema_directories_discover" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a>, <a href="#parameter-directory_definition_id"><code>directory_definition_id</code></a></td>
+    <td></td>
+    <td>Discover the latest schema definition for provisioning to an application. </td>
+</tr>
+<tr>
+    <td><a href="#schema_parse_expression"><CopyableCode code="schema_parse_expression" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
+    <td>Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.</td>
+</tr>
+<tr>
     <td><a href="#validate_credentials_2"><CopyableCode code="validate_credentials_2" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
@@ -288,55 +286,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-directory_definition_id">
+    <td><CopyableCode code="directory_definition_id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier of directoryDefinition</td>
+</tr>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
 </tr>
-<tr id="parameter-synchronizationJob-id">
-    <td><CopyableCode code="synchronizationJob-id" /></td>
+<tr id="parameter-synchronization_job_id">
+    <td><CopyableCode code="synchronization_job_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of synchronizationJob</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -352,7 +315,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     defaultValue="get"
     values={[
         { label: 'get', value: 'get' },
-        { label: 'bulk_upload', value: 'bulk_upload' },
         { label: 'list', value: 'list' }
     ]}
 >
@@ -363,7 +325,6 @@ Retrieve the existing synchronization job and its properties.
 ```sql
 SELECT
 id,
-@odata.type,
 bulkUpload,
 schedule,
 schema,
@@ -371,26 +332,8 @@ status,
 synchronizationJobSettings,
 templateId
 FROM entra_id.service_principals.synchronization_jobs
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
-;
-```
-</TabItem>
-<TabItem value="bulk_upload">
-
-The bulk upload operation for the job.
-
-```sql
-SELECT
-id,
-@odata.type
-FROM entra_id.service_principals.synchronization_jobs
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND synchronization_job_id = '{{ synchronization_job_id }}' -- required
 ;
 ```
 </TabItem>
@@ -401,7 +344,6 @@ List existing jobs for a given application instance (service principal).
 ```sql
 SELECT
 id,
-@odata.type,
 bulkUpload,
 schedule,
 schema,
@@ -409,15 +351,7 @@ status,
 synchronizationJobSettings,
 templateId
 FROM entra_id.service_principals.synchronization_jobs
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -440,28 +374,25 @@ Create new synchronization job with a default synchronization schema. The job is
 ```sql
 INSERT INTO entra_id.service_principals.synchronization_jobs (
 id,
-@odata.type,
 schedule,
 status,
 synchronizationJobSettings,
 templateId,
 bulkUpload,
 schema,
-servicePrincipal-id
+service_principal_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ schedule }}',
 '{{ status }}',
 '{{ synchronizationJobSettings }}',
 '{{ templateId }}',
 '{{ bulkUpload }}',
 '{{ schema }}',
-'{{ servicePrincipal-id }}'
+'{{ service_principal_id }}'
 RETURNING
 id,
-@odata.type,
 bulkUpload,
 schedule,
 schema,
@@ -476,15 +407,13 @@ templateId
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: synchronization_jobs
   props:
-    - name: servicePrincipal-id
-      value: "{{ servicePrincipal-id }}"
+    - name: service_principal_id
+      value: "{{ service_principal_id }}"
       description: Required parameter for the synchronization_jobs resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: schedule
       value: "{{ schedule }}"
       description: |
@@ -499,7 +428,6 @@ templateId
       value:
         - name: "{{ name }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: templateId
       value: "{{ templateId }}"
       description: |
@@ -534,7 +462,6 @@ No description available.
 UPDATE entra_id.service_principals.synchronization_jobs
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 schedule = '{{ schedule }}',
 status = '{{ status }}',
 synchronizationJobSettings = '{{ synchronizationJobSettings }}',
@@ -542,12 +469,10 @@ templateId = '{{ templateId }}',
 bulkUpload = '{{ bulkUpload }}',
 schema = '{{ schema }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_job_id = '{{ synchronization_job_id }}' --required
 RETURNING
 id,
-@odata.type,
 bulkUpload,
 schedule,
 schema,
@@ -573,8 +498,8 @@ Stop the synchronization job, and permanently delete all the state associated wi
 
 ```sql
 DELETE FROM entra_id.service_principals.synchronization_jobs
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_job_id = '{{ synchronization_job_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -585,23 +510,69 @@ AND If-Match = '{{ If-Match }}'
 ## Lifecycle Methods
 
 <Tabs
-    defaultValue="pause"
+    defaultValue="get_bulk_upload"
     values={[
+        { label: 'get_bulk_upload', value: 'get_bulk_upload' },
+        { label: 'update_bulk_upload', value: 'update_bulk_upload' },
+        { label: 'delete_bulk_upload', value: 'delete_bulk_upload' },
         { label: 'pause', value: 'pause' },
         { label: 'provision_on_demand', value: 'provision_on_demand' },
+        { label: 'restart', value: 'restart' },
         { label: 'start', value: 'start' },
         { label: 'validate_credentials', value: 'validate_credentials' },
+        { label: 'schema_directories_discover', value: 'schema_directories_discover' },
+        { label: 'schema_parse_expression', value: 'schema_parse_expression' },
         { label: 'validate_credentials_2', value: 'validate_credentials_2' }
     ]}
 >
+<TabItem value="get_bulk_upload">
+
+The bulk upload operation for the job.
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.get_bulk_upload 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required, 
+@$select='{{ $select }}', 
+@$expand='{{ $expand }}'
+;
+```
+</TabItem>
+<TabItem value="update_bulk_upload">
+
+Success
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.update_bulk_upload 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required 
+@@json=
+'{
+"id": "{{ id }}", 
+}'
+;
+```
+</TabItem>
+<TabItem value="delete_bulk_upload">
+
+Success
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.delete_bulk_upload 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required, 
+@If-Match='{{ If-Match }}'
+;
+```
+</TabItem>
 <TabItem value="pause">
 
 Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ```sql
 EXEC entra_id.service_principals.synchronization_jobs.pause 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required, 
-@synchronizationJob-id='{{ synchronizationJob-id }}' --required
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required
 ;
 ```
 </TabItem>
@@ -611,11 +582,26 @@ Select a user and provision the account on-demand. The rate limit for this API i
 
 ```sql
 EXEC entra_id.service_principals.synchronization_jobs.provision_on_demand 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required, 
-@synchronizationJob-id='{{ synchronizationJob-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required 
 @@json=
 '{
 "parameters": "{{ parameters }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="restart">
+
+Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.restart 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required 
+@@json=
+'{
+"criteria": "{{ criteria }}"
 }'
 ;
 ```
@@ -626,8 +612,8 @@ Start an existing synchronization job. If the job is in a paused state, it conti
 
 ```sql
 EXEC entra_id.service_principals.synchronization_jobs.start 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required, 
-@synchronizationJob-id='{{ synchronizationJob-id }}' --required
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required
 ;
 ```
 </TabItem>
@@ -637,8 +623,8 @@ Validate that the credentials are valid in the tenant.
 
 ```sql
 EXEC entra_id.service_principals.synchronization_jobs.validate_credentials 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required, 
-@synchronizationJob-id='{{ synchronizationJob-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required 
 @@json=
 '{
 "applicationIdentifier": "{{ applicationIdentifier }}", 
@@ -649,13 +635,42 @@ EXEC entra_id.service_principals.synchronization_jobs.validate_credentials
 ;
 ```
 </TabItem>
+<TabItem value="schema_directories_discover">
+
+Discover the latest schema definition for provisioning to an application. 
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.schema_directories_discover 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required, 
+@directory_definition_id='{{ directory_definition_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="schema_parse_expression">
+
+Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+
+```sql
+EXEC entra_id.service_principals.synchronization_jobs.schema_parse_expression 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_job_id='{{ synchronization_job_id }}' --required 
+@@json=
+'{
+"expression": "{{ expression }}", 
+"testInputObject": "{{ testInputObject }}", 
+"targetAttributeDefinition": "{{ targetAttributeDefinition }}"
+}'
+;
+```
+</TabItem>
 <TabItem value="validate_credentials_2">
 
 Success
 
 ```sql
 EXEC entra_id.service_principals.synchronization_jobs.validate_credentials_2 
-@servicePrincipal-id='{{ servicePrincipal-id }}' --required 
+@service_principal_id='{{ service_principal_id }}' --required 
 @@json=
 '{
 "applicationIdentifier": "{{ applicationIdentifier }}", 

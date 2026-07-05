@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="createdDateTime" /></td>
     <td><code>string (date-time)</code></td>
     <td>The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. (pattern: <code>^&#91;0-9&#93;&#123;4,&#125;-(0&#91;1-9&#93;|1&#91;012&#93;)-(0&#91;1-9&#93;|&#91;12&#93;&#91;0-9&#93;|3&#91;01&#93;)T(&#91;01&#93;&#91;0-9&#93;|2&#91;0-3&#93;):&#91;0-5&#93;&#91;0-9&#93;:&#91;0-5&#93;&#91;0-9&#93;(&#91;.&#93;&#91;0-9&#93;&#123;1,12&#125;)?(Z|&#91;+-&#93;&#91;0-9&#93;&#91;0-9&#93;:&#91;0-9&#93;&#91;0-9&#93;)$</code>)</td>
@@ -117,11 +112,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="createdDateTime" /></td>
@@ -181,35 +171,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementFileLocalization-id"><code>agreementFileLocalization-id</code></a>, <a href="#parameter-agreementFileVersion-id"><code>agreementFileVersion-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_file_localization_id"><code>agreement_file_localization_id</code></a>, <a href="#parameter-agreement_file_version_id"><code>agreement_file_version_id</code></a></td>
+    <td></td>
     <td>Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementFileLocalization-id"><code>agreementFileLocalization-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_file_localization_id"><code>agreement_file_localization_id</code></a></td>
+    <td></td>
     <td>Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementFileLocalization-id"><code>agreementFileLocalization-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_file_localization_id"><code>agreement_file_localization_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementFileLocalization-id"><code>agreementFileLocalization-id</code></a>, <a href="#parameter-agreementFileVersion-id"><code>agreementFileVersion-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_file_localization_id"><code>agreement_file_localization_id</code></a>, <a href="#parameter-agreement_file_version_id"><code>agreement_file_version_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementFileLocalization-id"><code>agreementFileLocalization-id</code></a>, <a href="#parameter-agreementFileVersion-id"><code>agreementFileVersion-id</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_file_localization_id"><code>agreement_file_localization_id</code></a>, <a href="#parameter-agreement_file_version_id"><code>agreement_file_version_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -229,60 +219,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-agreement-id">
-    <td><CopyableCode code="agreement-id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier of agreement</td>
-</tr>
-<tr id="parameter-agreementFileLocalization-id">
-    <td><CopyableCode code="agreementFileLocalization-id" /></td>
+<tr id="parameter-agreement_file_localization_id">
+    <td><CopyableCode code="agreement_file_localization_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of agreementFileLocalization</td>
 </tr>
-<tr id="parameter-agreementFileVersion-id">
-    <td><CopyableCode code="agreementFileVersion-id" /></td>
+<tr id="parameter-agreement_file_version_id">
+    <td><CopyableCode code="agreement_file_version_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of agreementFileVersion</td>
 </tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
+<tr id="parameter-agreement_id">
+    <td><CopyableCode code="agreement_id" /></td>
     <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
+    <td>The unique identifier of agreement</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -308,7 +258,6 @@ Read-only. Customized versions of the terms of use agreement in the Microsoft En
 ```sql
 SELECT
 id,
-@odata.type,
 createdDateTime,
 displayName,
 fileData,
@@ -317,11 +266,9 @@ isDefault,
 isMajorVersion,
 language
 FROM entra_id.agreements.files_versions
-WHERE agreement-id = '{{ agreement-id }}' -- required
-AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' -- required
-AND agreementFileVersion-id = '{{ agreementFileVersion-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE agreement_id = '{{ agreement_id }}' -- required
+AND agreement_file_localization_id = '{{ agreement_file_localization_id }}' -- required
+AND agreement_file_version_id = '{{ agreement_file_version_id }}' -- required
 ;
 ```
 </TabItem>
@@ -332,7 +279,6 @@ Read-only. Customized versions of the terms of use agreement in the Microsoft En
 ```sql
 SELECT
 id,
-@odata.type,
 createdDateTime,
 displayName,
 fileData,
@@ -341,16 +287,8 @@ isDefault,
 isMajorVersion,
 language
 FROM entra_id.agreements.files_versions
-WHERE agreement-id = '{{ agreement-id }}' -- required
-AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE agreement_id = '{{ agreement_id }}' -- required
+AND agreement_file_localization_id = '{{ agreement_file_localization_id }}' -- required
 ;
 ```
 </TabItem>
@@ -373,7 +311,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.agreements.files_versions (
 id,
-@odata.type,
 createdDateTime,
 displayName,
 fileData,
@@ -381,12 +318,11 @@ fileName,
 isDefault,
 isMajorVersion,
 language,
-agreement-id,
-agreementFileLocalization-id
+agreement_id,
+agreement_file_localization_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ createdDateTime }}',
 '{{ displayName }}',
 '{{ fileData }}',
@@ -394,11 +330,10 @@ SELECT
 {{ isDefault }},
 {{ isMajorVersion }},
 '{{ language }}',
-'{{ agreement-id }}',
-'{{ agreementFileLocalization-id }}'
+'{{ agreement_id }}',
+'{{ agreement_file_localization_id }}'
 RETURNING
 id,
-@odata.type,
 createdDateTime,
 displayName,
 fileData,
@@ -414,18 +349,16 @@ language
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: files_versions
   props:
-    - name: agreement-id
-      value: "{{ agreement-id }}"
+    - name: agreement_id
+      value: "{{ agreement_id }}"
       description: Required parameter for the files_versions resource.
-    - name: agreementFileLocalization-id
-      value: "{{ agreementFileLocalization-id }}"
+    - name: agreement_file_localization_id
+      value: "{{ agreement_file_localization_id }}"
       description: Required parameter for the files_versions resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: createdDateTime
       value: "{{ createdDateTime }}"
       description: |
@@ -439,7 +372,6 @@ language
         Data that represents the terms of use PDF document. Read-only.
       value:
         data: "{{ data }}"
-        @odata.type: "{{ @odata.type }}"
     - name: fileName
       value: "{{ fileName }}"
       description: |
@@ -478,7 +410,6 @@ No description available.
 UPDATE entra_id.agreements.files_versions
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 createdDateTime = '{{ createdDateTime }}',
 displayName = '{{ displayName }}',
 fileData = '{{ fileData }}',
@@ -487,13 +418,11 @@ isDefault = {{ isDefault }},
 isMajorVersion = {{ isMajorVersion }},
 language = '{{ language }}'
 WHERE 
-agreement-id = '{{ agreement-id }}' --required
-AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' --required
-AND agreementFileVersion-id = '{{ agreementFileVersion-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+agreement_id = '{{ agreement_id }}' --required
+AND agreement_file_localization_id = '{{ agreement_file_localization_id }}' --required
+AND agreement_file_version_id = '{{ agreement_file_version_id }}' --required
 RETURNING
 id,
-@odata.type,
 createdDateTime,
 displayName,
 fileData,
@@ -520,9 +449,9 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.agreements.files_versions
-WHERE agreement-id = '{{ agreement-id }}' --required
-AND agreementFileLocalization-id = '{{ agreementFileLocalization-id }}' --required
-AND agreementFileVersion-id = '{{ agreementFileVersion-id }}' --required
+WHERE agreement_id = '{{ agreement_id }}' --required
+AND agreement_file_localization_id = '{{ agreement_file_localization_id }}' --required
+AND agreement_file_version_id = '{{ agreement_file_version_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

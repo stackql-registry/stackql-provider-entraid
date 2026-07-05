@@ -63,11 +63,6 @@ Retrieved navigation property
     <td>Name of the directory. Must be unique within the synchronization schema. Not nullable.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="discoverabilities" /></td>
     <td><code>string</code></td>
     <td> (None, AttributeNames, AttributeDataTypes, AttributeReadOnly, ReferenceAttributes, UnknownFutureValue) (title: directoryDefinitionDiscoverabilities)</td>
@@ -119,11 +114,6 @@ Retrieved collection
     <td>Name of the directory. Must be unique within the synchronization schema. Not nullable.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="discoverabilities" /></td>
     <td><code>string</code></td>
     <td> (None, AttributeNames, AttributeDataTypes, AttributeReadOnly, ReferenceAttributes, UnknownFutureValue) (title: directoryDefinitionDiscoverabilities)</td>
@@ -171,35 +161,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a>, <a href="#parameter-directoryDefinition-id"><code>directoryDefinition-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a>, <a href="#parameter-directory_definition_id"><code>directory_definition_id</code></a></td>
+    <td></td>
     <td>Contains the collection of directories and all of their objects.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
+    <td></td>
     <td>Contains the collection of directories and all of their objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a>, <a href="#parameter-directoryDefinition-id"><code>directoryDefinition-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a>, <a href="#parameter-directory_definition_id"><code>directory_definition_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationJob-id"><code>synchronizationJob-id</code></a>, <a href="#parameter-directoryDefinition-id"><code>directoryDefinition-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_job_id"><code>synchronization_job_id</code></a>, <a href="#parameter-directory_definition_id"><code>directory_definition_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -219,60 +209,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-directoryDefinition-id">
-    <td><CopyableCode code="directoryDefinition-id" /></td>
+<tr id="parameter-directory_definition_id">
+    <td><CopyableCode code="directory_definition_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of directoryDefinition</td>
 </tr>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
 </tr>
-<tr id="parameter-synchronizationJob-id">
-    <td><CopyableCode code="synchronizationJob-id" /></td>
+<tr id="parameter-synchronization_job_id">
+    <td><CopyableCode code="synchronization_job_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of synchronizationJob</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -299,18 +249,15 @@ Contains the collection of directories and all of their objects.
 SELECT
 id,
 name,
-@odata.type,
 discoverabilities,
 discoveryDateTime,
 objects,
 readOnly,
 version
 FROM entra_id.service_principals.synchronization_jobs_schema_directories
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
-AND directoryDefinition-id = '{{ directoryDefinition-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND synchronization_job_id = '{{ synchronization_job_id }}' -- required
+AND directory_definition_id = '{{ directory_definition_id }}' -- required
 ;
 ```
 </TabItem>
@@ -322,23 +269,14 @@ Contains the collection of directories and all of their objects.
 SELECT
 id,
 name,
-@odata.type,
 discoverabilities,
 discoveryDateTime,
 objects,
 readOnly,
 version
 FROM entra_id.service_principals.synchronization_jobs_schema_directories
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND synchronization_job_id = '{{ synchronization_job_id }}' -- required
 ;
 ```
 </TabItem>
@@ -361,31 +299,28 @@ No description available.
 ```sql
 INSERT INTO entra_id.service_principals.synchronization_jobs_schema_directories (
 id,
-@odata.type,
 discoverabilities,
 discoveryDateTime,
 name,
 objects,
 readOnly,
 version,
-servicePrincipal-id,
-synchronizationJob-id
+service_principal_id,
+synchronization_job_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ discoverabilities }}',
 '{{ discoveryDateTime }}',
 '{{ name }}',
 '{{ objects }}',
 {{ readOnly }},
 '{{ version }}',
-'{{ servicePrincipal-id }}',
-'{{ synchronizationJob-id }}'
+'{{ service_principal_id }}',
+'{{ synchronization_job_id }}'
 RETURNING
 id,
 name,
-@odata.type,
 discoverabilities,
 discoveryDateTime,
 objects,
@@ -399,18 +334,16 @@ version
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: synchronization_jobs_schema_directories
   props:
-    - name: servicePrincipal-id
-      value: "{{ servicePrincipal-id }}"
+    - name: service_principal_id
+      value: "{{ service_principal_id }}"
       description: Required parameter for the synchronization_jobs_schema_directories resource.
-    - name: synchronizationJob-id
-      value: "{{ synchronizationJob-id }}"
+    - name: synchronization_job_id
+      value: "{{ synchronization_job_id }}"
       description: Required parameter for the synchronization_jobs_schema_directories resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: discoverabilities
       value: "{{ discoverabilities }}"
       valid_values: ['None', 'AttributeNames', 'AttributeDataTypes', 'AttributeReadOnly', 'ReferenceAttributes', 'UnknownFutureValue']
@@ -430,7 +363,6 @@ version
           metadata: "{{ metadata }}"
           name: "{{ name }}"
           supportedApis: "{{ supportedApis }}"
-          @odata.type: "{{ @odata.type }}"
     - name: readOnly
       value: {{ readOnly }}
       description: |
@@ -461,7 +393,6 @@ No description available.
 UPDATE entra_id.service_principals.synchronization_jobs_schema_directories
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 discoverabilities = '{{ discoverabilities }}',
 discoveryDateTime = '{{ discoveryDateTime }}',
 name = '{{ name }}',
@@ -469,14 +400,12 @@ objects = '{{ objects }}',
 readOnly = {{ readOnly }},
 version = '{{ version }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' --required
-AND directoryDefinition-id = '{{ directoryDefinition-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_job_id = '{{ synchronization_job_id }}' --required
+AND directory_definition_id = '{{ directory_definition_id }}' --required
 RETURNING
 id,
 name,
-@odata.type,
 discoverabilities,
 discoveryDateTime,
 objects,
@@ -501,9 +430,9 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.service_principals.synchronization_jobs_schema_directories
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationJob-id = '{{ synchronizationJob-id }}' --required
-AND directoryDefinition-id = '{{ directoryDefinition-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_job_id = '{{ synchronization_job_id }}' --required
+AND directory_definition_id = '{{ directory_definition_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

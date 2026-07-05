@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="clientId" /></td>
     <td><code>string</code></td>
     <td>The object id (not appId) of the client service principal for the application that's authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).</td>
@@ -107,11 +102,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="clientId" /></td>
@@ -161,35 +151,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-oAuth2PermissionGrant-id"><code>oAuth2PermissionGrant-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-o_auth2_permission_grant_id"><code>o_auth2_permission_grant_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object. An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-oAuth2PermissionGrant-id"><code>oAuth2PermissionGrant-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-o_auth2_permission_grant_id"><code>o_auth2_permission_grant_id</code></a></td>
     <td></td>
     <td>Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant. An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-oAuth2PermissionGrant-id"><code>oAuth2PermissionGrant-id</code></a></td>
+    <td><a href="#parameter-o_auth2_permission_grant_id"><code>o_auth2_permission_grant_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a delegated permission grant, represented by an oAuth2PermissionGrant object. When a delegated permission grant is deleted, the access it granted is revoked. Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.</td>
 </tr>
@@ -209,50 +199,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-oAuth2PermissionGrant-id">
-    <td><CopyableCode code="oAuth2PermissionGrant-id" /></td>
+<tr id="parameter-o_auth2_permission_grant_id">
+    <td><CopyableCode code="o_auth2_permission_grant_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of oAuth2PermissionGrant</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -278,16 +228,13 @@ Retrieve the properties of a single delegated permission grant represented by an
 ```sql
 SELECT
 id,
-@odata.type,
 clientId,
 consentType,
 principalId,
 resourceId,
 scope
 FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
-WHERE oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE o_auth2_permission_grant_id = '{{ o_auth2_permission_grant_id }}' -- required
 ;
 ```
 </TabItem>
@@ -298,21 +245,12 @@ Retrieve a list of oAuth2PermissionGrant objects, representing delegated permiss
 ```sql
 SELECT
 id,
-@odata.type,
 clientId,
 consentType,
 principalId,
 resourceId,
 scope
 FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -335,7 +273,6 @@ Create a delegated permission grant represented by an oAuth2PermissionGrant obje
 ```sql
 INSERT INTO entra_id.oauth2_permission_grants.oauth2_permission_grants (
 id,
-@odata.type,
 clientId,
 consentType,
 principalId,
@@ -344,7 +281,6 @@ scope
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ clientId }}',
 '{{ consentType }}',
 '{{ principalId }}',
@@ -352,7 +288,6 @@ SELECT
 '{{ scope }}'
 RETURNING
 id,
-@odata.type,
 clientId,
 consentType,
 principalId,
@@ -370,8 +305,6 @@ scope
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: clientId
       value: "{{ clientId }}"
       description: |
@@ -414,18 +347,15 @@ Update the properties of oAuth2PermissionGrant object, representing a delegated 
 UPDATE entra_id.oauth2_permission_grants.oauth2_permission_grants
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 clientId = '{{ clientId }}',
 consentType = '{{ consentType }}',
 principalId = '{{ principalId }}',
 resourceId = '{{ resourceId }}',
 scope = '{{ scope }}'
 WHERE 
-oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+o_auth2_permission_grant_id = '{{ o_auth2_permission_grant_id }}' --required
 RETURNING
 id,
-@odata.type,
 clientId,
 consentType,
 principalId,
@@ -450,7 +380,7 @@ Delete a delegated permission grant, represented by an oAuth2PermissionGrant obj
 
 ```sql
 DELETE FROM entra_id.oauth2_permission_grants.oauth2_permission_grants
-WHERE oAuth2PermissionGrant-id = '{{ oAuth2PermissionGrant-id }}' --required
+WHERE o_auth2_permission_grant_id = '{{ o_auth2_permission_grant_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

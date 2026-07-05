@@ -339,7 +339,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
     description: Provides operations to call the validateProperties method.
-  /directoryObjects/{directoryObject_id}:
+  /directoryObjects/{directory_object_id}:
     get:
       tags:
         - directoryObjects.directoryObject
@@ -370,7 +370,7 @@ paths:
             type: array
             items:
               type: string
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -414,7 +414,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -436,7 +436,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -452,7 +452,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of directoryObject entities.
-  /directoryObjects/{directoryObject_id}/checkMemberGroups:
+  /directoryObjects/{directory_object_id}/checkMemberGroups:
     post:
       tags:
         - directoryObjects.directoryObject.Actions
@@ -503,7 +503,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -511,7 +511,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryObject
     description: Provides operations to call the checkMemberGroups method.
-  /directoryObjects/{directoryObject_id}/checkMemberObjects:
+  /directoryObjects/{directory_object_id}/checkMemberObjects:
     post:
       tags:
         - directoryObjects.directoryObject.Actions
@@ -558,7 +558,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -566,7 +566,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryObject
     description: Provides operations to call the checkMemberObjects method.
-  /directoryObjects/{directoryObject_id}/getMemberGroups:
+  /directoryObjects/{directory_object_id}/getMemberGroups:
     post:
       tags:
         - directoryObjects.directoryObject.Actions
@@ -617,7 +617,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -625,7 +625,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryObject
     description: Provides operations to call the getMemberGroups method.
-  /directoryObjects/{directoryObject_id}/getMemberObjects:
+  /directoryObjects/{directory_object_id}/getMemberObjects:
     post:
       tags:
         - directoryObjects.directoryObject.Actions
@@ -676,7 +676,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -684,7 +684,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryObject
     description: Provides operations to call the getMemberObjects method.
-  /directoryObjects/{directoryObject_id}/restore:
+  /directoryObjects/{directory_object_id}/restore:
     post:
       tags:
         - directoryObjects.directoryObject.Actions
@@ -701,8 +701,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1845,7 +1843,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: directoryObject-id
+        - name: directory_object_id
           in: path
           description: The unique identifier of directoryObject
           required: true
@@ -1857,8 +1855,6 @@ components:
   schemas:
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -3017,8 +3013,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4199,8 +4193,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5367,8 +5359,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

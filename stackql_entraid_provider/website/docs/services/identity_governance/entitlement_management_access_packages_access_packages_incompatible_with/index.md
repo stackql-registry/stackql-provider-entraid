@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackagesIncompatibleWith" /></td>
     <td><code>array</code></td>
     <td>The access packages that are incompatible with this package. Read-only.</td>
@@ -137,11 +132,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackagesIncompatibleWith" /></td>
@@ -221,15 +211,15 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-accessPackage-id1"><code>accessPackage-id1</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-access_package_id1"><code>access_package_id1</code></a></td>
+    <td></td>
     <td>The access packages that are incompatible with this package. Read-only.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a></td>
+    <td></td>
     <td>Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.</td>
 </tr>
 </tbody>
@@ -248,55 +238,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackage-id">
-    <td><CopyableCode code="accessPackage-id" /></td>
+<tr id="parameter-access_package_id">
+    <td><CopyableCode code="access_package_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackage</td>
 </tr>
-<tr id="parameter-accessPackage-id1">
-    <td><CopyableCode code="accessPackage-id1" /></td>
+<tr id="parameter-access_package_id1">
+    <td><CopyableCode code="access_package_id1" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackage</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +267,6 @@ The access packages that are incompatible with this package. Read-only.
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -330,10 +279,8 @@ isHidden,
 modifiedDateTime,
 resourceRoleScopes
 FROM entra_id.identity_governance.entitlement_management_access_packages_access_packages_incompatible_with
-WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
-AND accessPackage-id1 = '{{ accessPackage-id1 }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
+AND access_package_id1 = '{{ access_package_id1 }}' -- required
 ;
 ```
 </TabItem>
@@ -344,7 +291,6 @@ Retrieve a list of the accessPackage objects that have marked a specified access
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -357,15 +303,7 @@ isHidden,
 modifiedDateTime,
 resourceRoleScopes
 FROM entra_id.identity_governance.entitlement_management_access_packages_access_packages_incompatible_with
-WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
 ;
 ```
 </TabItem>

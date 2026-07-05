@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="administrationScopeTargets" /></td>
     <td><code>array</code></td>
     <td>The administrative units in the scope of the workflow. Optional. Supports $expand.</td>
@@ -182,11 +177,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="administrationScopeTargets" /></td>
@@ -311,35 +301,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a workflow object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Get a list of workflow resources that are associated with lifecycle workflows.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new workflow object. You can create up to 100 workflows in a tenant.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a></td>
     <td></td>
     <td>Update the properties of a workflow object. Only the properties listed in the request body table can be updated. To update any other workflow properties, see workflow: createNewVersion.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-workflow-id"><code>workflow-id</code></a></td>
+    <td><a href="#parameter-workflow_id"><code>workflow_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.</td>
 </tr>
@@ -359,50 +349,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-workflow-id">
-    <td><CopyableCode code="workflow-id" /></td>
+<tr id="parameter-workflow_id">
+    <td><CopyableCode code="workflow_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of workflow</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -428,7 +378,6 @@ Read the properties and relationships of a workflow object.
 ```sql
 SELECT
 id,
-@odata.type,
 administrationScopeTargets,
 category,
 createdBy,
@@ -450,9 +399,7 @@ userProcessingResults,
 version,
 versions
 FROM entra_id.identity_governance.lifecycle_workflows_workflows
-WHERE workflow-id = '{{ workflow-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE workflow_id = '{{ workflow_id }}' -- required
 ;
 ```
 </TabItem>
@@ -463,7 +410,6 @@ Get a list of workflow resources that are associated with lifecycle workflows.
 ```sql
 SELECT
 id,
-@odata.type,
 administrationScopeTargets,
 category,
 createdBy,
@@ -485,14 +431,6 @@ userProcessingResults,
 version,
 versions
 FROM entra_id.identity_governance.lifecycle_workflows_workflows
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -526,7 +464,6 @@ administrationScopeTargets,
 createdBy,
 lastModifiedBy,
 tasks,
-@odata.type,
 deletedDateTime,
 id,
 nextScheduleRunDateTime,
@@ -550,7 +487,6 @@ SELECT
 '{{ createdBy }}',
 '{{ lastModifiedBy }}',
 '{{ tasks }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ id }}',
 '{{ nextScheduleRunDateTime }}',
@@ -562,7 +498,6 @@ SELECT
 '{{ versions }}'
 RETURNING
 id,
-@odata.type,
 administrationScopeTargets,
 category,
 createdBy,
@@ -610,7 +545,6 @@ versions
       description: |
         Defines when and for who the workflow will run.
       value:
-        @odata.type: "{{ @odata.type }}"
     - name: isEnabled
       value: {{ isEnabled }}
       description: |
@@ -628,14 +562,12 @@ versions
         The administrative units in the scope of the workflow. Optional. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
     - name: createdBy
       description: |
         The user who created the workflow.
       value:
         id: "{{ id }}"
-        @odata.type: "{{ @odata.type }}"
         deletedDateTime: "{{ deletedDateTime }}"
         aboutMe: "{{ aboutMe }}"
         accountEnabled: {{ accountEnabled }}
@@ -643,13 +575,11 @@ versions
         assignedLicenses:
           - disabledPlans: "{{ disabledPlans }}"
             skuId: "{{ skuId }}"
-            @odata.type: "{{ @odata.type }}"
         assignedPlans:
           - assignedDateTime: "{{ assignedDateTime }}"
             capabilityStatus: "{{ capabilityStatus }}"
             service: "{{ service }}"
             servicePlanId: "{{ servicePlanId }}"
-            @odata.type: "{{ @odata.type }}"
         authorizationInfo: "{{ authorizationInfo }}"
         birthday: "{{ birthday }}"
         businessPhones:
@@ -678,7 +608,6 @@ versions
           - issuer: "{{ issuer }}"
             issuerAssignedId: "{{ issuerAssignedId }}"
             signInType: "{{ signInType }}"
-            @odata.type: "{{ @odata.type }}"
         identityParentId: "{{ identityParentId }}"
         imAddresses:
           - "{{ imAddresses }}"
@@ -696,7 +625,6 @@ versions
             lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
             skuId: "{{ skuId }}"
             state: "{{ state }}"
-            @odata.type: "{{ @odata.type }}"
         mail: "{{ mail }}"
         mailboxSettings: "{{ mailboxSettings }}"
         mailNickname: "{{ mailNickname }}"
@@ -713,7 +641,6 @@ versions
             occurredDateTime: "{{ occurredDateTime }}"
             propertyCausingError: "{{ propertyCausingError }}"
             value: "{{ value }}"
-            @odata.type: "{{ @odata.type }}"
         onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
         onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
         onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -733,7 +660,6 @@ versions
           - capabilityStatus: "{{ capabilityStatus }}"
             provisioningStatus: "{{ provisioningStatus }}"
             service: "{{ service }}"
-            @odata.type: "{{ @odata.type }}"
         proxyAddresses:
           - "{{ proxyAddresses }}"
         responsibilities:
@@ -745,7 +671,6 @@ versions
           - createdDateTime: "{{ createdDateTime }}"
             isResolved: {{ isResolved }}
             serviceInstance: "{{ serviceInstance }}"
-            @odata.type: "{{ @odata.type }}"
         showInAddressList: {{ showInAddressList }}
         signInActivity: "{{ signInActivity }}"
         signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -759,7 +684,6 @@ versions
         userType: "{{ userType }}"
         activities:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             activationUrl: "{{ activationUrl }}"
             activitySourceHost: "{{ activitySourceHost }}"
             appActivityId: "{{ appActivityId }}"
@@ -778,21 +702,17 @@ versions
                 alternateText: "{{ alternateText }}"
                 alternativeText: "{{ alternativeText }}"
                 iconUrl: "{{ iconUrl }}"
-                @odata.type: "{{ @odata.type }}"
               backgroundColor: "{{ backgroundColor }}"
               content: "{{ content }}"
               description: "{{ description }}"
               displayText: "{{ displayText }}"
-              @odata.type: "{{ @odata.type }}"
             historyItems: "{{ historyItems }}"
         adhocCalls:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             recordings: "{{ recordings }}"
             transcripts: "{{ transcripts }}"
         agreementAcceptances:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             agreementFileId: "{{ agreementFileId }}"
             agreementId: "{{ agreementId }}"
             deviceDisplayName: "{{ deviceDisplayName }}"
@@ -808,7 +728,6 @@ versions
             userPrincipalName: "{{ userPrincipalName }}"
         appRoleAssignments:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             appRoleId: "{{ appRoleId }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -821,14 +740,12 @@ versions
         calendar: "{{ calendar }}"
         calendarGroups:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             changeKey: "{{ changeKey }}"
             classId: "{{ classId }}"
             name: "{{ name }}"
             calendars: "{{ calendars }}"
         calendars:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
             canEdit: {{ canEdit }}
             canShare: {{ canShare }}
@@ -849,7 +766,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         calendarView:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -900,7 +816,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         chats:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             chatType: "{{ chatType }}"
             createdDateTime: "{{ createdDateTime }}"
             isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -922,7 +837,6 @@ versions
         cloudClipboard: "{{ cloudClipboard }}"
         cloudPCs:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             aadDeviceId: "{{ aadDeviceId }}"
             displayName: "{{ displayName }}"
             gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -939,7 +853,6 @@ versions
             userPrincipalName: "{{ userPrincipalName }}"
         contactFolders:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             displayName: "{{ displayName }}"
             parentFolderId: "{{ parentFolderId }}"
             childFolders: "{{ childFolders }}"
@@ -948,7 +861,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         contacts:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -995,22 +907,18 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         createdObjects:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
         deviceManagementTroubleshootingEvents:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             correlationId: "{{ correlationId }}"
             eventDateTime: "{{ eventDateTime }}"
         directReports:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         drive: "{{ drive }}"
         drives:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             createdBy: "{{ createdBy }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1036,7 +944,6 @@ versions
         employeeExperience: "{{ employeeExperience }}"
         events:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1087,10 +994,8 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         extensions:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
         followedSites:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             createdBy: "{{ createdBy }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1127,7 +1032,6 @@ versions
         insights: "{{ insights }}"
         joinedTeams:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             classification: "{{ classification }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1159,13 +1063,11 @@ versions
             template: "{{ template }}"
         licenseDetails:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             servicePlans: "{{ servicePlans }}"
             skuId: "{{ skuId }}"
             skuPartNumber: "{{ skuPartNumber }}"
         mailFolders:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             childFolderCount: {{ childFolderCount }}
             displayName: "{{ displayName }}"
             isHidden: {{ isHidden }}
@@ -1179,7 +1081,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         managedAppRegistrations:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             appIdentifier: "{{ appIdentifier }}"
             applicationVersion: "{{ applicationVersion }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1197,7 +1098,6 @@ versions
             operations: "{{ operations }}"
         managedDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             activationLockBypassCode: "{{ activationLockBypassCode }}"
             androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
             azureADDeviceId: "{{ azureADDeviceId }}"
@@ -1262,11 +1162,9 @@ versions
         manager: "{{ manager }}"
         memberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         messages:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1303,7 +1201,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         oauth2PermissionGrants:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             clientId: "{{ clientId }}"
             consentType: "{{ consentType }}"
             principalId: "{{ principalId }}"
@@ -1312,7 +1209,6 @@ versions
         onenote: "{{ onenote }}"
         onlineMeetings:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
             allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
             allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -1361,15 +1257,12 @@ versions
         outlook: "{{ outlook }}"
         ownedDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         ownedObjects:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         people:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             birthday: "{{ birthday }}"
             companyName: "{{ companyName }}"
             department: "{{ department }}"
@@ -1391,7 +1284,6 @@ versions
             yomiCompany: "{{ yomiCompany }}"
         permissionGrants:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             clientAppId: "{{ clientAppId }}"
             clientId: "{{ clientId }}"
@@ -1401,42 +1293,35 @@ versions
         photo: "{{ photo }}"
         photos:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             height: {{ height }}
             width: {{ width }}
         planner: "{{ planner }}"
         presence: "{{ presence }}"
         registeredDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         scopedRoleMemberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             administrativeUnitId: "{{ administrativeUnitId }}"
             roleId: "{{ roleId }}"
             roleMemberInfo:
               displayName: "{{ displayName }}"
               id: "{{ id }}"
-              @odata.type: "{{ @odata.type }}"
         settings: "{{ settings }}"
         solutions: "{{ solutions }}"
         sponsors:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         teamwork: "{{ teamwork }}"
         todo: "{{ todo }}"
         transitiveMemberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
     - name: lastModifiedBy
       description: |
         The unique identifier of the Microsoft Entra identity that last modified the workflow.
       value:
         id: "{{ id }}"
-        @odata.type: "{{ @odata.type }}"
         deletedDateTime: "{{ deletedDateTime }}"
         aboutMe: "{{ aboutMe }}"
         accountEnabled: {{ accountEnabled }}
@@ -1444,13 +1329,11 @@ versions
         assignedLicenses:
           - disabledPlans: "{{ disabledPlans }}"
             skuId: "{{ skuId }}"
-            @odata.type: "{{ @odata.type }}"
         assignedPlans:
           - assignedDateTime: "{{ assignedDateTime }}"
             capabilityStatus: "{{ capabilityStatus }}"
             service: "{{ service }}"
             servicePlanId: "{{ servicePlanId }}"
-            @odata.type: "{{ @odata.type }}"
         authorizationInfo: "{{ authorizationInfo }}"
         birthday: "{{ birthday }}"
         businessPhones:
@@ -1479,7 +1362,6 @@ versions
           - issuer: "{{ issuer }}"
             issuerAssignedId: "{{ issuerAssignedId }}"
             signInType: "{{ signInType }}"
-            @odata.type: "{{ @odata.type }}"
         identityParentId: "{{ identityParentId }}"
         imAddresses:
           - "{{ imAddresses }}"
@@ -1497,7 +1379,6 @@ versions
             lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
             skuId: "{{ skuId }}"
             state: "{{ state }}"
-            @odata.type: "{{ @odata.type }}"
         mail: "{{ mail }}"
         mailboxSettings: "{{ mailboxSettings }}"
         mailNickname: "{{ mailNickname }}"
@@ -1514,7 +1395,6 @@ versions
             occurredDateTime: "{{ occurredDateTime }}"
             propertyCausingError: "{{ propertyCausingError }}"
             value: "{{ value }}"
-            @odata.type: "{{ @odata.type }}"
         onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
         onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
         onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -1534,7 +1414,6 @@ versions
           - capabilityStatus: "{{ capabilityStatus }}"
             provisioningStatus: "{{ provisioningStatus }}"
             service: "{{ service }}"
-            @odata.type: "{{ @odata.type }}"
         proxyAddresses:
           - "{{ proxyAddresses }}"
         responsibilities:
@@ -1546,7 +1425,6 @@ versions
           - createdDateTime: "{{ createdDateTime }}"
             isResolved: {{ isResolved }}
             serviceInstance: "{{ serviceInstance }}"
-            @odata.type: "{{ @odata.type }}"
         showInAddressList: {{ showInAddressList }}
         signInActivity: "{{ signInActivity }}"
         signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -1560,7 +1438,6 @@ versions
         userType: "{{ userType }}"
         activities:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             activationUrl: "{{ activationUrl }}"
             activitySourceHost: "{{ activitySourceHost }}"
             appActivityId: "{{ appActivityId }}"
@@ -1579,21 +1456,17 @@ versions
                 alternateText: "{{ alternateText }}"
                 alternativeText: "{{ alternativeText }}"
                 iconUrl: "{{ iconUrl }}"
-                @odata.type: "{{ @odata.type }}"
               backgroundColor: "{{ backgroundColor }}"
               content: "{{ content }}"
               description: "{{ description }}"
               displayText: "{{ displayText }}"
-              @odata.type: "{{ @odata.type }}"
             historyItems: "{{ historyItems }}"
         adhocCalls:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             recordings: "{{ recordings }}"
             transcripts: "{{ transcripts }}"
         agreementAcceptances:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             agreementFileId: "{{ agreementFileId }}"
             agreementId: "{{ agreementId }}"
             deviceDisplayName: "{{ deviceDisplayName }}"
@@ -1609,7 +1482,6 @@ versions
             userPrincipalName: "{{ userPrincipalName }}"
         appRoleAssignments:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             appRoleId: "{{ appRoleId }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1622,14 +1494,12 @@ versions
         calendar: "{{ calendar }}"
         calendarGroups:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             changeKey: "{{ changeKey }}"
             classId: "{{ classId }}"
             name: "{{ name }}"
             calendars: "{{ calendars }}"
         calendars:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
             canEdit: {{ canEdit }}
             canShare: {{ canShare }}
@@ -1650,7 +1520,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         calendarView:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1701,7 +1570,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         chats:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             chatType: "{{ chatType }}"
             createdDateTime: "{{ createdDateTime }}"
             isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -1723,7 +1591,6 @@ versions
         cloudClipboard: "{{ cloudClipboard }}"
         cloudPCs:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             aadDeviceId: "{{ aadDeviceId }}"
             displayName: "{{ displayName }}"
             gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -1740,7 +1607,6 @@ versions
             userPrincipalName: "{{ userPrincipalName }}"
         contactFolders:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             displayName: "{{ displayName }}"
             parentFolderId: "{{ parentFolderId }}"
             childFolders: "{{ childFolders }}"
@@ -1749,7 +1615,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         contacts:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1796,22 +1661,18 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         createdObjects:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
         deviceManagementTroubleshootingEvents:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             correlationId: "{{ correlationId }}"
             eventDateTime: "{{ eventDateTime }}"
         directReports:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         drive: "{{ drive }}"
         drives:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             createdBy: "{{ createdBy }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1837,7 +1698,6 @@ versions
         employeeExperience: "{{ employeeExperience }}"
         events:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1888,10 +1748,8 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         extensions:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
         followedSites:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             createdBy: "{{ createdBy }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1928,7 +1786,6 @@ versions
         insights: "{{ insights }}"
         joinedTeams:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             classification: "{{ classification }}"
             createdDateTime: "{{ createdDateTime }}"
             description: "{{ description }}"
@@ -1960,13 +1817,11 @@ versions
             template: "{{ template }}"
         licenseDetails:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             servicePlans: "{{ servicePlans }}"
             skuId: "{{ skuId }}"
             skuPartNumber: "{{ skuPartNumber }}"
         mailFolders:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             childFolderCount: {{ childFolderCount }}
             displayName: "{{ displayName }}"
             isHidden: {{ isHidden }}
@@ -1980,7 +1835,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         managedAppRegistrations:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             appIdentifier: "{{ appIdentifier }}"
             applicationVersion: "{{ applicationVersion }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -1998,7 +1852,6 @@ versions
             operations: "{{ operations }}"
         managedDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             activationLockBypassCode: "{{ activationLockBypassCode }}"
             androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
             azureADDeviceId: "{{ azureADDeviceId }}"
@@ -2063,11 +1916,9 @@ versions
         manager: "{{ manager }}"
         memberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         messages:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             categories: "{{ categories }}"
             changeKey: "{{ changeKey }}"
             createdDateTime: "{{ createdDateTime }}"
@@ -2104,7 +1955,6 @@ versions
             singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
         oauth2PermissionGrants:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             clientId: "{{ clientId }}"
             consentType: "{{ consentType }}"
             principalId: "{{ principalId }}"
@@ -2113,7 +1963,6 @@ versions
         onenote: "{{ onenote }}"
         onlineMeetings:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
             allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
             allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -2162,15 +2011,12 @@ versions
         outlook: "{{ outlook }}"
         ownedDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         ownedObjects:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         people:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             birthday: "{{ birthday }}"
             companyName: "{{ companyName }}"
             department: "{{ department }}"
@@ -2192,7 +2038,6 @@ versions
             yomiCompany: "{{ yomiCompany }}"
         permissionGrants:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             clientAppId: "{{ clientAppId }}"
             clientId: "{{ clientId }}"
@@ -2202,42 +2047,35 @@ versions
         photo: "{{ photo }}"
         photos:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             height: {{ height }}
             width: {{ width }}
         planner: "{{ planner }}"
         presence: "{{ presence }}"
         registeredDevices:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         scopedRoleMemberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             administrativeUnitId: "{{ administrativeUnitId }}"
             roleId: "{{ roleId }}"
             roleMemberInfo:
               displayName: "{{ displayName }}"
               id: "{{ id }}"
-              @odata.type: "{{ @odata.type }}"
         settings: "{{ settings }}"
         solutions: "{{ solutions }}"
         sponsors:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
         teamwork: "{{ teamwork }}"
         todo: "{{ todo }}"
         transitiveMemberOf:
           - id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
     - name: tasks
       description: |
         The tasks in the workflow.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           arguments: "{{ arguments }}"
           category: "{{ category }}"
           continueOnError: {{ continueOnError }}
@@ -2247,8 +2085,6 @@ versions
           isEnabled: {{ isEnabled }}
           taskDefinitionId: "{{ taskDefinitionId }}"
           taskProcessingResults: "{{ taskProcessingResults }}"
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -2270,7 +2106,6 @@ versions
         The list of users that meet the workflowExecutionConditions of a workflow.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           completedDateTime: "{{ completedDateTime }}"
           failedTasksCount: {{ failedTasksCount }}
           processingStatus: "{{ processingStatus }}"
@@ -2283,7 +2118,6 @@ versions
           reprocessedRuns: "{{ reprocessedRuns }}"
           subject:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             aboutMe: "{{ aboutMe }}"
             accountEnabled: {{ accountEnabled }}
@@ -2291,13 +2125,11 @@ versions
             assignedLicenses:
               - disabledPlans: "{{ disabledPlans }}"
                 skuId: "{{ skuId }}"
-                @odata.type: "{{ @odata.type }}"
             assignedPlans:
               - assignedDateTime: "{{ assignedDateTime }}"
                 capabilityStatus: "{{ capabilityStatus }}"
                 service: "{{ service }}"
                 servicePlanId: "{{ servicePlanId }}"
-                @odata.type: "{{ @odata.type }}"
             authorizationInfo: "{{ authorizationInfo }}"
             birthday: "{{ birthday }}"
             businessPhones:
@@ -2326,7 +2158,6 @@ versions
               - issuer: "{{ issuer }}"
                 issuerAssignedId: "{{ issuerAssignedId }}"
                 signInType: "{{ signInType }}"
-                @odata.type: "{{ @odata.type }}"
             identityParentId: "{{ identityParentId }}"
             imAddresses:
               - "{{ imAddresses }}"
@@ -2344,7 +2175,6 @@ versions
                 lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
                 skuId: "{{ skuId }}"
                 state: "{{ state }}"
-                @odata.type: "{{ @odata.type }}"
             mail: "{{ mail }}"
             mailboxSettings: "{{ mailboxSettings }}"
             mailNickname: "{{ mailNickname }}"
@@ -2361,7 +2191,6 @@ versions
                 occurredDateTime: "{{ occurredDateTime }}"
                 propertyCausingError: "{{ propertyCausingError }}"
                 value: "{{ value }}"
-                @odata.type: "{{ @odata.type }}"
             onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
             onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
             onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -2381,7 +2210,6 @@ versions
               - capabilityStatus: "{{ capabilityStatus }}"
                 provisioningStatus: "{{ provisioningStatus }}"
                 service: "{{ service }}"
-                @odata.type: "{{ @odata.type }}"
             proxyAddresses:
               - "{{ proxyAddresses }}"
             responsibilities:
@@ -2393,7 +2221,6 @@ versions
               - createdDateTime: "{{ createdDateTime }}"
                 isResolved: {{ isResolved }}
                 serviceInstance: "{{ serviceInstance }}"
-                @odata.type: "{{ @odata.type }}"
             showInAddressList: {{ showInAddressList }}
             signInActivity: "{{ signInActivity }}"
             signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -2407,7 +2234,6 @@ versions
             userType: "{{ userType }}"
             activities:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationUrl: "{{ activationUrl }}"
                 activitySourceHost: "{{ activitySourceHost }}"
                 appActivityId: "{{ appActivityId }}"
@@ -2426,21 +2252,17 @@ versions
                     alternateText: "{{ alternateText }}"
                     alternativeText: "{{ alternativeText }}"
                     iconUrl: "{{ iconUrl }}"
-                    @odata.type: "{{ @odata.type }}"
                   backgroundColor: "{{ backgroundColor }}"
                   content: "{{ content }}"
                   description: "{{ description }}"
                   displayText: "{{ displayText }}"
-                  @odata.type: "{{ @odata.type }}"
                 historyItems: "{{ historyItems }}"
             adhocCalls:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 recordings: "{{ recordings }}"
                 transcripts: "{{ transcripts }}"
             agreementAcceptances:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 agreementFileId: "{{ agreementFileId }}"
                 agreementId: "{{ agreementId }}"
                 deviceDisplayName: "{{ deviceDisplayName }}"
@@ -2456,7 +2278,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             appRoleAssignments:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 appRoleId: "{{ appRoleId }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2469,14 +2290,12 @@ versions
             calendar: "{{ calendar }}"
             calendarGroups:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 changeKey: "{{ changeKey }}"
                 classId: "{{ classId }}"
                 name: "{{ name }}"
                 calendars: "{{ calendars }}"
             calendars:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
                 canEdit: {{ canEdit }}
                 canShare: {{ canShare }}
@@ -2497,7 +2316,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             calendarView:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2548,7 +2366,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             chats:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 chatType: "{{ chatType }}"
                 createdDateTime: "{{ createdDateTime }}"
                 isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -2570,7 +2387,6 @@ versions
             cloudClipboard: "{{ cloudClipboard }}"
             cloudPCs:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 aadDeviceId: "{{ aadDeviceId }}"
                 displayName: "{{ displayName }}"
                 gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -2587,7 +2403,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             contactFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 displayName: "{{ displayName }}"
                 parentFolderId: "{{ parentFolderId }}"
                 childFolders: "{{ childFolders }}"
@@ -2596,7 +2411,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             contacts:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2643,22 +2457,18 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             createdObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
             deviceManagementTroubleshootingEvents:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 correlationId: "{{ correlationId }}"
                 eventDateTime: "{{ eventDateTime }}"
             directReports:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             drive: "{{ drive }}"
             drives:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -2684,7 +2494,6 @@ versions
             employeeExperience: "{{ employeeExperience }}"
             events:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2735,10 +2544,8 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             extensions:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
             followedSites:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -2775,7 +2582,6 @@ versions
             insights: "{{ insights }}"
             joinedTeams:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 classification: "{{ classification }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -2807,13 +2613,11 @@ versions
                 template: "{{ template }}"
             licenseDetails:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 servicePlans: "{{ servicePlans }}"
                 skuId: "{{ skuId }}"
                 skuPartNumber: "{{ skuPartNumber }}"
             mailFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 childFolderCount: {{ childFolderCount }}
                 displayName: "{{ displayName }}"
                 isHidden: {{ isHidden }}
@@ -2827,7 +2631,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             managedAppRegistrations:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 appIdentifier: "{{ appIdentifier }}"
                 applicationVersion: "{{ applicationVersion }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2845,7 +2648,6 @@ versions
                 operations: "{{ operations }}"
             managedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationLockBypassCode: "{{ activationLockBypassCode }}"
                 androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
                 azureADDeviceId: "{{ azureADDeviceId }}"
@@ -2910,11 +2712,9 @@ versions
             manager: "{{ manager }}"
             memberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             messages:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -2951,7 +2751,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             oauth2PermissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 clientId: "{{ clientId }}"
                 consentType: "{{ consentType }}"
                 principalId: "{{ principalId }}"
@@ -2960,7 +2759,6 @@ versions
             onenote: "{{ onenote }}"
             onlineMeetings:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
                 allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
                 allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -3009,15 +2807,12 @@ versions
             outlook: "{{ outlook }}"
             ownedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             ownedObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             people:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 birthday: "{{ birthday }}"
                 companyName: "{{ companyName }}"
                 department: "{{ department }}"
@@ -3039,7 +2834,6 @@ versions
                 yomiCompany: "{{ yomiCompany }}"
             permissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 clientAppId: "{{ clientAppId }}"
                 clientId: "{{ clientId }}"
@@ -3049,35 +2843,29 @@ versions
             photo: "{{ photo }}"
             photos:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 height: {{ height }}
                 width: {{ width }}
             planner: "{{ planner }}"
             presence: "{{ presence }}"
             registeredDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             scopedRoleMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 administrativeUnitId: "{{ administrativeUnitId }}"
                 roleId: "{{ roleId }}"
                 roleMemberInfo:
                   displayName: "{{ displayName }}"
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
             settings: "{{ settings }}"
             solutions: "{{ solutions }}"
             sponsors:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             teamwork: "{{ teamwork }}"
             todo: "{{ todo }}"
             transitiveMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
           taskProcessingResults: "{{ taskProcessingResults }}"
     - name: runs
@@ -3085,7 +2873,6 @@ versions
         Workflow runs.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           activatedOnScope: "{{ activatedOnScope }}"
           completedDateTime: "{{ completedDateTime }}"
           failedTasksCount: {{ failedTasksCount }}
@@ -3107,7 +2894,6 @@ versions
         Represents the aggregation of task execution data for tasks within a workflow object.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           completedDateTime: "{{ completedDateTime }}"
           failedUsersCount: {{ failedUsersCount }}
           lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
@@ -3119,11 +2905,9 @@ versions
           unprocessedUsersCount: {{ unprocessedUsersCount }}
           task:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             arguments:
               - name: "{{ name }}"
                 value: "{{ value }}"
-                @odata.type: "{{ @odata.type }}"
             category: "{{ category }}"
             continueOnError: {{ continueOnError }}
             description: "{{ description }}"
@@ -3133,7 +2917,6 @@ versions
             taskDefinitionId: "{{ taskDefinitionId }}"
             taskProcessingResults:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 completedDateTime: "{{ completedDateTime }}"
                 createdDateTime: "{{ createdDateTime }}"
                 failureReason: "{{ failureReason }}"
@@ -3142,7 +2925,6 @@ versions
                 startedDateTime: "{{ startedDateTime }}"
                 subject:
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
                   deletedDateTime: "{{ deletedDateTime }}"
                   aboutMe: "{{ aboutMe }}"
                   accountEnabled: {{ accountEnabled }}
@@ -3150,13 +2932,11 @@ versions
                   assignedLicenses:
                     - disabledPlans: "{{ disabledPlans }}"
                       skuId: "{{ skuId }}"
-                      @odata.type: "{{ @odata.type }}"
                   assignedPlans:
                     - assignedDateTime: "{{ assignedDateTime }}"
                       capabilityStatus: "{{ capabilityStatus }}"
                       service: "{{ service }}"
                       servicePlanId: "{{ servicePlanId }}"
-                      @odata.type: "{{ @odata.type }}"
                   authorizationInfo: "{{ authorizationInfo }}"
                   birthday: "{{ birthday }}"
                   businessPhones:
@@ -3185,7 +2965,6 @@ versions
                     - issuer: "{{ issuer }}"
                       issuerAssignedId: "{{ issuerAssignedId }}"
                       signInType: "{{ signInType }}"
-                      @odata.type: "{{ @odata.type }}"
                   identityParentId: "{{ identityParentId }}"
                   imAddresses:
                     - "{{ imAddresses }}"
@@ -3203,7 +2982,6 @@ versions
                       lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
                       skuId: "{{ skuId }}"
                       state: "{{ state }}"
-                      @odata.type: "{{ @odata.type }}"
                   mail: "{{ mail }}"
                   mailboxSettings: "{{ mailboxSettings }}"
                   mailNickname: "{{ mailNickname }}"
@@ -3220,7 +2998,6 @@ versions
                       occurredDateTime: "{{ occurredDateTime }}"
                       propertyCausingError: "{{ propertyCausingError }}"
                       value: "{{ value }}"
-                      @odata.type: "{{ @odata.type }}"
                   onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
                   onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
                   onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -3240,7 +3017,6 @@ versions
                     - capabilityStatus: "{{ capabilityStatus }}"
                       provisioningStatus: "{{ provisioningStatus }}"
                       service: "{{ service }}"
-                      @odata.type: "{{ @odata.type }}"
                   proxyAddresses:
                     - "{{ proxyAddresses }}"
                   responsibilities:
@@ -3252,7 +3028,6 @@ versions
                     - createdDateTime: "{{ createdDateTime }}"
                       isResolved: {{ isResolved }}
                       serviceInstance: "{{ serviceInstance }}"
-                      @odata.type: "{{ @odata.type }}"
                   showInAddressList: {{ showInAddressList }}
                   signInActivity: "{{ signInActivity }}"
                   signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -3266,7 +3041,6 @@ versions
                   userType: "{{ userType }}"
                   activities:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       activationUrl: "{{ activationUrl }}"
                       activitySourceHost: "{{ activitySourceHost }}"
                       appActivityId: "{{ appActivityId }}"
@@ -3285,16 +3059,13 @@ versions
                         content: "{{ content }}"
                         description: "{{ description }}"
                         displayText: "{{ displayText }}"
-                        @odata.type: "{{ @odata.type }}"
                       historyItems: "{{ historyItems }}"
                   adhocCalls:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       recordings: "{{ recordings }}"
                       transcripts: "{{ transcripts }}"
                   agreementAcceptances:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       agreementFileId: "{{ agreementFileId }}"
                       agreementId: "{{ agreementId }}"
                       deviceDisplayName: "{{ deviceDisplayName }}"
@@ -3310,7 +3081,6 @@ versions
                       userPrincipalName: "{{ userPrincipalName }}"
                   appRoleAssignments:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                       appRoleId: "{{ appRoleId }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3323,14 +3093,12 @@ versions
                   calendar: "{{ calendar }}"
                   calendarGroups:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       changeKey: "{{ changeKey }}"
                       classId: "{{ classId }}"
                       name: "{{ name }}"
                       calendars: "{{ calendars }}"
                   calendars:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
                       canEdit: {{ canEdit }}
                       canShare: {{ canShare }}
@@ -3351,7 +3119,6 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   calendarView:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       categories: "{{ categories }}"
                       changeKey: "{{ changeKey }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3402,7 +3169,6 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   chats:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       chatType: "{{ chatType }}"
                       createdDateTime: "{{ createdDateTime }}"
                       isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -3424,7 +3190,6 @@ versions
                   cloudClipboard: "{{ cloudClipboard }}"
                   cloudPCs:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       aadDeviceId: "{{ aadDeviceId }}"
                       displayName: "{{ displayName }}"
                       gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -3441,7 +3206,6 @@ versions
                       userPrincipalName: "{{ userPrincipalName }}"
                   contactFolders:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       displayName: "{{ displayName }}"
                       parentFolderId: "{{ parentFolderId }}"
                       childFolders: "{{ childFolders }}"
@@ -3450,7 +3214,6 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   contacts:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       categories: "{{ categories }}"
                       changeKey: "{{ changeKey }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3497,22 +3260,18 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   createdObjects:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
                   deviceManagementTroubleshootingEvents:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       correlationId: "{{ correlationId }}"
                       eventDateTime: "{{ eventDateTime }}"
                   directReports:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   drive: "{{ drive }}"
                   drives:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       createdBy: "{{ createdBy }}"
                       createdDateTime: "{{ createdDateTime }}"
                       description: "{{ description }}"
@@ -3538,7 +3297,6 @@ versions
                   employeeExperience: "{{ employeeExperience }}"
                   events:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       categories: "{{ categories }}"
                       changeKey: "{{ changeKey }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3589,10 +3347,8 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   extensions:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                   followedSites:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       createdBy: "{{ createdBy }}"
                       createdDateTime: "{{ createdDateTime }}"
                       description: "{{ description }}"
@@ -3629,7 +3385,6 @@ versions
                   insights: "{{ insights }}"
                   joinedTeams:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       classification: "{{ classification }}"
                       createdDateTime: "{{ createdDateTime }}"
                       description: "{{ description }}"
@@ -3661,13 +3416,11 @@ versions
                       template: "{{ template }}"
                   licenseDetails:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       servicePlans: "{{ servicePlans }}"
                       skuId: "{{ skuId }}"
                       skuPartNumber: "{{ skuPartNumber }}"
                   mailFolders:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       childFolderCount: {{ childFolderCount }}
                       displayName: "{{ displayName }}"
                       isHidden: {{ isHidden }}
@@ -3681,7 +3434,6 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   managedAppRegistrations:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       appIdentifier: "{{ appIdentifier }}"
                       applicationVersion: "{{ applicationVersion }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3699,7 +3451,6 @@ versions
                       operations: "{{ operations }}"
                   managedDevices:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       activationLockBypassCode: "{{ activationLockBypassCode }}"
                       androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
                       azureADDeviceId: "{{ azureADDeviceId }}"
@@ -3764,11 +3515,9 @@ versions
                   manager: "{{ manager }}"
                   memberOf:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   messages:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       categories: "{{ categories }}"
                       changeKey: "{{ changeKey }}"
                       createdDateTime: "{{ createdDateTime }}"
@@ -3805,7 +3554,6 @@ versions
                       singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
                   oauth2PermissionGrants:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       clientId: "{{ clientId }}"
                       consentType: "{{ consentType }}"
                       principalId: "{{ principalId }}"
@@ -3814,7 +3562,6 @@ versions
                   onenote: "{{ onenote }}"
                   onlineMeetings:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
                       allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
                       allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -3863,15 +3610,12 @@ versions
                   outlook: "{{ outlook }}"
                   ownedDevices:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   ownedObjects:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   people:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       birthday: "{{ birthday }}"
                       companyName: "{{ companyName }}"
                       department: "{{ department }}"
@@ -3893,7 +3637,6 @@ versions
                       yomiCompany: "{{ yomiCompany }}"
                   permissionGrants:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                       clientAppId: "{{ clientAppId }}"
                       clientId: "{{ clientId }}"
@@ -3903,43 +3646,35 @@ versions
                   photo: "{{ photo }}"
                   photos:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       height: {{ height }}
                       width: {{ width }}
                   planner: "{{ planner }}"
                   presence: "{{ presence }}"
                   registeredDevices:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   scopedRoleMemberOf:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       administrativeUnitId: "{{ administrativeUnitId }}"
                       roleId: "{{ roleId }}"
                       roleMemberInfo:
                         displayName: "{{ displayName }}"
                         id: "{{ id }}"
-                        @odata.type: "{{ @odata.type }}"
                   settings: "{{ settings }}"
                   solutions: "{{ solutions }}"
                   sponsors:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                   teamwork: "{{ teamwork }}"
                   todo: "{{ todo }}"
                   transitiveMemberOf:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       deletedDateTime: "{{ deletedDateTime }}"
                 task:
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
                   arguments:
                     - name: "{{ name }}"
                       value: "{{ value }}"
-                      @odata.type: "{{ @odata.type }}"
                   category: "{{ category }}"
                   continueOnError: {{ continueOnError }}
                   description: "{{ description }}"
@@ -3949,7 +3684,6 @@ versions
                   taskDefinitionId: "{{ taskDefinitionId }}"
                   taskProcessingResults:
                     - id: "{{ id }}"
-                      @odata.type: "{{ @odata.type }}"
                       completedDateTime: "{{ completedDateTime }}"
                       createdDateTime: "{{ createdDateTime }}"
                       failureReason: "{{ failureReason }}"
@@ -3958,7 +3692,6 @@ versions
                       startedDateTime: "{{ startedDateTime }}"
                       subject:
                         id: "{{ id }}"
-                        @odata.type: "{{ @odata.type }}"
                         deletedDateTime: "{{ deletedDateTime }}"
                         aboutMe: "{{ aboutMe }}"
                         accountEnabled: {{ accountEnabled }}
@@ -4096,7 +3829,6 @@ versions
                         transitiveMemberOf: "{{ transitiveMemberOf }}"
                       task:
                         id: "{{ id }}"
-                        @odata.type: "{{ @odata.type }}"
                         arguments: "{{ arguments }}"
                         category: "{{ category }}"
                         continueOnError: {{ continueOnError }}
@@ -4108,7 +3840,6 @@ versions
                         taskProcessingResults: "{{ taskProcessingResults }}"
           taskDefinition:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             category: "{{ category }}"
             continueOnError: {{ continueOnError }}
             description: "{{ description }}"
@@ -4117,7 +3848,6 @@ versions
               - name: "{{ name }}"
                 values: "{{ values }}"
                 valueType: "{{ valueType }}"
-                @odata.type: "{{ @odata.type }}"
             version: {{ version }}
           taskProcessingResults: "{{ taskProcessingResults }}"
     - name: userProcessingResults
@@ -4125,7 +3855,6 @@ versions
         Per-user workflow execution results.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           completedDateTime: "{{ completedDateTime }}"
           failedTasksCount: {{ failedTasksCount }}
           processingStatus: "{{ processingStatus }}"
@@ -4138,7 +3867,6 @@ versions
           reprocessedRuns: "{{ reprocessedRuns }}"
           subject:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             aboutMe: "{{ aboutMe }}"
             accountEnabled: {{ accountEnabled }}
@@ -4146,13 +3874,11 @@ versions
             assignedLicenses:
               - disabledPlans: "{{ disabledPlans }}"
                 skuId: "{{ skuId }}"
-                @odata.type: "{{ @odata.type }}"
             assignedPlans:
               - assignedDateTime: "{{ assignedDateTime }}"
                 capabilityStatus: "{{ capabilityStatus }}"
                 service: "{{ service }}"
                 servicePlanId: "{{ servicePlanId }}"
-                @odata.type: "{{ @odata.type }}"
             authorizationInfo: "{{ authorizationInfo }}"
             birthday: "{{ birthday }}"
             businessPhones:
@@ -4181,7 +3907,6 @@ versions
               - issuer: "{{ issuer }}"
                 issuerAssignedId: "{{ issuerAssignedId }}"
                 signInType: "{{ signInType }}"
-                @odata.type: "{{ @odata.type }}"
             identityParentId: "{{ identityParentId }}"
             imAddresses:
               - "{{ imAddresses }}"
@@ -4199,7 +3924,6 @@ versions
                 lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
                 skuId: "{{ skuId }}"
                 state: "{{ state }}"
-                @odata.type: "{{ @odata.type }}"
             mail: "{{ mail }}"
             mailboxSettings: "{{ mailboxSettings }}"
             mailNickname: "{{ mailNickname }}"
@@ -4216,7 +3940,6 @@ versions
                 occurredDateTime: "{{ occurredDateTime }}"
                 propertyCausingError: "{{ propertyCausingError }}"
                 value: "{{ value }}"
-                @odata.type: "{{ @odata.type }}"
             onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
             onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
             onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -4236,7 +3959,6 @@ versions
               - capabilityStatus: "{{ capabilityStatus }}"
                 provisioningStatus: "{{ provisioningStatus }}"
                 service: "{{ service }}"
-                @odata.type: "{{ @odata.type }}"
             proxyAddresses:
               - "{{ proxyAddresses }}"
             responsibilities:
@@ -4248,7 +3970,6 @@ versions
               - createdDateTime: "{{ createdDateTime }}"
                 isResolved: {{ isResolved }}
                 serviceInstance: "{{ serviceInstance }}"
-                @odata.type: "{{ @odata.type }}"
             showInAddressList: {{ showInAddressList }}
             signInActivity: "{{ signInActivity }}"
             signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -4262,7 +3983,6 @@ versions
             userType: "{{ userType }}"
             activities:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationUrl: "{{ activationUrl }}"
                 activitySourceHost: "{{ activitySourceHost }}"
                 appActivityId: "{{ appActivityId }}"
@@ -4281,21 +4001,17 @@ versions
                     alternateText: "{{ alternateText }}"
                     alternativeText: "{{ alternativeText }}"
                     iconUrl: "{{ iconUrl }}"
-                    @odata.type: "{{ @odata.type }}"
                   backgroundColor: "{{ backgroundColor }}"
                   content: "{{ content }}"
                   description: "{{ description }}"
                   displayText: "{{ displayText }}"
-                  @odata.type: "{{ @odata.type }}"
                 historyItems: "{{ historyItems }}"
             adhocCalls:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 recordings: "{{ recordings }}"
                 transcripts: "{{ transcripts }}"
             agreementAcceptances:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 agreementFileId: "{{ agreementFileId }}"
                 agreementId: "{{ agreementId }}"
                 deviceDisplayName: "{{ deviceDisplayName }}"
@@ -4311,7 +4027,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             appRoleAssignments:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 appRoleId: "{{ appRoleId }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4324,14 +4039,12 @@ versions
             calendar: "{{ calendar }}"
             calendarGroups:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 changeKey: "{{ changeKey }}"
                 classId: "{{ classId }}"
                 name: "{{ name }}"
                 calendars: "{{ calendars }}"
             calendars:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
                 canEdit: {{ canEdit }}
                 canShare: {{ canShare }}
@@ -4352,7 +4065,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             calendarView:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4403,7 +4115,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             chats:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 chatType: "{{ chatType }}"
                 createdDateTime: "{{ createdDateTime }}"
                 isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -4425,7 +4136,6 @@ versions
             cloudClipboard: "{{ cloudClipboard }}"
             cloudPCs:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 aadDeviceId: "{{ aadDeviceId }}"
                 displayName: "{{ displayName }}"
                 gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -4442,7 +4152,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             contactFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 displayName: "{{ displayName }}"
                 parentFolderId: "{{ parentFolderId }}"
                 childFolders: "{{ childFolders }}"
@@ -4451,7 +4160,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             contacts:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4498,22 +4206,18 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             createdObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
             deviceManagementTroubleshootingEvents:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 correlationId: "{{ correlationId }}"
                 eventDateTime: "{{ eventDateTime }}"
             directReports:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             drive: "{{ drive }}"
             drives:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -4539,7 +4243,6 @@ versions
             employeeExperience: "{{ employeeExperience }}"
             events:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4590,10 +4293,8 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             extensions:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
             followedSites:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -4630,7 +4331,6 @@ versions
             insights: "{{ insights }}"
             joinedTeams:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 classification: "{{ classification }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -4662,13 +4362,11 @@ versions
                 template: "{{ template }}"
             licenseDetails:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 servicePlans: "{{ servicePlans }}"
                 skuId: "{{ skuId }}"
                 skuPartNumber: "{{ skuPartNumber }}"
             mailFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 childFolderCount: {{ childFolderCount }}
                 displayName: "{{ displayName }}"
                 isHidden: {{ isHidden }}
@@ -4682,7 +4380,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             managedAppRegistrations:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 appIdentifier: "{{ appIdentifier }}"
                 applicationVersion: "{{ applicationVersion }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4700,7 +4397,6 @@ versions
                 operations: "{{ operations }}"
             managedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationLockBypassCode: "{{ activationLockBypassCode }}"
                 androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
                 azureADDeviceId: "{{ azureADDeviceId }}"
@@ -4765,11 +4461,9 @@ versions
             manager: "{{ manager }}"
             memberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             messages:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -4806,7 +4500,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             oauth2PermissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 clientId: "{{ clientId }}"
                 consentType: "{{ consentType }}"
                 principalId: "{{ principalId }}"
@@ -4815,7 +4508,6 @@ versions
             onenote: "{{ onenote }}"
             onlineMeetings:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
                 allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
                 allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -4864,15 +4556,12 @@ versions
             outlook: "{{ outlook }}"
             ownedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             ownedObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             people:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 birthday: "{{ birthday }}"
                 companyName: "{{ companyName }}"
                 department: "{{ department }}"
@@ -4894,7 +4583,6 @@ versions
                 yomiCompany: "{{ yomiCompany }}"
             permissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 clientAppId: "{{ clientAppId }}"
                 clientId: "{{ clientId }}"
@@ -4904,35 +4592,29 @@ versions
             photo: "{{ photo }}"
             photos:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 height: {{ height }}
                 width: {{ width }}
             planner: "{{ planner }}"
             presence: "{{ presence }}"
             registeredDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             scopedRoleMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 administrativeUnitId: "{{ administrativeUnitId }}"
                 roleId: "{{ roleId }}"
                 roleMemberInfo:
                   displayName: "{{ displayName }}"
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
             settings: "{{ settings }}"
             solutions: "{{ solutions }}"
             sponsors:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             teamwork: "{{ teamwork }}"
             todo: "{{ todo }}"
             transitiveMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
           taskProcessingResults: "{{ taskProcessingResults }}"
     - name: versions
@@ -4944,14 +4626,12 @@ versions
           description: "{{ description }}"
           displayName: "{{ displayName }}"
           executionConditions:
-            @odata.type: "{{ @odata.type }}"
           isEnabled: {{ isEnabled }}
           isSchedulingEnabled: {{ isSchedulingEnabled }}
           lastModifiedDateTime: "{{ lastModifiedDateTime }}"
           administrationScopeTargets: "{{ administrationScopeTargets }}"
           createdBy:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             aboutMe: "{{ aboutMe }}"
             accountEnabled: {{ accountEnabled }}
@@ -4959,13 +4639,11 @@ versions
             assignedLicenses:
               - disabledPlans: "{{ disabledPlans }}"
                 skuId: "{{ skuId }}"
-                @odata.type: "{{ @odata.type }}"
             assignedPlans:
               - assignedDateTime: "{{ assignedDateTime }}"
                 capabilityStatus: "{{ capabilityStatus }}"
                 service: "{{ service }}"
                 servicePlanId: "{{ servicePlanId }}"
-                @odata.type: "{{ @odata.type }}"
             authorizationInfo: "{{ authorizationInfo }}"
             birthday: "{{ birthday }}"
             businessPhones:
@@ -4994,7 +4672,6 @@ versions
               - issuer: "{{ issuer }}"
                 issuerAssignedId: "{{ issuerAssignedId }}"
                 signInType: "{{ signInType }}"
-                @odata.type: "{{ @odata.type }}"
             identityParentId: "{{ identityParentId }}"
             imAddresses:
               - "{{ imAddresses }}"
@@ -5012,7 +4689,6 @@ versions
                 lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
                 skuId: "{{ skuId }}"
                 state: "{{ state }}"
-                @odata.type: "{{ @odata.type }}"
             mail: "{{ mail }}"
             mailboxSettings: "{{ mailboxSettings }}"
             mailNickname: "{{ mailNickname }}"
@@ -5029,7 +4705,6 @@ versions
                 occurredDateTime: "{{ occurredDateTime }}"
                 propertyCausingError: "{{ propertyCausingError }}"
                 value: "{{ value }}"
-                @odata.type: "{{ @odata.type }}"
             onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
             onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
             onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -5049,7 +4724,6 @@ versions
               - capabilityStatus: "{{ capabilityStatus }}"
                 provisioningStatus: "{{ provisioningStatus }}"
                 service: "{{ service }}"
-                @odata.type: "{{ @odata.type }}"
             proxyAddresses:
               - "{{ proxyAddresses }}"
             responsibilities:
@@ -5061,7 +4735,6 @@ versions
               - createdDateTime: "{{ createdDateTime }}"
                 isResolved: {{ isResolved }}
                 serviceInstance: "{{ serviceInstance }}"
-                @odata.type: "{{ @odata.type }}"
             showInAddressList: {{ showInAddressList }}
             signInActivity: "{{ signInActivity }}"
             signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -5075,7 +4748,6 @@ versions
             userType: "{{ userType }}"
             activities:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationUrl: "{{ activationUrl }}"
                 activitySourceHost: "{{ activitySourceHost }}"
                 appActivityId: "{{ appActivityId }}"
@@ -5094,21 +4766,17 @@ versions
                     alternateText: "{{ alternateText }}"
                     alternativeText: "{{ alternativeText }}"
                     iconUrl: "{{ iconUrl }}"
-                    @odata.type: "{{ @odata.type }}"
                   backgroundColor: "{{ backgroundColor }}"
                   content: "{{ content }}"
                   description: "{{ description }}"
                   displayText: "{{ displayText }}"
-                  @odata.type: "{{ @odata.type }}"
                 historyItems: "{{ historyItems }}"
             adhocCalls:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 recordings: "{{ recordings }}"
                 transcripts: "{{ transcripts }}"
             agreementAcceptances:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 agreementFileId: "{{ agreementFileId }}"
                 agreementId: "{{ agreementId }}"
                 deviceDisplayName: "{{ deviceDisplayName }}"
@@ -5124,7 +4792,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             appRoleAssignments:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 appRoleId: "{{ appRoleId }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5137,14 +4804,12 @@ versions
             calendar: "{{ calendar }}"
             calendarGroups:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 changeKey: "{{ changeKey }}"
                 classId: "{{ classId }}"
                 name: "{{ name }}"
                 calendars: "{{ calendars }}"
             calendars:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
                 canEdit: {{ canEdit }}
                 canShare: {{ canShare }}
@@ -5165,7 +4830,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             calendarView:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5216,7 +4880,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             chats:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 chatType: "{{ chatType }}"
                 createdDateTime: "{{ createdDateTime }}"
                 isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -5238,7 +4901,6 @@ versions
             cloudClipboard: "{{ cloudClipboard }}"
             cloudPCs:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 aadDeviceId: "{{ aadDeviceId }}"
                 displayName: "{{ displayName }}"
                 gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -5255,7 +4917,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             contactFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 displayName: "{{ displayName }}"
                 parentFolderId: "{{ parentFolderId }}"
                 childFolders: "{{ childFolders }}"
@@ -5264,7 +4925,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             contacts:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5311,22 +4971,18 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             createdObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
             deviceManagementTroubleshootingEvents:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 correlationId: "{{ correlationId }}"
                 eventDateTime: "{{ eventDateTime }}"
             directReports:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             drive: "{{ drive }}"
             drives:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -5352,7 +5008,6 @@ versions
             employeeExperience: "{{ employeeExperience }}"
             events:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5403,10 +5058,8 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             extensions:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
             followedSites:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -5443,7 +5096,6 @@ versions
             insights: "{{ insights }}"
             joinedTeams:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 classification: "{{ classification }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -5475,13 +5127,11 @@ versions
                 template: "{{ template }}"
             licenseDetails:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 servicePlans: "{{ servicePlans }}"
                 skuId: "{{ skuId }}"
                 skuPartNumber: "{{ skuPartNumber }}"
             mailFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 childFolderCount: {{ childFolderCount }}
                 displayName: "{{ displayName }}"
                 isHidden: {{ isHidden }}
@@ -5495,7 +5145,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             managedAppRegistrations:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 appIdentifier: "{{ appIdentifier }}"
                 applicationVersion: "{{ applicationVersion }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5513,7 +5162,6 @@ versions
                 operations: "{{ operations }}"
             managedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationLockBypassCode: "{{ activationLockBypassCode }}"
                 androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
                 azureADDeviceId: "{{ azureADDeviceId }}"
@@ -5578,11 +5226,9 @@ versions
             manager: "{{ manager }}"
             memberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             messages:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5619,7 +5265,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             oauth2PermissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 clientId: "{{ clientId }}"
                 consentType: "{{ consentType }}"
                 principalId: "{{ principalId }}"
@@ -5628,7 +5273,6 @@ versions
             onenote: "{{ onenote }}"
             onlineMeetings:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
                 allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
                 allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -5677,15 +5321,12 @@ versions
             outlook: "{{ outlook }}"
             ownedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             ownedObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             people:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 birthday: "{{ birthday }}"
                 companyName: "{{ companyName }}"
                 department: "{{ department }}"
@@ -5707,7 +5348,6 @@ versions
                 yomiCompany: "{{ yomiCompany }}"
             permissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 clientAppId: "{{ clientAppId }}"
                 clientId: "{{ clientId }}"
@@ -5717,39 +5357,32 @@ versions
             photo: "{{ photo }}"
             photos:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 height: {{ height }}
                 width: {{ width }}
             planner: "{{ planner }}"
             presence: "{{ presence }}"
             registeredDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             scopedRoleMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 administrativeUnitId: "{{ administrativeUnitId }}"
                 roleId: "{{ roleId }}"
                 roleMemberInfo:
                   displayName: "{{ displayName }}"
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
             settings: "{{ settings }}"
             solutions: "{{ solutions }}"
             sponsors:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             teamwork: "{{ teamwork }}"
             todo: "{{ todo }}"
             transitiveMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
           lastModifiedBy:
             id: "{{ id }}"
-            @odata.type: "{{ @odata.type }}"
             deletedDateTime: "{{ deletedDateTime }}"
             aboutMe: "{{ aboutMe }}"
             accountEnabled: {{ accountEnabled }}
@@ -5757,13 +5390,11 @@ versions
             assignedLicenses:
               - disabledPlans: "{{ disabledPlans }}"
                 skuId: "{{ skuId }}"
-                @odata.type: "{{ @odata.type }}"
             assignedPlans:
               - assignedDateTime: "{{ assignedDateTime }}"
                 capabilityStatus: "{{ capabilityStatus }}"
                 service: "{{ service }}"
                 servicePlanId: "{{ servicePlanId }}"
-                @odata.type: "{{ @odata.type }}"
             authorizationInfo: "{{ authorizationInfo }}"
             birthday: "{{ birthday }}"
             businessPhones:
@@ -5792,7 +5423,6 @@ versions
               - issuer: "{{ issuer }}"
                 issuerAssignedId: "{{ issuerAssignedId }}"
                 signInType: "{{ signInType }}"
-                @odata.type: "{{ @odata.type }}"
             identityParentId: "{{ identityParentId }}"
             imAddresses:
               - "{{ imAddresses }}"
@@ -5810,7 +5440,6 @@ versions
                 lastUpdatedDateTime: "{{ lastUpdatedDateTime }}"
                 skuId: "{{ skuId }}"
                 state: "{{ state }}"
-                @odata.type: "{{ @odata.type }}"
             mail: "{{ mail }}"
             mailboxSettings: "{{ mailboxSettings }}"
             mailNickname: "{{ mailNickname }}"
@@ -5827,7 +5456,6 @@ versions
                 occurredDateTime: "{{ occurredDateTime }}"
                 propertyCausingError: "{{ propertyCausingError }}"
                 value: "{{ value }}"
-                @odata.type: "{{ @odata.type }}"
             onPremisesSamAccountName: "{{ onPremisesSamAccountName }}"
             onPremisesSecurityIdentifier: "{{ onPremisesSecurityIdentifier }}"
             onPremisesSyncEnabled: {{ onPremisesSyncEnabled }}
@@ -5847,7 +5475,6 @@ versions
               - capabilityStatus: "{{ capabilityStatus }}"
                 provisioningStatus: "{{ provisioningStatus }}"
                 service: "{{ service }}"
-                @odata.type: "{{ @odata.type }}"
             proxyAddresses:
               - "{{ proxyAddresses }}"
             responsibilities:
@@ -5859,7 +5486,6 @@ versions
               - createdDateTime: "{{ createdDateTime }}"
                 isResolved: {{ isResolved }}
                 serviceInstance: "{{ serviceInstance }}"
-                @odata.type: "{{ @odata.type }}"
             showInAddressList: {{ showInAddressList }}
             signInActivity: "{{ signInActivity }}"
             signInSessionsValidFromDateTime: "{{ signInSessionsValidFromDateTime }}"
@@ -5873,7 +5499,6 @@ versions
             userType: "{{ userType }}"
             activities:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationUrl: "{{ activationUrl }}"
                 activitySourceHost: "{{ activitySourceHost }}"
                 appActivityId: "{{ appActivityId }}"
@@ -5892,21 +5517,17 @@ versions
                     alternateText: "{{ alternateText }}"
                     alternativeText: "{{ alternativeText }}"
                     iconUrl: "{{ iconUrl }}"
-                    @odata.type: "{{ @odata.type }}"
                   backgroundColor: "{{ backgroundColor }}"
                   content: "{{ content }}"
                   description: "{{ description }}"
                   displayText: "{{ displayText }}"
-                  @odata.type: "{{ @odata.type }}"
                 historyItems: "{{ historyItems }}"
             adhocCalls:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 recordings: "{{ recordings }}"
                 transcripts: "{{ transcripts }}"
             agreementAcceptances:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 agreementFileId: "{{ agreementFileId }}"
                 agreementId: "{{ agreementId }}"
                 deviceDisplayName: "{{ deviceDisplayName }}"
@@ -5922,7 +5543,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             appRoleAssignments:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 appRoleId: "{{ appRoleId }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -5935,14 +5555,12 @@ versions
             calendar: "{{ calendar }}"
             calendarGroups:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 changeKey: "{{ changeKey }}"
                 classId: "{{ classId }}"
                 name: "{{ name }}"
                 calendars: "{{ calendars }}"
             calendars:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowedOnlineMeetingProviders: "{{ allowedOnlineMeetingProviders }}"
                 canEdit: {{ canEdit }}
                 canShare: {{ canShare }}
@@ -5963,7 +5581,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             calendarView:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -6014,7 +5631,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             chats:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 chatType: "{{ chatType }}"
                 createdDateTime: "{{ createdDateTime }}"
                 isHiddenForAllMembers: {{ isHiddenForAllMembers }}
@@ -6036,7 +5652,6 @@ versions
             cloudClipboard: "{{ cloudClipboard }}"
             cloudPCs:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 aadDeviceId: "{{ aadDeviceId }}"
                 displayName: "{{ displayName }}"
                 gracePeriodEndDateTime: "{{ gracePeriodEndDateTime }}"
@@ -6053,7 +5668,6 @@ versions
                 userPrincipalName: "{{ userPrincipalName }}"
             contactFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 displayName: "{{ displayName }}"
                 parentFolderId: "{{ parentFolderId }}"
                 childFolders: "{{ childFolders }}"
@@ -6062,7 +5676,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             contacts:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -6109,22 +5722,18 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             createdObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             dataSecurityAndGovernance: "{{ dataSecurityAndGovernance }}"
             deviceManagementTroubleshootingEvents:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 correlationId: "{{ correlationId }}"
                 eventDateTime: "{{ eventDateTime }}"
             directReports:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             drive: "{{ drive }}"
             drives:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -6150,7 +5759,6 @@ versions
             employeeExperience: "{{ employeeExperience }}"
             events:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -6201,10 +5809,8 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             extensions:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
             followedSites:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 createdBy: "{{ createdBy }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -6241,7 +5847,6 @@ versions
             insights: "{{ insights }}"
             joinedTeams:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 classification: "{{ classification }}"
                 createdDateTime: "{{ createdDateTime }}"
                 description: "{{ description }}"
@@ -6273,13 +5878,11 @@ versions
                 template: "{{ template }}"
             licenseDetails:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 servicePlans: "{{ servicePlans }}"
                 skuId: "{{ skuId }}"
                 skuPartNumber: "{{ skuPartNumber }}"
             mailFolders:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 childFolderCount: {{ childFolderCount }}
                 displayName: "{{ displayName }}"
                 isHidden: {{ isHidden }}
@@ -6293,7 +5896,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             managedAppRegistrations:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 appIdentifier: "{{ appIdentifier }}"
                 applicationVersion: "{{ applicationVersion }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -6311,7 +5913,6 @@ versions
                 operations: "{{ operations }}"
             managedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 activationLockBypassCode: "{{ activationLockBypassCode }}"
                 androidSecurityPatchLevel: "{{ androidSecurityPatchLevel }}"
                 azureADDeviceId: "{{ azureADDeviceId }}"
@@ -6376,11 +5977,9 @@ versions
             manager: "{{ manager }}"
             memberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             messages:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 categories: "{{ categories }}"
                 changeKey: "{{ changeKey }}"
                 createdDateTime: "{{ createdDateTime }}"
@@ -6417,7 +6016,6 @@ versions
                 singleValueExtendedProperties: "{{ singleValueExtendedProperties }}"
             oauth2PermissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 clientId: "{{ clientId }}"
                 consentType: "{{ consentType }}"
                 principalId: "{{ principalId }}"
@@ -6426,7 +6024,6 @@ versions
             onenote: "{{ onenote }}"
             onlineMeetings:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 allowAttendeeToEnableCamera: {{ allowAttendeeToEnableCamera }}
                 allowAttendeeToEnableMic: {{ allowAttendeeToEnableMic }}
                 allowBreakoutRooms: {{ allowBreakoutRooms }}
@@ -6475,15 +6072,12 @@ versions
             outlook: "{{ outlook }}"
             ownedDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             ownedObjects:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             people:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 birthday: "{{ birthday }}"
                 companyName: "{{ companyName }}"
                 department: "{{ department }}"
@@ -6505,7 +6099,6 @@ versions
                 yomiCompany: "{{ yomiCompany }}"
             permissionGrants:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
                 clientAppId: "{{ clientAppId }}"
                 clientId: "{{ clientId }}"
@@ -6515,38 +6108,31 @@ versions
             photo: "{{ photo }}"
             photos:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 height: {{ height }}
                 width: {{ width }}
             planner: "{{ planner }}"
             presence: "{{ presence }}"
             registeredDevices:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             scopedRoleMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 administrativeUnitId: "{{ administrativeUnitId }}"
                 roleId: "{{ roleId }}"
                 roleMemberInfo:
                   displayName: "{{ displayName }}"
                   id: "{{ id }}"
-                  @odata.type: "{{ @odata.type }}"
             settings: "{{ settings }}"
             solutions: "{{ solutions }}"
             sponsors:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
             teamwork: "{{ teamwork }}"
             todo: "{{ todo }}"
             transitiveMemberOf:
               - id: "{{ id }}"
-                @odata.type: "{{ @odata.type }}"
                 deletedDateTime: "{{ deletedDateTime }}"
           tasks: "{{ tasks }}"
-          @odata.type: "{{ @odata.type }}"
           versionNumber: {{ versionNumber }}
 `}</CodeBlock>
 
@@ -6581,7 +6167,6 @@ administrationScopeTargets = '{{ administrationScopeTargets }}',
 createdBy = '{{ createdBy }}',
 lastModifiedBy = '{{ lastModifiedBy }}',
 tasks = '{{ tasks }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 id = '{{ id }}',
 nextScheduleRunDateTime = '{{ nextScheduleRunDateTime }}',
@@ -6592,11 +6177,9 @@ taskReports = '{{ taskReports }}',
 userProcessingResults = '{{ userProcessingResults }}',
 versions = '{{ versions }}'
 WHERE 
-workflow-id = '{{ workflow-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+workflow_id = '{{ workflow_id }}' --required
 RETURNING
 id,
-@odata.type,
 administrationScopeTargets,
 category,
 createdBy,
@@ -6636,7 +6219,7 @@ Delete a workflow object and its associated tasks, taskProcessingResults and ver
 
 ```sql
 DELETE FROM entra_id.identity_governance.lifecycle_workflows_workflows
-WHERE workflow-id = '{{ workflow-id }}' --required
+WHERE workflow_id = '{{ workflow_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

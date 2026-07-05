@@ -304,7 +304,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
     description: Provides operations to call the validateProperties method.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}:
+  /permissionGrants/{resource_specific_permission_grant_id}:
     get:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant
@@ -331,7 +331,7 @@ paths:
             type: array
             items:
               type: string
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -375,7 +375,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -393,7 +393,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -409,7 +409,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of resourceSpecificPermissionGrant entities.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}/checkMemberGroups:
+  /permissionGrants/{resource_specific_permission_grant_id}/checkMemberGroups:
     post:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant.Actions
@@ -460,7 +460,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -468,7 +468,7 @@ paths:
             type: string
           x-ms-docs-key-type: resourceSpecificPermissionGrant
     description: Provides operations to call the checkMemberGroups method.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}/checkMemberObjects:
+  /permissionGrants/{resource_specific_permission_grant_id}/checkMemberObjects:
     post:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant.Actions
@@ -515,7 +515,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -523,7 +523,7 @@ paths:
             type: string
           x-ms-docs-key-type: resourceSpecificPermissionGrant
     description: Provides operations to call the checkMemberObjects method.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}/getMemberGroups:
+  /permissionGrants/{resource_specific_permission_grant_id}/getMemberGroups:
     post:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant.Actions
@@ -574,7 +574,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -582,7 +582,7 @@ paths:
             type: string
           x-ms-docs-key-type: resourceSpecificPermissionGrant
     description: Provides operations to call the getMemberGroups method.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}/getMemberObjects:
+  /permissionGrants/{resource_specific_permission_grant_id}/getMemberObjects:
     post:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant.Actions
@@ -633,7 +633,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -641,7 +641,7 @@ paths:
             type: string
           x-ms-docs-key-type: resourceSpecificPermissionGrant
     description: Provides operations to call the getMemberObjects method.
-  /permissionGrants/{resourceSpecificPermissionGrant_id}/restore:
+  /permissionGrants/{resource_specific_permission_grant_id}/restore:
     post:
       tags:
         - permissionGrants.resourceSpecificPermissionGrant.Actions
@@ -658,8 +658,6 @@ paths:
             application/json:
               schema:
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -1802,7 +1800,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: resourceSpecificPermissionGrant-id
+        - name: resource_specific_permission_grant_id
           in: path
           description: The unique identifier of resourceSpecificPermissionGrant
           required: true
@@ -1815,8 +1813,6 @@ components:
     microsoft.graph.resourceSpecificPermissionGrant:
       x-ms-discriminator-value: '#microsoft.graph.resourceSpecificPermissionGrant'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -2984,8 +2980,6 @@ components:
           nullable: true
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4133,8 +4127,6 @@ components:
     microsoft.graph.extensionProperty:
       x-ms-discriminator-value: '#microsoft.graph.extensionProperty'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5315,8 +5307,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6480,8 +6470,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

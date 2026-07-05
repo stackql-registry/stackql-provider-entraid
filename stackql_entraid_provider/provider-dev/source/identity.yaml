@@ -1219,8 +1219,6 @@ paths:
               properties:
                 signInIdentity:
                   title: signInIdentity
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     '@odata.type':
@@ -1234,8 +1232,6 @@ paths:
                   description: (opaque JSON object)
                 signInContext:
                   title: signInContext
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     '@odata.type':
@@ -1250,15 +1246,11 @@ paths:
                   description: (opaque JSON object)
                 signInConditions:
                   title: signInConditions
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     authenticationFlow:
                       description: 'Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.'
                       title: authenticationFlow
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         transferMethod:
@@ -1296,8 +1288,6 @@ paths:
                     deviceInfo:
                       description: Information about the device used for the sign-in.
                       title: deviceInfo
-                      required:
-                        - '@odata.type'
                       type: object
                       properties:
                         deviceId:
@@ -1925,8 +1915,6 @@ paths:
               properties:
                 endpointConfiguration:
                   title: customExtensionEndpointConfiguration
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     '@odata.type':
@@ -1940,8 +1928,6 @@ paths:
                   description: (opaque JSON object)
                 authenticationConfiguration:
                   title: customExtensionAuthenticationConfiguration
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     '@odata.type':
@@ -1961,8 +1947,6 @@ paths:
             application/json:
               schema:
                 title: authenticationConfigurationValidation
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   errors:
@@ -2815,7 +2799,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/apiConnectors/{identityApiConnector_id}:
+  /identity/apiConnectors/{identity_api_connector_id}:
     get:
       tags:
         - identity.identityApiConnector
@@ -2846,7 +2830,7 @@ paths:
             type: array
             items:
               type: string
-        - name: identityApiConnector-id
+        - name: identity_api_connector_id
           in: path
           description: The unique identifier of identityApiConnector
           required: true
@@ -2894,7 +2878,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: identityApiConnector-id
+        - name: identity_api_connector_id
           in: path
           description: The unique identifier of identityApiConnector
           required: true
@@ -2916,7 +2900,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: identityApiConnector-id
+        - name: identity_api_connector_id
           in: path
           description: The unique identifier of identityApiConnector
           required: true
@@ -2932,7 +2916,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-  /identity/apiConnectors/{identityApiConnector_id}/uploadClientCertificate:
+  /identity/apiConnectors/{identity_api_connector_id}/uploadClientCertificate:
     post:
       tags:
         - identity.identityApiConnector
@@ -2964,8 +2948,6 @@ paths:
               schema:
                 x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -4117,7 +4099,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: identityApiConnector-id
+        - name: identity_api_connector_id
           in: path
           description: The unique identifier of identityApiConnector
           required: true
@@ -4128,7 +4110,7 @@ paths:
     x-ms-docs-grouped-path:
       - /identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate
       - /identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate
-  /identity/authenticationEventListeners/{authenticationEventListener_id}:
+  /identity/authenticationEventListeners/{authentication_event_listener_id}:
     get:
       tags:
         - identity.authenticationEventListener
@@ -4159,7 +4141,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventListener-id
+        - name: authentication_event_listener_id
           in: path
           description: The unique identifier of authenticationEventListener
           required: true
@@ -4207,7 +4189,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventListener-id
+        - name: authentication_event_listener_id
           in: path
           description: The unique identifier of authenticationEventListener
           required: true
@@ -4229,7 +4211,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventListener-id
+        - name: authentication_event_listener_id
           in: path
           description: The unique identifier of authenticationEventListener
           required: true
@@ -4245,7 +4227,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4276,7 +4258,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4324,7 +4306,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4346,7 +4328,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4362,7 +4344,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/conditions:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/conditions:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4390,7 +4372,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4408,7 +4390,7 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/conditions/applications/includeApplications:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/conditions/applications/includeApplications:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4454,7 +4436,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4501,7 +4483,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4511,7 +4493,7 @@ paths:
     description: Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
     x-ms-docs-grouped-path:
       - /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/conditions/applications/includeApplications/{authenticationConditionApplication_appId}:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/conditions/applications/includeApplications/{authentication_condition_application_app_id}:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4538,14 +4520,14 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4589,14 +4571,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4618,14 +4600,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4643,7 +4625,7 @@ paths:
     description: Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
     x-ms-docs-grouped-path:
       - /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authenticationConditionApplication-appId}
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/conditions/applications/includeApplications/$count:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/conditions/applications/includeApplications/$count:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4652,7 +4634,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4667,7 +4649,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4694,7 +4676,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4713,7 +4695,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Casts the previous resource to externalUsersSelfServiceSignUpEventsFlow.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4741,7 +4723,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4759,7 +4741,7 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4801,7 +4783,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4844,7 +4826,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -4854,7 +4836,7 @@ paths:
     description: Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
     x-ms-docs-grouped-path:
       - /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authenticationConditionApplication_appId}:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authentication_condition_application_app_id}:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4881,14 +4863,14 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4932,14 +4914,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4957,14 +4939,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: authenticationConditionApplication-appId
+        - name: authentication_condition_application_app_id
           in: path
           description: The unique identifier of authenticationConditionApplication
           required: true
@@ -4982,7 +4964,7 @@ paths:
     description: Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
     x-ms-docs-grouped-path:
       - /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/{authenticationConditionApplication-appId}
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/$count:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/$count:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -4991,7 +4973,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5006,7 +4988,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5034,7 +5016,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5052,7 +5034,7 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5070,7 +5052,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5078,7 +5060,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
     description: Casts the previous resource to onAttributeCollectionExternalUsersSelfServiceSignUp.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5124,7 +5106,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5143,7 +5125,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the attributes property of the microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp entity.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/{identityUserFlowAttribute_id}/$ref:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/{identity_user_flow_attribute_id}/$ref:
     delete:
       tags:
         - identity.authenticationEventsFlow
@@ -5155,14 +5137,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: identityUserFlowAttribute-id
+        - name: identity_user_flow_attribute_id
           in: path
           description: The unique identifier of identityUserFlowAttribute
           required: true
@@ -5178,7 +5160,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$count:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$count:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5187,7 +5169,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5202,7 +5184,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$ref:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$ref:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5228,7 +5210,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5266,7 +5248,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5290,7 +5272,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5306,7 +5288,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5334,7 +5316,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5352,7 +5334,7 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5370,7 +5352,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5378,7 +5360,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
     description: Casts the previous resource to onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5424,7 +5406,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5443,7 +5425,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the identityProviders property of the microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp entity.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/{identityProviderBase_id}/$ref:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/{identity_provider_base_id}/$ref:
     delete:
       tags:
         - identity.authenticationEventsFlow
@@ -5455,14 +5437,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationEventsFlow
-        - name: identityProviderBase-id
+        - name: identity_provider_base_id
           in: path
           description: The unique identifier of identityProviderBase
           required: true
@@ -5478,7 +5460,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$count:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$count:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5487,7 +5469,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5502,7 +5484,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/authenticationEventsFlows/{authenticationEventsFlow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref:
+  /identity/authenticationEventsFlows/{authentication_events_flow_id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref:
     get:
       tags:
         - identity.authenticationEventsFlow
@@ -5528,7 +5510,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5566,7 +5548,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5590,7 +5572,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: authenticationEventsFlow-id
+        - name: authentication_events_flow_id
           in: path
           description: The unique identifier of authenticationEventsFlow
           required: true
@@ -5606,7 +5588,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -5637,7 +5619,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5681,7 +5663,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5703,7 +5685,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5719,7 +5701,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -5750,7 +5732,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5768,7 +5750,7 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postAttributeCollection:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -5795,7 +5777,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5839,7 +5821,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5857,7 +5839,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5873,7 +5855,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the postAttributeCollection property of the microsoft.graph.userFlowApiConnectorConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postAttributeCollection/$ref:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -5892,7 +5874,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5915,7 +5897,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5933,7 +5915,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -5949,7 +5931,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate:
     post:
       tags:
         - identity.b2xIdentityUserFlow
@@ -5981,8 +5963,6 @@ paths:
               schema:
                 x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -7134,7 +7114,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7145,7 +7125,7 @@ paths:
     x-ms-docs-grouped-path:
       - /identity/apiConnectors/{identityApiConnector-id}/uploadClientCertificate
       - /identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postFederationSignup:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -7172,7 +7152,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7216,7 +7196,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7234,7 +7214,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7250,7 +7230,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the postFederationSignup property of the microsoft.graph.userFlowApiConnectorConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postFederationSignup/$ref:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -7269,7 +7249,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7292,7 +7272,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7310,7 +7290,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -7326,7 +7306,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate:
     post:
       tags:
         - identity.b2xIdentityUserFlow
@@ -7358,8 +7338,6 @@ paths:
               schema:
                 x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -8511,7 +8489,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -8522,7 +8500,7 @@ paths:
     x-ms-docs-grouped-path:
       - /identity/apiConnectors/{identityApiConnector-id}/uploadClientCertificate
       - /identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/identityProviders:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/identityProviders:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8568,7 +8546,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -8593,7 +8571,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/identityProviders/{identityProvider_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/identityProviders/{identity_provider_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8621,14 +8599,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityProvider-id
+        - name: identity_provider_id
           in: path
           description: The unique identifier of identityProvider
           required: true
@@ -8654,7 +8632,7 @@ paths:
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/identityProviders/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/identityProviders/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8663,7 +8641,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -8684,7 +8662,7 @@ paths:
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8730,7 +8708,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -8773,7 +8751,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -8781,7 +8759,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
     description: Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8812,14 +8790,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -8863,14 +8841,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -8888,14 +8866,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -8911,7 +8889,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/defaultPages:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/defaultPages:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -8957,14 +8935,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9007,14 +8985,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9022,7 +9000,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
     description: Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/defaultPages/{userFlowLanguagePage_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/defaultPages/{user_flow_language_page_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9050,21 +9028,21 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9108,21 +9086,21 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9140,21 +9118,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9170,7 +9148,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/defaultPages/{userFlowLanguagePage_id}/$value:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/defaultPages/{user_flow_language_page_id}/$value:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9193,21 +9171,21 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9236,21 +9214,21 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9269,21 +9247,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9298,7 +9276,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the identityContainer entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/defaultPages/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/defaultPages/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9307,14 +9285,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9329,7 +9307,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/overridesPages:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9375,14 +9353,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9425,14 +9403,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9440,7 +9418,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
     description: Provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages/{userFlowLanguagePage_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/overridesPages/{user_flow_language_page_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9468,21 +9446,21 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9530,21 +9508,21 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9566,21 +9544,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9596,7 +9574,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages/{userFlowLanguagePage_id}/$value:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/overridesPages/{user_flow_language_page_id}/$value:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9619,21 +9597,21 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9665,21 +9643,21 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9701,21 +9679,21 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguageConfiguration
-        - name: userFlowLanguagePage-id
+        - name: user_flow_language_page_id
           in: path
           description: The unique identifier of userFlowLanguagePage
           required: true
@@ -9730,7 +9708,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to manage the media for the identityContainer entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/{user_flow_language_configuration_id}/overridesPages/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9739,14 +9717,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: userFlowLanguageConfiguration-id
+        - name: user_flow_language_configuration_id
           in: path
           description: The unique identifier of userFlowLanguageConfiguration
           required: true
@@ -9761,7 +9739,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/languages/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/languages/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9770,7 +9748,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -9785,7 +9763,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9831,7 +9809,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -9878,7 +9856,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -9886,7 +9864,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
     description: Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/{identityUserFlowAttributeAssignment_id}:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments/{identity_user_flow_attribute_assignment_id}:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -9917,14 +9895,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityUserFlowAttributeAssignment-id
+        - name: identity_user_flow_attribute_assignment_id
           in: path
           description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
@@ -9972,14 +9950,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityUserFlowAttributeAssignment-id
+        - name: identity_user_flow_attribute_assignment_id
           in: path
           description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
@@ -10001,14 +9979,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityUserFlowAttributeAssignment-id
+        - name: identity_user_flow_attribute_assignment_id
           in: path
           description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
@@ -10024,7 +10002,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/{identityUserFlowAttributeAssignment_id}/userAttribute:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments/{identity_user_flow_attribute_assignment_id}/userAttribute:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10052,14 +10030,14 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityUserFlowAttributeAssignment-id
+        - name: identity_user_flow_attribute_assignment_id
           in: path
           description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
@@ -10079,7 +10057,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the userAttribute property of the microsoft.graph.identityUserFlowAttributeAssignment entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10088,7 +10066,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10103,7 +10081,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/getOrder():
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments/getOrder():
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10120,8 +10098,6 @@ paths:
             application/json:
               schema:
                 title: assignmentOrder
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   order:
@@ -10140,7 +10116,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10148,7 +10124,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
     description: Provides operations to call the getOrder method.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/setOrder:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userAttributeAssignments/setOrder:
     post:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10167,8 +10143,6 @@ paths:
               properties:
                 newAssignmentOrder:
                   title: assignmentOrder
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     order:
@@ -10191,7 +10165,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10199,7 +10173,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
     description: Provides operations to call the setOrder method.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userFlowIdentityProviders:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userFlowIdentityProviders:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10241,7 +10215,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10260,7 +10234,7 @@ paths:
         operationName: listMore
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userFlowIdentityProviders/{identityProviderBase_id}/$ref:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userFlowIdentityProviders/{identity_provider_base_id}/$ref:
     delete:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10272,14 +10246,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
           schema:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityProviderBase-id
+        - name: identity_provider_base_id
           in: path
           description: The unique identifier of identityProviderBase
           required: true
@@ -10295,7 +10269,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userFlowIdentityProviders/$count:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userFlowIdentityProviders/$count:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10304,7 +10278,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10319,7 +10293,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userFlowIdentityProviders/$ref:
+  /identity/b2xUserFlows/{b2x_identity_user_flow_id}/userFlowIdentityProviders/$ref:
     get:
       tags:
         - identity.b2xIdentityUserFlow
@@ -10341,7 +10315,7 @@ paths:
             type: array
             items:
               type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10375,7 +10349,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10399,7 +10373,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: b2xIdentityUserFlow-id
+        - name: b2x_identity_user_flow_id
           in: path
           description: The unique identifier of b2xIdentityUserFlow
           required: true
@@ -10415,7 +10389,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the collection of identityContainer entities.
-  /identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference_id}:
+  /identity/conditionalAccess/authenticationContextClassReferences/{authentication_context_class_reference_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10446,7 +10420,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationContextClassReference-id
+        - name: authentication_context_class_reference_id
           in: path
           description: The unique identifier of authenticationContextClassReference
           required: true
@@ -10494,7 +10468,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationContextClassReference-id
+        - name: authentication_context_class_reference_id
           in: path
           description: The unique identifier of authenticationContextClassReference
           required: true
@@ -10516,7 +10490,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationContextClassReference-id
+        - name: authentication_context_class_reference_id
           in: path
           description: The unique identifier of authenticationContextClassReference
           required: true
@@ -10532,7 +10506,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
-  /identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail_id}:
+  /identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authentication_method_mode_detail_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10560,7 +10534,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationMethodModeDetail-id
+        - name: authentication_method_mode_detail_id
           in: path
           description: The unique identifier of authenticationMethodModeDetail
           required: true
@@ -10604,7 +10578,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationMethodModeDetail-id
+        - name: authentication_method_mode_detail_id
           in: path
           description: The unique identifier of authenticationMethodModeDetail
           required: true
@@ -10622,7 +10596,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationMethodModeDetail-id
+        - name: authentication_method_mode_detail_id
           in: path
           description: The unique identifier of authenticationMethodModeDetail
           required: true
@@ -10638,7 +10612,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}:
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10666,7 +10640,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -10710,7 +10684,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -10728,7 +10702,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -10744,7 +10718,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}/combinationConfigurations:
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}/combinationConfigurations:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10790,7 +10764,7 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -10837,7 +10811,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -10845,7 +10819,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}/combinationConfigurations/{authenticationCombinationConfiguration_id}:
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}/combinationConfigurations/{authentication_combination_configuration_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10876,14 +10850,14 @@ paths:
             type: array
             items:
               type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -10931,14 +10905,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -10960,14 +10934,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
           schema:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
-        - name: authenticationCombinationConfiguration-id
+        - name: authentication_combination_configuration_id
           in: path
           description: The unique identifier of authenticationCombinationConfiguration
           required: true
@@ -10983,7 +10957,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}/combinationConfigurations/$count:
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}/combinationConfigurations/$count:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -10992,7 +10966,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -11007,7 +10981,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}/updateAllowedCombinations:
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}/updateAllowedCombinations:
     post:
       tags:
         - identity.conditionalAccessRoot
@@ -11040,8 +11014,6 @@ paths:
             application/json:
               schema:
                 title: updateAllowedCombinationsResult
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   additionalInformation:
@@ -11074,7 +11046,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -11082,7 +11054,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to call the updateAllowedCombinations method.
-  /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy_id}/usage():
+  /identity/conditionalAccess/authenticationStrength/policies/{authentication_strength_policy_id}/usage():
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11099,8 +11071,6 @@ paths:
             application/json:
               schema:
                 title: authenticationStrengthUsage
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   mfa:
@@ -11123,7 +11093,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
       parameters:
-        - name: authenticationStrengthPolicy-id
+        - name: authentication_strength_policy_id
           in: path
           description: The unique identifier of authenticationStrengthPolicy
           required: true
@@ -11131,7 +11101,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
     description: Provides operations to call the usage method.
-  /identity/conditionalAccess/deletedItems/namedLocations/{namedLocation_id}:
+  /identity/conditionalAccess/deletedItems/namedLocations/{named_location_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11158,7 +11128,7 @@ paths:
             type: array
             items:
               type: string
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11202,7 +11172,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11220,7 +11190,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11236,7 +11206,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the namedLocations property of the microsoft.graph.caPoliciesDeletableRoot entity.
-  /identity/conditionalAccess/deletedItems/namedLocations/{namedLocation_id}/restore:
+  /identity/conditionalAccess/deletedItems/namedLocations/{named_location_id}/restore:
     post:
       tags:
         - identity.conditionalAccessRoot
@@ -11249,8 +11219,6 @@ paths:
             application/json:
               schema:
                 title: policyDeletableItem
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   deletedDateTime:
@@ -11294,7 +11262,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11306,7 +11274,7 @@ paths:
       - /identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy-id}/restore
       - /identity/conditionalAccess/namedLocations/{namedLocation-id}/restore
       - /identity/conditionalAccess/policies/{conditionalAccessPolicy-id}/restore
-  /identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy_id}:
+  /identity/conditionalAccess/deletedItems/policies/{conditional_access_policy_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11333,7 +11301,7 @@ paths:
             type: array
             items:
               type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11377,7 +11345,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11395,7 +11363,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11411,7 +11379,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the policies property of the microsoft.graph.caPoliciesDeletableRoot entity.
-  /identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy_id}/restore:
+  /identity/conditionalAccess/deletedItems/policies/{conditional_access_policy_id}/restore:
     post:
       tags:
         - identity.conditionalAccessRoot
@@ -11424,8 +11392,6 @@ paths:
             application/json:
               schema:
                 title: policyDeletableItem
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   deletedDateTime:
@@ -11494,7 +11460,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11506,7 +11472,7 @@ paths:
       - /identity/conditionalAccess/deletedItems/namedLocations/{namedLocation-id}/restore
       - /identity/conditionalAccess/namedLocations/{namedLocation-id}/restore
       - /identity/conditionalAccess/policies/{conditionalAccessPolicy-id}/restore
-  /identity/conditionalAccess/namedLocations/{namedLocation_id}:
+  /identity/conditionalAccess/namedLocations/{named_location_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11537,7 +11503,7 @@ paths:
             type: array
             items:
               type: string
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11585,7 +11551,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11607,7 +11573,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11623,7 +11589,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-  /identity/conditionalAccess/namedLocations/{namedLocation_id}/restore:
+  /identity/conditionalAccess/namedLocations/{named_location_id}/restore:
     post:
       tags:
         - identity.conditionalAccessRoot
@@ -11636,8 +11602,6 @@ paths:
             application/json:
               schema:
                 title: policyDeletableItem
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   deletedDateTime:
@@ -11681,7 +11645,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: namedLocation-id
+        - name: named_location_id
           in: path
           description: The unique identifier of namedLocation
           required: true
@@ -11693,7 +11657,7 @@ paths:
       - /identity/conditionalAccess/deletedItems/namedLocations/{namedLocation-id}/restore
       - /identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy-id}/restore
       - /identity/conditionalAccess/policies/{conditionalAccessPolicy-id}/restore
-  /identity/conditionalAccess/policies/{conditionalAccessPolicy_id}:
+  /identity/conditionalAccess/policies/{conditional_access_policy_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11724,7 +11688,7 @@ paths:
             type: array
             items:
               type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11772,7 +11736,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11794,7 +11758,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11810,7 +11774,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
-  /identity/conditionalAccess/policies/{conditionalAccessPolicy_id}/restore:
+  /identity/conditionalAccess/policies/{conditional_access_policy_id}/restore:
     post:
       tags:
         - identity.conditionalAccessRoot
@@ -11823,8 +11787,6 @@ paths:
             application/json:
               schema:
                 title: policyDeletableItem
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   deletedDateTime:
@@ -11893,7 +11855,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: conditionalAccessPolicy-id
+        - name: conditional_access_policy_id
           in: path
           description: The unique identifier of conditionalAccessPolicy
           required: true
@@ -11905,7 +11867,7 @@ paths:
       - /identity/conditionalAccess/deletedItems/namedLocations/{namedLocation-id}/restore
       - /identity/conditionalAccess/deletedItems/policies/{conditionalAccessPolicy-id}/restore
       - /identity/conditionalAccess/namedLocations/{namedLocation-id}/restore
-  /identity/conditionalAccess/templates/{conditionalAccessTemplate_id}:
+  /identity/conditionalAccess/templates/{conditional_access_template_id}:
     get:
       tags:
         - identity.conditionalAccessRoot
@@ -11936,7 +11898,7 @@ paths:
             type: array
             items:
               type: string
-        - name: conditionalAccessTemplate-id
+        - name: conditional_access_template_id
           in: path
           description: The unique identifier of conditionalAccessTemplate
           required: true
@@ -11956,7 +11918,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
-  /identity/customAuthenticationExtensions/{customAuthenticationExtension_id}:
+  /identity/customAuthenticationExtensions/{custom_authentication_extension_id}:
     get:
       tags:
         - identity.customAuthenticationExtension
@@ -11987,7 +11949,7 @@ paths:
             type: array
             items:
               type: string
-        - name: customAuthenticationExtension-id
+        - name: custom_authentication_extension_id
           in: path
           description: The unique identifier of customAuthenticationExtension
           required: true
@@ -12035,7 +11997,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: customAuthenticationExtension-id
+        - name: custom_authentication_extension_id
           in: path
           description: The unique identifier of customAuthenticationExtension
           required: true
@@ -12057,7 +12019,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: customAuthenticationExtension-id
+        - name: custom_authentication_extension_id
           in: path
           description: The unique identifier of customAuthenticationExtension
           required: true
@@ -12073,7 +12035,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
-  /identity/customAuthenticationExtensions/{customAuthenticationExtension_id}/validateAuthenticationConfiguration:
+  /identity/customAuthenticationExtensions/{custom_authentication_extension_id}/validateAuthenticationConfiguration:
     post:
       tags:
         - identity.customAuthenticationExtension
@@ -12090,8 +12052,6 @@ paths:
             application/json:
               schema:
                 title: authenticationConfigurationValidation
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   errors:
@@ -12114,7 +12074,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: customAuthenticationExtension-id
+        - name: custom_authentication_extension_id
           in: path
           description: The unique identifier of customAuthenticationExtension
           required: true
@@ -12124,7 +12084,7 @@ paths:
     description: Provides operations to call the validateAuthenticationConfiguration method.
     x-ms-docs-grouped-path:
       - /identity/customAuthenticationExtensions/validateAuthenticationConfiguration
-  /identity/identityProviders/{identityProviderBase_id}:
+  /identity/identityProviders/{identity_provider_base_id}:
     get:
       tags:
         - identity.identityProviderBase
@@ -12155,7 +12115,7 @@ paths:
             type: array
             items:
               type: string
-        - name: identityProviderBase-id
+        - name: identity_provider_base_id
           in: path
           description: The unique identifier of identityProviderBase
           required: true
@@ -12203,7 +12163,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: identityProviderBase-id
+        - name: identity_provider_base_id
           in: path
           description: The unique identifier of identityProviderBase
           required: true
@@ -12225,7 +12185,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: identityProviderBase-id
+        - name: identity_provider_base_id
           in: path
           description: The unique identifier of identityProviderBase
           required: true
@@ -12241,7 +12201,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-  /identity/riskPrevention/fraudProtectionProviders/{fraudProtectionProvider_id}:
+  /identity/riskPrevention/fraudProtectionProviders/{fraud_protection_provider_id}:
     get:
       tags:
         - identity.riskPreventionContainer
@@ -12272,7 +12232,7 @@ paths:
             type: array
             items:
               type: string
-        - name: fraudProtectionProvider-id
+        - name: fraud_protection_provider_id
           in: path
           description: The unique identifier of fraudProtectionProvider
           required: true
@@ -12320,7 +12280,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: fraudProtectionProvider-id
+        - name: fraud_protection_provider_id
           in: path
           description: The unique identifier of fraudProtectionProvider
           required: true
@@ -12342,7 +12302,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: fraudProtectionProvider-id
+        - name: fraud_protection_provider_id
           in: path
           description: The unique identifier of fraudProtectionProvider
           required: true
@@ -12358,7 +12318,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the fraudProtectionProviders property of the microsoft.graph.riskPreventionContainer entity.
-  /identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProvider_id}:
+  /identity/riskPrevention/webApplicationFirewallProviders/{web_application_firewall_provider_id}:
     get:
       tags:
         - identity.riskPreventionContainer
@@ -12389,7 +12349,7 @@ paths:
             type: array
             items:
               type: string
-        - name: webApplicationFirewallProvider-id
+        - name: web_application_firewall_provider_id
           in: path
           description: The unique identifier of webApplicationFirewallProvider
           required: true
@@ -12437,7 +12397,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: webApplicationFirewallProvider-id
+        - name: web_application_firewall_provider_id
           in: path
           description: The unique identifier of webApplicationFirewallProvider
           required: true
@@ -12459,7 +12419,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: webApplicationFirewallProvider-id
+        - name: web_application_firewall_provider_id
           in: path
           description: The unique identifier of webApplicationFirewallProvider
           required: true
@@ -12475,7 +12435,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the webApplicationFirewallProviders property of the microsoft.graph.riskPreventionContainer entity.
-  /identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProvider_id}/verify:
+  /identity/riskPrevention/webApplicationFirewallProviders/{web_application_firewall_provider_id}/verify:
     post:
       tags:
         - identity.riskPreventionContainer
@@ -12504,8 +12464,6 @@ paths:
               schema:
                 x-ms-discriminator-value: '#microsoft.graph.webApplicationFirewallVerificationModel'
                 title: entity
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   id:
@@ -13670,7 +13628,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
       parameters:
-        - name: webApplicationFirewallProvider-id
+        - name: web_application_firewall_provider_id
           in: path
           description: The unique identifier of webApplicationFirewallProvider
           required: true
@@ -13678,7 +13636,7 @@ paths:
             type: string
           x-ms-docs-key-type: webApplicationFirewallProvider
     description: Provides operations to call the verify method.
-  /identity/riskPrevention/webApplicationFirewallVerifications/{webApplicationFirewallVerificationModel_id}:
+  /identity/riskPrevention/webApplicationFirewallVerifications/{web_application_firewall_verification_model_id}:
     get:
       tags:
         - identity.riskPreventionContainer
@@ -13709,7 +13667,7 @@ paths:
             type: array
             items:
               type: string
-        - name: webApplicationFirewallVerificationModel-id
+        - name: web_application_firewall_verification_model_id
           in: path
           description: The unique identifier of webApplicationFirewallVerificationModel
           required: true
@@ -13753,7 +13711,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: webApplicationFirewallVerificationModel-id
+        - name: web_application_firewall_verification_model_id
           in: path
           description: The unique identifier of webApplicationFirewallVerificationModel
           required: true
@@ -13775,7 +13733,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: webApplicationFirewallVerificationModel-id
+        - name: web_application_firewall_verification_model_id
           in: path
           description: The unique identifier of webApplicationFirewallVerificationModel
           required: true
@@ -13791,7 +13749,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the webApplicationFirewallVerifications property of the microsoft.graph.riskPreventionContainer entity.
-  /identity/riskPrevention/webApplicationFirewallVerifications/{webApplicationFirewallVerificationModel_id}/provider:
+  /identity/riskPrevention/webApplicationFirewallVerifications/{web_application_firewall_verification_model_id}/provider:
     get:
       tags:
         - identity.riskPreventionContainer
@@ -13819,7 +13777,7 @@ paths:
             type: array
             items:
               type: string
-        - name: webApplicationFirewallVerificationModel-id
+        - name: web_application_firewall_verification_model_id
           in: path
           description: The unique identifier of webApplicationFirewallVerificationModel
           required: true
@@ -13839,7 +13797,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the provider property of the microsoft.graph.webApplicationFirewallVerificationModel entity.
-  /identity/userFlowAttributes/{identityUserFlowAttribute_id}:
+  /identity/userFlowAttributes/{identity_user_flow_attribute_id}:
     get:
       tags:
         - identity.identityUserFlowAttribute
@@ -13870,7 +13828,7 @@ paths:
             type: array
             items:
               type: string
-        - name: identityUserFlowAttribute-id
+        - name: identity_user_flow_attribute_id
           in: path
           description: The unique identifier of identityUserFlowAttribute
           required: true
@@ -13918,7 +13876,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: identityUserFlowAttribute-id
+        - name: identity_user_flow_attribute_id
           in: path
           description: The unique identifier of identityUserFlowAttribute
           required: true
@@ -13940,7 +13898,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: identityUserFlowAttribute-id
+        - name: identity_user_flow_attribute_id
           in: path
           description: The unique identifier of identityUserFlowAttribute
           required: true
@@ -13956,7 +13914,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-  /identity/verifiedId/profiles/{verifiedIdProfile_id}:
+  /identity/verifiedId/profiles/{verified_id_profile_id}:
     get:
       tags:
         - identity.identityVerifiedIdRoot
@@ -13987,7 +13945,7 @@ paths:
             type: array
             items:
               type: string
-        - name: verifiedIdProfile-id
+        - name: verified_id_profile_id
           in: path
           description: The unique identifier of verifiedIdProfile
           required: true
@@ -14035,7 +13993,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: verifiedIdProfile-id
+        - name: verified_id_profile_id
           in: path
           description: The unique identifier of verifiedIdProfile
           required: true
@@ -14057,7 +14015,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: verifiedIdProfile-id
+        - name: verified_id_profile_id
           in: path
           description: The unique identifier of verifiedIdProfile
           required: true
@@ -14078,8 +14036,6 @@ components:
     microsoft.graph.identityContainer:
       x-ms-discriminator-value: '#microsoft.graph.identityContainer'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -15270,8 +15226,6 @@ components:
     microsoft.graph.identityApiConnector:
       x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -16417,8 +16371,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationEventListener:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -17564,8 +17516,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationEventsFlow:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -18710,15 +18660,11 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationConditions:
       title: authenticationConditions
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: Applications which trigger a custom authentication extension.
           title: authenticationConditionsApplications
-          required:
-            - '@odata.type'
           type: object
           properties:
             includeApplications:
@@ -18733,8 +18679,6 @@ components:
           type: string
     microsoft.graph.authenticationConditionApplication:
       title: authenticationConditionApplication
-      required:
-        - '@odata.type'
       type: object
       properties:
         appId:
@@ -18745,8 +18689,6 @@ components:
     microsoft.graph.externalUsersSelfServiceSignUpEventsFlow:
       x-ms-discriminator-value: '#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -19933,8 +19875,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.onAttributeCollectionHandler:
       title: onAttributeCollectionHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -19946,8 +19886,6 @@ components:
     microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp:
       x-ms-discriminator-value: '#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp'
       title: onAttributeCollectionHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -19970,8 +19908,6 @@ components:
           '#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp': '#/components/schemas/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp'
     microsoft.graph.onAuthenticationMethodLoadStartHandler:
       title: onAuthenticationMethodLoadStartHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -19983,8 +19919,6 @@ components:
     microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp:
       x-ms-discriminator-value: '#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp'
       title: onAuthenticationMethodLoadStartHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -20001,8 +19935,6 @@ components:
     microsoft.graph.b2xIdentityUserFlow:
       x-ms-discriminator-value: '#microsoft.graph.b2xIdentityUserFlow'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -21173,16 +21105,12 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.userFlowApiConnectorConfiguration:
       title: userFlowApiConnectorConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         postAttributeCollection:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -22332,8 +22260,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -23484,8 +23410,6 @@ components:
     microsoft.graph.identityProvider:
       x-ms-discriminator-value: '#microsoft.graph.identityProvider'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -24633,8 +24557,6 @@ components:
     microsoft.graph.userFlowLanguageConfiguration:
       x-ms-discriminator-value: '#microsoft.graph.userFlowLanguageConfiguration'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -25785,8 +25707,6 @@ components:
     microsoft.graph.userFlowLanguagePage:
       x-ms-discriminator-value: '#microsoft.graph.userFlowLanguagePage'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -26918,8 +26838,6 @@ components:
     microsoft.graph.identityUserFlowAttributeAssignment:
       x-ms-discriminator-value: '#microsoft.graph.identityUserFlowAttributeAssignment'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -28075,8 +27993,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.identityUserFlowAttribute:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -29219,8 +29135,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.assignmentOrder:
       title: assignmentOrder
-      required:
-        - '@odata.type'
       type: object
       properties:
         order:
@@ -29234,8 +29148,6 @@ components:
     microsoft.graph.authenticationContextClassReference:
       x-ms-discriminator-value: '#microsoft.graph.authenticationContextClassReference'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -30379,8 +30291,6 @@ components:
     microsoft.graph.authenticationStrengthRoot:
       x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -31528,8 +31438,6 @@ components:
     microsoft.graph.authenticationMethodModeDetail:
       x-ms-discriminator-value: '#microsoft.graph.authenticationMethodModeDetail'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -32666,8 +32574,6 @@ components:
     microsoft.graph.authenticationStrengthPolicy:
       x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -33830,8 +33736,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationCombinationConfiguration:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -34991,8 +34895,6 @@ components:
         isFlags: true
     microsoft.graph.updateAllowedCombinationsResult:
       title: updateAllowedCombinationsResult
-      required:
-        - '@odata.type'
       type: object
       properties:
         additionalInformation:
@@ -35019,8 +34921,6 @@ components:
           type: string
     microsoft.graph.authenticationStrengthUsage:
       title: authenticationStrengthUsage
-      required:
-        - '@odata.type'
       type: object
       properties:
         mfa:
@@ -35038,8 +34938,6 @@ components:
     microsoft.graph.caPoliciesDeletableRoot:
       x-ms-discriminator-value: '#microsoft.graph.caPoliciesDeletableRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -36180,8 +36078,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.namedLocation:
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -36219,8 +36115,6 @@ components:
           '#microsoft.graph.ipNamedLocation': '#/components/schemas/microsoft.graph.ipNamedLocation'
     microsoft.graph.conditionalAccessPolicy:
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -36283,8 +36177,6 @@ components:
           '#microsoft.graph.ipNamedLocation': '#/components/schemas/microsoft.graph.ipNamedLocation'
     microsoft.graph.signInIdentity:
       title: signInIdentity
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -36296,8 +36188,6 @@ components:
           '#microsoft.graph.userSignIn': '#/components/schemas/microsoft.graph.userSignIn'
     microsoft.graph.signInContext:
       title: signInContext
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -36310,15 +36200,11 @@ components:
           '#microsoft.graph.userActionContext': '#/components/schemas/microsoft.graph.userActionContext'
     microsoft.graph.signInConditions:
       title: signInConditions
-      required:
-        - '@odata.type'
       type: object
       properties:
         authenticationFlow:
           description: 'Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.'
           title: authenticationFlow
-          required:
-            - '@odata.type'
           type: object
           properties:
             transferMethod:
@@ -36356,8 +36242,6 @@ components:
         deviceInfo:
           description: Information about the device used for the sign-in.
           title: deviceInfo
-          required:
-            - '@odata.type'
           type: object
           properties:
             deviceId:
@@ -36564,8 +36448,6 @@ components:
     microsoft.graph.whatIfAnalysisResult:
       x-ms-discriminator-value: '#microsoft.graph.whatIfAnalysisResult'
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -36634,8 +36516,6 @@ components:
     microsoft.graph.conditionalAccessTemplate:
       x-ms-discriminator-value: '#microsoft.graph.conditionalAccessTemplate'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -37776,8 +37656,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.customAuthenticationExtension:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -38944,8 +38822,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.authenticationConfigurationValidation:
       title: authenticationConfigurationValidation
-      required:
-        - '@odata.type'
       type: object
       properties:
         errors:
@@ -38962,8 +38838,6 @@ components:
           type: string
     microsoft.graph.customExtensionEndpointConfiguration:
       title: customExtensionEndpointConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -38975,8 +38849,6 @@ components:
           '#microsoft.graph.logicAppTriggerEndpointConfiguration': '#/components/schemas/microsoft.graph.logicAppTriggerEndpointConfiguration'
     microsoft.graph.customExtensionAuthenticationConfiguration:
       title: customExtensionAuthenticationConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -38988,8 +38860,6 @@ components:
           '#microsoft.graph.azureAdTokenAuthentication': '#/components/schemas/microsoft.graph.azureAdTokenAuthentication'
     microsoft.graph.identityProviderBase:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -40124,8 +39994,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.riskPreventionContainer:
       title: riskPreventionContainer
-      required:
-        - '@odata.type'
       type: object
       properties:
         fraudProtectionProviders:
@@ -40150,8 +40018,6 @@ components:
           type: string
     microsoft.graph.fraudProtectionProvider:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -41285,8 +41151,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.webApplicationFirewallProvider:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -42421,8 +42285,6 @@ components:
     microsoft.graph.webApplicationFirewallVerificationModel:
       x-ms-discriminator-value: '#microsoft.graph.webApplicationFirewallVerificationModel'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -43582,8 +43444,6 @@ components:
     microsoft.graph.identityVerifiedIdRoot:
       x-ms-discriminator-value: '#microsoft.graph.identityVerifiedIdRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -44721,8 +44581,6 @@ components:
     microsoft.graph.verifiedIdProfile:
       x-ms-discriminator-value: '#microsoft.graph.verifiedIdProfile'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -45886,8 +45744,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -47019,8 +46875,6 @@ components:
     microsoft.graph.conditionalAccessRoot:
       x-ms-discriminator-value: '#microsoft.graph.conditionalAccessRoot'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -48211,8 +48065,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
     microsoft.graph.apiAuthenticationConfigurationBase:
       title: apiAuthenticationConfigurationBase
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -48258,8 +48110,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlow'
     microsoft.graph.authenticationConditionsApplications:
       title: authenticationConditionsApplications
-      required:
-        - '@odata.type'
       type: object
       properties:
         includeApplications:
@@ -48286,8 +48136,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
     microsoft.graph.onAttributeCollectionStartHandler:
       title: onAttributeCollectionStartHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -48298,8 +48146,6 @@ components:
           '#microsoft.graph.onAttributeCollectionStartCustomExtensionHandler': '#/components/schemas/microsoft.graph.onAttributeCollectionStartCustomExtensionHandler'
     microsoft.graph.onAttributeCollectionSubmitHandler:
       title: onAttributeCollectionSubmitHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -48310,8 +48156,6 @@ components:
           '#microsoft.graph.onAttributeCollectionSubmitCustomExtensionHandler': '#/components/schemas/microsoft.graph.onAttributeCollectionSubmitCustomExtensionHandler'
     microsoft.graph.onInteractiveAuthFlowStartHandler:
       title: onInteractiveAuthFlowStartHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -48322,8 +48166,6 @@ components:
           '#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp': '#/components/schemas/microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp'
     microsoft.graph.onUserCreateStartHandler:
       title: onUserCreateStartHandler
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -48334,8 +48176,6 @@ components:
           '#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp': '#/components/schemas/microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp'
     microsoft.graph.authenticationAttributeCollectionPage:
       title: authenticationAttributeCollectionPage
-      required:
-        - '@odata.type'
       type: object
       properties:
         views:
@@ -48380,6 +48220,13 @@ components:
       properties:
         '@odata.id':
           type: string
+        directoryObjectId:
+          type: string
+          description: >-
+            The id of the directory object to reference (a user, group,
+            service principal, device, ...). Sent on the wire as
+            '@odata.id':
+            'https://graph.microsoft.com/v1.0/directoryObjects/{id}'.
       additionalProperties:
         type: string
         description: (opaque JSON object)
@@ -48430,8 +48277,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
     microsoft.graph.identityUserFlow:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -49640,8 +49485,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
     microsoft.graph.userAttributeValuesItem:
       title: userAttributeValuesItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         isDefault:
@@ -49796,8 +49639,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.namedLocation'
     microsoft.graph.policyDeletableItem:
       title: policyDeletableItem
-      required:
-        - '@odata.type'
       type: object
       properties:
         deletedDateTime:
@@ -49832,22 +49673,16 @@ components:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
     microsoft.graph.conditionalAccessConditionSet:
       title: conditionalAccessConditionSet
-      required:
-        - '@odata.type'
       type: object
       properties:
         applications:
           description: Applications and user actions included in and excluded from the policy. Required.
           title: conditionalAccessApplications
-          required:
-            - '@odata.type'
           type: object
           properties:
             applicationFilter:
               description: Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -49883,8 +49718,6 @@ components:
         authenticationFlows:
           description: Authentication flows included in the policy scope.
           title: conditionalAccessAuthenticationFlows
-          required:
-            - '@odata.type'
           type: object
           properties:
             transferMethods:
@@ -49895,8 +49728,6 @@ components:
         clientApplications:
           description: Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
           title: conditionalAccessClientApplications
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeServicePrincipals:
@@ -49912,8 +49743,6 @@ components:
             servicePrincipalFilter:
               description: Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -49935,15 +49764,11 @@ components:
         devices:
           description: Devices in the policy.
           title: conditionalAccessDevices
-          required:
-            - '@odata.type'
           type: object
           properties:
             deviceFilter:
               description: Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
               title: conditionalAccessFilter
-              required:
-                - '@odata.type'
               type: object
               properties:
                 mode:
@@ -49972,8 +49797,6 @@ components:
         locations:
           description: Locations included in and excluded from the policy.
           title: conditionalAccessLocations
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeLocations:
@@ -49992,8 +49815,6 @@ components:
         platforms:
           description: Platforms included in and excluded from the policy.
           title: conditionalAccessPlatforms
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludePlatforms:
@@ -50027,8 +49848,6 @@ components:
         users:
           description: Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
           title: conditionalAccessUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             excludeGroups:
@@ -50039,15 +49858,11 @@ components:
             excludeGuestsOrExternalUsers:
               description: Internal guests or external users excluded from the policy scope. Optionally populated.
               title: conditionalAccessGuestsOrExternalUsers
-              required:
-                - '@odata.type'
               type: object
               properties:
                 externalTenants:
                   description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
                   title: conditionalAccessExternalTenants
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     membershipKind:
@@ -50090,15 +49905,11 @@ components:
             includeGuestsOrExternalUsers:
               description: Internal guests or external users included in the policy scope. Optionally populated.
               title: conditionalAccessGuestsOrExternalUsers
-              required:
-                - '@odata.type'
               type: object
               properties:
                 externalTenants:
                   description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
                   title: conditionalAccessExternalTenants
-                  required:
-                    - '@odata.type'
                   type: object
                   properties:
                     membershipKind:
@@ -50140,8 +49951,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessGrantControls:
       title: conditionalAccessGrantControls
-      required:
-        - '@odata.type'
       type: object
       properties:
         builtInControls:
@@ -50167,8 +49976,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -51335,16 +51142,12 @@ components:
           type: string
     microsoft.graph.conditionalAccessSessionControls:
       title: conditionalAccessSessionControls
-      required:
-        - '@odata.type'
       type: object
       properties:
         applicationEnforcedRestrictions:
           description: Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
           x-ms-discriminator-value: '#microsoft.graph.applicationEnforcedRestrictionsSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -51366,8 +51169,6 @@ components:
           description: Session control to apply cloud app security.
           x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -51400,8 +51201,6 @@ components:
           description: Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
           x-ms-discriminator-value: '#microsoft.graph.persistentBrowserSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -51429,8 +51228,6 @@ components:
         secureSignInSession:
           x-ms-discriminator-value: '#microsoft.graph.secureSignInSessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -51453,8 +51250,6 @@ components:
           description: Session control to enforce signin frequency.
           x-ms-discriminator-value: '#microsoft.graph.signInFrequencySessionControl'
           title: conditionalAccessSessionControl
-          required:
-            - '@odata.type'
           type: object
           properties:
             isEnabled:
@@ -51511,8 +51306,6 @@ components:
       type: string
     microsoft.graph.authenticationFlow:
       title: authenticationFlow
-      required:
-        - '@odata.type'
       type: object
       properties:
         transferMethod:
@@ -51542,8 +51335,6 @@ components:
       type: string
     microsoft.graph.deviceInfo:
       title: deviceInfo
-      required:
-        - '@odata.type'
       type: object
       properties:
         deviceId:
@@ -51743,8 +51534,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
     microsoft.graph.conditionalAccessPolicyDetail:
       title: conditionalAccessPolicyDetail
-      required:
-        - '@odata.type'
       type: object
       properties:
         conditions:
@@ -51752,8 +51541,6 @@ components:
         grantControls:
           description: Represents grant controls that must be fulfilled for the policy.
           title: conditionalAccessGrantControls
-          required:
-            - '@odata.type'
           type: object
           properties:
             builtInControls:
@@ -51779,8 +51566,6 @@ components:
               x-ms-navigationProperty: true
               x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'
               title: entity
-              required:
-                - '@odata.type'
               type: object
               properties:
                 id:
@@ -52949,16 +52734,12 @@ components:
         sessionControls:
           description: Represents a complex type of session controls that is enforced after sign-in.
           title: conditionalAccessSessionControls
-          required:
-            - '@odata.type'
           type: object
           properties:
             applicationEnforcedRestrictions:
               description: Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
               x-ms-discriminator-value: '#microsoft.graph.applicationEnforcedRestrictionsSessionControl'
               title: conditionalAccessSessionControl
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isEnabled:
@@ -52980,8 +52761,6 @@ components:
               description: Session control to apply cloud app security.
               x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'
               title: conditionalAccessSessionControl
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isEnabled:
@@ -53014,8 +52793,6 @@ components:
               description: Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
               x-ms-discriminator-value: '#microsoft.graph.persistentBrowserSessionControl'
               title: conditionalAccessSessionControl
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isEnabled:
@@ -53043,8 +52820,6 @@ components:
             secureSignInSession:
               x-ms-discriminator-value: '#microsoft.graph.secureSignInSessionControl'
               title: conditionalAccessSessionControl
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isEnabled:
@@ -53067,8 +52842,6 @@ components:
               description: Session control to enforce signin frequency.
               x-ms-discriminator-value: '#microsoft.graph.signInFrequencySessionControl'
               title: conditionalAccessSessionControl
-              required:
-                - '@odata.type'
               type: object
               properties:
                 isEnabled:
@@ -53149,8 +52922,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
     microsoft.graph.customCalloutExtension:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -54310,8 +54081,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.customExtensionBehaviorOnError:
       title: customExtensionBehaviorOnError
-      required:
-        - '@odata.type'
       type: object
       properties:
         '@odata.type':
@@ -54322,8 +54091,6 @@ components:
           '#microsoft.graph.fallbackToMicrosoftProviderOnError': '#/components/schemas/microsoft.graph.fallbackToMicrosoftProviderOnError'
     microsoft.graph.genericError:
       title: genericError
-      required:
-        - '@odata.type'
       type: object
       properties:
         code:
@@ -54375,8 +54142,6 @@ components:
       type: string
     microsoft.graph.webApplicationFirewallVerificationResult:
       title: webApplicationFirewallVerificationResult
-      required:
-        - '@odata.type'
       type: object
       properties:
         errors:
@@ -54400,15 +54165,11 @@ components:
           type: string
     microsoft.graph.webApplicationFirewallVerifiedDetails:
       title: webApplicationFirewallVerifiedDetails
-      required:
-        - '@odata.type'
       type: object
       properties:
         dnsConfiguration:
           description: DNS-related details discovered during verification for the host, such as the DNS record name, record type, record value, whether the record is proxied through the provider, and whether the domain is verified.
           title: webApplicationFirewallDnsConfiguration
-          required:
-            - '@odata.type'
           type: object
           properties:
             isDomainVerified:
@@ -54469,8 +54230,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
     microsoft.graph.faceCheckConfiguration:
       title: faceCheckConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -54490,8 +54249,6 @@ components:
       type: string
     microsoft.graph.verifiedIdProfileConfiguration:
       title: verifiedIdProfileConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         acceptedIssuer:
@@ -54513,8 +54270,6 @@ components:
           type: string
     microsoft.graph.verifiedIdUsageConfiguration:
       title: verifiedIdUsageConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabledForTestOnly:
@@ -54546,8 +54301,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
     microsoft.graph.authenticationAttributeCollectionPageViewConfiguration:
       title: authenticationAttributeCollectionPageViewConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         description:
@@ -54585,15 +54338,11 @@ components:
       nullable: true
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
-      required:
-        - '@odata.type'
       type: object
       properties:
         applicationFilter:
           description: Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -54627,8 +54376,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessAuthenticationFlows:
       title: conditionalAccessAuthenticationFlows
-      required:
-        - '@odata.type'
       type: object
       properties:
         transferMethods:
@@ -54637,8 +54384,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessClientApplications:
       title: conditionalAccessClientApplications
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeServicePrincipals:
@@ -54654,8 +54399,6 @@ components:
         servicePrincipalFilter:
           description: Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -54670,15 +54413,11 @@ components:
           type: string
     microsoft.graph.conditionalAccessDevices:
       title: conditionalAccessDevices
-      required:
-        - '@odata.type'
       type: object
       properties:
         deviceFilter:
           description: Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
           title: conditionalAccessFilter
-          required:
-            - '@odata.type'
           type: object
           properties:
             mode:
@@ -54703,8 +54442,6 @@ components:
         isFlags: true
     microsoft.graph.conditionalAccessLocations:
       title: conditionalAccessLocations
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeLocations:
@@ -54721,8 +54458,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessPlatforms:
       title: conditionalAccessPlatforms
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludePlatforms:
@@ -54739,8 +54474,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessUsers:
       title: conditionalAccessUsers
-      required:
-        - '@odata.type'
       type: object
       properties:
         excludeGroups:
@@ -54751,15 +54484,11 @@ components:
         excludeGuestsOrExternalUsers:
           description: Internal guests or external users excluded from the policy scope. Optionally populated.
           title: conditionalAccessGuestsOrExternalUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             externalTenants:
               description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
               title: conditionalAccessExternalTenants
-              required:
-                - '@odata.type'
               type: object
               properties:
                 membershipKind:
@@ -54802,15 +54531,11 @@ components:
         includeGuestsOrExternalUsers:
           description: Internal guests or external users included in the policy scope. Optionally populated.
           title: conditionalAccessGuestsOrExternalUsers
-          required:
-            - '@odata.type'
           type: object
           properties:
             externalTenants:
               description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
               title: conditionalAccessExternalTenants
-              required:
-                - '@odata.type'
               type: object
               properties:
                 membershipKind:
@@ -54863,8 +54588,6 @@ components:
     microsoft.graph.applicationEnforcedRestrictionsSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.applicationEnforcedRestrictionsSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -54884,8 +54607,6 @@ components:
     microsoft.graph.cloudAppSecuritySessionControl:
       x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -54912,8 +54633,6 @@ components:
     microsoft.graph.persistentBrowserSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.persistentBrowserSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -54940,8 +54659,6 @@ components:
     microsoft.graph.secureSignInSessionControl:
       x-ms-discriminator-value: '#microsoft.graph.secureSignInSessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -54961,8 +54678,6 @@ components:
     microsoft.graph.signInFrequencySessionControl:
       x-ms-discriminator-value: '#microsoft.graph.signInFrequencySessionControl'
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -55019,8 +54734,6 @@ components:
         isFlags: true
     microsoft.graph.customExtensionClientConfiguration:
       title: customExtensionClientConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         maximumRetries:
@@ -55049,8 +54762,6 @@ components:
       type: string
     microsoft.graph.webApplicationFirewallDnsConfiguration:
       title: webApplicationFirewallDnsConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         isDomainVerified:
@@ -55073,8 +54784,6 @@ components:
           type: string
     microsoft.graph.claimBinding:
       title: claimBinding
-      required:
-        - '@odata.type'
       type: object
       properties:
         matchConfidenceLevel:
@@ -55095,8 +54804,6 @@ components:
       type: string
     microsoft.graph.claimValidation:
       title: claimValidation
-      required:
-        - '@odata.type'
       type: object
       properties:
         customExtensionId:
@@ -55130,8 +54837,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:
@@ -55152,8 +54857,6 @@ components:
           type: string
     microsoft.graph.authenticationAttributeCollectionInputConfiguration:
       title: authenticationAttributeCollectionInputConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         attribute:
@@ -55197,8 +54900,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessFilter:
       title: conditionalAccessFilter
-      required:
-        - '@odata.type'
       type: object
       properties:
         mode:
@@ -55210,15 +54911,11 @@ components:
           type: string
     microsoft.graph.conditionalAccessGuestsOrExternalUsers:
       title: conditionalAccessGuestsOrExternalUsers
-      required:
-        - '@odata.type'
       type: object
       properties:
         externalTenants:
           description: The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
           title: conditionalAccessExternalTenants
-          required:
-            - '@odata.type'
           type: object
           properties:
             membershipKind:
@@ -55244,8 +54941,6 @@ components:
           type: string
     microsoft.graph.conditionalAccessSessionControl:
       title: conditionalAccessSessionControl
-      required:
-        - '@odata.type'
       type: object
       properties:
         isEnabled:
@@ -55320,8 +55015,6 @@ components:
       type: string
     microsoft.graph.authenticationAttributeCollectionOptionConfiguration:
       title: authenticationAttributeCollectionOptionConfiguration
-      required:
-        - '@odata.type'
       type: object
       properties:
         label:
@@ -55340,8 +55033,6 @@ components:
       type: string
     microsoft.graph.conditionalAccessExternalTenants:
       title: conditionalAccessExternalTenants
-      required:
-        - '@odata.type'
       type: object
       properties:
         membershipKind:

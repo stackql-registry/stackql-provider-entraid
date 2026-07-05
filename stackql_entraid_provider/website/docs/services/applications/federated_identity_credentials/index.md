@@ -64,11 +64,6 @@ Retrieved navigation property
     <td>The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Alternate key. Required. Not nullable. Supports $filter (eq).</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="audiences" /></td>
     <td><code>array</code></td>
     <td>The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.</td>
@@ -113,11 +108,6 @@ Retrieved navigation property
     <td><CopyableCode code="name" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Alternate key. Required. Not nullable. Supports $filter (eq).</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="audiences" /></td>
@@ -166,11 +156,6 @@ Retrieved collection
     <td>The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Alternate key. Required. Not nullable. Supports $filter (eq).</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="audiences" /></td>
     <td><code>array</code></td>
     <td>The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.</td>
@@ -213,56 +198,56 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-federatedIdentityCredential-id"><code>federatedIdentityCredential-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-federated_identity_credential_id"><code>federated_identity_credential_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a federatedIdentityCredential object assigned to an application.</td>
 </tr>
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-name"><code>name</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-name"><code>name</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a federatedIdentityCredential object assigned to an application.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
+    <td></td>
     <td>Get a list of the federatedIdentityCredential objects and their properties assigned to an application.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a></td>
     <td></td>
     <td>Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-federatedIdentityCredential-id"><code>federatedIdentityCredential-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-federated_identity_credential_id"><code>federated_identity_credential_id</code></a></td>
     <td></td>
     <td>Create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.</td>
 </tr>
 <tr>
     <td><a href="#update_2"><CopyableCode code="update_2" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-name"><code>name</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-name"><code>name</code></a></td>
     <td></td>
     <td>Create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-federatedIdentityCredential-id"><code>federatedIdentityCredential-id</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-federated_identity_credential_id"><code>federated_identity_credential_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a federatedIdentityCredential object from an application.</td>
 </tr>
 <tr>
     <td><a href="#delete_2"><CopyableCode code="delete_2" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-application-id"><code>application-id</code></a>, <a href="#parameter-name"><code>name</code></a></td>
+    <td><a href="#parameter-application_id"><code>application_id</code></a>, <a href="#parameter-name"><code>name</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a federatedIdentityCredential object from an application.</td>
 </tr>
@@ -282,13 +267,13 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-application-id">
-    <td><CopyableCode code="application-id" /></td>
+<tr id="parameter-application_id">
+    <td><CopyableCode code="application_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of application</td>
 </tr>
-<tr id="parameter-federatedIdentityCredential-id">
-    <td><CopyableCode code="federatedIdentityCredential-id" /></td>
+<tr id="parameter-federated_identity_credential_id">
+    <td><CopyableCode code="federated_identity_credential_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of federatedIdentityCredential</td>
 </tr>
@@ -296,46 +281,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     <td><CopyableCode code="name" /></td>
     <td><code>string</code></td>
     <td>Alternate key of federatedIdentityCredential</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -363,16 +308,13 @@ Read the properties and relationships of a federatedIdentityCredential object as
 SELECT
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
 subject
 FROM entra_id.applications.federated_identity_credentials
-WHERE application-id = '{{ application-id }}' -- required
-AND federatedIdentityCredential-id = '{{ federatedIdentityCredential-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE application_id = '{{ application_id }}' -- required
+AND federated_identity_credential_id = '{{ federated_identity_credential_id }}' -- required
 ;
 ```
 </TabItem>
@@ -384,16 +326,13 @@ Read the properties and relationships of a federatedIdentityCredential object as
 SELECT
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
 subject
 FROM entra_id.applications.federated_identity_credentials
-WHERE application-id = '{{ application-id }}' -- required
+WHERE application_id = '{{ application_id }}' -- required
 AND name = '{{ name }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -405,21 +344,12 @@ Get a list of the federatedIdentityCredential objects and their properties assig
 SELECT
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
 subject
 FROM entra_id.applications.federated_identity_credentials
-WHERE application-id = '{{ application-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE application_id = '{{ application_id }}' -- required
 ;
 ```
 </TabItem>
@@ -442,27 +372,24 @@ Create a new federatedIdentityCredential object for an application. By configuri
 ```sql
 INSERT INTO entra_id.applications.federated_identity_credentials (
 id,
-@odata.type,
 audiences,
 description,
 issuer,
 name,
 subject,
-application-id
+application_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ audiences }}',
 '{{ description }}',
 '{{ issuer }}',
 '{{ name }}',
 '{{ subject }}',
-'{{ application-id }}'
+'{{ application_id }}'
 RETURNING
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
@@ -475,15 +402,13 @@ subject
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: federated_identity_credentials
   props:
-    - name: application-id
-      value: "{{ application-id }}"
+    - name: application_id
+      value: "{{ application_id }}"
       description: Required parameter for the federated_identity_credentials resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: audiences
       value:
         - "{{ audiences }}"
@@ -528,20 +453,17 @@ Create a new federatedIdentityCredential object for an application if it doesn't
 UPDATE entra_id.applications.federated_identity_credentials
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 audiences = '{{ audiences }}',
 description = '{{ description }}',
 issuer = '{{ issuer }}',
 name = '{{ name }}',
 subject = '{{ subject }}'
 WHERE 
-application-id = '{{ application-id }}' --required
-AND federatedIdentityCredential-id = '{{ federatedIdentityCredential-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+application_id = '{{ application_id }}' --required
+AND federated_identity_credential_id = '{{ federated_identity_credential_id }}' --required
 RETURNING
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
@@ -556,20 +478,17 @@ Create a new federatedIdentityCredential object for an application if it doesn't
 UPDATE entra_id.applications.federated_identity_credentials
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 audiences = '{{ audiences }}',
 description = '{{ description }}',
 issuer = '{{ issuer }}',
 name = '{{ name }}',
 subject = '{{ subject }}'
 WHERE 
-application-id = '{{ application-id }}' --required
+application_id = '{{ application_id }}' --required
 AND name = '{{ name }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
 name,
-@odata.type,
 audiences,
 description,
 issuer,
@@ -594,8 +513,8 @@ Delete a federatedIdentityCredential object from an application.
 
 ```sql
 DELETE FROM entra_id.applications.federated_identity_credentials
-WHERE application-id = '{{ application-id }}' --required
-AND federatedIdentityCredential-id = '{{ federatedIdentityCredential-id }}' --required
+WHERE application_id = '{{ application_id }}' --required
+AND federated_identity_credential_id = '{{ federated_identity_credential_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -606,7 +525,7 @@ Delete a federatedIdentityCredential object from an application.
 
 ```sql
 DELETE FROM entra_id.applications.federated_identity_credentials
-WHERE application-id = '{{ application-id }}' --required
+WHERE application_id = '{{ application_id }}' --required
 AND name = '{{ name }}' --required
 AND If-Match = '{{ If-Match }}'
 ;

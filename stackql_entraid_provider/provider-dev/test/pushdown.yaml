@@ -71,14 +71,19 @@
   expect_wire:
     - "$top=5"
 
-- name: limit_offset_to_top_and_skip
+- name: limit_offset_pushes_top_only
   sql: |
     SELECT id, displayName
     FROM entra_id.users.users
     LIMIT 5 OFFSET 2
+  # Graph rejects $skip on directory objects ("'$skip' is not supported by the
+  # service", 400), so the provider config omits the skip option: OFFSET stays
+  # a client-side primitive (correct via nextLink pagination), LIMIT still
+  # bounds the page size via $top.
   expect_wire:
     - "$top=5"
-    - "$skip=2"
+  forbid_wire:
+    - "$skip="
 
 - name: order_by_to_orderby
   sql: |

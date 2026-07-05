@@ -58,11 +58,6 @@ Retrieved entity
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="categories" /></td>
     <td><code>array</code></td>
     <td>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).</td>
@@ -122,11 +117,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="categories" /></td>
@@ -191,21 +181,21 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-applicationTemplate-id"><code>applicationTemplate-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-application_template_id"><code>application_template_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties of an applicationTemplate object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.</td>
 </tr>
 <tr>
     <td><a href="#instantiate"><CopyableCode code="instantiate" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-applicationTemplate-id"><code>applicationTemplate-id</code></a></td>
+    <td><a href="#parameter-application_template_id"><code>application_template_id</code></a></td>
     <td></td>
     <td>Add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.</td>
 </tr>
@@ -225,50 +215,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-applicationTemplate-id">
-    <td><CopyableCode code="applicationTemplate-id" /></td>
+<tr id="parameter-application_template_id">
+    <td><CopyableCode code="application_template_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of applicationTemplate</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -289,7 +239,6 @@ Retrieve the properties of an applicationTemplate object.
 ```sql
 SELECT
 id,
-@odata.type,
 categories,
 description,
 displayName,
@@ -299,9 +248,7 @@ publisher,
 supportedProvisioningTypes,
 supportedSingleSignOnModes
 FROM entra_id.application_templates.application_templates
-WHERE applicationTemplate-id = '{{ applicationTemplate-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE application_template_id = '{{ application_template_id }}' -- required
 ;
 ```
 </TabItem>
@@ -312,7 +259,6 @@ Retrieve a list of applicationTemplate objects from the Microsoft Entra applicat
 ```sql
 SELECT
 id,
-@odata.type,
 categories,
 description,
 displayName,
@@ -322,14 +268,6 @@ publisher,
 supportedProvisioningTypes,
 supportedSingleSignOnModes
 FROM entra_id.application_templates.application_templates
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -350,7 +288,7 @@ Add an instance of an application from the Microsoft Entra application gallery i
 
 ```sql
 EXEC entra_id.application_templates.application_templates.instantiate 
-@applicationTemplate-id='{{ applicationTemplate-id }}' --required 
+@application_template_id='{{ application_template_id }}' --required 
 @@json=
 '{
 "displayName": "{{ displayName }}", 

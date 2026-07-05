@@ -270,7 +270,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/findTenantInformationByDomainName(domainName='{domainName}'):
+  /tenantRelationships/findTenantInformationByDomainName(domainName='{domain_name}'):
     get:
       tags:
         - tenantRelationships.tenantRelationship.Functions
@@ -287,8 +287,6 @@ paths:
             application/json:
               schema:
                 title: tenantInformation
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   defaultDomainName:
@@ -316,7 +314,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
       parameters:
-        - name: domainName
+        - name: domain_name
           in: path
           description: 'Usage: domainName=''{domainName}'''
           required: true
@@ -324,7 +322,7 @@ paths:
             type: string
             nullable: true
     description: Provides operations to call the findTenantInformationByDomainName method.
-  /tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}'):
+  /tenantRelationships/findTenantInformationByTenantId(tenantId='{tenant_id}'):
     get:
       tags:
         - tenantRelationships.tenantRelationship.Functions
@@ -341,8 +339,6 @@ paths:
             application/json:
               schema:
                 title: tenantInformation
-                required:
-                  - '@odata.type'
                 type: object
                 properties:
                   defaultDomainName:
@@ -370,7 +366,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
       parameters:
-        - name: tenantId
+        - name: tenant_id
           in: path
           description: 'Usage: tenantId=''{tenantId}'''
           required: true
@@ -625,7 +621,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer_id}:
+  /tenantRelationships/delegatedAdminCustomers/{delegated_admin_customer_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
@@ -656,7 +652,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -700,7 +696,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -718,7 +714,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -734,7 +730,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-  /tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer_id}/serviceManagementDetails:
+  /tenantRelationships/delegatedAdminCustomers/{delegated_admin_customer_id}/serviceManagementDetails:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
@@ -780,7 +776,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -823,7 +819,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -831,7 +827,7 @@ paths:
             type: string
           x-ms-docs-key-type: delegatedAdminCustomer
     description: Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
-  /tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer_id}/serviceManagementDetails/{delegatedAdminServiceManagementDetail_id}:
+  /tenantRelationships/delegatedAdminCustomers/{delegated_admin_customer_id}/serviceManagementDetails/{delegated_admin_service_management_detail_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
@@ -859,14 +855,14 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminCustomer
-        - name: delegatedAdminServiceManagementDetail-id
+        - name: delegated_admin_service_management_detail_id
           in: path
           description: The unique identifier of delegatedAdminServiceManagementDetail
           required: true
@@ -910,14 +906,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminCustomer
-        - name: delegatedAdminServiceManagementDetail-id
+        - name: delegated_admin_service_management_detail_id
           in: path
           description: The unique identifier of delegatedAdminServiceManagementDetail
           required: true
@@ -935,14 +931,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminCustomer
-        - name: delegatedAdminServiceManagementDetail-id
+        - name: delegated_admin_service_management_detail_id
           in: path
           description: The unique identifier of delegatedAdminServiceManagementDetail
           required: true
@@ -958,7 +954,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
-  /tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer_id}/serviceManagementDetails/$count:
+  /tenantRelationships/delegatedAdminCustomers/{delegated_admin_customer_id}/serviceManagementDetails/$count:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
@@ -967,7 +963,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: delegatedAdminCustomer-id
+        - name: delegated_admin_customer_id
           in: path
           description: The unique identifier of delegatedAdminCustomer
           required: true
@@ -982,7 +978,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1013,7 +1009,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1061,7 +1057,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1083,7 +1079,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1099,7 +1095,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/accessAssignments:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/accessAssignments:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1145,7 +1141,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1192,7 +1188,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1200,7 +1196,7 @@ paths:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
     description: Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/accessAssignments/{delegatedAdminAccessAssignment_id}:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/accessAssignments/{delegated_admin_access_assignment_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1231,14 +1227,14 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminAccessAssignment-id
+        - name: delegated_admin_access_assignment_id
           in: path
           description: The unique identifier of delegatedAdminAccessAssignment
           required: true
@@ -1286,14 +1282,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminAccessAssignment-id
+        - name: delegated_admin_access_assignment_id
           in: path
           description: The unique identifier of delegatedAdminAccessAssignment
           required: true
@@ -1315,14 +1311,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminAccessAssignment-id
+        - name: delegated_admin_access_assignment_id
           in: path
           description: The unique identifier of delegatedAdminAccessAssignment
           required: true
@@ -1338,7 +1334,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/accessAssignments/$count:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/accessAssignments/$count:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1347,7 +1343,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1362,7 +1358,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/operations:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/operations:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1408,7 +1404,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1451,7 +1447,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1459,7 +1455,7 @@ paths:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
     description: Provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/operations/{delegatedAdminRelationshipOperation_id}:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/operations/{delegated_admin_relationship_operation_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1490,14 +1486,14 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipOperation-id
+        - name: delegated_admin_relationship_operation_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipOperation
           required: true
@@ -1541,14 +1537,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipOperation-id
+        - name: delegated_admin_relationship_operation_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipOperation
           required: true
@@ -1566,14 +1562,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipOperation-id
+        - name: delegated_admin_relationship_operation_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipOperation
           required: true
@@ -1589,7 +1585,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/operations/$count:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/operations/$count:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1598,7 +1594,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1613,7 +1609,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/requests:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/requests:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1659,7 +1655,7 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1706,7 +1702,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1714,7 +1710,7 @@ paths:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
     description: Provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/requests/{delegatedAdminRelationshipRequest_id}:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/requests/{delegated_admin_relationship_request_id}:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1745,14 +1741,14 @@ paths:
             type: array
             items:
               type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipRequest-id
+        - name: delegated_admin_relationship_request_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipRequest
           required: true
@@ -1796,14 +1792,14 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipRequest-id
+        - name: delegated_admin_relationship_request_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipRequest
           required: true
@@ -1821,14 +1817,14 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
           schema:
             type: string
           x-ms-docs-key-type: delegatedAdminRelationship
-        - name: delegatedAdminRelationshipRequest-id
+        - name: delegated_admin_relationship_request_id
           in: path
           description: The unique identifier of delegatedAdminRelationshipRequest
           required: true
@@ -1844,7 +1840,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     description: Provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
-  /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship_id}/requests/$count:
+  /tenantRelationships/delegatedAdminRelationships/{delegated_admin_relationship_id}/requests/$count:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
@@ -1853,7 +1849,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - name: delegatedAdminRelationship-id
+        - name: delegated_admin_relationship_id
           in: path
           description: The unique identifier of delegatedAdminRelationship
           required: true
@@ -1868,7 +1864,7 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
     description: Provides operations to count the resources in the collection.
-  /tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember_id}:
+  /tenantRelationships/multiTenantOrganization/tenants/{multi_tenant_organization_member_id}:
     get:
       tags:
         - tenantRelationships.multiTenantOrganization
@@ -1899,7 +1895,7 @@ paths:
             type: array
             items:
               type: string
-        - name: multiTenantOrganizationMember-id
+        - name: multi_tenant_organization_member_id
           in: path
           description: The unique identifier of multiTenantOrganizationMember
           required: true
@@ -1947,7 +1943,7 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
       parameters:
-        - name: multiTenantOrganizationMember-id
+        - name: multi_tenant_organization_member_id
           in: path
           description: The unique identifier of multiTenantOrganizationMember
           required: true
@@ -1969,7 +1965,7 @@ paths:
           description: ETag
           schema:
             type: string
-        - name: multiTenantOrganizationMember-id
+        - name: multi_tenant_organization_member_id
           in: path
           description: The unique identifier of multiTenantOrganizationMember
           required: true
@@ -1989,8 +1985,6 @@ components:
   schemas:
     microsoft.graph.tenantRelationship:
       title: tenantRelationship
-      required:
-        - '@odata.type'
       type: object
       properties:
         delegatedAdminCustomers:
@@ -2010,8 +2004,6 @@ components:
           x-ms-navigationProperty: true
           x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganization'
           title: entity
-          required:
-            - '@odata.type'
           type: object
           properties:
             id:
@@ -3181,8 +3173,6 @@ components:
     microsoft.graph.delegatedAdminCustomer:
       x-ms-discriminator-value: '#microsoft.graph.delegatedAdminCustomer'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -4327,8 +4317,6 @@ components:
     microsoft.graph.delegatedAdminServiceManagementDetail:
       x-ms-discriminator-value: '#microsoft.graph.delegatedAdminServiceManagementDetail'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -5465,8 +5453,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.delegatedAdminRelationship:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -6670,8 +6656,6 @@ components:
     microsoft.graph.delegatedAdminAccessAssignment:
       x-ms-discriminator-value: '#microsoft.graph.delegatedAdminAccessAssignment'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -7826,8 +7810,6 @@ components:
     microsoft.graph.delegatedAdminRelationshipOperation:
       x-ms-discriminator-value: '#microsoft.graph.delegatedAdminRelationshipOperation'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -8976,8 +8958,6 @@ components:
     microsoft.graph.delegatedAdminRelationshipRequest:
       x-ms-discriminator-value: '#microsoft.graph.delegatedAdminRelationshipRequest'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -10129,8 +10109,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.tenantInformation:
       title: tenantInformation
-      required:
-        - '@odata.type'
       type: object
       properties:
         defaultDomainName:
@@ -10153,8 +10131,6 @@ components:
     microsoft.graph.multiTenantOrganization:
       x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganization'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -11321,8 +11297,6 @@ components:
     microsoft.graph.multiTenantOrganizationJoinRequestRecord:
       x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationJoinRequestRecord'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -12479,8 +12453,6 @@ components:
     microsoft.graph.multiTenantOrganizationMember:
       x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationMember'
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -13685,8 +13657,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
     microsoft.graph.entity:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -14850,8 +14820,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
     microsoft.graph.delegatedAdminAccessDetails:
       title: delegatedAdminAccessDetails
-      required:
-        - '@odata.type'
       type: object
       properties:
         unifiedRoles:
@@ -14863,8 +14831,6 @@ components:
           type: string
     microsoft.graph.delegatedAdminRelationshipCustomerParticipant:
       title: delegatedAdminRelationshipCustomerParticipant
-      required:
-        - '@odata.type'
       type: object
       properties:
         displayName:
@@ -14908,8 +14874,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
     microsoft.graph.delegatedAdminAccessContainer:
       title: delegatedAdminAccessContainer
-      required:
-        - '@odata.type'
       type: object
       properties:
         accessContainerId:
@@ -15017,8 +14981,6 @@ components:
       type: string
     microsoft.graph.multiTenantOrganizationJoinRequestTransitionDetails:
       title: multiTenantOrganizationJoinRequestTransitionDetails
-      required:
-        - '@odata.type'
       type: object
       properties:
         desiredMemberState:
@@ -15065,8 +15027,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMember'
     microsoft.graph.directoryObject:
       title: entity
-      required:
-        - '@odata.type'
       type: object
       properties:
         id:
@@ -16203,8 +16163,6 @@ components:
           '#microsoft.graph.termStore.term': '#/components/schemas/microsoft.graph.termStore.term'
     microsoft.graph.multiTenantOrganizationMemberTransitionDetails:
       title: multiTenantOrganizationMemberTransitionDetails
-      required:
-        - '@odata.type'
       type: object
       properties:
         desiredRole:
@@ -16276,8 +16234,6 @@ components:
           nullable: true
     microsoft.graph.unifiedRole:
       title: unifiedRole
-      required:
-        - '@odata.type'
       type: object
       properties:
         roleDefinitionId:
@@ -16315,8 +16271,6 @@ components:
           nullable: true
     microsoft.graph.ODataErrors.InnerError:
       title: InnerError
-      required:
-        - '@odata.type'
       type: object
       properties:
         request-id:

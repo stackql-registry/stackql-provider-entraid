@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="appId" /></td>
     <td><code>string</code></td>
     <td>The globally unique identifier for the associated application (its appId property), if any.</td>
@@ -132,11 +127,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="appId" /></td>
@@ -211,35 +201,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-riskyServicePrincipal-id"><code>riskyServicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-risky_service_principal_id"><code>risky_service_principal_id</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of a riskyServicePrincipal object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of riskyServicePrincipal objects.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-riskyServicePrincipal-id"><code>riskyServicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-risky_service_principal_id"><code>risky_service_principal_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-riskyServicePrincipal-id"><code>riskyServicePrincipal-id</code></a></td>
+    <td><a href="#parameter-risky_service_principal_id"><code>risky_service_principal_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -249,6 +239,13 @@ The following methods are available for this resource:
     <td></td>
     <td></td>
     <td>Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.</td>
+</tr>
+<tr>
+    <td><a href="#dismiss"><CopyableCode code="dismiss" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td></td>
+    <td></td>
+    <td>Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.</td>
 </tr>
 </tbody>
 </table>
@@ -266,50 +263,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-riskyServicePrincipal-id">
-    <td><CopyableCode code="riskyServicePrincipal-id" /></td>
+<tr id="parameter-risky_service_principal_id">
+    <td><CopyableCode code="risky_service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of riskyServicePrincipal</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -335,7 +292,6 @@ Read the properties and relationships of a riskyServicePrincipal object.
 ```sql
 SELECT
 id,
-@odata.type,
 appId,
 displayName,
 history,
@@ -347,9 +303,7 @@ riskLevel,
 riskState,
 servicePrincipalType
 FROM entra_id.identity_protection.risky_service_principals
-WHERE riskyServicePrincipal-id = '{{ riskyServicePrincipal-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE risky_service_principal_id = '{{ risky_service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -360,7 +314,6 @@ Retrieve the properties and relationships of riskyServicePrincipal objects.
 ```sql
 SELECT
 id,
-@odata.type,
 appId,
 displayName,
 history,
@@ -372,14 +325,6 @@ riskLevel,
 riskState,
 servicePrincipalType
 FROM entra_id.identity_protection.risky_service_principals
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -402,7 +347,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.identity_protection.risky_service_principals (
 id,
-@odata.type,
 appId,
 displayName,
 isEnabled,
@@ -416,7 +360,6 @@ history
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ appId }}',
 '{{ displayName }}',
 {{ isEnabled }},
@@ -429,7 +372,6 @@ SELECT
 '{{ history }}'
 RETURNING
 id,
-@odata.type,
 appId,
 displayName,
 history,
@@ -452,8 +394,6 @@ servicePrincipalType
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: appId
       value: "{{ appId }}"
       description: |
@@ -495,7 +435,6 @@ servicePrincipalType
         Represents the risk history of Microsoft Entra service principals.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           appId: "{{ appId }}"
           displayName: "{{ displayName }}"
           isEnabled: {{ isEnabled }}
@@ -530,7 +469,6 @@ No description available.
 UPDATE entra_id.identity_protection.risky_service_principals
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 appId = '{{ appId }}',
 displayName = '{{ displayName }}',
 isEnabled = {{ isEnabled }},
@@ -542,11 +480,9 @@ riskState = '{{ riskState }}',
 servicePrincipalType = '{{ servicePrincipalType }}',
 history = '{{ history }}'
 WHERE 
-riskyServicePrincipal-id = '{{ riskyServicePrincipal-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+risky_service_principal_id = '{{ risky_service_principal_id }}' --required
 RETURNING
 id,
-@odata.type,
 appId,
 displayName,
 history,
@@ -576,7 +512,7 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.identity_protection.risky_service_principals
-WHERE riskyServicePrincipal-id = '{{ riskyServicePrincipal-id }}' --required
+WHERE risky_service_principal_id = '{{ risky_service_principal_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -589,7 +525,8 @@ AND If-Match = '{{ If-Match }}'
 <Tabs
     defaultValue="confirm_compromised"
     values={[
-        { label: 'confirm_compromised', value: 'confirm_compromised' }
+        { label: 'confirm_compromised', value: 'confirm_compromised' },
+        { label: 'dismiss', value: 'dismiss' }
     ]}
 >
 <TabItem value="confirm_compromised">
@@ -598,6 +535,19 @@ Confirm one or more riskyServicePrincipal objects as compromised. This action se
 
 ```sql
 EXEC entra_id.identity_protection.risky_service_principals.confirm_compromised 
+@@json=
+'{
+"servicePrincipalIds": "{{ servicePrincipalIds }}"
+}'
+;
+```
+</TabItem>
+<TabItem value="dismiss">
+
+Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
+
+```sql
+EXEC entra_id.identity_protection.risky_service_principals.dismiss 
 @@json=
 '{
 "servicePrincipalIds": "{{ servicePrincipalIds }}"

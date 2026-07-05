@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="agreementFileId" /></td>
     <td><code>string</code></td>
     <td>The identifier of the agreement file accepted by the user.</td>
@@ -147,11 +142,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="agreementFileId" /></td>
@@ -241,35 +231,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementAcceptance-id"><code>agreementAcceptance-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_acceptance_id"><code>agreement_acceptance_id</code></a></td>
+    <td></td>
     <td>Read-only. Information about acceptances of this agreement.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a></td>
+    <td></td>
     <td>Read-only. Information about acceptances of this agreement.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementAcceptance-id"><code>agreementAcceptance-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_acceptance_id"><code>agreement_acceptance_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-agreement-id"><code>agreement-id</code></a>, <a href="#parameter-agreementAcceptance-id"><code>agreementAcceptance-id</code></a></td>
+    <td><a href="#parameter-agreement_id"><code>agreement_id</code></a>, <a href="#parameter-agreement_acceptance_id"><code>agreement_acceptance_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
 </tr>
@@ -289,55 +279,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-agreement-id">
-    <td><CopyableCode code="agreement-id" /></td>
-    <td><code>string</code></td>
-    <td>The unique identifier of agreement</td>
-</tr>
-<tr id="parameter-agreementAcceptance-id">
-    <td><CopyableCode code="agreementAcceptance-id" /></td>
+<tr id="parameter-agreement_acceptance_id">
+    <td><CopyableCode code="agreement_acceptance_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of agreementAcceptance</td>
 </tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
+<tr id="parameter-agreement_id">
+    <td><CopyableCode code="agreement_id" /></td>
     <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
+    <td>The unique identifier of agreement</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -363,7 +313,6 @@ Read-only. Information about acceptances of this agreement.
 ```sql
 SELECT
 id,
-@odata.type,
 agreementFileId,
 agreementId,
 deviceDisplayName,
@@ -378,10 +327,8 @@ userEmail,
 userId,
 userPrincipalName
 FROM entra_id.agreements.acceptances
-WHERE agreement-id = '{{ agreement-id }}' -- required
-AND agreementAcceptance-id = '{{ agreementAcceptance-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE agreement_id = '{{ agreement_id }}' -- required
+AND agreement_acceptance_id = '{{ agreement_acceptance_id }}' -- required
 ;
 ```
 </TabItem>
@@ -392,7 +339,6 @@ Read-only. Information about acceptances of this agreement.
 ```sql
 SELECT
 id,
-@odata.type,
 agreementFileId,
 agreementId,
 deviceDisplayName,
@@ -407,15 +353,7 @@ userEmail,
 userId,
 userPrincipalName
 FROM entra_id.agreements.acceptances
-WHERE agreement-id = '{{ agreement-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE agreement_id = '{{ agreement_id }}' -- required
 ;
 ```
 </TabItem>
@@ -438,7 +376,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.agreements.acceptances (
 id,
-@odata.type,
 agreementFileId,
 agreementId,
 deviceDisplayName,
@@ -452,11 +389,10 @@ userDisplayName,
 userEmail,
 userId,
 userPrincipalName,
-agreement-id
+agreement_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ agreementFileId }}',
 '{{ agreementId }}',
 '{{ deviceDisplayName }}',
@@ -470,10 +406,9 @@ SELECT
 '{{ userEmail }}',
 '{{ userId }}',
 '{{ userPrincipalName }}',
-'{{ agreement-id }}'
+'{{ agreement_id }}'
 RETURNING
 id,
-@odata.type,
 agreementFileId,
 agreementId,
 deviceDisplayName,
@@ -495,15 +430,13 @@ userPrincipalName
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: acceptances
   props:
-    - name: agreement-id
-      value: "{{ agreement-id }}"
+    - name: agreement_id
+      value: "{{ agreement_id }}"
       description: Required parameter for the acceptances resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: agreementFileId
       value: "{{ agreementFileId }}"
       description: |
@@ -579,7 +512,6 @@ No description available.
 UPDATE entra_id.agreements.acceptances
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 agreementFileId = '{{ agreementFileId }}',
 agreementId = '{{ agreementId }}',
 deviceDisplayName = '{{ deviceDisplayName }}',
@@ -594,12 +526,10 @@ userEmail = '{{ userEmail }}',
 userId = '{{ userId }}',
 userPrincipalName = '{{ userPrincipalName }}'
 WHERE 
-agreement-id = '{{ agreement-id }}' --required
-AND agreementAcceptance-id = '{{ agreementAcceptance-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+agreement_id = '{{ agreement_id }}' --required
+AND agreement_acceptance_id = '{{ agreement_acceptance_id }}' --required
 RETURNING
 id,
-@odata.type,
 agreementFileId,
 agreementId,
 deviceDisplayName,
@@ -632,8 +562,8 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.agreements.acceptances
-WHERE agreement-id = '{{ agreement-id }}' --required
-AND agreementAcceptance-id = '{{ agreementAcceptance-id }}' --required
+WHERE agreement_id = '{{ agreement_id }}' --required
+AND agreement_acceptance_id = '{{ agreement_acceptance_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

@@ -18,7 +18,7 @@ audit_logs service documentation.
 
 :::info[Service Summary]
 
-total resources: __5__  
+total resources: __4__  
 
 :::
 
@@ -26,11 +26,10 @@ total resources: __5__
 <div class="row">
 <div class="providerDocColumn">
 <a href="/services/audit_logs/audit_logs/">audit_logs</a><br />
-<a href="/services/audit_logs/directory_audits/">directory_audits</a><br />
-<a href="/services/audit_logs/provisioning/">provisioning</a>
+<a href="/services/audit_logs/directory_audits/">directory_audits</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/audit_logs/sign_ins/">sign_ins</a><br />
-<a href="/services/audit_logs/sign_ins_dismiss/">sign_ins_dismiss</a>
+<a href="/services/audit_logs/provisioning/">provisioning</a><br />
+<a href="/services/audit_logs/sign_ins/">sign_ins</a>
 </div>
 </div>

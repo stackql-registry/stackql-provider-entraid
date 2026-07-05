@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessId" /></td>
     <td><code></code></td>
     <td>The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).</td>
@@ -139,8 +134,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-privilegedAccessGroupEligibilityScheduleRequest-id"><code>privilegedAccessGroupEligibilityScheduleRequest-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-privileged_access_group_eligibility_schedule_request_id"><code>privileged_access_group_eligibility_schedule_request_id</code></a></td>
+    <td></td>
     <td>Schedule created by this request.</td>
 </tr>
 </tbody>
@@ -159,20 +154,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-privilegedAccessGroupEligibilityScheduleRequest-id">
-    <td><CopyableCode code="privilegedAccessGroupEligibilityScheduleRequest-id" /></td>
+<tr id="parameter-privileged_access_group_eligibility_schedule_request_id">
+    <td><CopyableCode code="privileged_access_group_eligibility_schedule_request_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of privilegedAccessGroupEligibilityScheduleRequest</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -192,7 +177,6 @@ Schedule created by this request.
 ```sql
 SELECT
 id,
-@odata.type,
 accessId,
 createdDateTime,
 createdUsing,
@@ -205,9 +189,7 @@ principalId,
 scheduleInfo,
 status
 FROM entra_id.identity_governance.privileged_access_group_eligibility_schedule_requests_target_schedule
-WHERE privilegedAccessGroupEligibilityScheduleRequest-id = '{{ privilegedAccessGroupEligibilityScheduleRequest-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE privileged_access_group_eligibility_schedule_request_id = '{{ privileged_access_group_eligibility_schedule_request_id }}' -- required
 ;
 ```
 </TabItem>

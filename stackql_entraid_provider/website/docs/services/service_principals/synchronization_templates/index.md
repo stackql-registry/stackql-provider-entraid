@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="applicationId" /></td>
     <td><code>string (uuid)</code></td>
     <td>Identifier of the application this template belongs to. (pattern: <code>^&#91;0-9a-fA-F&#93;&#123;8&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;4&#125;-&#91;0-9a-fA-F&#93;&#123;12&#125;$</code>)</td>
@@ -117,11 +112,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="applicationId" /></td>
@@ -181,37 +171,51 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
+    <td></td>
     <td>Preconfigured synchronization settings for a particular application.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
+    <td></td>
     <td>List the synchronization templates associated with a given application or service principal.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-servicePrincipal-id"><code>servicePrincipal-id</code></a>, <a href="#parameter-synchronizationTemplate-id"><code>synchronizationTemplate-id</code></a></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td></td>
+</tr>
+<tr>
+    <td><a href="#schema_directories_discover"><CopyableCode code="schema_directories_discover" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a>, <a href="#parameter-directory_definition_id"><code>directory_definition_id</code></a></td>
+    <td></td>
+    <td>Discover the latest schema definition for provisioning to an application. </td>
+</tr>
+<tr>
+    <td><a href="#schema_parse_expression"><CopyableCode code="schema_parse_expression" /></a></td>
+    <td><CopyableCode code="exec" /></td>
+    <td><a href="#parameter-service_principal_id"><code>service_principal_id</code></a>, <a href="#parameter-synchronization_template_id"><code>synchronization_template_id</code></a></td>
+    <td></td>
+    <td>Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.</td>
 </tr>
 </tbody>
 </table>
@@ -229,55 +233,20 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-servicePrincipal-id">
-    <td><CopyableCode code="servicePrincipal-id" /></td>
+<tr id="parameter-directory_definition_id">
+    <td><CopyableCode code="directory_definition_id" /></td>
+    <td><code>string</code></td>
+    <td>The unique identifier of directoryDefinition</td>
+</tr>
+<tr id="parameter-service_principal_id">
+    <td><CopyableCode code="service_principal_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of servicePrincipal</td>
 </tr>
-<tr id="parameter-synchronizationTemplate-id">
-    <td><CopyableCode code="synchronizationTemplate-id" /></td>
+<tr id="parameter-synchronization_template_id">
+    <td><CopyableCode code="synchronization_template_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of synchronizationTemplate</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -303,7 +272,6 @@ Preconfigured synchronization settings for a particular application.
 ```sql
 SELECT
 id,
-@odata.type,
 applicationId,
 default,
 description,
@@ -312,10 +280,8 @@ factoryTag,
 metadata,
 schema
 FROM entra_id.service_principals.synchronization_templates
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
+AND synchronization_template_id = '{{ synchronization_template_id }}' -- required
 ;
 ```
 </TabItem>
@@ -326,7 +292,6 @@ List the synchronization templates associated with a given application or servic
 ```sql
 SELECT
 id,
-@odata.type,
 applicationId,
 default,
 description,
@@ -335,15 +300,7 @@ factoryTag,
 metadata,
 schema
 FROM entra_id.service_principals.synchronization_templates
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE service_principal_id = '{{ service_principal_id }}' -- required
 ;
 ```
 </TabItem>
@@ -366,7 +323,6 @@ No description available.
 ```sql
 INSERT INTO entra_id.service_principals.synchronization_templates (
 id,
-@odata.type,
 applicationId,
 default,
 description,
@@ -374,11 +330,10 @@ discoverable,
 factoryTag,
 metadata,
 schema,
-servicePrincipal-id
+service_principal_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ applicationId }}',
 {{ default }},
 '{{ description }}',
@@ -386,10 +341,9 @@ SELECT
 '{{ factoryTag }}',
 '{{ metadata }}',
 '{{ schema }}',
-'{{ servicePrincipal-id }}'
+'{{ service_principal_id }}'
 RETURNING
 id,
-@odata.type,
 applicationId,
 default,
 description,
@@ -405,15 +359,13 @@ schema
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: synchronization_templates
   props:
-    - name: servicePrincipal-id
-      value: "{{ servicePrincipal-id }}"
+    - name: service_principal_id
+      value: "{{ service_principal_id }}"
       description: Required parameter for the synchronization_templates resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: applicationId
       value: "{{ applicationId }}"
       description: |
@@ -440,7 +392,6 @@ schema
       value:
         - key: "{{ key }}"
           value: "{{ value }}"
-          @odata.type: "{{ @odata.type }}"
     - name: schema
       value: "{{ schema }}"
       description: |
@@ -467,7 +418,6 @@ No description available.
 UPDATE entra_id.service_principals.synchronization_templates
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 applicationId = '{{ applicationId }}',
 default = {{ default }},
 description = '{{ description }}',
@@ -476,12 +426,10 @@ factoryTag = '{{ factoryTag }}',
 metadata = '{{ metadata }}',
 schema = '{{ schema }}'
 WHERE 
-servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_template_id = '{{ synchronization_template_id }}' --required
 RETURNING
 id,
-@odata.type,
 applicationId,
 default,
 description,
@@ -508,9 +456,50 @@ No description available.
 
 ```sql
 DELETE FROM entra_id.service_principals.synchronization_templates
-WHERE servicePrincipal-id = '{{ servicePrincipal-id }}' --required
-AND synchronizationTemplate-id = '{{ synchronizationTemplate-id }}' --required
+WHERE service_principal_id = '{{ service_principal_id }}' --required
+AND synchronization_template_id = '{{ synchronization_template_id }}' --required
 AND If-Match = '{{ If-Match }}'
+;
+```
+</TabItem>
+</Tabs>
+
+
+## Lifecycle Methods
+
+<Tabs
+    defaultValue="schema_directories_discover"
+    values={[
+        { label: 'schema_directories_discover', value: 'schema_directories_discover' },
+        { label: 'schema_parse_expression', value: 'schema_parse_expression' }
+    ]}
+>
+<TabItem value="schema_directories_discover">
+
+Discover the latest schema definition for provisioning to an application. 
+
+```sql
+EXEC entra_id.service_principals.synchronization_templates.schema_directories_discover 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_template_id='{{ synchronization_template_id }}' --required, 
+@directory_definition_id='{{ directory_definition_id }}' --required
+;
+```
+</TabItem>
+<TabItem value="schema_parse_expression">
+
+Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+
+```sql
+EXEC entra_id.service_principals.synchronization_templates.schema_parse_expression 
+@service_principal_id='{{ service_principal_id }}' --required, 
+@synchronization_template_id='{{ synchronization_template_id }}' --required 
+@@json=
+'{
+"expression": "{{ expression }}", 
+"testInputObject": "{{ testInputObject }}", 
+"targetAttributeDefinition": "{{ targetAttributeDefinition }}"
+}'
 ;
 ```
 </TabItem>

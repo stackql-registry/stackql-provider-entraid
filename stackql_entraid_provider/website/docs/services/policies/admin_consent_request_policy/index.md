@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="isEnabled" /></td>
     <td><code>boolean</code></td>
     <td>Specifies whether the admin consent request feature is enabled or disabled. Required.</td>
@@ -115,13 +110,13 @@ The following methods are available for this resource:
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Read the properties and relationships of an adminConsentRequestPolicy object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Update the properties of an adminConsentRequestPolicy object.</td>
 </tr>
@@ -148,16 +143,6 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
     <td><code>string</code></td>
@@ -181,7 +166,6 @@ Read the properties and relationships of an adminConsentRequestPolicy object.
 ```sql
 SELECT
 id,
-@odata.type,
 isEnabled,
 notifyReviewers,
 remindersEnabled,
@@ -189,8 +173,6 @@ requestDurationInDays,
 reviewers,
 version
 FROM entra_id.policies.admin_consent_request_policy
-WHERE $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -213,18 +195,14 @@ Update the properties of an adminConsentRequestPolicy object.
 UPDATE entra_id.policies.admin_consent_request_policy
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 isEnabled = {{ isEnabled }},
 notifyReviewers = {{ notifyReviewers }},
 remindersEnabled = {{ remindersEnabled }},
 requestDurationInDays = {{ requestDurationInDays }},
 reviewers = '{{ reviewers }}',
 version = {{ version }}
-WHERE 
-@odata.type = '{{ @odata.type }}' --required
 RETURNING
 id,
-@odata.type,
 isEnabled,
 notifyReviewers,
 remindersEnabled,

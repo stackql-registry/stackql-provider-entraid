@@ -56,11 +56,6 @@ The following fields are returned by `SELECT` queries:
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackage" /></td>
     <td><code></code></td>
     <td>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</td>
@@ -118,11 +113,6 @@ The following fields are returned by `SELECT` queries:
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackage" /></td>
@@ -187,15 +177,15 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get_2"><CopyableCode code="get_2" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackageId"><code>accessPackageId</code></a>, <a href="#parameter-incompatibleAccessPackageId"><code>incompatibleAccessPackageId</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a>, <a href="#parameter-incompatible_access_package_id"><code>incompatible_access_package_id</code></a></td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.</td>
 </tr>
 </tbody>
@@ -214,55 +204,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackageId">
-    <td><CopyableCode code="accessPackageId" /></td>
+<tr id="parameter-access_package_id">
+    <td><CopyableCode code="access_package_id" /></td>
     <td><code>string</code></td>
     <td>Usage: accessPackageId='&#123;accessPackageId&#125;'</td>
 </tr>
-<tr id="parameter-incompatibleAccessPackageId">
-    <td><CopyableCode code="incompatibleAccessPackageId" /></td>
+<tr id="parameter-incompatible_access_package_id">
+    <td><CopyableCode code="incompatible_access_package_id" /></td>
     <td><code>string</code></td>
     <td>Usage: incompatibleAccessPackageId='&#123;incompatibleAccessPackageId&#125;'</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +233,6 @@ Success
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -293,16 +242,8 @@ state,
 status,
 target
 FROM entra_id.identity_governance.entitlement_management_assignments_additional_access
-WHERE accessPackageId = '{{ accessPackageId }}' -- required
-AND incompatibleAccessPackageId = '{{ incompatibleAccessPackageId }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $select = '{{ $select }}'
-AND $orderby = '{{ $orderby }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
+AND incompatible_access_package_id = '{{ incompatible_access_package_id }}' -- required
 ;
 ```
 </TabItem>
@@ -313,7 +254,6 @@ In Microsoft Entra Entitlement Management, retrieve a collection of accessPackag
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackage,
 assignmentPolicy,
 customExtensionCalloutInstances,
@@ -323,14 +263,6 @@ state,
 status,
 target
 FROM entra_id.identity_governance.entitlement_management_assignments_additional_access
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $select = '{{ $select }}'
-AND $orderby = '{{ $orderby }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>

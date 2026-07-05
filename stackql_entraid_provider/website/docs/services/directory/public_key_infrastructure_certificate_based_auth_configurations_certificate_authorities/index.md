@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="certificate" /></td>
     <td><code>string (base64url)</code></td>
     <td>The public key of the certificate authority.</td>
@@ -142,11 +137,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="certificate" /></td>
@@ -231,35 +221,35 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-certificateBasedAuthPki-id"><code>certificateBasedAuthPki-id</code></a>, <a href="#parameter-certificateAuthorityDetail-id"><code>certificateAuthorityDetail-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-certificate_based_auth_pki_id"><code>certificate_based_auth_pki_id</code></a>, <a href="#parameter-certificate_authority_detail_id"><code>certificate_authority_detail_id</code></a></td>
+    <td></td>
     <td>The collection of certificate authorities contained in this public key infrastructure resource.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-certificateBasedAuthPki-id"><code>certificateBasedAuthPki-id</code></a></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-certificate_based_auth_pki_id"><code>certificate_based_auth_pki_id</code></a></td>
+    <td></td>
     <td>Get a list of the certificateAuthorityDetail objects and their properties.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-certificateBasedAuthPki-id"><code>certificateBasedAuthPki-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-certificate_based_auth_pki_id"><code>certificate_based_auth_pki_id</code></a></td>
     <td></td>
     <td>Create a new certificateAuthorityDetail object.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-certificateBasedAuthPki-id"><code>certificateBasedAuthPki-id</code></a>, <a href="#parameter-certificateAuthorityDetail-id"><code>certificateAuthorityDetail-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-certificate_based_auth_pki_id"><code>certificate_based_auth_pki_id</code></a>, <a href="#parameter-certificate_authority_detail_id"><code>certificate_authority_detail_id</code></a></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-certificateBasedAuthPki-id"><code>certificateBasedAuthPki-id</code></a>, <a href="#parameter-certificateAuthorityDetail-id"><code>certificateAuthorityDetail-id</code></a></td>
+    <td><a href="#parameter-certificate_based_auth_pki_id"><code>certificate_based_auth_pki_id</code></a>, <a href="#parameter-certificate_authority_detail_id"><code>certificate_authority_detail_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete a certificateAuthorityDetail object.</td>
 </tr>
@@ -279,55 +269,15 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-certificateAuthorityDetail-id">
-    <td><CopyableCode code="certificateAuthorityDetail-id" /></td>
+<tr id="parameter-certificate_authority_detail_id">
+    <td><CopyableCode code="certificate_authority_detail_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of certificateAuthorityDetail</td>
 </tr>
-<tr id="parameter-certificateBasedAuthPki-id">
-    <td><CopyableCode code="certificateBasedAuthPki-id" /></td>
+<tr id="parameter-certificate_based_auth_pki_id">
+    <td><CopyableCode code="certificate_based_auth_pki_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of certificateBasedAuthPki</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -353,7 +303,6 @@ The collection of certificate authorities contained in this public key infrastru
 ```sql
 SELECT
 id,
-@odata.type,
 certificate,
 certificateAuthorityType,
 certificateRevocationListUrl,
@@ -367,10 +316,8 @@ issuer,
 issuerSubjectKeyIdentifier,
 thumbprint
 FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
-WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' -- required
-AND certificateAuthorityDetail-id = '{{ certificateAuthorityDetail-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE certificate_based_auth_pki_id = '{{ certificate_based_auth_pki_id }}' -- required
+AND certificate_authority_detail_id = '{{ certificate_authority_detail_id }}' -- required
 ;
 ```
 </TabItem>
@@ -381,7 +328,6 @@ Get a list of the certificateAuthorityDetail objects and their properties.
 ```sql
 SELECT
 id,
-@odata.type,
 certificate,
 certificateAuthorityType,
 certificateRevocationListUrl,
@@ -395,15 +341,7 @@ issuer,
 issuerSubjectKeyIdentifier,
 thumbprint
 FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
-WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' -- required
-AND $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE certificate_based_auth_pki_id = '{{ certificate_based_auth_pki_id }}' -- required
 ;
 ```
 </TabItem>
@@ -426,7 +364,6 @@ Create a new certificateAuthorityDetail object.
 ```sql
 INSERT INTO entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities (
 id,
-@odata.type,
 deletedDateTime,
 certificate,
 certificateAuthorityType,
@@ -439,11 +376,10 @@ isIssuerHintEnabled,
 issuer,
 issuerSubjectKeyIdentifier,
 thumbprint,
-certificateBasedAuthPki-id
+certificate_based_auth_pki_id
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ deletedDateTime }}',
 '{{ certificate }}',
 '{{ certificateAuthorityType }}',
@@ -456,10 +392,9 @@ SELECT
 '{{ issuer }}',
 '{{ issuerSubjectKeyIdentifier }}',
 '{{ thumbprint }}',
-'{{ certificateBasedAuthPki-id }}'
+'{{ certificate_based_auth_pki_id }}'
 RETURNING
 id,
-@odata.type,
 certificate,
 certificateAuthorityType,
 certificateRevocationListUrl,
@@ -480,15 +415,13 @@ thumbprint
 <CodeBlock language="yaml">{`# Description fields are for documentation purposes
 - name: public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
   props:
-    - name: certificateBasedAuthPki-id
-      value: "{{ certificateBasedAuthPki-id }}"
+    - name: certificate_based_auth_pki_id
+      value: "{{ certificate_based_auth_pki_id }}"
       description: Required parameter for the public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities resource.
     - name: id
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: deletedDateTime
       value: "{{ deletedDateTime }}"
       description: |
@@ -557,7 +490,6 @@ No description available.
 UPDATE entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 deletedDateTime = '{{ deletedDateTime }}',
 certificate = '{{ certificate }}',
 certificateAuthorityType = '{{ certificateAuthorityType }}',
@@ -571,12 +503,10 @@ issuer = '{{ issuer }}',
 issuerSubjectKeyIdentifier = '{{ issuerSubjectKeyIdentifier }}',
 thumbprint = '{{ thumbprint }}'
 WHERE 
-certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' --required
-AND certificateAuthorityDetail-id = '{{ certificateAuthorityDetail-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+certificate_based_auth_pki_id = '{{ certificate_based_auth_pki_id }}' --required
+AND certificate_authority_detail_id = '{{ certificate_authority_detail_id }}' --required
 RETURNING
 id,
-@odata.type,
 certificate,
 certificateAuthorityType,
 certificateRevocationListUrl,
@@ -608,8 +538,8 @@ Delete a certificateAuthorityDetail object.
 
 ```sql
 DELETE FROM entra_id.directory.public_key_infrastructure_certificate_based_auth_configurations_certificate_authorities
-WHERE certificateBasedAuthPki-id = '{{ certificateBasedAuthPki-id }}' --required
-AND certificateAuthorityDetail-id = '{{ certificateAuthorityDetail-id }}' --required
+WHERE certificate_based_auth_pki_id = '{{ certificate_based_auth_pki_id }}' --required
+AND certificate_authority_detail_id = '{{ certificate_authority_detail_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```

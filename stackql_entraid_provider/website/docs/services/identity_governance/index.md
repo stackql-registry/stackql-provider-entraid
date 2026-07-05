@@ -18,7 +18,7 @@ identity_governance service documentation.
 
 :::info[Service Summary]
 
-total resources: __403__  
+total resources: __402__  
 
 :::
 
@@ -29,7 +29,6 @@ total resources: __403__
 <a href="/services/identity_governance/access_reviews_definitions/">access_reviews_definitions</a><br />
 <a href="/services/identity_governance/access_reviews_definitions_filter_by_current_user/">access_reviews_definitions_filter_by_current_user</a><br />
 <a href="/services/identity_governance/access_reviews_definitions_instances/">access_reviews_definitions_instances</a><br />
-<a href="/services/identity_governance/access_reviews_definitions_instances_batch_record_decisions/">access_reviews_definitions_instances_batch_record_decisions</a><br />
 <a href="/services/identity_governance/access_reviews_definitions_instances_contacted_reviewers/">access_reviews_definitions_instances_contacted_reviewers</a><br />
 <a href="/services/identity_governance/access_reviews_definitions_instances_decisions/">access_reviews_definitions_instances_decisions</a><br />
 <a href="/services/identity_governance/access_reviews_definitions_instances_decisions_filter_by_current_user/">access_reviews_definitions_instances_decisions_filter_by_current_user</a><br />

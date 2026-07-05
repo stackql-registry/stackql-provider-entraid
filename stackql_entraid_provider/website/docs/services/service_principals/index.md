@@ -18,7 +18,7 @@ service_principals service documentation.
 
 :::info[Service Summary]
 
-total resources: __40__  
+total resources: __32__  
 
 :::
 
@@ -40,30 +40,22 @@ total resources: __40__
 <a href="/services/service_principals/owned_objects/">owned_objects</a><br />
 <a href="/services/service_principals/owners/">owners</a><br />
 <a href="/services/service_principals/remote_desktop_security_configuration/">remote_desktop_security_configuration</a><br />
-<a href="/services/service_principals/remote_desktop_security_configuration_approved_client_apps/">remote_desktop_security_configuration_approved_client_apps</a><br />
+<a href="/services/service_principals/remote_desktop_security_configuration_approved_client_apps/">remote_desktop_security_configuration_approved_client_apps</a>
+</div>
+<div class="providerDocColumn">
 <a href="/services/service_principals/remote_desktop_security_configuration_target_device_groups/">remote_desktop_security_configuration_target_device_groups</a><br />
 <a href="/services/service_principals/service_principals/">service_principals</a><br />
 <a href="/services/service_principals/synchronization/">synchronization</a><br />
-<a href="/services/service_principals/synchronization_acquire_access_token/">synchronization_acquire_access_token</a>
-</div>
-<div class="providerDocColumn">
 <a href="/services/service_principals/synchronization_jobs/">synchronization_jobs</a><br />
-<a href="/services/service_principals/synchronization_jobs_bulk_upload/">synchronization_jobs_bulk_upload</a><br />
-<a href="/services/service_principals/synchronization_jobs_restart/">synchronization_jobs_restart</a><br />
 <a href="/services/service_principals/synchronization_jobs_schema/">synchronization_jobs_schema</a><br />
 <a href="/services/service_principals/synchronization_jobs_schema_directories/">synchronization_jobs_schema_directories</a><br />
-<a href="/services/service_principals/synchronization_jobs_schema_directories_discover/">synchronization_jobs_schema_directories_discover</a><br />
 <a href="/services/service_principals/synchronization_jobs_schema_filter_operators/">synchronization_jobs_schema_filter_operators</a><br />
 <a href="/services/service_principals/synchronization_jobs_schema_functions/">synchronization_jobs_schema_functions</a><br />
-<a href="/services/service_principals/synchronization_jobs_schema_parse_expression/">synchronization_jobs_schema_parse_expression</a><br />
-<a href="/services/service_principals/synchronization_secrets/">synchronization_secrets</a><br />
 <a href="/services/service_principals/synchronization_templates/">synchronization_templates</a><br />
 <a href="/services/service_principals/synchronization_templates_schema/">synchronization_templates_schema</a><br />
 <a href="/services/service_principals/synchronization_templates_schema_directories/">synchronization_templates_schema_directories</a><br />
-<a href="/services/service_principals/synchronization_templates_schema_directories_discover/">synchronization_templates_schema_directories_discover</a><br />
 <a href="/services/service_principals/synchronization_templates_schema_filter_operators/">synchronization_templates_schema_filter_operators</a><br />
 <a href="/services/service_principals/synchronization_templates_schema_functions/">synchronization_templates_schema_functions</a><br />
-<a href="/services/service_principals/synchronization_templates_schema_parse_expression/">synchronization_templates_schema_parse_expression</a><br />
 <a href="/services/service_principals/token_issuance_policies/">token_issuance_policies</a><br />
 <a href="/services/service_principals/token_lifetime_policies/">token_lifetime_policies</a><br />
 <a href="/services/service_principals/transitive_member_of/">transitive_member_of</a>

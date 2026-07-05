@@ -58,11 +58,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="accessPackagesIncompatibleWith" /></td>
     <td><code>array</code></td>
     <td>The access packages that are incompatible with this package. Read-only.</td>
@@ -137,11 +132,6 @@ Retrieved collection
     <td><CopyableCode code="id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier for an entity. Read-only.</td>
-</tr>
-<tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
 </tr>
 <tr>
     <td><CopyableCode code="accessPackagesIncompatibleWith" /></td>
@@ -221,42 +211,42 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a></td>
+    <td></td>
     <td>Retrieve the properties and relationships of an accessPackage object.</td>
 </tr>
 <tr>
     <td><a href="#list"><CopyableCode code="list" /></a></td>
     <td><CopyableCode code="select" /></td>
     <td></td>
-    <td><a href="#parameter-$top"><code>$top</code></a>, <a href="#parameter-$skip"><code>$skip</code></a>, <a href="#parameter-$search"><code>$search</code></a>, <a href="#parameter-$filter"><code>$filter</code></a>, <a href="#parameter-$count"><code>$count</code></a>, <a href="#parameter-$orderby"><code>$orderby</code></a>, <a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td></td>
     <td>Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.</td>
 </tr>
 <tr>
     <td><a href="#insert"><CopyableCode code="insert" /></a></td>
     <td><CopyableCode code="insert" /></td>
-    <td><a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td></td>
     <td></td>
     <td>Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.</td>
 </tr>
 <tr>
     <td><a href="#update"><CopyableCode code="update" /></a></td>
     <td><CopyableCode code="update" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a>, <a href="#parameter-@odata.type"><code>@odata.type</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a></td>
     <td></td>
     <td>Update an existing accessPackage object to change one or more of its properties, such as the display name or description.</td>
 </tr>
 <tr>
     <td><a href="#delete"><CopyableCode code="delete" /></a></td>
     <td><CopyableCode code="delete" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a></td>
     <td><a href="#parameter-If-Match"><code>If-Match</code></a></td>
     <td>Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.</td>
 </tr>
 <tr>
     <td><a href="#get_applicable_policy_requirements"><CopyableCode code="get_applicable_policy_requirements" /></a></td>
     <td><CopyableCode code="exec" /></td>
-    <td><a href="#parameter-accessPackage-id"><code>accessPackage-id</code></a></td>
+    <td><a href="#parameter-access_package_id"><code>access_package_id</code></a></td>
     <td></td>
     <td>In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.</td>
 </tr>
@@ -276,50 +266,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-accessPackage-id">
-    <td><CopyableCode code="accessPackage-id" /></td>
+<tr id="parameter-access_package_id">
+    <td><CopyableCode code="access_package_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of accessPackage</td>
-</tr>
-<tr id="parameter-$count">
-    <td><CopyableCode code="$count" /></td>
-    <td><code>boolean</code></td>
-    <td>Include count of items</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$filter">
-    <td><CopyableCode code="$filter" /></td>
-    <td><code>string</code></td>
-    <td>Filter items by property values</td>
-</tr>
-<tr id="parameter-$orderby">
-    <td><CopyableCode code="$orderby" /></td>
-    <td><code>array</code></td>
-    <td>Order items by property values</td>
-</tr>
-<tr id="parameter-$search">
-    <td><CopyableCode code="$search" /></td>
-    <td><code>string</code></td>
-    <td>Search items by search phrases</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
-</tr>
-<tr id="parameter-$skip">
-    <td><CopyableCode code="$skip" /></td>
-    <td><code>integer</code></td>
-    <td>Skip the first n items</td>
-</tr>
-<tr id="parameter-$top">
-    <td><CopyableCode code="$top" /></td>
-    <td><code>integer</code></td>
-    <td>Show only the first n items (example: 50)</td>
 </tr>
 <tr id="parameter-If-Match">
     <td><CopyableCode code="If-Match" /></td>
@@ -345,7 +295,6 @@ Retrieve the properties and relationships of an accessPackage object.
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -358,9 +307,7 @@ isHidden,
 modifiedDateTime,
 resourceRoleScopes
 FROM entra_id.identity_governance.entitlement_management_access_packages
-WHERE accessPackage-id = '{{ accessPackage-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE access_package_id = '{{ access_package_id }}' -- required
 ;
 ```
 </TabItem>
@@ -371,7 +318,6 @@ Retrieve a list of accessPackage objects.  The resulting list includes all the a
 ```sql
 SELECT
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -384,14 +330,6 @@ isHidden,
 modifiedDateTime,
 resourceRoleScopes
 FROM entra_id.identity_governance.entitlement_management_access_packages
-WHERE $top = '{{ $top }}'
-AND $skip = '{{ $skip }}'
-AND $search = '{{ $search }}'
-AND $filter = '{{ $filter }}'
-AND $count = '{{ $count }}'
-AND $orderby = '{{ $orderby }}'
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
 ;
 ```
 </TabItem>
@@ -414,7 +352,6 @@ Create a new accessPackage object. The access package will be added to an existi
 ```sql
 INSERT INTO entra_id.identity_governance.entitlement_management_access_packages (
 id,
-@odata.type,
 createdDateTime,
 description,
 displayName,
@@ -429,7 +366,6 @@ resourceRoleScopes
 )
 SELECT 
 '{{ id }}',
-'{{ @odata.type }}' /* required */,
 '{{ createdDateTime }}',
 '{{ description }}',
 '{{ displayName }}',
@@ -443,7 +379,6 @@ SELECT
 '{{ resourceRoleScopes }}'
 RETURNING
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -467,8 +402,6 @@ resourceRoleScopes
       value: "{{ id }}"
       description: |
         The unique identifier for an entity. Read-only.
-    - name: @odata.type
-      value: "{{ @odata.type }}"
     - name: createdDateTime
       value: "{{ createdDateTime }}"
       description: |
@@ -494,7 +427,6 @@ resourceRoleScopes
         The access packages that are incompatible with this package. Read-only.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -511,7 +443,6 @@ resourceRoleScopes
         Read-only. Nullable. Supports $expand.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           allowedTargetScope: "{{ allowedTargetScope }}"
           automaticRequestSettings: "{{ automaticRequestSettings }}"
           createdDateTime: "{{ createdDateTime }}"
@@ -537,7 +468,6 @@ resourceRoleScopes
         The access packages whose assigned users are ineligible to be assigned this access package.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdDateTime: "{{ createdDateTime }}"
           description: "{{ description }}"
           displayName: "{{ displayName }}"
@@ -554,7 +484,6 @@ resourceRoleScopes
         The groups whose members are ineligible to be assigned this access package.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           deletedDateTime: "{{ deletedDateTime }}"
           allowExternalSenders: {{ allowExternalSenders }}
           assignedLabels: "{{ assignedLabels }}"
@@ -634,7 +563,6 @@ resourceRoleScopes
         The resource roles and scopes in this access package.
       value:
         - id: "{{ id }}"
-          @odata.type: "{{ @odata.type }}"
           createdDateTime: "{{ createdDateTime }}"
           role: "{{ role }}"
           scope: "{{ scope }}"
@@ -660,7 +588,6 @@ Update an existing accessPackage object to change one or more of its properties,
 UPDATE entra_id.identity_governance.entitlement_management_access_packages
 SET 
 id = '{{ id }}',
-@odata.type = '{{ @odata.type }}',
 createdDateTime = '{{ createdDateTime }}',
 description = '{{ description }}',
 displayName = '{{ displayName }}',
@@ -673,11 +600,9 @@ incompatibleAccessPackages = '{{ incompatibleAccessPackages }}',
 incompatibleGroups = '{{ incompatibleGroups }}',
 resourceRoleScopes = '{{ resourceRoleScopes }}'
 WHERE 
-accessPackage-id = '{{ accessPackage-id }}' --required
-AND @odata.type = '{{ @odata.type }}' --required
+access_package_id = '{{ access_package_id }}' --required
 RETURNING
 id,
-@odata.type,
 accessPackagesIncompatibleWith,
 assignmentPolicies,
 catalog,
@@ -708,7 +633,7 @@ Delete an accessPackage object. You cannot delete an access package if it has an
 
 ```sql
 DELETE FROM entra_id.identity_governance.entitlement_management_access_packages
-WHERE accessPackage-id = '{{ accessPackage-id }}' --required
+WHERE access_package_id = '{{ access_package_id }}' --required
 AND If-Match = '{{ If-Match }}'
 ;
 ```
@@ -730,7 +655,7 @@ In Microsoft Entra entitlement management, this action retrieves a list of acces
 
 ```sql
 EXEC entra_id.identity_governance.entitlement_management_access_packages.get_applicable_policy_requirements 
-@accessPackage-id='{{ accessPackage-id }}' --required
+@access_package_id='{{ access_package_id }}' --required
 ;
 ```
 </TabItem>

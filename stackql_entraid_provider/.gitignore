@@ -1,2 +1,14 @@
 .env
 /provider-dev/test/.bin
+
+# stackql server runtime artifacts (bin/start-server.sh)
+/.stackql
+stackql-server.log
+nohup.out
+*.log
+stackql
+
+# Re-include the committed helper scripts: the repo-root .gitignore has a
+# Python-style `[Bb]in/` rule that would otherwise drop this whole directory.
+!/bin/
+!/bin/**

@@ -57,11 +57,6 @@ Retrieved navigation property
     <td>The unique identifier for an entity. Read-only.</td>
 </tr>
 <tr>
-    <td><CopyableCode code="@odata.type" /></td>
-    <td><code>string</code></td>
-    <td></td>
-</tr>
-<tr>
     <td><CopyableCode code="description" /></td>
     <td><code>string</code></td>
     <td>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</td>
@@ -129,8 +124,8 @@ The following methods are available for this resource:
 <tr>
     <td><a href="#get"><CopyableCode code="get" /></a></td>
     <td><CopyableCode code="select" /></td>
-    <td><a href="#parameter-unifiedRoleAssignmentSchedule-id"><code>unifiedRoleAssignmentSchedule-id</code></a></td>
-    <td><a href="#parameter-$select"><code>$select</code></a>, <a href="#parameter-$expand"><code>$expand</code></a></td>
+    <td><a href="#parameter-unified_role_assignment_schedule_id"><code>unified_role_assignment_schedule_id</code></a></td>
+    <td></td>
     <td>Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.</td>
 </tr>
 </tbody>
@@ -149,20 +144,10 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
     </tr>
 </thead>
 <tbody>
-<tr id="parameter-unifiedRoleAssignmentSchedule-id">
-    <td><CopyableCode code="unifiedRoleAssignmentSchedule-id" /></td>
+<tr id="parameter-unified_role_assignment_schedule_id">
+    <td><CopyableCode code="unified_role_assignment_schedule_id" /></td>
     <td><code>string</code></td>
     <td>The unique identifier of unifiedRoleAssignmentSchedule</td>
-</tr>
-<tr id="parameter-$expand">
-    <td><CopyableCode code="$expand" /></td>
-    <td><code>array</code></td>
-    <td>Expand related entities</td>
-</tr>
-<tr id="parameter-$select">
-    <td><CopyableCode code="$select" /></td>
-    <td><code>array</code></td>
-    <td>Select properties to be returned</td>
 </tr>
 </tbody>
 </table>
@@ -182,7 +167,6 @@ Detailed information for the roleDefinition object that is referenced through th
 ```sql
 SELECT
 id,
-@odata.type,
 description,
 displayName,
 inheritsPermissionsFrom,
@@ -193,9 +177,7 @@ rolePermissions,
 templateId,
 version
 FROM entra_id.role_management.directory_role_assignment_schedules_role_definition
-WHERE unifiedRoleAssignmentSchedule-id = '{{ unifiedRoleAssignmentSchedule-id }}' -- required
-AND $select = '{{ $select }}'
-AND $expand = '{{ $expand }}'
+WHERE unified_role_assignment_schedule_id = '{{ unified_role_assignment_schedule_id }}' -- required
 ;
 ```
 </TabItem>
