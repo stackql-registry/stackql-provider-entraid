@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/subscribed_skus/subscribed_skus/">subscribed_skus</a>
+<a href="/services/subscribed_skus/subscribed_skus">subscribed_skus</a>
 </div>
 <div class="providerDocColumn">
 

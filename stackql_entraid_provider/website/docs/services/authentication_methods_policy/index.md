@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/authentication_methods_policy/authentication_method_configurations/">authentication_method_configurations</a>
+<a href="/services/authentication_methods_policy/authentication_method_configurations">authentication_method_configurations</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/authentication_methods_policy/authentication_methods_policy/">authentication_methods_policy</a>
+<a href="/services/authentication_methods_policy/authentication_methods_policy">authentication_methods_policy</a>
 </div>
 </div>

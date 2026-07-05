@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/agreement_acceptances/agreement_acceptances/">agreement_acceptances</a>
+<a href="/services/agreement_acceptances/agreement_acceptances">agreement_acceptances</a>
 </div>
 <div class="providerDocColumn">
 

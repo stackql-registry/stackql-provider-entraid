@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/oauth2_permission_grants/delta/">delta</a>
+<a href="/services/oauth2_permission_grants/delta">delta</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/oauth2_permission_grants/oauth2_permission_grants/">oauth2_permission_grants</a>
+<a href="/services/oauth2_permission_grants/oauth2_permission_grants">oauth2_permission_grants</a>
 </div>
 </div>

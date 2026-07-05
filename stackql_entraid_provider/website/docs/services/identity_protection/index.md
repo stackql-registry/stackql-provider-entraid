@@ -25,14 +25,14 @@ total resources: __7__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/identity_protection/identity_protection/">identity_protection</a><br />
-<a href="/services/identity_protection/risk_detections/">risk_detections</a><br />
-<a href="/services/identity_protection/risky_service_principals/">risky_service_principals</a><br />
-<a href="/services/identity_protection/risky_service_principals_history/">risky_service_principals_history</a>
+<a href="/services/identity_protection/identity_protection">identity_protection</a><br />
+<a href="/services/identity_protection/risk_detections">risk_detections</a><br />
+<a href="/services/identity_protection/risky_service_principals">risky_service_principals</a><br />
+<a href="/services/identity_protection/risky_service_principals_history">risky_service_principals_history</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/identity_protection/risky_users/">risky_users</a><br />
-<a href="/services/identity_protection/risky_users_history/">risky_users_history</a><br />
-<a href="/services/identity_protection/service_principal_risk_detections/">service_principal_risk_detections</a>
+<a href="/services/identity_protection/risky_users">risky_users</a><br />
+<a href="/services/identity_protection/risky_users_history">risky_users_history</a><br />
+<a href="/services/identity_protection/service_principal_risk_detections">service_principal_risk_detections</a>
 </div>
 </div>

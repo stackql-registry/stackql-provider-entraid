@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/group_setting_templates/delta/">delta</a>
+<a href="/services/group_setting_templates/delta">delta</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/group_setting_templates/group_setting_templates/">group_setting_templates</a>
+<a href="/services/group_setting_templates/group_setting_templates">group_setting_templates</a>
 </div>
 </div>

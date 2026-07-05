@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/certificate_based_auth_configuration/certificate_based_auth_configuration/">certificate_based_auth_configuration</a>
+<a href="/services/certificate_based_auth_configuration/certificate_based_auth_configuration">certificate_based_auth_configuration</a>
 </div>
 <div class="providerDocColumn">
 

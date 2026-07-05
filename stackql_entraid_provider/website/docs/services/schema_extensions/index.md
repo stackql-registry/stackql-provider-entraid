@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/schema_extensions/schema_extensions/">schema_extensions</a>
+<a href="/services/schema_extensions/schema_extensions">schema_extensions</a>
 </div>
 <div class="providerDocColumn">
 

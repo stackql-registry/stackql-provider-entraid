@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/data_policy_operations/data_policy_operations/">data_policy_operations</a>
+<a href="/services/data_policy_operations/data_policy_operations">data_policy_operations</a>
 </div>
 <div class="providerDocColumn">
 

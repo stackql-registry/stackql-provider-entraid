@@ -25,11 +25,11 @@ total resources: __4__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/directory_roles/delta/">delta</a><br />
-<a href="/services/directory_roles/directory_roles/">directory_roles</a>
+<a href="/services/directory_roles/delta">delta</a><br />
+<a href="/services/directory_roles/directory_roles">directory_roles</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/directory_roles/members/">members</a><br />
-<a href="/services/directory_roles/scoped_members/">scoped_members</a>
+<a href="/services/directory_roles/members">members</a><br />
+<a href="/services/directory_roles/scoped_members">scoped_members</a>
 </div>
 </div>

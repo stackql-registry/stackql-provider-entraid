@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/permission_grants/delta/">delta</a>
+<a href="/services/permission_grants/delta">delta</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/permission_grants/permission_grants/">permission_grants</a>
+<a href="/services/permission_grants/permission_grants">permission_grants</a>
 </div>
 </div>

@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/identity_providers/available_provider_types/">available_provider_types</a>
+<a href="/services/identity_providers/available_provider_types">available_provider_types</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/identity_providers/identity_providers/">identity_providers</a>
+<a href="/services/identity_providers/identity_providers">identity_providers</a>
 </div>
 </div>

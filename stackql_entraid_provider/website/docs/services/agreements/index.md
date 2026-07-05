@@ -25,14 +25,14 @@ total resources: __7__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/agreements/acceptances/">acceptances</a><br />
-<a href="/services/agreements/agreements/">agreements</a><br />
-<a href="/services/agreements/file/">file</a><br />
-<a href="/services/agreements/file_localizations/">file_localizations</a>
+<a href="/services/agreements/acceptances">acceptances</a><br />
+<a href="/services/agreements/agreements">agreements</a><br />
+<a href="/services/agreements/file">file</a><br />
+<a href="/services/agreements/file_localizations">file_localizations</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/agreements/file_localizations_versions/">file_localizations_versions</a><br />
-<a href="/services/agreements/files/">files</a><br />
-<a href="/services/agreements/files_versions/">files_versions</a>
+<a href="/services/agreements/file_localizations_versions">file_localizations_versions</a><br />
+<a href="/services/agreements/files">files</a><br />
+<a href="/services/agreements/files_versions">files_versions</a>
 </div>
 </div>

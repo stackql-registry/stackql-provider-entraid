@@ -25,11 +25,11 @@ total resources: __4__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/audit_logs/audit_logs/">audit_logs</a><br />
-<a href="/services/audit_logs/directory_audits/">directory_audits</a>
+<a href="/services/audit_logs/audit_logs">audit_logs</a><br />
+<a href="/services/audit_logs/directory_audits">directory_audits</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/audit_logs/provisioning/">provisioning</a><br />
-<a href="/services/audit_logs/sign_ins/">sign_ins</a>
+<a href="/services/audit_logs/provisioning">provisioning</a><br />
+<a href="/services/audit_logs/sign_ins">sign_ins</a>
 </div>
 </div>

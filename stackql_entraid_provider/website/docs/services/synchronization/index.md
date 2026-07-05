@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/synchronization/filter_operators/">filter_operators</a>
+<a href="/services/synchronization/filter_operators">filter_operators</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/synchronization/functions/">functions</a>
+<a href="/services/synchronization/functions">functions</a>
 </div>
 </div>

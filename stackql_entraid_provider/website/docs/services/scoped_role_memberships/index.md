@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/scoped_role_memberships/scoped_role_memberships/">scoped_role_memberships</a>
+<a href="/services/scoped_role_memberships/scoped_role_memberships">scoped_role_memberships</a>
 </div>
 <div class="providerDocColumn">
 

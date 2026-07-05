@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/group_settings/group_settings/">group_settings</a>
+<a href="/services/group_settings/group_settings">group_settings</a>
 </div>
 <div class="providerDocColumn">
 

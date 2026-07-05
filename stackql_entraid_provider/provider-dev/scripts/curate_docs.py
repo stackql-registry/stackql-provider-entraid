@@ -23,6 +23,14 @@ surfaces OData wire plumbing the runtime abstracts away from SQL users:
    a low-level OData discriminator, no longer a required body attribute
    (de-required at build time by curate_source_specs.py).
 
+3. **Trailing slashes are stripped from internal `/services/...` links** (the
+   service-index and resource-index anchor grids). The site is built with
+   `trailingSlash: false`, so pages are emitted as flat `.html` files and
+   GitHub Pages serves the slashed URL as a 404 (the SPA recovers on
+   hydration, but each click flashes "Page Not Found" and returns HTTP 404
+   to crawlers). These are raw `<a>` tags, so Docusaurus's broken-link
+   checker never sees them.
+
 Column and body-property names are left in their Graph wire casing
 (camelCase) - that is the SQL surface (see inject_pushdown_config.py for the
 rationale: raw-identifier push-down fidelity). Path params are snake_case in
@@ -37,7 +45,9 @@ import re
 import sys
 from pathlib import Path
 
-DOCS_DIR = Path(__file__).resolve().parent.parent.parent / "website" / "docs" / "services"
+# The whole docs tree, not just services/: the provider intro page
+# (docs/index.md) carries the same slashed /services/ links.
+DOCS_DIR = Path(__file__).resolve().parent.parent.parent / "website" / "docs"
 
 # OData query-option params to suppress from docs.
 ODATA_PARAMS = {"$top", "$skip", "$search", "$filter", "$count", "$orderby",
@@ -77,6 +87,9 @@ def transform_tables_and_links(text: str) -> str:
         return "<td>" + strip_odata_param_links(m.group(1)) + "</td>"
     text = re.sub(r"<td>((?:<a href=\"#parameter-[^\"]+\"><code>[^<]+</code></a>(?:, )?)+)</td>",
                   cell_fix, text)
+    # strip trailing slashes from internal /services/ links (trailingSlash:
+    # false site - the slashed form 404s on GitHub Pages)
+    text = re.sub(r"(href=\"/services/[^\"]+)/\"", r'\1"', text)
     return text
 
 
@@ -143,7 +156,8 @@ def curate(path: Path) -> bool:
     text = transform_example_lines(text)
     text = fix_where_leading_and(text)
     if text != original:
-        path.write_text(text, encoding="utf-8")
+        # pin LF so a run under Windows Python doesn't CRLF-flip the tree
+        path.write_text(text, encoding="utf-8", newline="\n")
         return True
     return False
 

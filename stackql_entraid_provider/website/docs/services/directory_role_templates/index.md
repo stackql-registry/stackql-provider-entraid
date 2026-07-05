@@ -25,9 +25,9 @@ total resources: __2__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/directory_role_templates/delta/">delta</a>
+<a href="/services/directory_role_templates/delta">delta</a>
 </div>
 <div class="providerDocColumn">
-<a href="/services/directory_role_templates/directory_role_templates/">directory_role_templates</a>
+<a href="/services/directory_role_templates/directory_role_templates">directory_role_templates</a>
 </div>
 </div>

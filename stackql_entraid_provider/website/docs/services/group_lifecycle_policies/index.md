@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/group_lifecycle_policies/group_lifecycle_policies/">group_lifecycle_policies</a>
+<a href="/services/group_lifecycle_policies/group_lifecycle_policies">group_lifecycle_policies</a>
 </div>
 <div class="providerDocColumn">
 

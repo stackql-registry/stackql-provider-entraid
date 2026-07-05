@@ -25,7 +25,7 @@ total resources: __1__
 ## Resources
 <div class="row">
 <div class="providerDocColumn">
-<a href="/services/application_templates/application_templates/">application_templates</a>
+<a href="/services/application_templates/application_templates">application_templates</a>
 </div>
 <div class="providerDocColumn">
 
