@@ -69,6 +69,143 @@ stackql shell --auth="${AUTH}"
 ```
 </details>
 
+## Example Queries
+
+Try the following queries using `stackql shell`, or run them from a script or CI pipeline with `stackql exec`.
+
+### Users with account status and UPN
+
+Every user in the tenant with its sign-in status, user type and organisational attributes, sorted by name:
+
+```sql
+SELECT id, displayName, userPrincipalName, accountEnabled, userType,
+       mail, jobTitle, department, createdDateTime
+FROM entra_id.users.users
+ORDER BY displayName;
+```
+
+### Groups and their members
+
+All groups with their type, visibility and dynamic membership rule, then the direct user members of one group (the `members` resource returns directory object IDs, so the join to `users` supplies the names):
+
+```sql
+SELECT id, displayName, mailEnabled, securityEnabled, groupTypes,
+       membershipRule, visibility, createdDateTime
+FROM entra_id.groups.groups;
+
+SELECT u.displayName, u.userPrincipalName, u.mail
+FROM entra_id.groups.members m
+JOIN entra_id.users.users u ON u.id = m.id
+WHERE m.group_id = '{{ group_id }}';
+```
+
+### App registrations with credentials
+
+App registrations that hold at least one client secret or certificate, with the number of each and the expiry of the first listed secret:
+
+```sql
+SELECT displayName, appId, signInAudience,
+       json_array_length(passwordCredentials) AS secret_count,
+       json_extract(passwordCredentials, '$[0].endDateTime') AS first_secret_expiry,
+       json_array_length(keyCredentials) AS certificate_count
+FROM entra_id.applications.applications
+WHERE json_array_length(passwordCredentials) > 0
+   OR json_array_length(keyCredentials) > 0;
+```
+
+### Service principals
+
+Enterprise applications, managed identities and other service principals in the tenant, with the principal type and whether sign-in is enabled:
+
+```sql
+SELECT id, appId, displayName, servicePrincipalType, accountEnabled,
+       appOwnerOrganizationId, appRoleAssignmentRequired
+FROM entra_id.service_principals.service_principals;
+```
+
+### Directory roles and their members
+
+The directory roles activated in the tenant, then the users that hold one of them:
+
+```sql
+SELECT id, displayName, description, roleTemplateId
+FROM entra_id.directory_roles.directory_roles;
+
+SELECT u.displayName, u.userPrincipalName, u.mail
+FROM entra_id.directory_roles.members m
+JOIN entra_id.users.users u ON u.id = m.id
+WHERE m.directory_role_id = '{{ directory_role_id }}';
+```
+
+### Conditional access policies
+
+Enabled policies that require multifactor authentication for all users, with the applications each one covers:
+
+```sql
+SELECT displayName, state,
+       json_extract(conditions, '$.applications.includeApplications') AS include_applications,
+       json_extract(grantControls, '$.builtInControls') AS built_in_controls
+FROM entra_id.identity.conditional_access_policies
+WHERE state = 'enabled'
+  AND json_extract(conditions, '$.users.includeUsers') LIKE '%All%'
+  AND json_extract(grantControls, '$.builtInControls') LIKE '%mfa%';
+```
+
+### Failed sign-ins for one user
+
+Sign-ins by one user that did not succeed, newest first, with the application, client, conditional access outcome and failure reason (the user predicate is pushed to Graph as `$filter` and the sort as `$orderby`):
+
+```sql
+SELECT createdDateTime, appDisplayName, clientAppUsed, ipAddress,
+       conditionalAccessStatus,
+       json_extract(status, '$.errorCode') AS error_code,
+       json_extract(status, '$.failureReason') AS failure_reason
+FROM entra_id.audit_logs.sign_ins
+WHERE userPrincipalName = 'alice@example.com'
+  AND json_extract(status, '$.errorCode') <> 0
+ORDER BY createdDateTime DESC;
+```
+
+### Guest users
+
+External (B2B) accounts in the tenant with their invitation state (the predicate is pushed to Graph as `$filter=userType eq 'Guest'`):
+
+```sql
+SELECT id, displayName, userPrincipalName, mail, externalUserState, createdDateTime
+FROM entra_id.users.users
+WHERE userType = 'Guest';
+```
+
+### Device posture by operating system
+
+Registered devices counted by operating system, compliance state and management state:
+
+```sql
+SELECT operatingSystem, isCompliant, isManaged, COUNT(*) AS device_count
+FROM entra_id.devices.devices
+GROUP BY operatingSystem, isCompliant, isManaged
+ORDER BY device_count DESC;
+```
+
+### Group provisioning
+
+Create a security group, add a member to it (relationship writes take the target object ID as `directoryObjectId`), update its description and finally delete it:
+
+```sql
+INSERT INTO entra_id.groups.groups (displayName, mailNickname, mailEnabled, securityEnabled, description)
+SELECT 'Platform Engineering', 'platform-engineering', false, true, 'Platform engineering team';
+
+INSERT INTO entra_id.groups.members (group_id, directoryObjectId)
+SELECT '{{ group_id }}', '{{ directoryObjectId }}';
+
+UPDATE entra_id.groups.groups
+SET description = 'Platform engineering team, owned by the CTO office'
+WHERE group_id = '{{ group_id }}';
+
+DELETE FROM entra_id.groups.groups
+WHERE group_id = '{{ group_id }}';
+```
+
 
 ## Services
 <div class="row">
