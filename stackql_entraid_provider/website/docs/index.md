@@ -27,6 +27,7 @@ Identity and directory management for Microsoft Entra ID (formerly Azure Active 
 
 total services: __39__  
 total resources: __849__  
+source project: __[stackql-provider-entraid](https://github.com/stackql-registry/stackql-provider-entraid)__  
 
 :::
 
