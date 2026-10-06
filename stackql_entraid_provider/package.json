@@ -4,7 +4,7 @@
   "description": "StackQL Provider for Microsoft Entra ID (derived from Microsoft Graph metadata)",
   "type": "module",
   "scripts": {
-    "generate-docs": "node node_modules/@stackql/provider-utils/bin/docgen-utils.mjs generate-docs",
+    "generate-docs": "node node_modules/@stackql/provider-utils/bin/docgen-utils.mjs generate-docs --source-project https://github.com/stackql-registry/stackql-provider-entraid",
     "split": "node node_modules/@stackql/provider-utils/bin/provider-dev-utils.mjs split",
     "normalize": "node node_modules/@stackql/provider-utils/bin/provider-dev-utils.mjs normalize",
     "generate-mappings": "node node_modules/@stackql/provider-utils/bin/provider-dev-utils.mjs analyze",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@stackql/pgwire-lite": "^1.0.1",
-    "@stackql/provider-utils": "^0.7.6"
+    "@stackql/provider-utils": "^0.7.11"
   },
   "keywords": [
     "stackql",
